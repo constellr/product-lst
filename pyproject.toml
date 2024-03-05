@@ -1,0 +1,19 @@
+[project]
+name = "product-lst"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Jonas Berhin", email = "jonas.berhin@gmail.com"},
+]
+dependencies = [
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.12",
+    "mkdocs-bibtex>=2.14.1",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
