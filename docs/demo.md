@@ -1,6 +1,6 @@
 # Demo data
 
-Here is some demo data for you to explore
+Here are some demo data for you to explore:
 
 - [Brasil Rioverde Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-rioverde-2023.zip)
 - [Brasil Barreiras Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-barreiras-2023.zip)
