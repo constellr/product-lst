@@ -1,6 +1,5 @@
 # Constellr LST30 Demo data
 
-
 ## Product Description
 
 ### Addressed challenges
