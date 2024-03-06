@@ -1,3 +1,6 @@
+# WARNING: mkdocs doesn't work with gh-pages activated
+# Just don't activate github page then 'mkdocs gh-deploy --clean'
+
 site_name: Product internal documentation
 site_url: https://github.com/constellr/product-lst
 edit_uri: https://github.com/constellr/product-lst/tree/main/docs/
