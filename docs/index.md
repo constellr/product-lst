@@ -1,11 +1,11 @@
-# Constellr LST30 Demo data
+# Constellr LST
 
-## Product Description
-
-### Addressed challenges
-Constellrs temperature product provides Land surface temperature at both high spatial and temporal
+Constellr temperature product provides Land surface temperature at both high spatial and temporal
 resolution.
-### Description
+
+
+## Specification
+
 Constellr LST consists of homogenized rasters of Land Surface Temperature (LST) data. All thermal
 datasets are spectrally harmonised using a single algorithm to retrieve LST.
 The data is delivered as if it were coming from a single satellite constellation.
@@ -15,8 +15,6 @@ Each pixel holds a temperature value. Temperatures are presented in degrees Cels
 Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in
 several or all images, due to issues in the data processing from the public providers. The data comprises,
 per scene:
-
-
 
 
 | Product Specifications                |                       |
