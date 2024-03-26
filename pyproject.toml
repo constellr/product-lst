@@ -1,14 +1,15 @@
 [project]
 name = "product-lst"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Constellr Public Documentation"
 authors = [
-    {name = "Jonas Berhin", email = "jonas.berhin@gmail.com"},
+    {name = "Jonas Berhin", email = "jonas.berhin@constellr.com"},
 ]
 dependencies = [
     "mkdocs>=1.5.3",
     "mkdocs-material>=9.5.12",
     "mkdocs-bibtex>=2.14.1",
+    "pandoc>=2.3",
 ]
 requires-python = "==3.12.*"
 readme = "README.md"
