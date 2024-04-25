@@ -1,4 +1,4 @@
-# Evapotranspiration
+# Constellr ET
 
 Evapotranspiration (ET) by Constellr is estimated using two models:
 Priestly-Taylor Jet Propulsion Laboratory (PTJPL) and Two-source model
