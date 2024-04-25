@@ -3,6 +3,7 @@
 This repository is aimed at providing publicly:
 - LST30 related documentation
 - LST30 demo data
+- ET related documentation
 
 Website is available [here](https://constellr.github.io/product-lst/)
 
