@@ -29,10 +29,20 @@ per scene:
 | Spatial accuracy                      | <1 pixel              |
 
 
-## Output File format
+## File-naming convention
 
-- One LST raster: *_LST_AOI.tif
-    pixel value: Kelvin Degree
-- One cloud mask: *_CLOUDS_AOI.tif
-    pixel values: 0=no cloud, 1=cloud
-- One metadata json: *.json
+Various layers are provided and follow this compact naming convention:
+
+YYYYMMDDTHHMMSS_aa
+
+Where
+
+-   YYYYMMDDTHHMMSS is the datatake sensing time of the land surface
+    temperature in isoformat. Time is based on Universal Time Coordinated (UTC), also
+    known as Greenwich Mean Time (GMT).
+-   aa indicates what contains the file
+    - **LST_AOI.tif**: LST raster
+        pixel value: Kelvin Degree
+    - **CLOUDS_AOI.tif**: Cloud mask raster
+        pixel values: 0=no cloud, 1=cloud
+    - **.json**: Metadata json

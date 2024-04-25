@@ -2,10 +2,10 @@
 # It is not intended for manual editing.
 
 [metadata]
-groups = ["default"]
+groups = ["default", "dev"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.1"
-content_hash = "sha256:353cda0ab484bc4236d9b7b127da906141b88aed6950d71e189158c43fe0edfa"
+content_hash = "sha256:8ca9043d8b335e2d27e5ad9648bbd9533f0e6a723c4dfb802f6a4fe7e56380ed"
 
 [[package]]
 name = "babel"
