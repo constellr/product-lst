@@ -20,7 +20,7 @@ constellr models the latent heat flux (LE) and then from it estimates the daily 
 Both LE and daily ET (mm/d) can be provided by constellr to the end-user as raster files. 
 
 
-<img src="images/et_flux.png" alt="et flux" style="height:250px;">
+![et flux](images/et_flux.png){: style="height:250px"}
 <figcaption id="et_flux" tag="image">Energy flux components </figcaption>
 
 
@@ -42,7 +42,7 @@ Both LE and daily ET (mm/d) can be provided by constellr to the end-user as rast
     modelled at satellite acquisition time.
 
 
-<img src="images/et_flow.png" alt="et flow" style="height:300px;">
+![et flow](images/et_flow.png){: style="height:300px"}
 <figcaption id="et_flow" tag="image">The general methodology of ET modelling </figcaption>
 
 
