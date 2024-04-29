@@ -1,6 +1,6 @@
 [project]
 name = "product-lst"
-version = "0.1.0"
+version = "0.1.1"
 description = "Constellr Public Documentation"
 authors = [
     {name = "Jonas Berhin", email = "jonas.berhin@constellr.com"},
