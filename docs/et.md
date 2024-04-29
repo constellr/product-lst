@@ -1,24 +1,33 @@
 # Constellr ET
 
-Evapotranspiration (ET) by Constellr is estimated using two models:
-Priestly-Taylor Jet Propulsion Laboratory (PTJPL) and Two-source model
-energy balance (TSEB). The results of each model are provided to empower
-the end-user in selecting the best approach suitable to their needs.
-This output sheet contains description of the various provided layers.
+Evapotranspiration (ET) by constellr is estimated using two-source models. 
+The results of each model are provided as raster files over the area of interest
+to empower the end-user in selecting the best approach suitable to their needs. 
+
 
 ## Background
 
 Evapotranspiration (ET) refers to the flow of water leaving the ground
-surface per unit of time. It has two main components: vegetation
-transpiration and soil evaporation. Therefore, ET supports the
-estimation of water consumption and water needs and is used to create
-efficient water budgets at various scales.
+surface per unit of time. It supports the estimation of water consumption 
+and water needs and is used to create efficient water budgets at various scales.
 
-The evapotranspiration (ET) provided by Constellr is based on remote
-sensing data and meteorological data. The input data used to estimate
-instantaneous ET, also know as latent heat flux, is:
+constellr models ET using two models:
+Priestly-Taylor Jet Propulsion Laboratory (PTJPL) and Two-source model
+energy balance (TSEB). They are two-source models, thus they model seperately in two
+main components: vegetation transpiration and soil evaporation
 
--   Land surface temperature: The [LST30](./lst.md) service of Constellr
+constellr models the latent heat flux (LE) and then from it estimates the daily ET.
+Both LE and daily ET (mm/d) can be provided by constellr to the end-user as raster files. 
+
+
+<img src="images/et_flux.png" alt="et flux" style="height:250px;">
+<figcaption id="et_flux" tag="image">Energy flux components </figcaption>
+
+
+
+## The input data to the ET models
+
+-   Land surface temperature: The [LST30](./lst.md) service of constellr
     provides a combined repository of spaceborne acquired land surface
     temperature from various sensors.
 
@@ -27,16 +36,15 @@ instantaneous ET, also know as latent heat flux, is:
     the best estimations of bio-physical vegetation parameters.
 
 -   Meteorological data: From local meteorological stations to global
-    atmospheric reanalysis datasets, Constellr assess temporal and
+    atmospheric reanalysis datasets, constellr assesses temporal and
     spatial data availability to provide the best input to the ET
-    models.
+    models and to estimate daily ET from instantaneous flux values
+    modelled at satellite acquisition time.
 
 
-![et flow](images/et_flow.png){: style="height:250px"}
-<figcaption id=et_flow tag="image">et flow</figcaption>
+<img src="images/et_flow.png" alt="et flow" style="height:300px;">
+<figcaption id="et_flow" tag="image">The general methodology of ET modelling </figcaption>
 
-![et flux](images/et_flux.png){: style="height:250px"}
-<figcaption id=et_flux tag="image">et flux</figcaption>
 
 
 ## Specification
@@ -46,10 +54,9 @@ instantaneous ET, also know as latent heat flux, is:
 | Spatial resolution (m)                | 30                    |
 | Frequency(days)                       | 8                     |
 | Coverage                              | Worldwide             |
-| Used data sources                     | Public mission        |
+| Used data sources                     | Public data and LSt30 |
 | Latency time after data acquisition   | 12h                   |  
 | Period of availability                | June 2018 - ongoing   |
-| Thematic accuracy                     |  1.5-3K               |
 | Spatial accuracy                      | <1 pixel              |
 
 ## File-naming convention
