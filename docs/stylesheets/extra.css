@@ -11,3 +11,39 @@
     --md-default-bg-color: rgb(15, 6, 40);
     --font-family: Inter, sans-serif;
 }
+
+
+/* Figure and Table Counter */
+body { counter-reset: imageCounter tableCounter; }
+figcaption[tag="image"] { counter-increment: imageCounter; }
+figcaption[tag="table"] { counter-increment: tableCounter; }
+figcaption[tag="equation"] { counter-increment: equationCounter; }
+figcaption[tag="image"]:before {
+    content: "Figure " counter(imageCounter) ": ";
+}
+figcaption[tag="table"]:before {
+    content: "Table " counter(tableCounter) ": ";
+}
+figcaption[tag="equation"]:before {
+    content: "Equation " counter(equationCounter) ": ";
+}
+
+/* Centering tables, figcaptions and paragraphs */
+.md-typeset .md-typeset__table {
+    display: block;
+}
+.md-typeset__table table:not([class]) {
+    display: table;
+}
+figcaption {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
