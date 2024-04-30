@@ -67,7 +67,6 @@ Various layers are provided and follow this compact naming convention:
 YYYYMMDD_ET_aa.tif
 
 where
-
 -   YYYYMMDD is the datatake sensing date of the land surface temperature in isoformat.  
 
 -   aa is the method name, PTJPL or TSEB
