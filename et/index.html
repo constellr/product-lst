@@ -494,12 +494,12 @@ to empower the end-user in selecting the best approach suitable to their needs. 
 <p>Evapotranspiration (ET) refers to the flow of water leaving the ground
 surface per unit of time. It supports the estimation of water consumption 
 and water needs and is used to create efficient water budgets at various scales.</p>
-<p>constellr models ET using two models:
-Priestly-Taylor Jet Propulsion Laboratory (PTJPL) and Two-source model
+<p>constellr models ET using two models:</p>
+<p>Priestly-Taylor Jet Propulsion Laboratory (PTJPL) and Two-source model
 energy balance (TSEB). They are two-source models, thus they model seperately in two
 main components: vegetation transpiration and soil evaporation</p>
-<p>constellr models the latent heat flux (LE) and then from it estimates the daily ET.
-Both LE and daily ET (mm/d) can be provided by constellr to the end-user as raster files. </p>
+<p>constellr models the latent heat flux (LE) and estimates the daily ET from it.
+Daily ET (mm/d) can be provided by constellr to the end-user as raster files. </p>
 <p><img alt="et flux" src="../images/et_flux.png" style="height:250px" /></p>
 <figcaption id="et_flux" tag="image">Energy flux components </figcaption>
 
@@ -549,7 +549,7 @@ Both LE and daily ET (mm/d) can be provided by constellr to the end-user as rast
 </tr>
 <tr>
 <td>Used data sources</td>
-<td style="text-align: right;">Public data and LSt30</td>
+<td style="text-align: right;">Public data and LST30</td>
 </tr>
 <tr>
 <td>Latency time after data acquisition</td>
@@ -567,15 +567,11 @@ Both LE and daily ET (mm/d) can be provided by constellr to the end-user as rast
 </table>
 <h2 id="file-naming-convention">File-naming convention</h2>
 <p>Various layers are provided and follow this compact naming convention:</p>
-<p>YYYYMMDD_aa_bb.tif</p>
+<p>YYYYMMDD_ET_bb.tif</p>
 <p>where</p>
 <ul>
 <li>
-<p>YYYYMMDD is the datatake sensing date of the land surface temperature in isoformat.<br />
-    Date is based on Universal Time Coordinated (UTC), also known as Greenwich Mean Time (GMT).</p>
-</li>
-<li>
-<p>aa can be either LE (instantaneous ET) or ET (daily estimate)</p>
+<p>YYYYMMDD is the datatake sensing date of the land surface temperature in isoformat.  </p>
 </li>
 <li>
 <p>bb is the method name, PTJPL or TSEB</p>
@@ -584,9 +580,8 @@ Both LE and daily ET (mm/d) can be provided by constellr to the end-user as rast
 <p>.tif is the geospatial raster format used to store the data</p>
 </li>
 </ul>
-<p>Thus, file <em>20220728_ET _PTJPL.tif</em> identifies a daily ET
-product estimated using PTJPL acquired by a thermal sensor on the July
-28, 2022 UTC</p>
+<p>Thus, file <em>20240728_ET _PTJPL.tif</em> identifies an ET product estimated using 
+PTJPL acquired by a thermal sensor on the July 28, 2024.</p>
 
 
 
