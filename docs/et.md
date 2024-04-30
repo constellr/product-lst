@@ -64,13 +64,13 @@ Daily ET (mm/d) can be provided by constellr to the end-user as raster files.
 
 Various layers are provided and follow this compact naming convention:
 
-YYYYMMDD_ET_bb.tif
+YYYYMMDD_ET_aa.tif
 
 where
 
 -   YYYYMMDD is the datatake sensing date of the land surface temperature in isoformat.  
 
--   bb is the method name, PTJPL or TSEB
+-   aa is the method name, PTJPL or TSEB
 
 -   .tif is the geospatial raster format used to store the data
 
