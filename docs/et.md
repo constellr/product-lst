@@ -17,7 +17,7 @@ energy balance (TSEB). They are two-source models, thus they model seperately in
 main components: vegetation transpiration and soil evaporation
 
 constellr models the latent heat flux (LE) and then from it estimates the daily ET.
-Both LE and daily ET (mm/d) can be provided by constellr to the end-user as raster files. 
+ET (mm/d) is provided by constellr to the end-user as raster files. 
 
 
 ![et flux](images/et_flux.png){: style="height:250px"}
@@ -63,20 +63,16 @@ Both LE and daily ET (mm/d) can be provided by constellr to the end-user as rast
 
 Various layers are provided and follow this compact naming convention:
 
-YYYYMMDD_aa_bb.tif
+YYYYMMDD_ET_bb.tif
 
 where
 
 -   YYYYMMDD is the datatake sensing date of the land surface temperature in isoformat.  
-    Date is based on Universal Time Coordinated (UTC), also known as Greenwich Mean Time (GMT).
 
--   aa can be either LE (instantaneous ET) or ET (daily estimate)
-
--   bb is the method name, PTJPL or TSEB
+-   bb is the model name, PTJPL or TSEB
 
 -   .tif is the geospatial raster format used to store the data
 
-Thus, file *20220728_ET \_PTJPL.tif* identifies a daily ET
-product estimated using PTJPL acquired by a thermal sensor on the July
-28, 2022 UTC
+Thus, file *20220728_ET \_PTJPL.tif* identifies ET product (mm/day)
+estimated using PTJPL acquired by a thermal sensor on the July 28, 2022
 
