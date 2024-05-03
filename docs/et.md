@@ -56,7 +56,6 @@ Daily ET (mm/d) can be provided by constellr to the end-user as raster files.
 | Frequency(days)                       | 8                     |
 | Coverage                              | Worldwide             |
 | Used data sources                     | Public data and LST30 |
-| Latency time after data acquisition   | 12h                   |  
 | Period of availability                | June 2018 - ongoing   |
 | Spatial accuracy                      | <1 pixel              |
 
