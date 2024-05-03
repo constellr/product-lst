@@ -20,7 +20,7 @@ per scene:
 | Product Specifications                |                       |
 |---                                    |----:                  |
 | Spatial resolution (m)                | 30                    |
-| Frequency(days)                       | 8                     |
+| Frequency(days)                       | 8 to 16 days          |
 | Coverage                              | Worldwide             |
 | Used data sources                     | Public mission        |
 | Period of availability                | June 2018 - ongoing   |
