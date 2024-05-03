@@ -23,7 +23,7 @@ per scene:
 | Frequency(days)                       | 8 to 16 days          |
 | Coverage                              | Worldwide             |
 | Used data sources                     | Public mission        |
-| Period of availability                | June 2018 - ongoing   |
+| Period of availability                | 2018 - ongoing        |
 | Thematic accuracy                     |  1.5-3K               |
 | Spatial accuracy                      | <1 pixel              |
 

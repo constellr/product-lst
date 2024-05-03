@@ -56,7 +56,7 @@ Daily ET (mm/d) can be provided by constellr to the end-user as raster files.
 | Frequency(days)                       | 8 to 16 days          |
 | Coverage                              | Worldwide             |
 | Used data sources                     | Public data and LST30 |
-| Period of availability                | June 2018 - ongoing   |
+| Period of availability                | 2018 - ongoing        |
 | Spatial accuracy                      | <1 pixel              |
 
 ## File-naming convention
