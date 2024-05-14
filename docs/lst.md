@@ -22,7 +22,6 @@ per scene:
 | Spatial resolution (m)                | 30                    |
 | Frequency(days)                       | 8 to 16 days          |
 | Coverage                              | Worldwide             |
-| Used data sources                     | Public mission        |
 | Period of availability                | 2018 - ongoing        |
 | Thematic accuracy                     |  1.5-3K               |
 | Spatial accuracy                      | <1 pixel              |
@@ -45,3 +44,17 @@ Where
     - **CLOUDS_AOI.tif**: Cloud mask raster
         pixel values: 0=no cloud, 1=cloud
     - **.json**: Metadata json
+
+
+
+## Data Sources
+
+Constellr LST30 leverages data from different public missions:
+
+-   Lisr, constellr property
+-   Landsat 8 and 9 from USGS
+-   Era5 and CAMS from CDSAPI
+-   Modis (soon)
+-   Sentinel 2 (soon)
+
+*Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).*
