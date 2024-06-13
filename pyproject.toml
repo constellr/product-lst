@@ -1,9 +1,10 @@
 [project]
 name = "product-lst"
-version = "0.1.1"
-description = "Constellr Public Documentation"
+version = "0.1.0"
+description = "Default template for PDM package"
 authors = [
     {name = "Jonas Berhin", email = "jonas.berhin@constellr.com"},
+    {name = "chanico1", email = "nicolas.chamberland@constellr.com"},
 ]
 dependencies = [
     "mkdocs>=1.5.3",
