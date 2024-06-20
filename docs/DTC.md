@@ -33,9 +33,9 @@ The general steps leading to generate the diurnal temperature cycle modelling da
 
 ### 1- Parameter initialization 
 
-Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.
+Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates t_sr, solar noon approximates t_max, and sunset + 1 hour approximates t_ss.
 
-Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.
+Temperature-Related Parameters: Derived from geostationary satellites. Missing values for T_sr and T_max are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.
 
 ### 2- Low resolution Fitting 
 
