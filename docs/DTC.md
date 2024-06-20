@@ -1,4 +1,5 @@
 # Constellr DTC
+(This tool is still under development, and further improvements are expected soon.)
 
 Constellr-DTC provides hourly Land Surface temperature data at 30-meter resolution. 
 
