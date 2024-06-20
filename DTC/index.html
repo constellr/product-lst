@@ -420,6 +420,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Constellr-DTC methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-parameter-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1- Parameter initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-low-resolution-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      2- Low resolution Fitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-high-resolution-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3- High Resolution Fitting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -543,6 +576,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Constellr-DTC methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-parameter-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1- Parameter initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-low-resolution-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      2- Low resolution Fitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-high-resolution-fitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3- High Resolution Fitting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -575,7 +641,7 @@
 <h1 id="constellr-dtc">Constellr DTC</h1>
 <p>Constellr-DTC provides hourly Land Surface temperature data at 30-meter resolution. </p>
 <h2 id="overall-objectives">Overall Objectives</h2>
-<p>The goal is to model the daily fluctuation in Land Surface Temperature (LST) at the highest spatial resolution possible. The primary advantage of this methodology is its ability to fusion multiple LST data sources at different resolutions. In other word, we're using constellr-DTC as a data fusion method between high resolution images (Landsat and Ecostress) and high temporal resolutions images (Mosaic of various geostationary satellites) to output high temporal and spatial resolution images. </p>
+<p>The goal is to model the daily fluctuation in Land Surface Temperature (LST) at the highest spatial resolution possible. The primary advantage of this methodology is its ability to fusion multiple LST data sources at different resolutions. In other word, we are using constellr-DTC as a data fusion method between high resolution images (Landsat and Ecostress) and high temporal resolutions images (Mosaic of various geostationary satellites) to output high temporal and spatial resolution images. </p>
 <h2 id="the-input-data-to-constellr-dtc">The input data to constellr-DTC</h2>
 <h3 id="high-temporal-resolution-images-geostationary-satellites">High temporal resolution images - geostationary satellites</h3>
 <p>The constellr-DTC model will require a time-series of hourly LST measurements from a geostationary satellite over multiple days. That data usually comes from GOES, SEVIRI and HIMAWARI missions. </p>
@@ -610,19 +676,14 @@
 </table>
 <h2 id="constellr-dtc-methodology">Constellr-DTC methodology</h2>
 <p>The general steps leading to generate the diurnal temperature cycle modelling data are listed below. </p>
-<p>1- Parameter initialization </p>
-<pre><code>-Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.
-
--Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.
-</code></pre>
-<p>2- Low resolution Fitting </p>
-<pre><code>-Least Square Approach: Allows individual residuals minimization with error measures, boundary constraints on T_sr and T_max, and control over the loss function
-
--DTC Interpolation: After fitting, the original low-resolution LST values are replaced by the predicted values from the model to fill missing LST values, preparing for the second fitting.
-</code></pre>
-<p>3- High Resolution Fitting </p>
-<pre><code>-The second fitting includes both high and low-resolution images, with a subset of parameters finely tuned. High-resolution image errors are weighted by their count. LST spread within each low-resolution pixel is checked to derive an LST error. Nearby timestamps are assumed to have similar error ranges.
-</code></pre>
+<h3 id="1-parameter-initialization">1- Parameter initialization</h3>
+<p>Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.</p>
+<p>Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.</p>
+<h3 id="2-low-resolution-fitting">2- Low resolution Fitting</h3>
+<p>Least Square Approach: Allows individual residuals minimization with error measures, boundary constraints on T_sr and T_max, and control over the loss function</p>
+<p>DTC Interpolation: After fitting, the original low-resolution LST values are replaced by the predicted values from the model to fill missing LST values, preparing for the second fitting.</p>
+<h3 id="3-high-resolution-fitting">3- High Resolution Fitting</h3>
+<p>The second fitting includes both high and low-resolution images, with a subset of parameters finely tuned. High-resolution image errors are weighted by their count. LST spread within each low-resolution pixel is checked to derive an LST error. Nearby timestamps are assumed to have similar error ranges.</p>
 <p>*For further details concerning the methodology, please contact the constellr product team.  </p>
 <p><img alt="dtc modeling" src="../images/dtc_modeling_outputs.png" style="height:300px" /></p>
 <figcaption id="dtc modeling" tag="image">Constellr-DTC outputs (hourly LST at 30m) over a ten-day period </figcaption>
