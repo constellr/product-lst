@@ -4,7 +4,7 @@ Constellr-DTC provides hourly Land Surface temperature data at 30-meter resoluti
 
 ## Overall Objectives 
 
-The goal is to model the daily fluctuation in Land Surface Temperature (LST) at the highest spatial resolution possible. The primary advantage of this methodology is its ability to fusion multiple LST data sources at different resolutions. In other word, we're using constellr-DTC as a data fusion method between high resolution images (Landsat and Ecostress) and high temporal resolutions images (Mosaic of various geostationary satellites) to output high temporal and spatial resolution images. 
+The goal is to model the daily fluctuation in Land Surface Temperature (LST) at the highest spatial resolution possible. The primary advantage of this methodology is its ability to fusion multiple LST data sources at different resolutions. In other word, we are using constellr-DTC as a data fusion method between high resolution images (Landsat and Ecostress) and high temporal resolutions images (Mosaic of various geostationary satellites) to output high temporal and spatial resolution images. 
 
 ## The input data to constellr-DTC
 
@@ -30,21 +30,21 @@ The second type of input refers to high spatial resolution data from polar orbit
 
 The general steps leading to generate the diurnal temperature cycle modelling data are listed below. 
 
-1- Parameter initialization 
+### 1- Parameter initialization 
 
-    -Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.
+Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.
 
-    -Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.
+Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.
 
-2- Low resolution Fitting 
+### 2- Low resolution Fitting 
 
-    -Least Square Approach: Allows individual residuals minimization with error measures, boundary constraints on T_sr and T_max, and control over the loss function
+Least Square Approach: Allows individual residuals minimization with error measures, boundary constraints on T_sr and T_max, and control over the loss function
 
-    -DTC Interpolation: After fitting, the original low-resolution LST values are replaced by the predicted values from the model to fill missing LST values, preparing for the second fitting.
+DTC Interpolation: After fitting, the original low-resolution LST values are replaced by the predicted values from the model to fill missing LST values, preparing for the second fitting.
 
-3- High Resolution Fitting 
+### 3- High Resolution Fitting 
 
-    -The second fitting includes both high and low-resolution images, with a subset of parameters finely tuned. High-resolution image errors are weighted by their count. LST spread within each low-resolution pixel is checked to derive an LST error. Nearby timestamps are assumed to have similar error ranges.
+The second fitting includes both high and low-resolution images, with a subset of parameters finely tuned. High-resolution image errors are weighted by their count. LST spread within each low-resolution pixel is checked to derive an LST error. Nearby timestamps are assumed to have similar error ranges.
  
 *For further details concerning the methodology, please contact the constellr product team.  
 
