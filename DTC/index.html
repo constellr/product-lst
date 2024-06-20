@@ -767,8 +767,8 @@
 <h2 id="constellr-dtc-methodology">Constellr-DTC methodology</h2>
 <p>The general steps leading to generate the diurnal temperature cycle modelling data are listed below. </p>
 <h3 id="1-parameter-initialization">1- Parameter initialization</h3>
-<p>Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.</p>
-<p>Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.</p>
+<p>Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates t_sr, solar noon approximates t_max, and sunset + 1 hour approximates t_ss.</p>
+<p>Temperature-Related Parameters: Derived from geostationary satellites. Missing values for T_sr and T_max are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.</p>
 <h3 id="2-low-resolution-fitting">2- Low resolution Fitting</h3>
 <p>Least Square Approach: Allows individual residuals minimization with error measures, boundary constraints on T_sr and T_max, and control over the loss function</p>
 <p>DTC Interpolation: After fitting, the original low-resolution LST values are replaced by the predicted values from the model to fill missing LST values, preparing for the second fitting.</p>
