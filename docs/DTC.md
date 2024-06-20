@@ -32,15 +32,21 @@ The general steps leading to generate the diurnal temperature cycle modelling da
 
 1- Parameter initialization 
 
+    -Time-Related Parameters: Derived from location and timestamps using solar geometry. Solar sunrise approximates T_sr, solar noon approximates T_max, and sunset + 1 hour approximates T_ss.
+
+    -Temperature-Related Parameters: Derived from geostationary satellites. Missing values at T_sr are interpolated at the pixel level for up to four consecutive missing timestamps. If still missing, an interpolation followed by extrapolation based on adjacent day T_sr and T_max is applied.
+
 2- Low resolution Fitting 
+
+    -Least Square Approach: Allows individual residuals minimization with error measures, boundary constraints on T_sr and T_max, and control over the loss function
+
+    -DTC Interpolation: After fitting, the original low-resolution LST values are replaced by the predicted values from the model to fill missing LST values, preparing for the second fitting.
 
 3- High Resolution Fitting 
 
+    -The second fitting includes both high and low-resolution images, with a subset of parameters finely tuned. High-resolution image errors are weighted by their count. LST spread within each low-resolution pixel is checked to derive an LST error. Nearby timestamps are assumed to have similar error ranges.
  
 *For further details concerning the methodology, please contact the constellr product team.  
-
-![dtc inputs](images/inputs_dtc.png){: style="height:300px"}
-<figcaption id="dtc inputs" tag="image">hourly Low-res data (lr -4km) and sporadic High-res data (hr-30m) over a ten-day period </figcaption>
 
 ![dtc modeling](images/dtc_modeling_outputs.png){: style="height:300px"}
 <figcaption id="dtc modeling" tag="image">Constellr-DTC outputs (hourly LST at 30m) over a ten-day period </figcaption>
