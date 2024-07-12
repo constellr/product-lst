@@ -50,7 +50,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     ---
 
-    <!-- ![colorado](images/demo/colorado-highway-lst15.png){: style=} -->
+    ![colorado](images/demo/colorado-highway-lst15.png){: style=}
 
     * Colorado, US
     * Highway Infrastucture
@@ -60,7 +60,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
 
     ---
-    
+
  
 </div>
 
