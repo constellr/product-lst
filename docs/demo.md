@@ -9,74 +9,83 @@ Do you want to get started using land surface temperature to derive temperature-
 ## LST30
 Our current offer entails fusioned land surface temperature data layers from a variety of data sources. It leverages our in-house developed proprietary emissivity and retrieval algorithms for enhanced data quality. The product is available for different surface areas today re-sampled at a 30m spatial resolution. 
 
+
+
 <div class="grid cards" markdown>
 
-=== ":fontawesome-brands-envira:{ .lg .left }  __Bare Soil Monitoring__ :octicons-download-16:{ style="float: right" .lg .middle }"
+-   :fontawesome-brands-envira:{ .lg .left }  __Bare Soil Monitoring__
 
-     [![dtc modeling](images/baresoilbis-lst15.png){: style="height:300px"}](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/baresoil_monitoring2022.zip)
+    ---
 
-=== "__Details__"
+    ![baresoil](images/demo/baresoil-lst15.png)
 
-    1. Corn Belt, US
-    2. April - June 2022
-    3. 30 meter spatial resolution
+    * Corn Belt, US
+    * April - June 2022
+    * 30 meter resolution
 
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/baresoil_monitoring2022.zip)
 
-------
+-   :fontawesome-brands-envira:{ .lg .left }  __Crop Health Monitoring__
 
-=== ":fontawesome-brands-envira:{ .lg .right }  __Crop Health Monitoring__ :octicons-download-16:{ style="float: right" .lg .middle }"
+    ---
 
-     [![dtc modeling](images/healthbis-lst15.png){: style="height:300px"}](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/health_monitoring_2022.zip)
+    ![health](images/demo/health-lst15.png)
 
-=== "__Details__"
+    * Kansas, US
+    * April - July 2022
+    * 30 meter spatial resolution
 
-    1. Kansas, US
-    2. April - July 2022
-    3. 30 meter spatial resolution
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/health_monitoring_2022.zip)
 
 </div>
+
+
 
 ## LST15
  LST15 is still under development, but it already achieves excellent performance. It is particularly well-suited for industrial processes and road monitoring, thanks to its finer spatial granularity of 15 meters.
 
 <div class="grid cards" markdown>
 
-=== ":material-road-variant:{ .lg .middle }  __Road Monitoring__ :octicons-download-16:{ style="float: right" .lg .middle }"
+-   :material-road-variant:{ .lg .left }  __Road Monitoring__
 
-     [![dtc modeling](images/colorado-highway-lst15.png){: style="width:300px"; float: right"}](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip )
+    ---
 
+    <!-- ![colorado](images/demo/colorado-highway-lst15.png){: style=} -->
 
-=== "__Details__"
+    * Colorado, US
+    * Highway Infrastucture
+    * November 2023 - March 2024
+    * 15 meter spatial resolution
 
-    1. Colorado, US
-    2. Highway Infrastucture
-    3. November 2023 - March 2024
-    4. 15 meter spatial resolution
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
 
--------------
+    ---
+    
+ 
 </div>
-
 
 
 ## High-precision LST - available by 2025
 Upon launch of our own satellites we will have an exclusive high-precision LST data layer available with enhanced accuracy on a 30m native spatial resolution. The simulated data set below has been generated using airborne thermal infrared sensors and is compatible to our geospatial data product next year. Get a glimpse into the improved data quality of our land surface temperature product already today!
 
+
 <div class="grid cards" markdown>
 
-=== ":material-home-city-outline:{ .lg .middle }  __Urban Heat Islands__ :octicons-download-16:{ style="float: right" .lg .middle }"
+-   :material-road-variant:{ .lg .left }  __Road Monitoring__
 
-     [![dtc modeling](images/toulouse.PNG){: style="height:300px"; float: right"}](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/test112_w00927_h01123__degC_full.zip)
+    ---
 
+    ![toulouse](images/demo/toulouse.png)
 
-=== "__Details__"
+    * Hive synthetic data
+    * Toulouse, France
+    * 30 meter spatial resolution
+    * November 2022
+    * License:doi.org/10.1016/j.dib.2023.109109 
 
-    1. Hive synthetic data
-    2. Toulouse, France
-    3. 30 meter spatial resolution
-    4. November 2022
-    5. License:doi.org/10.1016/j.dib.2023.109109 
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/test112_w00927_h01123__degC_full.zip)
 
--------------
-
+ 
 </div>
+
 
