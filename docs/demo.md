@@ -6,9 +6,9 @@ Do you want to get started using land surface temperature to derive temperature-
 - [France Marne Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/fr-marne-2023.zip)
 - [US Pontiac Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/us-pontiac-2023.zip)
 - [Germany Freiburg/Breisgau, Urban/Forest/Agriculture](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/germany_freiburg_breisgau-urban-forest-agriculture.zip) -->
+
 ## LST30
 Our current offer entails fusioned land surface temperature data layers from a variety of data sources. It leverages our in-house developed proprietary emissivity and retrieval algorithms for enhanced data quality. The product is available for different surface areas today re-sampled at a 30m spatial resolution. 
-
 
 
 <div class="grid cards" markdown>
@@ -71,7 +71,7 @@ Upon launch of our own satellites we will have an exclusive high-precision LST d
 
 <div class="grid cards" markdown>
 
--   :material-road-variant:{ .lg .left }  __Road Monitoring__
+-   :material-road-variant:{ .lg .left }  __Urban Monitoring__
 
     ---
 
