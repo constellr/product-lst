@@ -37,12 +37,33 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/health_monitoring_2022.zip)
 
+
+
 </div>
 
+<div class="grid cards" markdown>
+-    :material-home-city:{ .lg .left }  __Urban Monitoring__
+     
+    ---
+
+    ![Urban Heat Island](images/demo/toulouse_AOI_2021_LST30bis.PNG)
+
+    * Toulouse, France
+    * 16th June 2021
+    * 30 meter spatial resolution
+
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/toulouse_LST30.zip)    
+
+    ---
+
+
+
+</div>
 
 
 ## LST15
  LST15 is still under development, but it already achieves excellent performance. It is particularly well-suited for industrial processes and road monitoring, thanks to its finer spatial granularity of 15 meters.
+LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
 
 <div class="grid cards" markdown>
 
@@ -71,7 +92,7 @@ Upon launch of our own satellites we will have an exclusive high-precision LST d
 
 <div class="grid cards" markdown>
 
--   :material-road-variant:{ .lg .left }  __Urban Monitoring__
+-   :material-home-city:{ .lg .left }  __Urban Monitoring__
 
     ---
 
@@ -80,7 +101,7 @@ Upon launch of our own satellites we will have an exclusive high-precision LST d
     * Hive synthetic data
     * Toulouse, France
     * 30 meter spatial resolution
-    * November 2022
+    * 16th June 2021
     * License:doi.org/10.1016/j.dib.2023.109109 
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/test112_w00927_h01123__degC_full.zip)
