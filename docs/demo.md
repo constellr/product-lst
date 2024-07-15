@@ -17,7 +17,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     ---
 
-    ![baresoil](images/demo/baresoil-lst15.png){: style="height: auto; width: 200px; object-fit: cover;"}
+    ![baresoil](images/demo/baresoil-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
 
     * Corn Belt, US
@@ -30,7 +30,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     ---
 
-    ![health](images/demo/health-lst15.png){: style="height: auto; width: 200px; object-fit: cover;"}
+    ![health](images/demo/health-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Kansas, US
     * April - July 2022
@@ -42,7 +42,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
      
     ---
   
-    ![Urban Heat Island](images/demo/toulouse_AOI_2021_LST30bis.PNG){: style="height: auto; width: 200px; object-fit: cover; display: block;"}
+    ![Urban Heat Island](images/demo/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Toulouse, France
     * 16th June 2021
@@ -66,7 +66,7 @@ LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
 
     ---
 
-    ![colorado](images/demo/colorado-highway-lst15.png){: style="width: 100%; height:100%; display: block;"}
+    ![colorado](images/demo/colorado-highway-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Colorado, US
     * Highway Infrastucture
@@ -75,7 +75,6 @@ LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
 
-    ---
 
  
 </div>
@@ -87,21 +86,20 @@ Upon launch of our own satellites we will have an exclusive high-precision LST d
 
 <div class="grid cards" markdown>
 
--   :material-home-city:{ .lg .left }  __Urban Monitoring__
+-   :material-home-city:{ .lg .left }  __Urban__
 
     ---
 
-    ![toulouse](images/demo/toulouse.png)
+    ![colorado](images/demo/colorado-highway-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Hive synthetic data
     * Toulouse, France
     * 30 meter spatial resolution
     * 16th June 2021
-    * License:doi.org/10.1016/j.dib.2023.109109 
+    * [License](https://doi.org/10.1016/j.dib.2023.109109)
+    
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/test112_w00927_h01123__degC_full.zip)
 
  
 </div>
-
-
