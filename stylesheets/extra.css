@@ -47,3 +47,18 @@ img {
     display: block;
     margin: auto;
 }
+
+.md-typeset .grid{
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    /* centered: true; */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.cards > ul > li {
+    max-width: 300px;
+    justify-self: center;
+}
+
+/* .grid:only-child{
+    grid-template-columns: 1fr;
+} */
