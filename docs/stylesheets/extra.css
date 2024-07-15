@@ -55,7 +55,7 @@ img {
     margin-bottom: 3rem;
 }
 .cards > ul > li {
-    max-width: 400px;
+    max-width: 300px;
     justify-self: center;
 }
 
