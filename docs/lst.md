@@ -42,7 +42,9 @@ Where
     - **LST_AOI.tif**: LST raster
         pixel value: Kelvin Degree
     - **CLOUDS_AOI.tif**: Cloud mask raster
-        pixel values: 0=no cloud, 1=cloud
+        pixel values: 0=clear pixel, 1=contamined pixel
+
+        cloud mask is made of cloud and shadow pixels
     - **.json**: Metadata json
 
 

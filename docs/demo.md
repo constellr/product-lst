@@ -22,7 +22,8 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     * Corn Belt, US
     * April - June 2022
-    * 30 meter resolution
+    * 30 meter spatial resolution
+    * Kelvin degree
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/baresoil_monitoring2022.zip)
 
@@ -35,6 +36,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * Kansas, US
     * April - July 2022
     * 30 meter spatial resolution
+    * Kelvin degree
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/health_monitoring_2022.zip)
 
@@ -47,6 +49,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * Toulouse, France
     * 16th June 2021
     * 30 meter spatial resolution
+    * Kelvin degree
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/toulouse_LST30.zip)    
 
@@ -72,6 +75,7 @@ LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
     * Highway Infrastucture
     * November 2023 - March 2024
     * 15 meter spatial resolution
+    * Kelvin degree
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
 
@@ -90,16 +94,17 @@ Upon launch of our own satellites we will have an exclusive high-precision LST d
 
     ---
 
-    ![colorado](images/demo/colorado-highway-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![toulouse](images/demo/toulouse.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Hive synthetic data
     * Toulouse, France
     * 30 meter spatial resolution
     * 16th June 2021
+    * Celsius degree
     * [License](https://doi.org/10.1016/j.dib.2023.109109)
     
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/test112_w00927_h01123__degC_full.zip)
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/toulouse_synthetic_data_hive.zip)
 
  
 </div>
