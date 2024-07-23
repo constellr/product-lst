@@ -25,7 +25,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * 30 meter spatial resolution
     * Kelvin degree
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/baresoil_monitoring2022.zip)
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr-baresoil_monitoring2022.zip)
 
 -   :fontawesome-brands-envira:{ .lg .left }  __Crop Health__
 
