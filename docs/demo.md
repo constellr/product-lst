@@ -20,7 +20,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     ![baresoil monitoring](images/demo/baresoil-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
 
-    * Corn Belt, US
+    * Iowa, US
     * April - June 2022
     * 30 meter spatial resolution
     * Kelvin degree
