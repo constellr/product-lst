@@ -17,7 +17,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     ---
 
-    ![baresoil](images/demo/baresoil-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![baresoil monitoring](images/demo/baresoil-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
 
     * Corn Belt, US
@@ -31,14 +31,14 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     ---
 
-    ![health](images/demo/health-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![vegetation monitoring](images/demo/health-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Kansas, US
     * April - July 2022
     * 30 meter spatial resolution
     * Kelvin degree
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/health_monitoring_2022.zip)
+    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr_vegetation_monitoring_2022.zip)
 
 -    :material-home-city:{ .lg .left }  __Urban__
      
