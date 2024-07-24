@@ -59,6 +59,6 @@ Constellr LST30 leverages data from different public missions:
 -   Landsat 8 and 9 from USGS
 -   Era5 and CAMS from CDSAPI
 -   Modis (soon)
--   Sentinel 2 (soon)
+-   Sentinel 3 (soon)
 
 *Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).*
