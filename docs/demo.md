@@ -1,5 +1,5 @@
 # Demo data
-Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of demo data sets below. Get an impression of the data sets we deliver, our data quality and test data integration. Each data set includes the LST data layer, cloud masks and meta data files for each observation date over a given area of interest. 
+Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of demo datasets below. Get an impression of the datasets we deliver, our data quality, and test data integration. Each dataset includes the LST data layer, cloud masks and meta data files for each observation date over a given area of interest. 
 
 <!-- - [Brasil Rioverde Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-rioverde-2023.zip)
 - [Brasil Barreiras Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-barreiras-2023.zip)
@@ -23,7 +23,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * Iowa, US
     * April - June 2022
     * 30 meter spatial resolution
-    * Kelvin degree
+    * Degree Kelvin
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr-baresoil_monitoring2022.zip)
 
@@ -36,7 +36,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * Kansas, US
     * April - July 2022
     * 30 meter spatial resolution
-    * Kelvin degree
+    * Degree Kelvin
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr_vegetation_monitoring_2022.zip)
 
@@ -49,7 +49,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * Toulouse, France
     * 16th June 2021
     * 30 meter spatial resolution
-    * Kelvin degree
+    * Degree Kelvin
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/toulouse_LST30.zip)    
 
@@ -75,7 +75,7 @@ LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
     * Highway Infrastucture
     * November 2023 - March 2024
     * 15 meter spatial resolution
-    * Kelvin degree
+    * Degree Kelvin
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
 
@@ -85,7 +85,7 @@ LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
 
 
 ## High-precision LST - available by 2025
-Upon launch of our own satellites we will have an exclusive high-precision LST data layer available with enhanced accuracy on a 30m native spatial resolution. The simulated data set below has been generated using airborne thermal infrared sensors and is compatible to our geospatial data product next year. Get a glimpse into the improved data quality of our land surface temperature product already today!
+Upon launch of our own satellites, we will have an exclusive high-precision LST data layer available with enhanced accuracy on a 30m native spatial resolution. The simulated dataset below has been generated using airborne thermal infrared sensors and is compatible with our geospatial data product next year. Get a glimpse into the improved data quality of our land surface temperature product already today!
 
 
 <div class="grid cards" markdown>
@@ -100,7 +100,7 @@ Upon launch of our own satellites we will have an exclusive high-precision LST d
     * Toulouse, France
     * 30 meter spatial resolution
     * 16th June 2021
-    * Celsius degree
+    * Degree Celsius
     * [License](https://doi.org/10.1016/j.dib.2023.109109)
     
 
