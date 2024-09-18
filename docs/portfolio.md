@@ -6,13 +6,13 @@ Consider temperature as a critical proxy for agriculture and infrastructure. It 
 
 <div class="grid cards" markdown>
 
--   :material-database-settings:{ .lg .middle } __ST 30__
+-   :material-database-settings:{ .lg .middle } __LST 30__
 
     ---
 
     [:octicons-arrow-right-24: Available today](lst.md)
 
--   :material-database-settings:{ .lg .middle } __ST Fusion__
+-   :material-database-settings:{ .lg .middle } __LST Fusion__
 
     ---
 
@@ -25,7 +25,7 @@ Consider temperature as a critical proxy for agriculture and infrastructure. It 
 
     [:octicons-arrow-right-24: Available by 2025](#)
 
--   :material-database-settings:{ .lg .middle } __LST Super resolution__
+-   :material-database-settings:{ .lg .middle } __LST zoom__
 
     ---
 

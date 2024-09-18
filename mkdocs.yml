@@ -9,8 +9,8 @@ repo_name: constellr/product-lst
 edit_uri: https://github.com/constellr/product-lst/tree/main/docs/
 nav:
   - Home: index.md
-  - Product Portfolio: portfolio.md
-  - L2 products:
+  - Product Portfolio: 
+    - Portfolio: portfolio.md
     - LST30: lst.md
   - Demo Data: demo.md
  
