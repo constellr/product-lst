@@ -12,6 +12,7 @@ nav:
   - Product Portfolio: 
     - Portfolio: portfolio.md
     - LST30: lst.md
+  #- Use cases: use-cases.md
   - Demo Data: demo.md
  
 

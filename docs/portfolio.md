@@ -1,8 +1,13 @@
-# Introduction
 
-## Why is monitoring temperature so important ?
-Companies and institutions in industry and agriculture are in dire need of sustainable solutions to save freshwater, comprehend urban infrastructure, and enhance supply chain efficiency.
-Consider temperature as a critical proxy for agriculture and infrastructure. It plays a key role in guiding decisions related to, for example, urban planning, heat management or irrigation practices. By consistently and reliably monitoring temperature over time, we can gather valuable insights, painting a clearer picture than a single data point ever could. The advantages of temperature monitoring ripple out to numerous areas, impacting livelihood, health, food production, consumption, and essential survival needs.
+## Constellr's product Portfolio
+
+Constellr offers a comprehensive and innovative suite of Land Surface Temperature (LST) products. They are are designed to meet the diverse needs of industries and researchers alike and enables them to build their own solutions.
+
+For excellent global coverage and a vast historical archive: **LST Fusion** is the product for your services. It is built using renowned public satellite missions, giving users reliable insights into land surface temperature changes over time and with large coverage.
+
+For high native resolution, highest sensitivity, and highest revisit time: **LST Precision** enables you to capture detailed temperature information with great spatial and temporal resolution. This is based on Constellr's proprietary data acquired by the HiVe constellation.
+
+Bringing even more detail to you areas of interest using artificial intelligence: **LST Zoom** offers more granular temperature insights, helping users to zoom into critical zones for deeper analysis.
 
 <div class="grid cards" markdown>
 
@@ -33,3 +38,8 @@ Consider temperature as a critical proxy for agriculture and infrastructure. It 
     [:octicons-arrow-right-24: Available by 2025](#)
 
 </div>
+
+
+## Capability statement
+Have a look at constellr Surface Temperature product specifications:
+[Download](https://www.constellr.com/mediaandstatements)
