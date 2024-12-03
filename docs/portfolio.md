@@ -1,5 +1,4 @@
-
-## Constellr's product Portfolio
+# Constellr's product Portfolio
 
 Constellr offers a comprehensive and innovative suite of Land Surface Temperature (LST) products. They are are designed to meet the diverse needs of industries and researchers alike and enables them to build their own solutions.
 
