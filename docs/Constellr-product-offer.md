@@ -1,6 +1,4 @@
 
-## Constellr's product offer
-
 Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature.
 
 Benefit from our cutting edge proprietary data layers **LSTprecision** and **LSTzoom** for high-frequency and high resolution monitoring of your area of interest. LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis while the 10m spatial resolution of LSTzoom can provide you insights with a 10x improvement in sharpness over today's LST standard. Both products are ideal for understanding thermal footprints of urban environments, infrastructure and vegetation, allowing to generate new temperature-based insights in correlation analysis and research projects. Dedicated tasking to analyze your areas of interest is available for both products from mid 2025 onwards.

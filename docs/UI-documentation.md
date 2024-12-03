@@ -36,7 +36,7 @@ From the Account Page, you can navigate to the **Assets List Page**. This page p
 
 - Deliveries: Within each order, there are Deliveries. A delivery represents a specific batch of assets delivered under that order.
 
-- Assets: Finally, within each delivery, you will find Files. These are the actual assets that you can view or download. The available assets include: 1 x metadata .json, 1 x cloud mask .tiff and 1 x LST15 .tif
+- Assets: Finally, within each delivery, you will find Files. These are the actual assets that you can view or download. The available assets include: 1 x metadata .json, 1 x cloud mask .tiff and 1 x LST30 .tiff
 
 
 ### Downloading Assets

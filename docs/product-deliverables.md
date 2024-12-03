@@ -1,4 +1,3 @@
-## Product Deliverables
 
 Constellr's product deliverables include several layers, which are outlined below.
 
