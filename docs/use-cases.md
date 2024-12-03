@@ -1,3 +1,4 @@
+
 # The urban enviroment
 
 The urban fabric and city planning are key to the understanding of a city's resilience to heat waves in the critical times of climate change. Cities have faced increased heat exposure where managing extreme heat has become critical. The growing impact of urban Heat Islands and inefficient heat insulation in buildings contribute to increased energy consumption, higher temperatures, and reduced quality of life in cities. Traditional methods of monitoring these impacts  fail to provide a comprehensive view of temperature variations across large areas, limiting efforts for mitigation.
@@ -35,7 +36,6 @@ Nurturing seeds, seedlings, and plants at various growth stage in the Earth’s 
 Our solution leverages Land Surface Temperature (LST) to provide early detection of plant stress before visible symptoms appear and to delineate potential hotspot of pest infestations. By capturing temperature variations in crops, we help farmers spot water deficiencies or disease risks early, allowing for precise, variable fungicide application. In addition, our system integrates real-time thermal data with predictive models to improve yield forecasting, enabling more accurate planning and better decision-making.
 
 Constellr’s satellite data delivers smarter, more sustainable farming by optimising inputs, improving crop performance, and boosting profitability. Furthermore, acquiring data using satellites provides a reliable source of continuous and calibrated information that anyone in the agricultural supply chain can rely on and built numerous arrays of tailored solutions. 
-
 
 #### Soil condition monitoring 
 
