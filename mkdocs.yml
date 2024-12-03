@@ -15,6 +15,7 @@ nav:
     - Technical specification: Technical-specification.md
   - End User Platform Documentation:
     - UI documentation: UI-documentation.md
+    - API documentation: API-documentation.md
 
   - Use cases: use-cases.md
   - Demo Data: demo.md
