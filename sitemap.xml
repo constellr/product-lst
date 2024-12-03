@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/constellr/product-lst/API-documentation/</loc>
+         <lastmod>2024-12-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/constellr/product-lst/Constellr-product-offer/</loc>
          <lastmod>2024-12-03</lastmod>
          <changefreq>daily</changefreq>

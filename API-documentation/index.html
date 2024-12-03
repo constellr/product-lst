@@ -1,0 +1,1223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/constellr/product-lst/API-documentation/">
+      
+      
+        <link rel="prev" href="../UI-documentation/">
+      
+      
+        <link rel="next" href="../use-cases/">
+      
+      
+      <link rel="icon" href="../assets/logo-constellr-dark-icon.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>API documentation - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#constellr-api-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo-constellr-dark-icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/constellr/product-lst" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    constellr/product-lst
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo-constellr-dark-icon.svg" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/constellr/product-lst" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    constellr/product-lst
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Product Portfolio
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Product Portfolio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Constellr-product-offer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constellr's product offer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-deliverables/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product deliverables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technical-specification/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    End User Platform Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            End User Platform Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UI-documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API documentation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    API documentation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-use-case-for-constellrs-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's the use case for constellr's API?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-user-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typical User Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typical User Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-details-on-api-endpoints-including-code-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      More details on API endpoints including Code Snippets.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More details on API endpoints including Code Snippets.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-generate-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication: Generate Access Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Assets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Asset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-script-download-assets-sequentially" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Script: Download Assets sequentially
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-script-download-assets-in-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Script: Download Assets in Parallel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-cases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Demo Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-use-case-for-constellrs-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's the use case for constellr's API?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-user-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typical User Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typical User Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-details-on-api-endpoints-including-code-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      More details on API endpoints including Code Snippets.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More details on API endpoints including Code Snippets.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-generate-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication: Generate Access Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Assets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download Asset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample scripts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-script-download-assets-sequentially" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Script: Download Assets sequentially
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-script-download-assets-in-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Script: Download Assets in Parallel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="constellr-api-documentation">Constellr API Documentation</h1>
+<h2 id="whats-the-use-case-for-constellrs-api">What's the use case for constellr's API?</h2>
+<p>A STAC (SpatioTemporal Asset Catalog) API is ideal when you need to programmatically search, filter, and access large volumes of Earth observation data. It provides a standardized way to query and retrieve metadata and assets, making it suitable for automated workflows and integration with other tools. It naturally extends a static STAC catalogue to allow for dynamic search based on additional filters. In contrast, a web application is more user-friendly for interactive browsing, visualizing, and manually selecting data products. Use a STAC API for efficient, scalable data access in automated systems, and a web application for a more intuitive, hands-on experience.</p>
+<h2 id="typical-user-flow">Typical User Flow</h2>
+<p>This guide outlines how to authenticate, search, and download your data using the Constellr API. For a detailed overview of the latest API, including live examples, refer to the <a href="https://api.constellr.com/docs">interactive Swagger documentation</a> or access the OpenAPI JSON File.</p>
+<h3 id="initial-preparation">Initial Preparation</h3>
+<ul>
+<li>
+<p>Create an Account: Users should create their accounts via Constellr's end-user platform, which can be found at <a href="https://app.constellr.com/signup">https://app.constellr.com/signup</a></p>
+</li>
+<li>
+<p>Activate Account: After registering, users must activate their account by confirming their email address.</p>
+</li>
+</ul>
+<p>Once activated, you can begin accessing and retrieving data using the API.</p>
+<h3 id="api-usage">API Usage</h3>
+<p><strong>1- Request a temporary token</strong></p>
+<p>Use the /token endpoint to obtain a temporary access token which is currently set to expire after 24 hours. This token is required to access most endpoints.</p>
+<ul>
+<li>
+<p>Tokens are temporary and may expire during your session.</p>
+</li>
+<li>
+<p>In case of token expiration, your API requests will fail with an authentication error. Be sure to handle this error in your scripts by requesting a new token.</p>
+</li>
+</ul>
+<p>For details on token usage and example requests, visit the <a href="https://api.constellr.com/docs">API documentation</a> .</p>
+<p><strong>2- Search or Browse your ordered data</strong></p>
+<p>Use the /assets endpoint to search for your ordered data.</p>
+<ul>
+<li>
+<p>STAC Basics: The Constellr API uses the STAC model to structure spatial data.</p>
+</li>
+<li>
+<p>Catalogs: Collections of metadata or spatial assets.</p>
+</li>
+<li>
+<p>Collections: Groups of related catalogs with additional metadata.</p>
+</li>
+<li>
+<p>Items: Individual data entries within collections, typically tied to specific spatial or temporal locations.</p>
+</li>
+<li>
+<p>Assets: Files associated with an item (e.g., images, metadata, masks).</p>
+</li>
+</ul>
+<p>Unlike static STAC catalogs, the /assets endpoint allows dynamic filtering of assets. You can apply filters to quickly locate relevant assets (for example all assets in a specific order), bypassing the need to manually navigate through catalog structures. Please check the latest API documentation for the exact list of filter options which are currently available. Please do not hesitate to approach us via your customer support contact or email to support-csm@constellr.com if you need additional options.</p>
+<p><strong>3- Download your selected assets</strong></p>
+<p>Once you’ve retrieved a list of relevant assets using the /assets endpoint, download them via the /assets/{asset_name} endpoint.</p>
+<ul>
+<li>
+<p>Retrieve the asset identifiers from the list.</p>
+</li>
+<li>
+<p>Send a request for each file you wish to download.</p>
+</li>
+<li>
+<p>You can download files sequentially or in parallel, depending on your workflow.</p>
+</li>
+</ul>
+<p>For concrete request examples and response formats, refer to the latest API documentation.</p>
+<h2 id="more-details-on-api-endpoints-including-code-snippets">More details on API endpoints including Code Snippets.</h2>
+<p>In the code snippets, you would need to replace hardcoded credentials with actual credentials. Please note that you should never store your credentials in plain text in any piece of code.</p>
+<h3 id="authentication-generate-access-token">Authentication: Generate Access Token</h3>
+<p>Endpoint
+<code>POST /token</code></p>
+<p>Description
+Generate an access token to call API endpoints. Most endpoints require a token in the Authorization header as Bearer <token>. The token is valid for 24 hours.</p>
+<p>Request
+<div class="highlight"><pre><span></span><code>{
+  &quot;username&quot;: &quot;string&quot;,
+
+  &quot;password&quot;: &quot;string&quot;
+}
+</code></pre></div></p>
+<p>Response (200)
+<div class="highlight"><pre><span></span><code>{
+  &quot;access_token&quot;: &quot;string&quot;
+}
+</code></pre></div>
+Example: cURL
+<div class="highlight"><pre><span></span><code>curl -X POST https://api.constellr.com/token \
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{&quot;username&quot;: &quot;your_username&quot;, &quot;password&quot;: &quot;your_password&quot;}&#39;
+</code></pre></div>
+Example: Python
+<div class="highlight"><pre><span></span><code>import requests
+
+url = &#39;https://api.constellr.com/token&#39;
+data = {
+    &quot;username&quot;: &quot;your_username&quot;,
+    &quot;password&quot;: &quot;your_password&quot;
+}
+response = requests.post(url, json=data)
+token = response.json().get(&#39;access_token&#39;)
+</code></pre></div></p>
+<p>Example: TypeScript (Fetch)</p>
+<p><div class="highlight"><pre><span></span><code>const url = &quot;https://api.constellr.com/token&quot;;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>fetch(url, {
+  method: &quot;POST&quot;,
+  headers: {
+    &quot;Content-Type&quot;: &quot;application/json&quot;,
+  },
+  body: JSON.stringify({
+    username: &quot;your_username&quot;,
+    password: &quot;your_password&quot;,
+  }),
+})
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; {
+    const token = data.access_token;
+    console.log(token);
+  });
+</code></pre></div></p>
+<h3 id="get-assets">Get Assets</h3>
+<p>Endpoint
+<code>GET /assets</code></p>
+<p>Description</p>
+<p>Fetch a list of available assets. This requires a valid access token in the Authorization header.</p>
+<p>Query Parameters</p>
+<ul>
+<li>
+<p>lastModifiedBefore (optional): Filter assets modified before a specific date.</p>
+</li>
+<li>
+<p>lastModifiedAfter (optional): Filter assets modified after a specific date.</p>
+</li>
+<li>
+<p>limit (optional, default: 10): The number of assets to retrieve.</p>
+</li>
+<li>
+<p>continuation_token (optional): Token for pagination.</p>
+</li>
+</ul>
+<p>Response (200)
+<div class="highlight"><pre><span></span><code>{
+  &quot;Contents&quot;: [
+    {
+      &quot;Key&quot;: &quot;example_file.txt&quot;,
+      &quot;LastModified&quot;: &quot;2023-03-01T12:00:00Z&quot;,
+      &quot;Size&quot;: 1024
+    }
+  ]
+}
+</code></pre></div></p>
+<p>Example: cURL
+<div class="highlight"><pre><span></span><code>curl -X GET &quot;https://api.constellr.com/assets&quot; \
+-H &quot;Authorization: Bearer &lt;access_token&gt;&quot;
+</code></pre></div></p>
+<p>Example: Python
+<div class="highlight"><pre><span></span><code>url = &#39;https://api.constellr.com/assets&#39;
+headers = {
+    &#39;Authorization&#39;: f&#39;Bearer {token}&#39;
+}
+response = requests.get(url, headers=headers)
+assets = response.json().get(&#39;Contents&#39;, [])
+</code></pre></div>
+Example: TypeScript (Fetch)
+<div class="highlight"><pre><span></span><code>const url = &quot;https://api.constellr.com/assets&quot;;
+const token = &quot;your_access_token&quot;;
+
+fetch(url, {
+  method: &quot;GET&quot;,
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+})
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; {
+    const assets = data.Contents;
+    console.log(assets);
+  });
+</code></pre></div></p>
+<h3 id="download-asset">Download Asset</h3>
+<p>Endpoint
+<code>GET /assets/{asset_name}</code></p>
+<p>Description
+Download a specific asset file by its name. The access token is required.</p>
+<p>Path Parameter
+- asset_name (required): The name of the file to download.</p>
+<p>Example: cURL
+<div class="highlight"><pre><span></span><code>curl -X GET &quot;https://api.constellr.com/assets/example_file.txt&quot; \
+-H &quot;Authorization: Bearer &lt;access_token&gt;&quot; \
+-o &quot;example_file.txt&quot;
+</code></pre></div></p>
+<p>Example: Python
+<div class="highlight"><pre><span></span><code>asset_name = &#39;example_file.txt&#39;
+url = f&#39;https://api.constellr.com/assets/{asset_name}&#39;
+response = requests.get(url, headers=headers)
+with open(asset_name, &#39;wb&#39;) as file:
+    file.write(response.content)
+</code></pre></div>
+Example: TypeScript (Fetch)
+<div class="highlight"><pre><span></span><code>import * as fs from &quot;fs&quot;;
+import * as path from &quot;path&quot;;
+
+// Function to download an asset from the API
+async function downloadAsset(
+  assetName: string,
+  accessToken: string
+): Promise&lt;void&gt; {
+  const url = `https://api.constellr.com/assets/${assetName}`;
+
+  try {
+    const response = await fetch(url, {
+      method: &quot;GET&quot;,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    // Check if the response is okay (status code 200-299)
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+
+    // Set the path where you want to save the file
+    const filePath = path.resolve(__dirname, assetName);
+
+    // Create a writable stream to save the file
+    const fileStream = fs.createWriteStream(filePath);
+
+    // Use a readable stream from the response body and pipe it to the writable stream
+    response.body?.pipe(fileStream);
+
+    // Return a promise that resolves when the file is fully written
+    return new Promise((resolve, reject) =&gt; {
+      fileStream.on(&quot;finish&quot;, resolve); // Resolve the promise when done
+      fileStream.on(&quot;error&quot;, reject); // Reject the promise on error
+    });
+  } catch (error) {
+    console.error(&quot;Error downloading the asset:&quot;, error);
+    throw error; // Rethrow error for higher-level handling if needed
+  }
+}
+
+// Usage example
+const assetName = &quot;example_file.txt&quot;;
+const accessToken = &quot;your_access_token&quot;; // Replace with your actual access token
+
+downloadAsset(assetName, accessToken)
+  .then(() =&gt; {
+    console.log(`Successfully downloaded ${assetName}`);
+  })
+  .catch((error) =&gt; {
+    console.error(`Failed to download ${assetName}:`, error);
+  });
+</code></pre></div></p>
+<h2 id="sample-scripts">Sample scripts</h2>
+<h3 id="python-script-download-assets-sequentially">Python Script: Download Assets sequentially</h3>
+<div class="highlight"><pre><span></span><code>import requests
+
+# 1. Generate Access Token
+def get_token(username, password):
+    url = &#39;https://api.constellr.com/token&#39;
+    data = {&#39;username&#39;: username, &#39;password&#39;: password}
+    response = requests.post(url, json=data)
+    response.raise_for_status()  # Raise an error for bad responses
+    return response.json().get(&#39;access_token&#39;)
+
+# 2. Fetch Assets List
+def get_assets(token):
+    url = &#39;https://api.constellr.com/assets&#39;
+    headers = {&#39;Authorization&#39;: f&#39;Bearer {token}&#39;}
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # Raise an error for bad responses
+    return response.json().get(&#39;Contents&#39;, [])
+
+# 3. Download Asset
+def download_asset(token, asset):
+    url = f&quot;https://api.constellr.com/assets/{asset[&#39;Key&#39;]}&quot;
+    headers = {&#39;Authorization&#39;: f&#39;Bearer {token}&#39;}
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # Raise an error for bad responses
+    with open(asset[&#39;Key&#39;], &#39;wb&#39;) as file:
+        file.write(response.content)
+    print(f&quot;Downloaded: {asset[&#39;Key&#39;]}&quot;)
+
+# Main function to coordinate the process
+def main(username, password):
+    token = get_token(username, password)
+    assets = get_assets(token)
+
+    # Sequentially download each asset
+    for asset in assets:
+        download_asset(token, asset)
+
+if __name__ == &#39;__main__&#39;:
+    username = &#39;your_username&#39;
+    password = &#39;your_password&#39;
+    main(username, password)
+</code></pre></div>
+<h3 id="python-script-download-assets-in-parallel">Python Script: Download Assets in Parallel</h3>
+<p>Below is a Python script that:</p>
+<p>1- Generates a token.</p>
+<p>2- Fetches the list of assets.</p>
+<p>3- Downloads the assets in parallel.</p>
+<p>Note that while using Python's ThreadPoolExecutor is a viable option for parallelizing downloads in some settings, there are numerous alternative options available which may be more suitable in various standard use cases. If you need support parallelizing data acquisition or other operations, please feel free to reach out to the Software Team.</p>
+<div class="highlight"><pre><span></span><code>import requests
+from concurrent.futures import ThreadPoolExecutor
+
+# 1. Generate Access Token
+def get_token(username, password):
+    url = &#39;https://api.constellr.com/token&#39;
+    data = {&#39;username&#39;: username, &#39;password&#39;: password}
+    response = requests.post(url, json=data)
+    return response.json().get(&#39;access_token&#39;)
+
+# 2. Fetch Assets List
+def get_assets(token):
+    url = &#39;https://api.constellr.com/assets&#39;
+    headers = {&#39;Authorization&#39;: f&#39;Bearer {token}&#39;}
+    response = requests.get(url, headers=headers)
+    return response.json().get(&#39;Contents&#39;, [])
+
+# 3. Download Asset
+def download_asset(token, asset):
+    url = f&quot;https://api.constellr.com/assets/{asset[&#39;Key&#39;]}&quot;
+    headers = {&#39;Authorization&#39;: f&#39;Bearer {token}&#39;}
+    response = requests.get(url, headers=headers)
+    with open(asset[&#39;Key&#39;], &#39;wb&#39;) as file:
+        file.write(response.content)
+    print(f&quot;Downloaded: {asset[&#39;Key&#39;]}&quot;)
+
+# 4. Parallel Download
+def download_assets_in_parallel(token, assets):
+    with ThreadPoolExecutor() as executor:
+        executor.map(lambda asset: download_asset(token, asset), assets)
+
+# Main function to coordinate the process
+def main(username, password):
+    token = get_token(username, password)
+    assets = get_assets(token)
+    download_assets_in_parallel(token, assets)
+
+if __name__ == &#39;__main__&#39;:
+    username = &#39;your_username&#39;
+    password = &#39;your_password&#39;
+    main(username, password)
+</code></pre></div>
+<p>This script will generate a token, retrieve the list of assets, and download them in parallel using ThreadPoolExecutor. Make sure to replace your_username and your_password with your credentials.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tooltips"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
