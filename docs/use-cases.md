@@ -20,14 +20,14 @@ Constellr’s satellite-based products offer comprehensive, continuous coverage,
 
 # The agricultural environment
 
-![vegetation monitoring](images/2023-06-06_reims_spectral_blog_lst_multiple_background.png){: style="height:500px"}
-<figcaption id="vegetation monitoring" tag="image">Urban Environment </figcaption>
-
  Agriculture sustains life and provides us for to survive. As essential as it may seem, it has always faced challenges, and even more are expected with the changing climate. With advanced technology like Constellr’s thermal satellite fleet, monitoring plant and soil health at scale yet in detail has become a reality. Reliable traditional methods such as visual inspections or weather-dependent models often detect issues too late and cannot catch up with the mounting challenges that the sector is facing. The negatively affects yield, water quantity and quality, and increases vulnerability to pests and diseases. 
 
 Constellr provides and leverages Land Surface Temperature (LST) data to offer early detection of plant stress and monitor soil conditions across entire fields. By capturing temperature variations, we provide insights into water deficiencies, disease risks, and optimal planting depths in a timely manner that enable building groundbreaking solutions for targeted interventions, improvement of crop health, and yield maximisation.
 
 Our thermal data integrates seamlessly into existing platforms and can be combined with field sensors to give a complete view of soil and plant health that the end-user of comfortable with. With more accurate yield forecasts and data-driven decisions, Constellr empowers smarter, more sustainable farming practices—boosting productivity and profitability across the agricultural supply chain.
+
+![vegetation monitoring](images/2023-06-06_reims_spectral_blog_lst_multiple_background.png){: style="height:500px"}
+<figcaption id="vegetation monitoring" tag="image">Urban Environment </figcaption>
 
 #### Vegetation Monitoring
 
