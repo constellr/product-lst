@@ -13,7 +13,9 @@ nav:
     - Constellr's product offer: Constellr-product-offer.md
     - Product deliverables: product-deliverables.md
     - Technical specification: Technical-specification.md
-    
+  - End User Paltform Documentation:
+    - Ui documentation: UI-documentation.md
+
   - Use cases: use-cases.md
   - Demo Data: demo.md
  
