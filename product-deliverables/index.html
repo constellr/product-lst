@@ -583,6 +583,102 @@
 </tr>
 </tbody>
 </table>
+<h1 id="metadata-conventions">Metadata conventions</h1>
+<p>The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:</p>
+<table>
+<thead>
+<tr>
+<th>Metadata field</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>area_of_interest_id</td>
+<td>Internal aoi id</td>
+</tr>
+<tr>
+<td>area_of_interest_name</td>
+<td>Internal aoi name</td>
+</tr>
+<tr>
+<td>organization_id</td>
+<td>Internal organization id</td>
+</tr>
+<tr>
+<td>bbox</td>
+<td>bbox coordinates of the Area of Interest</td>
+</tr>
+<tr>
+<td>l1_item_href</td>
+<td>Landsat l1 data source</td>
+</tr>
+<tr>
+<td>l2_item_href</td>
+<td>Landsat l2 data source</td>
+</tr>
+<tr>
+<td>scene_datetime</td>
+<td>Image acquisition datetime</td>
+</tr>
+<tr>
+<td>processing_datetime</td>
+<td>Start of constellr processing image datetime</td>
+</tr>
+<tr>
+<td>cloud_ratio_aoi</td>
+<td>Percentage of cloud cover over the aoi</td>
+</tr>
+<tr>
+<td>na_ratio_aoi</td>
+<td>Percentage of nan values over the aoi</td>
+</tr>
+<tr>
+<td>min_lst</td>
+<td>Minimum LVT value (in Kelvin)</td>
+</tr>
+<tr>
+<td>max_lst</td>
+<td>Maximum LST value (in Kelvin)</td>
+</tr>
+<tr>
+<td>median_lst</td>
+<td>Median LST value (in Kelvin)</td>
+</tr>
+<tr>
+<td>sun_elevation</td>
+<td>Sun's elevation angle for a given geographical bounding box and time</td>
+</tr>
+<tr>
+<td>proj:epsg</td>
+<td>Reference projection in epsg</td>
+</tr>
+<tr>
+<td>proj:shape</td>
+<td>The shape of the spatial object in terms of the width and height, or the dimensions of the ara covered</td>
+</tr>
+<tr>
+<td>proj:transform</td>
+<td>The transformation matrix that is used to transform coordinates between different spatial reference systems</td>
+</tr>
+<tr>
+<td>sat_source</td>
+<td>Public data source used for satellite sensors</td>
+</tr>
+<tr>
+<td>atm_source</td>
+<td>Public data source used for atmospheric data</td>
+</tr>
+<tr>
+<td>requested_area_of_interest</td>
+<td>Coordinates of the AOI requested (Polygon)</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>Coordinates of the Polygon returned</td>
+</tr>
+</tbody>
+</table>
 <p>Data delivery of al data points through constellr's end-user platform via <a href="https://constellr.github.io/product-lst/UI-documentation/"><strong>UI download</strong></a> or <a href="https://constellr.github.io/product-lst/API-documentation/"><strong>API</strong></a>.</p>
 <p>In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the <a href="https://constellr.github.io/product-lst/Technical-specification/"><strong>technical specifications</strong></a> for each of our products.</p>
 
