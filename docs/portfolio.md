@@ -14,7 +14,7 @@ Bringing even more detail to you areas of interest using artificial intelligence
 
     ---
 
-    [:octicons-arrow-right-24: Available today](lst.md)
+    [:octicons-arrow-right-24: Available today](lst30.md)
 
 -   :material-database-settings:{ .lg .middle } __LST Fusion__
 

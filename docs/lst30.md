@@ -1,7 +1,16 @@
-# Constellr LST
+# Constellr LST30
 
-Constellr temperature product provides Land surface temperature at both high spatial and temporal
-resolution.
+Constellr LST30 consists of homogenized rasters of Land Surface Temperature (LST) data. These are their characteristics:
+
+- All thermal datasets are spectrally harmonised using a single in-house algorithm to retrieve LST.
+  
+- The data are delivered as if they were coming from a single satellite constellation.
+  
+- The geometry is aligned in all images: all images of an are of interest will show a perfect pixel alignment, regardless of the source. 
+  
+- Each pixel holds a temperature value in degree Kelvin. 
+  
+- Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in several or all images, due to issues in the data processing from the public providers. 
 
 
 ## Specification
@@ -22,7 +31,7 @@ per scene:
 | Spatial resolution (m)                | 30                    |
 | Frequency(days)                       | 8 to 16 days          |
 | Coverage                              | Worldwide             |
-| Period of availability                | 2018 - ongoing        |
+| Period of availability                | 2014 - ongoing        |
 | Thematic accuracy                     |  1.5-3K               |
 | Spatial accuracy                      | <1 pixel              |
 
@@ -53,12 +62,12 @@ Where
 
 ## Data Sources
 
-Constellr LST30 leverages data from different public missions:
+Constellr LST30 leverages data from different missions:
 
 -   Lisr, constellr property
 -   Landsat 8 and 9 from USGS
 -   Era5 and CAMS from CDSAPI
--   Modis (soon)
+-   MODIS (soon)
 -   Sentinel 3 (soon)
 
 *Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).*

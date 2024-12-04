@@ -1,15 +1,15 @@
 # Constellr's product offer
 
-Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature.
+Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature (LST).
 
-Benefit from our cutting edge proprietary data layers **LSTprecision** and **LSTzoom** for high-frequency and high resolution monitoring of your area of interest. LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis while the 10m spatial resolution of LSTzoom can provide you insights with a 10x improvement in sharpness over today's LST standard. Both products are ideal for understanding thermal footprints of urban environments, infrastructure and vegetation, allowing to generate new temperature-based insights in correlation analysis and research projects. Dedicated tasking to analyze your areas of interest is available for both products from mid 2025 onwards.
+Benefit from our cutting edge proprietary data layers **LSTprecision** and **LSTzoom** for high-frequency and high resolution monitoring of your area of interest. LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis while the 10m spatial resolution of LSTzoom can provide you insights with a 10x improvement in sharpness over today's LST standard. Both products are ideal for understanding thermal footprints of urban environments, infrastructure, and vegetation, allowing to generate new temperature-based insights in correlation analysis and research projects. Dedicated tasking to analyze your areas of interest is available for both products from mid 2025 onwards.
 
 **LSTfusion** complements our data offer in 2025 for large scale monitoring. Thanks to constellr's best-in-class data fusion and data assimilation approach leveraging public and proprietary land surface temperature data, you will benefit from temperature insights with reliable, guaranteed frequency every 8 days allowing continuous monitoring of larger geographic areas to detect trends and temperature patterns.
 
 
 <div class="grid cards" markdown>
 
--   __LSTfusion__
+-   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**LSTfusion**</a>
     
     ---
     
@@ -25,7 +25,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
     * Reliable data frequency
 
 
--   __LSTprecision__
+-   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**LSTprecision**</a>
 
     ---
 
@@ -40,7 +40,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
     * High temperature sensitivity
     * High frequency
 
--    __LSTzoom__
+-    <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**LSTzoom**</a>
      
     ---
 
@@ -58,12 +58,10 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
 </div>
 
-If you want to already  explore the benefits of high-resolution land surface temperature analysis today, we recommend you to take a look at our pre-cursor products in 2024 and get in touch with us. 
 
-**Learn more about our pre-cursor product portfolio available already today.**
+# Pre-cursor products in 2024-2025
 
-# Pre-cursor products in 2024
-
+If you want to already  explore the benefits of high-resolution land surface temperature analysis today, we recommend you to take a look at our pre-cursor products and get in touch with us. 
 
 
 <div class="grid cards" markdown>
@@ -72,7 +70,7 @@ If you want to already  explore the benefits of high-resolution land surface tem
 
     **Large coverage for regional monitoring**
 
-    ![LST 30](images/portfolio/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LST30](images/portfolio/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -81,19 +79,7 @@ If you want to already  explore the benefits of high-resolution land surface tem
     * Algorithm enhanced public data
     * Large area coverage
 
-    [:octicons-arrow-right-24: Available today](lst.md)
-
--   __LST15__
-
-    **High resolution for zooming in on anomalies**
-
-    ![LST15](images/portfolio/toulouse-capture.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
-
-    ---
-
-    * 15m spatial resolution
-    * Sharpened data
-    * Visually best resolved
+    [:octicons-arrow-right-24: Available today](lst30.md)
 
 
 

@@ -28,7 +28,7 @@ Daily ET (mm/d) can be provided by constellr to the end-user as raster files.
 
 ## The input data to the ET models
 
--   Land surface temperature: The [LST30](./lst.md) service of constellr
+-   Land surface temperature: The [LST30](./lst30.md) service of constellr
     provides a combined repository of spaceborne acquired land surface
     temperature from various sensors.
 
