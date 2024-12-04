@@ -1,4 +1,4 @@
-## Constellr's product offer
+# Constellr's product offer
 
 Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature.
 
@@ -62,7 +62,7 @@ If you want to already  explore the benefits of high-resolution land surface tem
 
 **Learn more about our pre-cursor product portfolio available already today.**
 
-## Pre-cursor products in 2024
+# Pre-cursor products in 2024
 
 
 

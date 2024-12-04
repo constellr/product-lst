@@ -18,12 +18,8 @@ We operate the world's most performant constellation of thermal-imaging satellit
      
 -   :octicons-light-bulb-24:{ .lg .left }:  __Product Portfolio__
     
-     [portfolio](portfolio.md)
-
 -   :material-folder-home:{ .lg .left }:  __Use Cases__
-   
-    [Use Cases](use-cases.md)
-     
+        
 -   :material-book-education:{ .lg .left } : __Explorer Lab__
     
 -   :material-cog:{ .lg .left }:  __Data Delivery and API__
