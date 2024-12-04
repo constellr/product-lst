@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/constellr/product-lst/lst30/">
+        <link rel="canonical" href="https://github.com/constellr/product-lst/lst15/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Constellr LST30 - Knowledge Center</title>
+        <title>Lst15 - Knowledge Center</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#constellr-lst30" class="md-skip">
+        <a href="#lst15" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Constellr LST30
+              Lst15
             
           </span>
         </div>
@@ -512,8 +512,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -522,27 +520,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+  <a href="#lst15" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-naming-convention" class="md-nav__link">
-    <span class="md-ellipsis">
-      File-naming convention
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-sources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Sources
+      LST15
     </span>
   </a>
   
@@ -566,61 +546,28 @@
   
 
 
-<h1 id="constellr-lst30">Constellr LST30</h1>
-<p>Constellr LST30 consists of homogenized rasters of Land Surface Temperature (LST) data. These are their characteristics:</p>
+  <h1>Lst15</h1>
+
+<h2 id="lst15">LST15</h2>
+<p>LST15 is still under development, but it already achieves excellent performance. It is particularly well-suited for industrial processes and road monitoring, thanks to its finer spatial granularity of 15 meters.
+LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.</p>
+<div class="grid cards">
 <ul>
 <li>
-<p>All thermal datasets are spectrally harmonised using a single in-house algorithm to retrieve LST.</p>
-</li>
-<li>
-<p>The data are delivered as if they were coming from a single satellite constellation.</p>
-</li>
-<li>
-<p>The geometry is aligned in all images: all images of an are of interest will show a perfect pixel alignment, regardless of the source. </p>
-</li>
-<li>
-<p>Each pixel holds a temperature value in degree Kelvin. </p>
-</li>
-<li>
-<p>Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in several or all images, due to issues in the data processing from the public providers. </p>
-</li>
-</ul>
-<h2 id="specification">Specification</h2>
-<p>Have a look at our Technical specifications documentation <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;"><strong>Here</strong></a></p>
-<h2 id="file-naming-convention">File-naming convention</h2>
-<p>Various layers are provided and follow this compact naming convention:</p>
-<p>YYYYMMDDTHHMMSS_aa</p>
-<p>Where</p>
+<p><span class="twemoji lg left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.1 4.8c-.1-.5-.5-.8-1-.8H13l.2 3h-2.4l.2-3H6.8c-.5 0-.9.4-1 .8l-2.7 14c-.1.6.4 1.2 1 1.2H10l.3-5h3.4l.3 5h5.8c.6 0 1.1-.6 1-1.2l-2.7-14M10.4 13l.2-4h2.6l.2 4h-3Z"/></svg></span>  <strong>Road</strong></p>
+<hr />
+<p><img alt="colorado" src="../images/demo/colorado-highway-lst15.png" style="height: 200px; width: 200px; object-fit: cover;" /></p>
 <ul>
-<li>YYYYMMDDTHHMMSS is the datatake sensing time of the land surface
-    temperature in isoformat. Time is based on Universal Time Coordinated (UTC), also
-    known as Greenwich Mean Time (GMT).</li>
-<li>
-<p>aa indicates what contains the file</p>
-<ul>
-<li><strong>LST_AOI.tif</strong>: LST raster
-    pixel value: Kelvin Degree</li>
-<li>
-<p><strong>CLOUDS_AOI.tif</strong>: Cloud mask raster</p>
-<p>pixel values: 0=clear pixel, 1=contamined pixel</p>
-<p>cloud mask is made of cloud and shadow pixels</p>
-</li>
-<li>
-<p><strong>.json</strong>: Metadata json</p>
+<li>Colorado, US</li>
+<li>Highway Infrastucture</li>
+<li>November 2023 - March 2024</li>
+<li>15 meter spatial resolution</li>
+<li>Degree Kelvin</li>
+</ul>
+<p><a href="https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg></span> Download</a></p>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="data-sources">Data Sources</h2>
-<p>Constellr LST30 leverages data from different missions:</p>
-<ul>
-<li>Lisr, constellr property</li>
-<li>Landsat 8 and 9 from USGS</li>
-<li>Era5 and CAMS from CDSAPI</li>
-<li>MODIS (soon)</li>
-<li>Sentinel 3 (soon)</li>
-</ul>
-<p><em>Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).</em></p>
+</div>
 
 
 
