@@ -12,6 +12,6 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Thumbnails for thermal and optical data                  |  .jpg format              |
 
 
-Data delivery of al data points through constellr's end-user platform via **UI download** or **API**
+Data delivery of al data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
 
-In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the **technical specifications** for each of our products.
+In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products.
