@@ -14,17 +14,17 @@ We operate the world's most performant constellation of thermal-imaging satellit
 
 <div class="grid cards" markdown>
 
--   :material-database-settings:{ .lg .left } __Constellation journey and specs__
+-   :material-database-settings:{ .lg .left } __Constellation journey and specs (coming soon)__
      
--   :octicons-light-bulb-24:{ .lg .left }:  __Product Portfolio__
-    
--   :material-folder-home:{ .lg .left }:  __Use Cases__
+-   :octicons-light-bulb-24:{ .lg .left }:  <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">**Product Portfolio (Already available)**</a>
         
--   :material-book-education:{ .lg .left } : __Explorer Lab__
+-   :material-folder-home:{ .lg .left }:  <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">**Use cases (Already available)**</a>
+        
+-   :material-book-education:{ .lg .left } : __Explorer Lab (coming soon)__
     
--   :material-cog:{ .lg .left }:  __Data Delivery and API__
+-   :material-cog:{ .lg .left }:  <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">**Data Delivery and API (Already available)**</a>
     
--   :material-chat-question:{ .lg .left } : __FAQ__
+-   :material-chat-question:{ .lg .left } : __FAQ (coming soon)__
   
 
 </div>
