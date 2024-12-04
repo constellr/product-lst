@@ -1,7 +1,7 @@
 # WARNING: mkdocs doesn't work with gh-pages activated
 # Just don't activate github page then 'mkdocs gh-deploy --clean'
 
-site_name: Documentation
+site_name: Knowledge Center
 site_url: https://github.com/constellr/product-lst
 repo_url: https://github.com/constellr/product-lst
 repo_name: constellr/product-lst
@@ -18,18 +18,19 @@ nav:
     - API documentation: API-documentation.md
 
   - Use cases: use-cases.md
-  - Demo Data: demo.md
+  - Explorer Lab: demo.md
  
 
 theme:
   name: material
+  show_toc: false
   favicon: assets/logo-constellr-dark-icon.svg
   logo: assets/logo-constellr-dark-icon.svg
   features:
     #- navigation.tabs
     #- navigation.top
     #- toc.integrate
-    - content.tooltips
+    #- content.tooltips
   text-align: right
 
   palette:

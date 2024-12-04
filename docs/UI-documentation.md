@@ -1,8 +1,11 @@
-# End User Platform - UI Documentation
+hide_table_of_contents: true
+
+<!-- no toc -->
+# End User Platform - UI Documentation <!-- no toc -->
 
 This page will guide you through the steps to create an account, access it, and browse through the assets list page.
 
-## 1. Registration 
+## 1. Registration <!-- no toc -->
 
 **Step 1 - Create an account**
 

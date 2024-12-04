@@ -1,3 +1,5 @@
+hide_table_of_contents: true
+
 # Constellr's product offer
 
 Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature (LST).

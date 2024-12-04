@@ -1,4 +1,4 @@
-# Demo data
+# Explorer Lab
 Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of demo datasets below. Get an impression of the datasets we deliver, our data quality, and test data integration. Each dataset includes the LST data layer, cloud masks and meta data files for each observation date over a given area of interest. 
 
 <!-- - [Brasil Rioverde Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-rioverde-2023.zip)
@@ -54,34 +54,8 @@ Our current offer entails fusioned land surface temperature data layers from a v
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/toulouse_LST30.zip)    
 
 
-
-
 </div>
 
-
-## LST15
- LST15 is still under development, but it already achieves excellent performance. It is particularly well-suited for industrial processes and road monitoring, thanks to its finer spatial granularity of 15 meters.
-LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
-
-<div class="grid cards" markdown>
-
--   :material-road-variant:{ .lg .left }  __Road__
-
-    ---
-
-    ![colorado](images/demo/colorado-highway-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
-
-    * Colorado, US
-    * Highway Infrastucture
-    * November 2023 - March 2024
-    * 15 meter spatial resolution
-    * Degree Kelvin
-
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
-
-
- 
-</div>
 
 
 ## High-precision LST - available by 2025
