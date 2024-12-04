@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/constellr/product-lst/lst/">
+        <link rel="canonical" href="https://github.com/constellr/product-lst/lst30/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Constellr LST - Documentation</title>
+        <title>Constellr LST30 - Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#constellr-lst" class="md-skip">
+        <a href="#constellr-lst30" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Constellr LST
+              Constellr LST30
             
           </span>
         </div>
@@ -354,7 +354,7 @@
         
   
   <span class="md-ellipsis">
-    Technical specification
+    Technical specifications
   </span>
   
 
@@ -566,9 +566,25 @@
   
 
 
-<h1 id="constellr-lst">Constellr LST</h1>
-<p>Constellr temperature product provides Land surface temperature at both high spatial and temporal
-resolution.</p>
+<h1 id="constellr-lst30">Constellr LST30</h1>
+<p>Constellr LST30 consists of homogenized rasters of Land Surface Temperature (LST) data. These are their characteristics:</p>
+<ul>
+<li>
+<p>All thermal datasets are spectrally harmonised using a single in-house algorithm to retrieve LST.</p>
+</li>
+<li>
+<p>The data are delivered as if they were coming from a single satellite constellation.</p>
+</li>
+<li>
+<p>The geometry is aligned in all images: all images of an are of interest will show a perfect pixel alignment, regardless of the source. </p>
+</li>
+<li>
+<p>Each pixel holds a temperature value in degree Kelvin. </p>
+</li>
+<li>
+<p>Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in several or all images, due to issues in the data processing from the public providers. </p>
+</li>
+</ul>
 <h2 id="specification">Specification</h2>
 <p>Constellr LST consists of homogenized rasters of Land Surface Temperature (LST) data. All thermal
 datasets are spectrally harmonised using a single algorithm to retrieve LST.
@@ -601,7 +617,7 @@ per scene:</p>
 </tr>
 <tr>
 <td>Period of availability</td>
-<td style="text-align: right;">2018 - ongoing</td>
+<td style="text-align: right;">2014 - ongoing</td>
 </tr>
 <tr>
 <td>Thematic accuracy</td>
@@ -638,12 +654,12 @@ per scene:</p>
 </li>
 </ul>
 <h2 id="data-sources">Data Sources</h2>
-<p>Constellr LST30 leverages data from different public missions:</p>
+<p>Constellr LST30 leverages data from different missions:</p>
 <ul>
 <li>Lisr, constellr property</li>
 <li>Landsat 8 and 9 from USGS</li>
 <li>Era5 and CAMS from CDSAPI</li>
-<li>Modis (soon)</li>
+<li>MODIS (soon)</li>
 <li>Sentinel 3 (soon)</li>
 </ul>
 <p><em>Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).</em></p>
