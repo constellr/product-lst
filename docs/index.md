@@ -40,6 +40,8 @@ We operate the world's most performant constellation of thermal-imaging satellit
       vertical-align: middle;
     }
    
+
+   
   </style>
 </head>
 <body>
@@ -108,16 +110,20 @@ We operate the world's most performant constellation of thermal-imaging satellit
 
 Here are some ways you can connect with us:
 
-### Contact Us
-You can reach us at:
-[<span class="material-icons">email</span> Email](mailto:support-csm@constellr.com)
 
-### Follow Us
-You can also follow us on LinkedIn:
-[<span class="material-icons">link</span> LinkedIn](https://www.linkedin.com/company/constellr/posts/?feedView=all)
+<div class="connect">
+    <h3>Connect with Us</h3>
 
+    <!-- Email Contact -->
+    <p><a href="mailto:support-csm@constellr.com">
+      <span class="material-icons">email</span> Email Us</a></p>
 
-### Button for Contacting Us:
-<a href="support-csm@constellr.com" class="btn" style="background-color: #5bc0de; color: white; border-radius: 5px; padding: 10px 20px; text-decoration: none;">
+    <!-- LinkedIn -->
+    <p><a href="https://www.linkedin.com/company/constellr/posts/?feedView=all">
+      <span class="material-icons">link</span> LinkedIn</a></p>
+
+    <!-- Contact Us Button (Black Text with Lighter Blue Background) -->
+    <a href="mailto:support-csm@constellr.com" class="btn" style="background-color: #5bc0de; color: black; border-radius: 5px; padding: 10px 20px; text-decoration: none;">
       <span class="material-icons">email</span> Contact Us
     </a>
+</div>

@@ -13,6 +13,7 @@
 }
 
 
+
 /* Figure and Table Counter */
 body { counter-reset: imageCounter tableCounter; }
 figcaption[tag="image"] { counter-increment: imageCounter; }
@@ -62,4 +63,44 @@ img {
 /* .grid:only-child{
     grid-template-columns: 1fr;
 } */
+/* Ensure all navigation links are black */
+.md-nav__link, .md-nav__item a {
+    color: black !important;  /* This targets all links in the navigation */
+}
 
+/* Change active navigation link color to black */
+.md-nav__item--active a {
+    color: black !important;  /* When the item is active */
+}
+
+/* Change the color of the dropdown links in the navigation */
+.md-nav__item--active .md-nav__link, 
+.md-nav__link:hover {
+    color: black !important;  /* Ensure hover also stays black */
+}
+
+/* Change the color of the main site navigation (header) to black */
+.md-header__title {
+    color: white !important;  /* Change the site title in header */
+}
+
+/* Change the color of the TOC (Table of Contents) title to black */
+.md-nav__title {
+    color: black !important;  /* TOC title */
+}
+/* Remove emphasis from all navigation links */
+.md-nav__link, .md-nav__item a {
+    color: black !important;  /* Ensure text is black */
+    font-weight: normal !important;  /* Remove bold styling */
+    text-decoration: none !important;  /* Remove underline */
+}
+/* Change the "Go to repository" link color to white */
+.md-header__right .md-nav__link {
+    color: white !important;
+}
+
+/* Optionally, also change the color when hovering over the link */
+.md-header__right .md-nav__link:hover {
+    color: white !important;  /* Keep the link white on hover */
+    text-decoration: none !important;  /* Remove underline on hover */
+}
