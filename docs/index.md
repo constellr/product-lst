@@ -1,7 +1,7 @@
 # Constellr Knowledge Center
  
 
-## :material-thermometer-alert: Company description
+## :material-satellite: Company description
 
 Constellr acquires its own satellite-based thermal information of the Earth's surface and provides essential thermal intelligence for agriculture, water, and infrastructure. Our constellation of satellites offer unmatched data quality and detail with seamless continuity and integration, enabling  informed decision-making to improve living standards and protect our planet.
 
@@ -12,39 +12,112 @@ We are a global leader in the thermal remote sensing market by 2030, offering un
 We operate the world's most performant constellation of thermal-imaging satellites to support data-driven decision making to improve ressource management and environmental governance for every single person on the planat.
 
 
-<div class="grid cards" markdown>
 
--   :material-database-settings:{ .lg .left } __Constellation journey and specs (coming soon)__
-     
--   :octicons-light-bulb-24:{ .lg .left }:  <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">**Product Portfolio (discover our offering)**</a>
-        
--   :material-folder-home:{ .lg .left }:  <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">**Use cases**</a>
-        
--   :material-book-education:{ .lg .left } : <a href="https://constellr.github.io/product-lst/demo/" style="color: black;">**Explorer Lab**</a>
-    
--   :material-cog:{ .lg .left }:  <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">**Data Delivery and API**</a>
-    
--   :material-chat-question:{ .lg .left } : __FAQ (coming soon)__
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards Grid</title>
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Material Icons CDN -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    /* Additional Custom Styles */
+    .card {
+      height: 100%; /* Ensure all cards have the same height */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Material Icons font-size */
+    .material-icons {
+      font-size: 24px;
+      vertical-align: middle;
+    }
+   
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><span class="material-icons">map</span> <strong>Constellation Journey and Specs</strong></h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><span class="material-icons">satellite</span> <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">Product Portfolio</a></h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><span class="material-icons">science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Use Cases</a></h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><span class="material-icons">book_education</span> <a href="https://constellr.github.io/product-lst/demo/" style="color: black;">Explorer Lab</a></h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><span class="material-icons">settings</span> <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">Data Delivery and API</a></h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><span class="material-icons">help_outline</span> <strong>FAQ</strong></h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- Bootstrap JS & Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
 
 
-## Media / Socials / Press
+## **Connect with Us**
 
-Read about us: [Forbes](https://www.forbes.com/sites/jenniferkitepowell/2024/06/25/a-look-at-how-constellr-is-measuring-surface-temperatures-from-space/) 
+Here are some ways you can connect with us:
 
+### Contact Us
+You can reach us at:
+[<span class="material-icons">email</span> Email](mailto:support-csm@constellr.com)
 
-[![Constellr Logo](assets/logo-constellr-dark-icon.svg)](https://www.constellr.com/){: style="width: 100px; height: 100px; float: left; margin-right: 10px;"} Visit our Website
-
-
-
-
-
-
-
+### Follow Us
+You can also follow us on LinkedIn:
+[<span class="material-icons">link</span> LinkedIn](https://www.linkedin.com/company/constellr/posts/?feedView=all)
 
 
-
-
+### Button for Contacting Us:
+<a href="support-csm@constellr.com" class="btn" style="background-color: #5bc0de; color: white; border-radius: 5px; padding: 10px 20px; text-decoration: none;">
+      <span class="material-icons">email</span> Contact Us
+    </a>
