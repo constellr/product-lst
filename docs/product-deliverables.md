@@ -17,7 +17,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:
 
 
-| Metadata field             | Explanation                                                                                                 |
+| Metadata field             | Definition                                                                                                 |
 |----------------------------|-------------------------------------------------------------------------------------------------------------|
 | area_of_interest_id        | Internal aoi id                                                                                             |
 | area_of_interest_name      | Internal aoi name                                                                                           |
