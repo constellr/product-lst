@@ -7,7 +7,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Images files               | TIR and VNIR for your area of interest - cloud optimized geotiff format              |
 | Quicklooks for thermal and optical data                       | geotiff format         |
 | Metadata file                             | json and xml format, STAC & INSPIRE compliant             |
-| Cloud Mask               | geotiff format        |
+| Cloud Mask               | geotiff format : pixel values: 0=clear pixel, 1=contamined pixel (both cloud and shadow pixels)      |
 | Quality data layer                     |  geotiff format              |
 | Thumbnails for thermal and optical data                  |  .jpg format              |
 
