@@ -16,7 +16,7 @@ LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
     * 15 meter spatial resolution
     * Degree Kelvin
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
+    [:octicons-download-16: Download](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/colorado-highway-2024.zip)
 
 
  

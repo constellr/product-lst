@@ -46,7 +46,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * 30 meter spatial resolution
     * Degree Kelvin
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr-baresoil_monitoring2022.zip)
+    [:octicons-download-16: Download](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/constellr-baresoil_monitoring2022.zip)
 
 -    :material-home-city:{ .lg .left }  __Urban__
      
@@ -59,7 +59,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * 30 meter spatial resolution
     * Degree Kelvin
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/toulouse_LST30.zip)    
+    [:octicons-download-16: Download](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/toulouse_LST30.zip)    
 
 
 </div>
@@ -86,7 +86,7 @@ Upon launch of our own satellites, we will have an exclusive high-precision LST 
     * [License](https://doi.org/10.1016/j.dib.2023.109109)
     
 
-    [:octicons-download-16: Download](https://data-delivery-archive-213979744349.s3.eu-central-1.amazonaws.com/constellr-toulouse_hive_synthetic2021.zip)
+    [:octicons-download-16: Download](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/constellr-toulouse_hive_synthetic2021.zip)
 
  
 </div>
