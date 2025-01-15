@@ -7,6 +7,27 @@ Do you want to get started using land surface temperature to derive temperature-
 - [US Pontiac Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/us-pontiac-2023.zip)
 - [Germany Freiburg/Breisgau, Urban/Forest/Agriculture](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/germany_freiburg_breisgau-urban-forest-agriculture.zip) -->
 
+## Demo data for use cases
+
+<div class="grid cards" markdown>
+
+-   :fontawesome-brands-envira:{ .lg .left }  __A water stress story__
+
+    ---
+
+    ![toulouse](images/demo/health-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+
+    * Kansas, US
+    * April - July 2022
+    * [LST30 product](Technical-specification.md)
+    * Degree Kelvin
+  
+    [Detecting water stress using spaceborne LST](water-stress-use-case.md)
+    
+ 
+</div>
+
+
 ## LST30
 Our current offer entails fusioned land surface temperature data layers from a variety of data sources. It leverages our in-house developed proprietary emissivity and retrieval algorithms for enhanced data quality. The product is available for different surface areas today re-sampled at a 30m spatial resolution. 
 
@@ -26,19 +47,6 @@ Our current offer entails fusioned land surface temperature data layers from a v
     * Degree Kelvin
 
     [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr-baresoil_monitoring2022.zip)
-
--   :fontawesome-brands-envira:{ .lg .left }  __Crop Health__
-
-    ---
-
-    ![vegetation monitoring](images/demo/health-lst15.png){: style="height: 200px; width: 200px; object-fit: cover;"}
-
-    * Kansas, US
-    * April - July 2022
-    * 30 meter spatial resolution
-    * Degree Kelvin
-
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr_vegetation_monitoring_2022.zip)
 
 -    :material-home-city:{ .lg .left }  __Urban__
      
@@ -78,7 +86,7 @@ Upon launch of our own satellites, we will have an exclusive high-precision LST 
     * [License](https://doi.org/10.1016/j.dib.2023.109109)
     
 
-    [:octicons-download-16: Download](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/constellr-toulouse_hive_synthetic2021.zip)
+    [:octicons-download-16: Download](https://data-delivery-archive-213979744349.s3.eu-central-1.amazonaws.com/constellr-toulouse_hive_synthetic2021.zip)
 
  
 </div>
