@@ -52,4 +52,4 @@ Constellr LST30 leverages data from different missions:
 -   MODIS (soon)
 -   Sentinel 3 (soon)
 
-*Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).*
+*Legal notice: LST30 is comprised of harmonized LST data that are retrieved  by constellr’s in-house technology. It utilizes proprietary data, as well as raw thermal data acquired by the Landsat missions (courtesy of USGS/ NASA), Ecostress (courtasy of NASA), and climatic data (courtesy of Copernicus/ECMWF).*
