@@ -48,7 +48,7 @@ Constellr LST30 leverages data from different missions:
 
 -   Lisr, constellr property
 -   Landsat 8 and 9 from USGS
--   Era5 and CAMS from CDSAPI
+-   Era5 and CAMS from Copernicus/ECMWF
 -   MODIS (soon)
 -   Sentinel 3 (soon)
 
