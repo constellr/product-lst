@@ -1,6 +1,5 @@
-hide_table_of_contents: true
 
-# Constellr's product offer
+# **Constellr's product offer** {style="color: #123774;margin-bottom: 5px;"}
 
 Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature (LST).
 
@@ -61,7 +60,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 </div>
 
 
-# Pre-cursor products in 2024-2025
+# Pre-cursor products in 2024-2025 {style="color: #123774;margin-bottom: 5px;"}
 
 If you want to already  explore the benefits of high-resolution land surface temperature analysis today, we recommend you to take a look at our pre-cursor products and get in touch with us. 
 

@@ -1,4 +1,4 @@
-# Product deliverables
+# **Product deliverables** {style="color: #123774;margin-bottom: 5px;"}
 Constellr's product deliverables include several layers, which are outlined below.
 
 
@@ -12,7 +12,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Thumbnails for thermal and optical data                  |  .jpg format              |
 
 
-# Metadata conventions
+# Metadata conventions {style="color: #123774;margin-bottom: 5px;"}
 
 The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:
 

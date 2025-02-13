@@ -1,6 +1,5 @@
-# constellr Knowledge Center
- 
-
+<h1 style="margin-bottom: 5px; color: #123774;">The Knowledge Center</h1>
+<h2 style="margin-top: 0; margin-bottom: 5px; color: #24398F;">Everything you need to know about <strong>constellr's LST data</strong></h2>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,40 +7,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centered Horizontally</title>
-<style>
-        body {
-            background-color: #f0f0f0; /* Optional background */
-            margin: 0;
-            padding: 0;
-        }
-        .wrapper {
-            text-align: center; /* Center children horizontally */
-            margin-top: 100px; /* Adjust vertical spacing as needed */
-        }
-        .image-container {
-            position: relative;
-            display: inline-block; /* Keeps it as a block within text-align */
-            width: 600px; /* Adjust width */
-            height: 400px; /* Adjust height */
-        }
-        .image-container img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .image-container img.active {
-            opacity: 1;
-        }
-</style>
+
+<!-- Font Awesome for Icons like LinkedIn -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+<!-- Custom Stylesheet -->
+<link href="stylesheets/extra.css" rel="stylesheet">
 </head>
+
+
 <body>
 <div class="wrapper">
 <div class="image-container">
-<img src="images/index/BareSoil.png" alt="First Image" class="active">
-<img src="images/index/LST.png" alt="Second Image">
+<img src="images/index/freiburg_2023-06-25_tobi_aoi_basemap.png" alt="First Image" class="active">
+<img src="images/index/freiburg_2023-06-25_tobi_aoi_lst_overlay.png" alt="Second Image">
 </div>
 </div>
  
@@ -60,27 +39,21 @@
 
 
 
+<h2 style= "color: #123774;">Company Description</h2>
 
-
-
-## Company Description
-
-
-constellr is developing an unparalleled thermal intelligence atlas of our planet. The atlas is a constantly updated view of the surface temperature across the globe, providing real-time high-precision insights into the water & carbon cycles it shapes.  
+constellr is developing an unparalleled <strong>thermal intelligence atlas of our planet</strong>. The atlas is a constantly updated view of the surface temperature across the globe, providing real-time high-precision insights into the water & carbon cycles it shapes.  
 
 The atlas leverages constellr's proprietary advanced satellite technology and data fusion combined with biophysical modelling and AI-powered analytics to transform how we understand and manage the Earth’s resources.  
 
-Find more about [constellr](https://www.constellr.com/) 
+Find out more about on [constellr](https://www.constellr.com/).
 
+<h2 style= "color: #123774;">About the Knowledge Center</h2>
 
-## About the Knowledge Center
 This space is a centralized source of technical information regarding constellr's datasets and products. It empowers customers and partners to engage with constellr's thermal products more effectively.  
 
 Through this knowledge center, find information about metadata and formats as well as obtain demo datasets for use cases that interest you. It is a dynamic space and is continuously updated with the most relevant information.  
 
-## Discover the Knowledge Center
-
-
+<h2 style= "color: #123774;">Discover the Knowledge Center</h2>
  
 <!DOCTYPE html>
 <html lang="en">
@@ -101,26 +74,54 @@ Through this knowledge center, find information about metadata and formats as we
       height: 100%; /* Ensure all cards have the same height */
       display: flex;
       flex-direction: column;
+      background-color: #160A42; /* Blue background */
+      color: #EE9219EA; /* Red text */
+      border: none; /* Optional: removes default border */
+      transition: background-color 0.3s ease-in-out; /* Smooth transition */
     }
 
+    /* Change background color on hover */
+    .card:hover {
+      background-color: #21125a; /* Slightly lighter blue */
+    }
+
+    /* Ensure icons and text are red */
+    .card-title {
+      color: #EE9219EA !important;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center horizontally */
+      gap: 8px; /* Space between icon and text */
+      /*height: 100%; /* Ensures full vertical centering */
+      margin: 0; /* Removes margin around title */
+    }
+
+    /* Ensure links inside the card title are also red */
+    .card-title a {
+      color: #EE9219EA !important;
+    }
     /* Material Icons font-size */
     .material-icons {
-      font-size: 24px;
+      font-size: 32px;
       vertical-align: middle;
+      color: #EE9219EA; /* Red */
+      line-height: 1; /* Fix vertical centering issues */
     }
    
 
    
-  </style>
+</style>
 </head>
 <body>
-
 <div class="container py-4">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><span class="material-icons">map</span> <strong>Constellation Journey and Specs</strong></h5>
+          <h5 class="card-title">
+            <span class="material-icons" >map</span>
+            <strong>Constellation Journey</strong> 
+          </h5>
         </div>
       </div>
     </div>
@@ -128,7 +129,9 @@ Through this knowledge center, find information about metadata and formats as we
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><span class="material-icons">satellite</span> <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">Product Portfolio</a></h5>
+          <h5 class="card-title">
+            <span class="material-icons">satellite_alt</span> <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">Product Portfolio</a>
+          </h5>
         </div>
       </div>
     </div>
@@ -136,7 +139,9 @@ Through this knowledge center, find information about metadata and formats as we
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><span class="material-icons">science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Use Cases</a></h5>
+          <h5 class="card-title">
+            <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Use Cases</a>
+          </h5>
         </div>
       </div>
     </div>
@@ -144,7 +149,10 @@ Through this knowledge center, find information about metadata and formats as we
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><span class="material-icons">book_education</span> <a href="https://constellr.github.io/product-lst/demo/" style="color: black;">Explorer Lab</a></h5>
+          <h5 class="card-title">
+            <span class="material-icons" >search</span> 
+            <a href="https://constellr.github.io/product-lst/demo/" style="color: black;" >Explorer Lab</a>
+          </h5>
         </div>
       </div>
     </div>
@@ -152,7 +160,8 @@ Through this knowledge center, find information about metadata and formats as we
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><span class="material-icons">settings</span> <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">Data Delivery and API</a></h5>
+          <h5 class="card-title">
+            <span class="material-icons">settings</span> <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">Data Delivery and API</a></h5>
         </div>
       </div>
     </div>
@@ -160,7 +169,8 @@ Through this knowledge center, find information about metadata and formats as we
     <div class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><span class="material-icons">help_outline</span> <strong>FAQ</strong></h5>
+          <h5 class="card-title">
+            <span class="material-icons" >help_outline</span> <strong>FAQ</strong></h5>
         </div>
       </div>
     </div>
@@ -175,28 +185,3 @@ Through this knowledge center, find information about metadata and formats as we
 </html>
 
 
-
-<div class="connect">
-    <h3>Connect with Us</h3>
-
-    <!-- Email Contact -->
-    <p>
-        <a href="mailto:support-csm@constellr.com">
-            <span class="material-icons">email</span> Email Us
-        </a>
-    </p>
-
-    <!-- LinkedIn -->
-    <p>
-        <a href="https://www.linkedin.com/company/constellr/posts/?feedView=all">
-            <span class="material-icons">link</span> LinkedIn
-        </a>
-    </p>
-
-    <!-- Website -->
-    <p>
-        <a href="https://www.constellr.com/" target="_blank">
-            <span class="material-icons">language</span> constellr Website
-        </a>
-    </p>
-</div>

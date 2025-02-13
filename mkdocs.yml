@@ -13,25 +13,24 @@ nav:
     - Constellr's product offer: Constellr-product-offer.md
     - Product deliverables: product-deliverables.md
     - Technical specifications: Technical-specification.md
+  - Insights: thermal-insights.md
   - End User Platform Documentation:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
-
-  - Use cases: use-cases.md
   - Explorer Lab: demo.md
  
 
 theme:
   name: material
-  show_toc: false
+  #show_toc: false
+  #toc_depth: 1;
   favicon: assets/logo-constellr-dark-icon.svg
   logo: assets/logo-constellr-dark-icon.svg
   features:
-    #- navigation.tabs
-    #- navigation.top
-    #- toc.integrate
-    #- content.tooltips
+    - toc.integrate
   text-align: right
+
+  custom_dir: overrides
 
   palette:
     # Palette toggle for light mode
@@ -48,6 +47,7 @@ extra_css:
   - stylesheets/extra.css
 
 strict: true
+
   
 markdown_extensions:
   - attr_list
