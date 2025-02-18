@@ -68,10 +68,10 @@ Special thanks to Charlie Siggs, Nicolas Chamberland, Loic Quertenmont, Elsy Ibr
 
 <br>
 <h2 style="margin-top: 10px; margin-bottom: 10px; color: #24398F;">Download demo data</h2>
-The demonstration data provides you with csv files containing data for a one-year-timeseries of 1) LST data for the water-stressed field section, 2) LST data for the well-watered field section, and 3) the NDVI mean and quantiles for the whole field. 
+The demonstration data provides you with csv files containing a timeseries of the growing season of one corn field. It includes the median and standard deviation of 1) [LST30](lst30.md) data for the water-stressed field section, 2) [LST30](lst30.md) data for the well-watered field section. Additionally, the NDVI mean and quantiles for the whole field are provided which have been sourced from Landsat 8 data. 
 
-Lst 2022 time series for a stressed portion of the field 
+[LST timeseries for a stressed section of the field](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/Water_sressed_.corn_LST+(1).csv) 
 
-LST 2022 time series for the well watered part of the field  
+[LST timeseries for the irrigated part of the field](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/Well_irrigated_corn_LST+(1).csv)  
 
-NDVI mean (and quantiles) of the field  
+NDVI mean and quantiles of the field  

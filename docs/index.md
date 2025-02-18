@@ -1,6 +1,8 @@
 <h1 style="margin-bottom: 5px; color: #123774;"><strong>The Knowledge Center</strong></h1>
 <h2 style="margin-top: 0; margin-bottom: 5px; color: #24398F;"><em>Everything you need to know about constellr's LST data</em></h2>
 
+<br>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,7 @@
 
 
 <body>
-<div class="wrapper">
+<div class="wrapper" style= 'margin-top: 0; margin-bottom: 0;'>
 <div class="image-container">
 <img src="images/index/freiburg_2023-06-25_tobi_aoi_basemap.png" alt="First Image" class="active">
 <img src="images/index/freiburg_2023-06-25_tobi_aoi_lst_overlay.png" alt="Second Image">
@@ -45,7 +47,7 @@ constellr is developing an unparalleled <strong>thermal intelligence atlas of ou
 
 The atlas leverages constellr's proprietary advanced satellite technology and data fusion combined with biophysical modelling and AI-powered analytics to transform how we understand and manage the Earth’s resources.  
 
-Find out more about on [constellr](https://www.constellr.com/).
+Find out more on [constellr](https://www.constellr.com/).
 
 <h2 style= "color: #123774;">About the Knowledge Center</h2>
 

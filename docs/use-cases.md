@@ -6,7 +6,7 @@
 Temperature is the most critical climate variable, fundamentally governing the water, energy, and carbon cycles.  With respect to **vegetation**, monitoring temperature is essential for predicting crop yields, optimizing agricultural planning, managing water use efficiently, and enhancing carbon sequestration. Similarly, thermal data is an essential tool for **urban** planners aiming to identify, monitor and mitigate urban heat islands. With constellr's accurate temperature data, stakeholders can intervene promptly to prevent adverse impacts and drive climate resilience.
 
 <body>
-<div class="wrapper">
+<div class="wrapper" style= 'margin-top: 0; margin-bottom: 0;'>
 <div class="image-container">
 <img src="../images/index/freiburg_2023-06-25_tobi_aoi_basemap.png" alt="First Image" class="active">
 <img src="../images/index/freiburg_2023-06-25_tobi_aoi_lst_overlay.png" alt="Second Image">
@@ -25,8 +25,6 @@ Temperature is the most critical climate variable, fundamentally governing the w
 </script>
 </body>
 
-
-<br>
 The costs of global adaptation to a 2°C warming scenario are expected to range between <strong> 150-300bn USD annually by 2030</strong> across the agricultural, urban and infrastructure sectors according to IPCC data. Thermal intelligence will be key in minimizing these costs by supporting decision-makers in measuring, monitoring, and predicting vulnerabilities to drive mitigation strategies.</span>
 
 ---------------------
@@ -40,7 +38,8 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/thermal_insights/overview.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="../images/thermal_insights/Kansas2022.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <figcaption style="font-size: 14px;">Crop fields in Kansas, USA - June 2022</figcaption>
 </div>
 <div style="flex: 2;">
     <h3 style="margin: 0; color: #123774;">Crop Stress Monitoring</h3>
