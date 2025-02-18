@@ -1,14 +1,14 @@
 # **Constellr API Documentation** {style="color: #123774;margin-bottom: 5px;"}
  
-## What's the use case for constellr's API? {style="color: #123774;margin-bottom: 5px;"}
+## Using a STAC API {style="color: #123774;margin-bottom: 5px;"}
 
 A STAC (SpatioTemporal Asset Catalog) API is ideal when you need to programmatically search, filter, and access large volumes of Earth observation data. It provides a standardized way to query and retrieve metadata and assets, making it suitable for automated workflows and integration with other tools. It naturally extends a static STAC catalogue to allow for dynamic search based on additional filters. In contrast, a web application is more user-friendly for interactive browsing, visualizing, and manually selecting data products. Use a STAC API for efficient, scalable data access in automated systems, and a web application for a more intuitive, hands-on experience.
 
-## Typical User Flow {style="color: #123774;margin-bottom: 5px;"}
+## Accessing constellr's API {style="color: #123774;margin-bottom: 5px;"}
 
-This guide outlines how to authenticate, search, and download your data using the Constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or access the OpenAPI JSON File.
+This guide outlines how to authenticate, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or access the OpenAPI JSON File.
 
-### Initial Preparation 
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Initial Preparation</span></h3>
 
 - Create an Account: Users should create their accounts via Constellr's end-user platform, which can be found at [https://app.constellr.com/signup](https://app.constellr.com/signup)
 
@@ -16,7 +16,7 @@ This guide outlines how to authenticate, search, and download your data using th
 
 Once activated, you can begin accessing and retrieving data using the API.
 
-### API Usage
+<h3 <span style= 'color: #24398F;margin-top: 0;'>API Usage</span></h3>
 
 **1- Request a temporary token**
 
@@ -57,11 +57,11 @@ Once you’ve retrieved a list of relevant assets using the /assets endpoint, do
 
 For concrete request examples and response formats, refer to the latest API documentation.
 
-## More details on API endpoints including Code Snippets. {style="color: #123774;margin-bottom: 5px;"}
+## Useful Code Snippets {style="color: #123774;margin-bottom: 5px;"}
 
 In the code snippets, you would need to replace hardcoded credentials with actual credentials. Please note that you should never store your credentials in plain text in any piece of code.
 
-### Authentication: Generate Access Token
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Authentication: Generate Access Token</span></h3>
 
 Endpoint
 `POST /token`
@@ -126,7 +126,8 @@ fetch(url, {
   });
 ```
 
-### Get Assets
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Get Assets</span></h3>
+
 
 Endpoint
 `GET /assets`
@@ -191,7 +192,8 @@ fetch(url, {
   });
 ```
 
-### Download Asset
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Download Assets</span></h3>
+
 
 Endpoint
 `GET /assets/{asset_name}`
@@ -277,7 +279,7 @@ downloadAsset(assetName, accessToken)
 
 ## Sample scripts {style="color: #123774;margin-bottom: 5px;"}
 
-### Python Script: Download Assets sequentially
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Python Script: Download Assets sequentially</span></h3>
 
 ```
 import requests
@@ -323,7 +325,7 @@ if __name__ == '__main__':
     main(username, password)
 ```
 
-### Python Script: Download Assets in Parallel
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Python Script: Download Assets in Parallel</span></h3>
 
 Below is a Python script that:
 

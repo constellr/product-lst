@@ -9,11 +9,12 @@ repo_name: constellr/product-lst
 edit_uri: https://github.com/constellr/product-lst/tree/main/docs/
 nav:
   - Home: index.md
+  - Our Technology: our-technology.md
   - Product Portfolio: 
     - Constellr's product offer: Constellr-product-offer.md
     - Product deliverables: product-deliverables.md
     - Technical specifications: Technical-specification.md
-  - Insights: thermal-insights.md
+  - Insights: use-cases.md
   - End User Platform Documentation:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md

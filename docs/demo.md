@@ -22,7 +22,7 @@ Do you want to get started using land surface temperature to derive temperature-
     * [LST30 product](Technical-specification.md)
     * Degree Kelvin
   
-    [Detecting water stress using spaceborne LST](water-stress-use-case2.md)
+    [Detecting water stress using spaceborne LST](water-stress-use-case.md)
     
  
 </div>

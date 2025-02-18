@@ -11,8 +11,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Quality data layer                     |  geotiff format              |
 | Thumbnails for thermal and optical data                  |  .jpg format              |
 
-
-# Metadata conventions {style="color: #123774;margin-bottom: 5px;"}
+<h2 style= "color: #123774;">Metadata conventions</h2>
 
 The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:
 
