@@ -1,5 +1,5 @@
-
-### Overview Product Specifications [^custom-label]
+# **Technical Specifications** {style="color: #123774;margin-bottom: 5px;"}
+## Overview Product Specifications [^custom-label] {style="color: #123774;margin-bottom: 5px;"}
 
 | Characteristics                      | **LSTprecision**                                                                                                                      | **LSTzoom**                                                              | LSTfusion                                                                    |[**LST30**](https://constellr.github.io/product-lst/lst30/)                             |
 |--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------|
@@ -20,10 +20,10 @@
 
 
 
-### Capability Statement
+## Capability Statement {style="color: #123774;margin-bottom: 5px;"}
 This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+PUBLIC+v1.3.pdf)
 
-### Footnotes
+## Footnotes {style="color: #123774;margin-bottom: 5px;"}
 [^custom-label]: Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km2) between 50 o S and 55 o N. All numbers are cloud coverage dependen
   
 [^2]: Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision and LSTzoom native nadir looking Ground Sampling Distance (GSD) at 540km altitude is 28.9 m for Thermal Infrared data, while GSD for LSTfusion varies with different input data sources. GSD defined as a pixel projection on ground. For LSTzoom higher resolution VNIR bands are used for sharpening to 10m.

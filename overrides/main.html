@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<head>
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+    
+    <hr style="border: none; height: 1px; background-color: #ccc; margin: 40px 0;">
+    <div class="connect">
+        <h3 style="color: #123774;">Connect with Us</h3>
+        <div style="display: flex; gap: 20px; align-items: center; justify-content: center;">
+            <!-- Email Contact -->
+            <a href="mailto:support-csm@constellr.com" class="icon-link">
+                <i class="fab fa-telegram-plane" style="font-size: 38px;"></i> <!-- Bigger icon -->
+            </a>
+        
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/constellr/posts/?feedView=all" class="icon-link">
+                <i class="fab fa-linkedin" style="font-size: 38px;"></i> <!-- Bigger icon -->
+            </a>
+        
+            <!-- Website -->
+            <a href="https://www.constellr.com/" target="_blank" class="icon-link">
+                <img src="{{ base_url }}/assets/logo-constellr-dark-icon.svg" alt="Constellr Logo" class="website-logo" style="height: 40px;"> <!-- Bigger logo -->
+            </a>
+        </div>
+        
+    </div>
+{% endblock %}

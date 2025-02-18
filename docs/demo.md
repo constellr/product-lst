@@ -1,4 +1,4 @@
-# Explorer Lab
+# **Explorer Lab** {style="color: #202A78;"}
 Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of demo datasets below. Get an impression of the datasets we deliver, our data quality, and test data integration. Each dataset includes the LST data layer, cloud masks and meta data files for each observation date over a given area of interest. 
 
 <!-- - [Brasil Rioverde Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-rioverde-2023.zip)
@@ -7,7 +7,7 @@ Do you want to get started using land surface temperature to derive temperature-
 - [US Pontiac Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/us-pontiac-2023.zip)
 - [Germany Freiburg/Breisgau, Urban/Forest/Agriculture](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/germany_freiburg_breisgau-urban-forest-agriculture.zip) -->
 
-## Demo data for use cases
+## Demo data for use cases {style="color: #202A78;"}
 
 <div class="grid cards" markdown>
 
@@ -28,7 +28,7 @@ Do you want to get started using land surface temperature to derive temperature-
 </div>
 
 
-## LST30
+## LST30 {style="color: #202A78;"}
 Our current offer entails fusioned land surface temperature data layers from a variety of data sources. It leverages our in-house developed proprietary emissivity and retrieval algorithms for enhanced data quality. The product is available for different surface areas today re-sampled at a 30m spatial resolution. 
 
 
@@ -66,7 +66,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
 
 
-## High-precision LST - available by 2025
+## LSTprecision - available by 2025 {style="color: #202A78;"}
 Upon launch of our own satellites, we will have an exclusive high-precision LST data layer available with enhanced accuracy on a 30m native spatial resolution. The simulated dataset below has been generated using airborne thermal infrared sensors and is compatible with our geospatial data product next year. Get a glimpse into the improved data quality of our land surface temperature product already today!
 
 

@@ -13,6 +13,30 @@
 }
 
 
+.image-container {
+    position: relative;
+    display: inline-block; /* Keeps it as a block within text-align */
+    width: 600px; /* Adjust width */
+    height: 400px; /* Adjust height */
+}
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.wrapper {
+    text-align: center; /* Center children horizontally */
+    margin-top: 100px; /* Adjust vertical spacing as needed */
+}
+
+.image-container img.active {
+    opacity: 1;
+}
+
 
 /* Figure and Table Counter */
 body { counter-reset: imageCounter tableCounter; }
@@ -63,9 +87,12 @@ img {
 /* .grid:only-child{
     grid-template-columns: 1fr;
 } */
+/* Navigation Links and Colors */
 /* Ensure all navigation links are black */
 .md-nav__link, .md-nav__item a {
-    color: black !important;  /* This targets all links in the navigation */
+    color: black !important;  /* Target all links in the navigation */
+    font-weight: normal !important;  /* Remove bold styling */
+    text-decoration: none !important;  /* Remove underline */
 }
 
 /* Change active navigation link color to black */
@@ -79,21 +106,12 @@ img {
     color: black !important;  /* Ensure hover also stays black */
 }
 
-/* Change the color of the main site navigation (header) to black */
+/* Header Links */
+/* Change the color of the main site navigation (header) to white */
 .md-header__title {
     color: white !important;  /* Change the site title in header */
 }
 
-/* Change the color of the TOC (Table of Contents) title to black */
-.md-nav__title {
-    color: black !important;  /* TOC title */
-}
-/* Remove emphasis from all navigation links */
-.md-nav__link, .md-nav__item a {
-    color: black !important;  /* Ensure text is black */
-    font-weight: normal !important;  /* Remove bold styling */
-    text-decoration: none !important;  /* Remove underline */
-}
 /* Change the "Go to repository" link color to white */
 .md-header__right .md-nav__link {
     color: white !important;
@@ -104,3 +122,117 @@ img {
     color: white !important;  /* Keep the link white on hover */
     text-decoration: none !important;  /* Remove underline on hover */
 }
+
+/* Sidebar and Navigation Customization */
+/* Increase width of the left navigation sidebar */
+.md-sidebar--primary {
+    width: 300px;  /* Adjust the width as needed (default is ~250px) */
+    margin-left: 0;
+}
+
+.md-main {
+    margin-left: 0;  /* Remove left margin from the main content */
+}
+
+.md-content {
+    padding-left: 0;  /* Remove left padding from content */
+}
+
+/* If there's padding or margin applied to the container around the page */
+.md-layout {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Ensure navigation items use the full width */
+.md-nav {
+    padding: 0; /* Remove unnecessary padding */
+    width: 100%;  /* Makes sure the nav items expand */
+}
+
+/* Make the text inside the navigation use the space */
+.md-nav__item a {
+    max-width: 100%; /* Prevent truncation */
+    display: block;  /* Ensures links take full width */
+    white-space: normal;  /* Allows text to wrap if needed */
+    padding: 5px 10px;  /* Control padding around links */
+    text-align: left;  /* Align text properly */
+}
+
+/* Indent nested navigation items properly */
+.md-nav__item--nested {
+    padding-left: 10px; /* Increase indentation for subsections */
+}
+
+/* Styling for Top-Level and Subsections */
+/* Customize top-level section headers */
+.md-nav__title {
+    font-size: 1rem;  /* Increase font size for section headers */
+    font-weight: bold;  /* Make them bold */
+    color: #333;  /* Darken color slightly */
+    text-transform: uppercase;  /* Optional: Make text uppercase */
+}
+
+/* Indent and style sub-items */
+.md-nav__list .md-nav__item {
+    margin-left: 10px;  /* Indent sub-items */
+    font-size: 0.8rem;  /* Slightly smaller font for sub-items */
+}
+
+/* Reduce font size for Table of Contents items in the navigation */
+.md-nav__list [data-md-component="toc"] .md-nav__link {
+    font-size: 0.7rem;  /* Adjust as needed */
+}
+
+
+
+
+
+
+/* Center and adjust the size of the icons */
+.connect {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.icon-link i {
+    font-size: 40px;  /* Adjust size */
+    color: #0077b5; /* LinkedIn color for all icons */
+    transition: color 0.3s;
+}
+
+.icon-link i:hover {
+    color: #1da1f2;  /* Change color on hover for visual effect */
+}
+
+.connect p {
+    display: inline-block; /* Align icons horizontally */
+    margin: 0 15px; /* Space between icons */
+}
+
+/* Optional: Adjust the color of the email icon to match LinkedIn */
+.icon-link[href^="mailto:"] i {
+    color: #0077b5; /* Same LinkedIn color */
+}
+
+/* Adjust the size for the website logo */
+.website-logo {
+    width: 40px;  /* Set width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Add hover effect */
+}
+
+.website-logo:hover {
+    transform: scale(1.1);  /* Slight zoom on hover */
+}
+
+/* Adjust the size for smaller screens */
+@media (max-width: 600px) {
+    .icon-link i {
+        font-size: 30px; /* Smaller size on mobile */
+    }
+    .website-logo {
+        width: 30px;  /* Adjust logo size for mobile */
+    }
+}
+
