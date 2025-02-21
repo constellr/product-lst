@@ -2,7 +2,7 @@
 # Just don't activate github page then 'mkdocs gh-deploy --clean'
 
 site_name: Knowledge Center
-site_url: https://github.com/constellr/product-lst
+site_url: https://constellr.github.io/product-lst/
 repo_url: https://github.com/constellr/product-lst
 repo_name: constellr/product-lst
 
