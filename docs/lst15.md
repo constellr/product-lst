@@ -1,4 +1,3 @@
-## LST15
  LST15 is still under development, but it already achieves excellent performance. It is particularly well-suited for industrial processes and road monitoring, thanks to its finer spatial granularity of 15 meters.
 LST10 is anticipated to replace LST15 in the mid-term, expectedly by 2025.
 

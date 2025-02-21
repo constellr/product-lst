@@ -1,11 +1,9 @@
-hide_table_of_contents: true
 
-<!-- no toc -->
-# End User Platform - UI Documentation <!-- no toc -->
+# **End User Platform - UI Documentation** {style="color: #123774;margin-bottom: 5px;"}
 
 This page will guide you through the steps to create an account, access it, and browse through the assets list page.
 
-## 1. Registration <!-- no toc -->
+## 1. Registration {style="color: #123774;margin-bottom: 5px;"}
 
 **Step 1 - Create an account**
 
@@ -15,13 +13,13 @@ To register an account, you can navigate to the [Sign Up Page](https://app.const
 
 After submitting your registration, you will receive an email with a verification code. In the application, you will be prompted to enter the verification code sent to your email address. Once the code is entered, the account will be activated and you can now proceed to sign in and access your account.
 
-## 2. Access your account
+## 2. Access your account {style="color: #123774;margin-bottom: 5px;"}
    
 Navigate to the [Sign Up Page](https://app.constellr.com/signin) you will be prompted to enter your email and password credentials. After successful authentication, you will be directed to your Account Page.
 
-## 3. Navigate the platform
+## 3. Navigate the platform {style="color: #123774;margin-bottom: 5px;"}
 
-### Account Page
+<h3 <span style= 'color: #24398F;'>Account Page</span></h3>
 
 After signin in, you will be taken to the **Account Page**. This page contains:
 
@@ -29,7 +27,7 @@ After signin in, you will be taken to the **Account Page**. This page contains:
    
 - Email Account: The email address associated with your account.
 
-### Assets List Page
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Assets List Page</span></h3>
 
 From the Account Page, you can navigate to the **Assets List Page**. This page provides access to the various assets available to you, organized in a structured manner:
 
@@ -42,7 +40,8 @@ From the Account Page, you can navigate to the **Assets List Page**. This page p
 - Assets: Finally, within each delivery, you will find Files. These are the actual assets that you can view or download. The available assets include: 1 x metadata .json, 1 x cloud mask .tiff and 1 x LST30 .tiff
 
 
-### Downloading Assets
+<h3 <span style= 'color: #24398F;margin-top: 0;'>Downloading Assets</span></h3>
+
 
 - To view the assets, navigate through the structure (AOI > Order > Delivery > Files) and select the file you wish to view.
 
