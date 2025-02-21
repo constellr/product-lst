@@ -71,9 +71,6 @@ extra_javascript:
 plugins:
   - search
   - mike
-  - bibtex:
-      bib_file: docs/refs.bib
-      # cite_style: "pandoc"
   
 
 extra:
