@@ -1,22 +1,22 @@
-# **Constellr API Documentation** {style="color: #123774;margin-bottom: 5px;"}
+# **Constellr API Documentation**
  
-## Using a STAC API {style="color: #123774;margin-bottom: 5px;"}
+## Using a STAC API {style="margin-bottom: 5px;"}
 
-A STAC (SpatioTemporal Asset Catalog) API is ideal when you need to programmatically search, filter, and access large volumes of Earth observation data. It provides a standardized way to query and retrieve metadata and assets, making it suitable for automated workflows and integration with other tools. It naturally extends a static STAC catalogue to allow for dynamic search based on additional filters. In contrast, a web application is more user-friendly for interactive browsing, visualizing, and manually selecting data products. Use a STAC API for efficient, scalable data access in automated systems, and a web application for a more intuitive, hands-on experience.
+A STAC (SpatioTemporal Asset Catalog) API is ideal when you need to programmatically search, filter, and access large volumes of Earth Observation data. It provides a standardized way to query and retrieve metadata and assets, making it suitable for automated workflows and integration with other tools. It naturally extends a static STAC catalogue to allow for dynamic search based on additional filters. In contrast, a web application is more user-friendly for interactive browsing, visualizing, and manually selecting data products. Use a STAC API for efficient, scalable data access in automated systems, and a web application for a more intuitive, hands-on experience.
 
-## Accessing constellr's API {style="color: #123774;margin-bottom: 5px;"}
+## Accessing constellr's API 
 
 This guide outlines how to authenticate, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or access the OpenAPI JSON File.
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>Initial Preparation</span></h3>
+<h3>Initial Preparation</h3>
 
 - Create an Account: Users should create their accounts via Constellr's end-user platform, which can be found at [https://app.constellr.com/signup](https://app.constellr.com/signup)
 
-- Activate Account: After registering, users must activate their account by confirming their email address.
+- Activate Account: After registering, users must activate their account by confirming their e-mail address.
 
 Once activated, you can begin accessing and retrieving data using the API.
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>API Usage</span></h3>
+<h3>API Usage</h3>
 
 **1- Request a temporary token**
 
@@ -57,11 +57,11 @@ Once you’ve retrieved a list of relevant assets using the /assets endpoint, do
 
 For concrete request examples and response formats, refer to the latest API documentation.
 
-## Useful Code Snippets {style="color: #123774;margin-bottom: 5px;"}
+## Useful Code Snippets
 
 In the code snippets, you would need to replace hardcoded credentials with actual credentials. Please note that you should never store your credentials in plain text in any piece of code.
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>Authentication: Generate Access Token</span></h3>
+<h3>Authentication: Generate Access Token</h3>
 
 Endpoint
 `POST /token`
@@ -126,7 +126,7 @@ fetch(url, {
   });
 ```
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>Get Assets</span></h3>
+<h3>Get Assets</h3>
 
 
 Endpoint
@@ -192,7 +192,7 @@ fetch(url, {
   });
 ```
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>Download Assets</span></h3>
+<h3>Download Assets</h3>
 
 
 Endpoint
@@ -277,9 +277,9 @@ downloadAsset(assetName, accessToken)
   });
 ```
 
-## Sample scripts {style="color: #123774;margin-bottom: 5px;"}
+## Sample scripts
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>Python Script: Download Assets sequentially</span></h3>
+<h3>Python Script: Download Assets sequentially</h3>
 
 ```
 import requests
@@ -325,7 +325,7 @@ if __name__ == '__main__':
     main(username, password)
 ```
 
-<h3 <span style= 'color: #24398F;margin-top: 0;'>Python Script: Download Assets in Parallel</span></h3>
+<h3>Python Script: Download Assets in Parallel</h3>
 
 Below is a Python script that:
 

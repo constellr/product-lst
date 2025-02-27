@@ -1,4 +1,4 @@
-# **Product deliverables** {style="color: #123774;margin-bottom: 5px;"}
+# **Product deliverables**
 Constellr's product deliverables include several layers, which are outlined below.
 
 
@@ -11,7 +11,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Quality data layer                     |  geotiff format              |
 | Thumbnails for thermal and optical data                  |  .jpg format              |
 
-<h2 style= "color: #123774;">Metadata conventions</h2>
+<h2>Metadata conventions</h2>
 
 The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:
 
@@ -28,7 +28,7 @@ The metadata file provided with the constellr products contains various pieces o
 | processing_datetime        | Start of constellr processing image datetime                                                                |
 | cloud_ratio_aoi            | Percentage of cloud cover over the aoi                                                                      |
 | na_ratio_aoi               | Percentage of nan values over the aoi                                                                       |
-| min_lst                    | Minimum LVT value (in Kelvin)                                                                               |
+| min_lst                    | Minimum LST value (in Kelvin)                                                                               |
 | max_lst                    | Maximum LST value (in Kelvin)                                                                               |
 | median_lst                 | Median LST value (in Kelvin)                                                                                |
 | sun_elevation              | Sun's elevation angle for a given geographical bounding box and time                                        |
@@ -41,6 +41,6 @@ The metadata file provided with the constellr products contains various pieces o
 | geometry                   | Coordinates of the Polygon returned                                                                         |
 
 
-Data delivery of al data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
+Data delivery of all data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
 
 In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products.

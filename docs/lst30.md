@@ -1,4 +1,4 @@
-<h1 <span style="color: #202A78;margin-bottom: 5px;">Constellr LST30</span></h1>
+<h1>Constellr LST30</h1>
 
 Constellr LST30 consists of homogenized rasters of Land Surface Temperature (LST) data. These are their characteristics:
 
@@ -10,15 +10,26 @@ Constellr LST30 consists of homogenized rasters of Land Surface Temperature (LST
   
 - Each pixel holds a temperature value in degree Kelvin. 
   
-- Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in several or all images, due to issues in the data processing from the public providers. 
+- Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in several or all images, due to issues in the data processing from the public providers.
 
+## Data Sources
 
-## Specification {style="color: #123774;margin-bottom: 5px;"}
+Constellr LST30 leverages data from different missions:
+
+-   Lisr, constellr property
+-   Landsat 8 and 9 from USGS
+-   Era5 and CAMS from CDSAPI
+-   MODIS (soon)
+-   Sentinel 3 (soon)
+
+*Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).*  
+
+## Specification
 
 Have a look at our Technical specifications documentation <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**Here**</a>
 
 
-## File-naming convention {style="color: #123774;margin-bottom: 5px;"}
+## File-naming convention
 
 Various layers are provided and follow this compact naming convention:
 
@@ -42,14 +53,3 @@ Where
 
 
 
-## Data Sources {style="color: #123774;margin-bottom: 5px;"}
-
-Constellr LST30 leverages data from different missions:
-
--   Lisr, constellr property
--   Landsat 8 and 9 from USGS
--   Era5 and CAMS from CDSAPI
--   MODIS (soon)
--   Sentinel 3 (soon)
-
-*Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).*
