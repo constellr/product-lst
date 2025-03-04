@@ -12,7 +12,8 @@ Temperature is the most critical climate variable, fundamentally governing the w
 <img src="../images/index/freiburg_2023-06-25_tobi_aoi_lst_overlay.png" alt="Second Image">
 </div>
 </div>
-</body>
+<figcaption>Land surface temperature of Freiburg, Germany - June 2023</figcaption>
+</body>  
 
 The costs of global adaptation to a 2°C warming scenario are expected to range between <strong> 150-300bn USD annually by 2030</strong> across the agricultural, urban and infrastructure sectors according to IPCC data. Thermal intelligence will be key in minimizing these costs by supporting decision-makers in measuring, monitoring, and predicting vulnerabilities to drive mitigation strategies.</span>
 
@@ -27,7 +28,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/thermal_insights/Kansas2022.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/Kansas2022.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Crop fields in Kansas, USA - June 2022</figcaption>
 </div>
 <div style="flex: 2;">
@@ -48,7 +49,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
     </p>
   </div>
   <div style="flex: 1;">
-    <img src="../images/thermal_insights/jd_2024-06-23_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/jd_2024-06-23_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>A bare soil field in Iowa, USA - June 2024</figcaption>
   </div>
 </div>
@@ -57,7 +58,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/thermal_insights/rmsi_20210325_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/rmsi_20210325_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Wheat fields in Madhya Pradesh, India - March 2021 </figcaption>
 </div>
 <div style="flex: 2;">
@@ -78,7 +79,7 @@ Urban environments are increasingly experiencing elevated temperatures due to th
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/thermal_insights/milan_2024-12-05_lst_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/milan_2024-12-05_lst_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Milano, Italy - December 2024</figcaption>
 </div>
 <div style="flex: 2;">
@@ -99,7 +100,7 @@ Urban environments are increasingly experiencing elevated temperatures due to th
     </p>
   </div>
   <div style="flex: 1;">
-    <img src="../images/thermal_insights/medellin_2024-07-06_lst_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/medellin_2024-07-06_lst_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Medellin, Colombia - July 2024</figcaption>
   </div>
 </div>
@@ -117,7 +118,7 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/thermal_insights/colorado_road_2024-02-05-LST_zoomedin.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/colorado_road_2024-02-05-LST_zoomedin.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Colorado, USA - February 2024</figcaption>
 </div>
 <div style="flex: 2;">
@@ -138,7 +139,7 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
     </p>
   </div>
   <div style="flex: 1;">
-    <img src="../images/thermal_insights/mercuria_2023-11-14_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/mercuria_2023-11-14_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Power Plant, Kuwait - November 2023</figcaption>
   </div>
 </div>
@@ -147,7 +148,7 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/thermal_insights/kd_2024-04-29_lst_usingNewBasemap_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/kd_2024-04-29_lst_usingNewBasemap_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Greenhouse in the Netherlands - April 2024</figcaption>
 </div>
 <div style="flex: 2;">
