@@ -53,3 +53,15 @@ Where
 
 
 
+=======
+## Data Sources {style="color: #123774;margin-bottom: 5px;"}
+
+Constellr LST30 leverages data from different missions:
+
+-   Lisr, constellr property
+-   Landsat 8 and 9 from USGS
+-   Era5 and CAMS from Copernicus/ECMWF
+-   MODIS (soon)
+-   Sentinel 3 (soon)
+
+*Legal notice: LST30 is comprised of harmonized LST data that are retrieved  by constellr’s in-house technology. It utilizes proprietary data, as well as raw thermal data acquired by the Landsat missions (courtesy of USGS/ NASA), Ecostress (courtasy of NASA), and climatic data (courtesy of Copernicus/ECMWF).*
