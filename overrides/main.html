@@ -8,26 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
+<script>
+    // Function to toggle the sidebar visibility
+    function toggleSidebar() {
+        var sidebar = document.querySelector('.md-sidebar--primary');
+        sidebar.classList.toggle('show');  // Toggle the 'show' class on the sidebar
+    }
+</script>
+
+<script>
+    const images = document.querySelectorAll('.image-container img');
+    let currentIndex = 0;
+
+    setInterval(() => {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+    }, 3000); // Switch every 3 seconds
+</script>
     
-    <hr style="border: none; height: 1px; background-color: #ccc; margin: 40px 0;">
-    <div class="connect">
-        <h3 style="color: #123774;">Connect with Us</h3>
-        <div style="display: flex; gap: 20px; align-items: center; justify-content: center;">
-            <!-- Email Contact -->
-            <a href="mailto:support-csm@constellr.com" class="icon-link">
-                <i class="fab fa-telegram-plane" style="font-size: 38px;"></i> <!-- Bigger icon -->
-            </a>
-        
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/company/constellr/posts/?feedView=all" class="icon-link">
-                <i class="fab fa-linkedin" style="font-size: 38px;"></i> <!-- Bigger icon -->
-            </a>
-        
-            <!-- Website -->
-            <a href="https://www.constellr.com/" target="_blank" class="icon-link">
-                <img src="{{ base_url }}/assets/logo-constellr-dark-icon.svg" alt="Constellr Logo" class="website-logo" style="height: 40px;"> <!-- Bigger logo -->
-            </a>
-        </div>
-        
+<hr style="border: none; height: 1px; background-color: #ccc; margin: 40px 0;">
+<div class="connect">
+    <h3 style="color: #123774;">Connect with Us</h3>
+    <div style="display: flex; gap: 20px; align-items: center; justify-content: center;">
+        <!-- Email Contact -->
+        <a href="mailto:support-csm@constellr.com" class="icon-link">
+            <i class="fab fa-telegram-plane" style="font-size: 38px;"></i> <!-- Bigger icon -->
+        </a>
+    
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/constellr/posts/?feedView=all" class="icon-link">
+            <i class="fab fa-linkedin" style="font-size: 38px;"></i> <!-- Bigger icon -->
+        </a>
+    
+        <!-- Website -->
+        <a href="https://www.constellr.com/" target="_blank" class="icon-link">
+            <img src="{{ base_url }}/assets/logo-constellr-dark-icon.svg" alt="Constellr Logo" class="website-logo" style="height: 40px;"> <!-- Bigger logo -->
+        </a>
     </div>
+    
+</div>
 {% endblock %}
+
+

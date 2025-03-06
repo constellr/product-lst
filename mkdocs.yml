@@ -2,29 +2,28 @@
 # Just don't activate github page then 'mkdocs gh-deploy --clean'
 
 site_name: Knowledge Center
-site_url: https://constellr.github.io/product-lst/
-repo_url: https://github.com/constellr/product-lst
-repo_name: constellr/product-lst
+site_url: https://github.com/constellr/product-lst
 
 edit_uri: https://github.com/constellr/product-lst/tree/main/docs/
 nav:
   - Home: index.md
   - Our Technology: our-technology.md
+  - Use Cases: use-cases.md
   - Product Portfolio: 
     - Constellr's product offer: Constellr-product-offer.md
-    - Product deliverables: product-deliverables.md
     - Technical specifications: Technical-specification.md
-  - Insights: use-cases.md
+    - Product deliverables: product-deliverables.md
   - End User Platform Documentation:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
-  - Explorer Lab: demo.md
+  - Explorer Lab: 
+    - demo.md
+    - Introduction to LST: introduction-to-lst.md
+
  
 
 theme:
   name: material
-  #show_toc: false
-  #toc_depth: 1;
   favicon: assets/logo-constellr-dark-icon.svg
   logo: assets/logo-constellr-dark-icon.svg
   features:
@@ -33,28 +32,30 @@ theme:
 
   custom_dir: overrides
 
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      accent: orange
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+  #this would create the sun button to change between light and dark mode but it didn't work
+  # palette:
+  #   # Palette toggle for light mode
+  #   - scheme: default
+  #     toggle:
+  #       icon: material/brightness-7
+  #       name: Switch to dark mode
+  #   - scheme: slate
+  #     accent: orange
+  #     toggle:
+  #       icon: material/brightness-4
+  #       name: Switch to light mode
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css
+  - https://fonts.googleapis.com/icon?family=Material+Icons
 
 strict: true
 
-  
 markdown_extensions:
   - attr_list
   - md_in_html
   - footnotes
-  - pymdownx.arithmatex:
+  - pymdownx.arithmatex: # only when using mathematical expressions with MathJax/Katex - not being used imo
       generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -64,9 +65,9 @@ markdown_extensions:
       alternate_style: true
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - javascripts/mathjax.js #imo not needed, for math equations, no javascripts folder either
   - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #imo not needed, for math equations
 
 plugins:
   - search
