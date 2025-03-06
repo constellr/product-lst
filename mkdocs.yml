@@ -16,7 +16,10 @@ nav:
   - End User Platform Documentation:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
-  - Explorer Lab: demo.md
+  - Explorer Lab: 
+    - demo.md
+    - Introduction to LST: introduction-to-lst.md
+
  
 
 theme:

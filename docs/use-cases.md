@@ -58,7 +58,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/rmsi_20210325_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/rmsi_20210325_lst-min.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Wheat fields in Madhya Pradesh, India - March 2021 </figcaption>
 </div>
 <div style="flex: 2;">
