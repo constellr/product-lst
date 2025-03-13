@@ -5,7 +5,7 @@
 
 <div style="display: flex; align-items: flex-start; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="../images/water-stress/corn.jpg" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/corn.jpg" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Figure 1: A corn field after canopy closure <br> (photo credit Charlie Siggs)</figcaption>
 </div>
 <div style="flex: 2;">
@@ -18,7 +18,7 @@
 In many parts of the United States, corn fields are circular, shaped by the sweeping arms of center-pivot irrigation systems. These systems rotate around a central point, delivering water evenly across the field to support the crop's growth. From above, these circular fields look like giant green disks against the earth’s surface (**Figure 2**). Satellites capture this unique geometry while also providing detailed information about the field's condition.  
 
 <div>
-    <img src="../images/water-stress/circular-corn-field.jpg" alt="Thermal Overview" style="max-width: 600px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/circular-corn-field.jpg" alt="Thermal Overview" style="max-width: 600px; height: auto;">
     <figcaption style="white-space: nowrap;">Figure 2: Circular corn fields as viewed from the ground and from space </figcaption>
 </div>
 
@@ -30,23 +30,23 @@ In many parts of the United States, corn fields are circular, shaped by the swee
     </p>
 </div>
 <div style="flex: 1;">
-    <img src="../images/water-stress/NDVI-time-series.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/NDVI-time-series.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Figure 3: NDVI time-series of a corn field <br> in Kansas, USA</figcaption>
 </div>
 </div> 
 
 On the other hand, it is essential to understand the importance of temperature and water at different growth stages (**Figure 4**). During healthy growth, the corn canopy cools the surface by shading the soil and releasing moisture through transpiration. At critical times, such as crop establishment or pollination, further information, such as field level meteorological or field-sensor data are needed to understand the crop status.  This data can be provided through in-field weather stations and soil sensors, but these are limited by cost and area of coverage. 
 
-![growth stages](images/water-stress/growth-stages.png){: style="height:450px"}
+![growth stages](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/growth-stages.png){: style="height:450px"}
 <figcaption>Figure 4: The different growth stages of corn and the phases where temperature and water are critical </figcaption>
 
 <br>
 Considering one field that has a sector that is not well irrigated in the red triangle shown in **Figure 5**, we can detect this stress using thermal data before you can catch it with a vegetation index such as NDVI. 
 
-![rgb timeline](images/water-stress/RGB-TS2.png){: style="height:250px"}
+![rgb timeline](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/RGB-TS2.png){: style="height:250px"}
 <figcaption> Figure 5: Timeline of a corn field after canopy closure with a segment that is not well irrigated (bounded by the red triangle) </figcaption>
 
-![lst heatmap](images/water-stress/water-stress-lst.png){: style="height:250px"}
+![lst heatmap](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-lst.png){: style="height:250px"}
 <figcaption> Figure 6: LST maps of the field showing the temperature variation with the segment of the fields that is not well irrigated shown in the red triangle </figcaption>
 
 By using just a few thermal images of [**constellr’s LST30**](lst30.md), acquired during the early vegetation growth stage of corn (from June 11 to June 28), LST can already identify a substantial portion of pixels deemed abnormal throughout the entire vegetation growth period (indicated by the red triangle, **Figure 6**). On the other hand, NDVI needed additional images (from June 11 to July 22) to flag a significant number of pixels as abnormal. Using machine learning techniques, such as One-Class Support Vector Machine (OC-SVM), patterns can be identified in an automated manner where anomalies that deviate significantly from the norm within a corn field can be detected.  

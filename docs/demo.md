@@ -15,7 +15,7 @@ Do you want to get started using land surface temperature to derive temperature-
 
     ---
 
-    ![toulouse](images/thermal_insights/Kansas2022.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![toulouse](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/Kansas2022.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Kansas, US
     * April - July 2022
@@ -38,7 +38,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
 
     ---
 
-    ![baresoil monitoring](images/demo/baresoil_newcolourscale.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![baresoil monitoring](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/baresoil_newcolourscale-min.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
 
     * Iowa, US
@@ -52,7 +52,7 @@ Our current offer entails fusioned land surface temperature data layers from a v
      
     ---
   
-    ![Urban Heat Island](images/demo/toulouse_newcolourscale.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![Urban Heat Island](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse_newcolourscale-min.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Toulouse, France
     * 16th June 2021
@@ -76,7 +76,7 @@ Upon launch of our own satellites in January 2025, we will have an exclusive hig
 
     ---
 
-    ![toulouse](images/demo/toulouse_urban.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![toulouse](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse_urban-min.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     * Hive synthetic data
     * Toulouse, France
