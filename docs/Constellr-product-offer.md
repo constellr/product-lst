@@ -16,7 +16,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
     
     **Large coverage for regional monitoring**
 
-    ![LSTfusion](images/portfolio/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -32,7 +32,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     **High accuracy for high-value asset monitoring**
     
-    ![LSTprecision](images/portfolio/toulouse-dms30-capture.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTprecision](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-dms30-capture-min.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -47,7 +47,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     **High resolution for zooming in on anomalies**
   
-    ![LSTzoom](images/portfolio/toulouse-capture.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTzoom](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-capture-min.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -70,7 +70,7 @@ If you want to already  explore the benefits of high-resolution land surface tem
 
     **Large coverage for regional monitoring**
 
-    ![LST30](images/portfolio/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LST30](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
