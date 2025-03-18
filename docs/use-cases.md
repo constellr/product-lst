@@ -8,8 +8,8 @@ Temperature is the most critical climate variable, fundamentally governing the w
 <body>
 <div class="wrapper" style= 'margin-top: 0; margin-bottom: 0;'>
 <div class="image-container">
-<img src="../images/index/freiburg_2023-06-25_tobi_aoi_basemap.png" alt="First Image" class="active">
-<img src="../images/index/freiburg_2023-06-25_tobi_aoi_lst_overlay.png" alt="Second Image">
+<img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_basemap-min.png" alt="First Image" class="active">
+<img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_lst_overlay-min.png" alt="Second Image">
 </div>
 </div>
 <figcaption>Land surface temperature of Freiburg, Germany - June 2023</figcaption>
