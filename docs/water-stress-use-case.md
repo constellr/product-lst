@@ -64,7 +64,7 @@ For example, when parts of a field experience water stress, the plant stomata cl
 </div>
 ---
 
-Special thanks to Charlie Siggs, Nicolas Chamberland, Loic Quertenmont, Elsy Ibrahim, Rosa Schmidt, and Yan de Paoli for their valuable contributions to this study and its documentation. Their insights, dedication, and support played a key role in shaping this work.  
+Special thanks to Charlie Siggs, Nicolas Chamberland, Loic Quertenmont, Elsy Ibrahim, Rosa Schmidt, Yan de Paoli, and Lena Rester for their valuable contributions to this study and its documentation. Their insights, dedication, and support played a key role in shaping this work.  
 
 <br>
 <h2 style="margin-top: 10px; margin-bottom: 10px; color: #24398F;">Download demo data</h2>
