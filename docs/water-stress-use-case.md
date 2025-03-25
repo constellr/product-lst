@@ -1,7 +1,12 @@
-<h1 <span style="color: #202A78;margin-bottom: 5px;">Detecting water stress using spaceborne LST </span></h1>
-<h2 style="margin-top: 10px; margin-bottom: 10px; color: #24398F;"><em>Crop Stress Monitoring</em></h2>
+<h1 <span style="color: #202A78;margin-bottom: 5px;">Detecting water stress using spaceborne LST </span></h1>  
 
-<br>
+## Graphical Summary
+![Graphical Abstract](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-story-graphical-abstract.png)  
+
+[Download the graphcial abstract her.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-story-graphical-abstract.png)  
+
+
+## Crop Stress Monitoring
 
 <div style="display: flex; align-items: flex-start; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
@@ -74,4 +79,4 @@ The demonstration data provides you with csv files containing a timeseries of th
 
 [LST timeseries for the irrigated part of the field](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/Well_irrigated_corn_LST+(1).csv)  
 
-NDVI mean and quantiles of the field  
+[NDVI median of the field](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/corn_ndvi_median.csv)
