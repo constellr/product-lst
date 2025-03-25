@@ -162,26 +162,6 @@ img {
 
 
 /* Sidebar and Navigation Customization */
-/* Initially hide the sidebar on small screens */
-@media (max-width: 768px) {
-    .md-sidebar--primary {
-        display: none;  /* Hide sidebar by default */
-    }
-
-    /* Style the hamburger button */
-    .sidebar-toggle {
-        display: block;  /* Show the hamburger menu */
-        background: none;
-        border: none;
-        font-size: 30px;
-        color: #fff;
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 1000;
-    }
-}
 
 /* Make the sidebar visible when toggled */
 .md-sidebar--primary.show {
