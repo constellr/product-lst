@@ -1,9 +1,9 @@
 <h1 <span style="color: #202A78;margin-bottom: 5px;">Detecting water stress using spaceborne LST </span></h1>  
 
 ## Graphical Summary
-![Graphical Abstract](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-story-graphical-abstract.png)  
+<img class= graph_abstract src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png">
 
-[Download the graphcial abstract her.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-story-graphical-abstract.png)  
+[Download the graphcial abstract her.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png)  
 
 
 ## Crop Stress Monitoring
