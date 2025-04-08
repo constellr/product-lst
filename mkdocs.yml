@@ -7,17 +7,20 @@ site_url: https://github.com/constellr/product-lst
 edit_uri: https://github.com/constellr/product-lst/tree/main/docs/
 nav:
   - Home: index.md
+  - Thermal Insights: use-cases.md
   - Our Technology: our-technology.md
-  - Use Cases: use-cases.md
   - Product Portfolio: 
     - Constellr's product offer: Constellr-product-offer.md
     - Technical specifications: Technical-specification.md
     - Product deliverables: product-deliverables.md
+    - LST30: lst30 copy.md
   - End User Platform Documentation:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
-  - Explorer Lab: demo.md
-    #- Introduction to LST: introduction-to-lst.md
+  - Explorer Lab: 
+    - LST Essentials: lst-essentials.md
+    - Demo data: demo.md
+    
 
  
 

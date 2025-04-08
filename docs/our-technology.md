@@ -1,22 +1,67 @@
 # **Our Technology** 
 
+## HiVE microsatellites
+*Delivering insights never seen before.*  
 
-constellr is is at the forefront of precise thermal monitoring from space by developing an unparalleled <strong>thermal intelligence atlas of our planet</strong>. The atlas is a constantly updated view of the surface temperature across the globe, providing real-time high-precision insights into the water & carbon cycles it shapes. The atlas leverages constellr's proprietary advanced satellite technology and data fusion combined with biophysical modelling and AI-powered analytics to transform how we understand and manage the Earth’s resources.  
+Our state-of-the-art microsatellite constellation is the High-Precision Versatile Ecosphere (HiVE) monitoring mission. It is a constellation of microsatellites, the SkyBees. These SkyBees are in the 120 kg class, flying in constellation in the same (or similar) sun-synchronous orbital plane. The Skybees orbit Earth at an altitude between 510 km and 590 km with a goal lifetime of 5 years for each satellite. Overpass time is 11:30 am for SkyBee-1 and 1:30pm is planned for SkyBee-2.  
+ 
+ 
+HiVE aim is to delivers Land Surface Temperature data (LST) at a 1-day global temporal resolution, 30 m spatial resolution (in the thermal infrared, TIR), and better than 2K absolute temperature accuracy. HiVE aims at providing near-real-time temperature mapping across the planet. If it’s visible from space, be it snow, crops, rooftops, or forest canopies, we can track its temperature. The comprehensive thermal intelligence we record acts as both a real-time data source and a continuously updated input for calibrating broader data environments. 
 
-Our technology delivers the market's most accurate and dependable thermal data, and specifically land surface temperature (LST). LST is not measured from space but determined using the best of constellr's acquisitions of thermal, visible, and near infra-red data. 
+![HiVE Journey](Link)
+<figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption>
 
-Precision farming and other use cases, demand highly accurate data, such as a stable observation time (like 10 AM) and temperature readings with a precision of 2K. To meet these needs, we’re launching a  constellation of satellites equipped with advanced imaging technology.
+## Mission Snapshot
+The HiVe mission is owned and operated by constellr and is deployed in orbit via ride-share procured from a third-party launch provider. The ground segment features multiple ground stations, mission planning, tasking and constellation management functions, as well as User Request I/O and data processing and storage functions. The uniqueness of HiVe is in providing a quantum leap in payload cost efficiency, leveraging our patented virtual calibration technology. Employing thermally stabilized optical systems, cryo-cooled sensors, and a cooperative approach with existing space infrastructure, allows for measurement accuracy comparable to large satellites on a microsatellite platform. 
 
-<h2>Technical details</h2>
+![Workflow](Link)
+<figcaption>Figure 2: Planning and processing workflow.</figcaption>
 
-The satellites feature a Long-Wave Infrared (LWIR) imager, which captures temperature readings at the field level with a 30-meter resolution. This allows us to monitor the temperature of specific areas with great detail.
-Paired with the LWIR is a Visible and Near-Infrared (VNIR) imager, which not only provides crucial data to support accurate temperature measurements but also helps us identify field boundaries and locate specific areas within those fields. Together, these tools ensure that customers get the precise, reliable data they need to optimize their operations.  
+## Payload Overview
+HiVE’s payload is composed of three main elements: a Thermal Infrared (TIR) Instrument, a Visible and Near Infrared (VNIR) Instrument, and a Data Processing Unit (DPU). A Thermal Control System that includes a Heater Control Unit, a Focus Motor Control Unit, and a radiator, is also part of the payload. The total payload mass is 29.17 kg, margins at subsystem and component levels included. 
+ 
+The payload is designed as a push-frame imaging system, meaning that multiple spectral bands are consecutively recorded in a push-broom configuration while the field of view of the remote sensing instrument sweeps over the surface of Earth.  
+ 
+The payload is designed such that it can operate either in mapping mode, where continuous stripes are recorded, or in targeting mode, where specific targets are pre-selected and then recorded within the field-of-regard of the satellite. The complete payload assembly is shown in the figure below. 
 
-Our space journey begins with the deployment of the High-precision Versatile Ecosphere (HiVE) monitoring satellite constellation, with the first satellite already launched on 15.01.2025. HiVE will operate in a sun-synchronous orbit at an altitude of approximately 500 km, marking a crucial step in our Earth Observation Thermal revolution. The two payloads on HiVE are thus one thermal infrared cryocool MCT sensor capturing Long-Wave Infrared (LWIR) imagery in 4 bands ranging from 8,5 µm to 11,5µm at a native spatial resolution of 30 meters. And one Visible and Near-Infrared (VNIR) imager, imaging on 11 spectral bands in the 400 to 980 nm range, aligned to Sentinel-2 bands, and capturing details at a resolution of 10 meters. The sensors will allow LST measurements with a precision level of 2K. 
+![Payload](Link)
+<figcaption>Figure 3: HiVE payload assembly.</figcaption>
 
-<h2>Capability Statement</h2>
+## TIR & VNIR instruments
+*The TIR instrument is HiVE's payload core.*  
+It will retrieve Land Surface Temperature (LST) data while utilizing the VNIR sensor will be used for georeferencing, emissivity estimation and cloud detection. The TIR imager is an actively cooled Long Wave Infrared Imager that uses a Mercury-Cadmium-Telluride (MCT) sensor. It achieves a 28.9 m Ground Sampling Distance (GSD) and an 18.5 km swath width at an altitude of 540km. 
 
+TABLE
+<figcaption>Table 1: Spectral bands in the TIR range.</figcaption>
 
+At a nominal altitude of 540km, the **VNIR camera** has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. Dependent on the bands the data is later on binned to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. Furthermore, the camera also provides a broad panchromatic band. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in table 2.
+
+TABLE
+<figcaption>Table 2: VNIR band configuration.</figcaption>
+
+Thus, together, the VNIR and TIR instruments provide 4 thermal and 10 visible and near infrared bands to enable precise geolocation, atmospheric correction, and cloud detection. 
+
+## Cryocooler Sensor
+The cryocooled infrared sensors are at the heart of delivering high-quality, high-resolution thermal data from space. Operating at temperatures around 70 Kelvin (-200°C), these sensors significantly reduce sensor noise, improve signal-to-noise ratios, and ensure minimal thermal drift over time. By cooling the Mercury-Cadmium-Telluride (MCT) detectors to such low temperatures, constellr’s satellites are capable of detecting subtle variations in thermal energy that would be invisible to standard EO satellites. 
+
+Cryocooling technology enables constellr’s HiVE satellites to maintain temperature accuracy within 1–2 Kelvin, while offering a 30 m spatial resolution. This level of sensitivity and precision is crucial for applications such as monitoring crop health, managing urban heat islands, and assessing industrial energy efficiency. The use of cryocooled sensors ensures that data remains consistent, accurate, and actionable over time. 
+
+By integrating cryocooler sensors with advanced multi-band thermal imaging and regular calibration protocols, constellr ensures the highest quality thermal data for commercial applications. This approach democratizes access to thermal intelligence, providing industries with the insights they need to make informed decisions in response to climate change and resource management challenges. 
+
+## Data Quality and Validation
+The HiVE data quality is assessed by defined high standards for all Cal/Val activities. The HiVE Cal/ Val activities are supported by ESA within the ESA programs InCubed and Copernicus Contributing Mission (CCM).  
+
+## Acquisition Scenarios
+The HiVE constellation is primary planned as a tasking-based mission with off-nadir pointing capabilities up to ±30◦ . For 2025, this enables an average revisit time of two days with the first two satellites, and reaching daily revisit with five satellites (2027+). 
+
+## Key Innovation
+constellr’s key innovation is a patented architecture to enable high-quality infrared imaging on microsatellites. So far, this was only possible with bus-sized systems costing hundreds of millions of Euros. Using our pioneering technology, we can reduce the cost of the satellites by a factor of around 30 at comparable performance levels. There are three key innovations related to our core expertise to (1) deliver precise information, (2) near real-time LST retrieval, and (3) the advanced processing algorithms and fusion of data sources to improve and extend the constellr LST products.  
+ 
+In summary, HiVe’s features allow to ensures absolute temperature accuracy and reliability of the data for high precision analysis. The full constellation of satellites ensures daily coverage for target regions by 2027. Its sunsynchronous orbit ensures comparability of data over time, making it well-suited for trend analysis. Finally, with its day and night imagery, it enabling critical insights for optimal decision-making by 2026. 
+
+----------
+
+## Capability Statement
 This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+PUBLIC+v1.3.pdf)
 
 

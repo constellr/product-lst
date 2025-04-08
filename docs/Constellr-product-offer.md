@@ -66,7 +66,7 @@ If you want to already  explore the benefits of high-resolution land surface tem
 
 <div class="grid cards" markdown>
 
--   __LST30__
+-   [__LST30__](https://constellr.github.io/product-lst/lst30/)
 
     **Large coverage for regional monitoring**
 
@@ -79,7 +79,6 @@ If you want to already  explore the benefits of high-resolution land surface tem
     * Algorithm enhanced public data
     * Large area coverage
 
-    [:octicons-arrow-right-24: Available today](lst30.md)
 
 
 

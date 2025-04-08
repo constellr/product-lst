@@ -27,21 +27,63 @@
 
 Welcome to constellr's centralized source of technical information regarding available datasets and products. We created this knowledge center to empower our customers and partners to engage with constellr's thermal products more effectively. It is a dynamic space and is continuously updated with the most relevant information.    
 
-In this knowledge center, you can find information about:  
-
-- Our Technology: how constellr creates high-resolution LST data  
-
-- Use Cases: learn about interesting real-life applications of constellr's LST data  
-
-- Product Portfolio: dive into the details of constellr's LST data, such as metadata and formats  
-
-- Explorer Lab: obtain demo datasets that interests you in the Explorer Lab.  
-
-- FAQ: Any questions that aren't yet answered? Maybe you will find your answer here!  
-
 <h2>Discover the Knowledge Center</h2>
 
-   
+In this knowledge center, you can find information about:  
+
+<center>How constellr creates high-resolution LST data:</center>  
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">
+      <span class="material-icons" >map</span> <a href="https://constellr.github.io/product-lst/our-technology/" style="color: black;">Our Technology</a>
+    </h5>
+  </div>
+</div>
+
+<center>Learn about interesting real-life applications of constellr's LST data:</center>  
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">
+      <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Thermal Insights</a>
+    </h5>
+  </div>
+</div>
+
+<center>Dive into the details of constellr's LST products:</center>  
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">
+      <span class="material-icons">satellite_alt</span> <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">Product Portfolio</a>
+    </h5>
+  </div>
+</div>
+
+<center>Obtain demo datasets that interests you in the Explorer Lab:</center>  
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">
+      <span class="material-icons" >search</span> 
+      <a href="https://constellr.github.io/product-lst/demo/" style="color: black;" >Explorer Lab</a>
+    </h5>
+  </div>
+</div>
+
+<center>Any questions that aren't yet answered? Maybe you will find your answer here!</center>  
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">
+      <span class="material-icons" >help_outline</span> <strong>FAQ</strong></h5>
+  </div>
+</div>
+
+
+
+
+
+
+## old stuff
+
+
 </style>
 </head>
 <body>

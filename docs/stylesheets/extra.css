@@ -72,6 +72,10 @@ img {
     margin: auto;
 }
 
+.graph_abstract {
+    width: 80%;
+}
+
 /*designs grid layout*/
 .md-typeset .grid{
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -88,12 +92,16 @@ img {
 /*design card on first page*/
 /* Custom Styles for Cards */
 .card {
-    height: 100%; /* Ensure all cards have the same height */
+    width: 250px; /* Fixed width to make them smaller */
+    margin: 5px auto; /* Space around each card */
+    height: 50px; 
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: #160A42; /* Blue background */
     color: #EE9219EA; /* Red text */
     border: none;
+    border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -107,12 +115,13 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
+    height: 50px;
 }
 
 .card-title {
     color: #EE9219EA !important;
     display: flex;
+    font-size: 12px;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -125,7 +134,7 @@ img {
 }
 
 .material-icons {
-    font-size: 32px;
+    font-size: 20px;
     vertical-align: middle;
     color: #EE9219EA;
     line-height: 1;

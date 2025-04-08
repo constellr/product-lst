@@ -9,6 +9,117 @@
 </head>
 
 <script>
+    window.onload = function() {
+        const introSection = document.getElementById("introSection");
+        let lastScrollY = 0;
+        let isSlidingUp = false;
+
+        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+            window.addEventListener("scroll", function() {
+                const currentScrollY = window.scrollY;
+
+                // Slide up only if scrolled down significantly
+                if (currentScrollY > 100 && !isSlidingUp) {
+                    introSection.classList.add("slide-up");
+                    isSlidingUp = true;
+                }
+
+                // Slide down if scrolling back to top
+                if (currentScrollY < 1 && isSlidingUp) {
+                    introSection.classList.remove("slide-up");
+                    isSlidingUp = false;
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        } else {
+            // Hide the intro on other pages
+            if (introSection) {
+                introSection.style.display = "none";
+            }
+        }
+    };
+</script>
+
+
+<div class="intro-section" id="introSection">
+    <div class="intro-content">
+        <h1> <span style= 'color: #EE9219EA;' >Welcome to constellr's Knowledge Center</span></h1>
+        <p><center>Explore constellr's technology, learn about different applications of LST data, and download our demo LST data.</center></p>
+        <div class="button-container">
+        <a href="https://constellr.github.io/product-lst/demo/" class="intro-button">Download Demo Data</a>
+        <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="intro-button">Product Offer</a>
+        </div>
+
+        <p class="arrow-text">&darr; Get started &darr;</p>
+    </div>
+</div>
+
+<style>
+    .intro-section {
+    position: fixed; /* Stay at the top */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/LiSR-2.png'); /* Add your image URL here */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    transition: transform 0.5s ease;
+    z-index: 1000; /* Ensure it’s on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+    .intro-content {
+        max-width: 800px;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .intro-button {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 30px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+    .intro-button:hover {
+        background-color: #0056b3;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    /* Style to make it scroll up with the page */
+    .slide-up {
+        transform: translateY(-100%);
+    }
+    .arrow-text {
+        margin-top: 20px;
+        color: #EE9219EA;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+<script>
     // Function to toggle the sidebar visibility
     function toggleSidebar() {
         var sidebar = document.querySelector('.md-sidebar--primary');
