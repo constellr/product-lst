@@ -8,13 +8,13 @@ Our state-of-the-art microsatellite constellation is the High-Precision Versatil
  
 HiVE aim is to delivers Land Surface Temperature data (LST) at a 1-day global temporal resolution, 30 m spatial resolution (in the thermal infrared, TIR), and better than 2K absolute temperature accuracy. HiVE aims at providing near-real-time temperature mapping across the planet. If it’s visible from space, be it snow, crops, rooftops, or forest canopies, we can track its temperature. The comprehensive thermal intelligence we record acts as both a real-time data source and a continuously updated input for calibrating broader data environments. 
 
-![HiVE Journey](Link)
+![HiVE Journey](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/HiVE-journey.png)
 <figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption>
 
 ## Mission Snapshot
 The HiVe mission is owned and operated by constellr and is deployed in orbit via ride-share procured from a third-party launch provider. The ground segment features multiple ground stations, mission planning, tasking and constellation management functions, as well as User Request I/O and data processing and storage functions. The uniqueness of HiVe is in providing a quantum leap in payload cost efficiency, leveraging our patented virtual calibration technology. Employing thermally stabilized optical systems, cryo-cooled sensors, and a cooperative approach with existing space infrastructure, allows for measurement accuracy comparable to large satellites on a microsatellite platform. 
 
-![Workflow](Link)
+![Workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/Work-process-flow.png)
 <figcaption>Figure 2: Planning and processing workflow.</figcaption>
 
 ## Payload Overview
@@ -31,12 +31,29 @@ The payload is designed such that it can operate either in mapping mode, where c
 *The TIR instrument is HiVE's payload core.*  
 It will retrieve Land Surface Temperature (LST) data while utilizing the VNIR sensor will be used for georeferencing, emissivity estimation and cloud detection. The TIR imager is an actively cooled Long Wave Infrared Imager that uses a Mercury-Cadmium-Telluride (MCT) sensor. It achieves a 28.9 m Ground Sampling Distance (GSD) and an 18.5 km swath width at an altitude of 540km. 
 
-TABLE
+| Filter Number | Central Wavelength [µm] | FWHM [nm] |
+| ------------- | ----------------------- | --------- |
+| 01 | 8.6 | 300 |
+| 02 | 9.2 | 300 |
+| 03 | 10.6 | 500 |
+| 04 | 11.75 | 500 |  
 <figcaption>Table 1: Spectral bands in the TIR range.</figcaption>
 
 At a nominal altitude of 540km, the **VNIR camera** has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. Dependent on the bands the data is later on binned to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. Furthermore, the camera also provides a broad panchromatic band. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in table 2.
 
-TABLE
+| Filter Number | Central Wavelength [µm] | FWHM [nm] | Targeted GSD [m] |
+| ------------- | ----------------------- | --------- | ---------------- |
+| 1 | 443 | 20 | 60 |
+| 2 | 490 | 65 | 10 |
+| 3 | 560 | 35 | 10 |
+| 4 | 665 | 30 | 10 |
+| 5 | 705 | 15 | 20 |
+| 6 | 740 | 15 | 20 |
+| 7 | 783 | 20 | 20 |
+| 8 | 842 | 115 | 10 |
+| 9 | 865 | 20 | 20 |
+| 10 | 945 | 20 | 60 |
+| 11 (PAN) | 625 | 250 | 10 |  
 <figcaption>Table 2: VNIR band configuration.</figcaption>
 
 Thus, together, the VNIR and TIR instruments provide 4 thermal and 10 visible and near infrared bands to enable precise geolocation, atmospheric correction, and cloud detection. 
