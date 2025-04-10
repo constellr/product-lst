@@ -13,7 +13,7 @@ Do you want to get started using land surface temperature to derive temperature-
 Our use case stories are in-depth examples of what LST data can achieve. Each story outlines a research question and is accompanied with a dataset to answer the question. 
 
 <h3><a href="https://constellr.github.io/product-lst/water-stress-use-case/">Detecting water stress in crop fields using LST30</a></h3>
-<img class= graph_abstract src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-story-graphical-abstract.png">
+<img class= graph_abstract src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png">
 
 
 
