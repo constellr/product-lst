@@ -1,5 +1,5 @@
 # **Thermal Insights**
-<h2 <span style= 'color: #24398F;margin-top: 0;'><em>Scientifically sound decision-making across industries</em></span></h2>
+<h2 <span style= 'margin-top: 0;'><em>Scientifically sound decision-making across industries</em></span></h2>
 
 
 <br>
@@ -19,7 +19,7 @@ The costs of global adaptation to a 2°C warming scenario are expected to range 
 
 ---------------------
 ## **Vegetation Intelligence** {style="margin-bottom: 5px; text-align: center;"}
-<h2 <span style= 'color: #24398F;margin-top: 0;'><center><em>Producing more with less</em></center></span></h2>
+<h2 <span style= 'margin-top: 0;'><center><em>Producing more with less</em></center></span></h2>
 
 
 Agriculture already uses 70% of all accessible freshwater, but with the global population expected to reach 10 billion by 2050, food production must increase by 60% to feed the world. Agriculture faces immense pressure to produce more with less. By providing real-time, high-resolution temperature data, we enable precision farming like never before. Our insights empower you to optimize water use, boost yields, and ensure your land works harder for you – sustainably. With constellr's thermal intelligence, you can make every decision count, transforming the way you grow, harvest, and manage resources. constellr’s thermal data provides a holistic picture of soil and plant health, enabling accurate yield predictions, water optimisation and crop profitability.  
@@ -32,7 +32,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
     <figcaption>Crop fields in Kansas, USA - June 2022</figcaption>
 </div>
 <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Crop Stress Monitoring</h3>
+    <h3 style="margin: 0;">Crop Stress Monitoring</h3>
     <p>
     Healthy vegetation is the foundation of successful farming, and subtle changes in temperature can reveal stress before it’s visible. Plant stress that goes unnoticed can lead to reduced yields, wasted water, and the spread of disease. Agribusinesses, retailers, and farmers use thermal data to detect these shifts early, giving them time to take mitigating action and preserve yields.
     </p>
@@ -43,7 +43,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
   <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Soil Temperature Monitoring</h3>
+    <h3 style="margin: 0;">Soil Temperature Monitoring</h3>
     <p>
       Deciding when to plant and how deep to plant into cold soils post winter can be challenging. LST helps agribusinesses, farmers and food chain companies understand the spatial distribution of soil temperature across a field to determine when and how deep to plant, maximizing crop yields from the beginning of the season on.
     </p>
@@ -62,7 +62,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
     <figcaption>Wheat fields in Madhya Pradesh, India - March 2021 </figcaption>
 </div>
 <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Biomass and Yield Monitoring</h3>
+    <h3 style="margin: 0;">Biomass and Yield Monitoring</h3>
     <p>
         Canopy temperature analysis is detecting changes in plant transpiration hinting at crop stress. Thermal data can provide this information up to two weeks earlier than current tools, enabling food chain companies, financial institutions and traders to spot crop stress with negative implications for yield before the broader market is aware.
     </p>
@@ -71,7 +71,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 --------------
 ## **Urban Climate Resilience** {style="margin-bottom: 5px; text-align: center;"}
-<h2 <span style= 'color: #24398F;margin-top: 0;'><center><em>Beat the Heat</em></center></span></h2>
+<h2 <span style= 'margin-top: 0;'><center><em>Beat the Heat</em></center></span></h2>
 
 Urban environments are increasingly experiencing elevated temperatures due to the Urban Heat Island (UHI) effect, where dense infrastructure absorbs and retains heat. This phenomenon exacerbates health risks with 61% of the world population living in urban environments today. The costs from heat-related stress alone are expected to reach close to a trillion USD annually by 2050 according to a Rockefeller report. Addressing UHIs through urban planning and green infrastructure is essential to mitigate these health risks and economic burdens, causing municipalities to significantly increase their spend on heat mitigation measures. New York City alone expects to spend 55m USD on heat mitigation by 2030. Additionally, UHIs contribute to increased energy consumption due to higher demand for air conditioning, further straining urban infrastructure and escalating costs. constellr's thermal intelligence helps to identify heat-vulnerable areas for targeted intervention and can support the scalable measurement of the effectiveness of mitigation measures. Thanks to its highly accurate thermal measurements capturing even fine contrasts in temperature variation, constellr enables evidence-based urban planning.
 
@@ -83,7 +83,7 @@ Urban environments are increasingly experiencing elevated temperatures due to th
     <figcaption>Milano, Italy - December 2024</figcaption>
 </div>
 <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Urban heat islands</h3>
+    <h3 style="margin: 0;">Urban heat islands</h3>
     <p>
     In urban environments, constellr’s ability to detect subtle absolute temperature variations helps to identify urban heat islands, areas where human activity and infrastructure result in higher temperatures. Urban heat islands are becoming a growing concern as cities expand and temperatures rise. Our thermal intelligence helps urban planners and governments to pinpoint temperature hotspots within urban areas, identifying zones with excessive heat. This data supports governments and city planners in developing targeted strategies to reduce heat and improve the liveability of their cities.
     </p>
@@ -94,7 +94,7 @@ Urban environments are increasingly experiencing elevated temperatures due to th
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
   <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Heat mititgation measures</h3>
+    <h3 style="margin: 0;">Heat mititgation measures</h3>
     <p>
       Urban vegetation and other heat mitigation measures play a crucial role in reducing heat island effects, improving air quality, and enhancing biodiversity. From trees and parks to green roofs, constellr's thermal intelligence helps urban planners, architects and project developers to track the temperature-reducing effect of mitigation measures on street level, while also enabling monitoring of vegetation health, water usage, and stress levels, enabling better management of urban greenery.
     </p>
@@ -109,7 +109,7 @@ For more information see our webinar/sign up to one of our webinars: [adjust lin
 
 ---------------------
 ## **Resilient Infrastructure** {style="margin-bottom: 5px; text-align: center;"}
-<h2 <span style= 'color: #24398F;margin-top: 0;'><center><em>Minimize Risks</em></center></span></h2>
+<h2 <span style= 'margin-top: 0;'><center><em>Minimize Risks</em></center></span></h2>
 
 Critical infrastructure—including transport networks, energy systems, and industrial sites—faces increased risks from thermal stress, material degradation, and extreme weather, leading to higher maintenance costs. Currently, global maintenance expenditures for transport infrastructure alone are substantial; for instance, the International Energy Agency (IEA) estimates that combined operations, maintenance, and infrastructure additions in land transport could cost up to a trillion USD by 2050. 
 constellr's thermal intelligence, powered by high-resolution land surface temperature data, offers a proactive solution by identifying vulnerabilities such as heat-induced material fatigue, pipeline leaks, and overheating equipment. Early detection through thermal monitoring reduces damages, prevents costly failures, and optimizes maintenance by targeting high-risk areas, thereby extending asset lifespans and minimizing unscheduled downtime. Integrating thermal intelligence into infrastructure management enhances resilience, lowers maintenance costs, and enables adaptation to the escalating impacts of climate change.
@@ -122,7 +122,7 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
     <figcaption>Colorado, USA - February 2024</figcaption>
 </div>
 <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Transport infrastructure</h3>
+    <h3 style="margin: 0;">Transport infrastructure</h3>
     <p>
     Temperature extremes can severely affect road conditions, leading to cracks, ice, and increased wear and tear. Our thermal intelligence helps monitor surface temperatures across road networks, enabling timely interventions for maintenance and repair. Instead of road-level sensors, which are expensive to implement and only offer coverage of specific areas, constellr’s thermal intelligence can monitor large regions simultaneously, ideal for tracking temperature trends across entire cities or highway networks. Whether it's detecting freeze-thaw cycles in winter or identifying heat-induced tarmac damage in summer, municipalities and maintenance companies get the insights needed to reduce road deterioration and ensure safer travel, extending the lifespan of the transport infrastructure and reducing costly emergency repairs.
     </p>
@@ -133,7 +133,7 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
   <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Energy infrastructure</h3>
+    <h3 style="margin: 0;">Energy infrastructure</h3>
     <p >
       From power grids to coal plants, energy infrastructure is vulnerable to the impact of temperature changes. Land Surface Temperature data provides critical insights for monitoring and maintaining energy infrastructure by enabling the detection of thermal anomalies, assessing environmental impacts, and enhancing operational efficiency. This reduces the risk of outages and harm. For power plants, LST helps monitor cooling performance, detect heat leaks, and optimize energy output, especially under rising ambient temperatures. For pipelines, temperature irregularities can be detected, signaling leaks early and thus improving safety and reliability.
     </p>
@@ -152,7 +152,7 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
     <figcaption>Greenhouse in the Netherlands - April 2024</figcaption>
 </div>
 <div style="flex: 2;">
-    <h3 style="margin: 0; color: #123774;">Industrial Sites Economic Monitoring</h3>
+    <h3 style="margin: 0;">Industrial Sites Economic Monitoring</h3>
     <p>
     By continuously monitoring thermal emissions from industrial sites, we can detect operational inefficiencies, malfunctions and productivity patterns. Our thermal intelligence helps site operators identify and monitor temperature-induced vulnerabilities, offering predictive insights that allow you to act before damage occurs. By tracking temperature shifts that affect structural integrity, we provide a comprehensive view of potential risks— from material degradation to malfunctioning systems - that allow to prioritize repairs and optimize maintenance schedules. Additionally, financial institutions use constellr's thermal intelligence for monitoring the activity of industrial sites to derive productivity information.
     </p>
