@@ -3,7 +3,7 @@
 ## Graphical Summary
 <img class= graph_abstract src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png">
 
-[Download the graphcial abstract her.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png)  
+[Download the graphcial abstract here.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png)  
 
 
 ## Crop Stress Monitoring
