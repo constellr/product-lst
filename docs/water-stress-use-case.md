@@ -64,7 +64,7 @@ This implies:
 
 For example, when parts of a field experience water stress, the plant stomata close, causing those areas to warm up, and thus subtle heat signatures that can be observed from space. By analyzing these satellite observations at each stage of a crop’s life cycle, such as corn, we can detect stress early and help farmers take action to maximize their yields.  
 
-<div style="background-color: #f0f8ff; padding: 10px; border-left: 5px solid #24398F;">
+<div style="background-color: #f0f8ff; padding: 10px; border-left: 5px solid #160A42;">
   With LST30, we can identify these issues early and precisely. In 2025, even more powerful datasets will be available. We look forward to quantifying the major improvements of the outcome with LST fusion to monitor large areas of corm, LST precision to obtain the highest accuracy and sensitivity, as well as LST zoom for the greatest details.
 </div>
 ---
@@ -72,7 +72,7 @@ For example, when parts of a field experience water stress, the plant stomata cl
 Special thanks to Charlie Siggs, Nicolas Chamberland, Loic Quertenmont, Elsy Ibrahim, Rosa Schmidt, Yan de Paoli, and Lena Rester for their valuable contributions to this study and its documentation. Their insights, dedication, and support played a key role in shaping this work.  
 
 <br>
-<h2 style="margin-top: 10px; margin-bottom: 10px; color: #24398F;">Download demo data</h2>
+<h2 style="margin-top: 10px; margin-bottom: 10px; ">Download demo data</h2>
 The demonstration data provides you with csv files containing a timeseries of the growing season of one corn field. It includes the median and standard deviation of 1) [LST30](lst30.md) data for the water-stressed field section, 2) [LST30](lst30.md) data for the well-watered field section. Additionally, the NDVI mean and quantiles for the whole field are provided which have been sourced from Landsat 8 data. 
 
 [LST timeseries for a stressed section of the field](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/Water_sressed_.corn_LST+(1).csv) 

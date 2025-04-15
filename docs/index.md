@@ -7,7 +7,7 @@
 </head>
 
 <h1 style="margin-bottom: 5px; "><strong>The Knowledge Center</strong></h1>
-<h2 style="margin-top: 0; margin-bottom: 0px; color: #24398F;"><em>Where you will find everything you need to know about constellr's LST data</em></h2>
+<h2 style="margin-top: 0; margin-bottom: 0px;"><em>Where you will find everything you need to know about constellr's LST data</em></h2>
 
 <br>
 
@@ -25,23 +25,13 @@
 
 <h2>About the Knowledge Center</h2>
 
-Welcome to constellr's centralized source of technical information regarding available datasets and products. We created this knowledge center to empower our customers and partners to engage with constellr's thermal products more effectively. It is a dynamic space and is continuously updated with the most relevant information.    
-
-In this knowledge center, you can find information about:  
-
-- Our Technology: how constellr creates high-resolution LST data  
-
-- Use Cases: learn about interesting real-life applications of constellr's LST data  
-
-- Product Portfolio: dive into the details of constellr's LST data, such as metadata and formats  
-
-- Explorer Lab: obtain demo datasets that interests you in the Explorer Lab.  
-
-- FAQ: Any questions that aren't yet answered? Maybe you will find your answer here!  
+**At constellr, we’re committed to equipping you with everything you need to harness the power of thermal intelligence.**
+From open-access Land Surface Temperature datasets to technical information and scientific insights, we believe knowledge should be as accessible as the data that drives it. Whether you're monitoring crop stress, modeling climate impacts, or developing new tools for resilience. We’re created this knowledge center to empower our customers and partners to engage with our thermal products. 
 
 <h2>Discover the Knowledge Center</h2>
 
-   
+In this knowledge center, you can find information about:  
+
 </style>
 </head>
 <body>
@@ -53,6 +43,7 @@ In this knowledge center, you can find information about:
           <h5 class="card-title">
             <span class="material-icons" >map</span> <a href="https://constellr.github.io/product-lst/our-technology/" style="color: black;">Our Technology</a>
           </h5>
+          <p class="card-text">How constellr creates high-resolution LST data.</p>
         </div>
       </div>
     </div>
@@ -63,6 +54,7 @@ In this knowledge center, you can find information about:
           <h5 class="card-title">
             <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Use Cases</a>
           </h5>
+          <p class="card-text">Learn about interesting real-life applications of constellr's LST data.</p>
         </div>
       </div>
     </div>
@@ -73,6 +65,7 @@ In this knowledge center, you can find information about:
           <h5 class="card-title">
             <span class="material-icons">satellite_alt</span> <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">Product Portfolio</a>
           </h5>
+          <p class="card-text">Dive into the technical details of constellr's LST products.</p>
         </div>
       </div>
     </div>
@@ -82,6 +75,7 @@ In this knowledge center, you can find information about:
         <div class="card-body">
           <h5 class="card-title">
             <span class="material-icons">settings</span> <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">End User Platform documentation</a></h5>
+          <p class="card-text">Learn how to request and download constellr's data.</p>
         </div>
       </div>
     </div>
@@ -93,6 +87,7 @@ In this knowledge center, you can find information about:
             <span class="material-icons" >search</span> 
             <a href="https://constellr.github.io/product-lst/demo/" style="color: black;" >Explorer Lab</a>
           </h5>
+          <p class="card-text">Obtain demo datasets that interests you in the Explorer Lab.</p>
         </div>
       </div>
     </div>
@@ -102,6 +97,7 @@ In this knowledge center, you can find information about:
         <div class="card-body">
           <h5 class="card-title">
             <span class="material-icons" >help_outline</span> <strong>FAQ</strong></h5>
+          <p class="card-text">Any questions that aren't yet answered? Maybe you will find your answer here!.</p>
         </div>
       </div>
     </div>

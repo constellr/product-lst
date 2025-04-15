@@ -10,16 +10,16 @@
 
 /*heading colours and style*/ 
 .md-content h1{
-    color: #123774;
+    color: #160A42;
     margin-bottom: 5px;
 }
 
 .md-content h2 {
-    color: #123774;
+    color: #160A42;
 }
 
 .md-content h3 {
-    color: #24398F
+    color: #162A42
 }
 
 /*for fading images*/
@@ -72,6 +72,10 @@ img {
     margin: auto;
 }
 
+.graph_abstract {
+    width: 80%;
+}
+
 /*designs grid layout*/
 .md-typeset .grid{
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -88,12 +92,16 @@ img {
 /*design card on first page*/
 /* Custom Styles for Cards */
 .card {
-    height: 100%; /* Ensure all cards have the same height */
+    width: 250px; /* Fixed width to make them smaller */
+    margin: 5px auto; /* Space around each card */
+    height: 150px;  /*80px */
     display: flex;
     flex-direction: column;
-    background-color: #160A42; /* Blue background */
-    color: #EE9219EA; /* Red text */
+    align-items: center;
+    background-color: #162a42; /* Blue background */
+    color: #ffc034;
     border: none;
+    border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -111,8 +119,9 @@ img {
 }
 
 .card-title {
-    color: #EE9219EA !important;
+    color: #ffc034 !important;
     display: flex;
+    font-size: 12px;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -121,13 +130,20 @@ img {
 }
 
 .card-title a {
-    color: #EE9219EA !important;
+    color: #ffc034 !important;
+}
+
+.card-text {
+    font-size: 0.80rem;
+    color: #e0dfe4;
+    /* margin-bottom: 5px; */
+    text-align: center;
 }
 
 .material-icons {
-    font-size: 32px;
+    font-size: 20px;
     vertical-align: middle;
-    color: #EE9219EA;
+    color: #ffc034;
     line-height: 1;
 }
 
