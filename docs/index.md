@@ -97,7 +97,7 @@ In this knowledge center, you can find information about:
         <div class="card-body">
           <h5 class="card-title">
             <span class="material-icons" >help_outline</span> <strong>FAQ</strong></h5>
-          <p class="card-text">Any questions that aren't yet answered? Maybe you will find your answer here!.</p>
+          <p class="card-text">Any questions that aren't yet answered? Maybe you will find your answer here!</p>
         </div>
       </div>
     </div>
