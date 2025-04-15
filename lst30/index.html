@@ -65,11 +65,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#data-sources" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -457,42 +452,6 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Explorer Lab
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Explorer Lab
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../demo/" class="md-nav__link">
         
@@ -504,14 +463,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -541,71 +492,64 @@
 
 <h1>Constellr LST30</h1>
 
-<p>Constellr LST30 consists of homogenized rasters of Land Surface Temperature (LST) data. These are their characteristics:</p>
-<ul>
-<li>
-<p>All thermal datasets are spectrally harmonised using a single in-house algorithm to retrieve LST.</p>
-</li>
-<li>
-<p>The data are delivered as if they were coming from a single satellite constellation.</p>
-</li>
-<li>
-<p>The geometry is aligned in all images: all images of an are of interest will show a perfect pixel alignment, regardless of the source. </p>
-</li>
-<li>
-<p>Each pixel holds a temperature value in degree Kelvin. </p>
-</li>
-<li>
-<p>Pixels that do not contain temperature values hold a ‘nodata’ value. Some zones may show empty pixels in several or all images, due to issues in the data processing from the public providers.</p>
-</li>
-</ul>
-<h2 id="data-sources">Data Sources</h2>
-<p>Constellr LST30 leverages data from different missions:</p>
-<ul>
-<li>Lisr, constellr property</li>
-<li>Landsat 8 and 9 from USGS</li>
-<li>Era5 and CAMS from CDSAPI</li>
-<li>MODIS (soon)</li>
-<li>Sentinel 3 (soon)</li>
-</ul>
-<p><em>Legal notice: Contains modified Copernicus Sentinel data, Landsat 8 and 9 images (U.S. Geological, Survey), Copernicus Climate Change Service information, Copernicus Service information, modified Modis data (courtesy of the NASA - LP DAAC) and modified Ecostress data (courtesy of the NASA - JPL).</em>  </p>
-<h2 id="specification">Specification</h2>
-<p>Have a look at our Technical specifications documentation <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;"><strong>Here</strong></a></p>
-<h2 id="file-naming-convention">File-naming convention</h2>
-<p>Various layers are provided and follow this compact naming convention:</p>
-<p>YYYYMMDDTHHMMSS_aa</p>
-<p>Where</p>
-<ul>
-<li>YYYYMMDDTHHMMSS is the datatake sensing time of the land surface
-    temperature in isoformat. Time is based on Universal Time Coordinated (UTC), also
-    known as Greenwich Mean Time (GMT).</li>
-<li>
-<p>aa indicates what contains the file</p>
-<ul>
-<li><strong>LST_AOI.tif</strong>: LST raster
-    pixel value: Kelvin Degree</li>
-<li>
-<p><strong>CLOUDS_AOI.tif</strong>: Cloud mask raster</p>
-<p>pixel values: 0=clear pixel, 1=contamined pixel</p>
-<p>cloud mask is made of cloud and shadow pixels</p>
-</li>
-<li>
-<p><strong>.json</strong>: Metadata json</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>=======</p>
-<h2 id="data-sources_1" style="color: #123774;margin-bottom: 5px;">Data Sources</h2>
-<p>Constellr LST30 leverages data from different missions:</p>
-<ul>
-<li>Lisr, constellr property</li>
-<li>Landsat 8 and 9 from USGS</li>
-<li>Era5 and CAMS from Copernicus/ECMWF</li>
-<li>MODIS (soon)</li>
-<li>Sentinel 3 (soon)</li>
-</ul>
-<p><em>Legal notice: LST30 is comprised of harmonized LST data that are retrieved  by constellr’s in-house technology. It utilizes proprietary data, as well as raw thermal data acquired by the Landsat missions (courtesy of USGS/ NASA), Ecostress (courtasy of NASA), and climatic data (courtesy of Copernicus/ECMWF).</em></p>
+<p><br></p>
+<p>Prior to the launch of HiVE’s satellites, constellr has been preparing for HiVE’s data since 2022. constellr developed sapproaches to derive LST from thermal data including LisR, to assess and validate the use of LST data for various <a href="https://constellr.github.io/product-lst/demo/">use-cases</a>, and finally to understand the impact that HiVE would bring to each solution. Thus, constellr developed its first product, LST30, that consists of homogenized rasters of LST acquired from various thermal public missions along with available proprietary data. LST30 is comprised of harmonized LST data that are retrieved by constellr’s in-house technology. It utilizes proprietary data (LisR), as well as raw thermal data acquired by the Landsat 8 and 9 missions (courtesy of U.S. Geological Survey), Ecostress (courtesy of NASA - JPL), and climatic data (courtesy of the Copernicus Climate Change Service/ECMWF). Yet, the data are delivered as if they were coming from a single satellite constellation with perfect pixel alignment in all images, regardless of the source.    </p>
+<p>Leveraging thermal data of LST30 has been a success, where the potential of LST has been highlighted for enhancing smart agriculture, monitoring urban heat islands, and optimizing infrastructure resilience. By validating the reliability and applicability of the data, cosntellr has ensured the effective integration of spaceborne LST in diverse, real-world scenarios, driving impact across multiple sectors.  </p>
+<p><strong>Key Technical Characteristics of LST30:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>Characteristics</th>
+<th>LST30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spatial resolution</td>
+<td>30m</td>
+</tr>
+<tr>
+<td>Spatial coverage</td>
+<td>Worldwide</td>
+</tr>
+<tr>
+<td>Scence size</td>
+<td>110km x 110km</td>
+</tr>
+<tr>
+<td>Temporal resolution</td>
+<td>8 days</td>
+</tr>
+<tr>
+<td>Temporal archive</td>
+<td>2014 - ongoing</td>
+</tr>
+<tr>
+<td>Bands</td>
+<td>LST <br> Cloud Mask</td>
+</tr>
+</tbody>
+</table>
+<p>For more details and a comparison with our other products, have a look at our Technical specifications documentation <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;"><strong>here</strong></a>.  </p>
+<p><strong>Various layers are provided and follow this compact naming convention:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Filename part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YYYYMMDDTHHMMSS</td>
+<td>Time of sensing LST in isoformat. <br> Time is based on Universal Time Coordinated (UTC), also known as Greenwhich Mean Time (GMT).</td>
+</tr>
+<tr>
+<td>aa</td>
+<td>Indicates what the file contains: <ul><li> <strong>LST_AOI.tif</strong>: LST raster <br> pixel value: Kelvin Degree or 'nodata' in case of issues in the data processing from the public providers </li><li><strong>CLOUDS_AOI.tif</strong>: Cloud mask raster <br> pixel values: 0=clear pixel, 1=contamined pixel <br> cloud mask is made of cloud and shadow pixels</li><li> <strong>.json</strong>: Metadata json </li></ul></td>
+</tr>
+</tbody>
+</table>
 
 
 
