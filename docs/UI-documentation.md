@@ -3,7 +3,9 @@
 
 This page will guide you through the steps to create an account, access it, and browse through the assets list page.
 
-> **Note:** You can create an account using your organizational email address **only if your organization is already registered with constellr**. If your organization hasn't signed up yet, your account request won't be processed.
+<!-- > **Note:** You can create an account using your organizational email address **only if your organization is already registered with constellr**. If your organization hasn't signed up yet, your account request won't be processed. -->
+
+> **Note:** If your organisation is registered with constellr, you can create an account for free.
 
 ## 1. Registration 
 
