@@ -22,6 +22,10 @@
     color: #162A42
 }
 
+.intro-section.hidden {
+    display: none !important;
+}
+
 /*for fading images*/
 /*fsets outer container*/
 .image-container {

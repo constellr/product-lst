@@ -665,38 +665,52 @@ From open-access Land Surface Temperature datasets to technical information and 
 <script>
     window.onload = function() {
         const introSection = document.getElementById("introSection");
-        let lastScrollY = 0;
-        let isSlidingUp = false;
+        const isHome = window.location.pathname.endsWith("/product-lst/") || window.location.pathname.endsWith("/product-lst/index.html");
 
-        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "https://constellr.github.io/product-lst/") {
-            window.addEventListener("scroll", function() {
-                const currentScrollY = window.scrollY;
+        // let lastScrollY = 0;
+        // let isSlidingUp = false;
 
-                // Slide up only if scrolled down significantly
-                if (currentScrollY > 100 && !isSlidingUp) {
-                    introSection.classList.add("slide-up");
-                    isSlidingUp = true;
-                }
+        // if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
 
-                // Slide down if scrolling back to top
-                if (currentScrollY < 0.01 && isSlidingUp) {
-                    introSection.classList.remove("slide-up");
-                    isSlidingUp = false;
-                }
+        if (introSection) {
+            if (isHome) {
+                introSection.classList.remove("hidden"); // Show it only on homepage
 
-                lastScrollY = currentScrollY;
-            });
-        } else {
-            // Hide the intro on other pages
-            if (introSection) {
-                introSection.style.display = "none";
+                let isSlidingUp = false;
+
+            
+                window.addEventListener("scroll", function() {
+                    const currentScrollY = window.scrollY;
+
+                    // Slide up only if scrolled down significantly
+                    if (currentScrollY > 100 && !isSlidingUp) {
+                        introSection.classList.add("slide-up");
+                        isSlidingUp = true;
+                    }
+
+                    // Slide down if scrolling back to top
+                    if (currentScrollY < 0.01 && isSlidingUp) {
+                        introSection.classList.remove("slide-up");
+                        isSlidingUp = false;
+                    }
+
+                    // lastScrollY = currentScrollY;
+                });
+            
+            } else {
+                introSection.classList.add("hidden"); // Keep it hidden elsewhere
             }
+        // } else {
+        //     // Hide the intro on other pages
+        //     if (introSection) {
+        //         introSection.style.display = "none";
+        //     }
         }
     };
 </script>
 
 
-<div class="intro-section" id="introSection">
+<div class="intro-section hidden" id="introSection">
     <div class="intro-content">
         <!-- Logo -->
         <img src="assets/logo_white.png" alt="constellr logo" class="logo">
