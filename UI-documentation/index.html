@@ -571,8 +571,10 @@
 
 <h1 id="end-user-platform-ui-documentation"><strong>End User Platform - UI Documentation</strong></h1>
 <p>This page will guide you through the steps to create an account, access it, and browse through the assets list page.</p>
+<!-- > **Note:** You can create an account using your organizational email address **only if your organization is already registered with constellr**. If your organization hasn't signed up yet, your account request won't be processed. -->
+
 <blockquote>
-<p><strong>Note:</strong> You can create an account using your organizational email address <strong>only if your organization is already registered with constellr</strong>. If your organization hasn't signed up yet, your account request won't be processed.</p>
+<p><strong>Note:</strong> If your organisation is registered with constellr, you can create an account for free.</p>
 </blockquote>
 <h2 id="1-registration">1. Registration</h2>
 <p><strong>Step 1 - Create an account</strong></p>
@@ -680,7 +682,7 @@
         let lastScrollY = 0;
         let isSlidingUp = false;
 
-        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "https://constellr.github.io/product-lst/") {
             window.addEventListener("scroll", function() {
                 const currentScrollY = window.scrollY;
 
