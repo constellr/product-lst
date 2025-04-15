@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://github.com/constellr/product-lst/our-technology/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../use-cases/">
       
       
-        <link rel="next" href="../use-cases/">
+        <link rel="next" href="../Constellr-product-offer/">
       
       
       <link rel="icon" href="../assets/logo-constellr-dark-icon.svg">
@@ -221,6 +221,27 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../use-cases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thermal Insights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -244,27 +265,6 @@
 
       </a>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Use Cases
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -511,13 +511,13 @@
 
 <h1 id="our-technology"><strong>Our Technology</strong></h1>
 <p>constellr is is at the forefront of precise thermal monitoring from space by developing an unparalleled <strong>thermal intelligence atlas of our planet</strong>. The atlas is a constantly updated view of the surface temperature across the globe, providing real-time high-precision insights into the water &amp; carbon cycles it shapes. The atlas leverages constellr's proprietary advanced satellite technology and data fusion combined with biophysical modelling and AI-powered analytics to transform how we understand and manage the Earth’s resources.  </p>
-<p>Our technology delivers the market's most accurate and dependable thermal data, and specifically land surface temperature (LST). LST is not measured from space but determined using the best of constellr's acquisitions of thermal, visible, and near infra-red data. </p>
+<p>Our technology delivers the market's most accurate and dependable thermal data, and specifically land surface temperature (LST). LST is not measured from space but determined using the best of constellr's acquisitions of thermal, visible, and near infra-red data. </p>
 <p>Precision farming and other use cases, demand highly accurate data, such as a stable observation time (like 10 AM) and temperature readings with a precision of 2K. To meet these needs, we’re launching a  constellation of satellites equipped with advanced imaging technology.</p>
 <h2>Technical details</h2>
 
 <p>The satellites feature a Long-Wave Infrared (LWIR) imager, which captures temperature readings at the field level with a 30-meter resolution. This allows us to monitor the temperature of specific areas with great detail.
 Paired with the LWIR is a Visible and Near-Infrared (VNIR) imager, which not only provides crucial data to support accurate temperature measurements but also helps us identify field boundaries and locate specific areas within those fields. Together, these tools ensure that customers get the precise, reliable data they need to optimize their operations.  </p>
-<p>Our space journey begins with the deployment of the High-precision Versatile Ecosphere (HiVE) monitoring satellite constellation, with the first satellite already launched on 15.01.2025. HiVE will operate in a sun-synchronous orbit at an altitude of approximately 500 km, marking a crucial step in our Earth Observation Thermal revolution. The two payloads on HiVE are thus one thermal infrared cryocool MCT sensor capturing Long-Wave Infrared (LWIR) imagery in 4 bands ranging from 8,5 µm to 11,5µm at a native spatial resolution of 30 meters. And one Visible and Near-Infrared (VNIR) imager, imaging on 11 spectral bands in the 400 to 980 nm range, aligned to Sentinel-2 bands, and capturing details at a resolution of 10 meters. The sensors will allow LST measurements with a precision level of 2K. </p>
+<p>Our space journey begins with the deployment of the High-precision Versatile Ecosphere (HiVE) monitoring satellite constellation, with the first satellite already launched on 15.01.2025. HiVE will operate in a sun-synchronous orbit at an altitude of approximately 500 km, marking a crucial step in our Earth Observation Thermal revolution. The two payloads on HiVE are thus one thermal infrared cryocool MCT sensor capturing Long-Wave Infrared (LWIR) imagery in 4 bands ranging from 8,5 µm to 11,5µm at a native spatial resolution of 30 meters. And one Visible and Near-Infrared (VNIR) imager, imaging on 11 spectral bands in the 400 to 980 nm range, aligned to Sentinel-2 bands, and capturing details at a resolution of 10 meters. The sensors will allow LST measurements with a precision level of 2K. </p>
 <h2>Capability Statement</h2>
 
 <p>This document is intented to always provide you the latest version of our capability statement. Download <a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+PUBLIC+v1.3.pdf">here</a></p>
@@ -536,6 +536,210 @@ Paired with the LWIR is a Visible and Near-Infrared (VNIR) imager, which not onl
                 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
+<!-- <script>
+    window.onload = function () {
+    const introSection = document.getElementById("introSection");
+    let isSlidingUp = false;
+
+        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+            window.addEventListener("scroll", function () {
+                const currentScrollY = window.scrollY;
+
+                // Slide up only if scrolled down significantly
+                if (currentScrollY > 100 && !isSlidingUp) {
+                    introSection.classList.add("slide-up");
+                    isSlidingUp = true;
+
+                    // Wait for slide animation, then hide it completely
+                    setTimeout(() => {
+                        introSection.style.display = "none";
+                        document.body.style.overflow = "auto"; // allow scrolling after intro
+                    }, 500); // match your transition duration
+                }
+
+                // If user scrolls back to top, re-enable the intro
+                if (currentScrollY < 1 && isSlidingUp) {
+                    introSection.style.display = "flex";
+                    introSection.classList.remove("slide-up");
+                    isSlidingUp = false;
+                    document.body.style.overflow = "hidden"; // lock scroll while intro is shown
+                }
+            });
+        } else {
+            if (introSection) {
+                introSection.style.display = "none";
+            }
+        }
+    };
+
+</script> -->
+
+<script>
+    window.onload = function() {
+        const introSection = document.getElementById("introSection");
+        let lastScrollY = 0;
+        let isSlidingUp = false;
+
+        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+            window.addEventListener("scroll", function() {
+                const currentScrollY = window.scrollY;
+
+                // Slide up only if scrolled down significantly
+                if (currentScrollY > 100 && !isSlidingUp) {
+                    introSection.classList.add("slide-up");
+                    isSlidingUp = true;
+                }
+
+                // Slide down if scrolling back to top
+                if (currentScrollY < 0.01 && isSlidingUp) {
+                    introSection.classList.remove("slide-up");
+                    isSlidingUp = false;
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        } else {
+            // Hide the intro on other pages
+            if (introSection) {
+                introSection.style.display = "none";
+            }
+        }
+    };
+</script>
+
+
+<div class="intro-section" id="introSection">
+    <div class="intro-content">
+        <!-- Logo -->
+        <img src="assets/logo_white.png" alt="constellr logo" class="logo">
+
+        <div class="button-container">
+            <a href="https://constellr.github.io/product-lst/" class="top-button">Knowledge Center</a>
+        </div>
+
+        <br>
+
+        <!-- Welcome Title -->
+        <p class="tagline">Your gateway to decoding Earth's temperature.</p>
+        <p class="tagline">From pixels to planetary resilience.</p>
+
+        <!-- Description -->
+        <p class="description">
+            Explore constellr's data, learn about thermal intelligence, explore our use cases and download actionable demo data sets.
+        </p>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="https://constellr.github.io/product-lst/use-cases/" class="intro-button">New to thermal data? <br> Click here for first insights.</a>
+            <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="intro-button">Explore constllr's <br> product range here.</a>
+            <a href="https://constellr.github.io/product-lst/UI-documentation/" class="intro-button">Already a customer? <br> Learn how to access your data.</a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .intro-section {
+    position: fixed; /* Stay at the top */
+    top: 0;
+    left: 0; 
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/Intro_background.png'); /* Add your image URL here */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .slide-up {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .intro-content {
+        max-width: 900px;
+        padding: 20px;
+        margin-top: -30px;
+        /* margin: auto; */
+        /* justify-content: center; */
+    }
+
+    .logo {
+        width: 250px;
+        margin-bottom: 30px;
+    }
+
+    .tagline {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #f3f3f5;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        color: #f3f3f5;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        color: #f3f3f5;
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .top-button {
+        background-color: #FFC034;
+        color: black;
+        padding: 15px 45px;
+        border-radius: 30px;
+        font-size: 22px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .intro-button {
+        background-color: #FFC034;
+        color: black;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: background-color 0.3s, transform 0.2s;
+        width: 300px; 
+        text-align: center;
+        line-height: 1.4;
+    }
+
+</style>
+
+
+
+
 
 <script>
     // Function to toggle the sidebar visibility

@@ -12,7 +12,7 @@
       
       
       
-        <link rel="next" href="our-technology/">
+        <link rel="next" href="use-cases/">
       
       
       <link rel="icon" href="assets/logo-constellr-dark-icon.svg">
@@ -225,11 +225,11 @@
   
   
     <li class="md-nav__item">
-      <a href="our-technology/" class="md-nav__link">
+      <a href="use-cases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Our Technology
+    Thermal Insights
     
   </span>
   
@@ -246,11 +246,11 @@
   
   
     <li class="md-nav__item">
-      <a href="use-cases/" class="md-nav__link">
+      <a href="our-technology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Use Cases
+    Our Technology
     
   </span>
   
@@ -509,7 +509,7 @@
 </head>
 
 <h1 style="margin-bottom: 5px; "><strong>The Knowledge Center</strong></h1>
-<h2 style="margin-top: 0; margin-bottom: 0px; color: #24398F;"><em>Where you will find everything you need to know about constellr's LST data</em></h2>
+<h2 style="margin-top: 0; margin-bottom: 0px;"><em>Where you will find everything you need to know about constellr's LST data</em></h2>
 
 <br>
 
@@ -527,27 +527,11 @@
 
 <h2>About the Knowledge Center</h2>
 
-<p>Welcome to constellr's centralized source of technical information regarding available datasets and products. We created this knowledge center to empower our customers and partners to engage with constellr's thermal products more effectively. It is a dynamic space and is continuously updated with the most relevant information.    </p>
-<p>In this knowledge center, you can find information about:  </p>
-<ul>
-<li>
-<p>Our Technology: how constellr creates high-resolution LST data  </p>
-</li>
-<li>
-<p>Use Cases: learn about interesting real-life applications of constellr's LST data  </p>
-</li>
-<li>
-<p>Product Portfolio: dive into the details of constellr's LST data, such as metadata and formats  </p>
-</li>
-<li>
-<p>Explorer Lab: obtain demo datasets that interests you in the Explorer Lab.  </p>
-</li>
-<li>
-<p>FAQ: Any questions that aren't yet answered? Maybe you will find your answer here!  </p>
-</li>
-</ul>
+<p><strong>At constellr, we’re committed to equipping you with everything you need to harness the power of thermal intelligence.</strong>
+From open-access Land Surface Temperature datasets to technical information and scientific insights, we believe knowledge should be as accessible as the data that drives it. Whether you're monitoring crop stress, modeling climate impacts, or developing new tools for resilience. We’re created this knowledge center to empower our customers and partners to engage with our thermal products. </p>
 <h2>Discover the Knowledge Center</h2>
 
+<p>In this knowledge center, you can find information about:  </p>
 <p></style>
 </head></p>
 <body>
@@ -559,6 +543,7 @@
           <h5 class="card-title">
             <span class="material-icons" >map</span> <a href="https://constellr.github.io/product-lst/our-technology/" style="color: black;">Our Technology</a>
           </h5>
+          <p class="card-text">How constellr creates high-resolution LST data.</p>
         </div>
       </div>
     </div>
@@ -569,6 +554,7 @@
           <h5 class="card-title">
             <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Use Cases</a>
           </h5>
+          <p class="card-text">Learn about interesting real-life applications of constellr's LST data.</p>
         </div>
       </div>
     </div>
@@ -579,6 +565,7 @@
           <h5 class="card-title">
             <span class="material-icons">satellite_alt</span> <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" style="color: black;">Product Portfolio</a>
           </h5>
+          <p class="card-text">Dive into the technical details of constellr's LST products.</p>
         </div>
       </div>
     </div>
@@ -588,6 +575,7 @@
         <div class="card-body">
           <h5 class="card-title">
             <span class="material-icons">settings</span> <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">End User Platform documentation</a></h5>
+          <p class="card-text">Learn how to request and download constellr's data.</p>
         </div>
       </div>
     </div>
@@ -599,6 +587,7 @@
             <span class="material-icons" >search</span> 
             <a href="https://constellr.github.io/product-lst/demo/" style="color: black;" >Explorer Lab</a>
           </h5>
+          <p class="card-text">Obtain demo datasets that interests you in the Explorer Lab.</p>
         </div>
       </div>
     </div>
@@ -608,6 +597,7 @@
         <div class="card-body">
           <h5 class="card-title">
             <span class="material-icons" >help_outline</span> <strong>FAQ</strong></h5>
+          <p class="card-text">Any questions that aren't yet answered? Maybe you will find your answer here!.</p>
         </div>
       </div>
     </div>
@@ -633,6 +623,210 @@
                 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
+<!-- <script>
+    window.onload = function () {
+    const introSection = document.getElementById("introSection");
+    let isSlidingUp = false;
+
+        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+            window.addEventListener("scroll", function () {
+                const currentScrollY = window.scrollY;
+
+                // Slide up only if scrolled down significantly
+                if (currentScrollY > 100 && !isSlidingUp) {
+                    introSection.classList.add("slide-up");
+                    isSlidingUp = true;
+
+                    // Wait for slide animation, then hide it completely
+                    setTimeout(() => {
+                        introSection.style.display = "none";
+                        document.body.style.overflow = "auto"; // allow scrolling after intro
+                    }, 500); // match your transition duration
+                }
+
+                // If user scrolls back to top, re-enable the intro
+                if (currentScrollY < 1 && isSlidingUp) {
+                    introSection.style.display = "flex";
+                    introSection.classList.remove("slide-up");
+                    isSlidingUp = false;
+                    document.body.style.overflow = "hidden"; // lock scroll while intro is shown
+                }
+            });
+        } else {
+            if (introSection) {
+                introSection.style.display = "none";
+            }
+        }
+    };
+
+</script> -->
+
+<script>
+    window.onload = function() {
+        const introSection = document.getElementById("introSection");
+        let lastScrollY = 0;
+        let isSlidingUp = false;
+
+        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+            window.addEventListener("scroll", function() {
+                const currentScrollY = window.scrollY;
+
+                // Slide up only if scrolled down significantly
+                if (currentScrollY > 100 && !isSlidingUp) {
+                    introSection.classList.add("slide-up");
+                    isSlidingUp = true;
+                }
+
+                // Slide down if scrolling back to top
+                if (currentScrollY < 0.01 && isSlidingUp) {
+                    introSection.classList.remove("slide-up");
+                    isSlidingUp = false;
+                }
+
+                lastScrollY = currentScrollY;
+            });
+        } else {
+            // Hide the intro on other pages
+            if (introSection) {
+                introSection.style.display = "none";
+            }
+        }
+    };
+</script>
+
+
+<div class="intro-section" id="introSection">
+    <div class="intro-content">
+        <!-- Logo -->
+        <img src="assets/logo_white.png" alt="constellr logo" class="logo">
+
+        <div class="button-container">
+            <a href="https://constellr.github.io/product-lst/" class="top-button">Knowledge Center</a>
+        </div>
+
+        <br>
+
+        <!-- Welcome Title -->
+        <p class="tagline">Your gateway to decoding Earth's temperature.</p>
+        <p class="tagline">From pixels to planetary resilience.</p>
+
+        <!-- Description -->
+        <p class="description">
+            Explore constellr's data, learn about thermal intelligence, explore our use cases and download actionable demo data sets.
+        </p>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="https://constellr.github.io/product-lst/use-cases/" class="intro-button">New to thermal data? <br> Click here for first insights.</a>
+            <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="intro-button">Explore constllr's <br> product range here.</a>
+            <a href="https://constellr.github.io/product-lst/UI-documentation/" class="intro-button">Already a customer? <br> Learn how to access your data.</a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .intro-section {
+    position: fixed; /* Stay at the top */
+    top: 0;
+    left: 0; 
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/Intro_background.png'); /* Add your image URL here */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .slide-up {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .intro-content {
+        max-width: 900px;
+        padding: 20px;
+        margin-top: -30px;
+        /* margin: auto; */
+        /* justify-content: center; */
+    }
+
+    .logo {
+        width: 250px;
+        margin-bottom: 30px;
+    }
+
+    .tagline {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #f3f3f5;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        color: #f3f3f5;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        color: #f3f3f5;
+        text-align: center;
+    }
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .top-button {
+        background-color: #FFC034;
+        color: black;
+        padding: 15px 45px;
+        border-radius: 30px;
+        font-size: 22px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .intro-button {
+        background-color: #FFC034;
+        color: black;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: background-color 0.3s, transform 0.2s;
+        width: 300px; 
+        text-align: center;
+        line-height: 1.4;
+    }
+
+</style>
+
+
+
+
 
 <script>
     // Function to toggle the sidebar visibility
