@@ -105,7 +105,7 @@ Urban environments are increasingly experiencing elevated temperatures due to th
   </div>
 </div>
 
-For more information see our webinar/sign up to one of our webinars: [adjust link](https://www.constellr.com)
+<!-- For more information see our webinar/sign up to one of our webinars: [adjust link](https://www.constellr.com) -->
 
 ---------------------
 ## **Resilient Infrastructure** {style="margin-bottom: 5px; text-align: center;"}
