@@ -579,62 +579,27 @@ Considering one field that has a sector that is not well irrigated in the red tr
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
-<!-- <script>
-    window.onload = function () {
-    const introSection = document.getElementById("introSection");
-    let isSlidingUp = false;
-
-        if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
-            window.addEventListener("scroll", function () {
-                const currentScrollY = window.scrollY;
-
-                // Slide up only if scrolled down significantly
-                if (currentScrollY > 100 && !isSlidingUp) {
-                    introSection.classList.add("slide-up");
-                    isSlidingUp = true;
-
-                    // Wait for slide animation, then hide it completely
-                    setTimeout(() => {
-                        introSection.style.display = "none";
-                        document.body.style.overflow = "auto"; // allow scrolling after intro
-                    }, 500); // match your transition duration
-                }
-
-                // If user scrolls back to top, re-enable the intro
-                if (currentScrollY < 1 && isSlidingUp) {
-                    introSection.style.display = "flex";
-                    introSection.classList.remove("slide-up");
-                    isSlidingUp = false;
-                    document.body.style.overflow = "hidden"; // lock scroll while intro is shown
-                }
-            });
-        } else {
-            if (introSection) {
-                introSection.style.display = "none";
-            }
-        }
-    };
-
-</script> -->
-
 <script>
-    window.onload = function() {
+    window.onload = function () {
         const introSection = document.getElementById("introSection");
         const isHome = window.location.pathname.endsWith("/product-lst/") || window.location.pathname.endsWith("/product-lst/index.html");
 
-        // let lastScrollY = 0;
-        // let isSlidingUp = false;
+        const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+        const now = new Date().getTime();
+        const lastShownTime = localStorage.getItem("introLastShown");
+        const introShownThisSession = sessionStorage.getItem("introShown");
 
-        // if (window.location.pathname === "/constellr/product-lst/" || window.location.pathname === "/constellr/product-lst/index.html") {
+        const timeExpired = !lastShownTime || (now - parseInt(lastShownTime, 10)) > TWO_HOURS_MS;
 
         if (introSection) {
-            if (isHome) {
-                introSection.classList.remove("hidden"); // Show it only on homepage
+            if (isHome && (!introShownThisSession || timeExpired)) {
+                introSection.classList.remove("hidden"); // Show intro
+                sessionStorage.setItem("introShown", "true");
+                localStorage.setItem("introLastShown", now.toString());
 
                 let isSlidingUp = false;
 
-            
-                window.addEventListener("scroll", function() {
+                window.addEventListener("scroll", function () {
                     const currentScrollY = window.scrollY;
 
                     // Slide up only if scrolled down significantly
@@ -648,21 +613,15 @@ Considering one field that has a sector that is not well irrigated in the red tr
                         introSection.classList.remove("slide-up");
                         isSlidingUp = false;
                     }
-
-                    // lastScrollY = currentScrollY;
                 });
-            
+
             } else {
-                introSection.classList.add("hidden"); // Keep it hidden elsewhere
+                introSection.classList.add("hidden"); // Don't show
             }
-        // } else {
-        //     // Hide the intro on other pages
-        //     if (introSection) {
-        //         introSection.style.display = "none";
-        //     }
         }
     };
 </script>
+
 
 
 <div class="intro-section hidden" id="introSection">
@@ -688,7 +647,7 @@ Considering one field that has a sector that is not well irrigated in the red tr
         <!-- Buttons -->
         <div class="button-container">
             <a href="https://constellr.github.io/product-lst/use-cases/" class="intro-button">New to thermal data? <br> Click here for first insights.</a>
-            <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="intro-button">Explore constllr's <br> product range here.</a>
+            <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="intro-button">Explore constellr's <br> product range here.</a>
             <a href="https://constellr.github.io/product-lst/UI-documentation/" class="intro-button">Already a customer? <br> Learn how to access your data.</a>
         </div>
 
