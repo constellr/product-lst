@@ -69,10 +69,10 @@ The HiVE data quality is assessed by defined high standards for all Cal/Val acti
 ## Acquisition Scenarios
 The HiVE constellation is primarily planned as a tasking-based mission with off-nadir pointing capabilities up to ±30°. For 2025, this enables an average revisit time of two days with the first two satellites, and reaching daily revisit with five satellites (2027+). 
 
-## Key Innovation
+<!-- ## Key Innovation
 constellr’s key innovation is a patented architecture to enable high-quality infrared imaging on microsatellites. So far, this was only possible with bus-sized systems costing hundreds of millions of Euros. Using our pioneering technology, we can reduce the cost of the satellites by a factor of around 30 at comparable performance levels.  
 
-In summary, HiVE’s features allow to ensures absolute temperature accuracy and reliability of the data for high precision analysis. The full constellation of satellites ensures daily coverage for target regions by 2027. Its sunsynchronous orbit ensures comparability of data over time, making it well-suited for trend analysis. Finally, with its day and night imagery, it enabling critical insights for optimal decision-making by 2026. 
+In summary, HiVE’s features allow to ensures absolute temperature accuracy and reliability of the data for high precision analysis. The full constellation of satellites ensures daily coverage for target regions by 2027. Its sunsynchronous orbit ensures comparability of data over time, making it well-suited for trend analysis. Finally, with its day and night imagery, it enabling critical insights for optimal decision-making by 2026.  -->
 
 To learn more about our different products visit our [Product Portfolio](https://constellr.github.io/product-lst/Constellr-product-offer/)
 
