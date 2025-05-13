@@ -41,15 +41,15 @@ At a nominal altitude of 540km, the **VNIR camera** has a swath width of 21km wi
 
 | Filter Number | Central Wavelength [µm] | Bandwidth [nm] | Targeted GSD [m] |
 | ------------- | ----------------------- | --------- | ---------------- |
-| 1 | 443 | 20 | 60 |
-| 2 | 490 | 65 | 10 |
-| 3 | 560 | 35 | 10 |
-| 4 | 665 | 30 | 10 |
-| 5 | 705 | 15 | 20 |
-| 6 | 740 | 15 | 20 |
-| 7 | 783 | 20 | 20 |
-| 8 | 842 | 115 | 10 |
-| 9 | 865 | 20 | 20 |
+| 01 | 443 | 20 | 60 |
+| 02 | 490 | 65 | 10 |
+| 03 | 560 | 35 | 10 |
+| 04 | 665 | 30 | 10 |
+| 05 | 705 | 15 | 20 |
+| 06 | 740 | 15 | 20 |
+| 07 | 783 | 20 | 20 |
+| 08 | 842 | 115 | 10 |
+| 09 | 865 | 20 | 20 |
 | 10 | 945 | 20 | 60 |
 <figcaption>Table 2: VNIR band configuration.</figcaption>
 
@@ -79,7 +79,7 @@ To learn more about our different products visit our [Product Portfolio](https:/
 ----------
 
 ## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+PUBLIC+v1.3.pdf)
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+20250513+PUBLIC.pdf)
 
 
 

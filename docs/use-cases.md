@@ -94,7 +94,7 @@ Urban environments are increasingly experiencing elevated temperatures due to th
 
 <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
   <div style="flex: 2;">
-    <h3 style="margin: 0;">Heat mititgation measures</h3>
+    <h3 style="margin: 0;">Heat mitigation measures</h3>
     <p>
       Urban vegetation and other heat mitigation measures play a crucial role in reducing heat island effects, improving air quality, and enhancing biodiversity. From trees and parks to green roofs, constellr's thermal intelligence helps urban planners, architects and project developers to track the temperature-reducing effect of mitigation measures on street level, while also enabling monitoring of vegetation health, water usage, and stress levels, enabling better management of urban greenery.
     </p>

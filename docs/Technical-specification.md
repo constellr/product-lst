@@ -3,7 +3,7 @@
 
 | Characteristics                      | **LSTprecision**                                                                                                                      | **LSTzoom**                                                              | LSTfusion                                                                    |[**LST30**](https://constellr.github.io/product-lst/lst30/)                             |
 |--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------|
-| **Spatial Resolution [^2]**                   | 30m                                                                                                                               | 10m                                                                  | 30m                                                                          | 30m                               |
+| **Spatial Resolution [^2]**                   | 30m                                                                                                                               | 5m                                                                  | 30m                                                                          | 30m                               |
 | **Swath**                                | 17.5km                                                                                                                            | 17.5km                                                               | Various                                                                      | 110km                             |
 | **Scene Size**                           | 15km x 15km                                                                                                                   | 15km x 15km                                                      | 110km x 110km                                                                | 110km x 110km                     |
 | **Frequency [^3]**                            | 2025: 1.5 to 3 days <br> 2026: sub-daily                                                                               | 2025: every 1.5-3 days <br> 2026: sub-daily                  | 2025: every 8 days <br> 2026: daily <br> 2027: hourly and forecast                                   | Up to every 8 days                |
@@ -20,7 +20,7 @@
 
 
 ## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+PUBLIC+v1.3.pdf)
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+20250513+PUBLIC.pdf)
 
 ## Footnotes
 [^custom-label]: Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km2) between 50°S and 55°N. All numbers are cloud coverage dependent.

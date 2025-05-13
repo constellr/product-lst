@@ -42,4 +42,4 @@ Bringing even more detail to you areas of interest using artificial intelligence
 
 ## Capability statement
 Have a look at constellr Surface Temperature product specifications:
-[Download](https://www.constellr.com/mediaandstatements)
+[Download](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+20250513+PUBLIC.pdf)
