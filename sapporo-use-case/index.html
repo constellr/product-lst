@@ -457,9 +457,19 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../demo/" class="md-nav__link">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Explorer Lab
@@ -467,7 +477,41 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Explorer Lab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solutions in Action›
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -494,38 +538,54 @@
 
 <h1 <span style="color: #202A78;margin-bottom: 5px;">Providing new insights into building occupancy and urban resilience in Japan using themal data</span></h1>
 
+<p><a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png">Download the graphcial abstract her.</a>  </p>
 <h2 id="introduction">Introduction</h2>
 <p><a href="https://www.japantimes.co.jp/news/2024/05/01/japan/japan-vacant-homes-record-high/">Japan</a> is confronting a significant vacant housing crisis, with approximately 9 million empty homes nationwide, accounting for 13.6% of all residences. This issue is particularly pronounced in Sapporo, where nearly one in five dwellings is unoccupied. The rise in vacant homes adversely affects property values, increases crime rates, leads to poor sanitation, and contributes to housing market stagnation. Notably, central Sapporo exhibits severe clusters of vacancies, indicating a disequilibrium in the housing market rather than mere urban decline. </p>
 <p>According to news sources, demographic projections indicate that by 2035, approximately <a href="https://indianexpress.com/article/world/japan-faces-population-crisis-cities-to-witness-decline-by-2035-amid-ageing-society-9838462/">34.6% of Sapporo's residents will be elderly</a>. This demographic shift is expected to exacerbate the housing vacancy issue, as an aging population may lead to more unoccupied homes, further challenging urban planning and economic stability. </p>
+<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
+<div style="flex: 1;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo-4.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <figcaption>Figure 1: A single LST image can capture the whole of Sapporo and provide thermal insights for buildings and industrial objects</figcaption>
+</div>
+<div style="flex: 2;">
+    <p>
+    To address these challenges, Sapporo has implemented <a href= "https://www.city.sapporo.jp/kikaku/miraisousei/3rd/documents/planenglish.pdf" target="_blank" rel="noopener noreferrer">measures</a> for unoccupied houses starting in fiscal year 2015 and formulated the Sapporo Unoccupied House Plan to promote appropriate management and utilization of these properties. <br> The city formulated the <a href= "https://www.city.sapporo.jp/kikaku/miraisousei/3rd/documents/planenglish.pdf" target="_blank" rel="noopener noreferrer">Sapporo Future Creation Plan</a>, which outlines priority measures to counteract population decline and promote economic revitalization. A key strategy involves developing a compact city structure by enhancing public transportation and promoting residential areas around subway stations, aiming to make urban living more attractive and reduce vacancies. Additionally, Sapporo emphasizes community engagement, encouraging resident-led initiatives in urban development to foster vibrant neighborhoods and address the issue of vacant properties.  
+
+    </p>
+</div>
+</div>
+
 <p>To address these challenges, Sapporo has implemented <a href="https://www.city.sapporo.jp/kikaku/miraisousei/3rd/documents/planenglish.pdf">measures</a> for unoccupied houses starting in fiscal year 2015 and formulated the Sapporo Unoccupied House Plan to promote appropriate management and utilization of these properties. </p>
 <p>The city formulated the <a href="https://www.city.sapporo.jp/kikaku/miraisousei/3rd/documents/planenglish.pdf">Sapporo Future Creation Plan</a>, which outlines priority measures to counteract population decline and promote economic revitalization. A key strategy involves developing a compact city structure by enhancing public transportation and promoting residential areas around subway stations, aiming to make urban living more attractive and reduce vacancies. Additionally, Sapporo emphasizes community engagement, encouraging resident-led initiatives in urban development to foster vibrant neighborhoods and address the issue of vacant properties.  </p>
 <p>By implementing these strategies, Sapporo aims to revitalize its urban environment, effectively manage vacant housing, and ensure sustainable development in the face of demographic changes.  </p>
 <p>However, current methods of identifying and addressing vacancy are often slow and reactive. constellr tested the ability of <strong>thermal data</strong> to reveal where vacancies are and why they matter. Thus, we applied our thermal monitoring capabilities to Sapporo. The results offer new insights into how <strong>thermal footprints</strong> can help cities tackle vacancy challenges and inform smarter urban planning. </p>
-<p><img alt="Sapporo" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo-4.png" /></p>
-<figcaption>Figure 1: A single LST image can capture the whole of Sapporo and provide thermal insights for buildings and industrial objects</figcaption>
-
 <h2 id="land-surface-temperature-lst-in-the-urban-context">Land Surface Temperature (LST) in the urban context</h2>
 <p>LST measures the heat emitted from Earth’s surface - whether from a building, a street, or a park. Using constellr’s satellite-based data products, LST is able to capture these data with precision and with large coverage to monitor cities in an integrated manner.  It empowers the way we understand how cities store and release heat, which directly connects to how buildings are used - or left vacant. </p>
 <h2 id="the-sapporo-analysis-ml-classification-using-lst-data">The Sapporo Analysis: ML classification using LST data</h2>
-<p>Inspired by the 2022 study “Vacancy Dwellings Spatial Distribution, The Determinants and Policy Implications in the City of Sapporo, Japan” by <a href="https://www.mdpi.com/2071-1050/14/19/12427">Van et al.(2022)</a>,constellr conducted an analysis of over 450,000 building footprints in Sapporo. By integrating LST data with population datasets from the <a href="https://human-settlement.emergency.copernicus.eu/">Global Human Settlement Layer</a>, our team sought to uncover patterns of building occupancy and vacancy through thermal signatures. </p>
+<p>Inspired by the 2022 study “Vacancy Dwellings Spatial Distribution, The Determinants and Policy Implications in the City of Sapporo, Japan” by <a href="https://www.mdpi.com/2071-1050/14/19/12427">Van et al.(2022)</a>, constellr conducted an analysis of over 450,000 building footprints in Sapporo. By integrating LST data with population datasets from the <a href="https://human-settlement.emergency.copernicus.eu/">Global Human Settlement Layer</a>, our team sought to uncover patterns of building occupancy and vacancy through thermal signatures. </p>
+<p><img alt="Methodology" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/ML_methodology.png" width="70%" /></p>
+<figcaption>Figure 2: A machine learning algorithm transforms LST data and complementary information into predictions about building vacancy.</figcaption>
+
 <p>A machine learning classification model was trained on LST data and population density information, which created a predictive model capable of classifying dwelling vacancies with an accuracy of 85 percent. In addition, including the morphological settlement zone features collected by Van et al. (2022) improved classification performance by up to 10 percent. This level of accuracy provides a powerful tool for urban planners and policymakers, enabling more informed decision-making about resource allocation, housing policy, and infrastructure management. </p>
-<h2 id="thermal-footprints-as-a-proxy-for-vacancy-key-findings">Thermal footprints as a proxy for vacancy: Key Findings</h2>
-<p>The analysis revealed two key findings to predict housing vacancy using LST data.</p>
-<p><em>Finding 1: There are distinct thermal patterns across different seasons between occupied and vacant buildings.</em>  </p>
+<h2 id="thermal-footprints-as-a-proxy-for-vacancy">Thermal footprints as a proxy for vacancy</h2>
+<p>The analysis revealed a key feature used to predict housing vacancy using LST data.</p>
 <p>Sapporo experiences cold winters, with December-January-February being the coldest months. Temperatures commonly fall below 0°C and cause snowfall. On the contrary, the summer months July-August-September can be hot and rainy, with temperatures exceeding 30°C. While these external drivers influence the building temperature, vacant and occupied buildings show clear differences, as visible in Figure 2a. </p>
 <p>In winter, vacant buildings were on average 3 to 4°C colder than their occupied counterparts, likely due to the absence of heating. In summer, these same buildings often registered higher temperatures, a consequence of the lack of air conditioning or ventilation systems. While occupied buildings range between 28 - 35°C, vacant buildings are much hotter, with temperatures between 35 and 41°C .These findings align with expectations, yet the granularity of the data enables a much more precise understanding of building-level dynamics across the urban landscape. </p>
-<p><img alt="Winter-Summer" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo_Winter_Summer_comparison.png" /></p>
-<figcaption>Figure 2a: Winter & Summer thermal footprint for buildings in Sapporo with high and low vacancy respectively. Each point represents one building.</figcaption>
+<figure style= "width: 100%;">
+    <div style="display: flex; gap: 10px; justify-content: center;">
+        <img src= "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo_Winter_Summer_comparison.png" alt="Image 1" width="45%">
+        <img src= "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo_Winter_Summer2.png" alt="Image 2" width="45%">
+    </div>
+    <figcaption style= "width: 100%;">
+        Figure 3: Left: Winter & Summer thermal footprint for buildings in Sapporo with high and low vacancy respectively. Each point represents one building. Right: Winter & Summer thermal footprint for buildings in Sapporo, revealing LST hot- and coldspots.
+    </figcaption>  
+</figure>
 
-<p><img alt="Winter-Summer-LST" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo_Winter_Summer2.png" /></p>
-<figcaption>Figure 2b: Winter & Summer thermal footprint for buildings in Sapporo, revealing LST hot- and coldspots. </figcaption>
-
-<p>MORE RESULTS</p>
 <h2 id="implications-for-urban-planning-and-policy">Implications for Urban Planning and Policy</h2>
 <p>High-resolution thermal data offers several advantages for addressing urban vacancy and its associated challenges. First, it enables large-scale, city-wide monitoring of building occupancy without the need for costly field surveys. A single thermal imaging acquisition can cover an area of over 400 square kilometers, providing consistent, repeatable insights across entire metropolitan areas. </p>
 <p>From a policy perspective, the ability to accurately predict building vacancy allows municipalities to better allocate resources for maintenance, security, and redevelopment. Vacant buildings can be prioritized for reinvestment or adaptive reuse initiatives, potentially revitalizing neighborhoods and stimulating local economies. </p>
 <p>Thermal data also has significant implications for energy policy and climate resilience. Understanding how vacant and occupied buildings consume and emit energy across seasons supports the design of targeted energy efficiency programs. In regions where energy demand for cooling is projected to double by 2050, such insights are critical for sustainable urban development. </p>
-<p><img alt="Final Output" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo_Classification.png" /></p>
+<p><img alt="Final Output" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Sapporo_Classification.png" width="70%" /></p>
 <figcaption>Figure 4: Final output showing thermal footprints at the building level in 2020, with a trained machine learning model classifying dwelling vacancy. This ready-to-use dataset supports urban-specific case studies and decision-making.</figcaption>
 
 <h2 id="the-broader-context-urban-heat-islands-and-climate-adaptation">The Broader Context: Urban Heat Islands and Climate Adaptation</h2>
@@ -534,13 +594,13 @@
 <h2 id="conclusion">Conclusion</h2>
 <p>The case of Sapporo demonstrates the potential of thermal intelligence to reshape how we approach urban vacancy and sustainability challenges. By integrating Land Surface Temperature data with population and settlement metrics, constellr offers a new tool for policymakers and urban planners to make data-driven decisions that enhance liveability, energy efficiency, and climate resilience. </p>
 <p>As constellr’s HiVE constellation continues to expand, offering near-continuous global thermal monitoring, the opportunities for applying thermal intelligence to urban challenges will only grow. Cities seeking to adapt to climate change, optimize resource use, and revitalize underutilized spaces will increasingly rely on data-driven insights like these. </p>
-<p><br></p>
 <h2 style="margin-top: 10px; margin-bottom: 10px; ">Download demo data</h2>
-<p>The demonstration data provides you with one geojson file of Sapporo's buildings sourced from Open Street Map (OSM). The attribute table contains information on LST for different years per building as well as the final probability of classification as vacant or non-vacant. The README.xlsx file provides information on the different fields of the attribute table.
-In addition, two example LSTs are provided, one for summer and one for winter. They can be used to visualize the differences in temperatures across the city for winter and summer.</p>
-<p><a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/osm_residential_building_classification.geojson">OSM Buildings Vacancy Classification</a>
-<a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/README.xlsx">README</a>
-<a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/20190707T011956_LST30.tiff">Summer LST: 07.07.2019</a>
+<p>The demonstration data provides you with one geojson file of Sapporo's buildings sourced from Open Street Map (OSM):<br />
+<a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/osm_residential_building_classification.geojson">OSM Buildings Vacancy Classification</a>  </p>
+<p>The attribute table contains information on LST for different years per building as well as the final probability of classification as vacant or non-vacant. The README.xlsx file provides information on the different fields of the attribute table:<br />
+<a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/README.xlsx">README</a>  </p>
+<p>In addition, two example LSTs are provided, one for summer and one for winter. They can be used to visualize the differences in temperatures across the city for winter and summer:<br />
+<a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/20190707T011956_LST30.tiff">Summer LST: 07.07.2019</a><br />
 <a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/20190222T011333_LST30.tiff">Winter LST: 22.02.2019</a></p>
 
 
