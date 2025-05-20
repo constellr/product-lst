@@ -20,7 +20,7 @@
 
 
 ## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+20250513+PUBLIC.pdf)
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+20250520+PUBLIC.pdf)
 
 ## Footnotes
 [^custom-label]: Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km2) between 50°S and 55°N. All numbers are cloud coverage dependent.
