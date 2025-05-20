@@ -16,7 +16,9 @@ nav:
   - How to access our data:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
-  - Explorer Lab: demo.md
+  - Explorer Lab: 
+    - Solutions in Action›: demo.md
+    # - Sapporo: sapporo-use-case.md
     # - LST Essentials: lst-essentials.md
     # - Demo data: demo.md
     
@@ -62,6 +64,8 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
 

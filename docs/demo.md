@@ -1,5 +1,6 @@
-# **Demo Data** 
-Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of demo datasets below. Get an impression of the datasets we deliver, our data quality, and test data integration. 
+# **Solutions in Action** 
+Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of curated use case stories below. Our use case stories are **in-depth examples** of what LST data can achieve. Each story outlines a research question and is **accompanied with a dataset** to answer the question. Get an impression of the datasets we deliver, our data quality, and test data integration. 
+
 <!-- Each dataset includes the LST data layer, cloud masks and meta data files for each observation date over a given area of interest.  -->
 
 <!-- - [Brasil Rioverde Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/br-rioverde-2023.zip)
@@ -8,16 +9,23 @@ Do you want to get started using land surface temperature to derive temperature-
 - [US Pontiac Fields](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/us-pontiac-2023.zip)
 - [Germany Freiburg/Breisgau, Urban/Forest/Agriculture](https://constellr-products-shared.s3.eu-central-1.amazonaws.com/germany_freiburg_breisgau-urban-forest-agriculture.zip) -->
 
-## Demo data for use case stories
+## LST for Precision Agriculture
 
-Our use case stories are in-depth examples of what LST data can achieve. Each story outlines a research question and is accompanied with a dataset to answer the question. 
+Click here for the full story and datasets: [Detecting water stress in crop fields using LST30](https://constellr.github.io/product-lst/water-stress-use-case/)
 
-<h3><a href="https://constellr.github.io/product-lst/water-stress-use-case/">Detecting water stress in crop fields using LST30</a></h3>
-<img class= graph_abstract src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png">
+![Graphical Abstract](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png){ width=70% }
+
+## LST for Urban planning
+
+Click here for the full story and datasets: [Mapping the invisible: using spaceborne LST data to uncover building vacancy](https://constellr.github.io/product-lst/sapporo-use-case/)
+
+![Graphical Abstract2](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png){ width=70% }
 
 
 
 
+
+<!-- 
 ## LST30 demo data
 Our current offer entails fusioned land surface temperature data layers from a variety of data sources. It leverages our in-house developed proprietary emissivity and retrieval algorithms for enhanced data quality. The product is available for different surface areas today re-sampled at a 30m spatial resolution. 
 
@@ -82,4 +90,4 @@ Delete: The simulated dataset below has been generated using airborne thermal in
     ) -->
 
  
-</div>
+<!-- </div> --> 
