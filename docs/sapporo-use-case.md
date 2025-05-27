@@ -1,5 +1,7 @@
 <h1 <span style="color: #202A78;margin-bottom: 5px;">Providing new insights into building occupancy and urban resilience in Japan using themal data</span></h1>  
 
+
+
 [Download the graphcial abstract her.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png)  
 
 
@@ -90,6 +92,6 @@ The demonstration data provides you with one geojson file of Sapporo's buildings
 The attribute table contains information on LST for different years per building as well as the final probability of classification as vacant or non-vacant. The README.xlsx file provides information on the different fields of the attribute table:  
 [README](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/README.xlsx)  
 
-In addition, two example LSTs are provided, one for summer and one for winter. They can be used to visualize the differences in temperatures across the city for winter and summer:  
+<!-- In addition, two example LSTs are provided, one for summer and one for winter. They can be used to visualize the differences in temperatures across the city for winter and summer:  
 [Summer LST: 07.07.2019](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/20190707T011956_LST30.tiff)  
-[Winter LST: 22.02.2019](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/20190222T011333_LST30.tiff)
+[Winter LST: 22.02.2019](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/20190222T011333_LST30.tiff) -->
