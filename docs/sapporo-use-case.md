@@ -2,7 +2,7 @@
 
 
 
-[Download the graphcial abstract her.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png)  
+[Download the graphcial abstract here.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png)  
 
 
 ## Introduction
