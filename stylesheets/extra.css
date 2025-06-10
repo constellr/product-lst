@@ -94,7 +94,7 @@ img {
 .card {
     width: 250px; /* Fixed width to make them smaller */
     margin: 5px auto; /* Space around each card */
-    height: 150px;  /*80px */
+    height: 170px;  /*80px */
     display: flex;
     flex-direction: column;
     align-items: center;
