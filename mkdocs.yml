@@ -8,7 +8,7 @@ edit_uri: https://github.com/constellr/product-lst/tree/main/docs/
 nav:
   - Home: index.md
   - Our Technology: our-technology.md
-  - Our data: 
+  - Our products portfolio: 
     - Constellr's product offer: Constellr-product-offer.md
     - Technical specifications: Technical-specification.md
     - Product deliverables: product-deliverables.md

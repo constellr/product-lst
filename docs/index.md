@@ -63,6 +63,16 @@ In this knowledge center, you can find information about:
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
+            <span class="material-icons" >lightbulb</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Thermal Insights</a></h5>
+          <p class="card-text">Get inspired on how to use LST data.</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
             <span class="material-icons">settings</span> <a href="https://constellr.github.io/product-lst/UI-documentation/" style="color: black;">Data access</a></h5>
           <p class="card-text">Learn how to request and download constellr's data.</p>
         </div>
@@ -76,7 +86,7 @@ In this knowledge center, you can find information about:
             <span class="material-icons" >search</span> 
             <a href="https://constellr.github.io/product-lst/demo/" style="color: black;" >Explorer Lab</a>
           </h5>
-          <p class="card-text">Obtain demo datasets that interests you in the Explorer Lab.</p>
+          <p class="card-text">Learn more about thermal data in the Explorer Lab.</p>
         </div>
       </div>
     </div>
@@ -85,19 +95,9 @@ In this knowledge center, you can find information about:
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <span class="material-icons" >lightbulb</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Thermal Insights</a></h5>
-          <p class="card-text">Get inspired on how to use LST data.</p>
-        </div>
-      </div>
-    </div>
-
-        <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">
-            <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/use-cases/" style="color: black;">Use Cases</a>
+            <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/demo/" style="color: black;">Data solutions</a>
           </h5>
-          <p class="card-text">Learn about interesting real-life applications of constellr's LST data.</p>
+          <p class="card-text">Discover real-life applications of constellr's LST data.</p>
         </div>
       </div>
     </div>
