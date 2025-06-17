@@ -19,6 +19,9 @@
 </div>
 </div>
 <figcaption>Land surface temperature of Freiburg, Germany - June 2023</figcaption>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script>
+
 </body>
 
 </html>

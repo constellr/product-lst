@@ -3,7 +3,7 @@
 
 Our data portfolio in 2025 consists of three distinct data layers that help you maximize insights from land surface temperature (LST).
 
-Benefit from our cutting edge proprietary data layers **LSTprecision** and **LSTzoom** for high-frequency and high resolution monitoring of your area of interest. LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis while the 10m spatial resolution of LSTzoom can provide you insights with a 10x improvement in sharpness over today's LST standard. Both products are ideal for understanding thermal footprints of urban environments, infrastructure, and vegetation, allowing to generate new temperature-based insights in correlation analysis and research projects. Dedicated tasking to analyze your areas of interest is available for both products from mid 2025 onwards, shortly after the launch of constellr's first satellite on the 15.01.2025.
+Benefit from our cutting edge proprietary data layers **LSTprecision** and **LSTzoom** for high-frequency and high resolution monitoring of your area of interest. LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30m while the 5m spatial resolution of LSTzoom can provide you insights with a 10x improvement in sharpness over today's LST standard. Both products are ideal for understanding thermal footprints of urban environments, infrastructure, and vegetation, allowing to generate new temperature-based insights in correlation analysis and research projects. Dedicated tasking to analyze your areas of interest is available for both products from mid 2025 onwards, shortly after the launch of constellr's first satellite on the 15.01.2025.
 
 **LSTfusion** complements our data offer in 2025 for large scale monitoring. Thanks to constellr's best-in-class data fusion and data assimilation approach leveraging public and proprietary land surface temperature data, you will benefit from temperature insights with reliable, guaranteed frequency every 8 days allowing continuous monitoring of larger geographic areas to detect trends and temperature patterns.
 
@@ -51,7 +51,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     ---
 
-    * 10m spatial resolution
+    * 5m spatial resolution
     * Enriched proprietary data
     * Visually best resolved
     * High frequency

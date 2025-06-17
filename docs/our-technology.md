@@ -8,8 +8,8 @@ Our state-of-the-art microsatellite constellation is the **Hi**gh-Precision **V*
  
 HiVE's aim is to delivers Land Surface Temperature data (LST) at a 1-day global temporal resolution, 30 m spatial resolution in the thermal infrared, and better than 2K absolute temperature accuracy. HiVE aims at providing near-real-time temperature mapping across the planet. If it is visible from space, be it snow, crops, rooftops, or forest canopies, we can track its temperature. The comprehensive thermal intelligence we record acts as both a real-time data source and a continuously updated input for calibrating broader data environments. 
 
-![HiVE Journey](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/Hive-journey.png)
-<figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption>
+<!-- ![HiVE Journey](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/Hive-journey.png)
+<figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption> -->
 
 ## Mission Snapshot
 The HiVE mission is owned and operated by constellr and is deployed in orbit via ride-share procured from a third-party launch provider. The ground segment features multiple ground stations, mission planning, tasking, and constellation management functions, as well as User Request I/O and data processing and storage functions. The uniqueness of HiVE is in providing a quantum leap in payload cost efficiency, leveraging our patented virtual calibration technology. Employing thermally stabilized optical systems, cryo-cooled sensors, and a cooperative approach with existing space infrastructure, allows for measurement accuracy comparable to large satellites on a microsatellite platform. 
@@ -79,7 +79,7 @@ To learn more about our different products visit our [Product Portfolio](https:/
 ----------
 
 ## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability+statement+constellr+20250520+PUBLIC.pdf)
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability%2Bstatement%2Bconstellr%2B20250617%2BPUBLIC.pdf)
 
 
 
