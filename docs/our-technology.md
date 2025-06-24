@@ -79,7 +79,7 @@ To learn more about our different products visit our [Product Portfolio](https:/
 ----------
 
 ## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability%2Bstatement%2Bconstellr%2B20250617%2BPUBLIC.pdf)
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability%2Bstatement%2Bconstellr%2B20250624%2BPUBLIC.pdf)
 
 
 
