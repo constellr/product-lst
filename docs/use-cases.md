@@ -26,7 +26,7 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
+<!-- <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
     <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/Kansas2022.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Crop fields in Kansas, USA - June 2022</figcaption>
@@ -37,7 +37,20 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
     Healthy vegetation is the foundation of successful farming, and subtle changes in temperature can reveal stress before it’s visible. Plant stress that goes unnoticed can lead to reduced yields, wasted water, and the spread of disease. Agribusinesses, retailers, and farmers use thermal data to detect these shifts early, giving them time to take mitigating action and preserve yields.
     </p>
 </div>
-</div>  
+</div>   -->
+
+<div class="image-text-block">
+<div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/Kansas2022.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <figcaption>Crop fields in Kansas, USA - June 2022</figcaption>
+</div>
+<div class="text-section">
+    <h3>Crop Stress Monitoring</h3>
+    <p>
+    Healthy vegetation is the foundation of successful farming, and subtle changes in temperature can reveal stress before it’s visible. Plant stress that goes unnoticed can lead to reduced yields, wasted water, and the spread of disease. Agribusinesses, retailers, and farmers use thermal data to detect these shifts early, giving them time to take mitigating action and preserve yields.
+    </p>
+</div>
+</div> 
 
 <br>
 

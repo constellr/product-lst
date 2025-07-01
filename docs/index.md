@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="stylesheets/extra.css" rel="stylesheet">
 </head>
+ 
+<!-- <h1 style="margin-bottom: 5px; "><strong>The Knowledge Center</strong></h1>
+<h2 style="margin-top: 0; margin-bottom: 0px;"><em>Where you will find everything you need to know about constellr's LST data</em></h2> -->
 
-<h1 style="margin-bottom: 5px; "><strong>The Knowledge Center</strong></h1>
-<h2 style="margin-top: 0; margin-bottom: 0px;"><em>Where you will find everything you need to know about constellr's LST data</em></h2>
+<!-- <br> -->
 
-<br>
-
-<body>
+<!-- <body>
 <div class="wrapper">
 <div class="image-container">
 <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_basemap-min.png" alt="First Image" class="active">
@@ -22,9 +22,26 @@
 
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script>
 
-</body>
+</body> -->
 
-</html>
+</html> 
+
+# <strong>The Knowledge Center</strong>
+### *Where you will find everything you need to know about constellr's LST data*
+
+<br>
+
+<div class="wrapper">
+  <div class="image-container">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_basemap-min.png" alt="First Image" class="active">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_lst_overlay-min.png" alt="Second Image">
+  </div>
+</div>
+
+<figcaption>Land surface temperature of Freiburg, Germany - June 2023</figcaption>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script>
+
 
 <h2>About the Knowledge Center</h2>
 
