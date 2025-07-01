@@ -24,15 +24,27 @@
 
 /*for fading images*/
 /*fsets outer container*/
-.image-container {
+/* .image-container {
     position: relative;
     display: inline-block; 
     width: 600px; 
     height: 400px;
-}
+} */
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  
+    /* This creates the height (3:2 aspect ratio) */
+    padding-bottom: 30%;
+  }
+
 /*styling image in container*/
 .image-container img {
     position: absolute;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -42,12 +54,18 @@
 /*centers images*/
 .wrapper {
     text-align: center; 
-    margin-top: 0; 
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 /*makes an image visible/active*/
 .image-container img.active {
     opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+    }
 }
 
 /* Centering tables, figcaptions and paragraphs */
