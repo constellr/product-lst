@@ -41,11 +41,11 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <div class="image-text-block">
 <div class="image-section">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/Kansas2022.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/Kansas2022.png" alt="Thermal Overview">
     <figcaption>Crop fields in Kansas, USA - June 2022</figcaption>
 </div>
 <div class="text-section">
-    <h3>Crop Stress Monitoring</h3>
+    <h3 style= "margin: 0;">Crop Stress Monitoring</h3>
     <p>
     Healthy vegetation is the foundation of successful farming, and subtle changes in temperature can reveal stress before it’s visible. Plant stress that goes unnoticed can lead to reduced yields, wasted water, and the spread of disease. Agribusinesses, retailers, and farmers use thermal data to detect these shifts early, giving them time to take mitigating action and preserve yields.
     </p>
@@ -54,28 +54,28 @@ Agriculture already uses 70% of all accessible freshwater, but with the global p
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-  <div style="flex: 2;">
-    <h3 style="margin: 0;">Soil Temperature Monitoring</h3>
+<div class="image-text-block">
+  <div class="text-section">
+    <h3 style= "margin: 0;">Soil Temperature Monitoring</h3>
     <p>
       Deciding when to plant and how deep to plant into cold soils post winter can be challenging. LST helps agribusinesses, farmers and food chain companies understand the spatial distribution of soil temperature across a field to determine when and how deep to plant, maximizing crop yields from the beginning of the season on.
     </p>
   </div>
-  <div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/jd_2024-06-23_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+  <div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/jd_2024-06-23_lst.png" alt="Thermal Overview">
     <figcaption>A bare soil field in Iowa, USA - June 2024</figcaption>
   </div>
 </div>
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-<div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/rmsi_20210325_lst-min.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+<div class="image-text-block">
+<div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/rmsi_20210325_lst-min.png" alt="Thermal Overview">
     <figcaption>Wheat fields in Madhya Pradesh, India - March 2021 </figcaption>
 </div>
-<div style="flex: 2;">
-    <h3 style="margin: 0;">Biomass and Yield Monitoring</h3>
+<div class="text-section">
+    <h3 style= "margin: 0;">Biomass and Yield Monitoring</h3>
     <p>
         Canopy temperature analysis is detecting changes in plant transpiration hinting at crop stress. Thermal data can provide this information up to two weeks earlier than current tools, enabling food chain companies, financial institutions and traders to spot crop stress with negative implications for yield before the broader market is aware.
     </p>
@@ -90,13 +90,13 @@ Urban environments are increasingly experiencing elevated temperatures due to th
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-<div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/milan_2024-12-05_lst_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+<div class="image-text-block">
+<div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/milan_2024-12-05_lst_short.png" alt="Thermal Overview">
     <figcaption>Milano, Italy - December 2024</figcaption>
 </div>
-<div style="flex: 2;">
-    <h3 style="margin: 0;">Urban heat islands</h3>
+<div class="text-section">
+    <h3 style= "margin: 0;">Urban heat islands</h3>
     <p>
     In urban environments, constellr’s ability to detect subtle absolute temperature variations helps to identify urban heat islands, areas where human activity and infrastructure result in higher temperatures. Urban heat islands are becoming a growing concern as cities expand and temperatures rise. Our thermal intelligence helps urban planners and governments to pinpoint temperature hotspots within urban areas, identifying zones with excessive heat. This data supports governments and city planners in developing targeted strategies to reduce heat and improve the liveability of their cities.
     </p>
@@ -105,15 +105,15 @@ Urban environments are increasingly experiencing elevated temperatures due to th
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-  <div style="flex: 2;">
-    <h3 style="margin: 0;">Heat mitigation measures</h3>
+<div class="image-text-block">
+  <div class="text-section">
+    <h3 style= "margin: 0;">Heat mitigation measures</h3>
     <p>
       Urban vegetation and other heat mitigation measures play a crucial role in reducing heat island effects, improving air quality, and enhancing biodiversity. From trees and parks to green roofs, constellr's thermal intelligence helps urban planners, architects and project developers to track the temperature-reducing effect of mitigation measures on street level, while also enabling monitoring of vegetation health, water usage, and stress levels, enabling better management of urban greenery.
     </p>
   </div>
-  <div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/medellin_2024-07-06_lst_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+  <div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/medellin_2024-07-06_lst_short.png" alt="Thermal Overview">
     <figcaption>Medellin, Colombia - July 2024</figcaption>
   </div>
 </div>
@@ -129,13 +129,13 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-<div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/colorado_road_2024-02-05-LST_zoomedin.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+<div class="image-text-block">
+<div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/colorado_road_2024-02-05-LST_zoomedin.png" alt="Thermal Overview">
     <figcaption>Colorado, USA - February 2024</figcaption>
 </div>
-<div style="flex: 2;">
-    <h3 style="margin: 0;">Transport infrastructure</h3>
+<div class="text-section">
+    <h3 style= "margin: 0;">Transport infrastructure</h3>
     <p>
     Temperature extremes can severely affect road conditions, leading to cracks, ice, and increased wear and tear. Our thermal intelligence helps monitor surface temperatures across road networks, enabling timely interventions for maintenance and repair. Instead of road-level sensors, which are expensive to implement and only offer coverage of specific areas, constellr’s thermal intelligence can monitor large regions simultaneously, ideal for tracking temperature trends across entire cities or highway networks. Whether it's detecting freeze-thaw cycles in winter or identifying heat-induced tarmac damage in summer, municipalities and maintenance companies get the insights needed to reduce road deterioration and ensure safer travel, extending the lifespan of the transport infrastructure and reducing costly emergency repairs.
     </p>
@@ -144,28 +144,28 @@ constellr's thermal intelligence, powered by high-resolution land surface temper
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-  <div style="flex: 2;">
-    <h3 style="margin: 0;">Energy infrastructure</h3>
-    <p >
+<div class="image-text-block">
+  <div class="text-section">
+    <h3 style= "margin: 0;">Energy infrastructure</h3>
+    <p>
       From power grids to coal plants, energy infrastructure is vulnerable to the impact of temperature changes. Land Surface Temperature data provides critical insights for monitoring and maintaining energy infrastructure by enabling the detection of thermal anomalies, assessing environmental impacts, and enhancing operational efficiency. This reduces the risk of outages and harm. For power plants, LST helps monitor cooling performance, detect heat leaks, and optimize energy output, especially under rising ambient temperatures. For pipelines, temperature irregularities can be detected, signaling leaks early and thus improving safety and reliability.
     </p>
   </div>
-  <div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/mercuria_2023-11-14_lst.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+  <div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/mercuria_2023-11-14_lst.png" alt="Thermal Overview">
     <figcaption>Power Plant, Kuwait - November 2023</figcaption>
   </div>
 </div>
 
 <br>
 
-<div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
-<div style="flex: 1;">
-    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/kd_2024-04-29_lst_usingNewBasemap_short.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+<div class="image-text-block">
+<div class="image-section">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/use-cases/kd_2024-04-29_lst_usingNewBasemap_short.png" alt="Thermal Overview">
     <figcaption>Greenhouse in the Netherlands - April 2024</figcaption>
 </div>
-<div style="flex: 2;">
-    <h3 style="margin: 0;">Industrial Sites Economic Monitoring</h3>
+<div class="text-section">
+    <h3 style= "margin: 0;">Industrial Sites Economic Monitoring</h3>
     <p>
     By continuously monitoring thermal emissions from industrial sites, we can detect operational inefficiencies, malfunctions and productivity patterns. Our thermal intelligence helps site operators identify and monitor temperature-induced vulnerabilities, offering predictive insights that allow you to act before damage occurs. By tracking temperature shifts that affect structural integrity, we provide a comprehensive view of potential risks— from material degradation to malfunctioning systems - that allow to prioritize repairs and optimize maintenance schedules. Additionally, financial institutions use constellr's thermal intelligence for monitoring the activity of industrial sites to derive productivity information.
     </p>
