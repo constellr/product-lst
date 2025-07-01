@@ -271,3 +271,50 @@ img {
     }
 }
 
+/* use-cases image-text design responsive to mobile version */
+
+.image-text-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .image-text-block .image-section {
+    flex: 1 1 300px;
+    /* min-width: 250px; */
+  }
+  
+  .image-text-block .image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .image-text-block .text-section {
+    flex: 2 1 300px;
+    /* min-width: 300px; */
+    word-wrap: break-word;
+  }
+  
+  .image-text-block figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  /* Mobile responsive tweak */
+  @media (max-width: 768px) {
+    .image-text-block {
+      flex-direction: column;
+    }
+  
+    .image-text-block .image-section,
+    .image-text-block .text-section {
+      width: 100%;
+    }
+  }
+  

@@ -8,8 +8,8 @@ Our state-of-the-art microsatellite constellation is the **Hi**gh-Precision **V*
  
 HiVE's aim is to delivers Land Surface Temperature data (LST) at a 1-day global temporal resolution, 30 m spatial resolution in the thermal infrared, and better than 2K absolute temperature accuracy. HiVE aims at providing near-real-time temperature mapping across the planet. If it is visible from space, be it snow, crops, rooftops, or forest canopies, we can track its temperature. The comprehensive thermal intelligence we record acts as both a real-time data source and a continuously updated input for calibrating broader data environments. 
 
-<!-- ![HiVE Journey](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/Hive-journey.png)
-<figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption> -->
+![HiVE Journey](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/Hive-journey.png)
+<figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption>
 
 ## Mission Snapshot
 The HiVE mission is owned and operated by constellr and is deployed in orbit via ride-share procured from a third-party launch provider. The ground segment features multiple ground stations, mission planning, tasking, and constellation management functions, as well as User Request I/O and data processing and storage functions. The uniqueness of HiVE is in providing a quantum leap in payload cost efficiency, leveraging our patented virtual calibration technology. Employing thermally stabilized optical systems, cryo-cooled sensors, and a cooperative approach with existing space infrastructure, allows for measurement accuracy comparable to large satellites on a microsatellite platform. 
@@ -67,7 +67,7 @@ Cryocooling technology enables constellr’s HiVE satellites to maintain tempera
 The HiVE data quality is assessed by defined high standards for all Cal/Val activities. The HiVE Cal/ Val activities are supported by ESA within the ESA programs InCubed and Copernicus Contributing Mission (CCM).  
 
 ## Acquisition Scenarios
-The HiVE constellation is primarily planned as a tasking-based mission with off-nadir pointing capabilities up to ±30°. For 2025, this enables an average revisit time of two days with the first two satellites, and reaching daily revisit with five satellites (2027+). 
+The HiVE constellation is primarily planned as a tasking-based mission with off-nadir pointing capabilities up to ±30°. For 2025, this enables an average revisit time of 1.5 days with the first two satellites, and reaching sub-daily revisit with three satellites (2026+). 
 
 <!-- ## Key Innovation
 constellr’s key innovation is a patented architecture to enable high-quality infrared imaging on microsatellites. So far, this was only possible with bus-sized systems costing hundreds of millions of Euros. Using our pioneering technology, we can reduce the cost of the satellites by a factor of around 30 at comparable performance levels.  
