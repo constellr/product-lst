@@ -1,20 +1,49 @@
 <h1 style="margin-bottom: 5px; "><strong>LST - The Essentials</strong></h1>
 
-## LST and its importance
+## Unveiling hiddin insights with thermal data
 
-The temperature of the Earth's land surface represents how hot the ground would feel if you touched it in a specific location. Such temperature is quantified using thermal and optical sensors such as those of constellr. From a satellite’s perspective, the "surface" could be anything visible from space—snow, grass, rooftops, or forest canopies (See Figure 1). So, LST differs from air temperature measured by local stations, by soil sensors, or reported weather data and forecasts. 
+Thermal satellite imagery provides a direct window into Earth’s temperature patterns by detecting the heat emitted from the surface, offering insights invisible to conventional optical sensors by providing land surface temperature (LST). Surface temperature is a fundamental driver of ecosystem processes, infrastructure behavior, and climate-related change. By mapping heat distribution and tracking temperature dynamics, thermal data plays a crucial role in understanding ecosystem functioning, monitoring infrastructure performance, and detecting the impacts of climate variability and change. 
 
-Scientists monitor Land surface temperature because it affects and is affected by weather and climate patterns. They track how rising greenhouse gases influence LST and how changes in LST impact glaciers, ice sheets, permafrost, and vegetation. Farmers often rely on spectral vegetation indices to assess irrigation needs and monitor crop water stress. However, they can also use LST maps to evaluate crop water requirements during summer heat and to identify areas at risk of frost damage in winter. City planners utilize LST data to assess urban heat islands and leverage insights for infrastructure planning.
+Beyond environmental monitoring, thermal observations support applications in disaster response, border monitoring, vessel monitoring, and situational awareness by revealing thermal anomalies associated with wildfires, energy infrastructure disruptions, or unusual heat signatures in remote areas on land and sea. These capabilities contribute to resilience planning and operational awareness while providing a layer of insight that complements conventional imagery for organizations focused on humanitarian, security, and critical infrastructure protection missions. 
 
-![LST monthly composite](link)
-<figcaption>Figure 1: Daytime LST monthly composite map, constellr (leveraging a fusion of public data) </figcaption>
+![First Light](link)
+<figcaption>First light from SkyBee 1: Tokyo, Japan 2025, exemplifying the difference between optical and thermal imagery.</figcaption>
 
-The 2030 Agenda for Sustainable Development, adopted by all United Nations Member States in 2015, offers a shared blueprint for peace and prosperity for people and the planet, now and into the future. At its core are the 17 Sustainable Development Goals (SDGs), which are an urgent call to action for all countries, both developed and developing, to engage in a global partnership. Temperature monitoring is crucial for 12 of them.   
+Surface temperature measurements play a vital role in advancing progress toward the United Nations Sustainable Development Goals (SDGs). Adopted in 2015 as part of the 2030 Agenda for Sustainable Development, the SDGs form a global blueprint for peace, prosperity, and environmental stewardship. Temperature monitoring plays a critical role in achieving at least 14 of the 17 goals.
 
-![SDGs](Link)
-<figcaption>Figure 2: 12 of 17 SDG Goals United Nations, 2024 shown around an image depicting LST Surface temperature of agricultural fields in Saudi Arabia where blue highlights the round fields with lower temperature. </figcaption>
+![SDG image](link)
+<figcaption>14 out of the 17 SDG Goals by the UN that benefit from the monitoring of thermal patterns.</figcaption>
 
-Through consistently delivering data over time, it is possible to make more intelligent decisions for the environment and businesses. Surface Temperature data empowers actionable intelligence for the sustainable management of agricultural and infrastructure assets, for example monitoring agricultural fields at scale or gathering precise data on Urban Heat Islands.  
+LST reveals processes invisible to optical imager, such as evapotranspiration in crops, surface and urban heat islands, or anomalies in industrial infrastructure. Together, optical and thermal data create a richer, more actionable picture of our planet’s surface dynamics. 
+
+There are many advantages of thermal data, find below a few of the most important ones:  
+
+- **Faster insights:** Temperature is a physical variable, which is a lot closer to insights in many use cases compared to visual data (and will hence need less computational effort to extract the same inisghts). While there are many reasons why leaf colour changes, temperature-derived vegetative stress is a direct quantification of the health of a plant, on which one can act. Road temperatures directly link to road erosion and maintenance requirements, the heat radiation from a building is highly related to its material and insulation.  
+- **Early warning capabilities:**  Anomalies in temperatures, be it in ways of detecting vegetative stress, the radiative heat of a power plant, or monitoring pollution in rivers, indicate symptoms of early damage, even before it is visible to the eye. A loss of yield, a power outage, or an algae blooming downriver can be better prepared for with an earlier understanding of risk and providing the capabilities of early warnings. 
+- **Predictive:** By using physical and AI models that fill gaps between thermal data points over time and space, we can project these insights into the future. This effectively enables forward-looking analysis to anticipate upcoming thermal conditions, enabling proactive decision-making for operations, maintenance, and network planning.  
+
+Today, thermal Earth observation (EO) data holds immense strategic value, constellr is a key player delivering high quality, spatial resolution, and precision LST. constellr’s LST is  improving global and temporal coverage of   thermal data, to deliver new value across cities, farms, and ecosystems worldwide.   
+
+## LST definition and its importance
+
+The temperature of the Earth's land surface represents how hot the ground would feel if touched at a specific location. Such temperature is measured using thermal and optical sensors, such as those used by constellr’s satellites. From a satellite perspective, the "surface" could be anything visible from space—snow, grass, rooftops, industrial buildings, or forest canopies. Importantly, LST differs from air temperature, which is typically measured by ground-based weather stations at about 2 meters above the surface and reported by weather forecasts. While LST reflects the actual skin temperature of the Earth’s surface, air temperature represents the temperature of the air above it—meaning the two can differ significantly, such as under clear skies and in urban areas. 
+
+![Global LST Map](link)
+<figcaption>Daytime LST monthly composite map (by constellr, leveraging a fusion of public data)</figcaption>
+
+Through consistently delivering high-quality LST data over time, it becomes possible to make more intelligent data-driven decisions for the environment, economy, and societal resilience. Surface temperature data empowers actionable intelligence for the sustainable management of agricultural, infrastructural, and industrial assets, as well as science. 
+
+**Scientists** monitor Land surface temperature because it affects and is affected by weather and climate patterns. They track how rising greenhouse gas concentrations influence LST and how this in turn impacts glaciers, ice sheets, permafrost, and vegetation.  
+
+For **farmers**, LST is a valuable complement to spectral vegetation indices. While farmers traditionally rely on indices like NDVI to assess plant health and irrigation needs, LST maps offer additional insights—helping detect crop water stress during summer heatwaves and identifying areas at risk of frost damage in winter. 
+
+**City planners** utilize LST data to assess urban heat islands and leverage insights for infrastructure planning.  
+
+**Security and intelligence analysts** leverage thermal data to reveal what is otherwise invisible such as human presence, equipment activity, energy use, and environmental change data on land and sea, from terrain analysis to vessel detection.
+
+**Industrial operators** use LST data to monitor activities at refineries and power plants, enabling better oversight of critical infrastructure, operational safety, and emissions management. 
+
+For more examples of how LST data can be applied in practice, see the page [Thermal Insights](https://constellr.github.io/product-lst/use-cases). 
 
 ## constellr's acquisition process
 <h3>What spaceborne instruments capture</h3>

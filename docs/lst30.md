@@ -12,7 +12,7 @@ Leveraging thermal data of LST30 has been a success, where the potential of LST 
 | --------------- | ----- |
 | Spatial resolution | 30m |
 | Spatial coverage | Worldwide|
-| Scence size | 110km x 110km |
+| Scene size | 110km x 110km |
 | Temporal resolution | 8 days |
 | Temporal archive | 2014 - ongoing|
 | Bands | LST <br> Cloud Mask |  

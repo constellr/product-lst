@@ -27,7 +27,7 @@
 </html> 
 
 # <strong>The Knowledge Center</strong>
-### *Where you will find everything you need to know about constellr's LST data*
+<h3>*Where you will find everything you need to know about constellr's LST data*</h3>
 
 <br>
 
