@@ -6,59 +6,51 @@ Explore our collection of use case stories, which are **in-depth examples** of w
 
 Or do you want to get started using land surface temperature to derive temperature-based insights? Use our **Open Data Archive** to experience our state-of-the-art imagery first-hand and for free. 
 
-## LST Essentials
 
-<div class="grid cards" markdown>
+## LST Essentials 
 
--   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**Unveiling hidden insights with thermal data*</a>
-    
-    ---
 
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+<!-- Swiper styles -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
-    ---
+<div class="carousel-container">
+    <!-- Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 
-    5 min read
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
 
--   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">*LST definition and its importance*</a>
-    
-    ---
+            <div class="swiper-slide">
+            <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
+            <h3><a href="#">Unveiling hidden insights with thermal data</a></h3>
+            <span class="card-meta">5 min read</span>
+            </div>
 
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+            <div class="swiper-slide">
+            <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
+            <h3><a href="#">LST definition and its importance</a></h3>
+            <span class="card-meta">3 min read</span>
+            </div>
 
-    ---
+            <div class="swiper-slide">
+            <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
+            <h3><a href="#">What our space instruments capture</a></h3>
+            <span class="card-meta">5 min read</span>
+            </div>
 
-    3 min read
+            <div class="swiper-slide">
+            <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
+            <h3><a href="#">LST data retrieval process</a></h3>
+            <span class="card-meta">3 min read</span>
+            </div>
 
--   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**What our spaceborn instruments capture**</a>
-    
-    ---
+            <div class="swiper-slide">
+            <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
+            <h3><a href="#">Processing satellite-derived thermal data</a></h3>
+            <span class="card-meta">5 min read</span>
+            </div>
 
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
-
-    ---
-
-    3 min read
-
--   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**LST data retrieval process**</a>
-    
-    ---
-
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
-
-    ---
-
-    3 min read
-
--   <a href="https://constellr.github.io/product-lst/Technical-specification/" style="color: black;">**Processing satellite-derived thermal data**</a>
-    
-    ---
-
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
-
-    ---
-
-    5 min read
-
+        </div>
+    </div>
 </div>
-

@@ -274,6 +274,21 @@
 
     <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script> -->
 
+    <!-- for image/card carousell -->
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+    </script>
 
 {% endblock %}
 

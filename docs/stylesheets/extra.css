@@ -197,6 +197,153 @@ img {
 }
 
 
+/* Image carousel explorer lab */
+.carousel-container {
+  max-width: 1500px; 
+  margin: 0 auto;
+  position: relative; 
+  padding: 0 40px; 
+}
+
+.swiper {
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.swiper-slide {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 290px;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.swiper-slide h3 {
+  font-size: 1 rem;
+  margin: 0.5rem 0 0.5rem 0;
+  min-height: 4.5em; /* Reserve space for 2 lines */
+}
+
+.card-meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.swiper-wrapper {
+    overflow: visible !important;
+    align-items: stretch;
+    padding: 1rem;
+}
+
+.swiper-slide {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: none;         /* remove background */
+  box-shadow: none;         /* remove shadow */
+  border: none;             /* remove border */
+  width: auto;              /* remove forced dimensions */
+  height: auto;
+  padding: 0;
+  color: #21125a; 
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px;
+  color: #21125a;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 0 30px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 32px;
+    height: 32px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 12px;
+  }
+}
+
+
+
+/* .swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007aff;
+  transition: all 0.2s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: -10px; 
+}
+
+.swiper-button-next {
+  right: 0px;
+} */
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+}
+
+
 /* Sidebar and Navigation Customization */
 
 /* Make the sidebar visible when toggled */
