@@ -3,7 +3,7 @@
 ## HiVE microsatellites
 *Delivering insights never seen before.*  
 
-Our state-of-the-art microsatellite constellation is the **Hi**gh-Precision **V**ersatile **E**cosphere (HiVE) monitoring mission. It is a constellation of microsatellites, the SkyBees. These SkyBees are in the 120 kg class, flying in constellation in a similar sun-synchronous orbital plane. The SkyBees orbit Earth at an altitude between 510 km and 590 km with a goal lifetime of 5 years for each satellite. Overpass time is 10:30 am for SkyBee-1 and 1:30pm is planned for SkyBee-2. Respective night time aquisitions are shifted for 12 hours. 
+Our state-of-the-art microsatellite constellation is the **Hi**gh-Precision **V**ersatile **E**cosphere (HiVE) monitoring mission. It is a constellation of microsatellites, the SkyBees. These SkyBees are in the 120 kg class, flying in constellation in a similar sun-synchronous orbital plane. The SkyBees orbit Earth at an altitude between 510 km and 590 km with a goal lifetime of 5 years for each satellite. Overpass time is 10:30 am for SkyBee-1 and 1:30 pm is planned for SkyBee-2. Respective night time aquisitions are shifted for 12 hours. 
  
  
 HiVE's aim is to delivers Land Surface Temperature data (LST) at a 1-day global temporal resolution, 30 m spatial resolution in the thermal infrared, and better than 2K absolute temperature accuracy. HiVE aims at providing near-real-time temperature mapping across the planet. If it is visible from space, be it snow, crops, rooftops, or forest canopies, we can track its temperature. The comprehensive thermal intelligence we record acts as both a real-time data source and a continuously updated input for calibrating broader data environments. 
@@ -27,7 +27,7 @@ The payload is designed such that it can operate either in mapping mode, where c
 ## TIR & VNIR instruments
 *The TIR instrument is HiVE's payload core.*  
 
-The Radiance retrieved by the TIR imager will be transformed to orthorectified Land Surface Temperature using the additional information from the VNIR imager (e.g. geometric information to built the geometric model, Aerosol and Water Vapor information to support the estimation of the atmospheric model and the NDVI to derive a first guess for the emissivity calculations). It achieves a 28.9 m Ground Sampling Distance (GSD) and a 18.5 km swath width at an altitude of 540km. The TIR bands and their central wavelengths, i.e. the wavelength at which the signal is strongest, as well as their respective bandwidth are displayed in Table 1.   
+The Radiance retrieved by the TIR imager will be transformed to orthorectified Land Surface Temperature using the additional information from the VNIR imager (e.g. geometric information to built the geometric model, Aerosol and Water Vapor information to support the estimation of the atmospheric model and the NDVI to derive a first guess for the emissivity calculations). It achieves a 28.9 m Ground Sampling Distance (GSD) and a 17.5 km swath width at an altitude of 510km. The TIR bands and their central wavelengths, i.e. the wavelength at which the signal is strongest, as well as their respective bandwidth are displayed in Table 1.   
 
 | Filter Number | Central Wavelength [µm] | Bandwidth [nm] |
 | ------------- | ----------------------- | --------- |
@@ -37,7 +37,7 @@ The Radiance retrieved by the TIR imager will be transformed to orthorectified L
 | 04 | 11.75 | 500 |  
 <figcaption>Table 1: Spectral bands in the TIR range.</figcaption>
 
-At a nominal altitude of 540km, the **VNIR camera** has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. The data binned on board to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in Table 2.
+At a nominal altitude of 510km, the **VNIR camera** has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. The data binned on board to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in Table 2.
 
 | Filter Number | Central Wavelength [µm] | Bandwidth [nm] | Targeted GSD [m] |
 | ------------- | ----------------------- | --------- | ---------------- |
