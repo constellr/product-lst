@@ -23,31 +23,31 @@ Or do you want to get started using land surface temperature to derive temperatu
 
             <div class="swiper-slide">
             <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
-            <h3><a href="#">Unveiling hidden insights with thermal data</a></h3>
+            <h3><a href="https://constellr.github.io/product-lst/EL-unveiling-hidden-insights/">Unveiling hidden insights with thermal data</a></h3>
             <span class="card-meta">5 min read</span>
             </div>
 
             <div class="swiper-slide">
             <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
-            <h3><a href="#">LST definition and its importance</a></h3>
+            <h3><a href="https://constellr.github.io/product-lst/EL-LST-definition">LST definition and its importance</a></h3>
             <span class="card-meta">3 min read</span>
             </div>
 
             <div class="swiper-slide">
             <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
-            <h3><a href="#">What our space instruments capture</a></h3>
+            <h3><a href="https://constellr.github.io/product-lst/EL-space-instruments-capture">What our space instruments capture</a></h3>
             <span class="card-meta">5 min read</span>
             </div>
 
             <div class="swiper-slide">
             <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
-            <h3><a href="#">LST data retrieval process</a></h3>
+            <h3><a href="https://constellr.github.io/product-lst/EL-LST-retrieval-process">LST data retrieval process</a></h3>
             <span class="card-meta">3 min read</span>
             </div>
 
             <div class="swiper-slide">
             <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
-            <h3><a href="#">Processing satellite-derived thermal data</a></h3>
+            <h3><a href="https://constellr.github.io/product-lst/EL-processing-thermal-data">Processing satellite-derived thermal data</a></h3>
             <span class="card-meta">5 min read</span>
             </div>
 

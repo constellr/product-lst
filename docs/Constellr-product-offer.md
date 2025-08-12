@@ -51,13 +51,13 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     ---
 
-    * 5m spatial resolution
+    * 10m spatial resolution
     * Enriched proprietary data
     * Visually best resolved
     * High frequency
 
 
-</div>
+<!-- </div>
 
 <h2>Pre-cursor products in 2024-2025</h2>
 
@@ -82,4 +82,4 @@ If you want to already  explore the benefits of high-resolution land surface tem
 
 
 
-</div>
+</div> -->
