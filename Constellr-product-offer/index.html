@@ -51,6 +51,8 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -591,32 +593,39 @@
 <p><img alt="LSTzoom" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-capture-min.PNG" style="height: 200px; width: 200px; object-fit: cover;" /></p>
 <hr />
 <ul>
-<li>5m spatial resolution</li>
+<li>10m spatial resolution</li>
 <li>Enriched proprietary data</li>
 <li>Visually best resolved</li>
 <li>High frequency</li>
 </ul>
 </li>
 </ul>
-</div>
+<!-- </div>
+
 <h2>Pre-cursor products in 2024-2025</h2>
 
-<p>If you want to already  explore the benefits of high-resolution land surface temperature analysis today, we recommend you to take a look at our pre-cursor products and get in touch with us. </p>
-<div class="grid cards">
-<ul>
-<li>
-<p><a href="https://constellr.github.io/product-lst/lst30/"><strong>LST30</strong></a></p>
-<p><strong>Large coverage for regional monitoring</strong></p>
-<p><img alt="LST30" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" style="height: 200px; width: 200px; object-fit: cover;" /></p>
-<hr />
-<ul>
-<li>30m spatial resolution</li>
-<li>Proprietary LST retrieval</li>
-<li>Algorithm enhanced public data</li>
-<li>Large area coverage</li>
-</ul>
-</li>
-</ul>
+If you want to already  explore the benefits of high-resolution land surface temperature analysis today, we recommend you to take a look at our pre-cursor products and get in touch with us. 
+
+
+<div class="grid cards" markdown>
+
+-   [__LST30__](https://constellr.github.io/product-lst/lst30/)
+
+    **Large coverage for regional monitoring**
+
+    ![LST30](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+
+    ---
+
+    * 30m spatial resolution
+    * Proprietary LST retrieval
+    * Algorithm enhanced public data
+    * Large area coverage
+
+
+
+
+</div> -->
 </div>
 
 
@@ -946,6 +955,21 @@
 
     <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script> -->
 
+    <!-- for image/card carousell -->
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+    </script>
 
 
   </body>

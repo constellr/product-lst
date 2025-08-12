@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://github.com/constellr/product-lst/Technical-specification/">
+        <link rel="canonical" href="https://github.com/constellr/product-lst/EL-processing-thermal-data/">
       
       
-        <link rel="prev" href="../Constellr-product-offer/">
-      
-      
-        <link rel="next" href="../product-deliverables/">
       
       
       <link rel="icon" href="../assets/logo-constellr-dark-icon.svg">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Technical specifications - Knowledge Center</title>
+        <title>Land Surface Temperature (LST) data retrieval process - Knowledge Center</title>
       
     
     
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#technical-specifications" class="md-skip">
+        <a href="#land-surface-temperature-lst-data-retrieval-process" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Technical specifications
+              Land Surface Temperature (LST) data retrieval process
             
           </span>
         </div>
@@ -244,19 +240,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -271,7 +265,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Our products portfolio
@@ -304,31 +298,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Technical specifications
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Technical-specification/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -338,53 +311,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview-product-specifications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview Product Specifications
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#capability-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Capability Statement
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#footnotes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Footnotes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -612,137 +538,18 @@
   
 
 
-<h1 id="technical-specifications"><strong>Technical Specifications</strong></h1>
-<h2 id="overview-product-specifications" style="margin-bottom: 5px;">Overview Product Specifications <sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></h2>
-<table>
-<thead>
-<tr>
-<th>Characteristics</th>
-<th><strong>LSTprecision</strong></th>
-<th><strong>LSTzoom</strong></th>
-<th>LSTfusion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Spatial Resolution <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></strong></td>
-<td>30m</td>
-<td>10m</td>
-<td>30m</td>
-</tr>
-<tr>
-<td><strong>Swath</strong></td>
-<td>17.5km</td>
-<td>17.5km</td>
-<td>Cropped to AOI (max. 110km x 110km)</td>
-</tr>
-<tr>
-<td><strong>Scene Size</strong></td>
-<td>15km x 15km</td>
-<td>15km x 15km</td>
-<td>110km x 110km</td>
-</tr>
-<tr>
-<td><strong>Frequency <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></strong></td>
-<td>2025: 1.5 - 3 days <br> 2026: sub-daily</td>
-<td>2025: 1.5-3 days <br> 2026: sub-daily</td>
-<td>2025: daily <br> 2026: hourly <br> 2027: forecast</td>
-</tr>
-<tr>
-<td><strong>Coverage</strong></td>
-<td>worldwide tasking, up to 1.000.000 km² daily imaging capacity</td>
-<td>worldwide tasking, up to 1.000.000 km² daily imaging capacity</td>
-<td>Worldwide</td>
-</tr>
-<tr>
-<td><strong>Local acquisition time <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></strong></td>
-<td>2025 Q3: 10:30 am &amp; 1:30 pm <br> 2025 Q4: 01:30 am/pm, 10:30h am/pm</td>
-<td>2025 Q3: 10:30 am &amp; 1:30 pm <br> 2025 Q4: 01:30 am/pm, 10:30h am/pm</td>
-<td>2025: Data delivery for 11:00 am <br> 2026: hourly</td>
-</tr>
-<tr>
-<td><strong>Type of images</strong></td>
-<td>2025 Q3: day imagery <br> 2025 Q4: day and night imagery</td>
-<td>2025 Q3: day imagery <br> 2025 Q4: day and night imagery</td>
-<td>2025: day imagery <br> 2026: day and night imagery</td>
-</tr>
-<tr>
-<td><strong>Availability</strong></td>
-<td>2025 Q3-ongoing</td>
-<td>2025 Q3-ongoing</td>
-<td>2014-ongoing<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></td>
-</tr>
-<tr>
-<td><strong>Acquisition Angle</strong></td>
-<td>up to 30°</td>
-<td>up to 30°</td>
-<td>not applicable</td>
-</tr>
-<tr>
-<td><strong>Temperature accuracy <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></strong></td>
-<td>&lt;1-2K with 0.03K NEDT</td>
-<td>&lt;3K</td>
-<td>&lt;5K</td>
-</tr>
-<tr>
-<td><strong>Latency <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></strong></td>
-<td>2025: &lt;3 days <br> 2026: &lt;12 hrs <br> 2027: &lt;5 h</td>
-<td>2025: &lt;3 days <br> 2026: &lt;12 hrs <br> 2027: &lt;5 h</td>
-<td>not applicable</td>
-</tr>
-<tr>
-<td><strong>Reactivity</strong></td>
-<td>2025: &lt;5 business days <br> 2026: &lt;12 hrs <br> 2027: &lt;1 h</td>
-<td>2025: &lt;3 days <br> 2026: &lt;12 hrs <br> 2027: &lt;1 h</td>
-<td>not applicable</td>
-</tr>
-<tr>
-<td><strong>Total request time</strong></td>
-<td>Sum of the above + revisit time</td>
-<td>Sum of the above + revisit time</td>
-<td>2025: &lt; 3 days <br> 2026: &lt; 24 hrs</td>
-</tr>
-<tr>
-<td><strong>Calibration and Validation</strong></td>
-<td>In-situ data validation following CEOS standards.  Patented cross calibration of HiVE with highly accurate calibrated public missions.</td>
-<td>In-situ data validation following CEOS standards. Patented cross calibration of HiVE with highly accurate calibrated public missions.</td>
-<td>In-situ data validation following CEOS standards. Patented cross calibration of HiVE with highly accurate calibrated public missions.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="capability-statement">Capability Statement</h2>
-<p>This document is intented to always provide you the latest version of our capability statement. Download <a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/capability-statement/Capability_statement_KC.pdf">here</a></p>
-<h2 id="footnotes">Footnotes</h2>
-<div class="footnote">
-<hr />
+<h1 id="land-surface-temperature-lst-data-retrieval-process"><strong>Land Surface Temperature (LST) data retrieval process</strong></h1>
+<p>As shown below, constellr monitors areas of interests as indicated by their customers. It then receives and processes the data from the HiVE constellation, to make the high/quality LST imagery available on a user platform for its customers. </p>
+<p><img alt="Process flow" src="AWS link" /></p>
+<figcaption>LST data retrieval process.</figcaption>
+
+<p>The captured signal follows a journey of a series of steps:  </p>
 <ol>
-<li id="fn:custom-label">
-<p>Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>) between 50°S and 55°N. All numbers are cloud coverage dependent.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision and LSTzoom native nadir looking Ground Sampling Distance (GSD) at 510km altitude is 27.3 m for Thermal Infrared data, while GSD for LSTfusion varies with different input data sources. GSD defined as a pixel projection on ground. For LSTzoom higher resolution VNIR bands are used for sharpening to 10m.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p>For LSTprecision and LSTzoom frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 &lt; 4 days is equatorial, &lt; 3 days at ± 40o+ latitudes and &lt; 2 days between ± 60o and ± 80o latitude. For LSTfusion frequency defines the regularity with which data output is delivered.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p>Defined as solar local time, which is time based on the Sun’s actual position in the sky at your location, without considering time zones or daylight saving shifts.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-<li id="fn:5">
-<p>Because LSTfusion combines data from multiple satellites it can deliver Land Surface Temperature maps starting from 2014 using archived imagery.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
-<li id="fn:6">
-<p>Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
-</li>
-<li id="fn:7">
-<p>Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
-</li>
-<li id="fn:8">
-<p>Defined as the time between image acquisition by a satellite and delivery of LST data corresponding to the acquisition. 2σ (95%) over 1000 deliveries.​
-​&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
-</li>
+<li>The data reaches constellr’s ground segment then are processed using constellr’s land surface temperature retrieval algorithm.  </li>
+<li>There are various datasets used to retrieve LST including atmospheric conditions during data acquisition, the land cover type as captured by constellr’s optical sensors, as well as topographical data.  </li>
+<li>The processed data is further transformed into heatmaps, where each pixel represents a specific temperature. One can visualize temperature distribution across areas by attributing colors to various temperature levels, making it easy to identify patterns like hot spots or cooler zones.  </li>
+<li>Constellr then makes its data available for customers on through the End User Platform.</li>
 </ol>
-</div>
 
 
 

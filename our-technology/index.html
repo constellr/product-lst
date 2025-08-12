@@ -51,6 +51,8 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -656,7 +658,7 @@
 <h1 id="our-technology"><strong>Our Technology</strong></h1>
 <h2 id="hive-microsatellites">HiVE microsatellites</h2>
 <p><em>Delivering insights never seen before.</em>  </p>
-<p>Our state-of-the-art microsatellite constellation is the <strong>Hi</strong>gh-Precision <strong>V</strong>ersatile <strong>E</strong>cosphere (HiVE) monitoring mission. It is a constellation of microsatellites, the SkyBees. These SkyBees are in the 120 kg class, flying in constellation in a similar sun-synchronous orbital plane. The SkyBees orbit Earth at an altitude between 510 km and 590 km with a goal lifetime of 5 years for each satellite. Overpass time is 10:30 am for SkyBee-1 and 1:30pm is planned for SkyBee-2. Respective night time aquisitions are shifted for 12 hours. </p>
+<p>Our state-of-the-art microsatellite constellation is the <strong>Hi</strong>gh-Precision <strong>V</strong>ersatile <strong>E</strong>cosphere (HiVE) monitoring mission. It is a constellation of microsatellites, the SkyBees. These SkyBees are in the 120 kg class, flying in constellation in a similar sun-synchronous orbital plane. The SkyBees orbit Earth at an altitude between 510 km and 590 km with a goal lifetime of 5 years for each satellite. Overpass time is 10:30 am for SkyBee-1 and 1:30 pm is planned for SkyBee-2. Respective night time aquisitions are shifted for 12 hours. </p>
 <p>HiVE's aim is to delivers Land Surface Temperature data (LST) at a 1-day global temporal resolution, 30 m spatial resolution in the thermal infrared, and better than 2K absolute temperature accuracy. HiVE aims at providing near-real-time temperature mapping across the planet. If it is visible from space, be it snow, crops, rooftops, or forest canopies, we can track its temperature. The comprehensive thermal intelligence we record acts as both a real-time data source and a continuously updated input for calibrating broader data environments. </p>
 <p><img alt="HiVE Journey" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Our-technology/Hive-journey.png" /></p>
 <figcaption>Figure 1: HiVE journey, the past and future of constellr's satellites. </figcaption>
@@ -672,7 +674,7 @@
 <p>The payload is designed such that it can operate either in mapping mode, where continuous stripes are recorded, or in targeting mode, where specific targets are pre-selected and then recorded within the field-of-regard of the satellite. </p>
 <h2 id="tir-vnir-instruments">TIR &amp; VNIR instruments</h2>
 <p><em>The TIR instrument is HiVE's payload core.</em>  </p>
-<p>The Radiance retrieved by the TIR imager will be transformed to orthorectified Land Surface Temperature using the additional information from the VNIR imager (e.g. geometric information to built the geometric model, Aerosol and Water Vapor information to support the estimation of the atmospheric model and the NDVI to derive a first guess for the emissivity calculations). It achieves a 28.9 m Ground Sampling Distance (GSD) and a 18.5 km swath width at an altitude of 540km. The TIR bands and their central wavelengths, i.e. the wavelength at which the signal is strongest, as well as their respective bandwidth are displayed in Table 1.   </p>
+<p>The Radiance retrieved by the TIR imager will be transformed to orthorectified Land Surface Temperature using the additional information from the VNIR imager (e.g. geometric information to built the geometric model, Aerosol and Water Vapor information to support the estimation of the atmospheric model and the NDVI to derive a first guess for the emissivity calculations). It achieves a 28.9 m Ground Sampling Distance (GSD) and a 17.5 km swath width at an altitude of 510km. The TIR bands and their central wavelengths, i.e. the wavelength at which the signal is strongest, as well as their respective bandwidth are displayed in Table 1.   </p>
 <table>
 <thead>
 <tr>
@@ -706,7 +708,7 @@
 </table>
 <figcaption>Table 1: Spectral bands in the TIR range.</figcaption>
 
-<p>At a nominal altitude of 540km, the <strong>VNIR camera</strong> has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. The data binned on board to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in Table 2.</p>
+<p>At a nominal altitude of 510km, the <strong>VNIR camera</strong> has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. The data binned on board to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in Table 2.</p>
 <table>
 <thead>
 <tr>
@@ -1129,6 +1131,21 @@ In summary, HiVE’s features allow to ensures absolute temperature accuracy and
 
     <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script> -->
 
+    <!-- for image/card carousell -->
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+    </script>
 
 
   </body>
