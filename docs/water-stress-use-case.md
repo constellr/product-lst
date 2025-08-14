@@ -15,7 +15,7 @@
 </div>
 <div style="flex: 2;">
     <p>
-    In the vast fields of corn across the United States, growing successful crops depends on detecting problems early (<strong>Figure 1</strong>). In such fields, water stress is one of the most common challenges, but it is not always easy for the land manager to spot. A section of the field might start to struggle, but by the time the signs are visible, it might already be too late to fully recover. Fortunately, constellr’s spaceborne technology is changing how farmers can manage their fields. Satellites equipped to measure land surface temperature detect subtle heat changes caused by water stress, often long before it is noticeable from the ground. This story demonstrates the detection of water stress using land surface temperature using <a href="lst30.md"><strong>constellr’s LST30 product</strong></a>  and a story of satellite data capturing the faint heat signals of stress before the harvest suffers. 
+    In the vast fields of corn across the United States, growing successful crops depends on detecting problems early (<strong>Figure 1</strong>). In such fields, water stress is one of the most common challenges, but it is not always easy for the land manager to spot. A section of the field might start to struggle, but by the time the signs are visible, it might already be too late to fully recover. Fortunately, constellr’s spaceborne technology is changing how farmers can manage their fields. Satellites equipped to measure land surface temperature detect subtle heat changes caused by water stress, often long before it is noticeable from the ground. This story demonstrates the detection of water stress using in-house derivation of LST from thermal acquisitions of Landsat 8 and Landsat 9 and a story of satellite data capturing the faint heat signals of stress before the harvest suffers. 
     </p>
 </div>
 </div>  
@@ -54,7 +54,7 @@ Considering one field that has a sector that is not well irrigated in the red tr
 ![lst heatmap](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/water-stress-lst.png){: style="height:250px"}
 <figcaption> Figure 6: LST maps of the field showing the temperature variation with the segment of the fields that is not well irrigated shown in the red triangle </figcaption>
 
-By using just a few thermal images of [**constellr’s LST30**](lst30.md), acquired during the early vegetation growth stage of corn (from June 11 to June 28), LST can already identify a substantial portion of pixels deemed abnormal throughout the entire vegetation growth period (indicated by the red triangle, **Figure 6**). On the other hand, NDVI needed additional images (from June 11 to July 22) to flag a significant number of pixels as abnormal. Using machine learning techniques, such as One-Class Support Vector Machine (OC-SVM), patterns can be identified in an automated manner where anomalies that deviate significantly from the norm within a corn field can be detected.  
+By using just a few thermal images of LST data, acquired during the early vegetation growth stage of corn (from June 11 to June 28), LST can already identify a substantial portion of pixels deemed abnormal throughout the entire vegetation growth period (indicated by the red triangle, **Figure 6**). On the other hand, NDVI needed additional images (from June 11 to July 22) to flag a significant number of pixels as abnormal. Using machine learning techniques, such as One-Class Support Vector Machine (OC-SVM), patterns can be identified in an automated manner where anomalies that deviate significantly from the norm within a corn field can be detected.  
 
 This implies:
 
@@ -65,7 +65,7 @@ This implies:
 For example, when parts of a field experience water stress, the plant stomata close, causing those areas to warm up, and thus subtle heat signatures that can be observed from space. By analyzing these satellite observations at each stage of a crop’s life cycle, such as corn, we can detect stress early and help farmers take action to maximize their yields.  
 
 <div style="background-color: #f0f8ff; padding: 10px; border-left: 5px solid #160A42;">
-  With LST30, we can identify these issues early and precisely. In 2025, even more powerful datasets will be available. We look forward to quantifying the major improvements of the outcome with LST fusion to monitor large areas of corm, LST precision to obtain the highest accuracy and sensitivity, as well as LST zoom for the greatest details.
+  With high-resolution LST data, we can identify these issues early and precisely. In 2025, even more powerful datasets will be available. We look forward to quantifying the major improvements of the outcome with LST fusion to monitor large areas of corm, LST precision to obtain the highest accuracy and sensitivity, as well as LST zoom for the greatest details.
 </div>
 ---
 
@@ -73,7 +73,7 @@ Special thanks to Charlie Siggs, Nicolas Chamberland, Loic Quertenmont, Elsy Ibr
 
 <br>
 <h2 style="margin-top: 10px; margin-bottom: 10px; ">Download demo data</h2>
-The demonstration data provides you with csv files containing a timeseries of the growing season of one corn field. It includes the median and standard deviation of 1) [LST30](lst30.md) data for the water-stressed field section, 2) [LST30](lst30.md) data for the well-watered field section. Additionally, the NDVI mean and quantiles for the whole field are provided which have been sourced from Landsat 8 data. 
+The demonstration data provides you with csv files containing a timeseries of the growing season of one corn field. It includes the median and standard deviation of 1) in-house derivation of LST data from thermal acquisitions of Landsat 8 and Landsat 9 data for the water-stressed field section, 2) in-house derivation of LST data from thermal acquisitions of Landsat 8 and Landsat 9 for the well-watered field section. Additionally, the NDVI mean and quantiles for the whole field are provided which have been sourced from Landsat 8 data. 
 
 [LST timeseries for a stressed section of the field](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/Water_sressed_.corn_LST+(1).csv) 
 
