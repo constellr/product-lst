@@ -4,12 +4,12 @@ Thermal satellite imagery provides a direct window into Earth’s temperature pa
 
 Beyond environmental monitoring, thermal observations support applications in disaster response, border monitoring, vessel monitoring, and situational awareness by revealing thermal anomalies associated with wildfires, energy infrastructure disruptions, or unusual heat signatures in remote areas on land and sea. These capabilities contribute to resilience planning and operational awareness while providing a layer of insight that complements conventional imagery for organizations focused on humanitarian, security, and critical infrastructure protection missions. 
 
-![First light](AWS link)
+![First light](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/First_Light_SB1_Tokyo.png)
 <figcaption>First light from SkyBee 1: Tokyo, Japan 2025, examplifying the difference between optical and thermal imagery.</figcaption>
 
 Surface temperature measurements play a vital role in advancing progress toward the United Nations Sustainable Development Goals (SDGs). Adopted in 2015 as part of the 2030 Agenda for Sustainable Development, the SDGs form a global blueprint for peace, prosperity, and environmental stewardship. Temperature monitoring plays a critical role in achieving at least 14 of the 17 goals.
 
-![SDGs](AWS link)
+![SDGs](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/SDG_Image.png)
 <figcaption>14 of 17 SDG Goals United Nations, 2024 shown around an image depicting LST Surface temperature of agricultural fields and cities in the delta of the Nile, Egypt, where blue highlights the fields with lower temperature and red the hotter city.</figcaption>
 
 LST reveals processes invisible to optical imager, such as evapotranspiration in crops, surface and urban heat islands, or anomalies in industrial infrastructure. Together, optical and thermal data create a richer, more actionable picture of our planet’s surface dynamics. 

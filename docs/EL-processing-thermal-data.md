@@ -2,7 +2,7 @@
 
 As shown below, constellr monitors areas of interests as indicated by their customers. It then receives and processes the data from the HiVE constellation, to make the high/quality LST imagery available on a user platform for its customers. 
 
-![Process flow](AWS link)
+![Process flow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Work-process-flow.png)
 <figcaption>LST data retrieval process.</figcaption>
 
 The captured signal follows a journey of a series of steps:  

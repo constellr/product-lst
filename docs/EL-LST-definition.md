@@ -2,7 +2,7 @@
 
 The temperature of the Earth's land surface represents how hot the ground would feel if touched at a specific location. Such temperature is measured using thermal and optical sensors, such as those used by constellr’s satellites. From a satellite perspective, the "surface" could be anything visible from space—snow, grass, rooftops, industrial buildings, or forest canopies. Importantly, LST differs from air temperature, which is typically measured by ground-based weather stations at about 2 meters above the surface and reported by weather forecasts. While LST reflects the actual skin temperature of the Earth’s surface, air temperature represents the temperature of the air above it—meaning the two can differ significantly, such as under clear skies and in urban areas. 
 
-![Global LST map](AWS link)
+![Global LST map](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Global_LST_Map.png)
 <figcaption>Daytime LST monthly composite map, constellr (leveraging a fusion of public data) </figcaption>
 
 Through consistently delivering high-quality LST data over time, it becomes possible to make more intelligent data-driven decisions for the environment, economy, and societal resilience. Surface temperature data empowers actionable intelligence for the sustainable management of agricultural, infrastructural, and industrial assets, as well as science. 
