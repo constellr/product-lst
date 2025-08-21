@@ -1,6 +1,5 @@
 <h1 <span style="color: #202A78;margin-bottom: 5px;">Providing new insights into building occupancy and urban resilience in Japan using themal data</span></h1>    
 
-<br>
 
 [Download the graphcial abstract here.](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png)  
 
