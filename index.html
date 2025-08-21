@@ -508,11 +508,11 @@
   
   
     <li class="md-nav__item">
-      <a href="demo/" class="md-nav__link">
+      <a href="explorer-lab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Solutions in Action›
+    Explorer Lab
     
   </span>
   
@@ -1010,12 +1010,22 @@ From open-access Land Surface Temperature datasets to technical information and 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
     <script>
-        const swiper = new Swiper('.mySwiper', {
+        const swiper1 = new Swiper('.mySwiper1', {
             slidesPerView: 3,
             spaceBetween: 35,
             navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next-1',
+            prevEl: '.swiper-button-prev-1',
+            },
+            loop: true,
+        });
+
+        const swiper2 = new Swiper('.mySwiper2', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next-2',
+            prevEl: '.swiper-button-prev-2',
             },
             loop: true,
         });

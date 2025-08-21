@@ -496,11 +496,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../demo/" class="md-nav__link">
+      <a href="../explorer-lab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Solutions in Action›
+    Explorer Lab
     
   </span>
   
@@ -542,7 +542,6 @@
 
 <pre><code>
 </code></pre>
-<p><br></p>
 <p><a href="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png">Download the graphcial abstract here.</a>  </p>
 <h2 id="introduction">Introduction</h2>
 <p><a href="https://www.japantimes.co.jp/news/2024/05/01/japan/japan-vacant-homes-record-high/">Japan</a> is confronting a significant vacant housing crisis, with approximately 9 million empty homes nationwide, accounting for 13.6% of all residences. This issue is particularly pronounced in Sapporo, where nearly one in five dwellings is unoccupied. The rise in vacant homes adversely affects property values, increases crime rates, leads to poor sanitation, and contributes to housing market stagnation. Notably, central Sapporo exhibits severe clusters of vacancies, indicating a disequilibrium in the housing market rather than mere urban decline. </p>
@@ -940,12 +939,22 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
     <script>
-        const swiper = new Swiper('.mySwiper', {
+        const swiper1 = new Swiper('.mySwiper1', {
             slidesPerView: 3,
             spaceBetween: 35,
             navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next-1',
+            prevEl: '.swiper-button-prev-1',
+            },
+            loop: true,
+        });
+
+        const swiper2 = new Swiper('.mySwiper2', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next-2',
+            prevEl: '.swiper-button-prev-2',
             },
             loop: true,
         });
