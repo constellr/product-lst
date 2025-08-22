@@ -19,7 +19,7 @@ nav:
   - Explorer Lab: 
     #- Solutions in Action›: demo.md
     - Explorer Lab: explorer-lab.md
-
+    - Example Datasets: example-datasets.md
   
 
  
@@ -73,6 +73,7 @@ extra_javascript:
   - javascripts/mathjax.js #imo not needed, for math equations, no javascripts folder either
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #imo not needed, for math equations
+  - https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js
 
 plugins:
   - search
