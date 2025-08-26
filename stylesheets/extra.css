@@ -205,56 +205,160 @@ img {
   padding: 0 40px; 
 }
 
+.swiper-wrapper {
+  overflow: visible !important;
+  padding: 1rem;
+}
+
 .swiper {
   width: 100%;
   padding: 2rem 0;
   position: relative;
 }
 
-.swiper-slide {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.swiper-slide { /* card-body */
+  /* background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   min-width: 290px;
   max-width: 290px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
   box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  overflow: hidden; */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  min-width: 290px;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden; 
+  height: 510px !important;
 }
+
+.slide-content {
+  padding: 1rem; /* now padding only applies to text */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* spreads elements evenly */
+  flex-grow: 1;                  /* makes content fill remaining slide height */
+}
+
 
 .swiper-slide:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
+.swiper-slide h6.fw-bold{
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0.8rem 0 0.5rem;
+}
+
+.swiper-slide-description{
+  font-size: 0.65rem;
+  line-height: 1.4;
+  color: #6c757d;
+  margin: 0.3rem 0 0.3rem;
+}
+
+.tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.tag-product {
+  background-color: white;
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+
+.location {
+  background-color: #f1f3f5;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+  color: #495057;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.download-button {
+  margin-top: 0.1rem; 
+  border: 1px solid #dee2e6;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+  text-align: center;
+  display: inline-block;
+  color: #213953ff;
+  background-color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+  box-shadow: none;
+}
+
+.download-button:hover {
+  background-color: #213953ff;
+  color: #fff !important;
+}
+
+/* .slide-content .tag,
+.slide-content .location,
+.slide-content .download-button {
+  display: block;              /* lets auto margins work */
+  /* width: max-content;          /* shrink to text width */
+  /* max-width: 100%;             safety: no overflow on small screens */
+  /* margin: 0 auto;              centers horizontally */
+/* } */
+
+.slide-content .tag,
+.slide-content .location,
+.slide-content .download-button {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;   /* only centers horizontally */
+}
+
+/* Keep vertical spacing from individual elements */
+.location {
+  margin-top: 0.1rem;
+  margin-bottom: 0.3rem;
+}
+.download-button {
+  margin-top: auto; /* or whatever spacing you need */
+}
+
+
+
 .swiper-slide img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.swiper-slide h3 {
-  font-size: 1 rem;
-  margin: 0.5rem 0 0.5rem 0;
-  min-height: 4.5em; /* Reserve space for 2 lines */
+  display: block; /* remove inline gaps */
 }
 
 .card-meta {
   color: #777;
   font-size: 0.9rem;
   margin-top: auto;
-}
-
-.swiper-wrapper {
-    overflow: visible !important;
-    align-items: stretch;
-    padding: 1rem;
-}
+} 
 
 .swiper-slide {
   transition: transform 0.2s ease, box-shadow 0.2s ease;

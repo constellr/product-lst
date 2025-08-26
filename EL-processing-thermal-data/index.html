@@ -18,7 +18,7 @@
     
     
       
-        <title>Land Surface Temperature (LST) data retrieval process - Knowledge Center</title>
+        <title>Processing satellite-derived thermal data - Knowledge Center</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#land-surface-temperature-lst-data-retrieval-process" class="md-skip">
+        <a href="#processing-satellite-derived-thermal-data" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Land Surface Temperature (LST) data retrieval process
+              Processing satellite-derived thermal data
             
           </span>
         </div>
@@ -500,7 +500,7 @@
         
   
   <span class="md-ellipsis">
-    Explorer Lab
+    LST Handbook
     
   </span>
   
@@ -538,18 +538,16 @@
   
 
 
-<h1 id="land-surface-temperature-lst-data-retrieval-process"><strong>Land Surface Temperature (LST) data retrieval process</strong></h1>
-<p>As shown below, constellr monitors areas of interests as indicated by their customers. It then receives and processes the data from the HiVE constellation, to make the high/quality LST imagery available on a user platform for its customers. </p>
-<p><img alt="Process flow" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Work-process-flow.png" width="60%" /></p>
-<figcaption>LST data retrieval process.</figcaption>
+<h1 id="processing-satellite-derived-thermal-data"><strong>Processing satellite-derived thermal data</strong></h1>
+<p>When you snap a photo with a standard phone camera, you can instantly view a clear image. However, this is not the case with a scientifically graded thermal imager, such as HiVE’s. For example, take a look at the raw imagery near Toulouse airport from our HiVE thermal imager (simulated). The airport and the nearby river features are hardly distinguishable until post-processing is applied. Therefore, constellr combines the use of VNIR and TIR data to generate high-quality LST imagery. </p>
+<p><img alt="Example of processing effect" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/raw_to_processed_image.png" width="60%" /></p>
+<figcaption>Example of raw HIVE thermal image on the left (simulated) vs processed image on the right.</figcaption>
 
-<p>The captured signal follows a journey of a series of steps:  </p>
-<ol>
-<li>The data reaches constellr’s ground segment then are processed using constellr’s land surface temperature retrieval algorithm.  </li>
-<li>There are various datasets used to retrieve LST including atmospheric conditions during data acquisition, the land cover type as captured by constellr’s optical sensors, as well as topographical data.  </li>
-<li>The processed data is further transformed into heatmaps, where each pixel represents a specific temperature. One can visualize temperature distribution across areas by attributing colors to various temperature levels, making it easy to identify patterns like hot spots or cooler zones.  </li>
-<li>Constellr then makes its data available for customers on through the End User Platform.</li>
-</ol>
+<p>The <em>VNIR sensor</em> on constellr’s satellites is similar to the <a href="https://sentiwiki.copernicus.eu/web/s2-mission#S2Mission-SpectralResolutionS2-Mission-Spectral-Resolution">Sentinel-2 mission</a>, capturing data in the visible and near-infrared spectrum. VNIR data provides crucial contextual information, helping to interpret thermal data accurately by identifying specific features on the ground, such as rivers, vegetation, and urban areas. This is essential for ensuring that temperature measurements are precisely linked to specific locations on Earth.  </p>
+<p>On the other hand, <em>Thermal Infrared (TIR)</em> sensors capture the heat emitted by objects on the Earth's surface. This data is critical for detecting temperature variations and identifying hotspots. Constellr captures long-wave thermal data emitted by objects on the Earth’s surface. As displayed above, raw thermal images can be challenging to interpret without the contextual information provided by VNIR data.  Therefore, VNIR data plays a pivotal role in enhancing the usability of thermal images. Without VNIR support, interpreting thermal data can be challenging, as features that appear similar in temperature might look very different in VNIR imagery. This contrast helps analysts pinpoint the exact location and nature of heat anomalies, providing a more accurate understanding of, for example, urban heat patterns.  </p>
+<p>For example, comparing a standard RGB image with a VNIR-enhanced image near Toulouse airport shows how VNIR data can highlight differences in vegetation, water bodies, and built-up areas. This differentiation is crucial for accurate thermal analysis, ensuring that hotspots are correctly located and identified.</p>
+<p><img alt="Optical vs thermal comparison" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Airport_RGB_NGB.png" /></p>
+<figcaption>Toulouse runway and surroundings as a real color image (left) and false color image that includes NIR (right)</figcaption>
 
 
 
@@ -890,7 +888,7 @@
             nextEl: '.swiper-button-next-1',
             prevEl: '.swiper-button-prev-1',
             },
-            loop: true,
+            loop: false,
         });
 
         const swiper2 = new Swiper('.mySwiper2', {
@@ -900,7 +898,7 @@
             nextEl: '.swiper-button-next-2',
             prevEl: '.swiper-button-prev-2',
             },
-            loop: true,
+            loop: false,
         });
     </script>
 

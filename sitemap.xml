@@ -2,82 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/constellr/product-lst/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/API-documentation/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/Constellr-product-offer/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/EL-LST-definition/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/EL-LST-retrieval-process/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/EL-processing-thermal-data/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/EL-space-instruments-capture/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/EL-unveiling-hidden-insights/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/Technical-specification/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/UI-documentation/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/demo/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/constellr/product-lst/example-datasets/</loc>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/explorer-lab/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/lst-essentials/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/lst30/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/our-technology/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/portfolio/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/product-deliverables/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/sapporo-use-case/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/use-cases/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
     <url>
          <loc>https://github.com/constellr/product-lst/water-stress-use-case/</loc>
-         <lastmod>2025-08-21</lastmod>
+         <lastmod>2025-08-26</lastmod>
     </url>
 </urlset>
