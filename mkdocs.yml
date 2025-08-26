@@ -17,8 +17,8 @@ nav:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
   - Explorer Lab: 
-    #- Solutions in Action›: demo.md
-    - Explorer Lab: explorer-lab.md
+    - LST Handbook: explorer-lab.md
+    #- Open Data Packages: example-datasets.md
 
   
 
