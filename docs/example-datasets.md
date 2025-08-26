@@ -6,7 +6,7 @@ Explore our comprehensive collection of high-resolution space-based satellite da
 
 <style>
   body {
-    background-color: #f8f9fc;
+    background-color: #ffffff;
     font-family: "Inter", sans-serif;
   }
 
