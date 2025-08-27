@@ -28,6 +28,6 @@ For more information on the different products offered by constellr, see the [Po
 ---
 
 <div class="article-nav">
-  <a class="next" href="https://constellr.github.io/product-lst/EL-LST-definition">← Next Article</a>
+  <a class="next" href="https://constellr.github.io/product-lst/EL-LST-definition">Next Article →</a>
 </div>
 
