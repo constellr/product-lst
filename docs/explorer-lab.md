@@ -27,7 +27,7 @@ Or do you want to get started using land surface temperature to derive temperatu
                         <span class="tag tag-product">3 min read</span>
                         <h6 class="fw-bold"><a>Unveiling hidden insights with thermal data</a></h6>
                         <p class="text-muted small">Thermal satellite imagery provides a direct window into Earth’s temperature patterns by detecting the heat emitted from the surface.</p>
-                        <a class="download-button" href="https://constellr.github.io/product-lst/EL-unveiling-hidden-insights/">Read article →</a>
+                        <a class="download-button" href="https://constellr.github.io/product-lst/EL-unveiling-hidden-insights">Read article →</a>
                     </div>
             </div>
 

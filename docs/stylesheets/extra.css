@@ -408,34 +408,6 @@ img {
 }
 
 
-
-/* .swiper-button-next,
-.swiper-button-prev {
-  background-color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #007aff;
-  transition: all 0.2s ease;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 10;
-}
-
-.swiper-button-prev {
-  left: -10px; 
-}
-
-.swiper-button-next {
-  right: 0px;
-} */
-
-
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #f0f0f0;
@@ -445,6 +417,26 @@ img {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 16px;
+}
+
+/* Next / Prev Article buttongs */
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.article-nav a {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  text-decoration: none;
+}
+
+.article-nav a:hover {
+  opacity: 0.85;
 }
 
 

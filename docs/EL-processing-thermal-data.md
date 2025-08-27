@@ -13,3 +13,11 @@ For example, comparing a standard RGB image with a VNIR-enhanced image near Toul
 
 ![Optical vs thermal comparison](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Airport_RGB_NGB.png)
 <figcaption>Toulouse runway and surroundings as a real color image (left) and false color image that includes NIR (right)</figcaption>
+
+
+---
+
+<div class="article-nav">
+  <a class="prev" href="https://constellr.github.io/product-lst/EL-LST-retrieval-process">← Previous Article</a>
+</div>
+
