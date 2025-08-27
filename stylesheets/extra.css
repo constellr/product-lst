@@ -421,7 +421,7 @@ img {
 
 /* Next / Prev Article buttongs */
 
-.article-nav {
+/* .article-nav {
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
@@ -437,7 +437,36 @@ img {
 
 .article-nav a:hover {
   opacity: 0.85;
+} */
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
 }
+
+/* shared button styling */
+.article-nav a {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  text-decoration: none;
+}
+
+.article-nav a:hover {
+  opacity: 0.85;
+}
+
+/* force alignment */
+.article-nav .prev {
+  margin-right: auto;   /* stick to left */
+}
+
+.article-nav .next {
+  margin-left: auto;    /* stick to right */
+}
+
+
 
 
 /* Sidebar and Navigation Customization */
