@@ -317,15 +317,6 @@ img {
   color: #fff !important;
 }
 
-/* .slide-content .tag,
-.slide-content .location,
-.slide-content .download-button {
-  display: block;              /* lets auto margins work */
-  /* width: max-content;          /* shrink to text width */
-  /* max-width: 100%;             safety: no overflow on small screens */
-  /* margin: 0 auto;              centers horizontally */
-/* } */
-
 .slide-content .tag,
 .slide-content .location,
 .slide-content .download-button {
@@ -344,8 +335,6 @@ img {
 .download-button {
   margin-top: auto; /* or whatever spacing you need */
 }
-
-
 
 .swiper-slide img {
   width: 100%;
@@ -419,25 +408,8 @@ img {
   font-size: 16px;
 }
 
-/* Next / Prev Article buttongs */
+/* Next / Prev Article buttons */
 
-/* .article-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2em;
-}
-
-.article-nav a {
-  background: var(--md-primary-fg-color);
-  color: white;
-  padding: 0.5em 1em;
-  border-radius: 0.3em;
-  text-decoration: none;
-}
-
-.article-nav a:hover {
-  opacity: 0.85;
-} */
 .article-nav {
   display: flex;
   justify-content: space-between;
@@ -470,56 +442,41 @@ img {
 /* collapsible elements */
 
 .md-typeset details {
-  border: none !important;
-  background: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
   font-size: 0.8rem;         
-  margin: 0  !important;          
-  padding: 0  !important;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif !important;
+  border-color: #007accab !important;
 }
 
 .md-typeset details summary {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   list-style: none;
   position: relative;
   font-size: 0.8rem;      
-  font-weight: 500;        
-  margin-left: 0  !important;          
   padding-left: 0.5rem   !important; 
+  font-family: 'Inter', sans-serif !important;
+  color: #160A42 !important;
+  background-color: #007ACC33 !important;   /* Header background */
 }
 
-
-/* Custom triangle marker */
 .md-typeset details summary::before {
   content: none;
+} 
+
+.md-typeset details summary::after {
+  content: '►';               /* right-pointing arrow */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #160A42 !important;            /* arrow color */
+  transition: transform 0.2s;
 }
 
-
-/* Reset Material's built-in details/admonition padding */
-/* .md-typeset details,
-.md-typeset details summary {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  background: none !important;
-  box-shadow: none !important;
-}
-
-/* Make the summary text look like normal heading text */
-.md-typeset details summary {
-  font-size: 1rem;     /* adjust to your liking */
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Optional: style the inner content */
-.md-typeset details > *:not(summary) {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-  font-size: 0.9rem;
-} */
+.md-typeset details[open] summary::after {
+  content: '▼';               /* down-pointing arrow when open */
+  color: #160A42 !important;   
 
 
 /* Sidebar and Navigation Customization */
@@ -575,12 +532,12 @@ img {
 
 .icon-link i {
     font-size: 40px;  /* Adjust size */
-    color: #0077b5; /* LinkedIn color for all icons */
+    color: #0077b5 !important; /* LinkedIn color for all icons */
     transition: color 0.3s;
 }
 
 .icon-link i:hover {
-    color: #1da1f2;  /* Change color on hover for visual effect */
+    color: #1da1f2 !important;  /* Change color on hover for visual effect */
 }
 
 .connect p {
@@ -590,7 +547,7 @@ img {
 
 /* Optional: Adjust the color of the email icon to match LinkedIn */
 .icon-link[href^="mailto:"] i {
-    color: #0077b5; /* Same LinkedIn color */
+    color: #0077b5 !important; /* Same LinkedIn color */
 }
 
 /* Adjust the size for the website logo */
@@ -660,4 +617,4 @@ img {
       width: 100%;
     }
   }
-  
+}
