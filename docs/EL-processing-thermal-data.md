@@ -11,7 +11,7 @@ On the other hand, *Thermal Infrared (TIR)* sensors capture the heat emitted
 
 For example, comparing a standard RGB image with a VNIR-enhanced image near Toulouse airport shows how VNIR data can highlight differences in vegetation, water bodies, and built-up areas. This differentiation is crucial for accurate thermal analysis, ensuring that hotspots are correctly located and identified.
 
-![Optical vs thermal comparison](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Airport_RGB_NGB.png)
+![Optical vs thermal comparison](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Airport_RGB_NGB.png){ width=50% }
 <figcaption>Toulouse runway and surroundings as a real color image (left) and false color image that includes NIR (right)</figcaption>
 
 
