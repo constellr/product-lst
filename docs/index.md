@@ -104,7 +104,7 @@ In this knowledge center, you can find information about:
         <div class="card-body">
           <h5 class="card-title">
             <span class="material-icons" >search</span> 
-            <a href="https://constellr.github.io/product-lst/demo/" style="color: black;" >Explorer Lab</a>
+            <a href="https://constellr.github.io/product-lst/explorer-lab/" style="color: black;" >Explorer Lab</a>
           </h5>
           <p class="card-text">Learn more about thermal data in the Explorer Lab.</p>
         </div>
@@ -115,7 +115,7 @@ In this knowledge center, you can find information about:
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/demo/" style="color: black;">Data solutions</a>
+            <span class="material-icons" >science</span> <a href="https://constellr.github.io/product-lst/explorer-lab/" style="color: black;">Data solutions</a>
           </h5>
           <p class="card-text">Discover real-life applications of constellr's LST data.</p>
         </div>
