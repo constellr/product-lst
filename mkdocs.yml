@@ -18,10 +18,7 @@ nav:
     - API documentation: API-documentation.md
   - Explorer Lab: 
     - LST Handbook: explorer-lab.md
-    #- Open Data Packages: example-datasets.md
-    # - Test: EL-unveiling-hidden-insights.md
-    # - Test 2: EL-processing-thermal-data.md
-  # - LST precision: LST-precision.md
+  #- LST precision: LST-precision.md
 
   
 
@@ -71,6 +68,8 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
+  - admonition
+  - pymdownx.details
 
 extra_javascript:
   - javascripts/mathjax.js #imo not needed, for math equations, no javascripts folder either
