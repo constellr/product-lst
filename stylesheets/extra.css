@@ -467,7 +467,26 @@ img {
 }
 
 
+/* collapsible elements */
 
+.md-typeset details {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.md-typeset details summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none; /* remove default triangle */
+  position: relative;
+}
+
+/* Custom triangle marker */
+.md-typeset details summary::before {
+  content: none;
+}
 
 /* Sidebar and Navigation Customization */
 
