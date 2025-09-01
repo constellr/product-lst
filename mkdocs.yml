@@ -18,10 +18,7 @@ nav:
     - API documentation: API-documentation.md
   - Explorer Lab: 
     - LST Handbook: explorer-lab.md
-    #- Open Data Packages: example-datasets.md
-    # - Test: EL-unveiling-hidden-insights.md
-    # - Test 2: EL-processing-thermal-data.md
-  # - LST precision: LST-precision.md
+  - LST precision: LST-precision.md
 
   
 

@@ -474,19 +474,53 @@ img {
   background: none !important;
   padding: 0 !important;
   box-shadow: none !important;
+  font-size: 0.8rem;         
+  margin: 0  !important;          
+  padding: 0  !important;
 }
 
 .md-typeset details summary {
   cursor: pointer;
   font-weight: 600;
-  list-style: none; /* remove default triangle */
+  list-style: none;
   position: relative;
+  font-size: 0.8rem;      
+  font-weight: 500;        
+  margin-left: 0  !important;          
+  padding-left: 0.5rem   !important; 
 }
+
 
 /* Custom triangle marker */
 .md-typeset details summary::before {
   content: none;
 }
+
+
+/* Reset Material's built-in details/admonition padding */
+/* .md-typeset details,
+.md-typeset details summary {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Make the summary text look like normal heading text */
+.md-typeset details summary {
+  font-size: 1rem;     /* adjust to your liking */
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Optional: style the inner content */
+.md-typeset details > *:not(summary) {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  font-size: 0.9rem;
+} */
+
 
 /* Sidebar and Navigation Customization */
 
