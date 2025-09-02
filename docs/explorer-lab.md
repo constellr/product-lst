@@ -1,10 +1,28 @@
 # **Explorer Lab**
 
-You want to learn more about how constellr's satellites capture thermal radiation from earth and why that is important? Then learn more about the basics of LST in our curated **LST essentials articles**.  
+<!-- You want to learn more about how constellr's satellites capture thermal radiation from earth and why that is important? Then learn more about the basics of LST in our curated [**LST essentials articles**](#lst-essentials).  
 
-Explore our collection of use case stories, which are **in-depth examples** of what LST data can achieve. Each story outlines a research question and is **accompanied with a dataset** to answer the question. 
+Explore our collection of [use case stories](#solutions-in-action), which are **analysis-ready examples** of what LST data can achieve. Each story outlines a research question and is **accompanied with a dataset** to answer the question. 
 
-Or do you want to get started using land surface temperature to derive temperature-based insights? Use our **Open Data Archive** to experience our state-of-the-art imagery first-hand and for free. 
+Or do you want to get started using land surface temperature to derive temperature-based insights? Use our **Open Data Archive** to experience our state-of-the-art imagery first-hand and for free.  -->
+
+
+<div class="grid cards" markdown>
+
+-   :material-crosshairs-gps: **LST Essentials**  
+    *You want to learn more about how constellr's satellites capture thermal radiation from earth and why that is important?*  
+    Then learn more about the basics of LST in our curated [**LST essentials articles →**](#lst-essentials)  
+
+-   :material-tune: **Solutions in Action**  
+    *You are interested in analysis-ready examples of what LST data can achieve?*  
+    <br>
+    Explore our collection of [**use case stories →**](#solutions-in-action) which are **accompanied with an LST-based dataset**.  
+
+-   :material-database-export-outline: **Open Data Packages**  
+    *You want to get started using land surface temperature to derive temperature-based insights by yourself?*  
+    Use our **Open Data Packages** to experience our state-of-the-art imagery first-hand and for free.  
+
+</div>
 
 
 ## LST Essentials 
