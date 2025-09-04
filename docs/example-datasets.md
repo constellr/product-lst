@@ -335,6 +335,16 @@ Explore our comprehensive collection of high-resolution space-based satellite da
   }
 </style>
 
+<script>
+  const HS_PORTAL_ID = "49002189";
+  const HS_FORM_ID   = "e32cf12b-484f-4f48-bb6d-4a193349f6e0";
+
+  function getCookie(name) {
+    const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return m ? decodeURIComponent(m[2]) : null;
+  }
+</script>
+
 <div class="container pt-2">
   <div class="row">
     <div class="col-md-4 filters">
@@ -372,12 +382,24 @@ Explore our comprehensive collection of high-resolution space-based satellite da
             <input type="text" class="form-control" id="name" placeholder="Your full name" />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="your.email@company.com" />
-          </div>
-          <div class="mb-3">
             <label for="company" class="form-label">Company</label>
             <input type="text" class="form-control" id="company" placeholder="Your company name" />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">
+              <span style="color:red">*</span> Email
+            </label>
+            <input type="email" class="form-control" id="email"
+                  placeholder="your.email@company.com"
+                  required />
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="gdprConsent" required>
+            <label for="gdprConsent" class="form-check-label small text-muted">
+              <span style="color: red">*</span>
+              I agree to allow Constellr GmbH. to store and process my personal data.
+              Read our <a href="https://www.constellr.com/privacy-policy" target="_blank">Privacy Policy</a>.
+            </label>
           </div>
         </form>
       </div>
@@ -577,16 +599,37 @@ document.getElementById("downloadForm").addEventListener("submit", async functio
   const company = document.getElementById("company").value.trim();
 
   if (name || email || company) {
-    await fetch("/api/send-download-info", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        company,
-        dataset: currentDataset.title,
-      }),
-    });
+  //send directly to HubSpot Forms API
+    const hsPayload = {
+      fields: [
+        { name: "firstname", value: name || "" },
+        { name: "email",     value: email || "" },
+        { name: "company",   value: company || "" },
+        { name: "dataset_title", value: currentDataset?.title || "" }
+      ],
+      context: {
+        hutk: getCookie("hubspotutk"),
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+
+    try {
+      const resp = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL_ID}/${HS_FORM_ID}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(hsPayload)
+        }
+      );
+
+      if (!resp.ok) {
+        console.warn("HubSpot submit failed:", await resp.text());
+      }
+    } catch (e) {
+      console.warn("HubSpot submit error:", e);
+    }
   }
 
    const formModalEl = document.getElementById("downloadModal");
