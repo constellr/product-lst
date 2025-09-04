@@ -205,56 +205,149 @@ img {
   padding: 0 40px; 
 }
 
+.swiper-wrapper {
+  overflow: visible !important;
+  padding: 1rem;
+}
+
 .swiper {
   width: 100%;
   padding: 2rem 0;
   position: relative;
 }
 
-.swiper-slide {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.swiper-slide { /* card-body */
+  /* background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   min-width: 290px;
   max-width: 290px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
   box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+  overflow: hidden; */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  min-width: 290px;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden; 
+  height: 510px !important;
 }
+
+.slide-content {
+  padding: 1rem; /* now padding only applies to text */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* spreads elements evenly */
+  flex-grow: 1;                  /* makes content fill remaining slide height */
+}
+
 
 .swiper-slide:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
+.swiper-slide h6.fw-bold{
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0.8rem 0 0.5rem;
+}
+
+.swiper-slide-description{
+  font-size: 0.65rem;
+  line-height: 1.4;
+  color: #6c757d;
+  margin: 0.3rem 0 0.3rem;
+}
+
+.tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.tag-product {
+  background-color: white;
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+
+.location {
+  background-color: #f1f3f5;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+  color: #495057;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.download-button {
+  margin-top: 0.1rem; 
+  border: 1px solid #dee2e6;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+  text-align: center;
+  display: inline-block;
+  color: #213953ff;
+  background-color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+  box-shadow: none;
+}
+
+.download-button:hover {
+  background-color: #213953ff;
+  color: #fff !important;
+}
+
+.slide-content .tag,
+.slide-content .location,
+.slide-content .download-button {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;   /* only centers horizontally */
+}
+
+/* Keep vertical spacing from individual elements */
+.location {
+  margin-top: 0.1rem;
+  margin-bottom: 0.3rem;
+}
+.download-button {
+  margin-top: auto; /* or whatever spacing you need */
+}
+
 .swiper-slide img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.swiper-slide h3 {
-  font-size: 1 rem;
-  margin: 0.5rem 0 0.5rem 0;
-  min-height: 4.5em; /* Reserve space for 2 lines */
+  display: block; /* remove inline gaps */
 }
 
 .card-meta {
   color: #777;
   font-size: 0.9rem;
   margin-top: auto;
-}
-
-.swiper-wrapper {
-    overflow: visible !important;
-    align-items: stretch;
-    padding: 1rem;
-}
+} 
 
 .swiper-slide {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -304,34 +397,6 @@ img {
 }
 
 
-
-/* .swiper-button-next,
-.swiper-button-prev {
-  background-color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #007aff;
-  transition: all 0.2s ease;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 10;
-}
-
-.swiper-button-prev {
-  left: -10px; 
-}
-
-.swiper-button-next {
-  right: 0px;
-} */
-
-
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #f0f0f0;
@@ -342,6 +407,76 @@ img {
 .swiper-button-prev::after {
   font-size: 16px;
 }
+
+/* Next / Prev Article buttons */
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+/* shared button styling */
+.article-nav a {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  text-decoration: none;
+}
+
+.article-nav a:hover {
+  opacity: 0.85;
+}
+
+/* force alignment */
+.article-nav .prev {
+  margin-right: auto;   /* stick to left */
+}
+
+.article-nav .next {
+  margin-left: auto;    /* stick to right */
+}
+
+
+/* collapsible elements */
+
+.md-typeset details {
+  font-size: 0.8rem;         
+  border-radius: 5px;
+  font-family: "Inter", sans-serif !important;
+  border-color: #007accab !important;
+}
+
+.md-typeset details summary {
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+  position: relative;
+  font-size: 0.8rem;      
+  padding-left: 0.5rem   !important; 
+  font-family: 'Inter', sans-serif !important;
+  color: #160A42 !important;
+  background-color: #007ACC33 !important;   /* Header background */
+}
+
+.md-typeset details summary::before {
+  content: none;
+} 
+
+.md-typeset details summary::after {
+  content: '►';               /* right-pointing arrow */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #160A42 !important;            /* arrow color */
+  transition: transform 0.2s;
+}
+
+.md-typeset details[open] summary::after {
+  content: '▼';               /* down-pointing arrow when open */
+  color: #160A42 !important;   
 
 
 /* Sidebar and Navigation Customization */
@@ -397,12 +532,12 @@ img {
 
 .icon-link i {
     font-size: 40px;  /* Adjust size */
-    color: #0077b5; /* LinkedIn color for all icons */
+    color: #0077b5 !important; /* LinkedIn color for all icons */
     transition: color 0.3s;
 }
 
 .icon-link i:hover {
-    color: #1da1f2;  /* Change color on hover for visual effect */
+    color: #1da1f2 !important;  /* Change color on hover for visual effect */
 }
 
 .connect p {
@@ -412,7 +547,7 @@ img {
 
 /* Optional: Adjust the color of the email icon to match LinkedIn */
 .icon-link[href^="mailto:"] i {
-    color: #0077b5; /* Same LinkedIn color */
+    color: #0077b5 !important; /* Same LinkedIn color */
 }
 
 /* Adjust the size for the website logo */
@@ -482,4 +617,4 @@ img {
       width: 100%;
     }
   }
-  
+}

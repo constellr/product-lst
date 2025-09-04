@@ -14,3 +14,9 @@ See the figure below and [Our Technology](https://constellr.github.io/product-ls
 ![Satellite sensors](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/SensorInfo.png){ width=60% }
 <figcaption>Description of the thermal and optical sensor on constellr's satellites.</figcaption>
 
+---
+
+<div class="article-nav">
+  <a class="prev" href="https://constellr.github.io/product-lst/EL-LST-definition">← Previous Article</a>
+  <a class="next" href="https://constellr.github.io/product-lst/EL-LST-retrieval-process">Next Article →</a>
+</div>
