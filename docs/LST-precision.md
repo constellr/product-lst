@@ -1,8 +1,8 @@
-# **LST precision** 
+# **LSTprecision** 
 <br>
 
 ??? note "What is LSTprecision?"
-      LSTprecision delivers exceptional satellite-based land surface temperature sensitivity and details, enabling accurate absolute temperature measurements. It is designed for precise thermal data, making it ideally suited for urban, vegetation, and industrial analyses with new levels of coverage, detail, and accuracy.  LSTprecision also delivers co-registered accurate surface reflectance measurements across ten visible and near-infrared bands. This enables for example the generation of true-color imagery and the calculation of key vegetation indices providing complementary information for more robust temperature analyses.  
+    LSTprecision delivers exceptional satellite-based land surface temperature sensitivity and details, enabling accurate absolute temperature measurements. It is designed for precise thermal data, making it ideally suited for urban, vegetation, and industrial analyses with new levels of coverage, detail, and accuracy.  LSTprecision also delivers co-registered accurate surface reflectance measurements across ten visible and near-infrared bands. This enables for example the generation of true-color imagery and the calculation of key vegetation indices providing complementary information for more robust temperature analyses.  
 
  
 ??? note "When should you use LSTprecision?"
@@ -16,7 +16,7 @@
     Need broader, cloud-free daily coverage? → [Discover LSTfusion](Link) 
 
 ??? note "How is LSTprecision created?"
-    LSTprecision is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of constellr’s HiVe constellation (Link to our technology page). Following an advanced calibration and validation (cal/val) procedure link to Cal/Val procedure, ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle. 
+    LSTprecision is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of [constellr’s HiVe constellation](https://constellr.github.io/product-lst/our-technology/). Following an [advanced calibration and validation (cal/val) procedure](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/), ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle. 
 
     1. **Cloud and Scene Classification:** 
     A deep learning algorithm relying on a U-net convolutional neural network (CNN)1  , classifies pixels into four cloud-related classes: clear sky, thick cloud, thin cloud, and cloud shadow. Additional masks are also generated to distinguish land and water and to detect terrain cast-shadows. 
@@ -34,7 +34,8 @@
     4. **Land Surface Temperature (LST) Retrieval:** 
     The VNIR SRs are derived from the satellite footprints and used to estimate an initial (first-guess) emissivity for each of the four thermal bands (link to technology page). Those are used as input of the constellr LST algorithm, relying on the Equivalent Temperature Approach (ETA), to derive the land surface temperature and to optimize the surface emissivity’s. The simultaneous retrieval of LST and emissivity’s enhance the overall LSTprecision product accuracy. 
 
-    IMAGE
+    ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision.png){ width=80% }
+    <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product.</figcaption>
 
 ??? note "What are the specifications of LSTprecision?"
     |Parameter|Value|
@@ -48,7 +49,7 @@
     For more see the [Technical Specifications](https://constellr.github.io/product-lst/Technical-specification/) page.
 
 ??? note "How accurate is LSTprecision?"
-    Thanks to the robust Cal/Val approach combined with state-of-the art algorithm processors, the SkyBee data offer a high level of accuracy from the radiometric and geometric point of views. The SkyBee satellites use two cameras to capture both visible/near-infrared and thermal infrared images of Earth, similar to the capabilities of other leading observation missions (link to our technology page).  LST and SR are provided with an absolute accuracy better than 2°K and 5%, respectively, for most clear sky geophysical conditions and with a geolocation accuracy better than XXm. 
+    Thanks to the [robust Cal/Val approach](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/) combined with state-of-the art algorithm processors, the SkyBee data offer a high level of accuracy from the radiometric and geometric point of views. The SkyBee satellites use two cameras to capture both visible/near-infrared and thermal infrared images of Earth, similar to the capabilities of [other leading observation missions](https://constellr.github.io/product-lst/our-technology/). LST and SR are provided with an absolute accuracy better than 2°K and 5%, respectively, for most clear sky geophysical conditions and with a geolocation accuracy better than XXm. 
 
     Achieving high accuracy starts well before launch with a proper characterization of the instruments in the lab, and continues in space with a regular verification of the instrumental performances. Engineers monitor and correct for changes over time, detect faulty pixels, and adjust for geometric distortions using well-known landscapes and landmarks. Calibration draws on trusted ground reference sites for visible/near-infrared data and patented methods comparing thermal readings with reliable satellite temperature measurements, guaranteeing data remain precise and reliable throughout the mission.  Accuracy of end-user products is also regularly evaluated against ground-truth measurements at a series of reference sites part of different official networks.  Explore the details of our Cal/Val approach. 
 

@@ -18,7 +18,10 @@ nav:
     - API documentation: API-documentation.md
   - Explorer Lab: 
     - LST Handbook: explorer-lab.md
-  #- LST precision: LST-precision.md
+  # - LST precision: LST-precision.md
+  # - LST fusion: LST-fusion.md
+  # - LST zoom: LST-zoom.md
+  # - CalVal: LST-precision-cal-val-procedure.md
 
   
 
