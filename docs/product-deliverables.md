@@ -13,9 +13,20 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 <h2>Metadata conventions</h2>
 
-The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:
+The metadata file provided with the constellr products contains various pieces of information. Find an explanatory table per product below:
+
+[Metadata description for **LSTfusion**]()  
+[Metadata description for **LSTprecision**](https://constellr.github.io/product-lst/LST-precision-metadata/)  
+[Metadata description for **LSTzoom**]()
+
+---
+Data delivery of all data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
+
+In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products.
 
 
+
+<!-- 
 | Metadata field             | Definition                                                                                                 |
 |----------------------------|-------------------------------------------------------------------------------------------------------------|
 | area_of_interest_id        | Internal aoi id                                                                                             |
@@ -39,8 +50,4 @@ The metadata file provided with the constellr products contains various pieces o
 | atm_source                 | Public data source used for atmospheric data                                                                |
 | requested_area_of_interest | Coordinates of the AOI requested (Polygon)                                                                  |
 | geometry                   | Coordinates of the Polygon returned                                                                         |
-
-
-Data delivery of all data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
-
-In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products.
+ -->

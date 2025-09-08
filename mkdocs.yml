@@ -22,9 +22,8 @@ nav:
   # - LST fusion: LST-fusion.md
   # - LST zoom: LST-zoom.md
   # - CalVal: LST-precision-cal-val-procedure.md
-
-  #- LST precision: LST-precision.md
     - Example Datasets: example-datasets.md
+    - Metadata: LST-precision-metadata.md
   
 
  
@@ -75,6 +74,7 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - pymdownx.tabbed
 
 extra_javascript:
   - javascripts/mathjax.js #imo not needed, for math equations, no javascripts folder either
