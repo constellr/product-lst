@@ -20,7 +20,7 @@ This guide outlines how to authenticate, search, and download your data using th
   ```
   Authorization: Bearer <access_token>
   ```
-- If your token expires, you will receive a 401 Unauthorized error. Request a new token and retry.
+- If your token expires, you will receive a 403 Not Authenticated error. Request a new token and retry.
 - Never store your credentials in plain text in production code.
 
 ---
@@ -86,7 +86,7 @@ fetch(url, {
 
 **Error Responses:**
 
-- **401 Unauthorized:** Invalid credentials, User not confirmed, or password reset required.
+- **401:** Invalid credentials, User not confirmed, or password reset required.
 
 
 ---
@@ -215,6 +215,16 @@ fetch(url, {
 ]
 ```
 
+**Error Responses:**
+
+- **400:** Invalid order request period.
+
+- **404:** Invalid product or area of interest.
+
+- **422:** Request parameters validation error.
+
+- **502:** Order creation error.
+
 ---
 
 ### 2. List All Orders
@@ -298,7 +308,11 @@ console.log(data.count, data.items.length);
   ]
 }
 ```
+**Error Responses:**
 
+- **422:** Request parameters validation error.
+
+- **502:** Order retrieval error.
 
 ---
 
@@ -328,7 +342,13 @@ curl -X GET "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-4266141740
   "state": "initial_state"
 }
 ```
+**Error Responses:**
 
+- **404:** Order not found.
+
+- **422:** Request parameters validation error.
+
+- **502:** Order retrieval error.
 
 ---
 
@@ -504,8 +524,7 @@ fetch(url, {
 
 **Error Responses**
 
-- **422:** There’s already an area of interest called Test AOI
-
+- **422:** Request parameters validation error.
 
 
 ---
@@ -549,9 +568,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 
 - **404:** Area of interest not found.
 
-- **403:** Unauthorized
-
-
+- **422:** Request parameters validation error.
 
 ---
 
@@ -652,8 +669,7 @@ data.items.forEach((item: any) => console.log(item.id, item.name));
 
 **Error Responses**
 
-- **422:** Invalid request params error detail
-
+- **422:** Request parameters validation error.
 
 ---
 
@@ -789,7 +805,7 @@ console.log("area:", data.area);
 
 **Error Responses**
 
-- **422:**  Invalid GeoJSON provided.
+- **422:** Request parameters validation error eg. invalid GeoJSON.
 
 
 ---
@@ -818,6 +834,10 @@ curl -X GET "https://api.constellr.com/products" \
   {"name": "LSTfusion"}
 ]
 ```
+
+**Error Responses:**
+
+- **502:** Products retrieval error.
 
 ---
 
@@ -1005,6 +1025,9 @@ fetch(`${url}?${params.toString()}`, {
   "numberReturned": 1
 }
 ```
+**Error Responses**
+
+- **422:** Request parameters validation error.
 
 ---
 
@@ -1052,6 +1075,7 @@ curl -X GET "https://api.constellr.com/stac/collections/lstfusion" \
 
 - **404:** Collection with ID lstfusion not found.
 
+- **422:** Request parameters validation error.
 
 ---
 
@@ -1163,9 +1187,9 @@ fetch(url, {
 
 - **404:** Item with ID item_id in collection lstfusion not found.
 
-- **403:**  Item is not allowed for your organization.
+- **502:**  Failed to retrieve item.
 
-- **502:**  Failed to retrieve item. Please contact support if this persists.
+- **422:** Request parameters validation error.
 
 ---
 
@@ -1266,6 +1290,8 @@ console.log("numberReturned:", data.numberReturned);
 - **400:** Invalid filter or collection not allowed.
 
 - **404:** No data orders found for the organization.
+
+- **422:** Request parameters validation error.
 
 - **502:** Failed to perform search.
 
