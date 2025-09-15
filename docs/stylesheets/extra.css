@@ -22,6 +22,14 @@
     color: #162A42
 }
 
+.md-typeset blockquote {
+    background-color: transparent; /* remove grey background */
+    color: #160A42;              /* your preferred text color */
+    border-left: 4px solid #160A42 !important; /* optional colored line */
+    padding-left: 1rem;
+    margin-left: 0;
+}
+
 /*for fading images*/
 /*fsets outer container*/
 /* .image-container {
@@ -477,6 +485,7 @@ img {
 .md-typeset details[open] summary::after {
   content: '▼';               /* down-pointing arrow when open */
   color: #160A42 !important;   
+}
 
 
 /* Sidebar and Navigation Customization */
@@ -617,4 +626,3 @@ img {
       width: 100%;
     }
   }
-}

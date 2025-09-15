@@ -16,7 +16,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
     
     **Large coverage for regional monitoring**
 
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_fusion_centered.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -32,7 +32,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     **High accuracy for high-value asset monitoring**
     
-    ![LSTprecision](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-dms30-capture-min.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTprecision](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_precision_centered.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -47,23 +47,23 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     **High resolution for zooming in on anomalies**
   
-    ![LSTzoom](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-capture-min.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTzoom](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_zoom_centered.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
     * 10m spatial resolution
     * Enriched proprietary data
     * Visually best resolved
-    * High frequency
+    * High frequency 
 
+</div>
 
-<!-- </div>
 
 <h2>Pre-cursor products in 2024-2025</h2>
 
 If you want to already  explore the benefits of high-resolution land surface temperature analysis today, we recommend you to take a look at our pre-cursor products and get in touch with us. 
 
-
+ 
 <div class="grid cards" markdown>
 
 -   [__LST30__](https://constellr.github.io/product-lst/lst30/)
@@ -77,9 +77,43 @@ If you want to already  explore the benefits of high-resolution land surface tem
     * 30m spatial resolution
     * Proprietary LST retrieval
     * Algorithm enhanced public data
-    * Large area coverage
+    * Large area coverage 
+
+-   [__LST15__]()
+
+    **For zooming in on anomalies**
+
+    ![LST15](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-capture-min.PNG){: style="height: 200px; width: 200px; object-fit: cover;"}
+
+    ---
+
+    * 15m spatial resolution
+    * Sharpened data
+    * Visually best resolved
 
 
 
 
+</div>
+
+
+<!-- <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide d-flex flex-column">
+                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png" />
+                    <div class= "slide-content">
+                        <h7 class="fw-bold"><a href="https://constellr.github.io/product-lst/lst30/">LST30</a></h7>
+                        <ul><li>30m spatial resolution</li><li>Proprietary LST retrieval</li><li>Algorithm enhanced public data</li><li>Large area coverage</li></ul>
+                        <a class="download-button">Large coverage for regional monitoring</a>
+                    </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-capture-min.PNG" />
+                    <div class= "slide-content">
+                        <h7 class="fw-bold"><a>LST15</a></h7>
+                        <ul><li>15m spatial resolution</li><li>Sharpened data</li><li>Visually best resolved</li></ul>
+                        <a class="download-button">For zooming in on anomalies</a>
+                    </div>
+            </div>
+        </div>
 </div> -->

@@ -1,7 +1,35 @@
-# **Product deliverables**
+# **LSTfusion Data Bundle**
 Constellr's product deliverables include several layers, which are outlined below.
 
+## Data layers
 
+For the LSTfusion product, each data layer is available for a given data and hour, which is indicate in its file name using the ISO 8601 date-time convention. Hence, the date is indicated at UTC time as follows: yyyymmddThhZ.
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| metadata/lstfusion_metadata_yyyymmddThhZ.json | Metadata description | json |
+| lst/lstfusion_lst_yyyymmddThhZ.tiff | LST data | Cloud optimized geotiff |
+| quicklooks/lstfusion_lst_quicklook_yyyymmddThhZ.tiff | Temperature quicklook | Cloud optimized geotiff |
+| thumbnails/lstfusion_lst_thumbnail_yyyymmddThhZ.jpg | LST Thumbnail | jpg |
+| std/lstfusion_lst_std_yyyymmddThhZ.tiff | Spatial Standard Deviation | Cloud optimized geotiff |
+
+
+## Naming Convention
+
+- Naming is performed at the point of download  
+- In the EUP UI, the full name is not shown as the hierarchy is available in the UI structure.
+    - For the example below, we show 'Cloudmask' in the appropriate folder
+
+Files downloaded from the data store follows the following naming convention:
+
+!!! note "Naming convention"
+    **[Acquisition time]** _ **<span style="color:orangered;">[Product]</span>** _ **<span style="color:green;">[AOI Name]</span>** _ **[data order ID]** _ **[file name]**
+
+    *Example*  
+    **20240512T095854Z** _ **<span style="color:orangered;">LSTFusion</span>** _ **<span style="color:green;">Paris</span>** _ **cae562b6-04a2-48cf-a044-eb61064e4c9b** _ **cloudmask**
+
+
+<!-- 
 | Product Deliverables               |                       |
 |---                                    |----:                  |
 | Images files               | TIR and VNIR for your area of interest - cloud optimized geotiff format              |
@@ -13,9 +41,20 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 <h2>Metadata conventions</h2>
 
-The metadata file provided with the constellr products contains various pieces of information that you can retrieve below:
+The metadata file provided with the constellr products contains various pieces of information. Find an explanatory table per product below:
+
+[Metadata description for **LSTfusion**]()  
+[Metadata description for **LSTprecision**](https://constellr.github.io/product-lst/LST-precision-metadata/)  
+[Metadata description for **LSTzoom**]()
+
+---
+Data delivery of all data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
+
+In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products. -->
 
 
+
+<!-- 
 | Metadata field             | Definition                                                                                                 |
 |----------------------------|-------------------------------------------------------------------------------------------------------------|
 | area_of_interest_id        | Internal aoi id                                                                                             |
@@ -39,8 +78,4 @@ The metadata file provided with the constellr products contains various pieces o
 | atm_source                 | Public data source used for atmospheric data                                                                |
 | requested_area_of_interest | Coordinates of the AOI requested (Polygon)                                                                  |
 | geometry                   | Coordinates of the Polygon returned                                                                         |
-
-
-Data delivery of all data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
-
-In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products.
+ -->
