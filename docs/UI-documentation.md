@@ -65,7 +65,7 @@ Each delivery is named according to when the image was acquired by the satellite
 ![MyDataExample](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataExample.png){ width=80% }
 
 <h3>New Order</h3>
-To place a new order, you can navigate to the [New Order](LINK MISSING) tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.   
+To place a new order, you can navigate to the [New Order](https://app.constellr.com/new-order) tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.   
 
 Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  
 
@@ -74,7 +74,7 @@ Upon successful submission, you will receive a confirmation message. Your order 
 <h3>AOI Library</h3>
 This page is under construction and provides limited functionality for the moment.  
 
-From the [AOI Library](LINK MISSING) tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  
+From the [AOI Library](https://app.constellr.com/aoi-library) tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  
 
 From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  
 
