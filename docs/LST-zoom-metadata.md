@@ -1,4 +1,4 @@
-# LSTprecision Metadata
+# LSTzoom Metadata
 
 This page describes the metadata file used for L2A products. 
 
@@ -31,7 +31,7 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-1">product_id</td><td>string</td><td>The name of this product</td></tr>
   <tr><td class="level-1">platform</td><td>string</td><td>The name of the spacecraft (e.g. SBA01)</td></tr>
   <tr><td class="level-1">product_type</td><td>string</td><td>"L2"</td></tr>
-  <tr><td class="level-1">product_name</td><td>string</td><td>"LSTprecision"</td></tr>
+  <tr><td class="level-1">product_name</td><td>string</td><td>"LSTzoom"</td></tr>
   <tr><td class="level-1">processing_scenario</td><td>string</td><td>"NRT" or "RPR"</td></tr>
   <tr><td class="level-1">acquisition_id</td><td>string</td><td>Location and time of acquisition</td></tr>
   <tr><td class="level-1">acquisition_datetime</td><td>string</td><td>Date and time of the acquisition, ISO 8601 format at UTC time</td></tr>

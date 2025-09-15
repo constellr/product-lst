@@ -1,40 +1,41 @@
 [
   {
     "title": "Urban Heat Island Analysis",
-    "description": "Comprehensive satellite imagery analysis of urban heat patterns including LST...",
-    "product": "LST Zoom",
+    "description": "Comprehensive satellite imagery of urban heat patterns including waterways and airports.",
+    "product": "LST Precision",
     "price": "FREE",
     "use_cases": ["Urban Planning"],
-    "locations": ["Miami USA", "Barcelona Spain", "Tokyo Japan"],
+    "locations": ["Dubai, UAE"],
     "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png",
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png",
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/toulouse-lst30.png"
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/mtf_nrb_dubai_2025-08-22T07-20-48.981760Z-2025-08-22T07_20_49_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/mtf_nrb_dubai_2025-08-22T07-20-48.981760Z-2025-08-22T07_20_49_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/toulouse_LST30.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/mtf_nrb_dubai_2025-08-22T07-20-48.981760Z.zip"
   },
   {
-    "title": "Industrial Facility Monitoring",
-    "description": "Space-based imagery of industrial facilities including oil refineries, chemical plants...",
+    "title": "Agricultural Fields and Natural Parks",
+    "description": "Detect different heat patterns across fields and monitor important natural reserves.",
     "product": "LST Precision",
-    "price": "PAID",
-    "use_cases": ["Industrial Monitoring", "Industrial Site Monitoring"],
-    "locations": ["Houston USA", "Rotterdam Netherlands", "Singapore"],
+    "price": "FREE",
+    "use_cases": ["Agriculture", "Nature Monitoring"],
+    "locations": ["Robson Creek, Northern Australia"],
     "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Global_LST_Map.png"
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Cop_LAW_Robson_Creek_2025-08-23T00-55-40.385570Z_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Cop_LAW_Robson_Creek_2025-08-23T00-55-40.385570Z_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/datasets/industrial.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/Cop_LAW_Robson_Creek_2025-08-23T00-55-40.385570Z.zip"
   },
   {
-    "title": "Agricultural Stress Mapping",
-    "description": "Detect water stress in fields using LST data to improve irrigation and crop health.",
-    "product": "LST Fusion",
+    "title": "Large Scale Agriculture Analysis",
+    "description": "Analyze large scale agriculture to improve irrigation and crop health.",
+    "product": "LST Precision",
     "price": "FREE",
     "use_cases": ["Agriculture"],
-    "locations": ["Central Valley USA"],
+    "locations": ["Illionis, USA"],
     "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/First_Light_SB1_Tokyo.png"
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/East_Coast_USA_2025-08-18T16-18-21.091328Z-2025-08-18T16_18_21_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/East_Coast_USA_2025-08-18T16-18-21.091328Z-2025-08-18T16_18_21_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/datasets/agriculture.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/East_Coast_USA_2025-08-18T16-18-21.091328Z.zip"
   }
 ]
