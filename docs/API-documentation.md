@@ -238,7 +238,7 @@ fetch(url, {
 
 - `offset` (optional, default: 0): Number of orders to skip.
 
-- `sort` (optional): Sort order by the `-created` field.
+- `sort` (optional): Sort orders by the `-created` field.
 
 
 **Example: cURL**
