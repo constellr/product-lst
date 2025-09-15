@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/constellr/product-lst/EL-unveiling-hidden-insights/">
+        <link rel="canonical" href="https://github.com/constellr/product-lst/LST-zoom/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Unveiling hidden insights with thermal data - Knowledge Center</title>
+        <title>LSTzoom - Knowledge Center</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unveiling-hidden-insights-with-thermal-data" class="md-skip">
+        <a href="#lstzoom" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unveiling hidden insights with thermal data
+              LSTzoom
             
           </span>
         </div>
@@ -735,29 +735,89 @@
   
 
 
-<h1 id="unveiling-hidden-insights-with-thermal-data"><strong>Unveiling hidden insights with thermal data</strong></h1>
-<p>Thermal satellite imagery provides a direct window into Earth’s temperature patterns by detecting the heat emitted from the surface, offering insights invisible to conventional optical sensors by providing land surface temperature (LST). Surface temperature is a fundamental driver of ecosystem processes, infrastructure behavior, and climate-related change. By mapping heat distribution and tracking temperature dynamics, thermal data plays a crucial role in understanding ecosystem functioning, monitoring infrastructure performance, and detecting the impacts of climate variability and change. </p>
-<p>Beyond environmental monitoring, thermal observations support applications in disaster response, border monitoring, vessel monitoring, and situational awareness by revealing thermal anomalies associated with wildfires, energy infrastructure disruptions, or unusual heat signatures in remote areas on land and sea. These capabilities contribute to resilience planning and operational awareness while providing a layer of insight that complements conventional imagery for organizations focused on humanitarian, security, and critical infrastructure protection missions. </p>
-<p><img alt="First light" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/First_Light_SB1_Tokyo.png" width="60%" /></p>
-<figcaption>First light from SkyBee 1: Tokyo, Japan 2025, examplifying the difference between optical and thermal imagery.</figcaption>
-
-<p>Surface temperature measurements play a vital role in advancing progress toward the United Nations Sustainable Development Goals (SDGs). Adopted in 2015 as part of the 2030 Agenda for Sustainable Development, the SDGs form a global blueprint for peace, prosperity, and environmental stewardship. Temperature monitoring plays a critical role in achieving at least 14 of the 17 goals.</p>
-<p><img alt="SDGs" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/SDG_Image.png" width="60%" /></p>
-<figcaption>14 of 17 SDG Goals United Nations, 2024 shown around an image depicting LST Surface temperature of agricultural fields and cities in the delta of the Nile, Egypt, where blue highlights the fields with lower temperature and red the hotter city.</figcaption>
-
-<p>LST reveals processes invisible to optical imager, such as evapotranspiration in crops, surface and urban heat islands, or anomalies in industrial infrastructure. Together, optical and thermal data create a richer, more actionable picture of our planet’s surface dynamics. </p>
-<p>There are many advantages of thermal data, find below a few of the most important ones:  </p>
+<h1 id="lstzoom"><strong>LSTzoom</strong></h1>
+<p><br></p>
+<details class="note">
+<summary>What is LSTzoom?</summary>
+<p>LSTzoom is optimized for localized analysis where fine spatial detail is critical, such as thermal footprints for defence and intelligence and for infrastructure and industrial hotspots. It is based on our <a href="https://constellr.github.io/product-lst/Constellr-product-offer/">LSTprecision product</a> with an additional sharpening algorithm applied to it to increase the spatial resolution up to 10m.   </p>
+</details>
+<details class="note">
+<summary>When should you use LSTzoom?</summary>
 <ul>
-<li><strong>Faster insights:</strong> Temperature is a physical variable, which is a lot closer to insights in many use cases compared to visual data (and will hence need less computational effort to extract the same insights). While there are many reasons why leaf colour changes, temperature-derived vegetative stress is a direct quantification of the health of a plant, on which one can act. Road temperatures directly link to road erosion and maintenance requirements, the heat radiation from a building is highly related to its material and insulation.</li>
-<li><strong>Early warning capabilities:</strong> Anomalies in temperatures, be it in ways of detecting vegetative stress, the radiative heat of a power plant, or monitoring pollution in rivers, indicate symptoms of early damage, even before it is visible to the eye. A loss of yield, a power outage, or an algae blooming downriver can be better prepared for with an earlier understanding of risk and providing the capabilities of early warnings.   </li>
-<li><strong>Predictive:</strong> By using physical and AI models that fill gaps between thermal data points over time and space, we can project these insights into the future. This effectively enables forward-looking analysis to anticipate upcoming thermal conditions, enabling proactive decision-making for operations, maintenance, and network planning.  </li>
+<li><em>See more, see clearly:</em> Visually detect even the smallest local variations with high-resolution temperature detail. </li>
+<li><em>Effortless understanding:</em> Granular thermal contrasts make interpretation straightforward, turning complex data into clear asset-level insights.  </li>
+<li><em>Intelligence at scale:</em> Refined contrast brings hidden patterns to light, unlocking smarter monitoring and decision-making.  </li>
+<li><em>Stay ahead of risks:</em> Identify early warning signs of stress across infrastructure, materials, and the environment before problems escalate.  </li>
+<li><em>Track change over time:</em> Frequent revisit cycles (as fast as every 3 days in daylight) build a powerful time-series for spotting anomalies and long-term trends with confidence.  </li>
 </ul>
-<p>Today, thermal Earth observation (EO) data holds immense strategic value, constellr is a key player delivering high quality, spatial resolution, and precision LST. constellr’s LST is improving global and temporal coverage of thermal data, to deliver new value across cities, farms, and ecosystems worldwide.</p>
-<p>For more information on the different products offered by constellr, see the <a href="https://constellr.github.io/product-lst/portfolio">Portfolio</a></p>
-<hr />
-<div class="article-nav">
-  <a class="next" href="https://constellr.github.io/product-lst/EL-LST-definition">Next Article →</a>
-</div>
+<p>Looking for consistent daily insights across large areas? → <a href="Link">Discover LSTfusion</a><br />
+Prefer highly accurate temperature benchmarks over time? → <a href="link">Explore LSTprecision</a>  </p>
+</details>
+<details class="note">
+<summary>How is LSTzoom created?</summary>
+<p>LSTzoom is generated by training a Machine Learning model, that learns a mapping between high-resolution VNIR data (10 m) and coarser resolution  temperature of the land surface (30 m). The goal is to upscale the spatial resolution of LST data while preserving accuracy, consistency, and capture the geometric features present in the VNIR data. The key steps involved in training the model and creating the final product are:  </p>
+<ul>
+<li><strong>Downsample</strong> the VNIR data to 30 m to match the resolution of the LST data.  </li>
+<li><strong>Select only the most stable, low-noise regions as training samples</strong> to ensure sharper, more reliable image enhancement.  </li>
+<li><strong>Train both local (window-wise)</strong> and <strong>global models</strong> across the scene using the Decision Tree Regressor.  </li>
+<li><strong>Predict high-resolution LST</strong> at 10 m using the trained models and full-resolution VNIR input.  </li>
+<li><strong>Fuse global and local predictions</strong> to generate a robust, high-accuracy estimate.  </li>
+<li><strong>Apply residual correction</strong> to ensure consistency with the original 30 m LST data. </li>
+</ul>
+<p>LSTzoom is thus a Level 3 (L3) product that refers to products resulting from the further processing of L2 data or model output based on L2 data and other external datasets, as shown in the figure below. </p>
+<p><img alt="LSTzoom workflow" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/lstzoom.png" width="80%" />
+<figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTzoom L3 product</figcaption></p>
+</details>
+<details class="note">
+<summary>What are the specifications of LSTzoom?</summary>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spatial Resolution</td>
+<td>TIR: 10m, VNIR:10m</td>
+</tr>
+<tr>
+<td>Temporal Resolution</td>
+<td>1.5-3 days</td>
+</tr>
+<tr>
+<td>Output Time</td>
+<td>10:30 or 13:30 local solar time</td>
+</tr>
+<tr>
+<td>Coverage Area</td>
+<td>Worldwide tasking, up to 1.000.000 km² daily imaging capacity</td>
+</tr>
+<tr>
+<td>Output Format</td>
+<td>GeoTIFF + Metadata geojson</td>
+</tr>
+</tbody>
+</table>
+<p>For more see the <a href="https://constellr.github.io/product-lst/Technical-specification/">Technical Specifications</a> page.</p>
+</details>
+<details class="note">
+<summary>How accurate is LSTzoom?</summary>
+<p>The methodology used to generate the LSTzoom product was evaluated against high-resolution airborne land surface temperature measurements from the <a href="https://hytes.jpl.nasa.gov">HYTES instrument</a>. The LSTzoom algorithm was applied to a downscaled version of these reference data, and the resulting outputs were compared with the original observations. In challenging urban environments, the estimated accuracy of the method is better than 5 K.  </p>
+</details>
+<details class="note">
+<summary>VNIR Quality Limitations</summary>
+</details>
+<details class="note">
+<summary>What to look forward to in future developments?</summary>
+<p><strong>5m Zoom</strong>  </p>
+<p><strong>LSTzoom night</strong>   </p>
+<p><strong>Deep Learning architectures</strong>  </p>
+</details>
+<details class="note">
+<summary>What is included in the product bundle?</summary>
+</details>
 
 
 
