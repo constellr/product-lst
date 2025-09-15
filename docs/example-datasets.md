@@ -541,7 +541,7 @@ Explore our comprehensive collection of high-resolution space-based satellite da
   }
 
 
-  fetch("/constellr/product-lst/datasets.json")
+  fetch("https://constellr.github.io/product-lst/datasets.json")
     .then(res => res.json())
     .then(data => {
       datasets = data;
