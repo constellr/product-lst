@@ -40,8 +40,9 @@ There are three sections to the platform, which you can access from the sidebar 
 This is the central place for tracking your data orders and downloading your data.  
 
 **Tracking Orders**  
-A table shows an overview of all orders you have placed, including their status, area of interest, product, and monitoring period. At the top of the page, you can search and filter your orders to quickly find the data you need. 
-![MyData]()
+A table shows an overview of all orders you have placed, including their status, area of interest, product, and monitoring period. At the top of the page, you can search and filter your orders to quickly find the data you need.  
+
+![MyDataList](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataList.png){ width=80% }
 
 Each row in the table represents one data order with the following information:  
 
@@ -61,14 +62,14 @@ You can access your data by clicking on the Data Order ID. Here, you can see eve
 
 Each delivery is named according to when the image was acquired by the satellite. You can expand each delivery to see the files inside of it, and download each delivery by using the download icon at the bottom.  
 
-![MyData2]()
+![MyDataExample](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataExample.png){ width=80% }
 
 <h3>New Order</h3>
 To place a new order, you can navigate to the [New Order](LINK MISSING) tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.   
 
 Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  
 
-![NewOrder]()
+![NewOrder](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/NewOrder.png){ width=80% }
 
 <h3>AOI Library</h3>
 This page is under construction and provides limited functionality for the moment.  
@@ -77,4 +78,4 @@ From the [AOI Library](LINK MISSING) tab, you can manage the AOIs that you have 
 
 From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  
 
-![AOILibrary]()
+![AOILibrary](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/AOILibrary.png){ width=80% }

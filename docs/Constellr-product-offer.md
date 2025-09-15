@@ -16,7 +16,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
     
     **Large coverage for regional monitoring**
 
-    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_fusion.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTfusion](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_fusion_centered.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -32,7 +32,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     **High accuracy for high-value asset monitoring**
     
-    ![LSTprecision](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_precision.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTprecision](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_precision_centered.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 
@@ -47,7 +47,7 @@ Benefit from our cutting edge proprietary data layers **LSTprecision** and **LST
 
     **High resolution for zooming in on anomalies**
   
-    ![LSTzoom](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_zoom.png){: style="height: 200px; width: 200px; object-fit: cover;"}
+    ![LSTzoom](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/product_offer/LST_zoom_centered.png){: style="height: 200px; width: 200px; object-fit: cover;"}
 
     ---
 

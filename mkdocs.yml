@@ -11,19 +11,28 @@ nav:
   - Our products portfolio: 
     - Constellr's product offer: Constellr-product-offer.md
     - Technical specifications: Technical-specification.md
-    - Product deliverables: product-deliverables.md
-  - Thermal Insights: use-cases.md
+    # - Product deliverables: product-deliverables.md
+  - Product User Guide:
+    # - Product Description:
+      # - LSTprecision: LST-precision.md
+      # - LSTzoom: LST-zoom.md
+      # - LSTfusion: LST-fusion.md
+    - Data Bundle:
+      - LSTprecision: LST-precision-product-deliverables.md
+      - LSTzoom: LST-zoom-product-deliverables.md
+      # - LSTfusion: LST-fusion-product-deliverables.md
+    - Metadata explanation:
+      - LSTprecision: LST-precision-metadata.md
+      - LSTzoom: LST-zoom-metadata.md
+      # - LSTfusion: LST-fusion-metadata.md
+  - Thermal Insights: thermal-insights.md
   - How to access our data:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
   - Explorer Lab: 
     - LST Handbook: explorer-lab.md
-  # - LST precision: LST-precision.md
-  # - LST fusion: LST-fusion.md
-  # - LST zoom: LST-zoom.md
-  # - CalVal: LST-precision-cal-val-procedure.md
-    - Example Datasets: example-datasets.md
-    - Metadata: LST-precision-metadata.md
+    # - Open Data Programme: example-datasets.md
+
   
 
  

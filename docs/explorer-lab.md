@@ -18,9 +18,9 @@ Or do you want to get started using land surface temperature to derive temperatu
     <br>
     Explore our collection of [**use case stories →**](#solutions-in-action) which are **accompanied with an LST-based dataset**.  
 
--   :material-database-export-outline: **Open Data Packages**  
+-   :material-database-export-outline: **Open Data Programme**  
     *You want to get started using land surface temperature to derive temperature-based insights by yourself?*  
-    Use our **Open Data Packages** to experience our state-of-the-art imagery first-hand and for free.  
+    Use our **Open Data Programme** to experience our state-of-the-art imagery first-hand and for free.  
 
 </div>
 
