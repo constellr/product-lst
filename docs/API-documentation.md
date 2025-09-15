@@ -1,14 +1,14 @@
 # **Constellr API Documentation**
  
-This guide outlines how to authenticate, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or access the OpenAPI JSON File.
+This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or access the OpenAPI JSON File.
 
 ---
 
 ## Initial Preparation
 
-- Create an Account: Users should create their accounts via Constellr's end-user platform, which can be found at [https://app.constellr.com/signup](https://app.constellr.com/signup)
+- Create an Account: You can create your account via Constellr's end-user platform, which can be found at [https://app.constellr.com/signup](https://app.constellr.com/signup)
 
-- Activate Account: After registering, users must activate their account by confirming their e-mail address.
+- Activate Account: After registering, you must activate your account by confirming your e-mail address.
 
 - Once activated, you can begin accessing and retrieving data using the API.
 
@@ -238,7 +238,7 @@ fetch(url, {
 
 - `offset` (optional, default: 0): Number of orders to skip.
 
-- `sort` (optional, default: `-created`): Sort order.
+- `sort` (optional): Sort order by the `-created` field.
 
 
 **Example: cURL**
@@ -583,7 +583,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 
 - `offset` (optional, default: 0): Zero-based index of the first item to return.
 
-- `sort` (optional, default: `-created`): Property to sort by. Use `+` or `-` as a prefix for ascending or descending order.
+- `sort` (optional): Property to sort results by the `-created` field. Use `+` or `-` as a prefix for ascending or descending order.
 
 **Example: cURL**
 ```bash
