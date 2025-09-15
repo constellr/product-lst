@@ -18,17 +18,14 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 ## Naming Convention
 
-- Naming is performed at the point of download  
-- In the EUP UI, the full name is not shown as the hierarchy is available in the UI structure.
-    - For the example below, we show 'Cloudmask' in the appropriate folder
-
-Files downloaded from the data store follows the following naming convention:
+Files, as described above, will be downloaded via a .zip file from the data store. The .zip file will have the following naming convention:
 
 !!! note "Naming convention"
-    **[Acquisition time]** _ **<span style="color:orangered;">[Product]</span>** _ **<span style="color:green;">[AOI Name]</span>** _ **[data order ID]** _ **[file name]**
+       
+    **<span style="color:blue;">[Acquisition time]</span>** _ **<span style="color:orangered;">[Product]</span>** _ **<span style="color:green;">[data order ID]</span>**
 
     *Example*  
-    **20240512T095854Z** _ **<span style="color:orangered;">LSTzoom</span>** _ **<span style="color:green;">Paris</span>** _ **cae562b6-04a2-48cf-a044-eb61064e4c9b** _ **cloudmask**
+    **<span style="color:blue;">20240512T095854Z</span>** _ **<span style="color:orangered;">LSTzoom</span>** _ **<span style="color:green;">cae562b6-04a2-48cf-a044-eb61064e4c9b</span>**
 
 
 <!-- 
