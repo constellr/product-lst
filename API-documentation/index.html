@@ -715,48 +715,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Orders API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-orders-in-batch" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Create Orders in Batch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-list-all-orders" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. List All Orders
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-get-order-by-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Get Order by ID
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-get-available-order-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Get Available Order Use Cases
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -765,48 +723,6 @@
       Areas of Interest API
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Areas of Interest API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-an-area-of-interest" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Create an Area of Interest
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-get-an-area-of-interest-by-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Get an Area of Interest by ID
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-list-areas-of-interest" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. List Areas of Interest
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-get-geometry-info-from-aoi" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Get Geometry Info from AOI
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -817,21 +733,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Products API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-list-available-products" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. List Available Products
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -840,66 +741,6 @@
       STAC API
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="STAC API">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-get-stac-landing-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Get STAC Landing Page
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-get-conformance-classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Get Conformance Classes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-list-available-collections" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. List Available Collections
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-get-a-single-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Get a Single Collection
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-get-a-single-item-by-collection-and-item-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Get a Single Item by Collection and Item ID
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-search-stac-collections" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Search STAC Collections
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1105,7 +946,8 @@
 <hr />
 <h2 id="orders-api">Orders API</h2>
 <p>The <code>/orders</code> endpoint allows you to create, list, and retrieve orders for your organization. All operations require authentication via a Bearer token.</p>
-<h3 id="1-create-orders-in-batch">1. Create Orders in Batch</h3>
+<h3>1. Create Orders in Batch</h3>
+
 <p><strong>Endpoint:</strong> <code>POST /orders/batch</code><br />
 <strong>Description:</strong> Create multiple new orders for your organization in a single request. <br />
 <strong>Order Validation:</strong> All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
@@ -1202,7 +1044,8 @@
 </li>
 </ul>
 <hr />
-<h3 id="2-list-all-orders">2. List All Orders</h3>
+<h3>2. List All Orders</h3>
+
 <p><strong>Endpoint:</strong> <code>GET /orders</code><br />
 <strong>Description:</strong> List all orders for your organization with pagination and sorting.</p>
 <p><strong>Query Parameters:</strong></p>
@@ -1263,7 +1106,8 @@
 <li><strong>400:</strong> Request parameters validation error.</li>
 </ul>
 <hr />
-<h3 id="3-get-order-by-id">3. Get Order by ID</h3>
+<h3>3. Get Order by ID</h3>
+
 <p><strong>Endpoint:</strong> <code>GET /orders/{order_id}</code><br />
 <strong>Description:</strong> Retrieve a specific order by its unique ID.</p>
 <p><strong>Example: cURL</strong>
@@ -1301,7 +1145,8 @@
 <li><strong>404:</strong> Order not found.</li>
 </ul>
 <hr />
-<h3 id="4-get-available-order-use-cases">4. Get Available Order Use Cases</h3>
+<h3>4. Get Available Order Use Cases</h3>
+
 <p><strong>Endpoint:</strong> <code>GET /orders/meta/use-cases</code><br />
 <strong>Description:</strong>  Returns a list of available order use cases supported by the API.  </p>
 <p><strong>Example: cURL</strong>
@@ -1333,7 +1178,8 @@
 <hr />
 <h2 id="areas-of-interest-api">Areas of Interest API</h2>
 <p>The <code>/areas-of-interest</code> endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your organization. AOIs define geographic regions used in data orders. All operations require authentication via a Bearer token.</p>
-<h3 id="1-create-an-area-of-interest">1. Create an Area of Interest</h3>
+<h3>1. Create an Area of Interest</h3>
+
 <p><strong>Endpoint:</strong>  <code>POST /areas-of-interest</code><br />
 <strong>Description:</strong> Creates a new Area of Interest (AOI) for your organization.</p>
 <p><strong>Request Body Example</strong>
@@ -1431,7 +1277,8 @@
 <li><strong>400:</strong> Request body validation error.</li>
 </ul>
 <hr />
-<h3 id="2-get-an-area-of-interest-by-id">2. Get an Area of Interest by ID</h3>
+<h3>2. Get an Area of Interest by ID</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /areas-of-interest/{area_of_interest_id}</code><br />
 <strong>Description:</strong> Retrieves a specific AOI by its unique ID.</p>
 <p><strong>Example: cURL</strong>
@@ -1465,7 +1312,8 @@
 <li><strong>404:</strong> Area of interest not found.</li>
 </ul>
 <hr />
-<h3 id="3-list-areas-of-interest">3. List Areas of Interest</h3>
+<h3>3. List Areas of Interest</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /areas-of-interest</code><br />
 <strong>Description:</strong> Lists all AOIs for your organization with pagination and sorting.</p>
 <p><strong>Query Parameters</strong></p>
@@ -1538,7 +1386,8 @@
 <li><strong>400:</strong> Request parameters validation error.</li>
 </ul>
 <hr />
-<h3 id="4-get-geometry-info-from-aoi">4. Get Geometry Info from AOI</h3>
+<h3>4. Get Geometry Info from AOI</h3>
+
 <p><strong>Endpoint:</strong>  <code>POST /areas-of-interest/geometry-info</code><br />
 <strong>Description:</strong> Get geometry information (bounding box width/height, area) for a provided GeoJSON AOI geometry.</p>
 <p><strong>Request Body Example</strong>
@@ -1624,7 +1473,8 @@
 <hr />
 <h2 id="products-api">Products API</h2>
 <p>The <code>/products</code> endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders. All operations require authentication via a Bearer token.</p>
-<h3 id="1-list-available-products">1. List Available Products</h3>
+<h3>1. List Available Products</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /products</code><br />
 <strong>Description:</strong> Retrieves a list of available products for your organization.</p>
 <p><strong>Example: cURL</strong>
@@ -1640,7 +1490,8 @@
 <h2 id="stac-api">STAC API</h2>
 <p>The <code>/stac</code> endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
 All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.</p>
-<h3 id="1-get-stac-landing-page">1. Get STAC Landing Page</h3>
+<h3>1. Get STAC Landing Page</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /stac</code><br />
 <strong>Description:</strong> Fetches landing page data for the STAC Browser.</p>
 <p><strong>Example: cURL</strong>
@@ -1672,7 +1523,8 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="2-get-conformance-classes">2. Get Conformance Classes</h3>
+<h3>2. Get Conformance Classes</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /stac/conformance</code><br />
 <strong>Description:</strong> Fetches the conformance classes supported by the STAC API.</p>
 <p><strong>Example: cURL</strong>
@@ -1690,7 +1542,8 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="p">}</span>
 </code></pre></div></p>
 <hr />
-<h3 id="3-list-available-collections">3. List Available Collections</h3>
+<h3>3. List Available Collections</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections</code><br />
 <strong>Description:</strong> Fetches the available STAC collections for your organization.</p>
 <p><strong>Query Parameters (optional):</strong></p>
@@ -1778,7 +1631,8 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <li><strong>400:</strong> Request parameters validation error.</li>
 </ul>
 <hr />
-<h3 id="4-get-a-single-collection">4. Get a Single Collection</h3>
+<h3>4. Get a Single Collection</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections/{collection_id}</code><br />
 <strong>Description:</strong> Fetches a single STAC collection by its ID.</p>
 <p><strong>Example: cURL</strong>
@@ -1830,7 +1684,8 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <li><strong>400:</strong> Invalid collection ID.</li>
 </ul>
 <hr />
-<h3 id="5-get-a-single-item-by-collection-and-item-id">5. Get a Single Item by Collection and Item ID</h3>
+<h3>5. Get a Single Item by Collection and Item ID</h3>
+
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections/{collection_id}/items/{item_id}</code><br />
 <strong>Description:</strong> Fetches a single STAC item(feature) by collection and item ID.</p>
 <p><strong>Example: cURL</strong>
@@ -1902,7 +1757,8 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <li><strong>404:</strong> Item not found.</li>
 </ul>
 <hr />
-<h3 id="6-search-stac-collections">6. Search STAC Collections</h3>
+<h3>6. Search STAC Collections</h3>
+
 <p><strong>Endpoint:</strong>  <code>POST /stac/search</code><br />
 <strong>Description:</strong> Performs a search on STAC collections using a request body.</p>
 <p><strong>Request Body Example</strong>
