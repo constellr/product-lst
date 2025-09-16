@@ -22,7 +22,7 @@ There are many advantages of thermal data, find below a few of the most importan
 
 Today, thermal Earth observation (EO) data holds immense strategic value, constellr is a key player delivering high quality, spatial resolution, and precision LST. constellr’s LST is improving global and temporal coverage of thermal data, to deliver new value across cities, farms, and ecosystems worldwide.
 
-For more information on the different products offered by constellr, see the [Portfolio](https://constellr.github.io/product-lst/portfolio)
+For more information on the different products offered by constellr, see the [Portfolio](https://constellr.github.io/product-lst/Constellr-product-offer)
 
 
 ---

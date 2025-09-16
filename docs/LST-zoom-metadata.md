@@ -39,7 +39,7 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-1">parent_product_key</td><td>string</td><td> </td></tr>
   <tr><td class="level-1">link</td><td>string</td><td>URL with complementary documentation and data access info</td></tr>
   <tr><td class="level-1">source</td><td>string</td><td>"constellr"</td></tr>
-  <tr><td class="level-1">use_limitations</td><td>string</td><td>To be defined</td></tr>
+  <tr><td class="level-1">use_limitations</td><td>string</td><td>NA</td></tr>
   <tr><td class="level-1">atmospheric_data_source</td><td>string</td><td>"ERA5" or "CAMS_forecast"</td></tr>
   <tr><td class="level-1">elevation_data_source</td><td>string</td><td>DEM used for geometric/topographic correction (usually "COPERNICUS GLO30")</td></tr>
   <tr><td class="level-1">aerosol_model</td><td>string</td><td>"RURAL"</td></tr>
