@@ -17,7 +17,7 @@ For **farmers**, LST is a valuable complement to spectral vegetation indices. Wh
 
 **Industrial operators** use LST data to monitor activities at refineries and power plants, enabling better oversight of critical infrastructure, operational safety, and emissions management. 
 
-For more examples of how LST data can be applied in practice, see the page [Thermal Insights](https://constellr.github.io/product-lst/use-cases)
+For more examples of how LST data can be applied in practice, see the page [Thermal Insights](https://constellr.github.io/product-lst/thermal-insights)
 
 ---
 
