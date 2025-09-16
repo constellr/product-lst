@@ -1,10 +1,11 @@
 # **Constellr API Documentation**
  
-This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or access the OpenAPI JSON File.
+This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or [Redoc documentation](https://api.constellr.com/redoc).
 
 ---
 
 ## Initial Preparation
+- To access the Constellr UI and API, your company’s email domain must be registered with Constellr. Once registered, you can create an account using your company email.
 
 - Create an Account: You can create your account via Constellr's end-user platform, which can be found at [https://app.constellr.com/signup](https://app.constellr.com/signup)
 
@@ -20,7 +21,7 @@ This guide outlines how to authenticate, place orders, search, and download your
   ```
   Authorization: Bearer <access_token>
   ```
-- If your token expires, you will receive a 403 Not Authenticated error. Request a new token and retry.
+- If your token expires, you will receive a 401 Not Authenticated error. Request a new token and retry.
 - Never store your credentials in plain text in production code.
 
 ---
@@ -28,12 +29,22 @@ This guide outlines how to authenticate, place orders, search, and download your
 ## Authentication API
 
 **Endpoint:** `POST /token`   
-**Description:** Generates an access token to call API endpoints. Endpoints require a token in the `Authorization` header as `Bearer <token>`.  Tokens are valid for **24 hours**.
+**Description:** Generates an access token to call the API endpoints. Endpoints require a token in the `Authorization` header as `Bearer <token>`. Tokens are valid for **24 hours**.
 
-**Request Body Example:**
+**Headers:**
 ```
-username=your_username
-password=your_password
+{
+  Accept=application/json
+  Content-Type=application/x-www-form-urlencoded
+}
+```
+
+**Request Body (in url-encoded format):**
+```
+{
+  username=your_username
+  password=your_password
+}
 ```
 
 **Example: cURL**
@@ -50,7 +61,11 @@ curl --location 'https://api.constellr.com/token' \
 import requests
 
 url = "https://api.constellr.com/token"
-headers = {"Accept": "application/json"}
+headers = {
+  "Accept": "application/json",
+  "Content-Type": "application/x-www-form-urlencoded",
+  "Accept": "application/json"
+}
 data = {
     "username": "your_username",
     "password": "your_password",
@@ -59,26 +74,6 @@ data = {
 resp = requests.post(url, headers=headers, data=data)
 token = resp.json().get("access_token")
 print(token)
-```
-
-**Example: TypeScript (Fetch)**
-```ts
-const url = "https://api.constellr.com/token";
-
-const response = await fetch(url, {
-  method: "POST",
-  headers: {
-    "Accept": "application/json",
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-  body: new URLSearchParams({
-    username: "your_username",
-    password: "your_password",
-  }),
-});
-
-const data = await response.json();
-console.log(data.access_token);
 ```
 
 **Success Response (200):**
@@ -90,7 +85,7 @@ console.log(data.access_token);
 
 **Error Responses:**
 
-- **401:** Invalid credentials, User not confirmed, or password reset required.
+- **401:** Invalid credentials, user not confirmed, token expired or password reset required.
 
 
 ---
@@ -103,7 +98,18 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 ### 1. Create Orders in Batch
 
 **Endpoint:** `POST /orders/batch`  
-**Description:** Create multiple new orders for your organization in a single request.
+**Description:** Create multiple new orders for your organization in a single request. <br />
+**Order Validation:** All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
+**Validation rules:**
+
+- `LSTprecision / LSTzoom:` 
+    - AOI bounding box must not exceed `15,000m` in width or `15,000m` in height
+    - Order period must start at least `8` days from the order creation date, last a minimum of `7` days, and a maximum of `365` days
+    - Frequency options: `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`
+- `LSTfusion:`
+    - No bounding box restrictions
+    - No order period restrictions
+    - Frequency options: `daily`
 
 **Request Body Example:**
 ```json
@@ -116,7 +122,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
       "start_date": "2025-09-27T10:30:08.004000Z",
       "end_date": "2025-10-18T10:30:08.004000Z",
       "frequency": "single-image",
-      "product_name": "LSTPrecision",
+      "product_name": "LSTprecision",
       "comment": "Order for field 42"
     }
   ]
@@ -154,7 +160,7 @@ payload = {
             "start_date": "2025-09-27T10:30:08.004000Z",
             "end_date": "2025-10-18T10:30:08.004000Z",
             "frequency": "single-image",
-            "product_name": "LSTPrecision",
+            "product_name": "LSTprecision",
             "comment": "Order for field 42"
         }
     ]
@@ -167,41 +173,6 @@ print(response.json())
 ```
 
 
-**Example: TypeScript  (Fetch)**
-```ts
-const url = "https://api.constellr.com/orders/batch";
-const token = "<access_token>";
-
-const payload = {
-  use_case: "Yield Prediction",
-  comment: "Urgent order for Q3 analysis",
-  orders: [
-    {
-      area_of_interest_id: "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
-      start_date: "2025-09-27T10:30:08.004000Z",
-      end_date: "2025-10-18T10:30:08.004000Z",
-      frequency: "single-image",
-      product_name: "LSTPrecision",
-      comment: "Order for field 42",
-    },
-  ],
-};
-
-fetch(url, {
-  method: "POST",
-  headers: {
-    "Authorization": `Bearer ${token}`,
-    "Content-Type": "application/json",
-    "accept": "application/json",
-  },
-  body: JSON.stringify(payload),
-})
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.error("Error creating orders:", err));
-
-```
-
 **Response (201):**
 ```json
 [
@@ -210,7 +181,7 @@ fetch(url, {
     "start_date": "2025-09-27T10:30:08.004000Z",
     "end_date": "2025-10-18T10:30:08.004000Z",
     "frequency": "single-image",
-    "product_name": "LSTPrecision",
+    "product_name": "LSTprecision",
     "comment": "Order for field 42",
     "id": "123e4567-e89b-12d3-a456-426614174000",
     "created": "2025-08-27T11:54:24.206072Z",
@@ -221,13 +192,9 @@ fetch(url, {
 
 **Error Responses:**
 
-- **400:** Invalid order request period.
+- **400:** Invalid order request body.
 
 - **404:** Invalid product or area of interest.
-
-- **422:** Request parameters validation error.
-
-- **502:** Order creation error.
 
 ---
 
@@ -272,27 +239,6 @@ data = resp.json()
 print(data["count"], len(data["items"]))
 ```
 
-**Example: TypeScript  (Fetch)**
-```ts
-const token = "<access_token>";
-const params = new URLSearchParams({
-  limit: "10",
-  offset: "0",
-  sort: "-created", // '+' asc or '-' desc
-});
-
-const res = await fetch(`https://api.constellr.com/orders?${params.toString()}`, {
-  headers: { Authorization: `Bearer ${token}` },
-});
-
-if (!res.ok) {
-  throw new Error(`Request failed: ${res.status} ${res.statusText}`);
-}
-
-const data = await res.json();
-console.log(data.count, data.items.length);
-```
-
 **Response (200):**
 ```json
 {
@@ -303,7 +249,7 @@ console.log(data.count, data.items.length);
       "start_date": "2025-09-27T10:30:08.004000Z",
       "end_date": "2025-10-18T10:30:08.004000Z",
       "frequency": "single-image",
-      "product_name": "LSTPrecision",
+      "product_name": "LSTprecision",
       "comment": "Order for field 42",
       "id": "123e4567-e89b-12d3-a456-426614174000",
       "created": "2025-08-27T11:54:24.206072Z",
@@ -314,9 +260,7 @@ console.log(data.count, data.items.length);
 ```
 **Error Responses:**
 
-- **422:** Request parameters validation error.
-
-- **502:** Order retrieval error.
+- **400:** Request parameters validation error.
 
 ---
 
@@ -332,6 +276,22 @@ curl -X GET "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-4266141740
   -H "Authorization: Bearer <access_token>"
 ```
 
+**Example: Python**
+```python
+import requests
+
+url = "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000"
+headers = {
+    "Authorization": "Bearer <access_token>"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.status_code)
+print(response.json())
+
+```
+
 **Response (200):**
 ```json
 {
@@ -339,7 +299,7 @@ curl -X GET "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-4266141740
   "start_date": "2025-09-27T10:30:08.004000Z",
   "end_date": "2025-10-18T10:30:08.004000Z",
   "frequency": "single-image",
-  "product_name": "LSTPrecision",
+  "product_name": "LSTprecision",
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
   "created": "2025-08-27T11:54:24.206072Z",
@@ -349,10 +309,6 @@ curl -X GET "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-4266141740
 **Error Responses:**
 
 - **404:** Order not found.
-
-- **422:** Request parameters validation error.
-
-- **502:** Order retrieval error.
 
 ---
 
@@ -365,6 +321,20 @@ curl -X GET "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-4266141740
 ```sh
 curl -X GET "https://api.constellr.com/orders/meta/use-cases" \
   -H "Authorization: Bearer <access_token>"
+```
+
+**Example: Python**
+```python
+import requests
+
+url = "https://api.constellr.com/orders/meta/use-cases"
+headers = {
+    "Authorization": "Bearer <access_token>"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.status_code)
 ```
 
 **Response (200):**
@@ -465,41 +435,6 @@ resp.raise_for_status()
 print(resp.json())
 ```
 
-**Example: TypeScript  (Fetch)**
-```ts
-const url = "https://api.constellr.com/areas-of-interest";
-const token = "<access_token>";
-
-const payload = {
-  name: "Test AOI",
-  description: "Test area",
-  geometry: {
-    type: "Polygon",
-    coordinates: [
-      [
-        [8.68483, 49.885416],
-        [8.684889, 49.876422],
-        [8.670971, 49.876383],
-        [8.67091, 49.885378],
-        [8.68483, 49.885416],
-      ],
-    ],
-  },
-};
-
-fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(payload),
-})
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.error("Error creating AOI:", err));
-```
-
 
 **Success Response (201)**
 ```json
@@ -528,7 +463,7 @@ fetch(url, {
 
 **Error Responses**
 
-- **422:** Request parameters validation error.
+- **400:** Request body validation error.
 
 
 ---
@@ -571,8 +506,6 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 **Error Responses**
 
 - **404:** Area of interest not found.
-
-- **422:** Request parameters validation error.
 
 ---
 
@@ -619,28 +552,6 @@ for item in data["items"]:
     print(item["id"], item["name"])
 ```
 
-**Example: TypeScript  (Fetch)**
-```ts
-const token = "<access_token>";
-const params = new URLSearchParams({
-  limit: "10",
-  offset: "0",
-  sort: "-created",
-});
-
-const res = await fetch(`https://api.constellr.com/areas-of-interest?${params.toString()}`, {
-  headers: { Authorization: `Bearer ${token}` },
-});
-
-if (!res.ok) {
-  throw new Error(`Request failed: ${res.status} ${res.statusText}`);
-}
-
-const data = await res.json();
-console.log("Total AOIs:", data.count);
-data.items.forEach((item: any) => console.log(item.id, item.name));
-```
-
 **Success Response (200)**
 ```json
 {
@@ -673,7 +584,7 @@ data.items.forEach((item: any) => console.log(item.id, item.name));
 
 **Error Responses**
 
-- **422:** Request parameters validation error.
+- **400:** Request parameters validation error.
 
 ---
 
@@ -757,46 +668,6 @@ print(f"bbox_height: {data['bbox_height']}")
 print(f"area: {data['area']}")
 ```
 
-**Example: TypeScript  (Fetch)**
-
-```ts
-const url = "https://api.constellr.com/areas-of-interest/geometry-info";
-const token = "<access_token>";
-
-const payload = {
-  type: "Feature",
-  geometry: {
-    type: "Polygon",
-    coordinates: [
-      [
-        [11.053963, 51.690862],
-        [11.976814, 51.690862],
-        [11.976814, 51.059955],
-        [10.944099, 51.073763],
-        [11.053963, 51.690862],
-      ],
-    ],
-  },
-};
-
-const res = await fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(payload),
-});
-
-if (!res.ok) {
-  throw new Error(`Request failed: ${res.status} ${res.statusText}`);
-}
-
-const data = await res.json();
-console.log("bbox_width:", data.bbox_width);
-console.log("bbox_height:", data.bbox_height);
-console.log("area:", data.area);
-```
 
 **Success Response (200)**
 ```json
@@ -809,7 +680,7 @@ console.log("area:", data.area);
 
 **Error Responses**
 
-- **422:** Request parameters validation error eg. invalid GeoJSON.
+- **400:** Request body validation error. eg. invalid GeoJSON geometry.
 
 
 ---
@@ -839,16 +710,10 @@ curl -X GET "https://api.constellr.com/products" \
 ]
 ```
 
-**Error Responses:**
-
-- **502:** Products retrieval error.
-
----
-
 
 ## STAC API
-
-A STAC (SpatioTemporal Asset Catalog) API is ideal when you need to programmatically search, filter, and access large volumes of Earth Observation data. It provides a standardized way to query and retrieve metadata and assets, making it suitable for automated workflows and integration with other tools. It naturally extends a static STAC catalogue to allow for dynamic search based on additional filters. In contrast, a web application is more user-friendly for interactive browsing, visualizing, and manually selecting data products. Use a STAC API for efficient, scalable data access in automated systems, and a web application for a more intuitive, hands-on experience. All operations require authentication via a Bearer token.
+The `/stac` endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
+All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.
 
 ### 1. Get STAC Landing Page
 
@@ -920,6 +785,22 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
 **Endpoint:**  `GET /stac/collections`  
 **Description:** Fetches the available STAC collections for your organization.
 
+**Query Parameters (optional):**
+
+- `limit`: Limits the number of results per page.
+
+- `offset`: Number of items to skip before starting to collect the result set.
+
+- `bbox`: Only return items intersecting this bounding box.
+
+- `datetime`: Only return items with a temporal property intersecting this value.
+
+- `sortby`: Array of property names to sort by, prefixed by `+` or `-`.
+
+- `filter`: CQL filter expression for filtering items.
+
+- `filter-lang`: The language used for the `filter` value (e.g., `cql2-json`).
+
 **Example: cURL**
 ```sh
 curl -G "https://api.constellr.com/stac/collections" \
@@ -949,53 +830,6 @@ for collection in data["collections"]:
     print(collection["id"], "-", collection["title"])
 ```
 
-**Example: TypeScript (Fetch)**
-```ts
-const url = "https://api.constellr.com/stac/collections";
-const token = "<access_token>";
-
-const params = new URLSearchParams({
-  limit: "5",
-  offset: "0",
-  bbox: "-122.1,5.1,35.4,53.6",
-});
-
-fetch(`${url}?${params.toString()}`, {
-  method: "GET",
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-})
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error(`Request failed: ${res.status} ${res.statusText}`);
-    }
-    return res.json();
-  })
-  .then((data) => {
-    for (const collection of data.collections) {
-      console.log(`${collection.id} - ${collection.title}`);
-    }
-  })
-  .catch((err) => {
-    console.error("Error fetching collections:", err);
-  });
-```
-**Query Parameters (optional):**
-
-- `limit`: Limits the number of results per page.
-
-- `offset`: Number of items to skip before starting to collect the result set.
-
-- `bbox`: Only return items intersecting this bounding box.
-
-- `datetime`: Only return items with a temporal property intersecting this value.
-
-- `sortby`: Array of property names to sort by, prefixed by `+` or `-`.
-
-- `filter`: CQL filter expression for filtering items.
-
-- `filter-lang`: The language used for the `filter` value (e.g., `cql2-json`).
 
 **Success Response (200)**
 ```json
@@ -1031,7 +865,7 @@ fetch(`${url}?${params.toString()}`, {
 ```
 **Error Responses**
 
-- **422:** Request parameters validation error.
+- **400:** Request parameters validation error.
 
 ---
 
@@ -1045,6 +879,23 @@ fetch(`${url}?${params.toString()}`, {
 ```sh
 curl -X GET "https://api.constellr.com/stac/collections/lstfusion" \
   -H "Authorization: Bearer <access_token>"
+```
+
+**Example: Python**
+```python
+import requests
+
+url = "https://api.constellr.com/stac/collections/lstfusion"
+
+headers = {
+    "Authorization": "Bearer <access_token>"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.status_code)
+print(response.json())
+
 ```
 
 **Success Response (200)**
@@ -1077,16 +928,14 @@ curl -X GET "https://api.constellr.com/stac/collections/lstfusion" \
 
 **Error Responses**
 
-- **404:** Collection with ID lstfusion not found.
-
-- **422:** Request parameters validation error.
+- **400:** Invalid collection ID.
 
 ---
 
 ### 5. Get a Single Item by Collection and Item ID
 
 **Endpoint:**  `GET /stac/collections/{collection_id}/items/{item_id}`  
-**Description:** Fetches a single STAC item by collection and item ID.
+**Description:** Fetches a single STAC item(feature) by collection and item ID.
 
 
 **Example: cURL**
@@ -1111,33 +960,6 @@ data = resp.json()
 print(data["id"], "-", data["collection"])
 ```
 
-
-**Example: TypeScript (Fetch)**
-```ts
-const collectionId = "lstfusion";
-const itemId = "item_id";
-const url = `https://api.constellr.com/stac/collections/${collectionId}/items/${itemId}`;
-const token = "<access_token>";
-
-fetch(url, {
-  method: "GET",
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-})
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error(`Request failed: ${res.status} ${res.statusText}`);
-    }
-    return res.json();
-  })
-  .then((data) => {
-    console.log(`${data.id} - ${data.collection}`);
-  })
-  .catch((err) => {
-    console.error("Error fetching item:", err);
-  });
-```
 
 **Success Response (200)**
 ```json
@@ -1189,11 +1011,7 @@ fetch(url, {
 
 **Error Responses**
 
-- **404:** Item with ID item_id in collection lstfusion not found.
-
-- **502:**  Failed to retrieve item.
-
-- **422:** Request parameters validation error.
+- **404:** Item not found.
 
 ---
 
@@ -1246,35 +1064,6 @@ print("numberMatched:", data.get("numberMatched"))
 print("numberReturned:", data.get("numberReturned"))
 ```
 
-**Example: TypeScript (Fetch)**
-```ts
-const url = "https://api.constellr.com/stac/search";
-const token = "<access_token>";
-
-const payload = {
-  collections: ["lstfusion"],
-  bbox: [8.3, 49.6, 9.0, 50.1],
-  datetime: "2025-08-18T11:00:00Z/..",
-};
-
-const res = await fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(payload),
-});
-
-if (!res.ok) {
-  throw new Error(`Request failed: ${res.status} ${res.statusText}`);
-}
-
-const data = await res.json();
-console.log("numberMatched:", data.numberMatched);
-console.log("numberReturned:", data.numberReturned);
-```
-
 **Success Response (200)**
 ```json
 {
@@ -1291,12 +1080,8 @@ console.log("numberReturned:", data.numberReturned);
 
 **Error Responses**
 
-- **400:** Invalid filter or collection not allowed.
+- **400:** Request body validation error.
 
 - **404:** No data orders found for the organization.
-
-- **422:** Request parameters validation error.
-
-- **502:** Failed to perform search.
 
 ---
