@@ -30,7 +30,7 @@ This page describes the metadata file used for L2A products.
   <!-- product-level keys -->
   <tr><td class="level-1">product_type</td><td>string</td><td>"L2"</td></tr>
   <tr><td class="level-1">product_name</td><td>string</td><td>"LSTfusion"</td></tr>
-  <tr><td class="level-1">link</td><td>string</td><td>URL with complementary documentation and data access info</td></tr>
+  <tr><td class="level-1">link</td><td>string</td><td><a href= "https://constellr.github.io/product-lst/Technical-specification/">URL with complementary documentation and data access info</a></td></tr>
   <tr><td class="level-1">source</td><td>string</td><td> "constellr" </td></tr>
   <tr><td class="level-1">acquisition_time</td><td>string</td><td>Date and time of the acquisition, ISO 8601 format at UTC time</td></tr>
   <tr><td class="level-1">sources</td><td>string</td><td> satellite sensors used, e.g. CLMS, MODIS_AQUA, MODIS_TERRA, VIIRS_NOAA20, VIIRS_NPP </td></tr>

@@ -94,7 +94,7 @@ print(token)
 
 The `/orders` endpoint allows you to create, list, and retrieve orders for your organization. All operations require authentication via a Bearer token.
 
-### 1. Create Orders in Batch
+<h3>1. Create Orders in Batch</h3>
 
 **Endpoint:** `POST /orders/batch`  
 **Description:** Create multiple new orders for your organization in a single request. <br />
@@ -197,7 +197,7 @@ print(response.json())
 
 ---
 
-### 2. List All Orders
+<h3>2. List All Orders</h3>
 
 **Endpoint:** `GET /orders`  
 **Description:** List all orders for your organization with pagination and sorting.
@@ -263,7 +263,7 @@ print(data["count"], len(data["items"]))
 
 ---
 
-### 3. Get Order by ID
+<h3>3. Get Order by ID</h3>
 
 **Endpoint:** `GET /orders/{order_id}`  
 **Description:** Retrieve a specific order by its unique ID.
@@ -311,7 +311,7 @@ print(response.json())
 
 ---
 
-### 4. Get Available Order Use Cases
+<h3>4. Get Available Order Use Cases</h3>
 
 **Endpoint:** `GET /orders/meta/use-cases`  
 **Description:**  Returns a list of available order use cases supported by the API.  
@@ -355,7 +355,7 @@ print(response.status_code)
 
 The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your organization. AOIs define geographic regions used in data orders. All operations require authentication via a Bearer token.
 
-### 1. Create an Area of Interest
+<h3>1. Create an Area of Interest</h3>
 
 **Endpoint:**  `POST /areas-of-interest`  
 **Description:** Creates a new Area of Interest (AOI) for your organization.
@@ -467,7 +467,7 @@ print(resp.json())
 
 ---
 
-### 2. Get an Area of Interest by ID
+<h3>2. Get an Area of Interest by ID</h3>
 
 **Endpoint:**  `GET /areas-of-interest/{area_of_interest_id}`  
 **Description:** Retrieves a specific AOI by its unique ID.
@@ -508,7 +508,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 
 ---
 
-### 3. List Areas of Interest
+<h3>3. List Areas of Interest</h3>
 
 **Endpoint:**  `GET /areas-of-interest`  
 **Description:** Lists all AOIs for your organization with pagination and sorting.
@@ -587,7 +587,7 @@ for item in data["items"]:
 
 ---
 
-### 4. Get Geometry Info from AOI
+<h3>4. Get Geometry Info from AOI</h3>
 
 **Endpoint:**  `POST /areas-of-interest/geometry-info`  
 **Description:** Get geometry information (bounding box width/height, area) for a provided GeoJSON AOI geometry.
@@ -688,7 +688,7 @@ print(f"area: {data['area']}")
 
 The `/products` endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders. All operations require authentication via a Bearer token.
 
-### 1. List Available Products
+<h3>1. List Available Products</h3>
 
 **Endpoint:**  `GET /products`  
 **Description:** Retrieves a list of available products for your organization.
@@ -714,7 +714,7 @@ curl -X GET "https://api.constellr.com/products" \
 The `/stac` endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
 All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.
 
-### 1. Get STAC Landing Page
+<h3>1. Get STAC Landing Page</h3>
 
 **Endpoint:**  `GET /stac`  
 **Description:** Fetches landing page data for the STAC Browser.
@@ -753,7 +753,7 @@ curl -X GET "https://api.constellr.com/stac" \
 
 ---
 
-### 2. Get Conformance Classes
+<h3>2. Get Conformance Classes</h3>
 
 **Endpoint:**  `GET /stac/conformance`  
 **Description:** Fetches the conformance classes supported by the STAC API.
@@ -779,7 +779,7 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
 
 ---
 
-### 3. List Available Collections
+<h3>3. List Available Collections</h3>
 
 **Endpoint:**  `GET /stac/collections`  
 **Description:** Fetches the available STAC collections for your organization.
@@ -868,7 +868,7 @@ for collection in data["collections"]:
 
 ---
 
-### 4. Get a Single Collection
+<h3>4. Get a Single Collection</h3>
 
 **Endpoint:**  `GET /stac/collections/{collection_id}`  
 **Description:** Fetches a single STAC collection by its ID.
@@ -931,7 +931,7 @@ print(response.json())
 
 ---
 
-### 5. Get a Single Item by Collection and Item ID
+<h3>5. Get a Single Item by Collection and Item ID</h3>
 
 **Endpoint:**  `GET /stac/collections/{collection_id}/items/{item_id}`  
 **Description:** Fetches a single STAC item(feature) by collection and item ID.
@@ -1014,7 +1014,7 @@ print(data["id"], "-", data["collection"])
 
 ---
 
-### 6. Search STAC Collections
+<h3>6. Search STAC Collections</h3>
 
 **Endpoint:**  `POST /stac/search `  
 **Description:** Performs a search on STAC collections using a request body.

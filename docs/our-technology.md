@@ -37,7 +37,7 @@ The Radiance retrieved by the TIR imager will be transformed to orthorectified L
 | 04 | 11.75 | 500 |  
 <figcaption>Table 1: Spectral bands in the TIR range.</figcaption>
 
-At a nominal altitude of 510km, the **VNIR camera** has a swath width of 21km with a ground sampling distance of 5m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. The data binned on board to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in Table 2.
+At a nominal altitude of 510km, the **VNIR camera** has a swath width of 21km with a ground sampling distance of 10m. Thus, the camera covers the complete swath of the TIR instrument and can be used for georeferencing. The data binned on board to, dependent on the band, 10m, 20m or 60m. The segmented spectral bandpass filters provide custom spectral channels aligned with those of the Sentinel-2 satellites. The spectral composition of the bands and their spatial resolution how they are delivered in the final orthorectified products is given in Table 2.
 
 | Filter Number | Central Wavelength [µm] | Bandwidth [nm] | Targeted GSD [m] |
 | ------------- | ----------------------- | --------- | ---------------- |
@@ -64,7 +64,7 @@ The cryocooled infrared sensors are at the heart of delivering high-quality, hig
 Cryocooling technology enables constellr’s HiVE satellites to maintain temperature accuracy within 1–2 Kelvin, while offering a 30 m spatial resolution. This level of sensitivity and precision is crucial for applications such as monitoring crop health, managing urban heat islands, and assessing industrial energy efficiency, and civil security. The use of cryocooled sensors ensures that data remains consistent, accurate, and actionable over time.  
 
 ## Data Quality and Validation
-The HiVE data quality is assessed by defined high standards for all Cal/Val activities. The HiVE Cal/ Val activities are supported by ESA within the ESA programs InCubed and Copernicus Contributing Mission (CCM).  
+The HiVE data quality is assessed by defined high standards for all Cal/Val activities. The HiVE Cal/Val activities are supported by ESA within the ESA programs InCubed and Copernicus Contributing Mission (CCM).  
 
 ## Acquisition Scenarios
 The HiVE constellation is primarily planned as a tasking-based mission with off-nadir pointing capabilities up to ±30°. For 2025, this enables an average revisit time of 1.5 days with the first two satellites, and reaching sub-daily revisit with three satellites (2026+). 
@@ -74,7 +74,7 @@ constellr’s key innovation is a patented architecture to enable high-quality i
 
 In summary, HiVE’s features allow to ensures absolute temperature accuracy and reliability of the data for high precision analysis. The full constellation of satellites ensures daily coverage for target regions by 2027. Its sunsynchronous orbit ensures comparability of data over time, making it well-suited for trend analysis. Finally, with its day and night imagery, it enabling critical insights for optimal decision-making by 2026.  -->
 
-To learn more about our different products visit our [Product Portfolio](https://constellr.github.io/product-lst/Constellr-product-offer/)
+To learn more about our different products visit our [Product Portfolio](https://constellr.github.io/product-lst/Constellr-product-offer/).
 
 ----------
 

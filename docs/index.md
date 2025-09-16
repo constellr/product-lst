@@ -106,7 +106,7 @@ In this knowledge center, you can find information about:
             <span class="material-icons" >search</span> 
             <a href="https://constellr.github.io/product-lst/explorer-lab/" style="color: black;" >Explorer Lab</a>
           </h5>
-          <p class="card-text">Learn more about real-life applications of thermal data in the Explorer Lab.</p>
+          <p class="card-text">Learn more about real-life applications of thermal data.</p>
         </div>
       </div>
     </div>

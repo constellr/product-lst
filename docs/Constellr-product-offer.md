@@ -79,7 +79,7 @@ If you want to already  explore the benefits of high-resolution land surface tem
     * Algorithm enhanced public data
     * Large area coverage 
 
--   [__LST15__]()
+-   __LST15__
 
     **For zooming in on anomalies**
 
