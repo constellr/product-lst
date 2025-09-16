@@ -64,7 +64,6 @@ url = "https://api.constellr.com/token"
 headers = {
   "Accept": "application/json",
   "Content-Type": "application/x-www-form-urlencoded",
-  "Accept": "application/json"
 }
 data = {
     "username": "your_username",
