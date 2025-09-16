@@ -28,7 +28,7 @@ This guide outlines how to authenticate, place orders, search, and download your
 ## Authentication API
 
 **Endpoint:** `POST /token`   
-**Description:** Generates an access token to call API endpoints. Endpoints require a token in the `Authorization` header as `Bearer <token>`.  Tokens are valid for **one hour**.
+**Description:** Generates an access token to call API endpoints. Endpoints require a token in the `Authorization` header as `Bearer <token>`.  Tokens are valid for **24 hours**.
 
 **Request Body Example:**
 ```
