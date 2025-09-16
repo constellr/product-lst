@@ -42,7 +42,7 @@ curl --location 'https://api.constellr.com/token' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'username=your_username' \
---data-urlencode 'password=your_passwordç'
+--data-urlencode 'password=your_password'
 ```
 
 **Example: Python**
