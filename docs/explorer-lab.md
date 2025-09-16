@@ -20,7 +20,7 @@ Or do you want to get started using land surface temperature to derive temperatu
 
 -   :material-database-export-outline: **Open Data Programme**  
     *You want to get started using land surface temperature to derive temperature-based insights by yourself?*  
-    Use our **Open Data Programme** to experience our state-of-the-art imagery first-hand and for free.  
+    Use our [**Open Data Programme →**](https://constellr.github.io/product-lst/example-datasets/) to experience our state-of-the-art imagery first-hand and for free.  
 
 </div>
 
