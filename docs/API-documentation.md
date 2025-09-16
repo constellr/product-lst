@@ -38,9 +38,11 @@ password=your_password
 
 **Example: cURL**
 ```sh
-curl -X POST https://api.constellr.com/token \
-  -H "Content-Type: application/json" \
-  -d '{"username": "your_username", "password": "your_password"}'
+curl --location 'https://api.constellr.com/token' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'username=your_username' \
+--data-urlencode 'password=your_passwordç'
 ```
 
 **Example: Python**
@@ -48,11 +50,13 @@ curl -X POST https://api.constellr.com/token \
 import requests
 
 url = "https://api.constellr.com/token"
+headers = {"Accept": "application/json"}
 data = {
     "username": "your_username",
-    "password": "your_password"
+    "password": "your_password",
 }
-resp = requests.post(url, json=data)
+
+resp = requests.post(url, headers=headers, data=data)
 token = resp.json().get("access_token")
 print(token)
 ```
@@ -61,20 +65,20 @@ print(token)
 ```ts
 const url = "https://api.constellr.com/token";
 
-fetch(url, {
+const response = await fetch(url, {
   method: "POST",
   headers: {
-    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Content-Type": "application/x-www-form-urlencoded",
   },
-  body: JSON.stringify({
+  body: new URLSearchParams({
     username: "your_username",
     password: "your_password",
   }),
-})
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data.access_token);
-  });
+});
+
+const data = await response.json();
+console.log(data.access_token);
 ```
 
 **Success Response (200):**
