@@ -37,7 +37,7 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-1">acquisition_datetime</td><td>string</td><td>Date and time of the acquisition, ISO 8601 format at UTC time</td></tr>
   <tr><td class="level-1">processing_time</td><td>string</td><td>ISO-8601 string indicating start time of imagery processing</td></tr>
   <tr><td class="level-1">parent_product_key</td><td>string</td><td> </td></tr>
-  <tr><td class="level-1">link</td><td>string</td><td>URL with complementary documentation and data access info</td></tr>
+  <tr><td class="level-1">link</td><td>string</td><td><a href= "https://constellr.github.io/product-lst/"> URL with complementary documentation and data access info</a></td></tr>
   <tr><td class="level-1">source</td><td>string</td><td>"constellr"</td></tr>
   <tr><td class="level-1">use_limitations</td><td>string</td><td>NA</td></tr>
   <tr><td class="level-1">atmospheric_data_source</td><td>string</td><td>"ERA5" or "CAMS_forecast"</td></tr>
@@ -153,7 +153,6 @@ This page describes the metadata file used for L2A products.
   <!-- Bands -->
   <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;Bands</td><td>object</td><td></td></tr>
   <tr><td class="level-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eo:common_name</td><td>string</td><td>STAC-compliant band name</td></tr>
-  <tr><td class="level-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_file_id</td><td>string</td><td>Filename of L2A SR product</td></tr>
   <tr><td class="level-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clipped_pixels</td><td>integer</td><td>Number of SR pixels clipped to 0 or 1</td></tr>
 
   <!-- L2_TIR -->
@@ -173,7 +172,6 @@ This page describes the metadata file used for L2A products.
 
   <!-- ST -->
   <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;ST</td><td>object</td><td></td></tr>
-  <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST_file_id</td><td>string</td><td>Filename of L2A Surface Temperature product</td></tr>
   <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST_type</td><td>string</td><td>"uint16"</td></tr>
   <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST_offset</td><td>float</td><td>Offset to compute ST from readings (st = DN × scale_factor + offset)</td></tr>
   <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST_scale_factor</td><td>float</td><td>Scale factor to compute ST from readings (st = DN × scale_factor + offset)</td></tr>

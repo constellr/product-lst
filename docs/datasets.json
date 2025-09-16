@@ -37,5 +37,31 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/East_Coast_USA_2025-08-18T16-18-21.091328Z-2025-08-18T16_18_21_RGB.png"
     ],
     "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_East_Coast_USA_2025-08-18T16-18-21.091328Z.zip"
+  },
+  {
+    "title": "Urban Infrastructure and Mangroves",
+    "description": "A city's infrastructure, such as the Surabaya airport, encroaching on mangroves, displaying stark temperature contrasts.",
+    "product": "LST Precision",
+    "price": "FREE",
+    "use_cases": ["Urban Heat Island, Urban Planning"],
+    "locations": ["Surabaya, Indonesia"],
+    "images": [
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Airport_2025-08-15T03_08_00.702421Z_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Airport_2025-08-15T03_08_00.702421Z_RGB.png"
+    ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Suramadu_Airport_2025-08-15T03_08_00.702421Z.zip"
+  },
+  {
+    "title": "Identifying Urban LST details",
+    "description": "Indonesia's longest bridge, showcasing significant temperature variations between land and water.",
+    "product": "LST Precision",
+    "price": "FREE",
+    "use_cases": ["Urban Planning"],
+    "locations": ["Surabaya, Indonesia"],
+    "images": [
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Bridge_2025-08-15T03-07-59.699198Z_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Bridge_2025-08-15T03-07-59.699198Z_RGB.png"
+    ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Suramadu_Bridge_2025-08-15T03-07-59.699198Z.zip"
   }
 ]

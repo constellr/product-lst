@@ -7,11 +7,11 @@ For the LSTfusion product, each data layer is available for a given data and hou
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| metadata/metadata_yyyymmddThhZ.json | Metadata description | json |
-| lst/lst_yyyymmddThhZ.tiff | LST data | Cloud optimized geotiff |
-| quicklooks/lst_quicklook_yyyymmddThhZ.tiff | Temperature quicklook | Cloud optimized geotiff |
-| thumbnails/lst_thumbnail_yyyymmddThhZ.jpg | LST Thumbnail | jpg |
-| std/lst_std_yyyymmddThhZ.tiff | Spatial Standard Deviation | Cloud optimized geotiff |
+| metadata_yyyymmddThhZ.json | [Metadata description](https://constellr.github.io/product-lst/LST-fusion-metadata/) | json |
+| lst_yyyymmddThhZ.tiff | LST data | Cloud optimized geotiff |
+| lst_composite_yyyymmddThhZ.tiff | Temperature quicklook | Cloud optimized geotiff |
+| lst_thumbnail_yyyymmddThhZ.jpg | LST Thumbnail | jpg |
+| lst_std_yyyymmddThhZ.tiff | Spatial Standard Deviation | Cloud optimized geotiff |
 
 
 ## Naming Convention

@@ -6,15 +6,15 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
-| vnir_data/vnir01.tiff - vnir10.tiff |VNIR Surface Reflection per band at 30m and 60m resolution| Cloud optimized geotiff |
-| tir_data/lst.tiff | LST data | Cloud optimized geotiff |
+| vnir01.tiff - vnir10.tiff |VNIR Surface Reflection per band at 30m and 60m resolution| Cloud optimized geotiff |
+| lst.tiff | LST data | Cloud optimized geotiff |
 | rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
 | lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
 | rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
-| scl_masks_data/scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution | Cloud optimized geotiff |
-| vnir_data/tcwv.tiff | Total Column Water Vapour | Cloud optimized geotiff |
-| vnir_data/aot.tiff | Aerosol Optical Thickness | Cloud optimized geotiff |
+| scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution | Cloud optimized geotiff |
+| tcwv.tiff | Total Column Water Vapour | Cloud optimized geotiff |
+| aot.tiff | Aerosol Optical Thickness | Cloud optimized geotiff |
 
 ## Naming Convention
 

@@ -1,6 +1,12 @@
 # **Open Data Programme**
+<h3><i>Explore our comprehensive collection of high-resolution space-based satellite datasets.</i></h3>  
 
-Explore our comprehensive collection of high-resolution space-based satellite datasets categorized by product, use case, and asset type.
+------
+After downloading the datasets, find more information on the different layers and metadata here:
+
+- [LSTprecision Data Bundle Description](https://constellr.github.io/product-lst/LST-precision-product-deliverables/) 
+- [LSTzoom Data Bundle Description](https://constellr.github.io/product-lst/LST-zoom-product-deliverables/) 
+------
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
