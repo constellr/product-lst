@@ -10,7 +10,7 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/mtf_nrb_dubai_2025-08-22T07-20-48.981760Z-2025-08-22T07_20_49_LST.png",
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/mtf_nrb_dubai_2025-08-22T07-20-48.981760Z-2025-08-22T07_20_49_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_dubai_airport_2025-08-22T07-20-48.981760Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/mtf_nrb_dubai_2025-08-22T07-20-48.981760Z.zip"
   },
   {
     "title": "Agricultural Fields and Natural Parks",
@@ -23,7 +23,7 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Cop_LAW_Robson_Creek_2025-08-23T00-55-40.385570Z_LST.png",
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Cop_LAW_Robson_Creek_2025-08-23T00-55-40.385570Z_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Robson_Creek_2025-08-23T00-55-40.385570Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/Cop_LAW_Robson_Creek_2025-08-23T00-55-40.385570Z.zip"
   },
   {
     "title": "Large Scale Agriculture Analysis",
@@ -31,11 +31,11 @@
     "product": "LST Precision",
     "price": "FREE",
     "use_cases": ["Agriculture"],
-    "locations": ["Illinois, USA"],
+    "locations": ["Illionis, USA"],
     "images": [
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/East_Coast_USA_2025-08-18T16-18-21.091328Z-2025-08-18T16_18_21_LST.png",
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/East_Coast_USA_2025-08-18T16-18-21.091328Z-2025-08-18T16_18_21_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_East_Coast_USA_2025-08-18T16-18-21.091328Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/East_Coast_USA_2025-08-18T16-18-21.091328Z.zip"
   }
 ]

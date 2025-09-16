@@ -1027,10 +1027,13 @@
 
 
 <h1 id="constellr-api-documentation"><strong>Constellr API Documentation</strong></h1>
-<p>This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the <a href="https://api.constellr.com/docs">interactive Swagger documentation</a> or access the OpenAPI JSON File.</p>
+<p>This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the <a href="https://api.constellr.com/docs">interactive Swagger documentation</a> or <a href="https://api.constellr.com/redoc">Redoc documentation</a>.</p>
 <hr />
 <h2 id="initial-preparation">Initial Preparation</h2>
 <ul>
+<li>
+<p>To access the Constellr UI and API, your company’s email domain must be registered with Constellr. Once registered, you can create an account using your company email.</p>
+</li>
 <li>
 <p>Create an Account: You can create your account via Constellr's end-user platform, which can be found at <a href="https://app.constellr.com/signup">https://app.constellr.com/signup</a></p>
 </li>
@@ -1047,16 +1050,24 @@
 <li>Add the word <code>Bearer</code> before the access token in the <code>Authorization</code> header for all API requests (except <code>/token</code> endpoint):
   <div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;access_token&gt;
 </code></pre></div></li>
-<li>If your token expires, you will receive a 403 Not Authenticated error. Request a new token and retry.</li>
+<li>If your token expires, you will receive a 401 Not Authenticated error. Request a new token and retry.</li>
 <li>Never store your credentials in plain text in production code.</li>
 </ul>
 <hr />
 <h2 id="authentication-api">Authentication API</h2>
 <p><strong>Endpoint:</strong> <code>POST /token</code> <br />
-<strong>Description:</strong> Generates an access token to call API endpoints. Endpoints require a token in the <code>Authorization</code> header as <code>Bearer &lt;token&gt;</code>.  Tokens are valid for <strong>24 hours</strong>.</p>
-<p><strong>Request Body Example:</strong>
-<div class="highlight"><pre><span></span><code>username=your_username
-password=your_password
+<strong>Description:</strong> Generates an access token to call the API endpoints. Endpoints require a token in the <code>Authorization</code> header as <code>Bearer &lt;token&gt;</code>. Tokens are valid for <strong>24 hours</strong>.</p>
+<p><strong>Headers:</strong>
+<div class="highlight"><pre><span></span><code>{
+  Accept=application/json
+  Content-Type=application/x-www-form-urlencoded
+}
+</code></pre></div></p>
+<p><strong>Request Body (in url-encoded format):</strong>
+<div class="highlight"><pre><span></span><code>{
+  username=your_username
+  password=your_password
+}
 </code></pre></div></p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span><span class="s1">&#39;https://api.constellr.com/token&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -1069,7 +1080,11 @@ password=your_password
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/token&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+<span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;your_username&quot;</span><span class="p">,</span>
     <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;your_password&quot;</span><span class="p">,</span>
@@ -1079,24 +1094,6 @@ password=your_password
 <span class="n">token</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;access_token&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/token&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;Accept&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your_username&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;your_password&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">}),</span>
-<span class="p">});</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">access_token</span><span class="p">);</span>
-</code></pre></div></p>
 <p><strong>Success Response (200):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
@@ -1104,14 +1101,30 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses:</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid credentials, User not confirmed, or password reset required.</li>
+<li><strong>401:</strong> Invalid credentials, user not confirmed, token expired or password reset required.</li>
 </ul>
 <hr />
 <h2 id="orders-api">Orders API</h2>
 <p>The <code>/orders</code> endpoint allows you to create, list, and retrieve orders for your organization. All operations require authentication via a Bearer token.</p>
 <h3 id="1-create-orders-in-batch">1. Create Orders in Batch</h3>
 <p><strong>Endpoint:</strong> <code>POST /orders/batch</code><br />
-<strong>Description:</strong> Create multiple new orders for your organization in a single request.</p>
+<strong>Description:</strong> Create multiple new orders for your organization in a single request. <br />
+<strong>Order Validation:</strong> All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
+<strong>Validation rules:</strong></p>
+<ul>
+<li><code>LSTprecision / LSTzoom:</code> <ul>
+<li>AOI bounding box must not exceed <code>15,000m</code> in width or <code>15,000m</code> in height</li>
+<li>Order period must start at least <code>8</code> days from the order creation date, last a minimum of <code>7</code> days, and a maximum of <code>365</code> days</li>
+<li>Frequency options: <code>single_image</code>, <code>max_frequency</code>, <code>once_every_two_weeks</code>, <code>monthly</code></li>
+</ul>
+</li>
+<li><code>LSTfusion:</code><ul>
+<li>No bounding box restrictions</li>
+<li>No order period restrictions</li>
+<li>Frequency options: <code>daily</code></li>
+</ul>
+</li>
+</ul>
 <p><strong>Request Body Example:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;use_case&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Yield Prediction&quot;</span><span class="p">,</span>
@@ -1122,7 +1135,7 @@ password=your_password
 <span class="w">      </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTPrecision&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -1155,7 +1168,7 @@ password=your_password
             <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
             <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
             <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;product_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LSTPrecision&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;product_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
             <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Order for field 42&quot;</span>
         <span class="p">}</span>
     <span class="p">]</span>
@@ -1165,38 +1178,6 @@ password=your_password
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript  (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/batch&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">use_case</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Yield Prediction&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">comment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Urgent order for Q3 analysis&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">orders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">area_of_interest_id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">start_date</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">end_date</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">frequency</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">product_name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;LSTPrecision&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">comment</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">  </span><span class="p">],</span>
-<span class="p">};</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;Authorization&quot;</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;accept&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
-<span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
-<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error creating orders:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">));</span>
-</code></pre></div></p>
 <p><strong>Response (201):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
@@ -1204,7 +1185,7 @@ password=your_password
 <span class="w">    </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTPrecision&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
@@ -1215,16 +1196,10 @@ password=your_password
 <p><strong>Error Responses:</strong></p>
 <ul>
 <li>
-<p><strong>400:</strong> Invalid order request period.</p>
+<p><strong>400:</strong> Invalid order request body.</p>
 </li>
 <li>
 <p><strong>404:</strong> Invalid product or area of interest.</p>
-</li>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
-<li>
-<p><strong>502:</strong> Order creation error.</p>
 </li>
 </ul>
 <hr />
@@ -1266,25 +1241,6 @@ password=your_password
 <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]))</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript  (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">offset</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">sort</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;-created&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// &#39;+&#39; asc or &#39;-&#39; desc</span>
-<span class="p">});</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://api.constellr.com/orders?</span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">},</span>
-<span class="p">});</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Request failed: </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-</code></pre></div></p>
 <p><strong>Response (200):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -1294,7 +1250,7 @@ password=your_password
 <span class="w">      </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTPrecision&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
@@ -1305,12 +1261,7 @@ password=your_password
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
-<li>
-<p><strong>502:</strong> Order retrieval error.</p>
-</li>
+<li><strong>400:</strong> Request parameters validation error.</li>
 </ul>
 <hr />
 <h3 id="3-get-order-by-id">3. Get Order by ID</h3>
@@ -1320,13 +1271,26 @@ password=your_password
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
 </code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div></p>
 <p><strong>Response (200):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTPrecision&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
@@ -1335,15 +1299,7 @@ password=your_password
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
-<li>
-<p><strong>404:</strong> Order not found.</p>
-</li>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
-<li>
-<p><strong>502:</strong> Order retrieval error.</p>
-</li>
+<li><strong>404:</strong> Order not found.</li>
 </ul>
 <hr />
 <h3 id="4-get-available-order-use-cases">4. Get Available Order Use Cases</h3>
@@ -1352,6 +1308,18 @@ password=your_password
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/meta/use-cases&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/meta/use-cases&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
 </code></pre></div></p>
 <p><strong>Response (200):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
@@ -1437,39 +1405,6 @@ password=your_password
 <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript  (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">coordinates</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="p">};</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
-<span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
-<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error creating AOI:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">));</span>
-</code></pre></div></p>
 <p><strong>Success Response (201)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
@@ -1494,7 +1429,7 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>422:</strong> Request parameters validation error.</li>
+<li><strong>400:</strong> Request body validation error.</li>
 </ul>
 <hr />
 <h3 id="2-get-an-area-of-interest-by-id">2. Get an Area of Interest by ID</h3>
@@ -1528,12 +1463,7 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li>
-<p><strong>404:</strong> Area of interest not found.</p>
-</li>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
+<li><strong>404:</strong> Area of interest not found.</li>
 </ul>
 <hr />
 <h3 id="3-list-areas-of-interest">3. List Areas of Interest</h3>
@@ -1577,26 +1507,6 @@ password=your_password
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript  (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">offset</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">sort</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;-created&quot;</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://api.constellr.com/areas-of-interest?</span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">},</span>
-<span class="p">});</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Request failed: </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Total AOIs:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">count</span><span class="p">);</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">));</span>
-</code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -1626,7 +1536,7 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>422:</strong> Request parameters validation error.</li>
+<li><strong>400:</strong> Request parameters validation error.</li>
 </ul>
 <hr />
 <h3 id="4-get-geometry-info-from-aoi">4. Get Geometry Info from AOI</h3>
@@ -1701,44 +1611,6 @@ password=your_password
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bbox_height: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;bbox_height&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;area: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript  (Fetch)</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/geometry-info&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">coordinates</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">11.053963</span><span class="p">,</span><span class="w"> </span><span class="mf">51.690862</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">11.976814</span><span class="p">,</span><span class="w"> </span><span class="mf">51.690862</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">11.976814</span><span class="p">,</span><span class="w"> </span><span class="mf">51.059955</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">10.944099</span><span class="p">,</span><span class="w"> </span><span class="mf">51.073763</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">11.053963</span><span class="p">,</span><span class="w"> </span><span class="mf">51.690862</span><span class="p">],</span>
-<span class="w">      </span><span class="p">],</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="p">};</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
-<span class="p">});</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Request failed: </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;bbox_width:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">bbox_width</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;bbox_height:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">bbox_height</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;area:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">area</span><span class="p">);</span>
-</code></pre></div>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">74218.0</span><span class="p">,</span>
@@ -1748,7 +1620,7 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>422:</strong> Request parameters validation error eg. invalid GeoJSON.</li>
+<li><strong>400:</strong> Request body validation error. eg. invalid GeoJSON geometry.</li>
 </ul>
 <hr />
 <h2 id="products-api">Products API</h2>
@@ -1766,13 +1638,9 @@ password=your_password
 <span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion&quot;</span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<p><strong>Error Responses:</strong></p>
-<ul>
-<li><strong>502:</strong> Products retrieval error.</li>
-</ul>
-<hr />
 <h2 id="stac-api">STAC API</h2>
-<p>A STAC (SpatioTemporal Asset Catalog) API is ideal when you need to programmatically search, filter, and access large volumes of Earth Observation data. It provides a standardized way to query and retrieve metadata and assets, making it suitable for automated workflows and integration with other tools. It naturally extends a static STAC catalogue to allow for dynamic search based on additional filters. In contrast, a web application is more user-friendly for interactive browsing, visualizing, and manually selecting data products. Use a STAC API for efficient, scalable data access in automated systems, and a web application for a more intuitive, hands-on experience. All operations require authentication via a Bearer token.</p>
+<p>The <code>/stac</code> endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
+All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.</p>
 <h3 id="1-get-stac-landing-page">1. Get STAC Landing Page</h3>
 <p><strong>Endpoint:</strong>  <code>GET /stac</code><br />
 <strong>Description:</strong> Fetches landing page data for the STAC Browser.</p>
@@ -1826,6 +1694,30 @@ password=your_password
 <h3 id="3-list-available-collections">3. List Available Collections</h3>
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections</code><br />
 <strong>Description:</strong> Fetches the available STAC collections for your organization.</p>
+<p><strong>Query Parameters (optional):</strong></p>
+<ul>
+<li>
+<p><code>limit</code>: Limits the number of results per page.</p>
+</li>
+<li>
+<p><code>offset</code>: Number of items to skip before starting to collect the result set.</p>
+</li>
+<li>
+<p><code>bbox</code>: Only return items intersecting this bounding box.</p>
+</li>
+<li>
+<p><code>datetime</code>: Only return items with a temporal property intersecting this value.</p>
+</li>
+<li>
+<p><code>sortby</code>: Array of property names to sort by, prefixed by <code>+</code> or <code>-</code>.</p>
+</li>
+<li>
+<p><code>filter</code>: CQL filter expression for filtering items.</p>
+</li>
+<li>
+<p><code>filter-lang</code>: The language used for the <code>filter</code> value (e.g., <code>cql2-json</code>).</p>
+</li>
+</ul>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -1851,61 +1743,6 @@ password=your_password
 <span class="k">for</span> <span class="n">collection</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;collections&quot;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">collection</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">collection</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">])</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">limit</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">offset</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">bbox</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;-122.1,5.1,35.4,53.6&quot;</span><span class="p">,</span>
-<span class="p">});</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">url</span><span class="si">}</span><span class="sb">?</span><span class="si">${</span><span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Request failed: </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="w">  </span><span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">collection</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">collections</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">collection</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">collection</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error fetching collections:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
-<span class="w">  </span><span class="p">});</span>
-</code></pre></div>
-<strong>Query Parameters (optional):</strong></p>
-<ul>
-<li>
-<p><code>limit</code>: Limits the number of results per page.</p>
-</li>
-<li>
-<p><code>offset</code>: Number of items to skip before starting to collect the result set.</p>
-</li>
-<li>
-<p><code>bbox</code>: Only return items intersecting this bounding box.</p>
-</li>
-<li>
-<p><code>datetime</code>: Only return items with a temporal property intersecting this value.</p>
-</li>
-<li>
-<p><code>sortby</code>: Array of property names to sort by, prefixed by <code>+</code> or <code>-</code>.</p>
-</li>
-<li>
-<p><code>filter</code>: CQL filter expression for filtering items.</p>
-</li>
-<li>
-<p><code>filter-lang</code>: The language used for the <code>filter</code> value (e.g., <code>cql2-json</code>).</p>
-</li>
-</ul>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;collections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -1939,7 +1776,7 @@ password=your_password
 </code></pre></div>
 <strong>Error Responses</strong></p>
 <ul>
-<li><strong>422:</strong> Request parameters validation error.</li>
+<li><strong>400:</strong> Request parameters validation error.</li>
 </ul>
 <hr />
 <h3 id="4-get-a-single-collection">4. Get a Single Collection</h3>
@@ -1948,6 +1785,20 @@ password=your_password
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1977,17 +1828,12 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li>
-<p><strong>404:</strong> Collection with ID lstfusion not found.</p>
-</li>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
+<li><strong>400:</strong> Invalid collection ID.</li>
 </ul>
 <hr />
 <h3 id="5-get-a-single-item-by-collection-and-item-id">5. Get a Single Item by Collection and Item ID</h3>
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections/{collection_id}/items/{item_id}</code><br />
-<strong>Description:</strong> Fetches a single STAC item by collection and item ID.</p>
+<strong>Description:</strong> Fetches a single STAC item(feature) by collection and item ID.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items/item_id&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
@@ -2005,31 +1851,6 @@ password=your_password
 <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;collection&quot;</span><span class="p">])</span>
-</code></pre></div></p>
-<p><strong>Example: TypeScript (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">collectionId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;lstfusion&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">itemId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;item_id&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`https://api.constellr.com/stac/collections/</span><span class="si">${</span><span class="nx">collectionId</span><span class="si">}</span><span class="sb">/items/</span><span class="si">${</span><span class="nx">itemId</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Request failed: </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="w">  </span><span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">collection</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="w">  </span><span class="p">})</span>
-<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error fetching item:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
-<span class="w">  </span><span class="p">});</span>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2079,15 +1900,7 @@ password=your_password
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li>
-<p><strong>404:</strong> Item with ID item_id in collection lstfusion not found.</p>
-</li>
-<li>
-<p><strong>502:</strong>  Failed to retrieve item.</p>
-</li>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
+<li><strong>404:</strong> Item not found.</li>
 </ul>
 <hr />
 <h3 id="6-search-stac-collections">6. Search STAC Collections</h3>
@@ -2131,33 +1944,6 @@ password=your_password
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numberMatched:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numberMatched&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numberReturned:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numberReturned&quot;</span><span class="p">))</span>
 </code></pre></div></p>
-<p><strong>Example: TypeScript (Fetch)</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">collections</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lstfusion&quot;</span><span class="p">],</span>
-<span class="w">  </span><span class="nx">bbox</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">8.3</span><span class="p">,</span><span class="w"> </span><span class="mf">49.6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">50.1</span><span class="p">],</span>
-<span class="w">  </span><span class="nx">datetime</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2025-08-18T11:00:00Z/..&quot;</span><span class="p">,</span>
-<span class="p">};</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
-<span class="p">});</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Request failed: </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;numberMatched:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">numberMatched</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;numberReturned:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">numberReturned</span><span class="p">);</span>
-</code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
@@ -2173,16 +1959,10 @@ password=your_password
 <p><strong>Error Responses</strong></p>
 <ul>
 <li>
-<p><strong>400:</strong> Invalid filter or collection not allowed.</p>
+<p><strong>400:</strong> Request body validation error.</p>
 </li>
 <li>
 <p><strong>404:</strong> No data orders found for the organization.</p>
-</li>
-<li>
-<p><strong>422:</strong> Request parameters validation error.</p>
-</li>
-<li>
-<p><strong>502:</strong> Failed to perform search.</p>
 </li>
 </ul>
 <hr />
@@ -2379,7 +2159,7 @@ password=your_password
     
             <!-- Buttons -->
             <div class="button-container">
-                <a href="https://constellr.github.io/product-lst/thermal-insights/" class="intro-button">New to thermal data? <br> Click here for first insights.</a>
+                <a href="https://constellr.github.io/product-lst/use-cases/" class="intro-button">New to thermal data? <br> Click here for first insights.</a>
                 <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="intro-button">Explore constellr's <br> product range here.</a>
                 <a href="https://constellr.github.io/product-lst/UI-documentation/" class="intro-button">Already a customer? <br> Learn how to access your data.</a>
             </div>
