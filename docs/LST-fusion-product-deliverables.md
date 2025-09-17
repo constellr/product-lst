@@ -23,10 +23,10 @@ For the LSTfusion product, each data layer is available for a given data and hou
 Files downloaded from the data store follows the following naming convention:
 
 !!! note "Naming convention"
-    **[Acquisition time]** _ **<span style="color:orangered;">[Product]</span>** _ **<span style="color:green;">[AOI Name]</span>** _ **[data order ID]** _ **[file name]**
+    **<span style="color:blue;">[Acquisition time]</span>** _ **<span style="color:orangered;">[Product]</span>** _ **<span style="color:green;">[data order ID]</span>**
 
     *Example*  
-    **20240512T095854Z** _ **<span style="color:orangered;">LSTfusion</span>** _ **<span style="color:green;">Paris</span>** _ **cae562b6-04a2-48cf-a044-eb61064e4c9b** _ **cloudmask**
+    **<span style="color:blue;">20240512T095854Z</span>** _ **<span style="color:orangered;">LSTfusion</span>** _ **<span style="color:green;">cae562b6-04a2-48cf-a044-eb61064e4c9b</span>**
 
 
 <!-- 

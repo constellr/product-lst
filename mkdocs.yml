@@ -20,11 +20,11 @@ nav:
     - Data Bundle Description:
       - LSTprecision: LST-precision-product-deliverables.md
       - LSTzoom: LST-zoom-product-deliverables.md
-      # - LSTfusion: LST-fusion-product-deliverables.md
+      - LSTfusion: LST-fusion-product-deliverables.md
     - Metadata Explanation:
       - LSTprecision: LST-precision-metadata.md
       - LSTzoom: LST-zoom-metadata.md
-      # - LSTfusion: LST-fusion-metadata.md
+      - LSTfusion: LST-fusion-metadata.md
   - Thermal Insights: thermal-insights.md
   - How to access our data:
     - UI documentation: UI-documentation.md
