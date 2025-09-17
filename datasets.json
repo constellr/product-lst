@@ -30,13 +30,13 @@
     "description": "A city's infrastructure, such as the Surabaya airport, encroaching on mangroves, displaying stark temperature contrasts.",
     "product": "LST Precision",
     "price": "FREE",
-    "use_cases": ["Urban Heat Island, Urban Planning"],
-    "locations": ["Surabaya, Indonesia"],
+    "use_cases": ["Urban Heat Island", "Urban Planning"],
+    "locations": ["Surabaya Airport, Indonesia"],
     "images": [
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Airport_2025-08-15T03_08_00.702421Z_LST.png",
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Airport_2025-08-15T03_08_00.702421Z_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Suramadu_Airport_2025-08-15T03_08_00.702421Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Surabaya_Airport_2025-08-15T03_08_00.702421Z.zip"
   },
   {
     "title": "Identifying Urban LST details",
@@ -44,12 +44,12 @@
     "product": "LST Precision",
     "price": "FREE",
     "use_cases": ["Urban Planning"],
-    "locations": ["Surabaya, Indonesia"],
+    "locations": ["Suramadu Bridge, Indonesia"],
     "images": [
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Bridge_2025-08-15T03-07-59.699198Z_LST.png",
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/open_data_constellr_Suramadu_Bridge_2025-08-15T03-07-59.699198Z_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Suramadu_Bridge_2025-08-15T03-07-59.699198Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/open_data_constellr_Suramadu_Bridge_2025-08-15T03_08_00.702421Z.zip"
   },
   {
     "title": "Large Scale Agriculture Analysis",
