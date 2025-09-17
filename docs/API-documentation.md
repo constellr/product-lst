@@ -85,7 +85,7 @@ print(token)
 **Error Responses:**
 
 - **401:** Invalid credentials, user not confirmed, token expired or password reset required.
-
+- **422:** Request body validation error.
 
 ---
 
@@ -141,7 +141,6 @@ curl -X POST "https://api.constellr.com/orders/batch" \
 **Example: Python**
 ```python
 import requests
-import json
 
 url = "https://api.constellr.com/orders/batch"
 headers = {
@@ -191,10 +190,11 @@ print(response.json())
 
 **Error Responses:**
 
-- **400:** Invalid order request body.
-
-- **404:** Invalid product or area of interest.
-
+- **400:** Invalid order request body values.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to create orders.
+- **404:** Resource not found (e.g., AOI or product does not exist).
+- **422:** Request body validation error.
 ---
 
 <h3>2. List All Orders</h3>
@@ -259,7 +259,9 @@ print(data["count"], len(data["items"]))
 ```
 **Error Responses:**
 
-- **400:** Request parameters validation error.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to view orders.
+- **422:** Query parameter validation error.
 
 ---
 
@@ -307,7 +309,10 @@ print(response.json())
 ```
 **Error Responses:**
 
+- **401:** Invalid authentication token.
+- **403:** User not authorized to view the order.
 - **404:** Order not found.
+- **422:** Request parameter validation error.
 
 ---
 
@@ -348,6 +353,10 @@ print(response.status_code)
 ]
 ```
 
+**Error Responses:**
+
+- **401:** Invalid authentication token.
+- **403:** User not authorized to view use cases.
 
 ---
 
@@ -462,8 +471,10 @@ print(resp.json())
 
 **Error Responses**
 
-- **400:** Request body validation error.
-
+- **400:** Invalid AOI request body values.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to create AOIs.
+- **422:** Request body validation error.
 
 ---
 
@@ -504,7 +515,10 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 
 **Error Responses**
 
-- **404:** Area of interest not found.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to view the AOI.
+- **404:** AOI not found.
+- **422:** Request parameter validation error.
 
 ---
 
@@ -583,7 +597,9 @@ for item in data["items"]:
 
 **Error Responses**
 
-- **400:** Request parameters validation error.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to view AOIs.
+- **422:** Query parameter validation error.
 
 ---
 
@@ -679,8 +695,10 @@ print(f"area: {data['area']}")
 
 **Error Responses**
 
-- **400:** Request body validation error. eg. invalid GeoJSON geometry.
-
+- **400:** Invalid AOI geometry in request body.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+- **422:** Request body validation error.
 
 ---
 
@@ -708,6 +726,11 @@ curl -X GET "https://api.constellr.com/products" \
   {"name": "LSTfusion"}
 ]
 ```
+
+**Error Responses**
+
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
 
 
 ## STAC API
@@ -751,6 +774,11 @@ curl -X GET "https://api.constellr.com/stac" \
 }
 ```
 
+**Error Responses**
+
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+
 ---
 
 <h3>2. Get Conformance Classes</h3>
@@ -775,6 +803,11 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
   ]
 }
 ```
+
+**Error Responses**
+
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
 
 
 ---
@@ -862,9 +895,12 @@ for collection in data["collections"]:
   "numberReturned": 1
 }
 ```
+
 **Error Responses**
 
-- **400:** Request parameters validation error.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+- **422:** Query parameter validation error.
 
 ---
 
@@ -927,7 +963,10 @@ print(response.json())
 
 **Error Responses**
 
-- **400:** Invalid collection ID.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+- **404:** Collection not found.
+- **422:** Request parameter validation error.
 
 ---
 
@@ -1010,7 +1049,10 @@ print(data["id"], "-", data["collection"])
 
 **Error Responses**
 
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
 - **404:** Item not found.
+- **422:** Request parameter validation error.
 
 ---
 
@@ -1079,8 +1121,9 @@ print("numberReturned:", data.get("numberReturned"))
 
 **Error Responses**
 
-- **400:** Request body validation error.
-
-- **404:** No data orders found for the organization.
+- **400:** Invalid search request body values.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+- **422:** Request body validation error.
 
 ---
