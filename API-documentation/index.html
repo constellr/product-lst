@@ -986,6 +986,7 @@
 <p><strong>Error Responses:</strong></p>
 <ul>
 <li><strong>401:</strong> Invalid credentials, user not confirmed, token expired or password reset required.</li>
+<li><strong>422:</strong> Request body validation error.</li>
 </ul>
 <hr />
 <h2 id="orders-api">Orders API</h2>
@@ -1035,7 +1036,6 @@
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/batch&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1080,12 +1080,11 @@
 </code></pre></div></p>
 <p><strong>Error Responses:</strong></p>
 <ul>
-<li>
-<p><strong>400:</strong> Invalid order request body.</p>
-</li>
-<li>
-<p><strong>404:</strong> Invalid product or area of interest.</p>
-</li>
+<li><strong>400:</strong> Invalid order request body values.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to create orders.</li>
+<li><strong>404:</strong> Resource not found (e.g., AOI or product does not exist).</li>
+<li><strong>422:</strong> Request body validation error.</li>
 </ul>
 <hr />
 <h3>2. List All Orders</h3>
@@ -1147,7 +1146,9 @@
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
-<li><strong>400:</strong> Request parameters validation error.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to view orders.</li>
+<li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
 <hr />
 <h3>3. Get Order by ID</h3>
@@ -1186,7 +1187,10 @@
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to view the order.</li>
 <li><strong>404:</strong> Order not found.</li>
+<li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
 <hr />
 <h3>4. Get Available Order Use Cases</h3>
@@ -1219,6 +1223,11 @@
 <span class="w">  </span><span class="s2">&quot;Yield Prediction&quot;</span>
 <span class="p">]</span>
 </code></pre></div></p>
+<p><strong>Error Responses:</strong></p>
+<ul>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to view use cases.</li>
+</ul>
 <hr />
 <h2 id="areas-of-interest-api">Areas of Interest API</h2>
 <p>The <code>/areas-of-interest</code> endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your organization. AOIs define geographic regions used in data orders. All operations require authentication via a Bearer token.</p>
@@ -1318,7 +1327,10 @@
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>400:</strong> Request body validation error.</li>
+<li><strong>400:</strong> Invalid AOI request body values.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to create AOIs.</li>
+<li><strong>422:</strong> Request body validation error.</li>
 </ul>
 <hr />
 <h3>2. Get an Area of Interest by ID</h3>
@@ -1353,7 +1365,10 @@
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>404:</strong> Area of interest not found.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to view the AOI.</li>
+<li><strong>404:</strong> AOI not found.</li>
+<li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
 <hr />
 <h3>3. List Areas of Interest</h3>
@@ -1427,7 +1442,9 @@
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>400:</strong> Request parameters validation error.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to view AOIs.</li>
+<li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
 <hr />
 <h3>4. Get Geometry Info from AOI</h3>
@@ -1512,7 +1529,10 @@
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>400:</strong> Request body validation error. eg. invalid GeoJSON geometry.</li>
+<li><strong>400:</strong> Invalid AOI geometry in request body.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>422:</strong> Request body validation error.</li>
 </ul>
 <hr />
 <h2 id="products-api">Products API</h2>
@@ -1531,6 +1551,11 @@
 <span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion&quot;</span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
+<p><strong>Error Responses</strong></p>
+<ul>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+</ul>
 <h2 id="stac-api">STAC API</h2>
 <p>The <code>/stac</code> endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
 All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.</p>
@@ -1566,6 +1591,11 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">  </span><span class="nt">&quot;stac_extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 <span class="p">}</span>
 </code></pre></div></p>
+<p><strong>Error Responses</strong></p>
+<ul>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+</ul>
 <hr />
 <h3>2. Get Conformance Classes</h3>
 
@@ -1585,6 +1615,11 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></p>
+<p><strong>Error Responses</strong></p>
+<ul>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+</ul>
 <hr />
 <h3>3. List Available Collections</h3>
 
@@ -1669,10 +1704,12 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">  </span><span class="nt">&quot;numberMatched&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;numberReturned&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
-</code></pre></div>
-<strong>Error Responses</strong></p>
+</code></pre></div></p>
+<p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>400:</strong> Request parameters validation error.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
 <hr />
 <h3>4. Get a Single Collection</h3>
@@ -1725,7 +1762,10 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>400:</strong> Invalid collection ID.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>404:</strong> Collection not found.</li>
+<li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
 <hr />
 <h3>5. Get a Single Item by Collection and Item ID</h3>
@@ -1798,7 +1838,10 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>404:</strong> Item not found.</li>
+<li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
 <hr />
 <h3>6. Search STAC Collections</h3>
@@ -1857,12 +1900,10 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li>
-<p><strong>400:</strong> Request body validation error.</p>
-</li>
-<li>
-<p><strong>404:</strong> No data orders found for the organization.</p>
-</li>
+<li><strong>400:</strong> Invalid search request body values.</li>
+<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>422:</strong> Request body validation error.</li>
 </ul>
 <hr />
 
