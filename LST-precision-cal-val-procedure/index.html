@@ -803,7 +803,7 @@
 
 <h1 id="calval-approach-for-lstprecision">Cal/Val approach for LSTprecision</h1>
 <p><br>
-The first-generation SKYBEE satellites are equipped with two onboard cameras covering the <a href="https://constellr.github.io/product-lst/Technical-specification/">Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges</a>. Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. </p>
+The first-generation SkyBee satellites are equipped with two onboard cameras covering the <a href="https://constellr.github.io/product-lst/Technical-specification/">Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges</a>. Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. </p>
 <p>This Cal/Val framework is designed to characterize the detector response to incoming signals and correct for undesired effects. Key aspects include:  </p>
 <ul>
 <li>Absolute radiometric response, dynamic range, non-uniformity, noise levels, and temporal stability; </li>
@@ -817,8 +817,8 @@ The first-generation SKYBEE satellites are equipped with two onboard cameras cov
 <p>Statistical analyses are employed to detect dead or bad detector pixels or to correct for possible non-uniformities of the detector. Those are complemented by measurements obtained through specific spacecraft manoeuvres such as 90°-yaw manoeuvre over homogeneous sites or pointing towards the cold deep space support respectively the characterization of detector non-uniformity and dark signal. </p>
 <p>Operational radiometric calibration in the VNIR range is performed using a vicarious calibration approach. This consists in aligning HiVE top-of-the atmosphere (TOA) radiances with those simultaneously provided by well-characterized, instrumented ground reference sites (e.g. RadCalNet). In the TIR domain, the radiometric calibration relies on a patented cross-calibration approach. It leverages the highly accurate land surface temperature estimates provided by independent geostationary sensors with a high temporal but low spatial resolution These temperatures are converted to simulated TOA radiances using auxiliary data and radiative transfer modelling. The comparison of the simulated and measured radiances enables the regular update of calibration parameters, ensuring continued accuracy of the thermal measurements.  </p>
 <p>In addition to the calibration procedures, the end-user LSTprecision products are regularly assessed using a set of well-established validation methods and protocols, such as the CEOS Best Practices Protocols for Global Surface Albedo and Land Surface Temperature Product Validation <sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup>. These protocols provide a harmonized framework for quantitative accuracy assessment, ensuring traceability and consistency across validation efforts.  </p>
-<p>In addition to the end-user products—namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV) and cloud mask quality which are produced as a interims products supporting the L2 processing based on VNIR data.  </p>
-<p>Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. An illustration of such a validation is shown below. It shows how well the constellr LST retrieved from LANDSAT data compare with data from a station of the SURFRAD network, with small bias (&lt;0.5°K) and small scatter (1.58°K).  </p>
+<p>In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as a interim products supporting the L2 processing based on VNIR data.  </p>
+<p>Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. </p>
 <table>
 <thead>
 <tr>
@@ -857,6 +857,7 @@ The first-generation SKYBEE satellites are equipped with two onboard cameras cov
 </table>
 <figcaption>Reference data or sites used for assessing the LSTprecision product quality.</figcaption>
 
+<p>The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited: The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the <a href="https://www.sciencedirect.com/science/article/pii/S0034425722001043">Cloud Mask Intercomparison eXercise (CMIX)</a> and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.</p>
 <h2 id="footnotes">Footnotes</h2>
 <div class="footnote">
 <hr />
@@ -1332,6 +1333,16 @@ Land Product Validation Subgroup (Working Group On Calibration And Validation Co
             navigation: {
             nextEl: '.swiper-button-next-2',
             prevEl: '.swiper-button-prev-2',
+            },
+            loop: false,
+        });
+
+        const swiper3 = new Swiper('.mySwiper3', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next-3',
+            prevEl: '.swiper-button-prev-3',
             },
             loop: false,
         });

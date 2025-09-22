@@ -800,6 +800,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lst-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      LST Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#solutions-in-action" class="md-nav__link">
     <span class="md-ellipsis">
       Solutions in Action
@@ -951,6 +960,28 @@ Or do you want to get started using land surface temperature to derive temperatu
                         <h6 class="fw-bold"><a>Processing satellite-derived thermal data</a></h6>
                         <p class="text-muted small">Processing thermal data is essentially different from processing optical data.</p>
                         <a class="download-button" href="https://constellr.github.io/product-lst/EL-processing-thermal-data">Read article →</a>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<h2 id="lst-quality">LST Quality</h2>
+<div class="carousel-container">
+
+    <div class="swiper-button-next swiper-button-next-3"></div>
+    <div class="swiper-button-prev swiper-button-prev-3"></div>
+
+    <div class="swiper mySwiper3">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide  d-flex flex-column">
+                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/correlation_lst_surfrad_SBA01_constellr_allsites+1.png" />
+                    <div class= "slide-content">
+                        <span class="tag tag-product">7 min read</span>
+                        <h6 class="fw-bold"><a>Cal/Val approach for LSTprecision</a></h6>
+                        <p class="text-muted small">Calibration and validation are important steps in assuring high quality of our LST data.</p>
+                        <a class="download-button" href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">Read article →</a>
                     </div>
             </div>
 
@@ -1458,6 +1489,16 @@ Or do you want to get started using land surface temperature to derive temperatu
             navigation: {
             nextEl: '.swiper-button-next-2',
             prevEl: '.swiper-button-prev-2',
+            },
+            loop: false,
+        });
+
+        const swiper3 = new Swiper('.mySwiper3', {
+            slidesPerView: 3,
+            spaceBetween: 35,
+            navigation: {
+            nextEl: '.swiper-button-next-3',
+            prevEl: '.swiper-button-prev-3',
             },
             loop: false,
         });
