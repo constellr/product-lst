@@ -25,7 +25,6 @@
         color: white;
         text-align: center;
         padding: 50px 20px;
-        transition: transform 2s ease, opacity 2s ease ; /* */
         z-index: 1000; 
         display: flex;
         justify-content: center;
@@ -231,24 +230,89 @@
         
           el.classList.remove("preload");
           el.classList.toggle("visible", showIntro);
-          if (!showIntro) el.classList.add("slide-up");
-        
-          if (showIntro) {
-            sessionStorage.setItem("introShown", "true");
-            localStorage.setItem("introLastShown", now.toString());
-          }
-        
-          let isHidden = !showIntro;
-          window.addEventListener("scroll", () => {
-            const y = window.scrollY;
-            if (y > 100 && !isHidden) {
-              el.classList.add("slide-up");
-              isHidden = true;
-            } else if (y < 1 && isHidden) {
-              el.classList.remove("slide-up");
-              isHidden = false;
+        })();
+
+
+        (function () {
+        const el = document.getElementById("introSection");
+
+        const REVEAL_PIXELS = 400; // how far scroll before hero fully fades
+        let progress = 0;          // 0 = hero fully visible, 1 = hero fully hidden
+        let active = true;         // whether hero is intercepting scroll
+        let startY = null;         // for touch handling
+
+        function lockScroll() {
+            document.body.classList.add("no-scroll");
+            window.scrollTo(0, 0);
+        }
+        function unlockScroll() {
+            document.body.classList.remove("no-scroll");
+        }
+
+        function apply() {
+            el.style.opacity   = String(1 - progress);
+            el.style.transform = `translateY(${-progress * 80}px)`;
+            el.style.filter    = `blur(${progress * 3}px)`;
+            el.style.display   = progress >= 1 ? "none" : "flex";
+        }
+
+        function setProgress(next) {
+            progress = Math.max(0, Math.min(1, next));
+            apply();
+
+            if (progress >= 1) {
+            active = false;
+            unlockScroll();
+            } else {
+            active = true;
+            lockScroll();
             }
-          });
+        }
+
+        // wheel handling (desktop)
+        window.addEventListener("wheel", (e) => {
+            const delta = e.deltaY;
+
+            // if hero is visible or partially visible
+            if (active || progress < 1) {
+            e.preventDefault();
+            const next = progress + delta / REVEAL_PIXELS;
+            setProgress(next);
+            }
+            // if hero is hidden and user scrolls up
+            else if (!active && delta < 0 && window.scrollY <= 0) {
+            e.preventDefault();
+            setProgress(progress + delta / REVEAL_PIXELS);
+            }
+        }, { passive: false });
+
+        // touch handling (mobile)
+        window.addEventListener("touchstart", (e) => {
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener("touchmove", (e) => {
+            if (startY == null) return;
+            const dy = startY - e.touches[0].clientY;
+
+            // downward swipe (hide hero)
+            if ((active || progress < 1) && dy > 0) {
+            e.preventDefault();
+            setProgress(progress + dy / REVEAL_PIXELS);
+            }
+
+            // upward swipe (show hero again if at top)
+            else if (!active && dy < 0 && window.scrollY <= 0) {
+            e.preventDefault();
+            setProgress(progress + dy / REVEAL_PIXELS);
+            }
+        }, { passive: false });
+
+        window.addEventListener("touchend", () => { startY = null; });
+
+        // init
+        lockScroll();
+        setProgress(0);
         })();
         </script>
 
