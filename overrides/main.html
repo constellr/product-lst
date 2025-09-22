@@ -119,6 +119,42 @@
             line-height: 1.4;
         }
 
+        .scroll-down {
+  position: absolute;
+  bottom: 20px; /* place at bottom of hero */
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.scroll-down span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+  transform: rotate(45deg);
+  margin: 0 auto;
+  animation: bounce 2s infinite;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(45deg) translateY(10px);
+  }
+  60% {
+    transform: rotate(45deg) translateY(5px);
+  }
+}
+
+.scroll-down:hover span {
+  opacity: 1;
+}
+
         @media (max-width: 480px) {
             .intro-button {
                 padding: 10px 20px;
@@ -186,6 +222,11 @@
                 <a href="https://constellr.github.io/product-lst/UI-documentation/" class="intro-button">Already a customer? <br> Learn how to access your data.</a>
             </div>
     
+
+            <!-- SCROLL ARROW -->
+            <div class="scroll-down">
+            <span></span>
+            </div>
         </div>
     </div>
 
@@ -215,106 +256,115 @@
 {% block scripts %}
   {{ super() }}
     
-    <script>
-        (function () {
-          const el = document.getElementById("introSection");
-          const isHome = /\/product-lst\/(index\.html)?$/.test(location.pathname);
-          if (!el || !isHome) return;
-        
-          const TWO_HOURS = 2 * 60 * 60 * 1000;
-          const now = Date.now();
-          const last = parseInt(localStorage.getItem("introLastShown") || 0, 10);
-          const sessionSeen = sessionStorage.getItem("introShown");
-        
-          const showIntro = !sessionSeen || (now - last > TWO_HOURS);
-        
-          el.classList.remove("preload");
-          el.classList.toggle("visible", showIntro);
-        })();
+<script>
+(function () {
+  const el = document.getElementById("introSection");
+  if (!el) return;
 
+  // --- show only on homepage (keep your own check if you like) ---
+  const isHome = /\/product-lst\/(index\.html)?$/.test(location.pathname);
+  if (!isHome) return;
 
-        (function () {
-        const el = document.getElementById("introSection");
+  // --- show logic you already had ---
+  el.classList.remove("preload");
+  el.classList.add("visible");
 
-        const REVEAL_PIXELS = 400; // how far scroll before hero fully fades
-        let progress = 0;          // 0 = hero fully visible, 1 = hero fully hidden
-        let active = true;         // whether hero is intercepting scroll
-        let startY = null;         // for touch handling
+  // --- scroll-driven hero with reveal buffer on upward scroll ---
+  const REVEAL_PIXELS  = 400;   // fade/slide distance (from visible -> hidden)
+  const REVEAL_BUFFER  = 1000;   // MUST scroll up this much (at top) before hero starts to reappear
 
-        function lockScroll() {
-            document.body.classList.add("no-scroll");
-            window.scrollTo(0, 0);
-        }
-        function unlockScroll() {
-            document.body.classList.remove("no-scroll");
-        }
+  let progress = 0;             // 0 = fully visible, 1 = fully hidden
+  let active   = true;          // hero intercepts scroll while true
+  let startY   = null;          // touch
+  let upAccum  = 0;             // accumulates upward scrolling when page is at top and hero is hidden
 
-        function apply() {
-            el.style.opacity   = String(1 - progress);
-            el.style.transform = `translateY(${-progress * 80}px)`;
-            el.style.filter    = `blur(${progress * 3}px)`;
-            el.style.display   = progress >= 1 ? "none" : "flex";
-        }
+  function lockScroll()   { document.body.classList.add("no-scroll"); window.scrollTo(0, 0); }
+  function unlockScroll() { document.body.classList.remove("no-scroll"); }
 
-        function setProgress(next) {
-            progress = Math.max(0, Math.min(1, next));
-            apply();
+  function apply() {
+    el.style.opacity   = String(1 - progress);
+    el.style.transform = `translateY(${-progress * 80}px)`;
+    el.style.filter    = `blur(${progress * 3}px)`;
+    el.style.display   = progress >= 1 ? "none" : "flex";
+  }
 
-            if (progress >= 1) {
-            active = false;
-            unlockScroll();
-            } else {
-            active = true;
-            lockScroll();
-            }
-        }
+  function setProgress(next) {
+    progress = Math.max(0, Math.min(1, next));
+    apply();
+    if (progress >= 1) { active = false; unlockScroll(); }
+    else               { active = true;  lockScroll();   }
+  }
 
-        // wheel handling (desktop)
-        window.addEventListener("wheel", (e) => {
-            const delta = e.deltaY;
+  // Desktop wheel
+  window.addEventListener("wheel", (e) => {
+    const dy = e.deltaY;
 
-            // if hero is visible or partially visible
-            if (active || progress < 1) {
-            e.preventDefault();
-            const next = progress + delta / REVEAL_PIXELS;
-            setProgress(next);
-            }
-            // if hero is hidden and user scrolls up
-            else if (!active && delta < 0 && window.scrollY <= 0) {
-            e.preventDefault();
-            setProgress(progress + delta / REVEAL_PIXELS);
-            }
-        }, { passive: false });
+    // When hero is visible/partial → consume normal scroll (down hides, up reveals)
+    if (active || progress < 1) {
+      e.preventDefault();
+      upAccum = 0; // reset buffer while not fully hidden
+      setProgress(progress + dy / REVEAL_PIXELS);
+      return;
+    }
 
-        // touch handling (mobile)
-        window.addEventListener("touchstart", (e) => {
-            startY = e.touches[0].clientY;
-        }, { passive: true });
+    // Hero fully hidden, user at top, and scrolling UP → apply buffer before revealing
+    if (!active && dy < 0 && window.scrollY <= 0) {
+      e.preventDefault();
+      upAccum += (-dy);                 // accumulate upward intent
+      if (upAccum <= REVEAL_BUFFER) {   // still within buffer → do nothing
+        return;
+      }
+      const extra = upAccum - REVEAL_BUFFER;
+      const frac  = Math.min(extra / REVEAL_PIXELS, 1);
+      setProgress(1 - frac);            // start revealing after buffer
+      return;
+    }
 
-        window.addEventListener("touchmove", (e) => {
-            if (startY == null) return;
-            const dy = startY - e.touches[0].clientY;
+    // Any other case (scrolling down etc.) → reset buffer
+    upAccum = 0;
+  }, { passive: false });
 
-            // downward swipe (hide hero)
-            if ((active || progress < 1) && dy > 0) {
-            e.preventDefault();
-            setProgress(progress + dy / REVEAL_PIXELS);
-            }
+  // Touch
+  window.addEventListener("touchstart", (e) => { startY = e.touches[0].clientY; }, { passive: true });
 
-            // upward swipe (show hero again if at top)
-            else if (!active && dy < 0 && window.scrollY <= 0) {
-            e.preventDefault();
-            setProgress(progress + dy / REVEAL_PIXELS);
-            }
-        }, { passive: false });
+  window.addEventListener("touchmove", (e) => {
+    if (startY == null) return;
+    const dy = startY - e.touches[0].clientY; // swipe down => negative; swipe up => positive (relative to start)
 
-        window.addEventListener("touchend", () => { startY = null; });
+    // Visible/partial hero: behave normally (down hides, up reveals). No buffer needed here.
+    if (active || progress < 1) {
+      if (dy !== 0) {
+        e.preventDefault();
+        upAccum = 0; // reset while not fully hidden
+        setProgress(progress + dy / REVEAL_PIXELS);
+      }
+      return;
+    }
 
-        // init
-        lockScroll();
-        setProgress(0);
-        })();
-        </script>
+    // Hero hidden, page at top, user swipes DOWN (to go up the page) → apply buffer
+    if (!active && dy < 0 && window.scrollY <= 0) {
+      e.preventDefault();
+      upAccum += (-dy);                 // dy is negative for downward swipe → add its magnitude
+      if (upAccum <= REVEAL_BUFFER) {
+        return;
+      }
+      const extra = upAccum - REVEAL_BUFFER;
+      const frac  = Math.min(extra / REVEAL_PIXELS, 1);
+      setProgress(1 - frac);
+      return;
+    }
+
+    // Any other gesture → reset buffer
+    upAccum = 0;
+  }, { passive: false });
+
+  window.addEventListener("touchend", () => { startY = null; }, { passive: true });
+
+  // Init
+  lockScroll();
+  setProgress(0);
+})();
+</script>
 
 
     <script>
