@@ -93,6 +93,29 @@ Or do you want to get started using land surface temperature to derive temperatu
     </div>
 </div>
 
+## LST Quality
+
+<div class="carousel-container">
+
+    <div class="swiper-button-next swiper-button-next-3"></div>
+    <div class="swiper-button-prev swiper-button-prev-3"></div>
+
+    <div class="swiper mySwiper3">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide  d-flex flex-column">
+                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/correlation_lst_surfrad_SBA01_constellr_allsites+1.png" />
+                    <div class= "slide-content">
+                        <span class="tag tag-product">7 min read</span>
+                        <h6 class="fw-bold"><a>Cal/Val approach for LSTprecision</a></h6>
+                        <p class="text-muted small">Calibration and validation are important steps in assuring high quality of our LST data.</p>
+                        <a class="download-button" href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">Read article →</a>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 ## Solutions in Action
 
 Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of curated use case stories below. Our use case stories are **in-depth examples** of what LST data can achieve. Each story outlines a research question and is **accompanied with a dataset** to answer the question. Get an impression of the datasets we deliver, our data quality, and test data integration. 

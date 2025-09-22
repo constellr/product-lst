@@ -1,6 +1,6 @@
-#Cal/Val approach for LSTprecision 
+# Cal/Val approach for LSTprecision 
 <br>
-The first-generation SKYBEE satellites are equipped with two onboard cameras covering the [Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges](https://constellr.github.io/product-lst/Technical-specification/). Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. 
+The first-generation SkyBee satellites are equipped with two onboard cameras covering the [Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges](https://constellr.github.io/product-lst/Technical-specification/). Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. 
  
 This Cal/Val framework is designed to characterize the detector response to incoming signals and correct for undesired effects. Key aspects include:  
 
@@ -21,9 +21,9 @@ Operational radiometric calibration in the VNIR range is performed using a vicar
 
 In addition to the calibration procedures, the end-user LSTprecision products are regularly assessed using a set of well-established validation methods and protocols, such as the CEOS Best Practices Protocols for Global Surface Albedo and Land Surface Temperature Product Validation [^custom-label]. These protocols provide a harmonized framework for quantitative accuracy assessment, ensuring traceability and consistency across validation efforts.  
  
-In addition to the end-user products—namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV) and cloud mask quality which are produced as a interims products supporting the L2 processing based on VNIR data.  
+In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as a interim products supporting the L2 processing based on VNIR data.  
  
-Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. An illustration of such a validation is shown below. It shows how well the constellr LST retrieved from LANDSAT data compare with data from a station of the SURFRAD network, with small bias (<0.5°K) and small scatter (1.58°K).  
+Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. 
 
 |  | Ground-based | Reference Satellite |
 |--|--------------|---------------------|
@@ -34,6 +34,7 @@ Those validation exercises rely on reference ground-based measurements and indep
 | **AOT/TCWV** | Aeronet |  |
 <figcaption>Reference data or sites used for assessing the LSTprecision product quality.</figcaption>
 
+The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited: The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the [Cloud Mask Intercomparison eXercise (CMIX)](https://www.sciencedirect.com/science/article/pii/S0034425722001043) and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.
 
 
 ## Footnotes
