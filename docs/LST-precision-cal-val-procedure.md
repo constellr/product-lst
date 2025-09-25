@@ -13,11 +13,11 @@ Cal/Val procedures begin pre-launch, with comprehensive laboratory calibrations 
  
 Post-launch, instrument performance may evolve due to launch effects or aging. Therefore, regular in-orbit calibration procedures are applied during commissioning and routine operations in order to monitor and, when necessary, update the instrument’s performance. These methodologies span a wide range of techniques. 
  
-Geometric performance and associated calibration parameters are generally updated by analysing images acquired over highly structured areas—such as agricultural regions with regular patterns (e.g., the Dakotas, USA) — or over sharp, well-defined features such as coastlines or bridges. These types of scenes serve as reliable references for detecting geometric distortions and verifying spatial accuracy. 
+**Geometric performance** and associated calibration parameters are generally updated by analysing images acquired over highly structured areas—such as agricultural regions with regular patterns (e.g., the Dakotas, USA) — or over sharp, well-defined features such as coastlines or bridges. These types of scenes serve as reliable references for detecting geometric distortions and verifying spatial accuracy. 
  
-Statistical analyses are employed to detect dead or bad detector pixels or to correct for possible non-uniformities of the detector. Those are complemented by measurements obtained through specific spacecraft manoeuvres such as 90°-yaw manoeuvre over homogeneous sites or pointing towards the cold deep space support respectively the characterization of detector non-uniformity and dark signal. 
+**Statistical analyses** are employed to detect dead or bad detector pixels or to correct for possible non-uniformities of the detector. Those are complemented by measurements obtained through specific spacecraft manoeuvres such as 90°-yaw manoeuvre over homogeneous sites or pointing towards the cold deep space support respectively the characterization of detector non-uniformity and dark signal. 
  
-Operational radiometric calibration in the VNIR range is performed using a vicarious calibration approach. This consists in aligning HiVE top-of-the atmosphere (TOA) radiances with those simultaneously provided by well-characterized, instrumented ground reference sites (e.g. RadCalNet). In the TIR domain, the radiometric calibration relies on a patented cross-calibration approach. It leverages the highly accurate land surface temperature estimates provided by independent geostationary sensors with a high temporal but low spatial resolution These temperatures are converted to simulated TOA radiances using auxiliary data and radiative transfer modelling. The comparison of the simulated and measured radiances enables the regular update of calibration parameters, ensuring continued accuracy of the thermal measurements.  
+**Operational radiometric calibration** in the VNIR range is performed using a vicarious calibration approach. This consists in aligning HiVE top-of-the atmosphere (TOA) radiances with those simultaneously provided by well-characterized, instrumented ground reference sites (e.g. RadCalNet). In the TIR domain, the radiometric calibration relies on a patented cross-calibration approach. It leverages the highly accurate land surface temperature estimates provided by independent geostationary sensors with a high temporal but low spatial resolution These temperatures are converted to simulated TOA radiances using auxiliary data and radiative transfer modelling. The comparison of the simulated and measured radiances enables the regular update of calibration parameters, ensuring continued accuracy of the thermal measurements.  
 
 In addition to the calibration procedures, the end-user LSTprecision products are regularly assessed using a set of well-established validation methods and protocols, such as the CEOS Best Practices Protocols for Global Surface Albedo and Land Surface Temperature Product Validation [^custom-label]. These protocols provide a harmonized framework for quantitative accuracy assessment, ensuring traceability and consistency across validation efforts.  
  
@@ -27,14 +27,14 @@ Those validation exercises rely on reference ground-based measurements and indep
 
 |  | Ground-based | Reference Satellite |
 |--|--------------|---------------------|
-| **Geolocation** | - | - |
+| **Geolocation** |  |  |
 | **MTF** |  |  |
 | **SR** | Radcalnet / (Hypernets) |Sentinel-2 |
 | **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations | SEVIRI <br> GOES <br> HIMAWARI |
 | **AOT/TCWV** | Aeronet |  |
 <figcaption>Reference data or sites used for assessing the LSTprecision product quality.</figcaption>
 
-The comparison of the surface temperatures measured by SkyBee-1 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the (LSTprecision product)[]. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
+The comparison of the surface temperatures measured by SkyBee-1 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the (LSTprecision product)[link]. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
 
 ![LST plot](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/correlation_lst_surfrad_SBA01_constellr_allsites+1.png){ width=70% }
 <figcaption>Comparison of surface temperatures measured from space by skybee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/>SURFRAD<a> and [JPL data](https://calval.jpl.nasa.gov/) portals as the sources of the reference ground data.</figcaption>
