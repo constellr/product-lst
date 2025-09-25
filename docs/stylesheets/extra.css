@@ -102,6 +102,7 @@ img {
     width: 80%;
 }
 
+
 /*designs grid layout*/
 .md-typeset .grid{
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));

@@ -93,7 +93,7 @@ Or do you want to get started using land surface temperature to derive temperatu
     </div>
 </div>
 
-## LST Quality
+<!-- ## LST Quality
 
 <div class="carousel-container">
 
@@ -114,7 +114,7 @@ Or do you want to get started using land surface temperature to derive temperatu
 
         </div>
     </div>
-</div>
+</div> -->
 
 ## Solutions in Action
 
