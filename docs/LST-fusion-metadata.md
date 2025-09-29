@@ -48,3 +48,8 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-1">request_end_datetime</td><td>string</td><td>ISO-8601 end time of imagery request</td></tr>
   
 </table> 
+
+
+<p style="text-align: right; font-size: 0.8rem; color: #777;">
+  Last update: September, 2025
+</p>

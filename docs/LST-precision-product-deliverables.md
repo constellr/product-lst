@@ -79,3 +79,9 @@ In case you are curious to leverage any of our data layers for your analysis, pl
 | requested_area_of_interest | Coordinates of the AOI requested (Polygon)                                                                  |
 | geometry                   | Coordinates of the Polygon returned                                                                         |
  -->
+
+
+<br>
+<p style="text-align: right; font-size: 0.8rem; color: #777;">
+  Last update: September, 2025
+</p>

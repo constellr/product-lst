@@ -197,3 +197,9 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EMIS_prior_water</td><td>float</td><td>Prior emissivity for water bodies</td></tr> -->
 
 </table> 
+
+
+<br>
+<p style="text-align: right; font-size: 0.8rem; color: #777;">
+  Last update: September, 2025
+</p>

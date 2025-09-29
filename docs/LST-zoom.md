@@ -63,3 +63,7 @@
 
 
 
+<br>
+<p style="text-align: right; font-size: 0.8rem; color: #777;">
+  Last update: September, 2025
+</p>
