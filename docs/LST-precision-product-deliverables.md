@@ -13,6 +13,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
 | scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution | Cloud optimized geotiff |
+| vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band| Cloud optimized geotiff |
 | tcwv.tiff | Total Column Water Vapour | Cloud optimized geotiff |
 | aot.tiff | Aerosol Optical Thickness | Cloud optimized geotiff |
 
