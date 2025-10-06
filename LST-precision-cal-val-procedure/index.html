@@ -981,9 +981,17 @@ The first-generation SkyBee satellites are equipped with two onboard cameras cov
 </table>
 <figcaption>Reference data or sites used for assessing the LSTprecision product quality.</figcaption>
 
-<p>The comparison of the surface temperatures measured by SkyBee-1 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the LSTprecision product. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.</p>
-<p><img alt="LST plot" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/correlation_lst_surfrad_SBA01_constellr_allsites_extended_newlabels.png" width="70%" /></p>
-<figcaption>Comparison of surface temperatures measured from space by skybee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD<a> and <a href= https://calval.jpl.nasa.gov/ >JPL data</a> portals as the sources of the reference ground data.</figcaption>
+<p>Surface temperatures measured by SkyBee-1 will be compared to the data points from these reference sites, to ensure that the mean deviation will be close to only 1 degree. Such a high accuracy, although challenging to reach, will offer opportunities for a large range of use cases based on the detection of thermal anomalies.</p>
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/PennState_referencesite.png" style="width:45%;">
+  <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LaCrau_referencesite.png" style="width:45%;">
+</div>
+<figcaption style="text-align:center;">Example locations of reference sites.</figcaption>
+
+<!-- The comparison of the surface temperatures measured by SkyBee-1 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the LSTprecision product. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
+
+![LST plot](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/correlation_lst_surfrad_SBA01_constellr_allsites_extended_newlabels.png){ width=70% }
+<figcaption>Comparison of surface temperatures measured from space by skybee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD<a> and <a href= https://calval.jpl.nasa.gov/ >JPL data</a> portals as the sources of the reference ground data.</figcaption> -->
 
 <p>The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited: The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.</p>
 <p><br></p>
