@@ -25,16 +25,16 @@ In addition to the end-user products — namely, surface reflectance and land su
  
 Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. 
 
-|  | Ground-based | Reference Satellite |
-|--|--------------|---------------------|
-| **Geolocation** |  |  |
-| **MTF** |  |  |
-| **SR** | Radcalnet / (Hypernets) |Sentinel-2 |
-| **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations | SEVIRI <br> GOES <br> HIMAWARI |
-| **AOT/TCWV** | Aeronet |  |
+|  | Ground-based | Reference Satellite |Others|
+|--|--------------|---------------------|------|
+| **Geolocation** | -- | -- | Sentinel-2 GRI |
+| **MTF** | -- | -- | Reference Targets |
+| **SR** | Radcalnet / (Hypernets) |Sentinel-2 | -- |
+| **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations | SEVIRI <br> GOES <br> HIMAWARI | -- |
+| **AOT/TCWV** | Aeronet | -- | -- |
 <figcaption>Reference data or sites used for assessing the LSTprecision product quality.</figcaption>
 
-Surface temperatures measured by SkyBee-1 will be compared to the data points from these reference sites, to ensure that the mean deviation will be close to only 1 degree. Such a high accuracy, although challenging to reach, will offer opportunities for a large range of use cases based on the detection of thermal anomalies.
+Surface temperatures measured by SkyBee-1 and SkyBee-2 are being compared to the data points from these reference sites, to ensure that the mean deviation will be close to only 1 degree. Such a high accuracy, although challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
 
 <div style="display: flex; justify-content: center; gap: 10px;">
   <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/PennState_referencesite.png" style="width:45%;">
