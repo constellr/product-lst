@@ -1,6 +1,6 @@
 # LSTfusion Metadata
 
-This page describes the metadata file used for L2A products. 
+This page describes the metadata file used for L3 products. 
 
 
 <style>
