@@ -5,33 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="stylesheets/extra.css" rel="stylesheet">
 </head>
- 
-<!-- <h1 style="margin-bottom: 5px; "><strong>The Knowledge Center</strong></h1>
-<h2 style="margin-top: 0; margin-bottom: 0px;"><em>Where you will find everything you need to know about constellr's LST data</em></h2> -->
-
-<!-- <br> -->
-
-<!-- <body>
-<div class="wrapper">
-<div class="image-container">
-<img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_basemap-min.png" alt="First Image" class="active">
-<img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_lst_overlay-min.png" alt="Second Image">
-</div>
-</div>
-<figcaption>Land surface temperature of Freiburg, Germany - June 2023</figcaption>
-
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script>
-
-</body> -->
 
 </html> 
 
-# <strong>The Knowledge Center</strong>
-<h3><i>Where you will find everything you need to know about constellr's LST data</i></h3>
+<!-- # <strong>The Knowledge Center</strong>
+<h3><i>Where you will find everything you need to know about constellr's LST data</i></h3> -->
 
-<br>
 
-<div class="wrapper">
+<div class="hero-section">
+  <div class="hero-text">
+    <img src="assets/logo_white.png" alt="Constellr Logo" class="hero-logo">
+    <h1><b>Welcome to the Knowledge Center</b></h1>
+    <p>Your gateway to decoding Earth's temperature. <br> From pixels to planetary resilience.</p>
+  </div>
+
+  <div class="hero-boxes">
+    <a href="https://constellr.github.io/product-lst/thermal-insights/" class="hero-box">New to thermal data? <br> Click here for first insights.</a>
+    <a href="https://constellr.github.io/product-lst/Constellr-product-offer/" class="hero-box">Explore constellr's <br> product range here.</a>
+    <a href="https://constellr.github.io/product-lst/UI-documentation/" class="hero-box">Already a customer? <br> Learn how to access your data.</a>
+  </div>
+</div>
+
+
+
+
+
+<br>  
+
+
+
+<!-- <div class="wrapper">
   <div class="image-container">
     <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_basemap-min.png" alt="First Image" class="active">
     <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_lst_overlay-min.png" alt="Second Image">
@@ -40,7 +43,7 @@
 
 <figcaption>Land surface temperature of Freiburg, Germany - June 2023</figcaption>
 
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script> -->
 
 
 <h2>About the Knowledge Center</h2>
