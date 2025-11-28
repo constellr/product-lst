@@ -110,6 +110,12 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
     - No order period restrictions
     - Frequency options: `daily`
 
+  - `Tags:`
+    - A maximum of 20 tags are allowed per order.
+    - Each tag must be between 1 and 50 characters long.
+    - Duplicate tags are not allowed.
+    - If a tag entity does not exist, it will be created automatically.
+
 **Request Body Example:**
 ```json
 {
@@ -122,7 +128,8 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
       "end_date": "2025-10-18T10:30:08.004000Z",
       "frequency": "single-image",
       "product_name": "LSTprecision",
-      "comment": "Order for field 42"
+      "comment": "Order for field 42",
+      "tags": ["field42"]
     }
   ]
 }
@@ -159,7 +166,8 @@ payload = {
             "end_date": "2025-10-18T10:30:08.004000Z",
             "frequency": "single-image",
             "product_name": "LSTprecision",
-            "comment": "Order for field 42"
+            "comment": "Order for field 42",
+            "tags": ["field42"]
         }
     ]
 }
@@ -183,7 +191,14 @@ print(response.json())
     "comment": "Order for field 42",
     "id": "123e4567-e89b-12d3-a456-426614174000",
     "created": "2025-08-27T11:54:24.206072Z",
-    "state": "initial_state"
+    "state": "initial_state",
+    "tags": [
+      {
+        "name": "field42",
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "created": "2025-11-28T10:05:36.362Z"
+      }
+    ]
   }
 ]
 ```
@@ -252,7 +267,14 @@ print(data["count"], len(data["items"]))
       "comment": "Order for field 42",
       "id": "123e4567-e89b-12d3-a456-426614174000",
       "created": "2025-08-27T11:54:24.206072Z",
-      "state": "initial_state"
+      "state": "initial_state",
+      "tags": [
+        {
+          "name": "field42",
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "created": "2025-11-28T10:05:36.362Z"
+        }
+      ]
     }
   ]
 }
@@ -304,7 +326,14 @@ print(response.json())
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
   "created": "2025-08-27T11:54:24.206072Z",
-  "state": "initial_state"
+  "state": "initial_state",
+  "tags": [
+      {
+        "name": "field42",
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "created": "2025-11-28T10:05:36.362Z"
+      }
+  ]
 }
 ```
 **Error Responses:**
@@ -316,7 +345,78 @@ print(response.json())
 
 ---
 
-<h3>4. Get Available Order Use Cases</h3>
+<h3>4. Partially Update Order by ID</h3>
+
+**Endpoint:** `PATCH /orders/{order_id}`  
+**Description:** Updates specific fields of an existing order.
+The update operation is limited to certain fields as defined in the example request schema.
+Only the fields provided in the request body will be updated; other fields will remain unchanged.
+
+**Example: cURL**
+```sh
+curl -X 'PATCH' \
+  'https://api.constellr.com/orders/b131326b-20ea-44ff-b589-231ea77a7456' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "tags": [
+    "field42"
+  ]
+}'
+```
+
+**Example: Python**
+```python
+import requests
+
+url = "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000"
+headers = {
+    "Authorization": "Bearer <access_token>"
+}
+
+payload = {
+    "tags": [
+        "field42"
+    ]
+}
+response = requests.patch(url, headers=headers, json=payload)
+
+print(response.status_code)
+print(response.json())
+
+```
+
+**Response (200):**
+```json
+{
+  "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "start_date": "2025-09-27T10:30:08.004000Z",
+  "end_date": "2025-10-18T10:30:08.004000Z",
+  "frequency": "single-image",
+  "product_name": "LSTprecision",
+  "comment": "Order for field 42",
+  "id": "123e4567-e89b-12d3-a456-426614174000",
+  "created": "2025-08-27T11:54:24.206072Z",
+  "state": "initial_state",
+  "tags": [
+      {
+        "name": "field42",
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "created": "2025-11-28T10:05:36.362Z"
+      }
+  ]
+}
+```
+**Error Responses:**
+
+- **401:** Invalid authentication token.
+- **403:** User not authorized to view the order.
+- **404:** Order not found.
+- **422:** Request parameter validation error.
+
+---
+
+<h3>5. Get Available Order Use Cases</h3>
 
 **Endpoint:** `GET /orders/meta/use-cases`  
 **Description:**  Returns a list of available order use cases supported by the API.  
