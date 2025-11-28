@@ -110,7 +110,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
     - No order period restrictions
     - Frequency options: `daily`
 
-  - `Tags:`
+- `Tags:`
     - A maximum of 20 tags are allowed per order.
     - Each tag must be between 1 and 50 characters long.
     - Duplicate tags are not allowed.
