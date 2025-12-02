@@ -27,7 +27,7 @@ Files, as described above, will be downloaded via a .zip file from the data stor
     *Example*  
     **<span style="color:blue;">20240512T095854Z</span>** _ **<span style="color:orangered;">LSTprecision</span>** _ **<span style="color:green;">cae562b6-04a2-48cf-a044-eb61064e4c9b</span>**
 
-## Footnotes
+
 [^custom-label]: The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
 [^2]: The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data. 
 
