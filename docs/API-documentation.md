@@ -99,22 +99,26 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 **Endpoint:** `POST /orders/batch`  
 **Description:** Create multiple new orders for your organization in a single request. <br />
 **Order Validation:** All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
-**Validation rules:**
 
-- `LSTprecision / LSTzoom:` 
-    - AOI bounding box must not exceed `15,000m` in width or `15,000m` in height
-    - Order period must start at least `8` days from the order creation date, last a minimum of `7` days, and a maximum of `365` days
-    - Frequency options: `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`
-- `LSTfusion:`
-    - No bounding box restrictions
-    - No order period restrictions
-    - Frequency options: `daily`
+- **Product Specific Validation**:<br />
 
-- `Tags:`
-    - A maximum of 20 tags are allowed per order.
-    - Each tag must be between 1 and 50 characters long.
-    - Duplicate tags are not allowed.
-    - If a tag entity does not exist, it will be created automatically.
+| Feature | LSTprecision / LSTzoom | LSTfusion |
+| :--- | :--- | :--- |
+| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | **No limit** |
+| **Start Date** | At least **8 days** from today | No restriction |
+| **Duration** | Min **7 days**, Max **1 year** | No restriction |
+| **Frequency** | `single_image`, `max_frequency`,<br>`once_every_two_weeks`, `monthly` | `daily` only | <br />
+
+- **General Validation(All Products)**: <br />
+    - Tags: <br />
+        - Max 10 tags per order.
+        - Each tag max length 50 characters.
+        - No duplicate tags are allowed for the same order.
+        - Tag entities are created if they do not already exist.
+    - Illumination Constraint: <br />
+        - Used to specify if imaging needs to take place during an astronomical day, night or either.
+        - Options: `day`, `night`, or `null`
+        - Default: `null`
 
 **Request Body Example:**
 ```json
@@ -129,7 +133,8 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
       "frequency": "single-image",
       "product_name": "LSTprecision",
       "comment": "Order for field 42",
-      "tags": ["field42"]
+      "tags": ["field42"],
+      "illumination_constraint": "day"
     }
   ]
 }
@@ -167,7 +172,8 @@ payload = {
             "frequency": "single-image",
             "product_name": "LSTprecision",
             "comment": "Order for field 42",
-            "tags": ["field42"]
+            "tags": ["field42"],
+            "illumination_constraint": "day"
         }
     ]
 }
@@ -198,7 +204,8 @@ print(response.json())
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "created": "2025-11-28T10:05:36.362Z"
       }
-    ]
+    ],
+    "illumination_constraint": "day"
   }
 ]
 ```
@@ -274,7 +281,8 @@ print(data["count"], len(data["items"]))
           "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
           "created": "2025-11-28T10:05:36.362Z"
         }
-      ]
+      ],
+      "illumination_constraint": "day"
     }
   ]
 }
@@ -333,7 +341,8 @@ print(response.json())
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "created": "2025-11-28T10:05:36.362Z"
       }
-  ]
+  ],
+  "illumination_constraint": "day"
 }
 ```
 **Error Responses:**
@@ -404,7 +413,8 @@ print(response.json())
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "created": "2025-11-28T10:05:36.362Z"
       }
-  ]
+  ],
+  "illumination_constraint": "day"
 }
 ```
 **Error Responses:**
