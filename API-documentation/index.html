@@ -1061,30 +1061,56 @@
 
 <p><strong>Endpoint:</strong> <code>POST /orders/batch</code><br />
 <strong>Description:</strong> Create multiple new orders for your organization in a single request. <br />
-<strong>Order Validation:</strong> All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
-<strong>Validation rules:</strong></p>
+<strong>Order Validation:</strong> All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br /></p>
 <ul>
-<li><code>LSTprecision / LSTzoom:</code> <ul>
-<li>AOI bounding box must not exceed <code>15,000m</code> in width or <code>15,000m</code> in height</li>
-<li>Order period must start at least <code>8</code> days from the order creation date, last a minimum of <code>7</code> days, and a maximum of <code>365</code> days</li>
-<li>Frequency options: <code>single_image</code>, <code>max_frequency</code>, <code>once_every_two_weeks</code>, <code>monthly</code></li>
+<li><strong>Product Specific Validation</strong>:<br /></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">LSTprecision / LSTzoom</th>
+<th style="text-align: left;">LSTfusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>AOI Limit</strong></td>
+<td style="text-align: left;">Bounding box limit max <strong>15,000m</strong> x <strong>15,000m</strong></td>
+<td style="text-align: left;"><strong>No limit</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Start Date</strong></td>
+<td style="text-align: left;">At least <strong>8 days</strong> from today</td>
+<td style="text-align: left;">No restriction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Duration</strong></td>
+<td style="text-align: left;">Min <strong>7 days</strong>, Max <strong>1 year</strong></td>
+<td style="text-align: left;">No restriction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Frequency</strong></td>
+<td style="text-align: left;"><code>single_image</code>, <code>max_frequency</code>,<br><code>once_every_two_weeks</code>, <code>monthly</code></td>
+<td style="text-align: left;"><code>daily</code> only</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>General Validation(All Products)</strong>: <br /><ul>
+<li>Tags: <br /><ul>
+<li>Max 10 tags per order.</li>
+<li>Each tag max length 50 characters.</li>
+<li>No duplicate tags are allowed for the same order.</li>
+<li>Tag entities are created if they do not already exist.</li>
 </ul>
 </li>
-<li>
-<p><code>LSTfusion:</code></p>
-<ul>
-<li>No bounding box restrictions</li>
-<li>No order period restrictions</li>
-<li>Frequency options: <code>daily</code></li>
+<li>Illumination Constraint: <br /><ul>
+<li>Used to specify if imaging needs to take place during an astronomical day, night or either.</li>
+<li>Options: <code>day</code>, <code>night</code>, or <code>null</code></li>
+<li>Default: <code>null</code></li>
 </ul>
 </li>
-<li>
-<p><code>Tags:</code></p>
-<ul>
-<li>A maximum of 20 tags are allowed per order.</li>
-<li>Each tag must be between 1 and 50 characters long.</li>
-<li>Duplicate tags are not allowed.</li>
-<li>If a tag entity does not exist, it will be created automatically.</li>
 </ul>
 </li>
 </ul>
@@ -1100,7 +1126,8 @@
 <span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -1133,7 +1160,8 @@
             <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
             <span class="s2">&quot;product_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
             <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">]</span>
+            <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">],</span>
+            <span class="s2">&quot;illumination_constraint&quot;</span><span class="p">:</span> <span class="s2">&quot;day&quot;</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -1160,7 +1188,8 @@
 <span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div></p>
@@ -1232,7 +1261,8 @@
 <span class="w">          </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">]</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -1282,7 +1312,8 @@
 <span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>
@@ -1345,7 +1376,8 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3fa85f64-5717-4562-b3fc-2c963f66afa6&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>

@@ -952,7 +952,7 @@
 <td>json</td>
 </tr>
 <tr>
-<td>vnir01.tiff - vnir10.tiff</td>
+<td>vnir02.tiff - vnir09.tiff<sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></td>
 <td>VNIR Surface Reflection per band at 30m and 60m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
@@ -992,12 +992,12 @@
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>tcwv.tiff</td>
+<td>tcwv.tiff[^2]</td>
 <td>Total Column Water Vapour</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>aot.tiff</td>
+<td>aot.tiff<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></td>
 <td>Aerosol Optical Thickness</td>
 <td>Cloud optimized geotiff</td>
 </tr>
@@ -1064,6 +1064,19 @@ In case you are curious to leverage any of our data layers for your analysis, pl
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
   Last update: September, 2025
 </p>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:custom-label">
+<p>Band 01 and 10 are excluded, as they do not represent surface information.
+[^2]The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
