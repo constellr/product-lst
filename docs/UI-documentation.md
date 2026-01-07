@@ -8,13 +8,10 @@ This page will guide you through the steps to create an account, access it, and 
 ## **Login**
 You can access the End User Platform via the [sign in](https://app.constellr.com/signin) page, using your email and password.  
 
-<h3>First time user?</h3>
-
-You will need to create an account via the [sign up](https://app.constellr.com/signin) page.
-
-> **Note**
-> To create an account, your organization must be registered with constellr and you must use your company email.  
-> In case you need support, please contact: [support-csm@constellr.com](mailto:support-csm@constellr.com)
+!!! note "First time user?"
+    > To create an account, your organization must be registered with constellr and you must use your company email.  
+    > You will need to create an account via the [sign up](https://app.constellr.com/signin) page.  
+    > In case you need support, please contact: [support-csm@constellr.com](mailto:support-csm@constellr.com)
 
 
 

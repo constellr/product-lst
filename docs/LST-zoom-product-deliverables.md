@@ -6,7 +6,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-zoom-metadata/) | json |
-| vnir01.tiff - vnir10.tiff |VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution| Cloud optimized geotiff |
+| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution| Cloud optimized geotiff |
 | lst.tiff | LST data | Cloud optimized geotiff |
 | rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
 | lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
@@ -14,8 +14,8 @@ Constellr's product deliverables include several layers, which are outlined belo
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
 | scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 10m, 20m, 30m, and 60m resolution | Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band| Cloud optimized geotiff |
-| tcwv.tiff | Total Column Water Vapour | Cloud optimized geotiff |
-| aot.tiff | Aerosol Optical Thickness | Cloud optimized geotiff |
+| tcwv.tiff[^2] | Total Column Water Vapour | Cloud optimized geotiff |
+| aot.tiff[^3] | Aerosol Optical Thickness | Cloud optimized geotiff |
 
 ## Naming Convention
 
@@ -27,6 +27,11 @@ Files, as described above, will be downloaded via a .zip file from the data stor
 
     *Example*  
     **<span style="color:blue;">20240512T095854Z</span>** _ **<span style="color:orangered;">LSTzoom</span>** _ **<span style="color:green;">cae562b6-04a2-48cf-a044-eb61064e4c9b</span>**
+
+
+[^custom-label]: Band 01 and 10 are excluded, as they do not represent surface information.
+[^2]: The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
+[^3]: The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data. 
 
 
 <!-- 
