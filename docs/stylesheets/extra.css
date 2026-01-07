@@ -3,13 +3,13 @@
 :root {
     --md-primary-fg-color: #160A42; /* Header background color */
     --md-accent-fg-color: #4169c1; /* Link color */
-    --md-default-bg-color: #ffffff; /* Background color */
+    --md-default-bg-color: #ffffff; /*  Background color */
     --md-default-fg-color: #000000; /* Text color */
     --font-family: Inter, sans-serif;
 }
 
 /*heading colours and style*/ 
-.md-content h1{
+ .md-content h1{
     color: #160A42;
     margin-bottom: 5px;
 }
@@ -24,29 +24,40 @@
 
 .md-typeset blockquote {
     background-color: transparent; /* remove grey background */
-    color: #160A42;              /* your preferred text color */
+    color: #160A42;             /*  your preferred text color */
     border-left: 4px solid #160A42 !important; /* optional colored line */
     padding-left: 1rem;
     margin-left: 0;
 }
 
+
+/*for fading images*/
+/* fsets outer container */
+.image-container {
+    position: relative;
+    display: inline-block; 
+    width: 600px; 
+    height: 400px;
+}
+
+
 /* Home page */
-.hero-section {
+/* .hero-section { 
   position: relative;
-  width: 100%;
-  height: 90vh; /* Adjust the height */
-  background-image: url('../assets/Intro_background.png') ; /* Path to your large image */
-  background-size: cover;
+  width: 100%; */
+  /* height: 90vh; Adjust the height */
+  /* background-image: url('../assets/Intro_background.png') ; Path to your large image */
+  /* background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.hero-logo {
+/* .hero-logo {
   width: 250px; /* Adjust as needed */
-  margin-bottom: 20px;
+  /* margin-bottom: 20px;
   z-index: 2;
 }
 
@@ -54,23 +65,23 @@
   color: white !important;
   text-align: center;
   margin-bottom: 10px;
-}
+}  */
 
-.hero-text p {
+/* .hero-text p {
   color: white;
   text-align: center;
   font-size: 1.2rem;
   max-width: 800px;
-  margin: 20px auto 50px auto;/* Centers text block horizontally */
-  line-height: 1.5;
+  margin: 20px auto 50px auto;Centers text block horizontally */
+  /* line-height: 1.5;
 }
 
 .hero-boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 650px; /* Only fits two boxes per row */
-    gap: 30px;
+    max-width: 650px; Only fits two boxes per row */
+    /* gap: 30px;
 }
 
 .hero-box {
@@ -83,10 +94,10 @@
   text-decoration: none;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s, transform 0.2s;
-  width: 300px; 
+  width: 300px;  */
   
   /* Center text vertically and horizontally */
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   
@@ -97,37 +108,38 @@
 .hero-box:hover {
   transform: translateY(-5px);
   background-color: rgba(255,192,52,0.8);
-}
+} */
 
 /* make hero section work for phones etc */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hero-section {
     height: auto; /* Allow section to grow with content */
-    padding: 40px 20px; /* Add breathing space on smaller screens */
-  }
+    /* padding: 40px 20px; /* Add breathing space on smaller screens 
+  } */
 
-  .hero-text h1 {
+  /* .hero-text h1 {
     font-size: 1.8rem;
   }
 
   .hero-text p {
     font-size: 1rem;
     max-width: 90%;
-  }
+  } */
 
-  .hero-boxes {
+  /* .hero-boxes {
     flex-direction: column; /* Stack boxes vertically */
-    align-items: center;
+    /* align-items: center;
     gap: 15px;
     max-width: 100%;
-  }
+  } */
 
-  .hero-box {
+  /* .hero-box {
     width: 90%; /* Slight margin on sides */
-    padding: 20px;
+    /* padding: 20px;
     font-size: 1rem;
-  }
-}
+  } */ 
+/* } */
+
 
 
 /*  */
