@@ -33,9 +33,9 @@
 ??? note "What are the specifications of LSTzoom?"
     |Parameter|Value|
     |---------|-----|
-    |Spatial Resolution|TIR: 10m, VNIR:10m|
-    |Temporal Resolution| 1.5-3 days|
-    |Output Time| 10:30 or 13:30 local solar time|
+    |Spatial Resolution|10m|
+    |Temporal Resolution| 1.5 - 3 days|
+    |Output Time| 10:30 or 13:30 am and pm, local solar time|
     |Coverage Area| Worldwide tasking, up to 1.000.000 km² daily imaging capacity |
     |Output Format| GeoTIFF + Metadata geojson |
 
@@ -45,6 +45,12 @@
     The methodology used to generate the LSTzoom product was evaluated against high-resolution airborne land surface temperature measurements from the [HYTES instrument](https://hytes.jpl.nasa.gov). The LSTzoom algorithm was applied to a downscaled version of these reference data, and the resulting outputs were compared with the original observations. In challenging urban environments, the estimated accuracy of the method is better than 5 K.  
 
 ??? note "VNIR Quality Limitations"
+    As part of LSTzoom’s ongoing further development to generate 10m resolution imagery by integrating VNIR with LST data, we continuously evaluate the spectral contributions to ensure optimal performance. Our analysis has identified wavelength-dependent sharpness degradation in our VNIR imagery, with the blue band most affected, and the NIR band least impacted. To safeguard the robustness of our outputs, we have excluded the blue band from the algorithm. Extensive validation confirms that this refinement does not compromise accuracy, allowing us to maintain both scientific rigor and confidence in the reliability of our results.  
+
+    In the following graph the lab measurements of MTF and current observed MTF can be found: 
+
+    ![Lab and Orbit MTF](link to image)
+    <figcaption>MTF measurements of the blue, green, red and nir spectral bands at 10m GSD from orbit after launch (solid lines) and in the laboratory before launch (dashed lines). An increasing degradation in MTF with decreasing wavelength can be observed after launch from orbit.</figcaption>
 
 ??? note "What to look forward to in future developments?"
       
@@ -53,11 +59,7 @@
     **LSTzoom night**   
     
     **Deep Learning architectures**  
-     
-
-
-??? note "What is included in the product bundle?"
-
+    
 
 
 
@@ -65,5 +67,5 @@
 
 <br>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: September, 2025
+  Last update: January, 2026
 </p>
