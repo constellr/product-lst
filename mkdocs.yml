@@ -26,7 +26,7 @@ nav:
       - LSTzoom: LST-zoom-metadata.md
       - LSTfusion: LST-fusion-metadata.md
     - Calibration and Validation:
-      # - LSTprecision: LST-precision-cal-val-procedure.md
+      - LSTprecision: LST-precision-cal-val-procedure.md
       - LSTfusion: LST-fusion-cal-val-procedure.md
   - Thermal Insights: thermal-insights.md
   - How to access our data:

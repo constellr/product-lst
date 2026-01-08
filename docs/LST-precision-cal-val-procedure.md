@@ -42,17 +42,17 @@ Those validation exercises rely on reference ground-based measurements and indep
 </div>
 <figcaption style="text-align:center;">Example locations of reference sites.</figcaption> -->
 
-The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the LSTprecision product. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
+The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the [LSTprecision product](https://constellr.github.io/product-lst/LST-precision/) both during the day and at night. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
 
-![LST plot](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/correlation_lst_surfrad_SBA01_constellr_allsites_extended_newlabels.png){ width=70% }
-<figcaption>Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD<a> and <a href= https://calval.jpl.nasa.gov/ >JPL data</a> portals as the sources of the reference ground data.</figcaption>
+![LST plot](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_validation_sites_statistics.png){ width=70% }
+<figcaption>Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
 
 The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited: The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)[^2] and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.
 
 <br>
 
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: October, 2025
+  Last update: January, 2026
 </p>
 
 
