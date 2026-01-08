@@ -380,7 +380,7 @@
             
   
   <span class="md-ellipsis">
-    Data Bundle Description
+    Product Description
     
   </span>
   
@@ -390,6 +390,72 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Product Description
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LST-fusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSTfusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Bundle Description
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Data Bundle Description
           </label>
@@ -483,10 +549,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -498,8 +564,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Metadata Explanation
           </label>
@@ -593,10 +659,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -608,8 +674,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             Calibration and Validation
           </label>
@@ -622,11 +688,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../LST-precision-cal-val-procedure/" class="md-nav__link">
+      <a href="../LST-fusion-cal-val-procedure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    LSTprecision
+    LSTfusion
     
   </span>
   
@@ -912,15 +978,15 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
 <tbody>
 <tr>
 <td>Spatial Resolution</td>
-<td>TIR: 10m, VNIR:10m</td>
+<td>10m</td>
 </tr>
 <tr>
 <td>Temporal Resolution</td>
-<td>1.5-3 days</td>
+<td>1.5 - 3 days</td>
 </tr>
 <tr>
 <td>Output Time</td>
-<td>10:30 or 13:30 local solar time</td>
+<td>10:30 or 13:30 am and pm, local solar time</td>
 </tr>
 <tr>
 <td>Coverage Area</td>
@@ -940,6 +1006,10 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
 </details>
 <details class="note">
 <summary>VNIR Quality Limitations</summary>
+<p>As part of LSTzoom’s ongoing further development to generate 10m resolution imagery by integrating VNIR with LST data, we continuously evaluate the spectral contributions to ensure optimal performance. Our analysis has identified wavelength-dependent sharpness degradation in our VNIR imagery, with the blue band most affected, and the NIR band least impacted. To safeguard the robustness of our outputs, we have excluded the blue band from the algorithm. Extensive validation confirms that this refinement does not compromise accuracy, allowing us to maintain both scientific rigor and confidence in the reliability of our results.  </p>
+<p>In the following graph the lab measurements of MTF and current observed MTF can be found: </p>
+<p><img alt="Lab and Orbit MTF" src="link to image" />
+<figcaption>MTF measurements of the blue, green, red and nir spectral bands at 10m GSD from orbit after launch (solid lines) and in the laboratory before launch (dashed lines). An increasing degradation in MTF with decreasing wavelength can be observed after launch from orbit.</figcaption></p>
 </details>
 <details class="note">
 <summary>What to look forward to in future developments?</summary>
@@ -947,12 +1017,9 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
 <p><strong>LSTzoom night</strong>   </p>
 <p><strong>Deep Learning architectures</strong>  </p>
 </details>
-<details class="note">
-<summary>What is included in the product bundle?</summary>
-</details>
 <p><br></p>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: September, 2025
+  Last update: January, 2026
 </p>
 
 
@@ -1226,6 +1293,7 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
       
     
     
+    <!-- Intro Slide Script -->
     <script>
         (function () {
           const el = document.getElementById("introSection");
@@ -1260,7 +1328,7 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
             }
           });
         })();
-        </script>
+    </script>
 
 
     <script>
@@ -1271,6 +1339,7 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
         }
     </script>
 
+    <!-- Image fade Script -->
     <script>
         const images = document.querySelectorAll('.image-container img');
         let currentIndex = 0;
@@ -1284,7 +1353,7 @@ Prefer highly accurate temperature benchmarks over time? → <a href="link">Expl
 
     <!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49002189.js"></script> -->
 
-    <!-- for image/card carousell -->
+    <!-- for image/card carousell (Explorer Lab)-->
     
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
