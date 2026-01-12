@@ -577,6 +577,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spatial-standard-deviation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial Standard Deviation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#naming-convention" class="md-nav__link">
     <span class="md-ellipsis">
       Naming Convention
@@ -1059,6 +1068,34 @@
 <td>lst_std_yyyymmddThhZ.tiff</td>
 <td>Spatial Standard Deviation</td>
 <td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<h2 id="spatial-standard-deviation">Spatial Standard Deviation</h2>
+<p>The STD layer provides the absolute standard deviation for each pixel in the LST layer. The standard deviation is inferred from the uncertainty of the measurements that drive the modelled LST value for each pixel. So, it reflects a value based on the closest sensor measurement available, the resolution and uncertainty of that satellite sensor and the distance to clouds.  </p>
+<table>
+<thead>
+<tr>
+<th>STD value range</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 3.1</td>
+<td>Data derived from closest Landsat image</td>
+</tr>
+<tr>
+<td>3.1 - 3.5</td>
+<td>Data derived from closest Modis/VIIRS image</td>
+</tr>
+<tr>
+<td>3.5 - 4.5</td>
+<td>Data derived from closest CLMS image</td>
+</tr>
+<tr>
+<td>&gt;= 4.5</td>
+<td>Data derived from LSTfusion model</td>
 </tr>
 </tbody>
 </table>
