@@ -13,6 +13,16 @@ For the LSTfusion product, each data layer is available for a given data and hou
 | lst_thumbnail_yyyymmddThhZ.jpg | LST Thumbnail | jpg |
 | lst_std_yyyymmddThhZ.tiff | Spatial Standard Deviation | Cloud optimized geotiff |
 
+## Spatial Standard Deviation
+The STD layer provides the absolute standard deviation for each pixel in the LST layer. The standard deviation is inferred from the uncertainty of the measurements that drive the modelled LST value for each pixel. So, it reflects a value based on the closest sensor measurement available, the resolution and uncertainty of that satellite sensor and the distance to clouds.  
+
+| STD value range | Meaning |
+| --- | --- |
+| < 3.1 | Data derived from closest Landsat image |
+| 3.1 - 3.5 | Data derived from closest Modis/VIIRS image |
+| 3.5 - 4.5 | Data derived from closest CLMS image |
+| >= 4.5 | Data derived from LSTfusion model | 
+
 
 ## Naming Convention
 
