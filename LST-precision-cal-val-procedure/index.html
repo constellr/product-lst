@@ -408,6 +408,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../LST-precision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSTprecision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LST-fusion/" class="md-nav__link">
         
   
@@ -1029,7 +1051,7 @@ The first-generation SkyBee satellites are equipped with two onboard cameras cov
 <p><strong>Statistical analyses</strong> are employed to detect dead or bad detector pixels or to correct for possible non-uniformities of the detector. Those are complemented by measurements obtained through specific spacecraft manoeuvres such as 90°-yaw manoeuvre over homogeneous sites or pointing towards the cold deep space support respectively the characterization of detector non-uniformity and dark signal. </p>
 <p><strong>Operational radiometric calibration</strong> in the VNIR range is performed using a vicarious calibration approach. This consists in aligning HiVE top-of-the atmosphere (TOA) radiances with those simultaneously provided by well-characterized, instrumented ground reference sites (e.g. RadCalNet). In the TIR domain, the radiometric calibration relies on a patented cross-calibration approach. It leverages the highly accurate land surface temperature estimates provided by independent geostationary sensors with a high temporal but low spatial resolution These temperatures are converted to simulated TOA radiances using auxiliary data and radiative transfer modelling. The comparison of the simulated and measured radiances enables the regular update of calibration parameters, ensuring continued accuracy of the thermal measurements.  </p>
 <p>In addition to the calibration procedures, the end-user LSTprecision products are regularly assessed using a set of well-established validation methods and protocols, such as the CEOS Best Practices Protocols for Global Surface Albedo and Land Surface Temperature Product Validation <sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup>. These protocols provide a harmonized framework for quantitative accuracy assessment, ensuring traceability and consistency across validation efforts.  </p>
-<p>In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as a interim products supporting the L2 processing based on VNIR data.  </p>
+<p>In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as interim products supporting the L2 processing based on VNIR data.  </p>
 <p>Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. </p>
 <table>
 <thead>
@@ -1087,7 +1109,7 @@ The first-generation SkyBee satellites are equipped with two onboard cameras cov
 <p><img alt="LST plot" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_validation_sites_statistics.png" width="70%" /></p>
 <figcaption>Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
 
-<p>The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited: The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.</p>
+<p>The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited. The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.</p>
 <p><br></p>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
   Last update: January, 2026
@@ -1102,7 +1124,7 @@ The first-generation SkyBee satellites are equipped with two onboard cameras cov
 Land Product Validation Subgroup (Working Group On Calibration And Validation Committee On Earth Observation Satellites), “Global Surface Albedo Product Validation Best Practice Protocol,” 2018, doi: 10.5067/DOC/CEOSWGCV/LPV/ALBEDO.001.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Skakun et al., "Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2", 2022, doi:&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Skakun et al., "Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2", 2022, doi: https://doi.org/10.1016/j.rse.2022.112990&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
