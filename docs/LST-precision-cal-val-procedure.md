@@ -21,7 +21,7 @@ Post-launch, instrument performance may evolve due to launch effects or aging. T
 
 In addition to the calibration procedures, the end-user LSTprecision products are regularly assessed using a set of well-established validation methods and protocols, such as the CEOS Best Practices Protocols for Global Surface Albedo and Land Surface Temperature Product Validation [^custom-label]. These protocols provide a harmonized framework for quantitative accuracy assessment, ensuring traceability and consistency across validation efforts.  
  
-In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as a interim products supporting the L2 processing based on VNIR data.  
+In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as interim products supporting the L2 processing based on VNIR data.  
  
 Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. 
 
@@ -47,7 +47,7 @@ The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 wit
 ![LST plot](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_validation_sites_statistics.png){ width=70% }
 <figcaption>Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
 
-The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited: The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)[^2] and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.
+The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited. The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)[^2] and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.
 
 <br>
 
@@ -60,4 +60,4 @@ The cloud and cloud masking algorithm uses the VNIR data as an input. Here the s
 ## Footnotes
 [^custom-label]: Land Product Validation Subgroup (Working Group On Calibration And Validation Committee On Earth Observation Satellites), “Land Surface Temperature Product Validation Best Practice Protocol,” 2017, doi: 10.5067/DOC/CEOSWGCV/LPV/LST.001. 
 Land Product Validation Subgroup (Working Group On Calibration And Validation Committee On Earth Observation Satellites), “Global Surface Albedo Product Validation Best Practice Protocol,” 2018, doi: 10.5067/DOC/CEOSWGCV/LPV/ALBEDO.001. 
-[^2]: Skakun et al., "Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2", 2022, doi: 
+[^2]: Skakun et al., "Cloud Mask Intercomparison eXercise (CMIX): An evaluation of cloud masking algorithms for Landsat 8 and Sentinel-2", 2022, doi: https://doi.org/10.1016/j.rse.2022.112990 

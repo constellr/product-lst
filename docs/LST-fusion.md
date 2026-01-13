@@ -11,8 +11,8 @@
     - *Benchmark and compare with confidence:* track long-term trends across regions, surfaces, or objects with detailed thermal profiles and accumulated temperature curves.   
     - *Scale from local to national:* Perform regional and national comparisons, then zoom in with HiVE or other high-resolution imagery for detailed asset-level insights.   
   
-<!-- Need asset-level precision for critical infrastructure? → [Explore LSTprecision](link)  
-Want to visually detect fine-grained variations locally? → [Explore LSTzoom](link) -->
+Need asset-level precision for critical infrastructure? → [Explore LSTprecision](https://constellr.github.io/product-lst/LST-precision/)  
+Want to visually detect fine-grained variations locally? → [Explore LSTzoom](link)
 
 ??? note "How is LSTfusion created?"
     LSTfusion is the result of combining dynamic diurnal cycle modelling, spatial upscaling techniques, and data assimilation using Kalman filtering. This powerful integration allows us to generate high-resolution, temporally consistent LST data, even when satellite observations are incomplete or missing. It represents a significant achievement, built on advanced research and deep domain expertise.  

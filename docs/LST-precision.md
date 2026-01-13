@@ -12,7 +12,7 @@
     - *Track trends with confidence:* High-frequency revisits (as often as every 3 days in daylight) deliver rich time-series data, enabling timely identification of anomalies and long-term patterns. 
 
     Want even sharper local detail? → [Explore LSTzoom](Link)  
-    Need broader, cloud-free daily coverage? → [Discover LSTfusion](Link) 
+    Need broader, cloud-free daily coverage? → [Discover LSTfusion](https://constellr.github.io/product-lst/LST-fusion/) 
 
 ??? note "How is LSTprecision created?"
     LSTprecision is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of [constellr’s HiVe constellation](https://constellr.github.io/product-lst/our-technology/). Following an [advanced calibration and validation (cal/val) procedure](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/), ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle. 
@@ -56,7 +56,7 @@
 
     Achieving high accuracy starts well before launch with a proper characterization of the instruments in the lab and continues in space with a regular verification of the instrumental performances. Engineers monitor and correct for changes over time, detect faulty pixels, and adjust for geometric distortions using well-known landscapes and landmarks. Calibration draws on trusted ground reference sites for visible/near-infrared data and patented methods comparing thermal readings with reliable satellite temperature measurements, guaranteeing data remain precise and reliable throughout the mission.  Accuracy of end-user products is also regularly evaluated against ground-truth measurements at a series of reference sites part of different official networks. These accuracy levels are supported by an independent ESA-led assessment, which confirms consistent thermal performance and reliable calibration across acquisitions.  
     
-    Explore the details of our [Cal/Val approach](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/). 
+    Explore the details of our [Cal/Val approach](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/). These accuracy levels are supported bz an independent ESA-led assessment, which confirms consistent thermal performance and reliable calibration across acquisitions.  
 
 ??? note "What to look forward to in future developments?"
 
