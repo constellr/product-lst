@@ -584,6 +584,7 @@ print(resp.json())
 - **400:** Invalid AOI request body values.
 - **401:** Invalid authentication token.
 - **403:** User not authorized to create AOIs.
+- **409:** An Area of Interest with this name already exists.
 - **422:** Request body validation error.
 
 ---
