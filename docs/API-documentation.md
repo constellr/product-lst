@@ -104,7 +104,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 
 | Feature | LSTprecision / LSTzoom | LSTfusion |
 | :--- | :--- | :--- |
-| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | **No limit** |
+| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters**  |
 | **Start Date** | At least **8 days** from today | No restriction |
 | **Duration** | Min **7 days**, Max **1 year** | No restriction |
 | **Frequency** | `single_image`, `max_frequency`,<br>`once_every_two_weeks`, `monthly` | `daily` only | <br />
