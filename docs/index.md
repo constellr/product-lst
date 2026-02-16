@@ -13,7 +13,6 @@
 
 <br>  
 
-
 <div class="wrapper">
   <div class="image-container">
     <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/freiburg_2023-06-25_tobi_aoi_basemap-min.png" alt="First Image" class="active">
