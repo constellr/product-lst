@@ -39,7 +39,7 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-1">processing_scenario</td><td>string</td><td>"NRT" or "RPR"</td></tr>
   <tr><td class="level-1">acquisition_id</td><td>string</td><td>Location and time of acquisition</td></tr>
   <tr><td class="level-1">acquisition_datetime</td><td>string</td><td>Date and time of the acquisition, ISO 8601 format at UTC time</td></tr>
-  <tr><td class="level-1">processing_time</td><td>string</td><td>Processing start time in ISO 8601 UTC format (e.g. 2026-01-14T14:12:48.694957Z)</td></tr>
+  <tr><td class="level-1">processing_time</td><td>string</td><td>Processing start time in ISO 8601 format at UTC time (e.g. 2026-01-14T14:12:48.694957Z)</td></tr>
   <tr><td class="level-1">parent_product_key</td><td>string</td><td> </td></tr>
   <tr><td class="level-1">link</td><td>string</td><td><a href= "https://constellr.github.io/product-lst/Technical-specification/"> URL with complementary documentation and data access info</a></td></tr>
   <tr><td class="level-1">source</td><td>string</td><td>"constellr"</td></tr>
