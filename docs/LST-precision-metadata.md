@@ -65,14 +65,6 @@ This page describes the metadata file used for L2A products.
   <tr><td class="level-2">&nbsp;&nbsp;saturated_mask_classes</td><td>dict</td><td>Possible values of saturated mask: 0 = valid data; 1 = saturated </td></tr>
   <tr><td class="level-2">&nbsp;&nbsp;untested_mask_classes</td><td>dict</td><td>Possible values of untested mask: 0 = valid data; 1 = untested </td></tr>
 
-  <!-- sensors -->
-  <tr><td class="level-1">sensors</td><td>object</td><td></td></tr>
-  <tr><td class="level-2">&nbsp;&nbsp;acquisition_starttime</td><td>string</td><td>ISO-8601 start time of imagery acquisition</td></tr>
-  <tr><td class="level-2">&nbsp;&nbsp;acquisition_endtime</td><td>string</td><td>ISO-8601 end time of imagery acquisition</td></tr>
-  <tr><td class="level-2">&nbsp;&nbsp;sensor</td><td>object</td><td>"VNIR" or "TIR"</td></tr>
-  <tr><td class="level-3">&nbsp;&nbsp;sensor_id</td><td>string array</td><td>List of sensor identifiers</td></tr>
-  <tr><td class="level-3">&nbsp;&nbsp;record_id</td><td>string array</td><td>List of record IDs forming the product</td></tr>
-
   <!-- geometric -->
 <tr><td class="level-1">geometric</td><td>object</td><td></td></tr>
 
@@ -98,8 +90,14 @@ This page describes the metadata file used for L2A products.
 
 <tr><td class="level-2">&nbsp;&nbsp;surface_altitude_median</td><td>float</td><td>Median surface elevation [km]</td></tr>
 
-
-
+  <!-- sensors -->
+  <tr><td class="level-1">sensors</td><td>object</td><td></td></tr>
+  <tr><td class="level-2">&nbsp;&nbsp;acquisition_starttime</td><td>string</td><td>ISO-8601 start time of imagery acquisition</td></tr>
+  <tr><td class="level-2">&nbsp;&nbsp;acquisition_endtime</td><td>string</td><td>ISO-8601 end time of imagery acquisition</td></tr>
+  <tr><td class="level-2">&nbsp;&nbsp;sensor</td><td>object</td><td>"VNIR" or "TIR"</td></tr>
+  <tr><td class="level-3">&nbsp;&nbsp;sensor_id</td><td>string array</td><td>List of sensor identifiers</td></tr>
+  <tr><td class="level-3">&nbsp;&nbsp;record_id</td><td>string array</td><td>List of record IDs forming the product</td></tr>
+  
   <!-- bands -->
   <tr><td class="level-3">&nbsp;&nbsp;bands</td><td>dict of objects</td><td></td></tr>
   <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;name</td><td>string</td><td>Name of band</td></tr>
