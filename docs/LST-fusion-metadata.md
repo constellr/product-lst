@@ -2,24 +2,6 @@
 
 This page describes the metadata file used for L3 products. 
 
-
-<style>
-  table { border-collapse: collapse; width: 100%; table-layout: fixed; }
-  th, td { border: 1px solid #aaa; padding: 6px; text-align: left; word-wrap: break-word; }
-  th { background-color: #f2f2f2; }
-
-  /* Adjust column widths */
-  th:nth-child(1), td:nth-child(1) { width: 25%; } 
-  th:nth-child(2), td:nth-child(2) { width: 20%; } 
-
-  /* Hierarchy styling */
-  .level-1 { font-weight: bold; }
-  .level-2 { font-style: normal; color: #000; }
-  .level-3 { font-style: italic; color: #333; }
-  .level-4 { font-style: italic; color: #555; }
-  .level-5 { font-style: italic; color: #777; }
-</style>
-
 <table>
   <tr>
     <th>Key</th>
