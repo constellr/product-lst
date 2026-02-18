@@ -2,7 +2,7 @@
 
 This page describes the metadata file used for L2A products. 
 
-??? note "Metadata used from 20/01/2026 until today"
+??? note "Data Processing Configuration - Effective 20 January 2026"
 
     <table>
       <tr>
@@ -36,14 +36,14 @@ This page describes the metadata file used for L2A products.
         <tr><td class="level-1">cloud_cover_computed</td><td>bool</td><td>Indicates whether cloud cover was computed from masks (true/false)</td></tr>
 
       <!-- mask_arrays -->
-      <tr><td class="level-1">scl_mask_bands</td><td>object</td><td></td></tr>
+      <tr><td class="level-1">scl_masks_bands</td><td>object</td><td>Scene classification files made up of four different bands providing information on cloud cover and type of scenes </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;cloud_mask_classes</td><td>dict</td><td>Possible values of cloud mask: 0 = clear; 1 = thick; 2 = thin; 3 = shadow </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;castshadow_mask_classes</td><td>dict</td><td>Possible values of cast-shadow mask: 0 = clear; 1 = castshadow</td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;landwater_mask_classes</td><td>dict</td><td>Possible values of land/water mask: 0 = land; 1 = water</td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;static_landwater_mask_classes</td><td>dict</td><td>Possible values of land/water mask: 0 = land; 1 = water</td></tr>
 
       <!-- qa mask arrays -->
-      <tr><td class="level-1">qa_mask_bands</td><td>object</td><td></td></tr>
+      <tr><td class="level-1">qa_mask_bands</td><td>object</td><td>Quality Assessment files for each band providing basic information on pixel quality </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;blackfill_mask_classes</td><td>dict</td><td>Possible values of blackfill mask: 0 = valid data; 1 = no data </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;saturated_mask_classes</td><td>dict</td><td>Possible values of saturated mask: 0 = valid data; 1 = saturated </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;untested_mask_classes</td><td>dict</td><td>Possible values of untested mask: 0 = valid data; 1 = untested </td></tr>
@@ -128,8 +128,8 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_scale_factor</td><td>float</td><td>Scale factor to compute AOT from readings (AOT = DN × scale_factor + offset)</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_nodata</td><td>integer</td><td>Fill value</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_format</td><td>string</td><td>"COG"; NA if "CAMS_fc"</td></tr> -->
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied?</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied?</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
 
       <!-- TCWV -->
       <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;TCWV</td><td>object</td><td></td></tr>
@@ -142,13 +142,13 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_scale_factor</td><td>float</td><td>Scale factor for TCWV from readings (tcwv = DN × scale_factor + offset); NA if "ERA5" or "CAMS_fc"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_nodata</td><td>integer</td><td>Fill value</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_format</td><td>string</td><td>"COG"; NA if "ERA5" or "CAMS_fc"</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied?</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied?</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
 
       <!-- SR -->
       <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;SR</td><td>object</td><td></td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied?</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied?</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_unit</td><td>string</td><td>1</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_type</td><td>string</td><td>"uint16"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_offset</td><td>float</td><td>Offset to compute SR from readings (SR = DN × scale_factor + offset)</td></tr>
@@ -209,7 +209,7 @@ This page describes the metadata file used for L2A products.
 
 
 
-??? note "Metadata used before 20/01/2026"
+??? note "Data Processing Configuration - Pre 20 January 2026"
 
     <table>
       <tr>
@@ -240,14 +240,14 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-1">cloud_shadow_percentage</td><td>float</td><td>Percentage of pixels affected by cloud shadows</td></tr>
 
       <!-- mask_arrays -->
-      <tr><td class="level-1">scl_masks_bands</td><td>object</td><td></td></tr>
+      <tr><td class="level-1">scl_masks_bands</td><td>object</td><td>Scene classification files made up of four different bands providing information on cloud cover and type of scenes </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;cloud_mask_classes</td><td>dict</td><td>Possible values of cloud mask: 0 = clear; 1 = thick; 2 = thin; 3 = shadow </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;castshadow_mask_classes</td><td>dict</td><td>Possible values of cast-shadow mask: 0 = clear; 1 = castshadow</td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;landwater_mask_classes</td><td>dict</td><td>Possible values of land/water mask: 0 = land; 1 = water</td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;static_landwater_mask_classes</td><td>dict</td><td>Possible values of land/water mask: 0 = land; 1 = water</td></tr>
 
       <!-- qa mask arrays -->
-      <tr><td class="level-1">qa_masks_bands</td><td>object</td><td></td></tr>
+      <tr><td class="level-1">qa_mask_bands</td><td>object</td><td>Quality Assessment files for each band providing basic information on pixel quality </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;blackfill_mask_classes</td><td>dict</td><td>Possible values of blackfill mask: 0 = valid data; 1 = no data </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;saturated_mask_classes</td><td>dict</td><td>Possible values of saturated mask: 0 = valid data; 1 = saturated </td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;untested_mask_classes</td><td>dict</td><td>Possible values of untested mask: 0 = valid data; 1 = untested </td></tr>
@@ -319,8 +319,8 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_scale_factor</td><td>float</td><td>Scale factor to compute AOT from readings (AOT = DN × scale_factor + offset)</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_nodata</td><td>integer</td><td>Fill value</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_format</td><td>string</td><td>"COG"; NA if "CAMS_fc"</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied?</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied?</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
 
       <!-- TCWV -->
       <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;TCWV</td><td>object</td><td></td></tr>
@@ -333,13 +333,13 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_scale_factor</td><td>float</td><td>Scale factor for TCWV from readings (tcwv = DN × scale_factor + offset); NA if "ERA5" or "CAMS_fc"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_nodata</td><td>integer</td><td>Fill value</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_format</td><td>string</td><td>"COG"; NA if "ERA5" or "CAMS_fc"</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied?</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied?</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
 
       <!-- SR -->
       <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;SR</td><td>object</td><td></td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied?</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied?</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_unit</td><td>string</td><td>"1"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_type</td><td>string</td><td>"uint16"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_offset</td><td>float</td><td>Offset to compute SR from readings (SR = DN × scale_factor + offset)</td></tr>
