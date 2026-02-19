@@ -401,8 +401,3 @@ This page describes the metadata file used for L2A products.
     Last update: February, 2026
   </p>
 
-
-
-
-
-
