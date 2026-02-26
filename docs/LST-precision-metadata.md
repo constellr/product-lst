@@ -20,15 +20,15 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-1">platform</td><td>string</td><td>The name of the spacecraft (e.g. SBA01)</td></tr>
       <tr><td class="level-1">product_type</td><td>string</td><td>"L2"</td></tr>
       <tr><td class="level-1">product_name</td><td>string</td><td>"LSTprecision"</td></tr>
-      <tr><td class="level-1">processing_scenario</td><td>string</td><td>"NRT" or "RPR"</td></tr>
+      <tr><td class="level-1">processing_scenario</td><td>string</td><td>A standardized label describing the atmospheric-correction processing mode. It depends on atmospheric_data_source: CAMS → NRT (Near Real Time); ERA5 → RPR (Reprocessed)</td></tr>
       <tr><td class="level-1">acquisition_id</td><td>string</td><td>Location and time of acquisition</td></tr>
       <tr><td class="level-1">acquisition_datetime</td><td>string</td><td>Date and time of the acquisition, ISO 8601 format at UTC time</td></tr>
       <tr><td class="level-1">processing_time</td><td>string</td><td>Processing start time in ISO 8601 format at UTC time (e.g. 2026-01-14T14:12:48.694957Z)</td></tr>
-      <tr><td class="level-1">parent_product_key</td><td>string</td><td> </td></tr>
+      <tr><td class="level-1">parent_product_key</td><td>string</td><td>Identifier of the parent product used as input to generate the current product (lineage reference).</td></tr>
       <tr><td class="level-1">link</td><td>string</td><td><a href= "https://constellr.github.io/product-lst/Technical-specification/"> URL with complementary documentation and data access info</a></td></tr>
       <tr><td class="level-1">source</td><td>string</td><td>"constellr"</td></tr>
       <tr><td class="level-1">use_limitations</td><td>string</td><td>NA</td></tr>
-      <tr><td class="level-1">atmospheric_data_source</td><td>string</td><td>"ERA5" or "CAMS_forecast"</td></tr>
+      <tr><td class="level-1">atmospheric_data_source</td><td>string</td><td>Atmospheric dataset used for atmospheric correction (allowed values: ERA5 or CAMS).</td></tr>
       <tr><td class="level-1">elevation_data_source</td><td>string</td><td>DEM used for geometric/topographic correction (usually "COPERNICUS GLO30")</td></tr>
       <tr><td class="level-1">aerosol_model</td><td>string</td><td>"RURAL"</td></tr>
       <tr><td class="level-1">thick_cloud_percentage</td><td>float</td><td>Percentage of pixels covered by thick clouds</td></tr>
@@ -78,7 +78,7 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-2">&nbsp;&nbsp;acquisition_starttime</td><td>string</td><td>ISO-8601 start time of imagery acquisition</td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;acquisition_endtime</td><td>string</td><td>ISO-8601 end time of imagery acquisition</td></tr>
       <tr><td class="level-2">&nbsp;&nbsp;sensor</td><td>object</td><td>"VNIR" or "TIR"</td></tr>
-      <tr><td class="level-3">&nbsp;&nbsp;sensor_id</td><td>string array</td><td>List of sensor identifiers</td></tr>
+      <tr><td class="level-3">&nbsp;&nbsp;sensor_id</td><td>string array</td><td>Identifier of the sensor instrument that acquired the thermal observations.</td></tr>
       <tr><td class="level-3">&nbsp;&nbsp;record_id</td><td>string array</td><td>List of record IDs forming the product</td></tr>
       
       <!-- bands -->
@@ -122,8 +122,8 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_source</td><td>string</td><td>Source ("constellr_DDV" or "CAMS_fc")</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DDV_percentage</td><td>float</td><td>% of DDV(S) pixels (NA if source is "CAMS_fc")</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOT_unit</td><td>string</td><td>"1"</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: True = yes, False = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: True = yes, False = no</td></tr>
 
       <!-- TCWV -->
       <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;TCWV</td><td>object</td><td></td></tr>
@@ -136,13 +136,13 @@ This page describes the metadata file used for L2A products.
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_scale_factor</td><td>float</td><td>Scale factor for TCWV from readings (tcwv = DN × scale_factor + offset); NA if "ERA5" or "CAMS_fc"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_nodata</td><td>integer</td><td>Fill value</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TCWV_format</td><td>string</td><td>"COG"; NA if "ERA5" or "CAMS_fc"</td></tr> -->
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: True = yes, False = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: True = yes, False = no</td></tr>
 
       <!-- SR -->
       <tr><td class="level-3">&nbsp;&nbsp;&nbsp;&nbsp;SR</td><td>object</td><td></td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: 1 = yes, 0 = no</td></tr>
-      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: 1 = yes, 0 = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;topographic_correction</td><td>bool</td><td>Topographic correction applied: True = yes, False = no</td></tr>
+      <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adjacency_correction</td><td>bool</td><td>Adjacency correction applied: True = yes, False = no</td></tr>
       <!-- <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_unit</td><td>string</td><td>"1"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_type</td><td>string</td><td>"uint16"</td></tr>
       <tr><td class="level-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SR_offset</td><td>float</td><td>Offset to compute SR from readings (SR = DN × scale_factor + offset)</td></tr>
