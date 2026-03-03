@@ -2,36 +2,58 @@
 # **End User Platform - UI Documentation**
 
 
-This page will guide you through the steps to create an account, access it, and browse through the assets list page.
+This page will guide you through the steps to create an account, access it, and browse through the delivery page.
 <!-- > **Note:** If your organisation is registered with constellr, you can create an account for free. -->
 
-## **Login**
-You can access the End User Platform via the [sign in](https://app.constellr.com/signin) page, using your email and password.  
+## **Login & Account Access**
 
-!!! note "First time user?"
-    > To create an account, your organization must be registered with constellr and you must use your company email.  
-    > You will need to create an account via the [sign up](https://app.constellr.com/signin) page.  
-    > In case you need support, please contact: [support-csm@constellr.com](mailto:support-csm@constellr.com)
+You can access the End User Platform via the [Sign In](https://app.constellr.com/signin) page using your registered email and password. 
 
+---
 
+!!! info "Invitation-Only Access"
+    To ensure strict data isolation and security, the platform is **invitation-only**. You cannot sign up independently; access must be granted to a specific **Workspace** by a workspace member or a constellr Customer Success Manager (CSM).
 
-**Step 1 - Create an account**
+**Getting Started**
 
-You’ll be prompted with a form where you need to provide your e-mail address and password. To create an account, you’ll need to read and accept the terms and conditions. 
+If you are new to the platform or joining a new workspace, follow these steps:
 
-**Step 2 - Verify your account**
+**1. Receive an Invitation**
 
-To finish creating your account, you will need to enter a verification code which you will receive via e-mail during the sign up process. In the application, you will be prompted to enter the verification code. This code is only valid for 24 hours.  
+An existing workspace member or a constellr Customer Success Manager (CSM) must send an invitation to your email address.
 
-Once the code is entered, the account will be activated, and you can proceed to sign in and access your account.  
+**2. Accept the Invite**
 
+Click the link provided in your invitation email. The system will determine your next step based on whether you already have an account:
+
+* **New Users:** You will be prompted to a sign-up form to provide your email and password. You must read and accept the Terms and Conditions to proceed.
+* **Existing Users:** Simply sign in with your current credentials to automatically add the new Workspace to your account.
+
+**3. Verify Your Account (New Users Only)**
+
+To finalize your account creation, you must enter a **verification code** sent to your email:
+
+* This code is valid for **24 hours**.
+* Once verified, your account is activated, and you can proceed to sign in.
+
+**4. Choose Your Workspace**
+
+Because the platform supports multi-tenancy, you may belong to multiple independent workspaces.
+
+* **Single Workspace:** You will be logged in directly to that workspace.
+* **Multiple Workspaces:** After signing in, you will be prompted to select which Workspace you wish to enter. In order to switch between workspaces, you can log out and log back in to select a different workspace.
+
+---
+
+> **Need Help?** > If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at [support-csm@constellr.com](mailto:support-csm@constellr.com).
 ## **Navigating the End User Platform**
    
-There are three sections to the platform, which you can access from the sidebar on the left:  
+There are four main sections in the platform, which you can access from the sidebar on the left:  
 
 - **My Data**: Access your data and track your orders.  
 - **New order**: Place a new order. 
 - **AOI Library**: Create and manage your Areas of Interest. 
+- **Account & Workspace Settings**: Manage your personal profile and control team access.
 
 <h3>My Data</h3>
 This is the central place for tracking your data orders and downloading your data.  
@@ -76,3 +98,36 @@ From the [AOI Library](https://app.constellr.com/aoi-library) tab, you can manag
 From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  
 
 ![AOILibrary](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/AOILibrary.png){ width=80% }
+
+
+<h3>Account & Workspace Settings</h3>
+You can access your account and workspace settings here: [Account and Workspace Settings](https://app.constellr.com/account).
+
+**Account Details**
+
+The **Account Details** page provides a quick overview of your profile, including your registered email, organization, and active workspace. You can also find contact information for your dedicated CSM and download the **End-User License Agreement (EULA)**.
+
+![AccountDetails](./images/ui-documentation/account_details.png){ width=80% }
+
+**Workspace Management**
+
+Workspaces are the core unit of data isolation and access control in the platform. Each workspace represents a separate tenant with its own data and user membership.
+You can manage team access via the **Workspace** section in the **Account** page. In order to create a new workspace, please contact your CSM.
+
+**Members**
+
+The **Members** tab lists everyone currently authorized to access the active workspace.
+
+* **Remove Members**: Click the trash can icon to immediately revoke a user's access to this workspace.
+
+![WorkspaceMembers](./images/ui-documentation/workspace_members.png){ width=80% }
+
+**Invitations** 
+
+The **Invitations** tab controls access for new users through secure, email-based invites.
+
+* **Invite Member**: Use the "Invite Member" button to send an access link to a colleague.
+* **Track Status**: Monitor if an invitation is *Pending* or *Expired*.
+* **Manage Invites**: Use the action icons to resend an invitation email or revoke an unused invitation.
+
+![WorkspaceInvitations](./images/ui-documentation/workspace_invitations.png){ width=80% }
