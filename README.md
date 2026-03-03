@@ -13,7 +13,7 @@ To update the website
 
 1. Edit the markdown files (*.md) from the docs folder on the 'main' branch
 2. If you want to test locally that it works as intended use 'mkdocs build' or 'mkdocs serve'. This requires your environment to be properly setup -> 'pdm sync'.
-3. Run 'mkdocs gh-deploy --clean'
+3. Run 'mkdocs gh-deploy --clean' to deploy the documentation to GitHub Pages. This will automatically update the website with your changes.
 
 Warning, 'mkdocs gh-deploy' requires github pages to be enabled but set on no branch -> like this:
 ![github-pages-setup](docs/images/github-pages-setup.png)
