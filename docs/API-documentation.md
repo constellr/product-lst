@@ -5,9 +5,9 @@ This guide outlines how to authenticate, place orders, search, and download your
 ---
 
 ## Initial Preparation
-- To access the Constellr UI and API, your company’s email domain must be registered with Constellr. Once registered, you can create an account using your company email.
+- Access to the Constellr API and UI is strictly invitation-only. You cannot register independently; you must be invited to a specific Workspace by an existing workspace member or a constellr Customer Success Manager (CSM).
 
-- Create an Account: You can create your account via Constellr's end-user platform, which can be found at [https://app.constellr.com/signup](https://app.constellr.com/signup)
+- Create an Account: If you do not have a Constellr account, you must click the link in your invitation email to begin the signup process. You will be prompted to provide your email address and a password.
 
 - Activate Account: After registering, you must activate your account by confirming your e-mail address.
 
