@@ -26,7 +26,7 @@ An existing workspace member or a constellr Customer Success Manager (CSM) must 
 
 Click the link provided in your invitation email. The system will determine your next step based on whether you already have an account:
 
-* **New Users:** You will be prompted to a sign-up form to provide your email and password. You must read and accept the Terms and Conditions to proceed.
+* **New Users:** You will be prompted with a sign-up form to provide your email and password. You must read and accept the Terms and Conditions to proceed.
 * **Existing Users:** Simply sign in with your current credentials to automatically add the new Workspace to your account.
 
 **3. Verify Your Account (New Users Only)**
