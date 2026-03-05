@@ -714,7 +714,48 @@ for item in data["items"]:
 
 ---
 
-<h3>4. Get Geometry Info from AOI</h3>
+<h3>4. Delete an Area of Interest by ID</h3>
+
+**Endpoint:**  `DELETE /areas-of-interest/{area_of_interest_id}`  
+**Description:** Deletes a specific Area of Interest (AOI) by its unique ID.
+
+**Path Parameters**
+
+- `area_of_interest_id` (required, UUID): Unique ID of the AOI to delete.
+
+**Example: cURL**
+```sh
+curl -X DELETE "https://api.constellr.com/areas-of-interest/cd9a3472-5e4d-495c-bb3a-8cf0408b2a3d" \
+  -H "Authorization: Bearer <access_token>" \
+  -H "accept: */*"
+```
+
+**Example: Python**
+```python
+import requests
+
+area_of_interest_id = "cd9a3472-5e4d-495c-bb3a-8cf0408b2a3d"
+url = f"https://api.constellr.com/areas-of-interest/{area_of_interest_id}"
+headers = {"Authorization": "Bearer <access_token>"}
+
+resp = requests.delete(url, headers=headers)
+print(resp.status_code)
+```
+
+**Success Response (204)**
+
+Area of interest deleted successfully. No response body is returned.
+
+**Error Responses**
+
+- **401:** Invalid token.
+- **403:** Forbidden (AOI does not belong to the user's workspace or user is not authorized).
+- **404:** Area of interest not found.
+- **422:** Request parameter validation error.
+
+---
+
+<h3>5. Get Geometry Info from AOI</h3>
 
 **Endpoint:**  `POST /areas-of-interest/geometry-info`  
 **Description:** Get geometry information (bounding box width/height, area) for a provided GeoJSON AOI geometry.
