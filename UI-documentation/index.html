@@ -880,9 +880,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#login" class="md-nav__link">
+  <a href="#login-account-access" class="md-nav__link">
     <span class="md-ellipsis">
-      Login
+      Login &amp; Account Access
     </span>
   </a>
   
@@ -1043,30 +1043,49 @@
 
 
 <h1 id="end-user-platform-ui-documentation"><strong>End User Platform - UI Documentation</strong></h1>
-<p>This page will guide you through the steps to create an account, access it, and browse through the assets list page.</p>
+<p>This page will guide you through the steps to create an account, access it, and browse through the delivery page.</p>
 <!-- > **Note:** If your organisation is registered with constellr, you can create an account for free. -->
 
-<h2 id="login"><strong>Login</strong></h2>
-<p>You can access the End User Platform via the <a href="https://app.constellr.com/signin">sign in</a> page, using your email and password.  </p>
-<div class="admonition note">
-<p class="admonition-title">First time user?</p>
-<blockquote>
-<p>To create an account, your organization must be registered with constellr and you must use your company email.<br />
-You will need to create an account via the <a href="https://app.constellr.com/signin">sign up</a> page.<br />
-In case you need support, please contact: <a href="mailto:support-csm@constellr.com">support-csm@constellr.com</a></p>
-</blockquote>
+<h2 id="login-account-access"><strong>Login &amp; Account Access</strong></h2>
+<p>You can access the End User Platform via the <a href="https://app.constellr.com/signin">Sign In</a> page using your registered email and password. </p>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Invitation-Only Access</p>
+<p>To ensure strict data isolation and security, the platform is <strong>invitation-only</strong>. You cannot sign up independently; access must be granted to a specific <strong>Workspace</strong> by a workspace member or a constellr Customer Success Manager (CSM).</p>
 </div>
-<p><strong>Step 1 - Create an account</strong></p>
-<p>You’ll be prompted with a form where you need to provide your e-mail address and password. To create an account, you’ll need to read and accept the terms and conditions. </p>
-<p><strong>Step 2 - Verify your account</strong></p>
-<p>To finish creating your account, you will need to enter a verification code which you will receive via e-mail during the sign up process. In the application, you will be prompted to enter the verification code. This code is only valid for 24 hours.  </p>
-<p>Once the code is entered, the account will be activated, and you can proceed to sign in and access your account.  </p>
+<p><strong>Getting Started</strong></p>
+<p>If you are new to the platform or joining a new workspace, follow these steps:</p>
+<p><strong>1. Receive an Invitation</strong></p>
+<p>An existing workspace member or a constellr Customer Success Manager (CSM) must send an invitation to your email address.</p>
+<p><strong>2. Accept the Invite</strong></p>
+<p>Click the link provided in your invitation email. The system will determine your next step based on whether you already have an account:</p>
+<ul>
+<li><strong>New Users:</strong> You will be prompted with a sign-up form to provide your email and password. You must read and accept the Terms and Conditions to proceed.</li>
+<li><strong>Existing Users:</strong> Simply sign in with your current credentials to automatically add the new Workspace to your account.</li>
+</ul>
+<p><strong>3. Verify Your Account (New Users Only)</strong></p>
+<p>To finalize your account creation, you must enter a <strong>verification code</strong> sent to your email:</p>
+<ul>
+<li>This code is valid for <strong>24 hours</strong>.</li>
+<li>Once verified, your account is activated, and you can proceed to sign in.</li>
+</ul>
+<p><strong>4. Choose Your Workspace</strong></p>
+<p>Because the platform supports multi-tenancy, you may belong to multiple independent workspaces.</p>
+<ul>
+<li><strong>Single Workspace:</strong> You will be logged in directly to that workspace.</li>
+<li><strong>Multiple Workspaces:</strong> After signing in, you will be prompted to select which Workspace you wish to enter. In order to switch between workspaces, you can log out and log back in to select a different workspace.</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>Need Help?</strong> &gt; If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at <a href="mailto:support-csm@constellr.com">support-csm@constellr.com</a>.</p>
+</blockquote>
 <h2 id="navigating-the-end-user-platform"><strong>Navigating the End User Platform</strong></h2>
-<p>There are three sections to the platform, which you can access from the sidebar on the left:  </p>
+<p>There are four main sections in the platform, which you can access from the sidebar on the left:  </p>
 <ul>
 <li><strong>My Data</strong>: Access your data and track your orders.  </li>
 <li><strong>New order</strong>: Place a new order. </li>
 <li><strong>AOI Library</strong>: Create and manage your Areas of Interest. </li>
+<li><strong>Account &amp; Workspace Settings</strong>: Manage your personal profile and control team access.</li>
 </ul>
 <h3>My Data</h3>
 <p>This is the central place for tracking your data orders and downloading your data.  </p>
@@ -1101,6 +1120,28 @@ You can access your data by clicking on the Data Order ID. Here, you can see eve
 <p>From the <a href="https://app.constellr.com/aoi-library">AOI Library</a> tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  </p>
 <p>From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  </p>
 <p><img alt="AOILibrary" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/AOILibrary.png" width="80%" /></p>
+<h3>Account & Workspace Settings</h3>
+<p>You can access your account and workspace settings here: <a href="https://app.constellr.com/account">Account and Workspace Settings</a>.</p>
+<p><strong>Account Details</strong></p>
+<p>The <strong>Account Details</strong> page provides a quick overview of your profile, including your registered email, organization, and active workspace. You can also find contact information for your dedicated CSM and download the <strong>End-User License Agreement (EULA)</strong>.</p>
+<p><img alt="AccountDetails" src="../images/ui-documentation/account_details.png" width="80%" /></p>
+<p><strong>Workspace Management</strong></p>
+<p>Workspaces are the core unit of data isolation and access control in the platform. Each workspace represents a separate tenant with its own data and user membership.
+You can manage team access via the <strong>Workspace</strong> section in the <strong>Account</strong> page. In order to create a new workspace, please contact your CSM.</p>
+<p><strong>Members</strong></p>
+<p>The <strong>Members</strong> tab lists everyone currently authorized to access the active workspace.</p>
+<ul>
+<li><strong>Remove Members</strong>: Click the trash can icon to immediately revoke a user's access to this workspace.</li>
+</ul>
+<p><img alt="WorkspaceMembers" src="../images/ui-documentation/workspace_members.png" width="80%" /></p>
+<p><strong>Invitations</strong> </p>
+<p>The <strong>Invitations</strong> tab controls access for new users through secure, email-based invites.</p>
+<ul>
+<li><strong>Invite Member</strong>: Use the "Invite Member" button to send an access link to a colleague.</li>
+<li><strong>Track Status</strong>: Monitor if an invitation is <em>Pending</em> or <em>Expired</em>.</li>
+<li><strong>Manage Invites</strong>: Use the action icons to resend an invitation email or revoke an unused invitation.</li>
+</ul>
+<p><img alt="WorkspaceInvitations" src="../images/ui-documentation/workspace_invitations.png" width="80%" /></p>
 
 
 
