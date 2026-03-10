@@ -100,7 +100,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 **Description:** Create multiple new orders for your organization in a single request. <br />
 **Order Validation:** All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
 
-- **Order Limit**: Each `/orders/batch` request can contain a maximum of **25** orders‚ request.
+- **Order Limit**: Each `/orders/batch` request can contain a maximum of **25** orders per request.
 
 - **Product Specific Validation**:<br />
 
