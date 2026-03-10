@@ -1173,7 +1173,12 @@
 <strong>Description:</strong> Create multiple new orders for your organization in a single request. <br />
 <strong>Order Validation:</strong> All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br /></p>
 <ul>
-<li><strong>Product Specific Validation</strong>:<br /></li>
+<li>
+<p><strong>Order Limit</strong>: Each <code>/orders/batch</code> request can contain a maximum of <strong>25</strong> orders‚ request.</p>
+</li>
+<li>
+<p><strong>Product Specific Validation</strong>:<br /></p>
+</li>
 </ul>
 <table>
 <thead>
@@ -1309,7 +1314,7 @@
 <li><strong>401:</strong> Invalid authentication token.</li>
 <li><strong>403:</strong> User not authorized to create orders.</li>
 <li><strong>404:</strong> Resource not found (e.g., AOI or product does not exist).</li>
-<li><strong>422:</strong> Request body validation error.</li>
+<li><strong>422:</strong> Request body validation error (including when a customer order contains more than 25 data orders).</li>
 </ul>
 <hr />
 <h3>2. List All Orders</h3>
@@ -1782,6 +1787,7 @@ Only the fields provided in the request body will be updated; other fields will 
 <ul>
 <li><strong>401:</strong> Invalid token.</li>
 <li><strong>403:</strong> Forbidden (AOI does not belong to the user's workspace or user is not authorized).</li>
+<li><strong>409:</strong> Conflict (AOI has active orders and cannot be deleted).</li>
 <li><strong>404:</strong> Area of interest not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
