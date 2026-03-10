@@ -100,6 +100,8 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 **Description:** Create multiple new orders for your organization in a single request. <br />
 **Order Validation:** All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
 
+- **Order Limit**: Each `/orders/batch` request can contain a maximum of **25** orders‚ request.
+
 - **Product Specific Validation**:<br />
 
 | Feature | LSTprecision / LSTzoom | LSTfusion |
@@ -216,7 +218,7 @@ print(response.json())
 - **401:** Invalid authentication token.
 - **403:** User not authorized to create orders.
 - **404:** Resource not found (e.g., AOI or product does not exist).
-- **422:** Request body validation error.
+- **422:** Request body validation error (including when a customer order contains more than 25 data orders).
 ---
 
 <h3>2. List All Orders</h3>
@@ -750,6 +752,7 @@ Area of interest deleted successfully. No response body is returned.
 
 - **401:** Invalid token.
 - **403:** Forbidden (AOI does not belong to the user's workspace or user is not authorized).
+- **409:** Conflict (AOI has active orders and cannot be deleted).
 - **404:** Area of interest not found.
 - **422:** Request parameter validation error.
 
