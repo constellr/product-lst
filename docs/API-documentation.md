@@ -428,7 +428,48 @@ print(response.json())
 
 ---
 
-<h3>5. Get Available Order Use Cases</h3>
+<h3>5. Delete Order by ID</h3>
+
+**Endpoint:** `DELETE /orders/{order_id}`  
+**Description:** Deletes an existing order. Only orders with status `pending_validation` or `rejected` can be deleted.
+
+**Path Parameters**
+
+- `order_id` (required, UUID): Unique ID of the order to delete.
+
+**Example: cURL**
+```sh
+curl -X DELETE "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000" \
+  -H "Authorization: Bearer <access_token>" \
+  -H "accept: */*"
+```
+
+**Example: Python**
+```python
+import requests
+
+order_id = "123e4567-e89b-12d3-a456-426614174000"
+url = f"https://api.constellr.com/orders/{order_id}"
+headers = {"Authorization": "Bearer <access_token>"}
+
+resp = requests.delete(url, headers=headers)
+print(resp.status_code)
+```
+
+**Success Response (204)**
+
+Order deleted successfully. No response body is returned.
+
+**Error Responses:**
+
+- **401:** Invalid token.
+- **403:** Forbidden.
+- **404:** Order not found.
+- **409:** Order cannot be deleted in its current state. Only `pending_validation` or `rejected` orders can be deleted.
+
+---
+
+<h3>6. Get Available Order Use Cases</h3>
 
 **Endpoint:** `GET /orders/meta/use-cases`  
 **Description:**  Returns a list of available order use cases supported by the API.  
