@@ -338,8 +338,8 @@ print(response.json())
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
   "created": "2025-08-27T11:54:24.206072Z",
-  "state": "initial_state",
-  "rejection_reason": null,
+  "state": "rejected",
+  "rejection_reason": "AOI is outside of the supported coverage area.",
   "tags": [
       {
         "name": "field42",
