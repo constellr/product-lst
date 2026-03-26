@@ -200,6 +200,7 @@ print(response.json())
     "id": "123e4567-e89b-12d3-a456-426614174000",
     "created": "2025-08-27T11:54:24.206072Z",
     "state": "initial_state",
+    "rejection_reason": null,
     "tags": [
       {
         "name": "field42",
@@ -277,6 +278,7 @@ print(data["count"], len(data["items"]))
       "id": "123e4567-e89b-12d3-a456-426614174000",
       "created": "2025-08-27T11:54:24.206072Z",
       "state": "initial_state",
+      "rejection_reason": null,
       "tags": [
         {
           "name": "field42",
@@ -337,6 +339,7 @@ print(response.json())
   "id": "123e4567-e89b-12d3-a456-426614174000",
   "created": "2025-08-27T11:54:24.206072Z",
   "state": "initial_state",
+  "rejection_reason": null,
   "tags": [
       {
         "name": "field42",
@@ -409,6 +412,7 @@ print(response.json())
   "id": "123e4567-e89b-12d3-a456-426614174000",
   "created": "2025-08-27T11:54:24.206072Z",
   "state": "initial_state",
+  "rejection_reason": null,
   "tags": [
       {
         "name": "field42",
