@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/constellr/product-lst/LST-fusion/">
       
       
-        <link rel="prev" href="../LST-zoom/">
+        <link rel="prev" href="../LST-precision/">
       
       
         <link rel="next" href="../LST-precision-product-deliverables/">
@@ -415,28 +415,6 @@
   
   <span class="md-ellipsis">
     LSTprecision
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../LST-zoom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LSTzoom
     
   </span>
   
@@ -990,28 +968,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../LST-zoom/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LSTzoom
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1053,9 +1009,9 @@
 <li><em>Benchmark and compare with confidence:</em> track long-term trends across regions, surfaces, or objects with detailed thermal profiles and accumulated temperature curves.   </li>
 <li><em>Scale from local to national:</em> Perform regional and national comparisons, then zoom in with HiVE or other high-resolution imagery for detailed asset-level insights.   </li>
 </ul>
+</details>
 <p>Need asset-level precision for critical infrastructure? → <a href="https://constellr.github.io/product-lst/LST-precision/">Explore LSTprecision</a><br />
 Want to visually detect fine-grained variations locally? → <a href="link">Explore LSTzoom</a></p>
-</details>
 <details class="note">
 <summary>How is LSTfusion created?</summary>
 <p>LSTfusion is the result of combining dynamic diurnal cycle modelling, spatial upscaling techniques, and data assimilation using Kalman filtering. This powerful integration allows us to generate high-resolution, temporally consistent LST data, even when satellite observations are incomplete or missing. It represents a significant achievement, built on advanced research and deep domain expertise.  </p>
@@ -1088,10 +1044,10 @@ Upsampling in LSTfusion is the process of transferring information from high
 Data assimilation is based on a vectorized Kalman filter. Its objective is to optimally estimate the land surface temperature (LST) and its diurnal trend at high resolution by combining predictive modelling with satellite observations of varying resolutions.<br />
 The system operates on an hourly timestep. At each step, the filter:  </p>
 <ol>
-<li><strong>Predicts</strong> the thermal state forward in time using the dynamic model.  </li>
-<li><strong>Assimilates</strong> available observations from low-, medium- (upsampled), and high-resolution data sources (e.g., Landsat, Skybee) when possible.  </li>
-<li><strong>Adapts uncertainties</strong> using observation-specific covariance structures and distance-based Gaussian smoothing.  </li>
-<li><strong>Falls back</strong> to model propagation with uncertainty inflation if no valid observations are available. </li>
+<li>Predicts the thermal state forward in time using the dynamic model.  </li>
+<li>Assimilates available observations from low-, medium- (upsampled), and high-resolution data sources (e.g., Landsat, Skybee) when possible.  </li>
+<li>Adapts uncertainties using observation-specific covariance structures and distance-based Gaussian smoothing.  </li>
+<li>Falls back to model propagation with uncertainty inflation if no valid observations are available. </li>
 </ol>
 </li>
 </ol>
@@ -1149,7 +1105,7 @@ The system operates on an hourly timestep. At each step, the filter:  </p>
 </details>
 <p><br></p>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: March, 2026
+  Last update: January, 2026
 </p>
 
 
