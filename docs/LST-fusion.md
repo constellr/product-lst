@@ -11,8 +11,8 @@
     - *Benchmark and compare with confidence:* track long-term trends across regions, surfaces, or objects with detailed thermal profiles and accumulated temperature curves.   
     - *Scale from local to national:* Perform regional and national comparisons, then zoom in with HiVE or other high-resolution imagery for detailed asset-level insights.   
   
-Need asset-level precision for critical infrastructure? → [Explore LSTprecision](https://constellr.github.io/product-lst/LST-precision/)  
-Want to visually detect fine-grained variations locally? → [Explore LSTzoom](link)
+    Need asset-level precision for critical infrastructure? → [Explore LSTprecision](https://constellr.github.io/product-lst/LST-precision/)  
+    Want to visually detect fine-grained variations locally? → [Explore LSTzoom](link)
 
 ??? note "How is LSTfusion created?"
     LSTfusion is the result of combining dynamic diurnal cycle modelling, spatial upscaling techniques, and data assimilation using Kalman filtering. This powerful integration allows us to generate high-resolution, temporally consistent LST data, even when satellite observations are incomplete or missing. It represents a significant achievement, built on advanced research and deep domain expertise.  
@@ -39,10 +39,10 @@ Want to visually detect fine-grained variations locally? → [Explore LSTzoom](l
     4. **Data Assimilation**  
     Data assimilation is based on a vectorized Kalman filter. Its objective is to optimally estimate the land surface temperature (LST) and its diurnal trend at high resolution by combining predictive modelling with satellite observations of varying resolutions.  
     The system operates on an hourly timestep. At each step, the filter:  
-        1. Predicts the thermal state forward in time using the dynamic model.  
-        2. Assimilates available observations from low-, medium- (upsampled), and high-resolution data sources (e.g., Landsat, Skybee) when possible.  
-        3. Adapts uncertainties using observation-specific covariance structures and distance-based Gaussian smoothing.  
-        4. Falls back to model propagation with uncertainty inflation if no valid observations are available. 
+        1. **Predicts** the thermal state forward in time using the dynamic model.  
+        2. **Assimilates** available observations from low-, medium- (upsampled), and high-resolution data sources (e.g., Landsat, Skybee) when possible.  
+        3. **Adapts uncertainties** using observation-specific covariance structures and distance-based Gaussian smoothing.  
+        4. **Falls back** to model propagation with uncertainty inflation if no valid observations are available. 
 
     ![LSTfusion workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/lstfusion.png){ width=80% }
     <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTfusion L3 product.</figcaption>
@@ -80,6 +80,6 @@ Want to visually detect fine-grained variations locally? → [Explore LSTzoom](l
 
 <br>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: January, 2026
+  Last update: March, 2026
 </p>
 
