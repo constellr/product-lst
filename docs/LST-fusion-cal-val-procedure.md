@@ -15,5 +15,5 @@ The comparison of the surface temperatures modelled by LSTfusion with reference 
 <br>
 
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: January, 2026
+  Last update: March, 2026
 </p>

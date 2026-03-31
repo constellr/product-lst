@@ -15,7 +15,7 @@ nav:
   - Product User Guide:
     - Product Description:
       - LSTprecision: LST-precision.md
-      # - LSTzoom: LST-zoom.md
+      - LSTzoom: LST-zoom.md
       - LSTfusion: LST-fusion.md
     - Data Bundle Description:
       - LSTprecision: LST-precision-product-deliverables.md
@@ -35,7 +35,7 @@ nav:
   - Explorer Lab: 
     - LST Handbook: explorer-lab.md
     - Open Data Programme: example-datasets.md
-  # - PUG zoom: LST-zoom.md
+    - PUG zoom: LST-zoom.md
 
 
   
