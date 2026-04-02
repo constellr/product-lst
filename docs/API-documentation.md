@@ -1453,14 +1453,29 @@ print("numberReturned:", data.get("numberReturned"))
 ```json
 {
   "type": "FeatureCollection",
+  "features": [],
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"},
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://example.com/stac/collections/lstzoom"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://example.com/stac/collections/lstzoom"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://example.com/stac/"
+    },
     {
       "rel": "self",
-      "href": "https://example.com/stac/collections/lstfusion/items"
+      "type": "application/geo+json",
+      "href": "https://example.com/stac/collections/lstzoom/items"
     }
   ],
-  "features": [],
   "numberMatched": 0,
   "numberReturned": 0
 }
