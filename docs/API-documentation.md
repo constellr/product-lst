@@ -1327,3 +1327,165 @@ print("numberReturned:", data.get("numberReturned"))
 - **422:** Request body validation error.
 
 ---
+
+<h3>7. Search STAC Collections (GET)</h3>
+
+**Endpoint:**  `GET /stac/search`  
+**Description:** Performs a search on STAC collections using query parameters.
+
+**Query Parameters (optional):**
+
+- `collections`: Array of collection IDs to search for items (comma-separated).
+- `ids`: Array of item IDs to return (comma-separated).
+- `bbox`: Only return items intersecting this bounding box.
+- `intersects`: GeoJSON geometry to intersect with (mutually exclusive with `bbox`).
+- `datetime`: Only return items with a temporal property intersecting this value.
+- `limit`: Limits the number of results per page.
+- `fields`: Include or exclude fields from items body.
+- `filter`: CQL2-JSON filter expression as a JSON string.
+- `filter-lang`: The language used for the `filter` value (currently `cql2-json`).
+- `filter-crs`: CRS URI for interpreting filter geometry coordinates.
+- `sortby`: Array of property names to sort by, prefixed by `+` or `-`.
+- `token`: Pagination token from a previous response.
+
+**Example: cURL**
+```sh
+curl -G "https://api.constellr.com/stac/search" \
+  -H "Authorization: Bearer <access_token>" \
+  --data-urlencode "collections=lstfusion" \
+  --data-urlencode "limit=5" \
+  --data-urlencode "datetime=2025-08-18T11:00:00Z/.." \
+  --data-urlencode "sortby=-datetime"
+```
+
+**Example: Python**
+```python
+import requests
+
+url = "https://api.constellr.com/stac/search"
+headers = {"Authorization": "Bearer <access_token>"}
+params = {
+    "collections": "lstfusion",
+    "limit": 5,
+    "datetime": "2025-08-18T11:00:00Z/..",
+    "sortby": "-datetime",
+}
+
+resp = requests.get(url, headers=headers, params=params)
+resp.raise_for_status()
+data = resp.json()
+
+print("numberMatched:", data.get("numberMatched"))
+print("numberReturned:", data.get("numberReturned"))
+```
+
+**Success Response (200)**
+```json
+{
+  "type": "FeatureCollection",
+  "links": [
+    {"rel": "root", "href": "https://example.com/stac/"},
+    {"rel": "self", "href": "https://example.com/stac/search"}
+  ],
+  "features": [],
+  "numberMatched": 0,
+  "numberReturned": 0
+}
+```
+
+**Error Responses**
+
+- **400:** Invalid search request parameters.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+- **422:** Query parameter validation error.
+
+---
+
+<h3>8. Get Collection Items</h3>
+
+**Endpoint:**  `GET /stac/collections/{collection_id}/items`  
+**Description:** Fetches STAC items for a specific collection using query parameters.
+
+**Query Parameters (optional):**
+
+- `bbox`: Only return items intersecting this bounding box.
+- `datetime`: Only return items with a temporal property intersecting this value.
+- `limit`: Limits the number of results per page.
+- `fields`: Include or exclude fields from items body.
+- `filter`: CQL2-JSON filter expression as a JSON string.
+- `filter-lang`: The language used for the `filter` value (currently `cql2-json`).
+- `filter-crs`: CRS URI for interpreting filter geometry coordinates.
+- `sortby`: Array of property names to sort by, prefixed by `+` or `-`.
+- `token`: Pagination token from a previous response.
+
+**Example: cURL**
+```sh
+curl -G "https://api.constellr.com/stac/collections/lstfusion/items" \
+  -H "Authorization: Bearer <access_token>" \
+  --data-urlencode "limit=5" \
+  --data-urlencode "datetime=2025-08-18T11:00:00Z/.." \
+  --data-urlencode "sortby=-datetime"
+```
+
+**Example: Python**
+```python
+import requests
+
+collection_id = "lstfusion"
+url = f"https://api.constellr.com/stac/collections/{collection_id}/items"
+headers = {"Authorization": "Bearer <access_token>"}
+params = {
+    "limit": 5,
+    "datetime": "2025-08-18T11:00:00Z/..",
+    "sortby": "-datetime",
+}
+
+resp = requests.get(url, headers=headers, params=params)
+resp.raise_for_status()
+data = resp.json()
+
+print("numberMatched:", data.get("numberMatched"))
+print("numberReturned:", data.get("numberReturned"))
+```
+
+**Success Response (200)**
+```json
+{
+  "type": "FeatureCollection",
+  "features": [],
+  "links": [
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://example.com/stac/collections/lstzoom"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://example.com/stac/collections/lstzoom"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://example.com/stac/"
+    },
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://example.com/stac/collections/lstzoom/items"
+    }
+  ],
+  "numberMatched": 0,
+  "numberReturned": 0
+}
+```
+
+**Error Responses**
+
+- **400:** Invalid request parameters.
+- **401:** Invalid authentication token.
+- **403:** User not authorized to access this endpoint.
+- **422:** Query parameter validation error.
+
+---
