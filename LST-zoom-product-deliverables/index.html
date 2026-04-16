@@ -1069,6 +1069,7 @@
 <h1 id="lstzoom-data-bundle"><strong>LSTzoom Data Bundle</strong></h1>
 <p>Constellr's product deliverables include several layers, which are outlined below.</p>
 <h2 id="data-layers">Data layers</h2>
+<p><strong>Daytime data layers :</strong></p>
 <table>
 <thead>
 <tr>
@@ -1079,9 +1080,9 @@
 </thead>
 <tbody>
 <tr>
-<td>metadata.json</td>
-<td><a href="https://constellr.github.io/product-lst/LST-zoom-metadata/">Metadata description</a></td>
-<td>json</td>
+<td>lst.tiff</td>
+<td>LST data</td>
+<td>Cloud optimized geotiff</td>
 </tr>
 <tr>
 <td>vnir02.tiff - vnir09.tiff<sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></td>
@@ -1089,8 +1090,28 @@
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst.tiff</td>
-<td>LST data</td>
+<td>metadata.json</td>
+<td><a href="https://constellr.github.io/product-lst/LST-zoom-metadata/">Metadata description</a></td>
+<td>json</td>
+</tr>
+<tr>
+<td>lst_composite.tiff</td>
+<td>Temperature quicklook</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_thumbnail.jpg</td>
+<td>LST Thumbnail</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>vnirXX_qa.tiff</td>
+<td>Quality Assessment Layer for each VNIR band</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>scl_mask_XXm.tiff</td>
+<td>Scene Classification Layer (e.g. vegetation, water) at  10m, 20m, 30m and 60m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
@@ -1099,29 +1120,9 @@
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst_composite.tiff</td>
-<td>Temperature quicklook</td>
-<td>Cloud optimized geotiff</td>
-</tr>
-<tr>
 <td>rgb_thumbnail.jpg</td>
 <td>RGB Thumbnail</td>
 <td>jpg</td>
-</tr>
-<tr>
-<td>lst_thumbnail.jpg</td>
-<td>LST Thumbnail</td>
-<td>jpg</td>
-</tr>
-<tr>
-<td>scl_mask_XXm.tiff</td>
-<td>Scene Classification Layer (e.g. vegetation, water) at 10m, 20m, 30m, and 60m resolution</td>
-<td>Cloud optimized geotiff</td>
-</tr>
-<tr>
-<td>vnirXX_qa.tiff</td>
-<td>Quality Assessment Layer for each VNIR band</td>
-<td>Cloud optimized geotiff</td>
 </tr>
 <tr>
 <td>tcwv.tiff<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
@@ -1131,6 +1132,43 @@
 <tr>
 <td>aot.tiff<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
 <td>Aerosol Optical Thickness</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nighttime data layers :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lst.tiff</td>
+<td>LST data</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>metadata.json</td>
+<td><a href="https://constellr.github.io/product-lst/LST-zoom-metadata/">Metadata description</a></td>
+<td>json</td>
+</tr>
+<tr>
+<td>lst_composite.tiff</td>
+<td>Temperature quicklook</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_thumbnail.jpg</td>
+<td>LST Thumbnail</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>scl_mask_30m.tiff</td>
+<td>Scene Classification Layer (e.g. vegetation, water) at 30m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 </tbody>

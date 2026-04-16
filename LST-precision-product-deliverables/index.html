@@ -1069,6 +1069,7 @@
 <h1 id="lstprecision-data-bundle"><strong>LSTprecision Data Bundle</strong></h1>
 <p>Constellr's product deliverables include several layers, which are outlined below.</p>
 <h2 id="data-layers">Data layers</h2>
+<p><strong>Daytime data layers :</strong> </p>
 <table>
 <thead>
 <tr>
@@ -1079,18 +1080,38 @@
 </thead>
 <tbody>
 <tr>
-<td>metadata.json</td>
-<td><a href="https://constellr.github.io/product-lst/LST-precision-metadata/">Metadata description</a></td>
-<td>json</td>
-</tr>
-<tr>
-<td>vnir02.tiff - vnir09.tiff<sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></td>
-<td>VNIR Surface Reflection per band at 30m and 60m resolution</td>
+<td>lst.tiff</td>
+<td>LST data</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst.tiff</td>
-<td>LST data</td>
+<td>vnir02.tiff - vnir09.tiff<sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></td>
+<td>VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>metadata.json</td>
+<td><a href="https://constellr.github.io/product-lst/LST-zoom-metadata/">Metadata description</a></td>
+<td>json</td>
+</tr>
+<tr>
+<td>lst_composite.tiff</td>
+<td>Temperature quicklook</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_thumbnail.jpg</td>
+<td>LST Thumbnail</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>vnirXX_qa.tiff</td>
+<td>Quality Assessment Layer for each VNIR band</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>scl_mask_XXm.tiff</td>
+<td>Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
@@ -1099,14 +1120,46 @@
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst_composite.tiff</td>
-<td>Temperature quicklook</td>
-<td>Cloud optimized geotiff</td>
-</tr>
-<tr>
 <td>rgb_thumbnail.jpg</td>
 <td>RGB Thumbnail</td>
 <td>jpg</td>
+</tr>
+<tr>
+<td>tcwv.tiff<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td>Total Column Water Vapour</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>aot.tiff<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>Aerosol Optical Thickness</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nighttime data layers :</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lst.tiff</td>
+<td>LST data</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>metadata.json</td>
+<td><a href="https://constellr.github.io/product-lst/LST-precision-metadata/">Metadata description</a></td>
+<td>json</td>
+</tr>
+<tr>
+<td>lst_composite.tiff</td>
+<td>Temperature quicklook</td>
+<td>Cloud optimized geotiff</td>
 </tr>
 <tr>
 <td>lst_thumbnail.jpg</td>
@@ -1114,23 +1167,8 @@
 <td>jpg</td>
 </tr>
 <tr>
-<td>scl_mask_XXm.tiff</td>
-<td>Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution</td>
-<td>Cloud optimized geotiff</td>
-</tr>
-<tr>
-<td>vnirXX_qa.tiff</td>
-<td>Quality Assessment Layer for each VNIR band</td>
-<td>Cloud optimized geotiff</td>
-</tr>
-<tr>
-<td>tcwv.tiff[^2]</td>
-<td>Total Column Water Vapour</td>
-<td>Cloud optimized geotiff</td>
-</tr>
-<tr>
-<td>aot.tiff<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></td>
-<td>Aerosol Optical Thickness</td>
+<td>scl_mask_30m.tiff</td>
+<td>Scene Classification Layer (e.g. vegetation, water) at 30m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 </tbody>
@@ -1201,11 +1239,13 @@ In case you are curious to leverage any of our data layers for your analysis, pl
 <hr />
 <ol>
 <li id="fn:custom-label">
-<p>Band 01 and 10 are excluded, as they do not represent surface information.
-[^2]The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Band 01 and 10 are excluded, as they do not represent surface information.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
