@@ -3,19 +3,34 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 ## Data layers
 
+**Daytime data layers :** 
+
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
-| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 30m and 60m resolution| Cloud optimized geotiff |
 | lst.tiff | LST data | Cloud optimized geotiff |
-| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
+| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution| Cloud optimized geotiff |
+| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-zoom-metadata/) | json |
 | lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
-| rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
-| scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution | Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band| Cloud optimized geotiff |
+| scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution | Cloud optimized geotiff |
+| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
+| rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | tcwv.tiff[^2] | Total Column Water Vapour | Cloud optimized geotiff |
 | aot.tiff[^3] | Aerosol Optical Thickness | Cloud optimized geotiff |
+
+
+**Nighttime data layers :** 
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| lst.tiff | LST data | Cloud optimized geotiff |
+| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
+| lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
+| lst_thumbnail.jpg | LST Thumbnail | jpg |
+| scl_mask_30m.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m resolution | Cloud optimized geotiff |
+
+
 
 ## Naming Convention
 
@@ -29,7 +44,7 @@ Files, as described above, will be downloaded via a .zip file from the data stor
 
 
 [^custom-label]: Band 01 and 10 are excluded, as they do not represent surface information.
-[^2]The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
+[^2]: The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
 [^3]: The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data. 
 
 <!-- 

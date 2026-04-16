@@ -3,19 +3,33 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 ## Data layers
 
+**Daytime data layers :**
+
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-zoom-metadata/) | json |
-| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution| Cloud optimized geotiff |
 | lst.tiff | LST data | Cloud optimized geotiff |
-| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
+| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution| Cloud optimized geotiff |
+| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-zoom-metadata/) | json |
 | lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
-| rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
-| scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 10m, 20m, 30m, and 60m resolution | Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band| Cloud optimized geotiff |
+| scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at  10m, 20m, 30m and 60m resolution | Cloud optimized geotiff |
+| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
+| rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | tcwv.tiff[^2] | Total Column Water Vapour | Cloud optimized geotiff |
 | aot.tiff[^3] | Aerosol Optical Thickness | Cloud optimized geotiff |
+
+
+
+**Nighttime data layers :**
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| lst.tiff | LST data | Cloud optimized geotiff |
+| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-zoom-metadata/) | json |
+| lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
+| lst_thumbnail.jpg | LST Thumbnail | jpg |
+| scl_mask_30m.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m resolution | Cloud optimized geotiff |
 
 ## Naming Convention
 
