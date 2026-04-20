@@ -109,7 +109,8 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 | **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters**  |
 | **Start Date** | Starting from today | No restriction |
 | **Duration** | Min **7 days**, Max **1 year** | No restriction |
-| **Frequency** | `single_image`, `max_frequency`,<br>`once_every_two_weeks`, `monthly` | `daily` only | <br />
+| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`. 
+| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported
 
 - **General Validation(All Products)**: <br />
     - Tags: <br />
@@ -136,7 +137,8 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
       "product_name": "LSTprecision",
       "comment": "Order for field 42",
       "tags": ["field42"],
-      "illumination_constraint": "day"
+      "illumination_constraint": "day",
+      "maximum_number_of_images": 1
     }
   ]
 }
@@ -175,7 +177,8 @@ payload = {
             "product_name": "LSTprecision",
             "comment": "Order for field 42",
             "tags": ["field42"],
-            "illumination_constraint": "day"
+            "illumination_constraint": "day",
+            "maximum_number_of_images": 1
         }
     ]
 }
@@ -208,7 +211,8 @@ print(response.json())
         "created": "2025-11-28T10:05:36.362Z"
       }
     ],
-    "illumination_constraint": "day"
+    "illumination_constraint": "day",
+    "maximum_number_of_images": 1
   }
 ]
 ```
@@ -286,7 +290,8 @@ print(data["count"], len(data["items"]))
           "created": "2025-11-28T10:05:36.362Z"
         }
       ],
-      "illumination_constraint": "day"
+      "illumination_constraint": "day",
+      "maximum_number_of_images": 1
     }
   ]
 }
@@ -347,7 +352,8 @@ print(response.json())
         "created": "2025-11-28T10:05:36.362Z"
       }
   ],
-  "illumination_constraint": "day"
+  "illumination_constraint": "day",
+  "maximum_number_of_images": 1
 }
 ```
 **Error Responses:**
@@ -420,7 +426,8 @@ print(response.json())
         "created": "2025-11-28T10:05:36.362Z"
       }
   ],
-  "illumination_constraint": "day"
+  "illumination_constraint": "day",
+  "maximum_number_of_images": 1
 }
 ```
 **Error Responses:**
