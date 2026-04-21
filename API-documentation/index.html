@@ -1228,8 +1228,13 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Frequency</strong></td>
-<td style="text-align: left;"><code>single_image</code>, <code>max_frequency</code>,<br><code>once_every_two_weeks</code>, <code>monthly</code></td>
-<td style="text-align: left;"><code>daily</code> only</td>
+<td style="text-align: left;"><code>single_image</code>, <code>max_frequency</code>, <code>once_every_two_weeks</code>, <code>monthly</code>.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Maximum Number Of Images</strong></td>
+<td style="text-align: left;">when <code>frequency</code> is <code>single_image</code>, its value must be <code>1</code></td>
+<td style="text-align: left;">Not supported</td>
 </tr>
 </tbody>
 </table>
@@ -1264,7 +1269,8 @@
 <span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -1298,7 +1304,8 @@
             <span class="s2">&quot;product_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
             <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
             <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">],</span>
-            <span class="s2">&quot;illumination_constraint&quot;</span><span class="p">:</span> <span class="s2">&quot;day&quot;</span>
+            <span class="s2">&quot;illumination_constraint&quot;</span><span class="p">:</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;maximum_number_of_images&quot;</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -1327,7 +1334,8 @@
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">    </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div></p>
@@ -1401,7 +1409,8 @@
 <span class="w">          </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -1453,7 +1462,8 @@
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>
@@ -1518,7 +1528,8 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>
