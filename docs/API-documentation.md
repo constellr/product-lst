@@ -2,6 +2,12 @@
  
 This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or [Redoc documentation](https://api.constellr.com/redoc).
 
+## Base URL
+
+All API endpoints use
+```
+https://api.constellr.com
+```
 ---
 
 ## Initial Preparation
@@ -42,12 +48,12 @@ This guide outlines how to authenticate, place orders, search, and download your
 
 ## Orders API
 
-The `/orders` endpoint allows you to create, list, and retrieve orders for your organization.
+The `/orders` endpoint allows you to create, list, and retrieve orders for your workspace.
 
 <h3>1. Create Orders in Batch</h3>
 
 **Endpoint:** `POST /orders/batch`  
-**Description:** Create multiple new orders for your organization in a single request. <br />
+**Description:** Create multiple new orders for your workspace in a single request. <br />
 **Order Validation:** All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
 
 - **Order Limit**: Each `/orders/batch` request can contain a maximum of **25** orders per request.
@@ -60,7 +66,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 | **Start Date** | Starting from today | No restriction                                                                                    |
 | **Duration** | Min **7 days**, Max **1 year** | No restriction                                                                                    |
 | **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`. | `daily`                                                                                           |
-| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported                                                                                     
+| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported                                                                                     |
 
 - **General Validation(All Products)**: <br />
     - Tags: <br />
@@ -80,10 +86,10 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
   "comment": "Urgent order for Q3 analysis",
   "orders": [
     {
-      "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+      "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
       "start_date": "2025-09-27T10:30:08.004000Z",
       "end_date": "2025-10-18T10:30:08.004000Z",
-      "frequency": "single-image",
+      "frequency": "single_image",
       "product_name": "LSTprecision",
       "comment": "Order for field 42",
       "tags": ["field42"],
@@ -120,10 +126,10 @@ payload = {
     "comment": "Urgent order for Q3 analysis",
     "orders": [
         {
-            "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+            "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
             "start_date": "2025-09-27T10:30:08.004000Z",
             "end_date": "2025-10-18T10:30:08.004000Z",
-            "frequency": "single-image",
+            "frequency": "single_image",
             "product_name": "LSTprecision",
             "comment": "Order for field 42",
             "tags": ["field42"],
@@ -143,10 +149,10 @@ print(response.json())
 ```json
 [
   {
-    "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+    "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
     "start_date": "2025-09-27T10:30:08.004000Z",
     "end_date": "2025-10-18T10:30:08.004000Z",
-    "frequency": "single-image",
+    "frequency": "single_image",
     "product_name": "LSTprecision",
     "comment": "Order for field 42",
     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -178,7 +184,7 @@ print(response.json())
 <h3>2. List All Orders</h3>
 
 **Endpoint:** `GET /orders`  
-**Description:** List all orders for your organization with pagination and sorting.
+**Description:** List all orders for your workspace with pagination and sorting.
 
 **Query Parameters:**
 
@@ -224,10 +230,10 @@ print(data["count"], len(data["items"]))
   "count": 1,
   "items": [
     {
-      "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+      "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
       "start_date": "2025-09-27T10:30:08.004000Z",
       "end_date": "2025-10-18T10:30:08.004000Z",
-      "frequency": "single-image",
+      "frequency": "single_image",
       "product_name": "LSTprecision",
       "comment": "Order for field 42",
       "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -286,10 +292,10 @@ print(response.json())
 **Response (200):**
 ```json
 {
-  "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "start_date": "2025-09-27T10:30:08.004000Z",
   "end_date": "2025-10-18T10:30:08.004000Z",
-  "frequency": "single-image",
+  "frequency": "single_image",
   "product_name": "LSTprecision",
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -363,10 +369,10 @@ print(response.json())
 **Response (200):**
 ```json
 {
-  "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "start_date": "2025-09-27T10:30:08.004000Z",
   "end_date": "2025-10-18T10:30:08.004000Z",
-  "frequency": "single-image",
+  "frequency": "single_image",
   "product_name": "LSTprecision",
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -480,12 +486,12 @@ print(response.status_code)
 
 ## Areas of Interest API
 
-The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your organization. AOIs define geographic regions used in data orders.
+The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your workspace. AOIs define geographic regions used in data orders.
 
 <h3>1. Create an Area of Interest</h3>
 
 **Endpoint:**  `POST /areas-of-interest`  
-**Description:** Creates a new Area of Interest (AOI) for your organization.
+**Description:** Creates a new Area of Interest (AOI) for your workspace.
 
 **Request Body Example**
 ```json
@@ -581,7 +587,7 @@ print(resp.json())
   "description": "Test area",
   "bbox_width": 1200.1,
   "bbox_height": 1300.1,
-  "id": "f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "id": "f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "created": "2025-07-31T11:05:29.157539"
 }
 ```
@@ -604,7 +610,7 @@ print(resp.json())
 
 **Example: cURL**
 ```bash
-curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770" \
+curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770" \
   -H "X-Api-Key: <your_api_key>"
 ```
 
@@ -612,7 +618,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 ```python
 import requests
 
-url = "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770"
+url = "https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770"
 headers = {
     "X-Api-Key": "<your_api_key>"
 }
@@ -641,7 +647,7 @@ print(resp.json())
   "description": "Test area",
   "bbox_width": 1200.1,
   "bbox_height": 1300.1,
-  "id": "f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "id": "f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "created": "2025-07-31T11:05:29.157539"
 }
 ```
@@ -658,7 +664,7 @@ print(resp.json())
 <h3>3. List Areas of Interest</h3>
 
 **Endpoint:**  `GET /areas-of-interest`  
-**Description:** Lists all AOIs for your organization with pagination and sorting.
+**Description:** Lists all AOIs for your workspace with pagination and sorting.
 
 **Query Parameters**
 
@@ -720,7 +726,7 @@ for item in data["items"]:
       "description": "Test area",
       "bbox_width": 1200.1,
       "bbox_height": 1300.1,
-      "id": "f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+      "id": "f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
       "created": "2025-04-03T10:36:40.348842"
     }
   ]
@@ -884,7 +890,7 @@ The `/products` endpoint provides access to the list of available constellr prod
 <h3>1. List Available Products</h3>
 
 **Endpoint:**  `GET /products`  
-**Description:** Retrieves a list of available products for your organization.
+**Description:** Retrieves a list of available products for your workspace.
 
 
 **Example: cURL**
@@ -936,13 +942,13 @@ curl -X GET "https://api.constellr.com/stac" \
       "rel": "self",
       "type": "application/json",
       "title": "This document",
-      "href": "https://example.com/stac/"
+      "href": "https://api.constellr.com/stac/"
     },
     {
       "rel": "data",
       "type": "application/json",
       "title": "Collections available for this Catalog",
-      "href": "https://example.com/stac/collections"
+      "href": "https://api.constellr.com/stac/collections"
     }
   ],
   "stac_extensions": []
@@ -990,7 +996,7 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
 <h3>3. List Available Collections</h3>
 
 **Endpoint:**  `GET /stac/collections`  
-**Description:** Fetches the available STAC collections for your organization.
+**Description:** Fetches the available STAC collections for your workspace.
 
 **Query Parameters (optional):**
 
@@ -1048,7 +1054,7 @@ for collection in data["collections"]:
       "links": [
         {
           "rel": "items",
-          "href": "https://example.com/stac/collections/lstfusion/items"
+          "href": "https://api.constellr.com/stac/collections/lstfusion/items"
         }
       ],
       "title": "LSTfusion Level-3 UTM LST Product",
@@ -1064,7 +1070,7 @@ for collection in data["collections"]:
     }
   ],
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"}
+    {"rel": "root", "href": "https://api.constellr.com/stac/"}
   ],
   "numberMatched": 1,
   "numberReturned": 1
@@ -1116,11 +1122,11 @@ print(response.json())
   "links": [
     {
       "rel": "items",
-      "href": "https://example.com/stac/collections/lstfusion/items"
+      "href": "https://api.constellr.com/stac/collections/lstfusion/items"
     },
     {
       "rel": "self",
-      "href": "https://example.com/stac/collections/lstfusion"
+      "href": "https://api.constellr.com/stac/collections/lstfusion"
     }
   ],
   "title": "LSTfusion Level-3 UTM LST Product",
@@ -1195,11 +1201,11 @@ print(data["id"], "-", data["collection"])
   "links": [
     {
       "rel": "collection",
-      "href": "https://example.com/stac/collections/lstfusion"
+      "href": "https://api.constellr.com/stac/collections/lstfusion"
     },
     {
       "rel": "self",
-      "href": "https://example.com/stac/collections/lstfusion/items/item_id"
+      "href": "https://api.constellr.com/stac/collections/lstfusion/items/item_id"
     }
   ],
   "assets": {
@@ -1231,9 +1237,9 @@ print(data["id"], "-", data["collection"])
 
 ---
 
-<h3>6. Search STAC Collections</h3>
+<h3>6. Search STAC Collections (POST)</h3>
 
-**Endpoint:**  `POST /stac/search `  
+**Endpoint:**  `POST /stac/search`  
 **Description:** Performs a search on STAC collections using a request body.
 
 
@@ -1285,8 +1291,8 @@ print("numberReturned:", data.get("numberReturned"))
 {
   "type": "FeatureCollection",
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"},
-    {"rel": "self", "href": "https://example.com/stac/search"}
+    {"rel": "root", "href": "https://api.constellr.com/stac/"},
+    {"rel": "self", "href": "https://api.constellr.com/stac/search"}
   ],
   "features": [],
   "numberMatched": 1,
@@ -1359,8 +1365,8 @@ print("numberReturned:", data.get("numberReturned"))
 {
   "type": "FeatureCollection",
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"},
-    {"rel": "self", "href": "https://example.com/stac/search"}
+    {"rel": "root", "href": "https://api.constellr.com/stac/"},
+    {"rel": "self", "href": "https://api.constellr.com/stac/search"}
   ],
   "features": [],
   "numberMatched": 0,
@@ -1433,22 +1439,22 @@ print("numberReturned:", data.get("numberReturned"))
     {
       "rel": "collection",
       "type": "application/json",
-      "href": "https://example.com/stac/collections/lstzoom"
+      "href": "https://api.constellr.com/stac/collections/lstzoom"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://example.com/stac/collections/lstzoom"
+      "href": "https://api.constellr.com/stac/collections/lstzoom"
     },
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://example.com/stac/"
+      "href": "https://api.constellr.com/stac/"
     },
     {
       "rel": "self",
       "type": "application/geo+json",
-      "href": "https://example.com/stac/collections/lstzoom/items"
+      "href": "https://api.constellr.com/stac/collections/lstzoom/items"
     }
   ],
   "numberMatched": 0,
