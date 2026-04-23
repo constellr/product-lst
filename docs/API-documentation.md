@@ -32,7 +32,7 @@ This guide outlines how to authenticate, place orders, search, and download your
 
 
 !!! warning "Legacy Bearer Token Authentication"
-    Bearer token authentication (using `POST /token`) continues to work if your user account belongs to a **single workspace**. However, if your account is added to multiple workspaces, bearer token authentication will **stop working** and your requests will fail. For the sake of simplicity and reducing confusion, we removed the bearer token generation endpoint and bearer token authentication from the API documentation.
+    Bearer token authentication (using `POST /token`) continues to work if your user account belongs to a **single workspace**. However, if your account is added to multiple workspaces, bearer token authentication will **stop working** and your requests will fail. For simplicity and to avoid confusion, this guide focuses on workspace-scoped API key authentication and does not document the legacy bearer-token flow.    
 
     To avoid disruptions, we recommend switching to workspace-scoped API keys now. API keys explicitly target a specific workspace and will continue to work regardless of how many workspaces your account belongs to.
 
@@ -54,13 +54,13 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 
 - **Product Specific Validation**:<br />
 
-| Feature | LSTprecision / LSTzoom | LSTfusion |
-| :--- | :--- | :--- |
-| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters**  |
-| **Start Date** | Starting from today | No restriction |
-| **Duration** | Min **7 days**, Max **1 year** | No restriction |
-| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`.
-| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported
+| Feature | LSTprecision / LSTzoom | LSTfusion                                                                                         |
+| :--- | :--- |:--------------------------------------------------------------------------------------------------|
+| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters** |
+| **Start Date** | Starting from today | No restriction                                                                                    |
+| **Duration** | Min **7 days**, Max **1 year** | No restriction                                                                                    |
+| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`. | `daily`                                                                                           |
+| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported                                                                                     
 
 - **General Validation(All Products)**: <br />
     - Tags: <br />
