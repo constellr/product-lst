@@ -2,115 +2,71 @@
  
 This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the [interactive Swagger documentation](https://api.constellr.com/docs) or [Redoc documentation](https://api.constellr.com/redoc).
 
+## Base URL
+
+All API endpoints use
+```
+https://api.constellr.com
+```
 ---
 
 ## Initial Preparation
-- Access to the Constellr API and UI is strictly invitation-only. You cannot register independently; you must be invited to a specific Workspace by an existing workspace member or a constellr Customer Success Manager (CSM).
 
-- Create an Account: If you do not have a Constellr account, you must click the link in your invitation email to begin the signup process. You will be prompted to provide your email address and a password.
+- **Access requirements:** The Constellr API and UI are invitation-only. You cannot sign up independently. You must be invited to a specific workspace by an existing member or a Constellr Customer Success Manager (CSM).
 
-- Activate Account: After registering, you must activate your account by confirming your e-mail address.
+- **Create your account:** If you do not yet have a Constellr account, open the invitation email and follow the signup link. You will be asked to provide your email address and set a password.
 
-- Once activated, you can begin accessing and retrieving data using the API.
+- **Activate your account:** After registering, confirm your email address to activate your account.
 
----
+- **Generate your API key:** Once your account is active, create a workspace-scoped API key in the Constellr UI by navigating to the Account page:
+  [https://app.constellr.com/account/workspace-api-keys](https://app.constellr.com/account/workspace-api-keys)
 
-## Usage Notes
-
-- Add the word `Bearer` before the access token in the `Authorization` header for all API requests (except `/token` endpoint):
-  ```
-  Authorization: Bearer <access_token>
-  ```
-- If your token expires, you will receive a 401 Not Authenticated error. Request a new token and retry.
-- Never store your credentials in plain text in production code.
+  > **Security Note:** The full API key is returned **only once** during the creation process. It cannot be retrieved again. Please store it securely immediately.
 
 ---
 
-## Authentication API
+## Authentication
 
-**Endpoint:** `POST /token`   
-**Description:** Generates an access token to call the API endpoints. Endpoints require a token in the `Authorization` header as `Bearer <token>`. Tokens are valid for **24 hours**.
+- **Authentication Header:** All API requests must include your API key in the `X-Api-Key` header.
 
-**Headers:**
-```
-{
-  Accept=application/json
-  Content-Type=application/x-www-form-urlencoded
-}
-```
+- **Workspace Scoping:** All API keys are workspace-scoped. The key is bound to a specific workspace and automatically sets the context for your requests. If you belong to multiple workspaces, you must use the key corresponding to the workspace you wish to access.
 
-**Request Body (in url-encoded format):**
-```
-{
-  username=your_username
-  password=your_password
-}
-```
+- **Security Best Practices:**
+    - **No plaintext storage:** Never store API keys in plain text within your production code. Use environment variables or a secret management service.
+    - **Automatic revocation:** When a member is removed from a workspace, or when a user account is deleted, all associated API keys are automatically revoked.
+    - **Immediate effect:** Revocation takes effect immediately. Rotate keys promptly if you suspect a key has been compromised.
 
-**Example: cURL**
-```sh
-curl --location 'https://api.constellr.com/token' \
---header 'Accept: application/json' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'username=your_username' \
---data-urlencode 'password=your_password'
-```
 
-**Example: Python**
-```python
-import requests
+!!! warning "Legacy Bearer Token Authentication"
+    Bearer token authentication (using `POST /token`) continues to work if your user account belongs to a **single workspace**. However, if your account is added to multiple workspaces, bearer token authentication will **stop working** and your requests will fail. For simplicity and to avoid confusion, this guide focuses on workspace-scoped API key authentication and does not document the legacy bearer-token flow.    
 
-url = "https://api.constellr.com/token"
-headers = {
-  "Accept": "application/json",
-  "Content-Type": "application/x-www-form-urlencoded",
-}
-data = {
-    "username": "your_username",
-    "password": "your_password",
-}
+    To avoid disruptions, we recommend switching to workspace-scoped API keys now. API keys explicitly target a specific workspace and will continue to work regardless of how many workspaces your account belongs to.
 
-resp = requests.post(url, headers=headers, data=data)
-token = resp.json().get("access_token")
-print(token)
-```
-
-**Success Response (200):**
-```json
-{
-  "access_token": "string"
-}
-```
-
-**Error Responses:**
-
-- **401:** Invalid credentials, user not confirmed, token expired or password reset required.
-- **422:** Request body validation error.
-
+    Generate your API key at: [https://app.constellr.com/account/workspace-api-keys](https://app.constellr.com/account/workspace-api-keys)
 ---
 
 
 ## Orders API
 
-The `/orders` endpoint allows you to create, list, and retrieve orders for your organization. All operations require authentication via a Bearer token.
+The `/orders` endpoint allows you to create, list, and retrieve orders for your workspace.
 
 <h3>1. Create Orders in Batch</h3>
 
 **Endpoint:** `POST /orders/batch`  
-**Description:** Create multiple new orders for your organization in a single request. <br />
+**Description:** Create multiple new orders for your workspace in a single request. <br />
 **Order Validation:** All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br />
 
 - **Order Limit**: Each `/orders/batch` request can contain a maximum of **25** orders per request.
 
 - **Product Specific Validation**:<br />
 
-| Feature | LSTprecision / LSTzoom | LSTfusion |
-| :--- | :--- | :--- |
-| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters**  |
-| **Start Date** | Starting from today | No restriction |
-| **Duration** | Min **7 days**, Max **1 year** | No restriction |
-| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`. 
-| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported
+| Feature | LSTprecision / LSTzoom | LSTfusion                                                                                         |
+| :--- | :--- |:--------------------------------------------------------------------------------------------------|
+| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters** |
+| **Start Date** | Starting from today | No restriction                                                                                    |
+| **Duration** | Min **7 days**, Max **1 year** | No restriction                                                                                    |
+| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`. | `daily`                                                                                           |
+| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported                                                                                     |
 
 - **General Validation(All Products)**: <br />
     - Tags: <br />
@@ -130,10 +86,10 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
   "comment": "Urgent order for Q3 analysis",
   "orders": [
     {
-      "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+      "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
       "start_date": "2025-09-27T10:30:08.004000Z",
       "end_date": "2025-10-18T10:30:08.004000Z",
-      "frequency": "single-image",
+      "frequency": "single_image",
       "product_name": "LSTprecision",
       "comment": "Order for field 42",
       "tags": ["field42"],
@@ -149,7 +105,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 ```sh
 curl -X POST "https://api.constellr.com/orders/batch" \
   -H 'accept: application/json' \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   -H "Content-Type: application/json" \
   -d @order_payload.json
 ```
@@ -160,7 +116,7 @@ import requests
 
 url = "https://api.constellr.com/orders/batch"
 headers = {
-    "Authorization": "Bearer <access_token>",
+    "X-Api-Key": "<your_api_key>",
     "Content-Type": "application/json",
     "accept": "application/json"
 }
@@ -170,10 +126,10 @@ payload = {
     "comment": "Urgent order for Q3 analysis",
     "orders": [
         {
-            "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+            "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
             "start_date": "2025-09-27T10:30:08.004000Z",
             "end_date": "2025-10-18T10:30:08.004000Z",
-            "frequency": "single-image",
+            "frequency": "single_image",
             "product_name": "LSTprecision",
             "comment": "Order for field 42",
             "tags": ["field42"],
@@ -186,7 +142,6 @@ payload = {
 response = requests.post(url, headers=headers, json=payload)
 print(response.status_code)
 print(response.json())
-
 ```
 
 
@@ -194,10 +149,10 @@ print(response.json())
 ```json
 [
   {
-    "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+    "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
     "start_date": "2025-09-27T10:30:08.004000Z",
     "end_date": "2025-10-18T10:30:08.004000Z",
-    "frequency": "single-image",
+    "frequency": "single_image",
     "product_name": "LSTprecision",
     "comment": "Order for field 42",
     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -220,7 +175,7 @@ print(response.json())
 **Error Responses:**
 
 - **400:** Invalid order request body values.
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to create orders.
 - **404:** Resource not found (e.g., AOI or product does not exist).
 - **422:** Request body validation error (including when a customer order contains more than 25 data orders).
@@ -229,7 +184,7 @@ print(response.json())
 <h3>2. List All Orders</h3>
 
 **Endpoint:** `GET /orders`  
-**Description:** List all orders for your organization with pagination and sorting.
+**Description:** List all orders for your workspace with pagination and sorting.
 
 **Query Parameters:**
 
@@ -243,7 +198,7 @@ print(response.json())
 **Example: cURL**
 ```bash
 curl -G "https://api.constellr.com/orders" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   --data-urlencode "limit=10" \
   --data-urlencode "offset=0" \
   --data-urlencode "sort=-created"
@@ -254,7 +209,9 @@ curl -G "https://api.constellr.com/orders" \
 import requests
 
 url = "https://api.constellr.com/orders"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {
+    "X-Api-Key": "<your_api_key>"
+}
 params = {
     "limit": 10,
     "offset": 0,
@@ -273,10 +230,10 @@ print(data["count"], len(data["items"]))
   "count": 1,
   "items": [
     {
-      "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+      "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
       "start_date": "2025-09-27T10:30:08.004000Z",
       "end_date": "2025-10-18T10:30:08.004000Z",
-      "frequency": "single-image",
+      "frequency": "single_image",
       "product_name": "LSTprecision",
       "comment": "Order for field 42",
       "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -298,7 +255,7 @@ print(data["count"], len(data["items"]))
 ```
 **Error Responses:**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to view orders.
 - **422:** Query parameter validation error.
 
@@ -313,7 +270,7 @@ print(data["count"], len(data["items"]))
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Example: Python**
@@ -322,7 +279,7 @@ import requests
 
 url = "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000"
 headers = {
-    "Authorization": "Bearer <access_token>"
+    "X-Api-Key": "<your_api_key>"
 }
 
 response = requests.get(url, headers=headers)
@@ -335,10 +292,10 @@ print(response.json())
 **Response (200):**
 ```json
 {
-  "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "start_date": "2025-09-27T10:30:08.004000Z",
   "end_date": "2025-10-18T10:30:08.004000Z",
-  "frequency": "single-image",
+  "frequency": "single_image",
   "product_name": "LSTprecision",
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -358,7 +315,7 @@ print(response.json())
 ```
 **Error Responses:**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to view the order.
 - **404:** Order not found.
 - **422:** Request parameter validation error.
@@ -377,6 +334,7 @@ Only the fields provided in the request body will be updated; other fields will 
 curl -X 'PATCH' \
   'https://api.constellr.com/orders/b131326b-20ea-44ff-b589-231ea77a7456' \
   -H 'accept: application/json' \
+  -H 'X-Api-Key: <your_api_key>' \
   -H 'Content-Type: application/json' \
   -d '{
   "tags": [
@@ -391,7 +349,9 @@ import requests
 
 url = "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000"
 headers = {
-    "Authorization": "Bearer <access_token>"
+    "X-Api-Key": "<your_api_key>",
+    "Content-Type": "application/json",
+    "accept": "application/json"
 }
 
 payload = {
@@ -409,10 +369,10 @@ print(response.json())
 **Response (200):**
 ```json
 {
-  "area_of_interest_id": "1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "start_date": "2025-09-27T10:30:08.004000Z",
   "end_date": "2025-10-18T10:30:08.004000Z",
-  "frequency": "single-image",
+  "frequency": "single_image",
   "product_name": "LSTprecision",
   "comment": "Order for field 42",
   "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -432,8 +392,8 @@ print(response.json())
 ```
 **Error Responses:**
 
-- **401:** Invalid authentication token.
-- **403:** User not authorized to view the order.
+- **401:** Invalid API key.
+- **403:** User not authorized to update the order.
 - **404:** Order not found.
 - **422:** Request parameter validation error.
 
@@ -451,7 +411,7 @@ print(response.json())
 **Example: cURL**
 ```sh
 curl -X DELETE "https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   -H "accept: */*"
 ```
 
@@ -461,7 +421,7 @@ import requests
 
 order_id = "123e4567-e89b-12d3-a456-426614174000"
 url = f"https://api.constellr.com/orders/{order_id}"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 
 resp = requests.delete(url, headers=headers)
 print(resp.status_code)
@@ -473,8 +433,8 @@ Order deleted successfully. No response body is returned.
 
 **Error Responses:**
 
-- **401:** Invalid token.
-- **403:** Forbidden.
+- **401:** Invalid API key.
+- **403:** User not authorized to delete the order.
 - **404:** Order not found.
 - **409:** Order cannot be deleted in its current state. Only `pending_validation` or `rejected` orders can be deleted.
 
@@ -488,7 +448,7 @@ Order deleted successfully. No response body is returned.
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/orders/meta/use-cases" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Example: Python**
@@ -497,7 +457,7 @@ import requests
 
 url = "https://api.constellr.com/orders/meta/use-cases"
 headers = {
-    "Authorization": "Bearer <access_token>"
+    "X-Api-Key": "<your_api_key>"
 }
 
 response = requests.get(url, headers=headers)
@@ -519,19 +479,19 @@ print(response.status_code)
 
 **Error Responses:**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to view use cases.
 
 ---
 
 ## Areas of Interest API
 
-The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your organization. AOIs define geographic regions used in data orders. All operations require authentication via a Bearer token.
+The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your workspace. AOIs define geographic regions used in data orders.
 
 <h3>1. Create an Area of Interest</h3>
 
 **Endpoint:**  `POST /areas-of-interest`  
-**Description:** Creates a new Area of Interest (AOI) for your organization.
+**Description:** Creates a new Area of Interest (AOI) for your workspace.
 
 **Request Body Example**
 ```json
@@ -556,7 +516,7 @@ The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas
 **Example: cURL**
 ```bash
 curl -X POST "https://api.constellr.com/areas-of-interest" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Test AOI",
@@ -582,7 +542,7 @@ import requests
 
 url = "https://api.constellr.com/areas-of-interest"
 headers = {
-    "Authorization": "Bearer <access_token>",
+    "X-Api-Key": "<your_api_key>",
     "Content-Type": "application/json"
 }
 payload = {
@@ -627,7 +587,7 @@ print(resp.json())
   "description": "Test area",
   "bbox_width": 1200.1,
   "bbox_height": 1300.1,
-  "id": "f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "id": "f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "created": "2025-07-31T11:05:29.157539"
 }
 ```
@@ -636,7 +596,7 @@ print(resp.json())
 **Error Responses**
 
 - **400:** Invalid AOI request body values.
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to create AOIs.
 - **409:** An Area of Interest with this name already exists.
 - **422:** Request body validation error.
@@ -650,8 +610,22 @@ print(resp.json())
 
 **Example: cURL**
 ```bash
-curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770" \
-  -H "Authorization: Bearer <access_token>"
+curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770" \
+  -H "X-Api-Key: <your_api_key>"
+```
+
+**Example: Python**
+```python
+import requests
+
+url = "https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770"
+headers = {
+    "X-Api-Key": "<your_api_key>"
+}
+
+resp = requests.get(url, headers=headers)
+resp.raise_for_status()
+print(resp.json())
 ```
 
 **Success Response (200)**
@@ -673,14 +647,14 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
   "description": "Test area",
   "bbox_width": 1200.1,
   "bbox_height": 1300.1,
-  "id": "f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+  "id": "f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
   "created": "2025-07-31T11:05:29.157539"
 }
 ```
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to view the AOI.
 - **404:** AOI not found.
 - **422:** Request parameter validation error.
@@ -690,7 +664,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 <h3>3. List Areas of Interest</h3>
 
 **Endpoint:**  `GET /areas-of-interest`  
-**Description:** Lists all AOIs for your organization with pagination and sorting.
+**Description:** Lists all AOIs for your workspace with pagination and sorting.
 
 **Query Parameters**
 
@@ -703,7 +677,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998
 **Example: cURL**
 ```bash
 curl -G "https://api.constellr.com/areas-of-interest" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   --data-urlencode "limit=10" \
   --data-urlencode "offset=0" \
   --data-urlencode "sort=-created"
@@ -714,7 +688,7 @@ curl -G "https://api.constellr.com/areas-of-interest" \
 import requests
 
 url = "https://api.constellr.com/areas-of-interest"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 params = {
     "limit": 10,
     "offset": 0,
@@ -752,7 +726,7 @@ for item in data["items"]:
       "description": "Test area",
       "bbox_width": 1200.1,
       "bbox_height": 1300.1,
-      "id": "f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770",
+      "id": "f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
       "created": "2025-04-03T10:36:40.348842"
     }
   ]
@@ -762,7 +736,7 @@ for item in data["items"]:
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to view AOIs.
 - **422:** Query parameter validation error.
 
@@ -780,7 +754,7 @@ for item in data["items"]:
 **Example: cURL**
 ```sh
 curl -X DELETE "https://api.constellr.com/areas-of-interest/cd9a3472-5e4d-495c-bb3a-8cf0408b2a3d" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   -H "accept: */*"
 ```
 
@@ -790,7 +764,7 @@ import requests
 
 area_of_interest_id = "cd9a3472-5e4d-495c-bb3a-8cf0408b2a3d"
 url = f"https://api.constellr.com/areas-of-interest/{area_of_interest_id}"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 
 resp = requests.delete(url, headers=headers)
 print(resp.status_code)
@@ -802,7 +776,7 @@ Area of interest deleted successfully. No response body is returned.
 
 **Error Responses**
 
-- **401:** Invalid token.
+- **401:** Invalid API key.
 - **403:** Forbidden (AOI does not belong to the user's workspace or user is not authorized).
 - **409:** Conflict (AOI has active orders and cannot be deleted).
 - **404:** Area of interest not found.
@@ -837,7 +811,7 @@ Area of interest deleted successfully. No response body is returned.
 **Example: cURL**
 ```sh
 curl -X POST "https://api.constellr.com/areas-of-interest/geometry-info" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{
     "type": "Feature",
@@ -862,7 +836,7 @@ import requests
 
 url = "https://api.constellr.com/areas-of-interest/geometry-info"
 headers = {
-    "Authorization": "Bearer <access_token>",
+    "X-Api-Key": "<your_api_key>",
     "Content-Type": "application/json",
 }
 payload = {
@@ -903,7 +877,7 @@ print(f"area: {data['area']}")
 **Error Responses**
 
 - **400:** Invalid AOI geometry in request body.
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **422:** Request body validation error.
 
@@ -911,18 +885,18 @@ print(f"area: {data['area']}")
 
 ## Products API
 
-The `/products` endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders. All operations require authentication via a Bearer token.
+The `/products` endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders.
 
 <h3>1. List Available Products</h3>
 
 **Endpoint:**  `GET /products`  
-**Description:** Retrieves a list of available products for your organization.
+**Description:** Retrieves a list of available products for your workspace.
 
 
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/products" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Success Response (200)**
@@ -936,13 +910,13 @@ curl -X GET "https://api.constellr.com/products" \
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 
 
 ## STAC API
 The `/stac` endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
-All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.
+The endpoints comply with the STAC API specification.
 
 <h3>1. Get STAC Landing Page</h3>
 
@@ -952,7 +926,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/stac" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Success Response (200)**
@@ -968,13 +942,13 @@ curl -X GET "https://api.constellr.com/stac" \
       "rel": "self",
       "type": "application/json",
       "title": "This document",
-      "href": "https://example.com/stac/"
+      "href": "https://api.constellr.com/stac/"
     },
     {
       "rel": "data",
       "type": "application/json",
       "title": "Collections available for this Catalog",
-      "href": "https://example.com/stac/collections"
+      "href": "https://api.constellr.com/stac/collections"
     }
   ],
   "stac_extensions": []
@@ -983,7 +957,7 @@ curl -X GET "https://api.constellr.com/stac" \
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 
 ---
@@ -996,7 +970,7 @@ curl -X GET "https://api.constellr.com/stac" \
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/stac/conformance" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Success Response (200)**
@@ -1013,7 +987,7 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 
 
@@ -1022,7 +996,7 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
 <h3>3. List Available Collections</h3>
 
 **Endpoint:**  `GET /stac/collections`  
-**Description:** Fetches the available STAC collections for your organization.
+**Description:** Fetches the available STAC collections for your workspace.
 
 **Query Parameters (optional):**
 
@@ -1043,7 +1017,7 @@ curl -X GET "https://api.constellr.com/stac/conformance" \
 **Example: cURL**
 ```sh
 curl -G "https://api.constellr.com/stac/collections" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   --data-urlencode "limit=5" \
   --data-urlencode "offset=0" \
   --data-urlencode "bbox=-122.1,5.1,35.4,53.6"
@@ -1054,7 +1028,7 @@ curl -G "https://api.constellr.com/stac/collections" \
 import requests
 
 url = "https://api.constellr.com/stac/collections"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 params = {
     "limit": 5,
     "offset": 0,
@@ -1080,7 +1054,7 @@ for collection in data["collections"]:
       "links": [
         {
           "rel": "items",
-          "href": "https://example.com/stac/collections/lstfusion/items"
+          "href": "https://api.constellr.com/stac/collections/lstfusion/items"
         }
       ],
       "title": "LSTfusion Level-3 UTM LST Product",
@@ -1096,7 +1070,7 @@ for collection in data["collections"]:
     }
   ],
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"}
+    {"rel": "root", "href": "https://api.constellr.com/stac/"}
   ],
   "numberMatched": 1,
   "numberReturned": 1
@@ -1105,7 +1079,7 @@ for collection in data["collections"]:
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **422:** Query parameter validation error.
 
@@ -1120,7 +1094,7 @@ for collection in data["collections"]:
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/stac/collections/lstfusion" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Example: Python**
@@ -1130,7 +1104,7 @@ import requests
 url = "https://api.constellr.com/stac/collections/lstfusion"
 
 headers = {
-    "Authorization": "Bearer <access_token>"
+    "X-Api-Key": "<your_api_key>"
 }
 
 response = requests.get(url, headers=headers)
@@ -1148,11 +1122,11 @@ print(response.json())
   "links": [
     {
       "rel": "items",
-      "href": "https://example.com/stac/collections/lstfusion/items"
+      "href": "https://api.constellr.com/stac/collections/lstfusion/items"
     },
     {
       "rel": "self",
-      "href": "https://example.com/stac/collections/lstfusion"
+      "href": "https://api.constellr.com/stac/collections/lstfusion"
     }
   ],
   "title": "LSTfusion Level-3 UTM LST Product",
@@ -1170,7 +1144,7 @@ print(response.json())
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **404:** Collection not found.
 - **422:** Request parameter validation error.
@@ -1186,7 +1160,7 @@ print(response.json())
 **Example: cURL**
 ```sh
 curl -X GET "https://api.constellr.com/stac/collections/lstfusion/items/item_id" \
-  -H "Authorization: Bearer <access_token>"
+  -H "X-Api-Key: <your_api_key>"
 ```
 
 **Example: Python**
@@ -1196,7 +1170,7 @@ import requests
 collection_id = "lstfusion"
 item_id = "item_id"
 url = f"https://api.constellr.com/stac/collections/{collection_id}/items/{item_id}"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 
 resp = requests.get(url, headers=headers)
 resp.raise_for_status()
@@ -1227,11 +1201,11 @@ print(data["id"], "-", data["collection"])
   "links": [
     {
       "rel": "collection",
-      "href": "https://example.com/stac/collections/lstfusion"
+      "href": "https://api.constellr.com/stac/collections/lstfusion"
     },
     {
       "rel": "self",
-      "href": "https://example.com/stac/collections/lstfusion/items/item_id"
+      "href": "https://api.constellr.com/stac/collections/lstfusion/items/item_id"
     }
   ],
   "assets": {
@@ -1256,16 +1230,16 @@ print(data["id"], "-", data["collection"])
 
 **Error Responses**
 
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **404:** Item not found.
 - **422:** Request parameter validation error.
 
 ---
 
-<h3>6. Search STAC Collections</h3>
+<h3>6. Search STAC Collections (POST)</h3>
 
-**Endpoint:**  `POST /stac/search `  
+**Endpoint:**  `POST /stac/search`  
 **Description:** Performs a search on STAC collections using a request body.
 
 
@@ -1280,7 +1254,7 @@ print(data["id"], "-", data["collection"])
 **Example: cURL**
 ```sh
 curl -X POST "https://api.constellr.com/stac/search" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{
     "collections": ["lstfusion"],
@@ -1295,7 +1269,7 @@ import requests
 
 url = "https://api.constellr.com/stac/search"
 headers = {
-    "Authorization": "Bearer <access_token>",
+    "X-Api-Key": "<your_api_key>",
     "Content-Type": "application/json",
 }
 payload = {
@@ -1317,8 +1291,8 @@ print("numberReturned:", data.get("numberReturned"))
 {
   "type": "FeatureCollection",
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"},
-    {"rel": "self", "href": "https://example.com/stac/search"}
+    {"rel": "root", "href": "https://api.constellr.com/stac/"},
+    {"rel": "self", "href": "https://api.constellr.com/stac/search"}
   ],
   "features": [],
   "numberMatched": 1,
@@ -1329,7 +1303,7 @@ print("numberReturned:", data.get("numberReturned"))
 **Error Responses**
 
 - **400:** Invalid search request body values.
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **422:** Request body validation error.
 
@@ -1358,7 +1332,7 @@ print("numberReturned:", data.get("numberReturned"))
 **Example: cURL**
 ```sh
 curl -G "https://api.constellr.com/stac/search" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   --data-urlencode "collections=lstfusion" \
   --data-urlencode "limit=5" \
   --data-urlencode "datetime=2025-08-18T11:00:00Z/.." \
@@ -1370,7 +1344,7 @@ curl -G "https://api.constellr.com/stac/search" \
 import requests
 
 url = "https://api.constellr.com/stac/search"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 params = {
     "collections": "lstfusion",
     "limit": 5,
@@ -1391,8 +1365,8 @@ print("numberReturned:", data.get("numberReturned"))
 {
   "type": "FeatureCollection",
   "links": [
-    {"rel": "root", "href": "https://example.com/stac/"},
-    {"rel": "self", "href": "https://example.com/stac/search"}
+    {"rel": "root", "href": "https://api.constellr.com/stac/"},
+    {"rel": "self", "href": "https://api.constellr.com/stac/search"}
   ],
   "features": [],
   "numberMatched": 0,
@@ -1403,7 +1377,7 @@ print("numberReturned:", data.get("numberReturned"))
 **Error Responses**
 
 - **400:** Invalid search request parameters.
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **422:** Query parameter validation error.
 
@@ -1429,7 +1403,7 @@ print("numberReturned:", data.get("numberReturned"))
 **Example: cURL**
 ```sh
 curl -G "https://api.constellr.com/stac/collections/lstfusion/items" \
-  -H "Authorization: Bearer <access_token>" \
+  -H "X-Api-Key: <your_api_key>" \
   --data-urlencode "limit=5" \
   --data-urlencode "datetime=2025-08-18T11:00:00Z/.." \
   --data-urlencode "sortby=-datetime"
@@ -1441,7 +1415,7 @@ import requests
 
 collection_id = "lstfusion"
 url = f"https://api.constellr.com/stac/collections/{collection_id}/items"
-headers = {"Authorization": "Bearer <access_token>"}
+headers = {"X-Api-Key": "<your_api_key>"}
 params = {
     "limit": 5,
     "datetime": "2025-08-18T11:00:00Z/..",
@@ -1465,22 +1439,22 @@ print("numberReturned:", data.get("numberReturned"))
     {
       "rel": "collection",
       "type": "application/json",
-      "href": "https://example.com/stac/collections/lstzoom"
+      "href": "https://api.constellr.com/stac/collections/lstzoom"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://example.com/stac/collections/lstzoom"
+      "href": "https://api.constellr.com/stac/collections/lstzoom"
     },
     {
       "rel": "root",
       "type": "application/json",
-      "href": "https://example.com/stac/"
+      "href": "https://api.constellr.com/stac/"
     },
     {
       "rel": "self",
       "type": "application/geo+json",
-      "href": "https://example.com/stac/collections/lstzoom/items"
+      "href": "https://api.constellr.com/stac/collections/lstzoom/items"
     }
   ],
   "numberMatched": 0,
@@ -1491,7 +1465,7 @@ print("numberReturned:", data.get("numberReturned"))
 **Error Responses**
 
 - **400:** Invalid request parameters.
-- **401:** Invalid authentication token.
+- **401:** Invalid API key.
 - **403:** User not authorized to access this endpoint.
 - **422:** Query parameter validation error.
 
