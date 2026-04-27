@@ -54,6 +54,7 @@ There are four main sections in the platform, which you can access from the side
 * **New order**: Place a new order.
 * **AOI Library**: Create and manage your Areas of Interest.
 * **Account & Workspace Settings**: Manage your personal profile and control team access.
+* **Archive**: Browse and preview data from the L0 catalog.
 
 <h3>My Data</h3>
 This is the central place for tracking your data orders and downloading your data.  
