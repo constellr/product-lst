@@ -28,11 +28,11 @@ nav:
     - Calibration and Validation:
       - LSTprecision: LST-precision-cal-val-procedure.md
       - LSTfusion: LST-fusion-cal-val-procedure.md
-  - Thermal Insights: thermal-insights.md
+ # - Thermal Insights: thermal-insights.md
   - How to access our data:
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
-  - Explorer Lab: 
+  - Explorer Lab & Insights: 
     - LST Handbook: explorer-lab.md
     - Open Data Programme: example-datasets.md
     # - PUG zoom: LST-zoom.md
