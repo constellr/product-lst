@@ -63,7 +63,7 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 | Feature | LSTprecision / LSTzoom | LSTfusion                                                                                         |
 | :--- | :--- |:--------------------------------------------------------------------------------------------------|
 | **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters** |
-| **Start Date** | Starting from today | No restriction                                                                                    |
+| **Start Date** | Starting from today | Cannot be set in the future                                                                      |
 | **Duration** | Min **7 days**, Max **1 year** | No restriction                                                                                    |
 | **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`. | `daily`                                                                                           |
 | **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported                                                                                     |
@@ -493,45 +493,61 @@ The `/areas-of-interest` endpoint allows you to create, list, and retrieve Areas
 **Endpoint:**  `POST /areas-of-interest`  
 **Description:** Creates a new Area of Interest (AOI) for your workspace.
 
-**Request Body Example**
+**Supported GeoJSON inputs:**  
+- **Feature**: Accepted as-is.  
+- **FeatureCollection**: Must contain exactly one feature.  
+- **Polygon**: Accepted and used directly.  
+- **MultiPolygon**: Must contain exactly one polygon.  
+
+> **Note:** Only a single geometry is accepted. If a FeatureCollection or MultiPolygon is provided, it must contain exactly one feature or one polygon, respectively.
+
+**Request Body Example:**
 ```json
 {
   "name": "Test AOI",
   "description": "Test area",
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [8.68483, 49.885416],
-        [8.684889, 49.876422],
-        [8.670971, 49.876383],
-        [8.67091, 49.885378],
-        [8.68483, 49.885416]
+  "geojson": {
+    "type": "Feature",
+    "properties": {},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [13.0, 52.0],
+          [13.5, 52.0],
+          [13.5, 52.5],
+          [13.0, 52.5],
+          [13.0, 52.0]
+        ]
       ]
-    ]
+    }
   }
 }
 ```
 
 **Example: cURL**
-```bash
+```sh
 curl -X POST "https://api.constellr.com/areas-of-interest" \
   -H "X-Api-Key: <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Test AOI",
     "description": "Test area",
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [8.68483, 49.885416],
-          [8.684889, 49.876422],
-          [8.670971, 49.876383],
-          [8.67091, 49.885378],
-          [8.68483, 49.885416]
+    "geojson": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [13.0, 52.0],
+            [13.5, 52.0],
+            [13.5, 52.5],
+            [13.0, 52.5],
+            [13.0, 52.0]
+          ]
         ]
-      ]
+      }
     }
   }'
 ```
@@ -548,17 +564,21 @@ headers = {
 payload = {
     "name": "Test AOI",
     "description": "Test area",
-    "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-            [
-                [8.68483, 49.885416],
-                [8.684889, 49.876422],
-                [8.670971, 49.876383],
-                [8.67091, 49.885378],
-                [8.68483, 49.885416]
+    "geojson": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [13.0, 52.0],
+                    [13.5, 52.0],
+                    [13.5, 52.5],
+                    [13.0, 52.5],
+                    [13.0, 52.0]
+                ]
             ]
-        ]
+        }
     }
 }
 
@@ -567,22 +587,25 @@ resp.raise_for_status()
 print(resp.json())
 ```
 
-
 **Success Response (201)**
 ```json
 {
   "name": "Test AOI",
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [8.68483, 49.885416],
-        [8.684889, 49.876422],
-        [8.670971, 49.876383],
-        [8.67091, 49.885378],
-        [8.68483, 49.885416]
+  "geojson": {
+    "type": "Feature",
+    "properties": {},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [13.0, 52.0],
+          [13.5, 52.0],
+          [13.5, 52.5],
+          [13.0, 52.5],
+          [13.0, 52.0]
+        ]
       ]
-    ]
+    }
   },
   "description": "Test area",
   "bbox_width": 1200.1,
@@ -591,7 +614,6 @@ print(resp.json())
   "created": "2025-07-31T11:05:29.157539"
 }
 ```
-
 
 **Error Responses**
 
@@ -605,8 +627,8 @@ print(resp.json())
 
 <h3>2. Get an Area of Interest by ID</h3>
 
-**Endpoint:**  `GET /areas-of-interest/{area_of_interest_id}`  
-**Description:** Retrieves a specific AOI by its unique ID.
+**Endpoint:** `GET /areas-of-interest/{area_of_interest_id}`  
+**Description:** Retrieves a specific AOI by its unique ID.  
 
 **Example: cURL**
 ```bash
@@ -619,9 +641,7 @@ curl -X GET "https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-899
 import requests
 
 url = "https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770"
-headers = {
-    "X-Api-Key": "<your_api_key>"
-}
+headers = {"X-Api-Key": "<your_api_key>"}
 
 resp = requests.get(url, headers=headers)
 resp.raise_for_status()
@@ -632,17 +652,21 @@ print(resp.json())
 ```json
 {
   "name": "Test AOI",
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [8.68483, 49.885416],
-        [8.684889, 49.876422],
-        [8.670971, 49.876383],
-        [8.67091, 49.885378],
-        [8.68483, 49.885416]
+  "geojson": {
+    "type": "Feature",
+    "properties": {},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [13.0, 52.0],
+          [13.5, 52.0],
+          [13.5, 52.5],
+          [13.0, 52.5],
+          [13.0, 52.0]
+        ]
       ]
-    ]
+    }
   },
   "description": "Test area",
   "bbox_width": 1200.1,
@@ -669,10 +693,8 @@ print(resp.json())
 **Query Parameters**
 
 - `limit` (optional, default: 10): Maximum number of items to return.
-
 - `offset` (optional, default: 0): Zero-based index of the first item to return.
-
-- `sort` (optional): Property to sort results by the `-created` field. Use `+` or `-` as a prefix for ascending or descending order.
+- `sort` (optional): Property to sort results by. Use `+` or `-` as a prefix for ascending or descending order. Default is `-created`.
 
 **Example: cURL**
 ```bash
@@ -711,17 +733,21 @@ for item in data["items"]:
   "items": [
     {
       "name": "Test AOI",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-8.558478, 40.317694],
-            [-8.343601, 40.314150],
-            [-8.365829, 40.186899],
-            [-8.545914, 40.188510],
-            [-8.558478, 40.317694]
+      "geojson": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [13.0, 52.0],
+              [13.5, 52.0],
+              [13.5, 52.5],
+              [13.0, 52.5],
+              [13.0, 52.0]
+            ]
           ]
-        ]
+        }
       },
       "description": "Test area",
       "bbox_width": 1200.1,
@@ -732,7 +758,6 @@ for item in data["items"]:
   ]
 }
 ```
-
 
 **Error Responses**
 
@@ -787,7 +812,7 @@ Area of interest deleted successfully. No response body is returned.
 <h3>5. Get Geometry Info from AOI</h3>
 
 **Endpoint:**  `POST /areas-of-interest/geometry-info`  
-**Description:** Get geometry information (bounding box width/height, area) for a provided GeoJSON AOI geometry.
+**Description:** Get geometry information (bounding box width/height, area) for a provided GeoJSON.
 
 **Request Body Example**
 ```json
@@ -795,6 +820,7 @@ Area of interest deleted successfully. No response body is returned.
   "type": "Feature",
   "geometry": {
     "type": "Polygon",
+    "properties": {},
     "coordinates": [
       [
         [11.053963, 51.690862],
@@ -863,7 +889,6 @@ print(f"bbox_width: {data['bbox_width']}")
 print(f"bbox_height: {data['bbox_height']}")
 print(f"area: {data['area']}")
 ```
-
 
 **Success Response (200)**
 ```json
