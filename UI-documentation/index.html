@@ -1119,7 +1119,17 @@ You can access your data by clicking on the Data Order ID. Here, you can see eve
 <h3>AOI Library</h3>
 <p>This page is under construction and provides limited functionality for the moment.  </p>
 <p>From the <a href="https://app.constellr.com/aoi-library">AOI Library</a> tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  </p>
-<p>From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  </p>
+<p>From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload a GeoJSON file. Each AOI in your account must have a unique name.  </p>
+<p>For GeoJSON uploads, we accept the following inputs:</p>
+<ul>
+<li><strong>Feature</strong>: Accepted as-is.  </li>
+<li><strong>FeatureCollection</strong>: Must contain exactly one feature.  </li>
+<li><strong>Polygon</strong>: Accepted and used directly.  </li>
+<li><strong>MultiPolygon</strong>: Must contain exactly one polygon.  </li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Only a single geometry is accepted. If a FeatureCollection or MultiPolygon is provided, it must contain exactly one feature or one polygon, respectively.  </p>
+</blockquote>
 <p><img alt="AOILibrary" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/AOILibrary.png" width="80%" /></p>
 <h3>Account & Workspace Settings</h3>
 <p>You can access your account and workspace settings here: <a href="https://app.constellr.com/account">Account and Workspace Settings</a>.</p>
