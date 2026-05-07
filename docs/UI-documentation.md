@@ -96,7 +96,9 @@ This page is under construction and provides limited functionality for the momen
 
 From the [AOI Library](https://app.constellr.com/aoi-library) tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  
 
-From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  
+From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload a GeoJSON file. Each AOI in your account must have a unique name.  
+
+For GeoJSON uploads, we accept `Feature`, `FeatureCollection`, `Polygon`, or `MultiPolygon`, each containing exactly one polygon.  
 
 ![AOILibrary](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/AOILibrary.png){ width=80% }
 
