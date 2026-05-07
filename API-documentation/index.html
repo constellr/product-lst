@@ -1572,21 +1572,33 @@ Only the fields provided in the request body will be updated; other fields will 
 
 <p><strong>Endpoint:</strong>  <code>POST /areas-of-interest</code><br />
 <strong>Description:</strong> Creates a new Area of Interest (AOI) for your workspace.</p>
-<p><strong>Request Body Example</strong>
+<p><strong>Supported GeoJSON inputs:</strong><br />
+- <strong>Feature</strong>: Accepted as-is.<br />
+- <strong>FeatureCollection</strong>: Must contain exactly one feature.<br />
+- <strong>Polygon</strong>: Accepted and used directly.<br />
+- <strong>MultiPolygon</strong>: Must contain exactly one polygon.  </p>
+<blockquote>
+<p><strong>Note:</strong> Only a single geometry is accepted. If a FeatureCollection or MultiPolygon is provided, it must contain exactly one feature or one polygon, respectively.</p>
+</blockquote>
+<p><strong>Request Body Example:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
@@ -1597,17 +1609,21 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;name&quot;: &quot;Test AOI&quot;,</span>
 <span class="s1">    &quot;description&quot;: &quot;Test area&quot;,</span>
-<span class="s1">    &quot;geometry&quot;: {</span>
-<span class="s1">      &quot;type&quot;: &quot;Polygon&quot;,</span>
-<span class="s1">      &quot;coordinates&quot;: [</span>
-<span class="s1">        [</span>
-<span class="s1">          [8.68483, 49.885416],</span>
-<span class="s1">          [8.684889, 49.876422],</span>
-<span class="s1">          [8.670971, 49.876383],</span>
-<span class="s1">          [8.67091, 49.885378],</span>
-<span class="s1">          [8.68483, 49.885416]</span>
+<span class="s1">    &quot;geojson&quot;: {</span>
+<span class="s1">      &quot;type&quot;: &quot;Feature&quot;,</span>
+<span class="s1">      &quot;properties&quot;: {},</span>
+<span class="s1">      &quot;geometry&quot;: {</span>
+<span class="s1">        &quot;type&quot;: &quot;Polygon&quot;,</span>
+<span class="s1">        &quot;coordinates&quot;: [</span>
+<span class="s1">          [</span>
+<span class="s1">            [13.0, 52.0],</span>
+<span class="s1">            [13.5, 52.0],</span>
+<span class="s1">            [13.5, 52.5],</span>
+<span class="s1">            [13.0, 52.5],</span>
+<span class="s1">            [13.0, 52.0]</span>
+<span class="s1">          ]</span>
 <span class="s1">        ]</span>
-<span class="s1">      ]</span>
+<span class="s1">      }</span>
 <span class="s1">    }</span>
 <span class="s1">  }&#39;</span>
 </code></pre></div></p>
@@ -1622,17 +1638,21 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
     <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span> <span class="mf">49.885416</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span> <span class="mf">49.876422</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span> <span class="mf">49.876383</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span> <span class="mf">49.885378</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span> <span class="mf">49.885416</span><span class="p">]</span>
+    <span class="s2">&quot;geojson&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">52.5</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">52.5</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">]</span>
+                <span class="p">]</span>
             <span class="p">]</span>
-        <span class="p">]</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1643,17 +1663,21 @@ Only the fields provided in the request body will be updated; other fields will 
 <p><strong>Success Response (201)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.1</span><span class="p">,</span>
@@ -1673,8 +1697,8 @@ Only the fields provided in the request body will be updated; other fields will 
 <hr />
 <h3>2. Get an Area of Interest by ID</h3>
 
-<p><strong>Endpoint:</strong>  <code>GET /areas-of-interest/{area_of_interest_id}</code><br />
-<strong>Description:</strong> Retrieves a specific AOI by its unique ID.</p>
+<p><strong>Endpoint:</strong> <code>GET /areas-of-interest/{area_of_interest_id}</code><br />
+<strong>Description:</strong> Retrieves a specific AOI by its unique ID.  </p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
@@ -1683,9 +1707,7 @@ Only the fields provided in the request body will be updated; other fields will 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span>
-<span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
@@ -1694,17 +1716,21 @@ Only the fields provided in the request body will be updated; other fields will 
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.1</span><span class="p">,</span>
@@ -1727,15 +1753,9 @@ Only the fields provided in the request body will be updated; other fields will 
 <strong>Description:</strong> Lists all AOIs for your workspace with pagination and sorting.</p>
 <p><strong>Query Parameters</strong></p>
 <ul>
-<li>
-<p><code>limit</code> (optional, default: 10): Maximum number of items to return.</p>
-</li>
-<li>
-<p><code>offset</code> (optional, default: 0): Zero-based index of the first item to return.</p>
-</li>
-<li>
-<p><code>sort</code> (optional): Property to sort results by the <code>-created</code> field. Use <code>+</code> or <code>-</code> as a prefix for ascending or descending order.</p>
-</li>
+<li><code>limit</code> (optional, default: 10): Maximum number of items to return.</li>
+<li><code>offset</code> (optional, default: 0): Zero-based index of the first item to return.</li>
+<li><code>sort</code> (optional): Property to sort results by. Use <code>+</code> or <code>-</code> as a prefix for ascending or descending order. Default is <code>-created</code>.</li>
 </ul>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -1769,17 +1789,21 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="p">[</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.558478</span><span class="p">,</span><span class="w"> </span><span class="mf">40.317694</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.343601</span><span class="p">,</span><span class="w"> </span><span class="mf">40.314150</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.365829</span><span class="p">,</span><span class="w"> </span><span class="mf">40.186899</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.545914</span><span class="p">,</span><span class="w"> </span><span class="mf">40.188510</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.558478</span><span class="p">,</span><span class="w"> </span><span class="mf">40.317694</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">[</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">]</span>
-<span class="w">        </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.1</span><span class="p">,</span>
@@ -1834,12 +1858,13 @@ Only the fields provided in the request body will be updated; other fields will 
 <h3>5. Get Geometry Info from AOI</h3>
 
 <p><strong>Endpoint:</strong>  <code>POST /areas-of-interest/geometry-info</code><br />
-<strong>Description:</strong> Get geometry information (bounding box width/height, area) for a provided GeoJSON AOI geometry.</p>
+<strong>Description:</strong> Get geometry information (bounding box width/height, area) for a provided GeoJSON.</p>
 <p><strong>Request Body Example</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">[</span>
 <span class="w">        </span><span class="p">[</span><span class="mf">11.053963</span><span class="p">,</span><span class="w"> </span><span class="mf">51.690862</span><span class="p">],</span>
