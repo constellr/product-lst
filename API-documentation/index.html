@@ -428,6 +428,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../LST-zoom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSTzoom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LST-fusion/" class="md-nav__link">
         
   
@@ -770,27 +792,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../thermal-insights/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Thermal Insights
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -803,10 +804,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -818,8 +819,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             How to access our data
           </label>
@@ -902,6 +903,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#base-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Base URL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initial-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       Initial Preparation
@@ -911,18 +921,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-notes" class="md-nav__link">
+  <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage Notes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication API
+      Authentication
     </span>
   </a>
   
@@ -994,14 +995,14 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Explorer Lab
+    Explorer Lab & Insights
     
   </span>
   
@@ -1009,10 +1010,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Explorer Lab
+            Explorer Lab & Insights
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1089,91 +1090,69 @@
 
 <h1 id="constellr-api-documentation"><strong>Constellr API Documentation</strong></h1>
 <p>This guide outlines how to authenticate, place orders, search, and download your data using the constellr API. For a detailed overview of the latest API, including live examples, refer to the <a href="https://api.constellr.com/docs">interactive Swagger documentation</a> or <a href="https://api.constellr.com/redoc">Redoc documentation</a>.</p>
+<h2 id="base-url">Base URL</h2>
+<p>All API endpoints use
+<div class="highlight"><pre><span></span><code>https://api.constellr.com
+</code></pre></div></p>
 <hr />
 <h2 id="initial-preparation">Initial Preparation</h2>
 <ul>
 <li>
-<p>Access to the Constellr API and UI is strictly invitation-only. You cannot register independently; you must be invited to a specific Workspace by an existing workspace member or a constellr Customer Success Manager (CSM).</p>
+<p><strong>Access requirements:</strong> The Constellr API and UI are invitation-only. You cannot sign up independently. You must be invited to a specific workspace by an existing member or a Constellr Customer Success Manager (CSM).</p>
 </li>
 <li>
-<p>Create an Account: If you do not have a Constellr account, you must click the link in your invitation email to begin the signup process. You will be prompted to provide your email address and a password.</p>
+<p><strong>Create your account:</strong> If you do not yet have a Constellr account, open the invitation email and follow the signup link. You will be asked to provide your email address and set a password.</p>
 </li>
 <li>
-<p>Activate Account: After registering, you must activate your account by confirming your e-mail address.</p>
+<p><strong>Activate your account:</strong> After registering, confirm your email address to activate your account.</p>
 </li>
 <li>
-<p>Once activated, you can begin accessing and retrieving data using the API.</p>
+<p><strong>Generate your API key:</strong> Once your account is active, create a workspace-scoped API key in the Constellr UI by navigating to the Account page:
+  <a href="https://app.constellr.com/account/workspace-api-keys">https://app.constellr.com/account/workspace-api-keys</a></p>
 </li>
 </ul>
+<blockquote>
+<p><strong>Security Note:</strong> The full API key is returned <strong>only once</strong> during the creation process. It cannot be retrieved again. Please store it securely immediately.</p>
+</blockquote>
 <hr />
-<h2 id="usage-notes">Usage Notes</h2>
+<h2 id="authentication">Authentication</h2>
 <ul>
-<li>Add the word <code>Bearer</code> before the access token in the <code>Authorization</code> header for all API requests (except <code>/token</code> endpoint):
-  <div class="highlight"><pre><span></span><code>Authorization: Bearer &lt;access_token&gt;
-</code></pre></div></li>
-<li>If your token expires, you will receive a 401 Not Authenticated error. Request a new token and retry.</li>
-<li>Never store your credentials in plain text in production code.</li>
-</ul>
-<hr />
-<h2 id="authentication-api">Authentication API</h2>
-<p><strong>Endpoint:</strong> <code>POST /token</code> <br />
-<strong>Description:</strong> Generates an access token to call the API endpoints. Endpoints require a token in the <code>Authorization</code> header as <code>Bearer &lt;token&gt;</code>. Tokens are valid for <strong>24 hours</strong>.</p>
-<p><strong>Headers:</strong>
-<div class="highlight"><pre><span></span><code>{
-  Accept=application/json
-  Content-Type=application/x-www-form-urlencoded
-}
-</code></pre></div></p>
-<p><strong>Request Body (in url-encoded format):</strong>
-<div class="highlight"><pre><span></span><code>{
-  username=your_username
-  password=your_password
-}
-</code></pre></div></p>
-<p><strong>Example: cURL</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span><span class="s1">&#39;https://api.constellr.com/token&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Content-Type: application/x-www-form-urlencoded&#39;</span><span class="w"> </span><span class="se">\</span>
---data-urlencode<span class="w"> </span><span class="s1">&#39;username=your_username&#39;</span><span class="w"> </span><span class="se">\</span>
---data-urlencode<span class="w"> </span><span class="s1">&#39;password=your_password&#39;</span>
-</code></pre></div></p>
-<p><strong>Example: Python</strong>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/token&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;your_username&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;your_password&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="n">token</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;access_token&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
-</code></pre></div></p>
-<p><strong>Success Response (200):</strong>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Error Responses:</strong></p>
+<li>
+<p><strong>Authentication Header:</strong> All API requests must include your API key in the <code>X-Api-Key</code> header.</p>
+</li>
+<li>
+<p><strong>Workspace Scoping:</strong> All API keys are workspace-scoped. The key is bound to a specific workspace and automatically sets the context for your requests. If you belong to multiple workspaces, you must use the key corresponding to the workspace you wish to access.</p>
+</li>
+<li>
+<p><strong>Security Best Practices:</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid credentials, user not confirmed, token expired or password reset required.</li>
-<li><strong>422:</strong> Request body validation error.</li>
+<li><strong>No plaintext storage:</strong> Never store API keys in plain text within your production code. Use environment variables or a secret management service.</li>
+<li><strong>Automatic revocation:</strong> When a member is removed from a workspace, or when a user account is deleted, all associated API keys are automatically revoked.</li>
+<li><strong>Immediate effect:</strong> Revocation takes effect immediately. Rotate keys promptly if you suspect a key has been compromised.</li>
 </ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Legacy Bearer Token Authentication</p>
+<p>Bearer token authentication (using <code>POST /token</code>) continues to work if your user account belongs to a <strong>single workspace</strong>. However, if your account is added to multiple workspaces, bearer token authentication will <strong>stop working</strong> and your requests will fail. For simplicity and to avoid confusion, this guide focuses on workspace-scoped API key authentication and does not document the legacy bearer-token flow.    </p>
+<p>To avoid disruptions, we recommend switching to workspace-scoped API keys now. API keys explicitly target a specific workspace and will continue to work regardless of how many workspaces your account belongs to.</p>
+<p>Generate your API key at: <a href="https://app.constellr.com/account/workspace-api-keys">https://app.constellr.com/account/workspace-api-keys</a></p>
+</div>
 <hr />
 <h2 id="orders-api">Orders API</h2>
-<p>The <code>/orders</code> endpoint allows you to create, list, and retrieve orders for your organization. All operations require authentication via a Bearer token.</p>
+<p>The <code>/orders</code> endpoint allows you to create, list, and retrieve orders for your workspace.</p>
 <h3>1. Create Orders in Batch</h3>
 
 <p><strong>Endpoint:</strong> <code>POST /orders/batch</code><br />
-<strong>Description:</strong> Create multiple new orders for your organization in a single request. <br />
+<strong>Description:</strong> Create multiple new orders for your workspace in a single request. <br />
 <strong>Order Validation:</strong> All orders are validated upon submission. If any order is invalid, the entire request is rejected with a 400/404 status code and an error message. <br /></p>
 <ul>
-<li><strong>Product Specific Validation</strong>:<br /></li>
+<li>
+<p><strong>Order Limit</strong>: Each <code>/orders/batch</code> request can contain a maximum of <strong>25</strong> orders per request.</p>
+</li>
+<li>
+<p><strong>Product Specific Validation</strong>:<br /></p>
+</li>
 </ul>
 <table>
 <thead>
@@ -1191,8 +1170,8 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Start Date</strong></td>
-<td style="text-align: left;">At least <strong>8 days</strong> from today</td>
-<td style="text-align: left;">No restriction</td>
+<td style="text-align: left;">Starting from today</td>
+<td style="text-align: left;">Cannot be set in the future</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Duration</strong></td>
@@ -1201,8 +1180,13 @@
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Frequency</strong></td>
-<td style="text-align: left;"><code>single_image</code>, <code>max_frequency</code>,<br><code>once_every_two_weeks</code>, <code>monthly</code></td>
-<td style="text-align: left;"><code>daily</code> only</td>
+<td style="text-align: left;"><code>single_image</code>, <code>max_frequency</code>, <code>once_every_two_weeks</code>, <code>monthly</code>, <code>weekly</code>.</td>
+<td style="text-align: left;"><code>daily</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Maximum Number Of Images</strong></td>
+<td style="text-align: left;">when <code>frequency</code> is <code>single_image</code>, its value must be <code>1</code></td>
+<td style="text-align: left;">Not supported</td>
 </tr>
 </tbody>
 </table>
@@ -1230,14 +1214,15 @@
 <span class="w">  </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Urgent order for Q3 analysis&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;orders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single_image&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -1245,7 +1230,7 @@
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/batch&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span>@order_payload.json
 </code></pre></div></p>
@@ -1254,7 +1239,7 @@
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/batch&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
     <span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
 <span class="p">}</span>
@@ -1264,14 +1249,15 @@
     <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Urgent order for Q3 analysis&quot;</span><span class="p">,</span>
     <span class="s2">&quot;orders&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">&quot;area_of_interest_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;area_of_interest_id&quot;</span><span class="p">:</span> <span class="s2">&quot;1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
             <span class="s2">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
             <span class="s2">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;single_image&quot;</span><span class="p">,</span>
             <span class="s2">&quot;product_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
             <span class="s2">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
             <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;field42&quot;</span><span class="p">],</span>
-            <span class="s2">&quot;illumination_constraint&quot;</span><span class="p">:</span> <span class="s2">&quot;day&quot;</span>
+            <span class="s2">&quot;illumination_constraint&quot;</span><span class="p">:</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;maximum_number_of_images&quot;</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -1283,15 +1269,16 @@
 <p><strong>Response (201):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single_image&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;field42&quot;</span><span class="p">,</span>
@@ -1299,23 +1286,24 @@
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">    </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div></p>
 <p><strong>Error Responses:</strong></p>
 <ul>
 <li><strong>400:</strong> Invalid order request body values.</li>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to create orders.</li>
 <li><strong>404:</strong> Resource not found (e.g., AOI or product does not exist).</li>
-<li><strong>422:</strong> Request body validation error.</li>
+<li><strong>422:</strong> Request body validation error (including when a customer order contains more than 25 data orders).</li>
 </ul>
 <hr />
 <h3>2. List All Orders</h3>
 
 <p><strong>Endpoint:</strong> <code>GET /orders</code><br />
-<strong>Description:</strong> List all orders for your organization with pagination and sorting.</p>
+<strong>Description:</strong> List all orders for your workspace with pagination and sorting.</p>
 <p><strong>Query Parameters:</strong></p>
 <ul>
 <li>
@@ -1330,7 +1318,7 @@
 </ul>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=10&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;offset=0&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;sort=-created&quot;</span>
@@ -1339,7 +1327,9 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span>
+<span class="p">}</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1356,15 +1346,16 @@
 <span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single_image&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;field42&quot;</span><span class="p">,</span>
@@ -1372,14 +1363,15 @@
 <span class="w">          </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">      </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to view orders.</li>
 <li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
@@ -1390,14 +1382,14 @@
 <strong>Description:</strong> Retrieve a specific order by its unique ID.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span>
 <span class="p">}</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
@@ -1407,15 +1399,16 @@
 </code></pre></div></p>
 <p><strong>Response (200):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single_image&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rejected&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AOI is outside of the supported coverage area.&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;field42&quot;</span><span class="p">,</span>
@@ -1423,12 +1416,13 @@
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to view the order.</li>
 <li><strong>404:</strong> Order not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
@@ -1444,6 +1438,7 @@ Only the fields provided in the request body will be updated; other fields will 
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;PATCH&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="s1">&#39;https://api.constellr.com/orders/b131326b-20ea-44ff-b589-231ea77a7456&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;X-Api-Key: &lt;your_api_key&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">  &quot;tags&quot;: [</span>
@@ -1456,7 +1451,9 @@ Only the fields provided in the request body will be updated; other fields will 
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
 <span class="p">}</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -1471,15 +1468,16 @@ Only the fields provided in the request body will be updated; other fields will 
 </code></pre></div></p>
 <p><strong>Response (200):</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;area_of_interest_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-09-27T10:30:08.004000Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;end_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-10-18T10:30:08.004000Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-image&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;frequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single_image&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;field42&quot;</span><span class="p">,</span>
@@ -1487,31 +1485,65 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">        </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-28T10:05:36.362Z&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span>
+<span class="w">  </span><span class="nt">&quot;illumination_constraint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;maximum_number_of_images&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
 <strong>Error Responses:</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
-<li><strong>403:</strong> User not authorized to view the order.</li>
+<li><strong>401:</strong> Invalid API key.</li>
+<li><strong>403:</strong> User not authorized to update the order.</li>
 <li><strong>404:</strong> Order not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
 <hr />
-<h3>5. Get Available Order Use Cases</h3>
+<h3>5. Delete Order by ID</h3>
+
+<p><strong>Endpoint:</strong> <code>DELETE /orders/{order_id}</code><br />
+<strong>Description:</strong> Deletes an existing order. Only orders with status <code>pending_validation</code> or <code>rejected</code> can be deleted.</p>
+<p><strong>Path Parameters</strong></p>
+<ul>
+<li><code>order_id</code> (required, UUID): Unique ID of the order to delete.</li>
+</ul>
+<p><strong>Example: cURL</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;accept: */*&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">order_id</span> <span class="o">=</span> <span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.constellr.com/orders/</span><span class="si">{</span><span class="n">order_id</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Success Response (204)</strong></p>
+<p>Order deleted successfully. No response body is returned.</p>
+<p><strong>Error Responses:</strong></p>
+<ul>
+<li><strong>401:</strong> Invalid API key.</li>
+<li><strong>403:</strong> User not authorized to delete the order.</li>
+<li><strong>404:</strong> Order not found.</li>
+<li><strong>409:</strong> Order cannot be deleted in its current state. Only <code>pending_validation</code> or <code>rejected</code> orders can be deleted.</li>
+</ul>
+<hr />
+<h3>6. Get Available Order Use Cases</h3>
 
 <p><strong>Endpoint:</strong> <code>GET /orders/meta/use-cases</code><br />
 <strong>Description:</strong>  Returns a list of available order use cases supported by the API.  </p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/orders/meta/use-cases&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/orders/meta/use-cases&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span>
 <span class="p">}</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
@@ -1530,52 +1562,68 @@ Only the fields provided in the request body will be updated; other fields will 
 </code></pre></div></p>
 <p><strong>Error Responses:</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to view use cases.</li>
 </ul>
 <hr />
 <h2 id="areas-of-interest-api">Areas of Interest API</h2>
-<p>The <code>/areas-of-interest</code> endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your organization. AOIs define geographic regions used in data orders. All operations require authentication via a Bearer token.</p>
+<p>The <code>/areas-of-interest</code> endpoint allows you to create, list, and retrieve Areas of Interest (AOIs) for your workspace. AOIs define geographic regions used in data orders.</p>
 <h3>1. Create an Area of Interest</h3>
 
 <p><strong>Endpoint:</strong>  <code>POST /areas-of-interest</code><br />
-<strong>Description:</strong> Creates a new Area of Interest (AOI) for your organization.</p>
-<p><strong>Request Body Example</strong>
+<strong>Description:</strong> Creates a new Area of Interest (AOI) for your workspace.</p>
+<p><strong>Supported GeoJSON inputs:</strong><br />
+- <strong>Feature</strong>: Accepted as-is.<br />
+- <strong>FeatureCollection</strong>: Must contain exactly one feature.<br />
+- <strong>Polygon</strong>: Accepted and used directly.<br />
+- <strong>MultiPolygon</strong>: Must contain exactly one polygon.  </p>
+<blockquote>
+<p><strong>Note:</strong> Only a single geometry is accepted. If a FeatureCollection or MultiPolygon is provided, it must contain exactly one feature or one polygon, respectively.</p>
+</blockquote>
+<p><strong>Request Body Example:</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;name&quot;: &quot;Test AOI&quot;,</span>
 <span class="s1">    &quot;description&quot;: &quot;Test area&quot;,</span>
-<span class="s1">    &quot;geometry&quot;: {</span>
-<span class="s1">      &quot;type&quot;: &quot;Polygon&quot;,</span>
-<span class="s1">      &quot;coordinates&quot;: [</span>
-<span class="s1">        [</span>
-<span class="s1">          [8.68483, 49.885416],</span>
-<span class="s1">          [8.684889, 49.876422],</span>
-<span class="s1">          [8.670971, 49.876383],</span>
-<span class="s1">          [8.67091, 49.885378],</span>
-<span class="s1">          [8.68483, 49.885416]</span>
+<span class="s1">    &quot;geojson&quot;: {</span>
+<span class="s1">      &quot;type&quot;: &quot;Feature&quot;,</span>
+<span class="s1">      &quot;properties&quot;: {},</span>
+<span class="s1">      &quot;geometry&quot;: {</span>
+<span class="s1">        &quot;type&quot;: &quot;Polygon&quot;,</span>
+<span class="s1">        &quot;coordinates&quot;: [</span>
+<span class="s1">          [</span>
+<span class="s1">            [13.0, 52.0],</span>
+<span class="s1">            [13.5, 52.0],</span>
+<span class="s1">            [13.5, 52.5],</span>
+<span class="s1">            [13.0, 52.5],</span>
+<span class="s1">            [13.0, 52.0]</span>
+<span class="s1">          ]</span>
 <span class="s1">        ]</span>
-<span class="s1">      ]</span>
+<span class="s1">      }</span>
 <span class="s1">    }</span>
 <span class="s1">  }&#39;</span>
 </code></pre></div></p>
@@ -1584,23 +1632,27 @@ Only the fields provided in the request body will be updated; other fields will 
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
 <span class="p">}</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
     <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span> <span class="mf">49.885416</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span> <span class="mf">49.876422</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span> <span class="mf">49.876383</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span> <span class="mf">49.885378</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span> <span class="mf">49.885416</span><span class="p">]</span>
+    <span class="s2">&quot;geojson&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">52.5</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">52.5</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">52.0</span><span class="p">]</span>
+                <span class="p">]</span>
             <span class="p">]</span>
-        <span class="p">]</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -1611,29 +1663,33 @@ Only the fields provided in the request body will be updated; other fields will 
 <p><strong>Success Response (201)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;bbox_height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1300.1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-07-31T11:05:29.157539&quot;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
 <li><strong>400:</strong> Invalid AOI request body values.</li>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to create AOIs.</li>
 <li><strong>409:</strong> An Area of Interest with this name already exists.</li>
 <li><strong>422:</strong> Request body validation error.</li>
@@ -1641,37 +1697,51 @@ Only the fields provided in the request body will be updated; other fields will 
 <hr />
 <h3>2. Get an Area of Interest by ID</h3>
 
-<p><strong>Endpoint:</strong>  <code>GET /areas-of-interest/{area_of_interest_id}</code><br />
-<strong>Description:</strong> Retrieves a specific AOI by its unique ID.</p>
+<p><strong>Endpoint:</strong> <code>GET /areas-of-interest/{area_of_interest_id}</code><br />
+<strong>Description:</strong> Retrieves a specific AOI by its unique ID.  </p>
 <p><strong>Example: cURL</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest/f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="p">[</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.684889</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876422</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.670971</span><span class="p">,</span><span class="w"> </span><span class="mf">49.876383</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.67091</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885378</span><span class="p">],</span>
-<span class="w">        </span><span class="p">[</span><span class="mf">8.68483</span><span class="p">,</span><span class="w"> </span><span class="mf">49.885416</span><span class="p">]</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;bbox_height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1300.1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-07-31T11:05:29.157539&quot;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to view the AOI.</li>
 <li><strong>404:</strong> AOI not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
@@ -1680,22 +1750,16 @@ Only the fields provided in the request body will be updated; other fields will 
 <h3>3. List Areas of Interest</h3>
 
 <p><strong>Endpoint:</strong>  <code>GET /areas-of-interest</code><br />
-<strong>Description:</strong> Lists all AOIs for your organization with pagination and sorting.</p>
+<strong>Description:</strong> Lists all AOIs for your workspace with pagination and sorting.</p>
 <p><strong>Query Parameters</strong></p>
 <ul>
-<li>
-<p><code>limit</code> (optional, default: 10): Maximum number of items to return.</p>
-</li>
-<li>
-<p><code>offset</code> (optional, default: 0): Zero-based index of the first item to return.</p>
-</li>
-<li>
-<p><code>sort</code> (optional): Property to sort results by the <code>-created</code> field. Use <code>+</code> or <code>-</code> as a prefix for ascending or descending order.</p>
-</li>
+<li><code>limit</code> (optional, default: 10): Maximum number of items to return.</li>
+<li><code>offset</code> (optional, default: 0): Zero-based index of the first item to return.</li>
+<li><code>sort</code> (optional): Property to sort results by. Use <code>+</code> or <code>-</code> as a prefix for ascending or descending order. Default is <code>-created</code>.</li>
 </ul>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=10&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;offset=0&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;sort=-created&quot;</span>
@@ -1704,7 +1768,7 @@ Only the fields provided in the request body will be updated; other fields will 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -1725,22 +1789,26 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test AOI&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="p">[</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.558478</span><span class="p">,</span><span class="w"> </span><span class="mf">40.317694</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.343601</span><span class="p">,</span><span class="w"> </span><span class="mf">40.314150</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.365829</span><span class="p">,</span><span class="w"> </span><span class="mf">40.186899</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.545914</span><span class="p">,</span><span class="w"> </span><span class="mf">40.188510</span><span class="p">],</span>
-<span class="w">            </span><span class="p">[</span><span class="mf">-8.558478</span><span class="p">,</span><span class="w"> </span><span class="mf">40.317694</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">[</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.5</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.5</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">]</span>
-<span class="w">        </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test area&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;bbox_width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1200.1</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;bbox_height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1300.1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f1c53eaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-04-03T10:36:40.348842&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
@@ -1748,7 +1816,7 @@ Only the fields provided in the request body will be updated; other fields will 
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to view AOIs.</li>
 <li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
@@ -1763,7 +1831,7 @@ Only the fields provided in the request body will be updated; other fields will 
 </ul>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/cd9a3472-5e4d-495c-bb3a-8cf0408b2a3d&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;accept: */*&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
@@ -1771,7 +1839,7 @@ Only the fields provided in the request body will be updated; other fields will 
 
 <span class="n">area_of_interest_id</span> <span class="o">=</span> <span class="s2">&quot;cd9a3472-5e4d-495c-bb3a-8cf0408b2a3d&quot;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/</span><span class="si">{</span><span class="n">area_of_interest_id</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
@@ -1780,8 +1848,9 @@ Only the fields provided in the request body will be updated; other fields will 
 <p>Area of interest deleted successfully. No response body is returned.</p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> Forbidden (AOI does not belong to the user's workspace or user is not authorized).</li>
+<li><strong>409:</strong> Conflict (AOI has active orders and cannot be deleted).</li>
 <li><strong>404:</strong> Area of interest not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
@@ -1789,12 +1858,13 @@ Only the fields provided in the request body will be updated; other fields will 
 <h3>5. Get Geometry Info from AOI</h3>
 
 <p><strong>Endpoint:</strong>  <code>POST /areas-of-interest/geometry-info</code><br />
-<strong>Description:</strong> Get geometry information (bounding box width/height, area) for a provided GeoJSON AOI geometry.</p>
+<strong>Description:</strong> Get geometry information (bounding box width/height, area) for a provided GeoJSON.</p>
 <p><strong>Request Body Example</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">[</span>
 <span class="w">        </span><span class="p">[</span><span class="mf">11.053963</span><span class="p">,</span><span class="w"> </span><span class="mf">51.690862</span><span class="p">],</span>
@@ -1809,7 +1879,7 @@ Only the fields provided in the request body will be updated; other fields will 
 </code></pre></div></p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/geometry-info&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;type&quot;: &quot;Feature&quot;,</span>
@@ -1832,7 +1902,7 @@ Only the fields provided in the request body will be updated; other fields will 
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest/geometry-info&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -1869,20 +1939,20 @@ Only the fields provided in the request body will be updated; other fields will 
 <p><strong>Error Responses</strong></p>
 <ul>
 <li><strong>400:</strong> Invalid AOI geometry in request body.</li>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>422:</strong> Request body validation error.</li>
 </ul>
 <hr />
 <h2 id="products-api">Products API</h2>
-<p>The <code>/products</code> endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders. All operations require authentication via a Bearer token.</p>
+<p>The <code>/products</code> endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders.</p>
 <h3>1. List Available Products</h3>
 
 <p><strong>Endpoint:</strong>  <code>GET /products</code><br />
-<strong>Description:</strong> Retrieves a list of available products for your organization.</p>
+<strong>Description:</strong> Retrieves a list of available products for your workspace.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/products&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
@@ -1892,19 +1962,19 @@ Only the fields provided in the request body will be updated; other fields will 
 </code></pre></div>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 </ul>
 <h2 id="stac-api">STAC API</h2>
 <p>The <code>/stac</code> endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
-All operations require authentication via a Bearer token. The endpoints comply with the STAC API specification.</p>
+The endpoints comply with the STAC API specification.</p>
 <h3>1. Get STAC Landing Page</h3>
 
 <p><strong>Endpoint:</strong>  <code>GET /stac</code><br />
 <strong>Description:</strong> Fetches landing page data for the STAC Browser.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1918,13 +1988,13 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This document&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collections available for this Catalog&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/collections&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;stac_extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
@@ -1932,7 +2002,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 </ul>
 <hr />
@@ -1942,7 +2012,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <strong>Description:</strong> Fetches the conformance classes supported by the STAC API.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/conformance&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1956,14 +2026,14 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 </ul>
 <hr />
 <h3>3. List Available Collections</h3>
 
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections</code><br />
-<strong>Description:</strong> Fetches the available STAC collections for your organization.</p>
+<strong>Description:</strong> Fetches the available STAC collections for your workspace.</p>
 <p><strong>Query Parameters (optional):</strong></p>
 <ul>
 <li>
@@ -1990,7 +2060,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </ul>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=5&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;offset=0&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;bbox=-122.1,5.1,35.4,53.6&quot;</span>
@@ -1999,7 +2069,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/collections&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -2022,7 +2092,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">          </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;items&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/collections/lstfusion/items&quot;</span>
+<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">],</span>
 <span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion Level-3 UTM LST Product&quot;</span><span class="p">,</span>
@@ -2038,7 +2108,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/&quot;</span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;numberMatched&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;numberReturned&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
@@ -2046,7 +2116,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
@@ -2057,7 +2127,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <strong>Description:</strong> Fetches a single STAC collection by its ID.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -2065,7 +2135,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span>
 <span class="p">}</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
@@ -2080,11 +2150,11 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;items&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/collections/lstfusion/items&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/collections/lstfusion&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion Level-3 UTM LST Product&quot;</span><span class="p">,</span>
@@ -2101,7 +2171,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>404:</strong> Collection not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
@@ -2113,7 +2183,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <strong>Description:</strong> Fetches a single STAC item(feature) by collection and item ID.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items/item_id&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -2121,7 +2191,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="n">collection_id</span> <span class="o">=</span> <span class="s2">&quot;lstfusion&quot;</span>
 <span class="n">item_id</span> <span class="o">=</span> <span class="s2">&quot;item_id&quot;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.constellr.com/stac/collections/</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">/items/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
@@ -2149,11 +2219,11 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/collections/lstfusion&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/collections/lstfusion/items/item_id&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items/item_id&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;assets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2177,13 +2247,13 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div></p>
 <p><strong>Error Responses</strong></p>
 <ul>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>404:</strong> Item not found.</li>
 <li><strong>422:</strong> Request parameter validation error.</li>
 </ul>
 <hr />
-<h3>6. Search STAC Collections</h3>
+<h3>6. Search STAC Collections (POST)</h3>
 
 <p><strong>Endpoint:</strong>  <code>POST /stac/search</code><br />
 <strong>Description:</strong> Performs a search on STAC collections using a request body.</p>
@@ -2196,7 +2266,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 </code></pre></div>
 <strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;collections&quot;: [&quot;lstfusion&quot;],</span>
@@ -2209,7 +2279,7 @@ All operations require authentication via a Bearer token. The endpoints comply w
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &lt;access_token&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -2229,8 +2299,8 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/&quot;</span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.com/stac/search&quot;</span><span class="p">}</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
 <span class="w">  </span><span class="nt">&quot;numberMatched&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -2240,9 +2310,155 @@ All operations require authentication via a Bearer token. The endpoints comply w
 <p><strong>Error Responses</strong></p>
 <ul>
 <li><strong>400:</strong> Invalid search request body values.</li>
-<li><strong>401:</strong> Invalid authentication token.</li>
+<li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>422:</strong> Request body validation error.</li>
+</ul>
+<hr />
+<h3>7. Search STAC Collections (GET)</h3>
+
+<p><strong>Endpoint:</strong>  <code>GET /stac/search</code><br />
+<strong>Description:</strong> Performs a search on STAC collections using query parameters.</p>
+<p><strong>Query Parameters (optional):</strong></p>
+<ul>
+<li><code>collections</code>: Array of collection IDs to search for items (comma-separated).</li>
+<li><code>ids</code>: Array of item IDs to return (comma-separated).</li>
+<li><code>bbox</code>: Only return items intersecting this bounding box.</li>
+<li><code>intersects</code>: GeoJSON geometry to intersect with (mutually exclusive with <code>bbox</code>).</li>
+<li><code>datetime</code>: Only return items with a temporal property intersecting this value.</li>
+<li><code>limit</code>: Limits the number of results per page.</li>
+<li><code>fields</code>: Include or exclude fields from items body.</li>
+<li><code>filter</code>: CQL2-JSON filter expression as a JSON string.</li>
+<li><code>filter-lang</code>: The language used for the <code>filter</code> value (currently <code>cql2-json</code>).</li>
+<li><code>filter-crs</code>: CRS URI for interpreting filter geometry coordinates.</li>
+<li><code>sortby</code>: Array of property names to sort by, prefixed by <code>+</code> or <code>-</code>.</li>
+<li><code>token</code>: Pagination token from a previous response.</li>
+</ul>
+<p><strong>Example: cURL</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;collections=lstfusion&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=5&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;datetime=2025-08-18T11:00:00Z/..&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;sortby=-datetime&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;collections&quot;</span><span class="p">:</span> <span class="s2">&quot;lstfusion&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-08-18T11:00:00Z/..&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sortby&quot;</span><span class="p">:</span> <span class="s2">&quot;-datetime&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numberMatched:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numberMatched&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numberReturned:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numberReturned&quot;</span><span class="p">))</span>
+</code></pre></div></p>
+<p><strong>Success Response (200)</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;numberMatched&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;numberReturned&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Error Responses</strong></p>
+<ul>
+<li><strong>400:</strong> Invalid search request parameters.</li>
+<li><strong>401:</strong> Invalid API key.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>422:</strong> Query parameter validation error.</li>
+</ul>
+<hr />
+<h3>8. Get Collection Items</h3>
+
+<p><strong>Endpoint:</strong>  <code>GET /stac/collections/{collection_id}/items</code><br />
+<strong>Description:</strong> Fetches STAC items for a specific collection using query parameters.</p>
+<p><strong>Query Parameters (optional):</strong></p>
+<ul>
+<li><code>bbox</code>: Only return items intersecting this bounding box.</li>
+<li><code>datetime</code>: Only return items with a temporal property intersecting this value.</li>
+<li><code>limit</code>: Limits the number of results per page.</li>
+<li><code>fields</code>: Include or exclude fields from items body.</li>
+<li><code>filter</code>: CQL2-JSON filter expression as a JSON string.</li>
+<li><code>filter-lang</code>: The language used for the <code>filter</code> value (currently <code>cql2-json</code>).</li>
+<li><code>filter-crs</code>: CRS URI for interpreting filter geometry coordinates.</li>
+<li><code>sortby</code>: Array of property names to sort by, prefixed by <code>+</code> or <code>-</code>.</li>
+<li><code>token</code>: Pagination token from a previous response.</li>
+</ul>
+<p><strong>Example: cURL</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=5&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;datetime=2025-08-18T11:00:00Z/..&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;sortby=-datetime&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">collection_id</span> <span class="o">=</span> <span class="s2">&quot;lstfusion&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.constellr.com/stac/collections/</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">/items&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-08-18T11:00:00Z/..&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sortby&quot;</span><span class="p">:</span> <span class="s2">&quot;-datetime&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numberMatched:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numberMatched&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;numberReturned:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numberReturned&quot;</span><span class="p">))</span>
+</code></pre></div></p>
+<p><strong>Success Response (200)</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstzoom&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;parent&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstzoom&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/geo+json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstzoom/items&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;numberMatched&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;numberReturned&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Error Responses</strong></p>
+<ul>
+<li><strong>400:</strong> Invalid request parameters.</li>
+<li><strong>401:</strong> Invalid API key.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>422:</strong> Query parameter validation error.</li>
 </ul>
 <hr />
 

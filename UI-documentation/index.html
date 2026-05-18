@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/constellr/product-lst/UI-documentation/">
       
       
-        <link rel="prev" href="../thermal-insights/">
+        <link rel="prev" href="../LST-fusion-cal-val-procedure/">
       
       
         <link rel="next" href="../API-documentation/">
@@ -428,6 +428,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../LST-zoom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSTzoom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LST-fusion/" class="md-nav__link">
         
   
@@ -770,27 +792,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../thermal-insights/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Thermal Insights
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -803,10 +804,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -818,8 +819,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             How to access our data
           </label>
@@ -949,14 +950,14 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Explorer Lab
+    Explorer Lab & Insights
     
   </span>
   
@@ -964,10 +965,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Explorer Lab
+            Explorer Lab & Insights
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1047,7 +1048,7 @@
 <!-- > **Note:** If your organisation is registered with constellr, you can create an account for free. -->
 
 <h2 id="login-account-access"><strong>Login &amp; Account Access</strong></h2>
-<p>You can access the End User Platform via the <a href="https://app.constellr.com/signin">Sign In</a> page using your registered email and password. </p>
+<p>You can access the End User Platform via the <a href="https://app.constellr.com/signin">Sign In</a> page using your registered email and password.</p>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Invitation-Only Access</p>
@@ -1077,15 +1078,17 @@
 </ul>
 <hr />
 <blockquote>
-<p><strong>Need Help?</strong> &gt; If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at <a href="mailto:support-csm@constellr.com">support-csm@constellr.com</a>.</p>
+<p><strong>Need Help?</strong> &gt; If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at <a href="mailto:support-csm@constellr.com">support-csm@constellr.com</a>.
+</p>
 </blockquote>
 <h2 id="navigating-the-end-user-platform"><strong>Navigating the End User Platform</strong></h2>
 <p>There are four main sections in the platform, which you can access from the sidebar on the left:  </p>
 <ul>
 <li><strong>My Data</strong>: Access your data and track your orders.  </li>
-<li><strong>New order</strong>: Place a new order. </li>
-<li><strong>AOI Library</strong>: Create and manage your Areas of Interest. </li>
+<li><strong>New order</strong>: Place a new order.</li>
+<li><strong>AOI Library</strong>: Create and manage your Areas of Interest.</li>
 <li><strong>Account &amp; Workspace Settings</strong>: Manage your personal profile and control team access.</li>
+<li><strong>Archive</strong>: Browse and preview data from the L0 catalog.</li>
 </ul>
 <h3>My Data</h3>
 <p>This is the central place for tracking your data orders and downloading your data.  </p>
@@ -1095,16 +1098,14 @@ A table shows an overview of all orders you have placed, including their status,
 <p>Each row in the table represents one data order with the following information:  </p>
 <ul>
 <li><strong>Data Order ID</strong>: The unique identifier for the order.  </li>
-<li><strong>State</strong>: You can use this to track where the order is in it’s lifecycle: <ul>
-<li><em>Pending Validation</em> – waiting for validation by constellr CSMs. </li>
+<li><strong>State</strong>: You can use this to track where the order is in it’s lifecycle:</li>
+<li><em>Pending Validation</em> – waiting for validation by constellr CSMs.</li>
 <li><em>In Progress</em> – the order is active and the system is working to acquire and deliver images to you.  </li>
 <li><em>Closing</em> – this status is triggered when the monitoring period is over. The system is no longer trying to acquire new images. However, we are waiting for any last images taken by the satellite to be downlinked, processed and quality controlled before the order closes.  </li>
-<li><em>Closed</em> – the order is complete and all of your data has been delivered.   </li>
-</ul>
-</li>
-<li><strong>Area of Interest</strong>: The AOI being imaged for this order. </li>
+<li><em>Closed</em> – the order is complete and all of your data has been delivered.</li>
+<li><strong>Area of Interest</strong>: The AOI being imaged for this order.</li>
 <li><strong>Frequency</strong>: How often data is delivered to you (e.g. <em>Single Image, Weekly, Monthly</em>). This is a <em>target</em> frequency rather than a guaranteed frequency. The real frequency of deliveries may vary based on when acquisitions can take place, cloud coverage, satellite availability etc.  </li>
-<li><strong>Product</strong>: The selected product type for the order (<em>LSTprecision, LSTzoom, LSTfusion</em>). </li>
+<li><strong>Product</strong>: The selected product type for the order (<em>LSTprecision, LSTzoom, LSTfusion</em>).</li>
 <li><strong>Monitoring Period</strong>: The time window for which data is collected.  </li>
 </ul>
 <p><strong>Downloading Data</strong><br />
@@ -1112,13 +1113,23 @@ You can access your data by clicking on the Data Order ID. Here, you can see eve
 <p>Each delivery is named according to when the image was acquired by the satellite. You can expand each delivery to see the files inside of it, and download each delivery by using the download icon at the bottom.  </p>
 <p><img alt="MyDataExample" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataExample.png" width="80%" /></p>
 <h3>New Order</h3>
-<p>To place a new order, you can navigate to the <a href="https://app.constellr.com/new-order">New Order</a> tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.   </p>
+<p>To place a new order, you can navigate to the <a href="https://app.constellr.com/new-order">New Order</a> tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.</p>
 <p>Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  </p>
 <p><img alt="NewOrder" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/NewOrder.png" width="80%" /></p>
 <h3>AOI Library</h3>
 <p>This page is under construction and provides limited functionality for the moment.  </p>
 <p>From the <a href="https://app.constellr.com/aoi-library">AOI Library</a> tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  </p>
-<p>From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload polygon coordinates. Each AOI in your account must have a unique name.  </p>
+<p>From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload a GeoJSON file. Each AOI in your account must have a unique name.  </p>
+<p>For GeoJSON uploads, we accept the following inputs:</p>
+<ul>
+<li><strong>Feature</strong>: Accepted as-is.  </li>
+<li><strong>FeatureCollection</strong>: Must contain exactly one feature.  </li>
+<li><strong>Polygon</strong>: Accepted and used directly.  </li>
+<li><strong>MultiPolygon</strong>: Must contain exactly one polygon.  </li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Only a single geometry is accepted. If a FeatureCollection or MultiPolygon is provided, it must contain exactly one feature or one polygon, respectively.  </p>
+</blockquote>
 <p><img alt="AOILibrary" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/AOILibrary.png" width="80%" /></p>
 <h3>Account & Workspace Settings</h3>
 <p>You can access your account and workspace settings here: <a href="https://app.constellr.com/account">Account and Workspace Settings</a>.</p>
@@ -1134,7 +1145,7 @@ You can manage team access via the <strong>Workspace</strong> section in the <st
 <li><strong>Remove Members</strong>: Click the trash can icon to immediately revoke a user's access to this workspace.</li>
 </ul>
 <p><img alt="WorkspaceMembers" src="../images/ui-documentation/workspace_members.png" width="80%" /></p>
-<p><strong>Invitations</strong> </p>
+<p><strong>Invitations</strong></p>
 <p>The <strong>Invitations</strong> tab controls access for new users through secure, email-based invites.</p>
 <ul>
 <li><strong>Invite Member</strong>: Use the "Invite Member" button to send an access link to a colleague.</li>
@@ -1142,6 +1153,35 @@ You can manage team access via the <strong>Workspace</strong> section in the <st
 <li><strong>Manage Invites</strong>: Use the action icons to resend an invitation email or revoke an unused invitation.</li>
 </ul>
 <p><img alt="WorkspaceInvitations" src="../images/ui-documentation/workspace_invitations.png" width="80%" /></p>
+<p><strong>API Keys</strong></p>
+<p>The <strong>API Keys</strong> section allows workspace users to create and manage API credentials for programmatic integrations. You can access it by navigating to <a href="https://app.constellr.com/account/workspace-api-keys">Account &gt; Workspace &gt; API Keys</a>.</p>
+<p>From this page, you can generate a new API key by providing a name, view your existing keys in a paginated table, and delete a key to immediately revoke access.</p>
+<div class="admonition warning api key shown only once">
+<p class="admonition-title">Warning</p>
+<p>The generated key value is displayed <strong>only once</strong> at the time of creation. Make sure to copy it immediately and store it securely, as it cannot be retrieved afterwards.</p>
+</div>
+<p>A few important things to keep in mind:</p>
+<ul>
+<li>A user can have only <strong>one active API key</strong> at a time.</li>
+<li>If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.</li>
+<li>Deleting a key is irreversible — any integrations relying on that key will stop working immediately.</li>
+</ul>
+<p><img alt="APIKeys" src="../images/ui-documentation/api_keys.png" width="80%" /></p>
+<h3>Archive Browser</h3>
+
+<p>The <strong>Archive Browser</strong> provides an interactive map interface to explore available archive footprints and inspect imagery overlaps for a selected area of interest (AOI). You can access it from the main sidebar as <a href="https://app.constellr.com/archive">Archive</a>.</p>
+<p><img alt="ArchiveBrowserCoverage" src="../images/ui-documentation/archive_browser_coverage.png" width="80%" /></p>
+<p>To get started, use the quick square drawing tool to place a 15 km × 15 km AOI. The browser will display all intersecting footprints for your selected area. You can then:</p>
+<ul>
+<li>Filter results by <strong>acquisition date range</strong> (UTC)</li>
+<li>Filter by <strong>image type</strong> (<em>Day</em> and/or <em>Night</em>)</li>
+<li>Toggle footprint visibility on the map</li>
+<li>Select a footprint to inspect its metadata and load a crop preview</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Archive results are based on the L0 catalog. Preview images may appear slightly offset due to georeferencing.</p>
+</blockquote>
+<p><img alt="ArchiveBrowserPreview" src="../images/ui-documentation/archive_browser_preview.png" width="80%" /></p>
 
 
 

@@ -430,6 +430,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../LST-zoom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSTzoom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LST-fusion/" class="md-nav__link">
         
   
@@ -826,27 +848,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../thermal-insights/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Thermal Insights
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
     
     
     
@@ -855,10 +856,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -870,8 +871,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             How to access our data
           </label>
@@ -942,14 +943,14 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Explorer Lab
+    Explorer Lab & Insights
     
   </span>
   
@@ -957,10 +958,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Explorer Lab
+            Explorer Lab & Insights
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1047,9 +1048,20 @@ The first-generation SkyBee satellites are equipped with two onboard cameras cov
 </ul>
 <p>Cal/Val procedures begin pre-launch, with comprehensive laboratory calibrations in controlled environments. For example, these use a variety of calibrated reference instruments, such as blackbodies for thermal calibration and uniform light sources in the VNIR, to assess the detector responses, optical alignment, and radiometric accuracy. </p>
 <p>Post-launch, instrument performance may evolve due to launch effects or aging. Therefore, regular in-orbit calibration procedures are applied during commissioning and routine operations in order to monitor and, when necessary, update the instrument’s performance. These methodologies span a wide range of techniques. </p>
-<p><strong>Geometric performance</strong> and associated calibration parameters are generally updated by analysing images acquired over highly structured areas—such as agricultural regions with regular patterns (e.g., the Dakotas, USA) — or over sharp, well-defined features such as coastlines or bridges. These types of scenes serve as reliable references for detecting geometric distortions and verifying spatial accuracy. </p>
+<p><strong>Geometric orthorectification</strong> follows a two-step approach. First, a systematic correction is applied, which relies on the orbit ephemeris, attitude information and pre-computed calibration parameters. The calibration parameters are computed and continuously updated by analysing images acquired over highly structured areas, such as agricultural regions with regular patterns (e.g., the Dakotas, USA), or over sharp, well-defined features such as coastlines or bridges. These types of scenes serve as reliable references for detecting geometric distortions and verifying spatial accuracy. Together, this first step is assumed to correct the products to an error level of approx. 200m. </p>
+<p>The second step is a precision modelling for which reference images and a digital elevation model are used to further improve geometric accuracy to a sub pixel level. While the first step is performed for all image products, the second can only be performed successfully in areas where the imaged surface shows sufficient structures to automatically derive a set of correlation points distributed well enough over the whole image take so that an improved geometric model can be created.  </p>
+<p>The result of constellr's geometric orthorectification process, i.e. an image's geometric accuracy, is continuously monitored and evaluated by constellr. In Figure 1 and 2 the box and whisker plots present, separately for each of the two cameras (VNIR and TIR), the monthly statistical distribution of the assessed product geometric accuracy after the precision correction has been applied. In these plots, the green lines correspond to the median accuracy, the boxes are formed by the percentiles 25 and 75, and the whiskers represent the remaining 50% of the images after filtering out possible outliers (dots).  </p>
+<p>In general, these plots show that the median CE95 values are below the 1 pixel accuracy threshold over the operational time for both the TIR camera (30m GSD) and the VNIR camera (10m GSD).  </p>
+<p>Those plots will be updated monthly with the most recent images.  </p>
+<p><img alt="Geometric Accuracy 1" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_TIR02_precision+6.png" width="70%" /></p>
+<figcaption> Figure 1: TIR CE95 distribution over all precision corrected products </figcaption>
+
+<p><img alt="Geometric Accuracy 2" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_VNIR04_precision+3.png" width="70%" /></p>
+<figcaption> Figure 2: VNIR CE95 distribution over all precision corrected products </figcaption>
+
+<p><em>Note</em>: The statistical baseline of this evaluation is all image products which have successfully processed into precision status. The outliers are mostly images where the precision model falsely assumed a good enough correlation point distribution or a high enough number of correlation points. During image QC such images are sorted out and will not be delivered to customers.  </p>
 <p><strong>Statistical analyses</strong> are employed to detect dead or bad detector pixels or to correct for possible non-uniformities of the detector. Those are complemented by measurements obtained through specific spacecraft manoeuvres such as 90°-yaw manoeuvre over homogeneous sites or pointing towards the cold deep space support respectively the characterization of detector non-uniformity and dark signal. </p>
-<p><strong>Operational radiometric calibration</strong> in the VNIR range is performed using a vicarious calibration approach. This consists in aligning HiVE top-of-the atmosphere (TOA) radiances with those simultaneously provided by well-characterized, instrumented ground reference sites (e.g. RadCalNet). In the TIR domain, the radiometric calibration relies on a patented cross-calibration approach. It leverages the highly accurate land surface temperature estimates provided by independent geostationary sensors with a high temporal but low spatial resolution These temperatures are converted to simulated TOA radiances using auxiliary data and radiative transfer modelling. The comparison of the simulated and measured radiances enables the regular update of calibration parameters, ensuring continued accuracy of the thermal measurements.  </p>
+<p><strong>Operational radiometric calibration</strong> in the VNIR range is performed using a vicarious calibration approach. This consists in aligning HiVE top-of-the atmosphere (TOA) radiances with those simultaneously provided by well-characterized, instrumented ground reference sites (e.g. RadCalNet). In the TIR domain, the radiometric calibration relies on a patented cross-calibration approach. It leverages the highly accurate land surface temperature estimates provided by independent geostationary sensors with a high temporal but low spatial resolution. These temperatures are converted to simulated TOA radiances using auxiliary data and radiative transfer modelling. The comparison of the simulated and measured radiances enables the regular update of calibration parameters, ensuring continued accuracy of the thermal measurements.  </p>
 <p>In addition to the calibration procedures, the end-user LSTprecision products are regularly assessed using a set of well-established validation methods and protocols, such as the CEOS Best Practices Protocols for Global Surface Albedo and Land Surface Temperature Product Validation <sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup>. These protocols provide a harmonized framework for quantitative accuracy assessment, ensuring traceability and consistency across validation efforts.  </p>
 <p>In addition to the end-user products — namely, surface reflectance and land surface temperature, some supporting geophysical variables are also regularly evaluated. Specifically, it also includes the assessment of the geolocation accuracy, the instruments Modulation Transfer Function (MTF), atmospheric information (AOT and TCWV), and cloud mask quality which are produced as interim products supporting the L2 processing based on VNIR data.  </p>
 <p>Those validation exercises rely on reference ground-based measurements and independent satellite data coming from different networks or sources as listed in the table below. </p>
@@ -1105,14 +1117,14 @@ The first-generation SkyBee satellites are equipped with two onboard cameras cov
 </div>
 <figcaption style="text-align:center;">Example locations of reference sites.</figcaption> -->
 
-<p>The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the <a href="https://constellr.github.io/product-lst/LST-precision/">LSTprecision product</a> both during the day and at night. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.</p>
+<p>The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the <a href="https://constellr.github.io/product-lst/LST-precision/">LSTprecision product</a> both during the day and at night, as shown in Figure 3. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.</p>
 <p><img alt="LST plot" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_validation_sites_statistics.png" width="70%" /></p>
-<figcaption>Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
+<figcaption>Figure 3: Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
 
 <p>The cloud and cloud masking algorithm uses the VNIR data as an input. Here the similarity to Sentinel-2 data is exploited. The HiVE cloud algorithm was extensively validated on S2 reference data, for example on the data published in the Cloud Mask Intercomparison eXercise (CMIX)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> and is currently partaking in the follow up CMIX II comparison. Here the absolute labelling acuracy as well as class specific accuracies are evaluated. Furthermore, the cloud mask results are visually inspected for HiVE data and will be compared to selected manually labelled cloud masks.</p>
 <p><br></p>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: January, 2026
+  Last update: May, 2026
 </p>
 
 <h2 id="footnotes">Footnotes</h2>
