@@ -23,10 +23,10 @@ In general, these plots show that the median CE95 values are below the 1 pixel a
  
 Those plots will be updated monthly with the most recent images.  
 
-![Geometric Accuracy 1](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_TIR02_precision+6.png){ width=70% }
+![Geometric Accuracy 1](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_TIR02_precision+9.png){ width=70% }
 <figcaption> Figure 1: TIR CE95 distribution over all precision corrected products </figcaption>
 
-![Geometric Accuracy 2](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_VNIR04_precision+3.png){ width=70% }
+![Geometric Accuracy 2](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_VNIR04_precision+6.png){ width=70% }
 <figcaption> Figure 2: VNIR CE95 distribution over all precision corrected products </figcaption>
 
 *Note*: The statistical baseline of this evaluation is all image products which have successfully processed into precision status. The outliers are mostly images where the precision model falsely assumed a good enough correlation point distribution or a high enough number of correlation points. During image QC such images are sorted out and will not be delivered to customers.  
