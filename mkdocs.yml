@@ -16,18 +16,14 @@ nav:
     - Product Description:
       - LSTprecision: LST-precision.md
       - LSTzoom: LST-zoom.md
-      - LSTfusion: LST-fusion.md
     - Data Bundle Description:
       - LSTprecision: LST-precision-product-deliverables.md
       - LSTzoom: LST-zoom-product-deliverables.md
-      - LSTfusion: LST-fusion-product-deliverables.md
     - Metadata Explanation:
       - LSTprecision: LST-precision-metadata.md
       - LSTzoom: LST-zoom-metadata.md
-      - LSTfusion: LST-fusion-metadata.md
     - Calibration and Validation:
       - LSTprecision: LST-precision-cal-val-procedure.md
-      - LSTfusion: LST-fusion-cal-val-procedure.md
  # - Thermal Insights: thermal-insights.md
   - How to access our data:
     - UI documentation: UI-documentation.md

@@ -11,8 +11,7 @@
     - *Intelligence at scale:* Refined contrast brings hidden patterns to light, unlocking smarter monitoring and decision-making.  
     - *Stay ahead of risks:* Identify early warning signs of stress across infrastructure, materials, and the environment before problems escalate.  
     - *Track change over time:* Frequent revisit cycles (as fast as every 3 days in daylight) build a powerful time-series for spotting anomalies and long-term trends with confidence.  
-
-    Looking for consistent daily insights across large areas? → [Discover LSTfusion](https://constellr.github.io/product-lst/LST-fusion/)  
+ 
     Prefer highly accurate temperature benchmarks over time? → [Explore LSTprecision](https://constellr.github.io/product-lst/LST-precision/)  
 
 ??? note "How is LSTzoom created?"
