@@ -12,6 +12,7 @@
     - *Track trends with confidence:* High-frequency revisits (as often as every 3 days in daylight) deliver rich time-series data, enabling timely identification of anomalies and long-term patterns. 
 
     Want even sharper local detail? → [Explore LSTzoom](Link)  
+    Need broader, cloud-free daily coverage? → [Discover LSTfusion](https://constellr.github.io/product-lst/LST-fusion/) 
 
 ??? note "How is LSTprecision created?"
     LSTprecision is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of [constellr’s HiVe constellation](https://constellr.github.io/product-lst/our-technology/). Following an [advanced calibration and validation (cal/val) procedure](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/), ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle. 
@@ -72,5 +73,4 @@
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
   Last update: March, 2026
 </p>
-
 
