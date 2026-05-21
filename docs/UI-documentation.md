@@ -74,7 +74,7 @@ Each row in the table represents one data order with the following information:
   * *Closed* – the order is complete and all of your data has been delivered.
 * **Area of Interest**: The AOI being imaged for this order.
 * **Frequency**: How often data is delivered to you (e.g. *Single Image, Weekly, Monthly*). This is a *target* frequency rather than a guaranteed frequency. The real frequency of deliveries may vary based on when acquisitions can take place, cloud coverage, satellite availability etc.  
-* **Product**: The selected product type for the order (*LSTprecision, LSTzoom, LSTfusion*).
+* **Product**: The selected product type for the order (*LSTprecision, LSTzoom*).
 * **Monitoring Period**: The time window for which data is collected.  
 
 **Downloading Data**  

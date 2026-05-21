@@ -43,4 +43,3 @@ This document is intented to always provide you the latest version of our capabi
 
 [^7]: Defined as the time between image acquisition by a satellite and delivery of LST data corresponding to the acquisition. 2σ (95%) over 1000 deliveries.​
 ​
-

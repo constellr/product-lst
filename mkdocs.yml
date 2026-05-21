@@ -104,4 +104,3 @@ plugins:
 extra:
   version:
     provider: mike
-

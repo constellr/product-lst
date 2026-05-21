@@ -60,13 +60,13 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 
 - **Product Specific Validation**:<br />
 
-| Feature | LSTprecision / LSTzoom | LSTfusion                                                                                         |
-| :--- | :--- |:--------------------------------------------------------------------------------------------------|
-| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** | Bounding box limit min **60 meters** x **60 meters**, max **110,000 meters** x **110,000 meters** |
-| **Start Date** | Starting from today | Cannot be set in the future                                                                      |
-| **Duration** | Min **7 days**, Max **1 year** | No restriction                                                                                    |
-| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`. | `daily`                                                                                           |
-| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` | Not supported                                                                                     |
+| Feature | LSTprecision / LSTzoom |
+| :--- | :--- |
+| **AOI Limit** | Bounding box limit max **15,000m** x **15,000m** |
+| **Start Date** | Starting from today |
+| **Duration** | Min **7 days**, Max **1 year** |
+| **Frequency** | `single_image`, `max_frequency`, `once_every_two_weeks`, `monthly`, `weekly`. |
+| **Maximum Number Of Images** | when `frequency` is `single_image`, its value must be `1` |
 
 - **General Validation(All Products)**: <br />
     - Tags: <br />
@@ -929,7 +929,7 @@ curl -X GET "https://api.constellr.com/products" \
 ```json
 [
   {"name": "LSTprecision"},
-  {"name": "LSTfusion"}
+  {"name": "LSTzoom"}
 ]
 ```
 
@@ -1074,15 +1074,15 @@ for collection in data["collections"]:
 {
   "collections": [
     {
-      "id": "lstfusion",
+      "id": "lstprecision",
       "type": "Collection",
       "links": [
         {
           "rel": "items",
-          "href": "https://api.constellr.com/stac/collections/lstfusion/items"
+          "href": "https://api.constellr.com/stac/collections/lstprecision/items"
         }
       ],
-      "title": "LSTfusion Level-3 UTM LST Product",
+      "title": "LSTprecision Level-3 UTM LST Product",
       "extent": {
         "spatial": {"bbox": [[-122.1, 5.1, 35.4, 53.6]]},
         "temporal": {
@@ -1090,7 +1090,7 @@ for collection in data["collections"]:
         }
       },
       "license": "other",
-      "description": "Land Surface Temperature (LST) Fusion product.",
+      "description": "Land Surface Temperature (LST) Precision product.",
       "stac_version": "1.1.0"
     }
   ],
@@ -1118,7 +1118,7 @@ for collection in data["collections"]:
 
 **Example: cURL**
 ```sh
-curl -X GET "https://api.constellr.com/stac/collections/lstfusion" \
+curl -X GET "https://api.constellr.com/stac/collections/lstprecision" \
   -H "X-Api-Key: <your_api_key>"
 ```
 
@@ -1126,7 +1126,7 @@ curl -X GET "https://api.constellr.com/stac/collections/lstfusion" \
 ```python
 import requests
 
-url = "https://api.constellr.com/stac/collections/lstfusion"
+url = "https://api.constellr.com/stac/collections/lstprecision"
 
 headers = {
     "X-Api-Key": "<your_api_key>"
@@ -1142,19 +1142,19 @@ print(response.json())
 **Success Response (200)**
 ```json
 {
-  "id": "lstfusion",
+  "id": "lstprecision",
   "type": "Collection",
   "links": [
     {
       "rel": "items",
-      "href": "https://api.constellr.com/stac/collections/lstfusion/items"
+      "href": "https://api.constellr.com/stac/collections/lstprecision/items"
     },
     {
       "rel": "self",
-      "href": "https://api.constellr.com/stac/collections/lstfusion"
+      "href": "https://api.constellr.com/stac/collections/lstprecision"
     }
   ],
-  "title": "LSTfusion Level-3 UTM LST Product",
+  "title": "LSTprecision Level-3 UTM LST Product",
   "extent": {
     "spatial": {"bbox": [[-122.1, 5.1, 35.4, 53.6]]},
     "temporal": {
@@ -1184,7 +1184,7 @@ print(response.json())
 
 **Example: cURL**
 ```sh
-curl -X GET "https://api.constellr.com/stac/collections/lstfusion/items/item_id" \
+curl -X GET "https://api.constellr.com/stac/collections/lstprecision/items/item_id" \
   -H "X-Api-Key: <your_api_key>"
 ```
 
@@ -1192,7 +1192,7 @@ curl -X GET "https://api.constellr.com/stac/collections/lstfusion/items/item_id"
 ```python
 import requests
 
-collection_id = "lstfusion"
+collection_id = "lstprecision"
 item_id = "item_id"
 url = f"https://api.constellr.com/stac/collections/{collection_id}/items/{item_id}"
 headers = {"X-Api-Key": "<your_api_key>"}
@@ -1226,11 +1226,11 @@ print(data["id"], "-", data["collection"])
   "links": [
     {
       "rel": "collection",
-      "href": "https://api.constellr.com/stac/collections/lstfusion"
+      "href": "https://api.constellr.com/stac/collections/lstprecision"
     },
     {
       "rel": "self",
-      "href": "https://api.constellr.com/stac/collections/lstfusion/items/item_id"
+      "href": "https://api.constellr.com/stac/collections/lstprecision/items/item_id"
     }
   ],
   "assets": {
@@ -1243,7 +1243,7 @@ print(data["id"], "-", data["collection"])
       "type": "application/json"
     }
   },
-  "collection": "lstfusion",
+  "collection": "lstprecision",
   "properties": {
     "gsd": 30,
     "datetime": "2025-08-18T11:00:00Z"
@@ -1271,7 +1271,7 @@ print(data["id"], "-", data["collection"])
 **Request Body Example**
 ```json
 {
-  "collections": ["lstfusion"],
+  "collections": ["lstprecision"],
   "bbox": [8.3, 49.6, 9.0, 50.1],
   "datetime": "2025-08-18T11:00:00Z/.."
 }
@@ -1282,7 +1282,7 @@ curl -X POST "https://api.constellr.com/stac/search" \
   -H "X-Api-Key: <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{
-    "collections": ["lstfusion"],
+    "collections": ["lstprecision"],
     "bbox": [8.3, 49.6, 9.0, 50.1],
     "datetime": "2025-08-18T11:00:00Z/.."
   }'
@@ -1298,7 +1298,7 @@ headers = {
     "Content-Type": "application/json",
 }
 payload = {
-    "collections": ["lstfusion"],
+    "collections": ["lstprecision"],
     "bbox": [8.3, 49.6, 9.0, 50.1],
     "datetime": "2025-08-18T11:00:00Z/..",
 }
@@ -1358,7 +1358,7 @@ print("numberReturned:", data.get("numberReturned"))
 ```sh
 curl -G "https://api.constellr.com/stac/search" \
   -H "X-Api-Key: <your_api_key>" \
-  --data-urlencode "collections=lstfusion" \
+  --data-urlencode "collections=lstprecision" \
   --data-urlencode "limit=5" \
   --data-urlencode "datetime=2025-08-18T11:00:00Z/.." \
   --data-urlencode "sortby=-datetime"
@@ -1371,7 +1371,7 @@ import requests
 url = "https://api.constellr.com/stac/search"
 headers = {"X-Api-Key": "<your_api_key>"}
 params = {
-    "collections": "lstfusion",
+    "collections": "lstprecision",
     "limit": 5,
     "datetime": "2025-08-18T11:00:00Z/..",
     "sortby": "-datetime",
@@ -1427,7 +1427,7 @@ print("numberReturned:", data.get("numberReturned"))
 
 **Example: cURL**
 ```sh
-curl -G "https://api.constellr.com/stac/collections/lstfusion/items" \
+curl -G "https://api.constellr.com/stac/collections/lstprecision/items" \
   -H "X-Api-Key: <your_api_key>" \
   --data-urlencode "limit=5" \
   --data-urlencode "datetime=2025-08-18T11:00:00Z/.." \
@@ -1438,7 +1438,7 @@ curl -G "https://api.constellr.com/stac/collections/lstfusion/items" \
 ```python
 import requests
 
-collection_id = "lstfusion"
+collection_id = "lstprecision"
 url = f"https://api.constellr.com/stac/collections/{collection_id}/items"
 headers = {"X-Api-Key": "<your_api_key>"}
 params = {
@@ -1464,12 +1464,12 @@ print("numberReturned:", data.get("numberReturned"))
     {
       "rel": "collection",
       "type": "application/json",
-      "href": "https://api.constellr.com/stac/collections/lstzoom"
+      "href": "https://api.constellr.com/stac/collections/lstprecision"
     },
     {
       "rel": "parent",
       "type": "application/json",
-      "href": "https://api.constellr.com/stac/collections/lstzoom"
+      "href": "https://api.constellr.com/stac/collections/lstprecision"
     },
     {
       "rel": "root",
@@ -1479,7 +1479,7 @@ print("numberReturned:", data.get("numberReturned"))
     {
       "rel": "self",
       "type": "application/geo+json",
-      "href": "https://api.constellr.com/stac/collections/lstzoom/items"
+      "href": "https://api.constellr.com/stac/collections/lstprecision/items"
     }
   ],
   "numberMatched": 0,
