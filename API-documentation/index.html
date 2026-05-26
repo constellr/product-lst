@@ -1159,34 +1159,28 @@
 <tr>
 <th style="text-align: left;">Feature</th>
 <th style="text-align: left;">LSTprecision / LSTzoom</th>
-<th style="text-align: left;">LSTfusion</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>AOI Limit</strong></td>
 <td style="text-align: left;">Bounding box limit max <strong>15,000m</strong> x <strong>15,000m</strong></td>
-<td style="text-align: left;">Bounding box limit min <strong>60 meters</strong> x <strong>60 meters</strong>, max <strong>110,000 meters</strong> x <strong>110,000 meters</strong></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Start Date</strong></td>
 <td style="text-align: left;">Starting from today</td>
-<td style="text-align: left;">Cannot be set in the future</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Duration</strong></td>
 <td style="text-align: left;">Min <strong>7 days</strong>, Max <strong>1 year</strong></td>
-<td style="text-align: left;">No restriction</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Frequency</strong></td>
 <td style="text-align: left;"><code>single_image</code>, <code>max_frequency</code>, <code>once_every_two_weeks</code>, <code>monthly</code>, <code>weekly</code>.</td>
-<td style="text-align: left;"><code>daily</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Maximum Number Of Images</strong></td>
 <td style="text-align: left;">when <code>frequency</code> is <code>single_image</code>, its value must be <code>1</code></td>
-<td style="text-align: left;">Not supported</td>
 </tr>
 </tbody>
 </table>
@@ -1957,7 +1951,7 @@ Only the fields provided in the request body will be updated; other fields will 
 <p><strong>Success Response (200)</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision&quot;</span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion&quot;</span><span class="p">}</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTzoom&quot;</span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <p><strong>Error Responses</strong></p>
@@ -2087,15 +2081,15 @@ The endpoints comply with the STAC API specification.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;collections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lstfusion&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lstprecision&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">          </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;items&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items&quot;</span>
+<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision/items&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion Level-3 UTM LST Product&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision Level-3 UTM LST Product&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;extent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;spatial&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mf">-122.1</span><span class="p">,</span><span class="w"> </span><span class="mf">5.1</span><span class="p">,</span><span class="w"> </span><span class="mf">35.4</span><span class="p">,</span><span class="w"> </span><span class="mf">53.6</span><span class="p">]]},</span>
 <span class="w">        </span><span class="nt">&quot;temporal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2103,7 +2097,7 @@ The endpoints comply with the STAC API specification.</p>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;other&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land Surface Temperature (LST) Fusion product.&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Land Surface Temperature (LST) Precision product.&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;stac_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.1.0&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
@@ -2126,13 +2120,13 @@ The endpoints comply with the STAC API specification.</p>
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections/{collection_id}</code><br />
 <strong>Description:</strong> Fetches a single STAC collection by its ID.</p>
 <p><strong>Example: cURL</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision&quot;</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span>
@@ -2145,19 +2139,19 @@ The endpoints comply with the STAC API specification.</p>
 </code></pre></div></p>
 <p><strong>Success Response (200)</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lstfusion&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lstprecision&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;items&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision/items&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTfusion Level-3 UTM LST Product&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LSTprecision Level-3 UTM LST Product&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;extent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;spatial&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mf">-122.1</span><span class="p">,</span><span class="w"> </span><span class="mf">5.1</span><span class="p">,</span><span class="w"> </span><span class="mf">35.4</span><span class="p">,</span><span class="w"> </span><span class="mf">53.6</span><span class="p">]]},</span>
 <span class="w">    </span><span class="nt">&quot;temporal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2182,13 +2176,13 @@ The endpoints comply with the STAC API specification.</p>
 <p><strong>Endpoint:</strong>  <code>GET /stac/collections/{collection_id}/items/{item_id}</code><br />
 <strong>Description:</strong> Fetches a single STAC item(feature) by collection and item ID.</p>
 <p><strong>Example: cURL</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items/item_id&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision/items/item_id&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span>
 </code></pre></div></p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">collection_id</span> <span class="o">=</span> <span class="s2">&quot;lstfusion&quot;</span>
+<span class="n">collection_id</span> <span class="o">=</span> <span class="s2">&quot;lstprecision&quot;</span>
 <span class="n">item_id</span> <span class="o">=</span> <span class="s2">&quot;item_id&quot;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.constellr.com/stac/collections/</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">/items/</span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
@@ -2219,11 +2213,11 @@ The endpoints comply with the STAC API specification.</p>
 <span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items/item_id&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision/items/item_id&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;assets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2236,7 +2230,7 @@ The endpoints comply with the STAC API specification.</p>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nt">&quot;collection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lstfusion&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;collection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lstprecision&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;gsd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-18T11:00:00Z&quot;</span>
@@ -2259,7 +2253,7 @@ The endpoints comply with the STAC API specification.</p>
 <strong>Description:</strong> Performs a search on STAC collections using a request body.</p>
 <p><strong>Request Body Example</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;collections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lstfusion&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;collections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lstprecision&quot;</span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">8.3</span><span class="p">,</span><span class="w"> </span><span class="mf">49.6</span><span class="p">,</span><span class="w"> </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">50.1</span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-18T11:00:00Z/..&quot;</span>
 <span class="p">}</span>
@@ -2269,7 +2263,7 @@ The endpoints comply with the STAC API specification.</p>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;collections&quot;: [&quot;lstfusion&quot;],</span>
+<span class="s1">    &quot;collections&quot;: [&quot;lstprecision&quot;],</span>
 <span class="s1">    &quot;bbox&quot;: [8.3, 49.6, 9.0, 50.1],</span>
 <span class="s1">    &quot;datetime&quot;: &quot;2025-08-18T11:00:00Z/..&quot;</span>
 <span class="s1">  }&#39;</span>
@@ -2283,7 +2277,7 @@ The endpoints comply with the STAC API specification.</p>
     <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;collections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;lstfusion&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;collections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;lstprecision&quot;</span><span class="p">],</span>
     <span class="s2">&quot;bbox&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">8.3</span><span class="p">,</span> <span class="mf">49.6</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">50.1</span><span class="p">],</span>
     <span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-08-18T11:00:00Z/..&quot;</span><span class="p">,</span>
 <span class="p">}</span>
@@ -2337,7 +2331,7 @@ The endpoints comply with the STAC API specification.</p>
 <p><strong>Example: cURL</strong>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;collections=lstfusion&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;collections=lstprecision&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=5&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;datetime=2025-08-18T11:00:00Z/..&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;sortby=-datetime&quot;</span>
@@ -2348,7 +2342,7 @@ The endpoints comply with the STAC API specification.</p>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/stac/search&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;collections&quot;</span><span class="p">:</span> <span class="s2">&quot;lstfusion&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;collections&quot;</span><span class="p">:</span> <span class="s2">&quot;lstprecision&quot;</span><span class="p">,</span>
     <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2025-08-18T11:00:00Z/..&quot;</span><span class="p">,</span>
     <span class="s2">&quot;sortby&quot;</span><span class="p">:</span> <span class="s2">&quot;-datetime&quot;</span><span class="p">,</span>
@@ -2398,7 +2392,7 @@ The endpoints comply with the STAC API specification.</p>
 <li><code>token</code>: Pagination token from a previous response.</li>
 </ul>
 <p><strong>Example: cURL</strong>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstfusion/items&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision/items&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;limit=5&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">&quot;datetime=2025-08-18T11:00:00Z/..&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -2407,7 +2401,7 @@ The endpoints comply with the STAC API specification.</p>
 <p><strong>Example: Python</strong>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
-<span class="n">collection_id</span> <span class="o">=</span> <span class="s2">&quot;lstfusion&quot;</span>
+<span class="n">collection_id</span> <span class="o">=</span> <span class="s2">&quot;lstprecision&quot;</span>
 <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.constellr.com/stac/collections/</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">/items&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
@@ -2431,12 +2425,12 @@ The endpoints comply with the STAC API specification.</p>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstzoom&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;parent&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstzoom&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">,</span>
@@ -2446,7 +2440,7 @@ The endpoints comply with the STAC API specification.</p>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/geo+json&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstzoom/items&quot;</span>
+<span class="w">      </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.constellr.com/stac/collections/lstprecision/items&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;numberMatched&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
