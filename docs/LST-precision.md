@@ -31,9 +31,9 @@
     Surface Reflectance is derived from the ten [VNIR bands](https://constellr.github.io/product-lst/our-technology/) using as input the generated masks and atmospheric amounts. The constellr SR algorithm includes corrections for adjacency effects, providing SR with high accuracy for any type of scene, including vegetation, or buildings and infrastructure suitable for a large range of applications.  
 
     4. **Land Surface Temperature (LST) Retrieval:** 
-    The VNIR SRs are derived from the satellite footprints and used to estimate an initial (first-guess) emissivity for each of the four thermal bands (link to technology page). Those are used as input of the constellr LST algorithm, relying on the Equivalent Temperature Approach (ETA), to derive the land surface temperature and to optimize the surface emissivity’s. The simultaneous retrieval of LST and emissivity’s enhance the overall LSTprecision product accuracy.   
+    The VNIR SRs are derived from the satellite footprints and used to estimate an initial (first-guess) emissivity for each of the [four thermal bands](https://constellr.github.io/product-lst/our-technology/). Those are used as input of the constellr LST algorithm, relying on the Equivalent Temperature Approach (ETA), to derive the land surface temperature and to optimize the surface emissivity’s. The simultaneous retrieval of LST and emissivity’s enhance the overall LSTprecision product accuracy.   
 
-    LST and VNIR surface reflectance are thus Level 2 (L2) products that have gone through various preprocessing levels (see figure below). Therefore, they represent geophysical values that are scientifically useful and that can be processed into meaningful Earth-surface variables.  
+    LST and VNIR surface reflectance are thus Level 2 (L2) products that have gone through various preprocessing levels (see Figure below). Therefore, they represent geophysical values that are scientifically useful and that can be processed into meaningful Earth-surface variables.  
  
     During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks. In the absence of SR data, the LST retrieval is adapted and initiated with a fixed emissivity value with an expected marginal accuracy loss.  
 
