@@ -908,6 +908,105 @@ print(f"area: {data['area']}")
 
 ---
 
+<h3>6. Convert an AOI File to GeoJSON</h3>
+
+**Endpoint:** `POST /areas-of-interest/convert`  
+**Description:** Converts an uploaded KML or Shapefile into a GeoJSON Polygon. The file is validated and normalised — it must contain exactly one Polygon or MultiPolygon geometry. The result is not persisted; use `POST /areas-of-interest` afterwards to save it.
+
+**Supported formats:**
+
+- **KML** — upload a `.kml` file with `file_format=kml`.
+- **Shapefile** — upload a ZIP archive containing at least a `.shp` file (plus companion `.dbf`, `.prj`, etc.) with `file_format=shapefile`.
+
+> **Note:** The file must contain exactly one named geometry. The `name` attribute from the file is returned in the response. Maximum upload size is **10 MB**.
+
+**Form Parameters**
+
+- `file_format` (required): `kml` or `shapefile`.
+- `file` (required): The file to upload.
+
+**Example: cURL (KML)**
+```sh
+curl -X POST "https://api.constellr.com/areas-of-interest/convert" \
+  -H "X-Api-Key: <your_api_key>" \
+  -F "file_format=kml" \
+  -F "file=@my_aoi.kml"
+```
+
+**Example: cURL (Shapefile)**
+```sh
+curl -X POST "https://api.constellr.com/areas-of-interest/convert" \
+  -H "X-Api-Key: <your_api_key>" \
+  -F "file_format=shapefile" \
+  -F "file=@my_aoi.zip"
+```
+
+**Example: Python (KML)**
+```python
+import requests
+
+url = "https://api.constellr.com/areas-of-interest/convert"
+headers = {"X-Api-Key": "<your_api_key>"}
+
+with open("my_aoi.kml", "rb") as f:
+    resp = requests.post(
+        url,
+        headers=headers,
+        data={"file_format": "kml"},
+        files={"file": ("my_aoi.kml", f, "application/vnd.google-earth.kml+xml")},
+    )
+
+resp.raise_for_status()
+print(resp.json())
+```
+
+**Example: Python (Shapefile)**
+```python
+import requests
+
+url = "https://api.constellr.com/areas-of-interest/convert"
+headers = {"X-Api-Key": "<your_api_key>"}
+
+with open("my_aoi.zip", "rb") as f:
+    resp = requests.post(
+        url,
+        headers=headers,
+        data={"file_format": "shapefile"},
+        files={"file": ("my_aoi.zip", f, "application/zip")},
+    )
+
+resp.raise_for_status()
+print(resp.json())
+```
+
+**Success Response (200)**
+```json
+{
+  "name": "My Field AOI",
+  "geojson": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [13.0, 52.0],
+        [13.1, 52.0],
+        [13.1, 52.1],
+        [13.0, 52.1],
+        [13.0, 52.0]
+      ]
+    ]
+  }
+}
+```
+
+**Error Responses**
+
+- **400:** Invalid file content (unsupported geometry, multiple AOIs, missing name, corrupt file, or file exceeds 10 MB).
+- **401:** Invalid API key.
+- **403:** User not authorized to access this endpoint.
+- **502:** Conversion service unavailable. Contact support if the error persists.
+
+---
+
 ## Products API
 
 The `/products` endpoint provides access to the list of available constellr products. Use it to explore product details before creating data orders.
