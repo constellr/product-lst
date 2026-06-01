@@ -1271,7 +1271,7 @@
 <span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending_validation&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
@@ -1348,7 +1348,7 @@
 <span class="w">      </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending_validation&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -1470,7 +1470,7 @@ Only the fields provided in the request body will be updated; other fields will 
 <span class="w">  </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Order for field 42&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123e4567-e89b-12d3-a456-426614174000&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-08-27T11:54:24.206072Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;initial_state&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending_validation&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;rejection_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">      </span><span class="p">{</span>
@@ -1936,6 +1936,94 @@ Only the fields provided in the request body will be updated; other fields will 
 <li><strong>401:</strong> Invalid API key.</li>
 <li><strong>403:</strong> User not authorized to access this endpoint.</li>
 <li><strong>422:</strong> Request body validation error.</li>
+</ul>
+<hr />
+<h3>6. Convert an AOI File to GeoJSON</h3>
+
+<p><strong>Endpoint:</strong> <code>POST /areas-of-interest/convert</code><br />
+<strong>Description:</strong> Converts an uploaded KML or Shapefile into a GeoJSON Polygon. The file is validated and normalised — it must contain exactly one Polygon or MultiPolygon geometry. The result is not persisted; use <code>POST /areas-of-interest</code> afterwards to save it.</p>
+<p><strong>Supported formats:</strong></p>
+<ul>
+<li><strong>KML</strong> — upload a <code>.kml</code> file with <code>file_format=kml</code>.</li>
+<li><strong>Shapefile</strong> — upload a ZIP archive containing at least a <code>.shp</code> file (plus companion <code>.dbf</code>, <code>.prj</code>, etc.) with <code>file_format=shapefile</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The file must contain exactly one named geometry. The <code>name</code> attribute from the file is returned in the response. Maximum upload size is <strong>10 MB</strong>.</p>
+</blockquote>
+<p><strong>Form Parameters</strong></p>
+<ul>
+<li><code>file_format</code> (required): <code>kml</code> or <code>shapefile</code>.</li>
+<li><code>file</code> (required): The file to upload.</li>
+</ul>
+<p><strong>Example: cURL (KML)</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/convert&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file_format=kml&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file=@my_aoi.kml&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: cURL (Shapefile)</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.constellr.com/areas-of-interest/convert&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-Api-Key: &lt;your_api_key&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file_format=shapefile&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-F<span class="w"> </span><span class="s2">&quot;file=@my_aoi.zip&quot;</span>
+</code></pre></div></p>
+<p><strong>Example: Python (KML)</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest/convert&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_aoi.kml&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;file_format&quot;</span><span class="p">:</span> <span class="s2">&quot;kml&quot;</span><span class="p">},</span>
+        <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;my_aoi.kml&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s2">&quot;application/vnd.google-earth.kml+xml&quot;</span><span class="p">)},</span>
+    <span class="p">)</span>
+
+<span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div></p>
+<p><strong>Example: Python (Shapefile)</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.constellr.com/areas-of-interest/convert&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;X-Api-Key&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your_api_key&gt;&quot;</span><span class="p">}</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;my_aoi.zip&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;file_format&quot;</span><span class="p">:</span> <span class="s2">&quot;shapefile&quot;</span><span class="p">},</span>
+        <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;file&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;my_aoi.zip&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="s2">&quot;application/zip&quot;</span><span class="p">)},</span>
+    <span class="p">)</span>
+
+<span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div></p>
+<p><strong>Success Response (200)</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Field AOI&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;geojson&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="mf">13.1</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="mf">13.1</span><span class="p">,</span><span class="w"> </span><span class="mf">52.1</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.1</span><span class="p">],</span>
+<span class="w">        </span><span class="p">[</span><span class="mf">13.0</span><span class="p">,</span><span class="w"> </span><span class="mf">52.0</span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Error Responses</strong></p>
+<ul>
+<li><strong>400:</strong> Invalid file content (unsupported geometry, multiple AOIs, missing name, corrupt file, or file exceeds 10 MB).</li>
+<li><strong>401:</strong> Invalid API key.</li>
+<li><strong>403:</strong> User not authorized to access this endpoint.</li>
+<li><strong>502:</strong> Conversion service unavailable. Contact support if the error persists.</li>
 </ul>
 <hr />
 <h2 id="products-api">Products API</h2>
