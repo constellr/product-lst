@@ -1,31 +1,6 @@
-# **Explorer Lab**
+# Articles on LST
 
-<!-- You want to learn more about how constellr's satellites capture thermal radiation from earth and why that is important? Then learn more about the basics of LST in our curated [**LST essentials articles**](#lst-essentials).  
-
-Explore our collection of [use case stories](#solutions-in-action), which are **analysis-ready examples** of what LST data can achieve. Each story outlines a research question and is **accompanied with a dataset** to answer the question. 
-
-Or do you want to get started using land surface temperature to derive temperature-based insights? Use our **Open Data Archive** to experience our state-of-the-art imagery first-hand and for free.  -->
-
-
-<div class="grid cards" markdown>
-
--   :material-crosshairs-gps: **LST Essentials**  
-    *You want to learn more about how constellr's satellites capture thermal radiation from earth and why that is important?*  
-    Then learn more about the basics of LST in our curated [**LST essentials articles →**](#lst-essentials)  
-
--   :material-tune: **Solutions in Action**  
-    *You are interested in analysis-ready examples of what LST data can achieve?*  
-    <br>
-    Explore our collection of [**use case stories →**](#solutions-in-action) which are **accompanied with an LST-based dataset**.  
-
--   :material-database-export-outline: **Open Data Programme**  
-    *You want to get started using land surface temperature to derive temperature-based insights by yourself?*  
-    Use our [**Open Data Programme →**](https://constellr.github.io/product-lst/example-datasets/) to experience our state-of-the-art imagery first-hand and for free.  
-
-</div>
-
-
-## LST Essentials 
+<br>
 
 
 <!-- Swiper styles -->
@@ -93,64 +68,4 @@ Or do you want to get started using land surface temperature to derive temperatu
     </div>
 </div>
 
-<!-- ## LST Quality
-
-<div class="carousel-container">
-
-    <div class="swiper-button-next swiper-button-next-3"></div>
-    <div class="swiper-button-prev swiper-button-prev-3"></div>
-
-    <div class="swiper mySwiper3">
-         <div class="swiper-wrapper">
-            <div class="swiper-slide  d-flex flex-column">
-                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/correlation_lst_surfrad_SBA01_constellr_allsites+1.png" />
-                    <div class= "slide-content">
-                        <span class="tag tag-product">7 min read</span>
-                        <h6 class="fw-bold"><a>Cal/Val approach for LSTprecision</a></h6>
-                        <p class="text-muted small">Calibration and validation are important steps in assuring high quality of our LST data.</p>
-                        <a class="download-button" href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">Read article →</a>
-                    </div>
-            </div>
-
-        </div>
-    </div>
-</div> -->
-
-## Solutions in Action
-
-Do you want to get started using land surface temperature to derive temperature-based insights? Explore our collection of curated use case stories below. Our use case stories are **in-depth examples** of what LST data can achieve. Each story outlines a research question and is **accompanied with a dataset** to answer the question. Get an impression of the datasets we deliver, our data quality, and test data integration. 
-
-<div class="carousel-container">
-
-    <div class="swiper-button-next swiper-button-next-2"></div>
-    <div class="swiper-button-prev swiper-button-prev-2"></div>
-
-    <div class="swiper mySwiper2">
-         <div class="swiper-wrapper">
-
-            <div class="swiper-slide  d-flex flex-column">
-                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png" />
-                    <div class= "slide-content">
-                        <span class="tag tag-product">6 min read</span>
-                        <h6 class="fw-bold"><a>LST for Precision Agriculture</a></h6>
-                        <div class="location">📍 United States</div>
-                        <p class="text-muted small">Satellites equipped to measure LST can detect water stress, often long before it becomes visible.</p>
-                        <a class="download-button" href="https://constellr.github.io/product-lst/water-stress-use-case">Read article →</a>
-                    </div>
-            </div>
-
-            <div class="swiper-slide  d-flex flex-column">
-                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/sapporo-use-case/Gaphical_abstract_sapporo.png" />
-                    <div class= "slide-content">
-                        <span class="tag tag-product">9 min read</span>
-                        <h6 class="fw-bold"><a>LST for Urban Planning</a></h6>
-                        <div class="location">📍 Sapporo, Japan</div>
-                        <p class="text-muted small">constellr tested the ability of thermal data to identify vacant housing, confronting Japan's housing crisis.</p>
-                        <a class="download-button" href="https://constellr.github.io/product-lst/sapporo-use-case">Read article →</a>
-                    </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
+<br>

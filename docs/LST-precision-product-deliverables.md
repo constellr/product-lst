@@ -1,4 +1,4 @@
-# **LSTprecision Data Bundle**
+# LSTprecision Data Bundle Description
 Constellr's product deliverables include several layers, which are outlined below.
 
 ## Data layers

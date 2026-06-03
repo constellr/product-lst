@@ -1,4 +1,4 @@
-# Cal/Val approach for LSTprecision 
+# Calibration and Validation approach for LSTprecision 
 <br>
 The first-generation SkyBee satellites are equipped with two onboard cameras covering the [Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges](https://constellr.github.io/product-lst/Technical-specification/). Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. 
  
