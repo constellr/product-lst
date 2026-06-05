@@ -14,12 +14,13 @@ nav:
     - Metadata Explanation: LST-precision-metadata.md
     - Calibration and Validation: LST-precision-cal-val-procedure.md
   - How to access our data:
+    - Open Data Programme: example-datasets.md
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
   - Our Technology: our-technology.md
   - Case Studies: case-studies.md
-  - Open Data Programme: example-datasets.md
-  - Articles on LST: explorer-lab.md
+ 
+  # - Articles on LST: explorer-lab.md
   - Archive:
     - Home: index.md
     - Our Technology: archive/our-technology.md
