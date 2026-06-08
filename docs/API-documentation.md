@@ -82,8 +82,6 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
 **Request Body Example:**
 ```json
 {
-  "use_case": "Yield Prediction",
-  "comment": "Urgent order for Q3 analysis",
   "orders": [
     {
       "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
@@ -122,8 +120,6 @@ headers = {
 }
 
 payload = {
-    "use_case": "Yield Prediction",
-    "comment": "Urgent order for Q3 analysis",
     "orders": [
         {
             "area_of_interest_id": "1c53eaaa-9b26-4c3d-8998-bfc8e9ac1770",
@@ -437,50 +433,6 @@ Order deleted successfully. No response body is returned.
 - **403:** User not authorized to delete the order.
 - **404:** Order not found.
 - **409:** Order cannot be deleted in its current state. Only `pending_validation` or `rejected` orders can be deleted.
-
----
-
-<h3>6. Get Available Order Use Cases</h3>
-
-**Endpoint:** `GET /orders/meta/use-cases`  
-**Description:**  Returns a list of available order use cases supported by the API.  
-
-**Example: cURL**
-```sh
-curl -X GET "https://api.constellr.com/orders/meta/use-cases" \
-  -H "X-Api-Key: <your_api_key>"
-```
-
-**Example: Python**
-```python
-import requests
-
-url = "https://api.constellr.com/orders/meta/use-cases"
-headers = {
-    "X-Api-Key": "<your_api_key>"
-}
-
-response = requests.get(url, headers=headers)
-
-print(response.status_code)
-```
-
-**Response (200):**
-```json
-[
-  "Unknown",
-  "Adoption of regenerative ag",
-  "Algae/Bacteria bloom",
-  "Cover crop monitoring",
-  "Drought Stress",
-  "Yield Prediction"
-]
-```
-
-**Error Responses:**
-
-- **401:** Invalid API key.
-- **403:** User not authorized to view use cases.
 
 ---
 
