@@ -3,6 +3,48 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 ## Data layers
 
+
+**Core product data layers** 
+
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| lst.tiff | LST data | Cloud optimized geotiff |
+| lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
+| lst_thumbnail.jpg | LST Thumbnail | jpg |
+| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
+| scl_mask_XXm.tiff | Scene Classification Layer at 60m, 30m, 20m, 10m resolution. See [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) for interpretation of the individual layers. | Cloud optimized geotiff |
+
+
+**Option 1: VNIR data layers** 
+
+These files are available for free for all daytime imgaes. 
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| aot.tiff[^3] | Aerosol Optical Thickness | Cloud optimized geotiff |
+| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
+| rgb_thumbnail.jpg | RGB Thumbnail | jpg |
+| tcwv.tiff[^2] | Total Column Water Vapour | Cloud optimized geotiff |
+| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 30m resolution| Cloud optimized geotiff |
+| vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band. See [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) for interpretation of the individual layers. | Cloud optimized geotiff |
+
+**Option 2: Shaprening product layers** 
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| lst_10m.tiff | LST data at 10m resolution| Cloud optimized geotiff |
+
+**Option 3: Emissivity layers** 
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff |
+<!-- 
+
+
+--------------
+
 **Daytime data layers :** 
 
 | Layers | Description | File Format |
@@ -30,7 +72,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
 | scl_mask_30m.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m resolution | Cloud optimized geotiff |
 
-
+ -->
 
 ## Naming Convention
 
