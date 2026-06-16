@@ -94,7 +94,10 @@ The `/orders` endpoint allows you to create, list, and retrieve orders for your 
       "comment": "Order for field 42",
       "tags": ["field42"],
       "illumination_constraint": "day",
-      "maximum_number_of_images": 1
+      "maximum_number_of_images": 1,
+      "product_options": {
+        "sharpened_10m": false
+      }
     }
   ]
 }
@@ -134,7 +137,10 @@ payload = {
             "comment": "Order for field 42",
             "tags": ["field42"],
             "illumination_constraint": "day",
-            "maximum_number_of_images": 1
+            "maximum_number_of_images": 1,
+            "product_options": {
+                "sharpened_10m": True
+            }
         }
     ]
 }
@@ -167,7 +173,10 @@ print(response.json())
       }
     ],
     "illumination_constraint": "day",
-    "maximum_number_of_images": 1
+    "maximum_number_of_images": 1,
+    "product_options": {
+      "sharpened_10m": true
+    }
   }
 ]
 ```
@@ -248,7 +257,10 @@ print(data["count"], len(data["items"]))
         }
       ],
       "illumination_constraint": "day",
-      "maximum_number_of_images": 1
+      "maximum_number_of_images": 1,
+      "product_options": {
+        "sharpened_10m": true
+      }
     }
   ]
 }
@@ -310,7 +322,10 @@ print(response.json())
       }
   ],
   "illumination_constraint": "day",
-  "maximum_number_of_images": 1
+  "maximum_number_of_images": 1,
+  "product_options": {
+    "sharpened_10m": true
+  }
 }
 ```
 **Error Responses:**
@@ -387,7 +402,10 @@ print(response.json())
       }
   ],
   "illumination_constraint": "day",
-  "maximum_number_of_images": 1
+  "maximum_number_of_images": 1,
+  "product_options": {
+    "sharpened_10m": true
+  }
 }
 ```
 **Error Responses:**
