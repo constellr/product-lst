@@ -1,11 +1,10 @@
 # LSTprecision Data Bundle Description
 Constellr's product deliverables include several layers, which are outlined below.
 
-## Data layers
+## Data Layers
 
 
 **Core product data layers** 
-
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
@@ -16,63 +15,93 @@ Constellr's product deliverables include several layers, which are outlined belo
 | scl_mask_XXm.tiff | Scene Classification Layer at 60m, 30m, 20m, 10m resolution. See [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) for interpretation of the individual layers. | Cloud optimized geotiff |
 
 
-**Option 1: VNIR data layers** 
+**Option 1: VNIR layers** 
 
 These files are available for free for all daytime imgaes. 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| aot.tiff[^3] | Aerosol Optical Thickness | Cloud optimized geotiff |
 | rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
 | rgb_thumbnail.jpg | RGB Thumbnail | jpg |
-| tcwv.tiff[^2] | Total Column Water Vapour | Cloud optimized geotiff |
 | vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 30m resolution| Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band. See [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) for interpretation of the individual layers. | Cloud optimized geotiff |
 
-**Option 2: Shaprening product layers** 
+**Option 2: Shaprening layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | lst_10m.tiff | LST data at 10m resolution| Cloud optimized geotiff |
 
-**Option 3: Emissivity layers** 
+**Option 3: Emissivity layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff |
-<!-- 
+
+## Data Layer Description
+
+<h3>LSTprecision Layer</h3>
+LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30m - day and night. It is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of [constellr’s HiVe constellation](https://constellr.github.io/product-lst/our-technology/). Following an [advanced calibration and validation (cal/val) procedure](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/), ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle:
+
+  1. **Cloud and Scene Classification:** 
+  A deep learning algorithm relying on a U-net convolutional neural network (CNN), classifies pixels into four cloud-related classes: clear sky, thick cloud, thin cloud, and cloud shadow. Additional masks are also generated to distinguish land and water and to detect terrain cast-shadows. 
+
+  2. **Atmospheric Correction Inputs:** 
+  Two key atmospheric parameters are retrieved from the data: 
+      - Aerosol Optical Thickness (AOT) using the Dense Dark Vegetation (DDV) method. 
+      - Total Column Water Vapor (TCWV) via the Atmospheric Pre-corrected Differential Absorption (APDA) technique.  
+
+        We make use of  high quality and well-established datasets [ERA5](https://doi.org/10.24381/cds.bd0915c6) and [CAMS_forecast](https://doi.org/10.24381/04a0b097) datasets to complement our imagery. We seamlessly leverage the best available source to deliver robust, reliable parameter coverage and consistently high-quality results. 
+
+  3. **Surface Reflectance (SR) Retrieval:** 
+  Surface Reflectance is derived from the ten [VNIR bands](https://constellr.github.io/product-lst/our-technology/) using as input the generated masks and atmospheric amounts. The constellr SR algorithm includes corrections for adjacency effects, providing SR with high accuracy for any type of scene, including vegetation, or buildings and infrastructure suitable for a large range of applications.  
+
+  4. **Land Surface Temperature (LST) Retrieval:** 
+  The thermal retrieval is based on a library-constrained Temperature–Emissivity Separation (TES) approach. Instead of relying only on VNIR-derived first-guess emissivities, the algorithm evaluates candidate emissivity spectra from a reduced spectral library that has been adapted to the sensor’s thermal bands. For each pixel, the observed thermal radiances are atmospherically corrected and compared against the candidate emissivity spectra to identify the most physically plausible emissivity-temperature combination. Candidate solutions are ranked primarily by inter-band temperature consistency, and the final emissivity is derived from the best-supported subset of candidates. This joint retrieval of LST and emissivity provides a more physically meaningful representation of surface thermal behaviour, particularly over heterogeneous and mixed land-cover types, and supports improved robustness of the final LST product.    
+
+  LST and VNIR surface reflectance are thus Level 2 (L2) products that have gone through various preprocessing levels (see Figure below). Therefore, they represent geophysical values that are scientifically useful and that can be processed into meaningful Earth-surface variables.  
+
+  During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks.   
+
+  ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision.png){ width=80% }
+  <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product.</figcaption>
+
+<h3>VNIR Surface Reflectance Layers</h3>
+Daytime imagery comes with 8 VNIR bands for free. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  
+
+Surface reflectance (SR) is delivered at 10m native spatial resolution. The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:
+
+${SR} = DN * scale factor + offset$
+
+This has been introduced to allow the quantization of floating point numbers up to 1/100% in a 16 bit integer number. The offset value is non-zero to ensure that slightly negative values are not clipped. 
+The product is based on the L1B/C product and shows the same geotiff structure as the L1B/C radiance files.
+
+<h3>Quality Assessment Layers</h3>
+Quality masks are provided for each of the VNIR and TIR bands as uint8 data at the native spatial resolution of the corresponding band. Those masks report among others the presence of saturated pixels, nodata pixels, or possibly pixels for which the quality could not be tested. 
+
+<h3>Scene Classification Layers</h3>
+
+<h3>Sharpening Layer</h3>
+The sharpening layer has a 10m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.
+
+<h3>Emissivity Layer</h3>
+These layers provide the derived Emissivity (EMIS) values for each of the three thermal bands used in the LST algorithm, as described in Step 4 of the LSTprecision derivation.  
+
+The layers are provided as uint16 Digital Numbers at the spatial resolution of the TIR bands, i.e. 30m. The physical emissivity values (unitless) can be obtained from the DNs by applying offset and scale factors specified in the table below as
+
+${EMIS} = DN* scale factor + offset$
+
+<h3>TIR bands</h3>
+TBC
 
 
---------------
 
-**Daytime data layers :** 
-
-| Layers | Description | File Format |
-|--------|-------------|-------------|
-| lst.tiff | LST data | Cloud optimized geotiff |
-| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 10m, 20m, 30m, and 60m resolution| Cloud optimized geotiff |
-| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-zoom-metadata/) | json |
-| lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
-| lst_thumbnail.jpg | LST Thumbnail | jpg |
-| vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band| Cloud optimized geotiff |
-| scl_mask_XXm.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m and 60m resolution | Cloud optimized geotiff |
-| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
-| rgb_thumbnail.jpg | RGB Thumbnail | jpg |
-| tcwv.tiff[^2] | Total Column Water Vapour | Cloud optimized geotiff |
-| aot.tiff[^3] | Aerosol Optical Thickness | Cloud optimized geotiff |
-
-
-**Nighttime data layers :** 
-
-| Layers | Description | File Format |
-|--------|-------------|-------------|
-| lst.tiff | LST data | Cloud optimized geotiff |
-| metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
-| lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
-| lst_thumbnail.jpg | LST Thumbnail | jpg |
-| scl_mask_30m.tiff | Scene Classification Layer (e.g. vegetation, water) at 30m resolution | Cloud optimized geotiff |
-
- -->
+| Variable | Data Type | Scale Factor | Offset | Unit | Fill in |
+|---|---|---|---|---|---|
+|ST|uint16|0.01|0|K|65535|
+|EMIS|uint16|0.0001|0|1|65535|
+|SR|uint16|0.0001|-0.1|1|65535|
+<figcaption>Raster Properties for ST, EMIS and SR</figcaption>
 
 ## Naming Convention
 
@@ -86,8 +115,8 @@ Files, as described above, will be downloaded via a .zip file from the data stor
 
 
 [^custom-label]: Band 01 and 10 are excluded, as they do not represent surface information.
-[^2]: The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
-[^3]: The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data. 
+<!-- [^2]: The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
+[^3]: The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data.  -->
 
 <!-- 
 | Product Deliverables               |                       |
@@ -143,5 +172,5 @@ In case you are curious to leverage any of our data layers for your analysis, pl
 
 <br>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: September, 2025
+  Last update: June, 2026
 </p>
