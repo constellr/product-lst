@@ -1,6 +1,6 @@
 # Calibration and Validation approach for LSTprecision 
 <br>
-The first-generation SkyBee satellites are equipped with two onboard cameras covering the [Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges](https://constellr.github.io/product-lst/Technical-specification/). Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. 
+The first-generation SkyBee satellites are equipped with two onboard cameras covering the [Visible/Near-Infrared (VNIR) and Thermal Infrared (TIR) spectral ranges](https://constellr.github.io/product-lst/Technical-specification/). Measurements are acquired in ten VNIR bands—comparable to those of Sentinel-2—and four TIR bands between 8 and 12 µm, similar to those planned for the upcoming LSTM and TRISHNA missions. The detectors produce non-interpretable Digital Numbers (DNs), which are converted into accurate, georeferenced radiance measurements through a dedicated calibration and validation (Cal/Val) framework, enabling the retrieval of reliable land surface temperature and surface reflectance  products. The entire calibration and validation chain behind LSTprecision has been independently reviewed as part of an ESA Copernicus mission quality assessment. This confirms that constellr’s processing, auxiliary data usage, and validation approach meet the expectations applied to leading European Earth observation missions and guarantees high level of accuracy from the radiometric and geometric point of views.
  
 This Cal/Val framework is designed to characterize the detector response to incoming signals and correct for undesired effects. Key aspects include:  
 
@@ -46,7 +46,7 @@ Those validation exercises rely on reference ground-based measurements and indep
 | **Geolocation** | -- | -- | Sentinel-2 GRI |
 | **MTF** | -- | -- | Reference Targets |
 | **SR** | Radcalnet / (Hypernets) |Sentinel-2 | -- |
-| **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations | SEVIRI <br> GOES <br> HIMAWARI | -- |
+| **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations <br>  USCRN stations | SEVIRI <br> GOES <br> HIMAWARI | -- |
 | **AOT/TCWV** | Aeronet | -- | -- |
 <figcaption>Reference data or sites used for assessing the LSTprecision product quality.</figcaption>
 
@@ -61,7 +61,7 @@ Those validation exercises rely on reference ground-based measurements and indep
 The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the [LSTprecision product](https://constellr.github.io/product-lst/LST-precision/) both during the day and at night, as shown in Figure 3. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
 
 ![LST plot SB01](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/SBA01_TESlib_Correlation_insitu_starttime20250905_endtime20260616_forKnowledgeCenter+1.png){ width=70% }
-<figcaption>Figure 3: Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. The satellite time series span the period 15th September 2025 to 15th June 2026. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, USCRN, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
+<figcaption>Figure 3: Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. The satellite time series span the period 15th September 2025 to 15th June 2026. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, USCRN data portals, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
 
 ![LST plot SB02](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/SBA02_TESlib_Correlation_insitu_starttime20260117_endtime20260616_forKnowledgeCenter+1.png){ width=70% }
 <figcaption>Figure 3: Comparison of surface temperatures measured from space by SkyBee-02 with high-quality reference ground data over a few key validation sites. The satellite time series span the period 17th January 2026 to 15th June 2026. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, USCRN, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
@@ -71,7 +71,7 @@ The cloud and cloud masking algorithm uses the VNIR data as an input. Here the s
 <br>
 
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: May, 2026
+  Last update: June, 2026
 </p>
 
 
