@@ -74,7 +74,7 @@ Each row in the table represents one data order with the following information:
   * *Closed* – the order is complete and all of your data has been delivered.
 * **Area of Interest**: The AOI being imaged for this order.
 * **Frequency**: How often data is delivered to you (e.g. *Single Image, Weekly, Monthly*). This is a *target* frequency rather than a guaranteed frequency. The real frequency of deliveries may vary based on when acquisitions can take place, cloud coverage, satellite availability etc.  
-* **Product**: The selected product type for the order (*LSTprecision, LSTzoom*).
+* **Product**: The selected product type for the order (*LSTprecision*).
 * **Monitoring Period**: The time window for which data is collected.  
 
 **Downloading Data**  
@@ -87,9 +87,19 @@ Each delivery is named according to when the image was acquired by the satellite
 <h3>New Order</h3>
 To place a new order, you can navigate to the [New Order](https://app.constellr.com/new-order) tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.
 
+The New Order form includes the following fields:
+
+* **Monitoring Period**: Define the time window during which acquisitions should be attempted.
+* **Area of Interest (AOI)**: Select the AOI you want to monitor from your AOI Library.
+* **Desired Imaging Frequency**: Choose how often you want data deliveries (e.g. *Single Image, Weekly, Monthly*).
+* **Max Number of Images**: Set the maximum number of images to be delivered for the order.
+* **Illumination Constraint**: Specify illumination preferences constraints for acquisitions: *Day, Night, No Constraint*.
+* **Product Options**: Select the product configuration for your order, including the optional Sharpened 10m dataset.
+* **Optional Tags and Comments**: Add tags and free-text comments to help identify and manage your order.
+
 Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  
 
-![NewOrder](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/NewOrder.png){ width=80% }
+![NewOrder](./images/ui-documentation/new-order.png){ width=80% }
 
 <h3>AOI Library</h3>
 This page is under construction and provides limited functionality for the moment.  
