@@ -21,10 +21,8 @@ nav:
   - Case Studies: case-studies.md
  
   # - Articles on LST: explorer-lab.md
-  - Archive:
-    - Home: index.md
-    - Our Technology: archive/our-technology.md
-    - Our Products Portfolio: 
+  - Product Offer Archive:
+    - Products Portfolio 2025: 
       - Constellr's product offer: archive/Constellr-product-offer.md
       - Technical specifications: archive/Technical-specification.md
     - Product User Guide:
@@ -43,12 +41,6 @@ nav:
       - Calibration and Validation:
         - LSTprecision: archive/LST-precision-cal-val-procedure.md
         - LSTfusion: archive/LST-fusion-cal-val-procedure.md
-    - How to access our data:
-      - UI documentation: archive/UI-documentation.md
-      - API documentation: archive/API-documentation.md
-    - Explorer Lab & Insights: 
-      - LST Handbook: archive/explorer-lab.md
-      - Open Data Programme: archive/example-datasets.md
 
 
   

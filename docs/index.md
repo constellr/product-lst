@@ -27,7 +27,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>Open Data Programme</a></h6>
               <p class="text-muted small">Download free datasets to explore our products.</p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/example-datasets/">Explore →</a>
           </div>
   </div>
 
@@ -35,7 +35,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>LST specifications</a></h6>
               <p class="text-muted small">Find details on the technical specifications of our LST data. </p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/Technical-specification/">Explore →</a>
           </div>
   </div>
 
@@ -43,7 +43,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>Satellite Constellation</a></h6>
               <p class="text-muted small">Learn more about the HiVE constellation and SkyBee satellites</p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/our-technology/">Explore →</a>
           </div>
   </div>
 </div>
@@ -56,7 +56,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>Metadata</a></h6>
               <p class="text-muted small">How to interprete the data you receive.</p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/LST-precision-metadata/">Explore →</a>
           </div>
   </div>
 
@@ -64,7 +64,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>Case Studies</a></h6>
               <p class="text-muted small">Get inspired on how to use LST data for different applications.</p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/case-studies/">Explore →</a>
           </div>
   </div>
 
@@ -72,7 +72,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>Product Offer</a></h6>
               <p class="text-muted small">Decide which layers you need for your analysis.</p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/Constellr-product-offer/">Explore →</a>
           </div>
   </div>
 </div>
