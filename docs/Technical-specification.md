@@ -29,9 +29,9 @@ This document is intented to always provide you the latest version of our capabi
 ## Footnotes
 [^custom-label]: Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km²) between 50°S and 55°N. All numbers are cloud coverage dependent.
   
-[^2]: Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision and LSTzoom native nadir looking Ground Sampling Distance (GSD) at 510km altitude is 27.3 m for Thermal Infrared data, while GSD for LSTfusion varies with different input data sources. GSD defined as a pixel projection on ground. For LSTzoom higher resolution VNIR bands are used for sharpening to 10m.
+[^2]: Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision native nadir looking Ground Sampling Distance (GSD) at 510km altitude is 27.3 m for Thermal Infrared data. GSD defined as a pixel projection on ground.  
 
-[^3]: For LSTprecision and LSTzoom frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 < 4 days is equatorial, < 3 days at ± 40°+ latitudes and < 2 days between ± 60° and ± 80° latitude. For LSTfusion frequency defines the regularity with which data output is delivered.
+[^3]: For LSTprecision frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 < 4 days is equatorial, < 3 days at ± 40°+ latitudes and < 2 days between ± 60° and ± 80° latitude.  
 
 [^4]: Defined as solar local time, which is time based on the Sun’s actual position in the sky at your location, without considering time zones or daylight saving shifts.  
 
