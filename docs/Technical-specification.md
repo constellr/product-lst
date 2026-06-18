@@ -10,16 +10,14 @@
 | **Coverage**| worldwide tasking, up to 1.000.000 km² daily imaging capacity | 
 | **Local acquisition time [^4]**  | 01:30 am/pm <br> 10:30 am/pm   | 
 | **Type of images** | day and night imagery  | 
-| **Availability**   | 2025 Q3-ongoing  |
 | **Acquisition Angle**    | up to 30° | not applicable | 
 | **Temperature accuracy [^5]**  | <1-2K with 0.03K NEDT |
 | **Spatial accuracy**          | <1 px |
-| **Data  availability**      | 2025 - ongoing | 
-| **Data access**           | API or download | 
-| **Latency [^6]**     | 2026: <12 hrs <br> 2027: <5 hrs    | 
-| **Reactivity**     | <3 days <br> H2 2026: <12 hrs <br> 2027: <6 hrs  |  
+| **Data access**           | [API](https://constellr.github.io/product-lst/API-documentation/) or [UI](https://constellr.github.io/product-lst/UI-documentation/) | 
+| **Mean Time to Tasking (MTT)**           | Standard: 3 days <br> Priority offer: 24 hours[^6] | 
+| **Latency [^7]**     |  Standard: 3 days <br> Priority offer: 24 hours  | 
 | **Total request time**     | Sum of the above + revisit time. | 
-| **Calibration and Validation**           | In-situ data validation following CEOS standards.  Patented cross calibration of HiVE with highly accurate calibrated public missions. |
+| **Calibration and Validation**           | In-situ data validation following CEOS standards.  Patented cross calibration of HiVE with highly accurate calibrated public missions. <br> [Calibration and Validation](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/) |
 
 
 
@@ -39,5 +37,7 @@ This document is intented to always provide you the latest version of our capabi
 
 [^5]: Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.   
 
-[^6]: Defined as the time between image acquisition by a satellite and delivery of LST data corresponding to the acquisition. 2σ (95%) over 1000 deliveries.​
+[^6]: Available for orders placed Monday to Friday, 9.00am until 4.00pm Central European Time.
+
+[^7]: Defined as the time between image acquisition by a satellite and delivery of LST data corresponding to the acquisition. 2σ (95%) over 1000 deliveries.​
 ​
