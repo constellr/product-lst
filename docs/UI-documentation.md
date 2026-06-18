@@ -1,64 +1,99 @@
 
 # **End User Platform - UI Documentation**
-
 This page will guide you through the steps to create an account, access it, and browse through the delivery page.
-<!-- > **Note:** If your organisation is registered with constellr, you can create an account for free. -->
 
-## **Login & Account Access**
-
-You can access the End User Platform via the [Sign In](https://app.constellr.com/signin) page using your registered email and password.
-
----
-
-!!! info "Invitation-Only Access"
-    To ensure strict data isolation and security, the platform is **invitation-only**. You cannot sign up independently; access must be granted to a specific **Workspace** by a workspace member or a constellr Customer Success Manager (CSM).
-
-**Getting Started**
-
+## **Registration**
+ 
+The platform is **invitation-only**. You cannot sign up independently; access must be granted to a specific **Workspace** by an existing workspace member or a constellr Customer Success Manager (CSM). This ensures strict data isolation and security.
+ 
 If you are new to the platform or joining a new workspace, follow these steps:
-
+ 
 **1. Receive an Invitation**
-
-An existing workspace member or a constellr Customer Success Manager (CSM) must send an invitation to your email address.
-
+ 
+An existing workspace member or a constellr CSM must send an invitation to your email address.
+ 
 **2. Accept the Invite**
-
+ 
 Click the link provided in your invitation email. The system will determine your next step based on whether you already have an account:
-
+ 
 * **New Users:** You will be prompted with a sign-up form to provide your email and password. You must read and accept the Terms and Conditions to proceed.
 * **Existing Users:** Simply sign in with your current credentials to automatically add the new Workspace to your account.
 
 **3. Verify Your Account (New Users Only)**
-
+ 
 To finalize your account creation, you must enter a **verification code** sent to your email:
-
+ 
 * This code is valid for **24 hours**.
 * Once verified, your account is activated, and you can proceed to sign in.
-
-**4. Choose Your Workspace**
-
-Because the platform supports multi-tenancy, you may belong to multiple independent workspaces.
-
-* **Single Workspace:** You will be logged in directly to that workspace.
-* **Multiple Workspaces:** After signing in, you will be prompted to select which Workspace you wish to enter. In order to switch between workspaces, you can log out and log back in to select a different workspace.
-
+---
+ 
+> **Need Help?** If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at [support-csm@constellr.com](mailto:support-csm@constellr.com).
 ---
 
-> **Need Help?** > If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at [support-csm@constellr.com](mailto:support-csm@constellr.com).
->
+ 
+## **Login & Account Access**
+ 
+This section assumes you already have an account. If you have not registered yet, see the [Registration](#registration) section above.
+ 
+### UI Access
+ 
+You can access the End User Platform via the [Sign In](https://app.constellr.com/signin) page using your registered email and password.
+ 
+**Choosing Your Workspace**
+ 
+Because the platform allows you to join multiple workspaces, you may be asked which account you want to log in to.
+ 
+* **Single Workspace:** You will be logged in directly to that workspace.
+* **Multiple Workspaces:** After signing in, you will be prompted to select which Workspace you wish to enter. To switch between workspaces, log out and log back in to select a different one.
+### API Access
+ 
+For programmatic integrations, you can authenticate using an API key. API keys are created and managed per workspace via [Account > Workspace > API Keys](https://app.constellr.com/account/workspace-api-keys).
+ 
+A few important things to keep in mind:
+ 
+* A user can have only **one active API key** at a time.
+* The generated key value is displayed **only once** at the time of creation. Copy it immediately and store it securely, as it cannot be retrieved afterwards.
+* If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.
+* Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
+See the [API Keys](#api-keys) section for more detail on managing keys.
+ 
+---
 ## **Navigating the End User Platform**
 
-There are four main sections in the platform, which you can access from the sidebar on the left:  
+There are five main sections in the platform, which you can access from the sidebar on the left:  
 
 * **My Data**: Access your data and track your orders.  
 * **New order**: Place a new order.
+* **Archive**: Browse and preview data from our L0 catalog.
 * **AOI Library**: Create and manage your Areas of Interest.
-* **Account & Workspace Settings**: Manage your personal profile and control team access.
-* **Archive**: Browse and preview data from the L0 catalog.
+* **Demo Packs**: Access sample data sets for a variety of use cases.
+
+Additionally, the side bar contains:
+* **Documentation**: This will open a new tab on your browser and redirect you to the Knowledge Center, the central source for all constellr information.
+* **Account**: Access your End User Licencing Agreement, invite or remove people from your workspace and manage your API keys.
+
+
+<h3>New Order</h3>
+To place a new order, you can navigate to the [New Order](https://app.constellr.com/new-order) tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.
+
+The New Order form includes the following fields:
+
+* **Monitoring Period**: Define the time window during which acquisitions should be attempted.
+* **Area of Interest (AOI)**: Select the AOI you want to monitor from your AOI Library.
+* **Desired Imaging Frequency**: Choose how often you want data deliveries (e.g. *Single Image, Weekly, Monthly*).
+* **Max Number of Images**: Set the maximum number of images to be delivered for the order.
+* **Illumination Constraint**: Specify illumination preferences constraints for acquisitions: *Day, Night, No Constraint*.
+* **Product Options**: Select the product configuration for your order, including the optional Sharpened 10m dataset.
+* **Optional Tags and Comments**: Add tags and free-text comments to help identify and manage your order.
+
+Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  
+
+![NewOrder](./images/ui-documentation/new-order.png){ width=80% }
 
 <h3>My Data</h3>
 This is the central place for tracking your data orders and downloading your data.  
 
+ 
 **Tracking Orders**  
 A table shows an overview of all orders you have placed, including their status, area of interest, product, and monitoring period. At the top of the page, you can search and filter your orders to quickly find the data you need.  
 
@@ -84,22 +119,23 @@ Each delivery is named according to when the image was acquired by the satellite
 
 ![MyDataExample](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataExample.png){ width=80% }
 
-<h3>New Order</h3>
-To place a new order, you can navigate to the [New Order](https://app.constellr.com/new-order) tab. Here, you can simply fill in the order details as prompted. You can submit multiple orders at a time by clicking the  ‘Add Order’ button before submission. You can also duplicate or remove an order by clicking on the three dots on the top right of each order box.
 
-The New Order form includes the following fields:
+<h3>Archive Browser</h3>
 
-* **Monitoring Period**: Define the time window during which acquisitions should be attempted.
-* **Area of Interest (AOI)**: Select the AOI you want to monitor from your AOI Library.
-* **Desired Imaging Frequency**: Choose how often you want data deliveries (e.g. *Single Image, Weekly, Monthly*).
-* **Max Number of Images**: Set the maximum number of images to be delivered for the order.
-* **Illumination Constraint**: Specify illumination preferences constraints for acquisitions: *Day, Night, No Constraint*.
-* **Product Options**: Select the product configuration for your order, including the optional Sharpened 10m dataset.
-* **Optional Tags and Comments**: Add tags and free-text comments to help identify and manage your order.
+The **Archive Browser** provides an interactive map interface to explore available archive footprints and inspect imagery overlaps for a selected area of interest (AOI). You can access it from the main sidebar as [Archive](https://app.constellr.com/archive).
 
-Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  
+![ArchiveBrowserCoverage](./images/ui-documentation/archive_browser_coverage.png){ width=80% }
 
-![NewOrder](./images/ui-documentation/new-order.png){ width=80% }
+To get started, use the quick square drawing tool to place a 15 km × 15 km AOI. The browser will display all intersecting footprints for your selected area. You can then:
+
+* Filter results by **acquisition date range** (UTC)
+* Filter by **image type** (*Day* and/or *Night*)
+* Toggle footprint visibility on the map
+* Select a footprint to inspect its metadata and load a crop preview
+
+> **Note:** Archive results are based on the L0 catalog. Preview images may appear slightly offset due to georeferencing.
+
+![ArchiveBrowserPreview](./images/ui-documentation/archive_browser_preview.png){ width=80% }
 
 <h3>AOI Library</h3>
 This page is under construction and provides limited functionality for the moment.  
@@ -168,19 +204,4 @@ A few important things to keep in mind:
 
 ![APIKeys](./images/ui-documentation/api_keys.png){ width=80% }
 
-<h3>Archive Browser</h3>
 
-The **Archive Browser** provides an interactive map interface to explore available archive footprints and inspect imagery overlaps for a selected area of interest (AOI). You can access it from the main sidebar as [Archive](https://app.constellr.com/archive).
-
-![ArchiveBrowserCoverage](./images/ui-documentation/archive_browser_coverage.png){ width=80% }
-
-To get started, use the quick square drawing tool to place a 15 km × 15 km AOI. The browser will display all intersecting footprints for your selected area. You can then:
-
-* Filter results by **acquisition date range** (UTC)
-* Filter by **image type** (*Day* and/or *Night*)
-* Toggle footprint visibility on the map
-* Select a footprint to inspect its metadata and load a crop preview
-
-> **Note:** Archive results are based on the L0 catalog. Preview images may appear slightly offset due to georeferencing.
-
-![ArchiveBrowserPreview](./images/ui-documentation/archive_browser_preview.png){ width=80% }
