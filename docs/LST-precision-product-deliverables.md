@@ -66,7 +66,7 @@ LSTprecision's unprecedented temperature sensitivity allows for reliable absolut
   During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks.   
 
   ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_processing_steps_L0_L2.jpg){ width=80% }
-  <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the [Product Offer](https://constellr.github.io/product-lst/Constellr-product-offer/)</figcaption>
+  <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the <a href= https://constellr.github.io/product-lst/Constellr-product-offer/ >Product Offer</a></figcaption>
 
 <h3>VNIR Surface Reflectance Layers</h3>
 Daytime imagery comes with 8 VNIR bands for free. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  
@@ -82,6 +82,14 @@ The product is based on the L1B/C product and shows the same geotiff structure a
 Quality masks are provided for each of the VNIR and TIR bands as uint8 data at the native spatial resolution of the corresponding band. Those masks report among others the presence of saturated pixels, nodata pixels, or possibly pixels for which the quality could not be tested. 
 
 <h3>Scene Classification Layers</h3>
+The Scene Classification Layer (SCL) provides per-pixel quality and contextual information that can be used to identify and mask clouds, cloud shadows, and water bodies, enabling more robust retrieval of geophysical parameters and improving the reliability of change detection, time-series analysis, and monitoring workflows. 
+
+The SCL product consists of four classification bands: a cloud mask, a cast shadow mask, a dynamic and a static land/water mask (see more detail in Metadata). 
+
+The dynamic land/water mask is generated from the Level-1B calibrated (L1BC) imagery using the spectral ratio between the VNIR03 and VNIR08 bands. This approach leverages the characteristic reflectance differences of water and land surfaces to derive a scene-dependent classification that captures temporary changes in coastlines, water extent, and surface conditions at the time of acquisition. 
+
+The static land/water mask is derived from the ESA WorldCover 2021 global land-cover dataset and provides a stable reference classification independent of the current acquisition. It is particularly useful for consistency checks and for distinguishing between persistent land/water boundaries and short-term variations observed in the dynamic mask. 
+
 
 <h3>Sharpening Layer</h3>
 The sharpening layer has a 10m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.  
@@ -103,7 +111,6 @@ TBC -->
 | Variable | Data Type | Scale Factor | Offset | Unit | Fill in |
 |---|---|---|---|---|---|
 |ST|uint16|0.01|0|K|65535|
-<!-- |EMIS|uint16|0.0001|0|1|65535| -->
 |SR|uint16|0.0001|-0.1|1|65535|
 <figcaption>Raster Properties for ST and SR</figcaption>
 
