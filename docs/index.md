@@ -16,38 +16,71 @@
 
 <!-- CHANGE LINKS ONCE READY!!!! -->
 
-<div class="grid cards" markdown>
-
--   :material-database-export: [**Open Data Programme**](https://constellr.github.io/product-lst/)  
-    Download free datasets to explore our products.
-
--   :material-list-status: [**LST specifications**](https://constellr.github.io/product-lst/)  
-    Find details on the technical specifications of our LST data.  
-
--   :material-satellite-variant: [**Satellite Constellation**](https://constellr.github.io/product-lst/)  
-    Learn more about the HiVE constellation and SkyBee satellites.
-
-</div>
-
-<div class="grid cards" markdown>
-
--   :material-lightbulb: [**Metadata**](https://constellr.github.io/product-lst/)  
-    How to interprete the data you receive.  
-
--   :material-map: [**Case Studies**](https://constellr.github.io/product-lst/)  
-    Get inspired on how to use LST data for different applications.  
-
--   :material-layers-triple: [**Product Offer**](https://constellr.github.io/product-lst/)  
-    Decide which layers you need for your analysis.  
-
-</div>
 
 <br>
 
-<h3><i>LST Articles<h3><i>
-
 <!-- Swiper styles -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+<div class="swiper-wrapper2">
+  <div class="swiper-slide2  d-flex flex-column">
+          <div class= "slide-content">
+              <h6 class="fw-bold"><a>Open Data Programme</a></h6>
+              <p class="text-muted small">Download free datasets to explore our products.</p>
+              <a class="download-button" href="https://constellr.github.io/product-lst/example-datasets/">Explore →</a>
+          </div>
+  </div>
+
+  <div class="swiper-slide2  d-flex flex-column">
+          <div class= "slide-content">
+              <h6 class="fw-bold"><a>LST specifications</a></h6>
+              <p class="text-muted small">Find details on the technical specifications of our LST data. </p>
+              <a class="download-button" href="https://constellr.github.io/product-lst/Technical-specification/">Explore →</a>
+          </div>
+  </div>
+
+  <div class="swiper-slide2  d-flex flex-column">
+          <div class= "slide-content">
+              <h6 class="fw-bold"><a>Satellite Constellation</a></h6>
+              <p class="text-muted small">Learn more about the HiVE constellation and SkyBee satellites</p>
+              <a class="download-button" href="https://constellr.github.io/product-lst/our-technology/">Explore →</a>
+          </div>
+  </div>
+</div>
+
+
+
+<div class="swiper-wrapper2">
+
+  <div class="swiper-slide2  d-flex flex-column">
+          <div class= "slide-content">
+              <h6 class="fw-bold"><a>Metadata</a></h6>
+              <p class="text-muted small">How to interprete the data you receive.</p>
+              <a class="download-button" href="https://constellr.github.io/product-lst/LST-precision-metadata/">Explore →</a>
+          </div>
+  </div>
+
+  <div class="swiper-slide2  d-flex flex-column">
+          <div class= "slide-content">
+              <h6 class="fw-bold"><a>Case Studies</a></h6>
+              <p class="text-muted small">Get inspired on how to use LST data for different applications.</p>
+              <a class="download-button" href="https://constellr.github.io/product-lst/case-studies/">Explore →</a>
+          </div>
+  </div>
+
+  <div class="swiper-slide2  d-flex flex-column">
+          <div class= "slide-content">
+              <h6 class="fw-bold"><a>Product Offer</a></h6>
+              <p class="text-muted small">Decide which layers you need for your analysis.</p>
+              <a class="download-button" href="https://constellr.github.io/product-lst/Constellr-product-offer/">Explore →</a>
+          </div>
+  </div>
+</div>
+
+
+
+
+## LST Articles
 
 <div class="carousel-container">
     <!-- Arrows -->

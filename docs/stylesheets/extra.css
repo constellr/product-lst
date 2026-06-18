@@ -323,6 +323,15 @@ img {
   padding: 1rem;
 }
 
+.swiper-wrapper2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers all cards */
+  gap: 24px;
+  padding: 1rem;
+}
+
+
 .swiper {
   width: 100%;
   padding: 2rem 0;
@@ -330,18 +339,6 @@ img {
 }
 
 .swiper-slide { /* card-body */
-  /* background-color: white;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  min-width: 290px;
-  max-width: 290px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; 
-  overflow: hidden; */
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
@@ -355,6 +352,21 @@ img {
   height: 510px !important;
 }
 
+.swiper-slide2 { /* card-body */
+  background: white;
+  border-radius: 10px;
+  width: 290px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.swiper-slide2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 .slide-content {
   padding: 1rem; /* now padding only applies to text */
   display: flex;
@@ -369,7 +381,7 @@ img {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.swiper-slide h6.fw-bold{
+.slide-content h6.fw-bold{
   font-size: 0.9rem;
   font-weight: 700;
   color: #212529;

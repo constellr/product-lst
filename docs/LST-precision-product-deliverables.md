@@ -9,10 +9,10 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | lst.tiff | LST data | Cloud optimized geotiff |
-| lst_composite.tiff | Temperature quicklook | Cloud optimized geotiff |
+| lst_quicklook.tiff | Temperature quicklook | Cloud optimized geotiff |
 | lst_thumbnail.jpg | LST Thumbnail | jpg |
 | metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
-| scl_mask_XXm.tiff | Scene Classification Layer at 60m, 30m, 20m, 10m resolution. See [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) for interpretation of the individual layers. | Cloud optimized geotiff |
+| scl_mask_30m.tiff | Scene Classification Layer at 30m resolution | Cloud optimized geotiff |
 
 
 **Option 1: VNIR layers** 
@@ -21,22 +21,24 @@ These files are available for free for all daytime imgaes.
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| rgb_composite.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
+| rgb_quicklook.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
 | rgb_thumbnail.jpg | RGB Thumbnail | jpg |
-| vnir02.tiff - vnir09.tiff[^custom-label] |VNIR Surface Reflection per band at 30m resolution| Cloud optimized geotiff |
-| vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band. See [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) for interpretation of the individual layers. | Cloud optimized geotiff |
+| scl_mask_xxm.tiff | Scene Classification Layer at 10m and 20m spatial resolution | Cloud optimized geotiff |
+| vnirXX.tiff[^custom-label] |VNIR Surface Reflection for bands 02 - 09 ( see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)| Cloud optimized geotiff |
+| vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band at band's spatial resolution | Cloud optimized geotiff |
 
 **Option 2: Shaprening layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| lst_10m.tiff | LST data at 10m resolution| Cloud optimized geotiff |
+| lst_sharpened_10m.tiff | LST data at 10m resolution| Cloud optimized geotiff |
+| scl_mask_10m.tiff |Scene Classification Layer at 10m spatial resolution| Cloud optimized geotiff |
 
-**Option 3: Emissivity layer** 
+<!-- **Option 3: Emissivity layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff |
+| emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff | -->
 
 ## Data Layer Description
 
@@ -57,19 +59,19 @@ LSTprecision's unprecedented temperature sensitivity allows for reliable absolut
   Surface Reflectance is derived from the ten [VNIR bands](https://constellr.github.io/product-lst/our-technology/) using as input the generated masks and atmospheric amounts. The constellr SR algorithm includes corrections for adjacency effects, providing SR with high accuracy for any type of scene, including vegetation, or buildings and infrastructure suitable for a large range of applications.  
 
   4. **Land Surface Temperature (LST) Retrieval:** 
-  The thermal retrieval is based on a library-constrained Temperature–Emissivity Separation (TES) approach. Instead of relying only on VNIR-derived first-guess emissivities, the algorithm evaluates candidate emissivity spectra from a reduced spectral library that has been adapted to the sensor’s thermal bands. For each pixel, the observed thermal radiances are atmospherically corrected and compared against the candidate emissivity spectra to identify the most physically plausible emissivity-temperature combination. Candidate solutions are ranked primarily by inter-band temperature consistency, and the final emissivity is derived from the best-supported subset of candidates. This joint retrieval of LST and emissivity provides a more physically meaningful representation of surface thermal behaviour, particularly over heterogeneous and mixed land-cover types, and supports improved robustness of the final LST product.    
+  The thermal retrieval is based on a library-constrained Temperature–Emissivity Separation (TES) approach. Instead of relying only on VNIR-derived first-guess emissivities, the algorithm evaluates candidate emissivity spectra from a spectral library that has been adapted to the sensor’s thermal bands. For each pixel, the observed thermal radiances are atmospherically corrected and compared against the candidate emissivity spectra to identify the most physically plausible emissivity-temperature combination. Candidate solutions are ranked primarily by inter-band temperature consistency, and the final emissivity is derived from the best-supported subset of candidates. This joint retrieval of LST and emissivity provides a more physically meaningful representation of surface thermal behaviour, particularly over heterogeneous and mixed land-cover types, and supports improved robustness of the final LST product.    
 
   LST and VNIR surface reflectance are thus Level 2 (L2) products that have gone through various preprocessing levels (see Figure below). Therefore, they represent geophysical values that are scientifically useful and that can be processed into meaningful Earth-surface variables.  
 
   During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks.   
 
-  ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision.png){ width=80% }
-  <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product.</figcaption>
+  ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_processing_steps_L0_L2.jpg){ width=80% }
+  <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the [Product Offer](https://constellr.github.io/product-lst/Constellr-product-offer/)</figcaption>
 
 <h3>VNIR Surface Reflectance Layers</h3>
 Daytime imagery comes with 8 VNIR bands for free. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  
 
-Surface reflectance (SR) is delivered at 10m native spatial resolution. The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:
+Surface reflectance (SR) is delivered at 10m and 20m spatial resolution (see [Our Technology](https://constellr.github.io/product-lst/our-technology/) for each band's resolution). The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:
 
 ${SR} = DN * scale factor + offset$
 
@@ -82,9 +84,11 @@ Quality masks are provided for each of the VNIR and TIR bands as uint8 data at t
 <h3>Scene Classification Layers</h3>
 
 <h3>Sharpening Layer</h3>
-The sharpening layer has a 10m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.
+The sharpening layer has a 10m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.  
+The sharpening algorithm creates a 10m resolution LST data layer using as input the nominal HiVE 30m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation.  
+Consequently, the 10m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.
 
-<h3>Emissivity Layer</h3>
+<!-- <h3>Emissivity Layer</h3>
 These layers provide the derived Emissivity (EMIS) values for each of the three thermal bands used in the LST algorithm, as described in Step 4 of the LSTprecision derivation.  
 
 The layers are provided as uint16 Digital Numbers at the spatial resolution of the TIR bands, i.e. 30m. The physical emissivity values (unitless) can be obtained from the DNs by applying offset and scale factors specified in the table below as
@@ -92,16 +96,16 @@ The layers are provided as uint16 Digital Numbers at the spatial resolution of t
 ${EMIS} = DN* scale factor + offset$
 
 <h3>TIR bands</h3>
-TBC
+TBC -->
 
 
 
 | Variable | Data Type | Scale Factor | Offset | Unit | Fill in |
 |---|---|---|---|---|---|
 |ST|uint16|0.01|0|K|65535|
-|EMIS|uint16|0.0001|0|1|65535|
+<!-- |EMIS|uint16|0.0001|0|1|65535| -->
 |SR|uint16|0.0001|-0.1|1|65535|
-<figcaption>Raster Properties for ST, EMIS and SR</figcaption>
+<figcaption>Raster Properties for ST and SR</figcaption>
 
 ## Naming Convention
 
