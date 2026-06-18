@@ -1,4 +1,4 @@
-# LSTprecision Metadata
+# LSTprecision Metadata Explanation
 
 
 This page describes the metadata file used for L2A products. 
