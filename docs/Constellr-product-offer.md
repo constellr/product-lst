@@ -3,7 +3,7 @@
 
 Our product portfolio combines a **core Land Surface Temperature (LST) dataset with optional advanced data layers** to help you extract maximum value from thermal observations. Monitor your area of interest with proprietary, high-frequency, high-resolution data designed for deeper insights and better decision-making.
 
-![Product Offer](./images/Screenshot 2026-06-02 at 13.53.04.png)  
+<img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/images/product.png" alt="Product Offer" style="width:60%;">
 
 <br>
 
