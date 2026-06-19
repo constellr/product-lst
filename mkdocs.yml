@@ -20,12 +20,12 @@ nav:
   - Our Technology: our-technology.md
   - Case Studies: case-studies.md
  
-  # - Articles on LST: explorer-lab.md
-  - Product Offer Archive:
+
+  - Archive:
     - Products Portfolio 2025: 
       - Constellr's product offer: archive/Constellr-product-offer.md
       - Technical specifications: archive/Technical-specification.md
-    - Product User Guide:
+    - Product User Guide 2025:
       - Product Description:
         - LSTprecision: archive/LST-precision.md
         - LSTzoom: archive/LST-zoom.md

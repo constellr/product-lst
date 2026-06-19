@@ -78,8 +78,8 @@ To learn more about our different products visit our [Product Portfolio](https:/
 
 ----------
 
-## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://constdataext.blob.core.windows.net/constellr-public/Capability_Statement/Capability_statement_constellr_PUBLIC.pdf).
+<!-- ## Capability Statement
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://constdataext.blob.core.windows.net/constellr-public/Capability_Statement/Capability_statement_constellr_PUBLIC.pdf). -->
 
 
 

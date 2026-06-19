@@ -16,15 +16,15 @@
 | **Data access**           | [API](https://constellr.github.io/product-lst/API-documentation/) or [UI](https://constellr.github.io/product-lst/UI-documentation/) | 
 | **Mean Time to Tasking (MTT)**           | Standard: 3 days <br> Priority offer: 24 hours[^6] | 
 | **Latency [^7]**     |  Standard: 3 days <br> Priority offer: 24 hours  | 
-| **Total request time**     | Sum of the above + revisit time. | 
+| **Total request time**     | Sum of (MTT + Revisit Time + Latency) | 
 | **Calibration and Validation**           | In-situ data validation following CEOS standards.  Patented cross calibration of HiVE with highly accurate calibrated public missions. <br> [Calibration and Validation](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/) |
 
 
 
 
-
+<!-- 
 ## Capability Statement
-This document is intented to always provide you the latest version of our capability statement. Download [here](https://constdataext.blob.core.windows.net/constellr-public/Capability_Statement/Capability_statement_constellr_PUBLIC.pdf).  
+This document is intented to always provide you the latest version of our capability statement. Download [here](https://constdataext.blob.core.windows.net/constellr-public/Capability_Statement/Capability_statement_constellr_PUBLIC.pdf).   -->
 
 ## Footnotes
 [^custom-label]: Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km²) between 50°S and 55°N. All numbers are cloud coverage dependent.
