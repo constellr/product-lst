@@ -116,13 +116,29 @@ TBC -->
 
 ## Naming Convention
 
-Files, as described above, will be downloaded via a .zip file from the data store. The .zip file will have the following naming convention:
+**Via the API**
+<br> Files can be downloaded via a STAC compliant API. The naming convention per file is as follows: 
 
 !!! note "Naming convention"
-    **<span style="color:blue;">[Acquisition time]</span>** _ **<span style="color:orangered;">[Product]</span>** _ **<span style="color:green;">[data order ID]</span>**
+    **<span style="color:darkblue;">[Product Type]</span>** _ **<span style="color:red;">[Satellite ID]</span>** _ **<span style="color:green;">[Geohash]</span>** _ **<span style="color:blue;">[Acquisition Time]</span>** _ **<span style="color:purple;">[File Type]</span>**
 
-    *Example*  
-    **<span style="color:blue;">20240512T095854Z</span>** _ **<span style="color:orangered;">LSTprecision</span>** _ **<span style="color:green;">cae562b6-04a2-48cf-a044-eb61064e4c9b</span>**
+    <!-- *Example*  
+    **<span style="color:darkblue;">LSTprecision</span>** _ **<span style="color:red;">SBA01</span>** _ **<span style="color:green;">[Geohash]</span>** _ **<span style="color:blue;">[Acquisition Time]</span>** _ **<span style="color:purple;">[File Type]</span>** -->
+
+    **<span style="color:darkblue;">[Product Type]</span>** = the constellr product name e.g. LSTprecision 
+    <br> **<span style="color:red;">[Satellite ID]</span>** = the unique satellite ID e.g. SBA01 or SBA02 
+    <br> **<span style="color:green;">[Geohash]</span>** = the geohash of the image’s footprint
+    <br> **<span style="color:blue;">[Acquisition Time]</span>** = the time the image was acquired by the satellite
+    <br> **<span style="color:purple;">[File Type]</span>** = describes the content of the file e.g. metadata.json, lst.tiff etc
+
+
+
+**Via the UI**
+<br> For every acquired image, you can download a zip folder containing all of the files related to that image. The file naming convention is as above. The folder name is the root of the file i.e.  
+
+!!! note "Naming convention"
+    **<span style="color:darkblue;">[Product Type]</span>** _ **<span style="color:red;">[Satellite ID]</span>** _ **<span style="color:green;">[Geohash]</span>** _ **<span style="color:blue;">[Acquisition Time]</span>**
+
 
 
 [^custom-label]: Band 01 and 10 are excluded, as they do not represent surface information.
