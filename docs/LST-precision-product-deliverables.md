@@ -17,14 +17,14 @@ Constellr's product deliverables include several layers, which are outlined belo
 
 **Option 1: VNIR layers** 
 
-These files are available for free for all daytime imgaes. 
+These files are available for free for all daytime images. 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | rgb_quicklook.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
 | rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | scl_mask_xxm.tiff | Scene Classification Layer at 10m and 20m spatial resolution | Cloud optimized geotiff |
-| vnirXX.tiff[^custom-label] |VNIR Surface Reflection for bands 02 - 09 ( see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)| Cloud optimized geotiff |
+| vnirXX.tiff[^custom-label] |VNIR Surface Reflection for bands 02 - 09 (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/))| Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band at band's spatial resolution | Cloud optimized geotiff |
 
 **Option 2: Shaprening layer** 
