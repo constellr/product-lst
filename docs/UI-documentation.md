@@ -25,10 +25,8 @@ To finalize your account creation, you must enter a **verification code** sent t
  
 * This code is valid for **24 hours**.
 * Once verified, your account is activated, and you can proceed to sign in.
----
- 
-> **Need Help?** If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at [support-csm@constellr.com](mailto:support-csm@constellr.com).
----
+
+> **Need Help?** If you haven't received an invitation or need technical assistance, please contact your project lead or our support team at [support-csm@constellr.com](mailto:support-csm@constellr.com)
 
  
 ## **Login & Account Access**
@@ -116,6 +114,18 @@ Each row in the table represents one data order with the following information:
 You can access your data by clicking on the Data Order ID. Here, you can see every delivery for that order.  
 
 Each delivery is named according to when the image was acquired by the satellite. You can expand each delivery to see the files inside of it, and download each delivery by using the download icon at the bottom.  
+
+**File Naming Convention**
+
+Downloaded files follow a consistent naming structure so you can easily identify the content at a glance.
+
+Individual files are named as follows:
+
+`[PRODUCT]_[SATELLITE]_[GEOHASH]_[ACQUISITION TIME]_[FILE TYPE].ext`
+
+When you download a zip file, the folder inside the archive is named as follows:
+
+`[PRODUCT]_[SATELLITE]_[GEOHASH]_[ACQUISITION TIME]`
 
 ![MyDataExample](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataExample.png){ width=80% }
 
