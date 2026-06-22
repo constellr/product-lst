@@ -127,6 +127,15 @@ When you download a zip file, the folder inside the archive is named as follows:
 
 `[PRODUCT]_[SATELLITE]_[GEOHASH]_[ACQUISITION TIME]`
 
+Field breakdown (applies to both file and folder names):
+
+* **[PRODUCT]**: Product line for the delivery.
+* **[SATELLITE]**: Satellite identifier used for the acquisition.
+* **[GEOHASH]**: Location code representing the acquisition tile/area.
+* **[ACQUISITION TIME]**: Timestamp of image acquisition (UTC).
+* **[FILE TYPE]**: File content/type label (present in file names only, for example, LST layer).
+* **.ext**: File extension indicating the format (present in file names only, for example, `.tif`, `.json`).
+
 ![MyDataExample](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/UI_documentation/MyDataExample.png){ width=80% }
 
 
