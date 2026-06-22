@@ -1012,6 +1012,14 @@ curl -X GET "https://api.constellr.com/products" \
 The `/stac` endpoint provides access to SpatioTemporal Asset Catalog (STAC) API, allowing you to search and retrieve geospatial data in a standardized format.
 The endpoints comply with the STAC API specification.
 
+### Downloading Files
+
+Each STAC item contains an `assets` field with pre-signed URLs for direct file download. Send a plain HTTP GET to the `href` of the asset you need — no API key is required for the download request itself.
+
+Files follow a consistent naming convention: `[PRODUCT]_[SATELLITE]_[GEOHASH]_[ACQUISITION TIME]_[FILE TYPE].ext`
+
+---
+
 <h3>1. Get STAC Landing Page</h3>
 
 **Endpoint:**  `GET /stac`  
@@ -1563,4 +1571,4 @@ print("numberReturned:", data.get("numberReturned"))
 - **403:** User not authorized to access this endpoint.
 - **422:** Query parameter validation error.
 
----
+
