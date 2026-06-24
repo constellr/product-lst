@@ -9,8 +9,8 @@ Constellr's product deliverables include several layers, which are outlined belo
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | lst.tiff | LST data | Cloud optimized geotiff |
-| lst_quicklook.tiff | Temperature quicklook | Cloud optimized geotiff |
-| lst_thumbnail.jpg | LST Thumbnail | jpg |
+| quicklook.tiff | Temperature quicklook | Cloud optimized geotiff |
+| thumbnail.jpg | Temperature Thumbnail | jpg |
 | metadata.json | [Metadata description](https://constellr.github.io/product-lst/LST-precision-metadata/) | json |
 | scl_mask_30m.tiff | Scene Classification Layer at 30m resolution | Cloud optimized geotiff |
 
@@ -32,6 +32,8 @@ These files are available for free for all daytime images.
 | Layers | Description | File Format |
 |--------|-------------|-------------|
 | lst_sharpened_10m.tiff | LST data at 10m resolution| Cloud optimized geotiff |
+| lst_quicklook_sharpened_10m.tiff | Temperature quicklook at 10m| Cloud optimized geotiff |
+| lst_thumbnail_sharpened_10m.tiff | Temperature thumbnail at 10m| jpg |
 | scl_mask_10m.tiff |Scene Classification Layer at 10m spatial resolution| Cloud optimized geotiff |
 
 <!-- **Option 3: Emissivity layer** 
@@ -69,7 +71,7 @@ LSTprecision's unprecedented temperature sensitivity allows for reliable absolut
   <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the <a href= https://constellr.github.io/product-lst/Constellr-product-offer/ >Product Offer</a></figcaption>
 
 <h3>VNIR Surface Reflectance Layers</h3>
-Daytime imagery comes with 8 VNIR bands for free. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  
+Daytime imagery comes with 8 VNIR bands. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  
 
 Surface reflectance (SR) is delivered at 10m and 20m spatial resolution (see [Our Technology](https://constellr.github.io/product-lst/our-technology/) for each band's resolution). The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:
 
