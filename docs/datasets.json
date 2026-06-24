@@ -76,38 +76,7 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_RGB.png"
     ],
     "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_THQDZSBX_20251123T072838Z.zip"
-<<<<<<< HEAD
-  },
-  {
-    "title": "Oil Refineries and Petrochemicals Monitoring",
-    "description": "Monitoring of oil refineries and petrochemical facilities.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Nizhny Tagil, Russia"],
-=======
->>>>>>> a2a0007 (issue)
   }
-  /* {
-    "title": "Icebreakers Monitoring",
-    "description": "Monitoring of icebreaker activities and port operations.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Maritime"],
-    "locations": ["Pevek, Russia"],
-    "images": [""],
-    "download_url": ""
-  },
-  {
-    "title": "Vessel Detection",
-    "description": "Monitoring of vessel activities in the Bering Strait.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Maritime"],
-    "locations": ["Bering Strait, Russia"],
-    "images": [""],
-    "download_url": ""
-  } */
 ]
 
 
