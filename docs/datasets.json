@@ -76,6 +76,7 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_RGB.png"
     ],
     "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_THQDZSBX_20251123T072838Z.zip"
+<<<<<<< HEAD
   },
   {
     "title": "Oil Refineries and Petrochemicals Monitoring",
@@ -84,6 +85,8 @@
     "price": "FREE",
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Nizhny Tagil, Russia"],
+=======
+>>>>>>> a2a0007 (issue)
   }
   /* {
     "title": "Icebreakers Monitoring",
