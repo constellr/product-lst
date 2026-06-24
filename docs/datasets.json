@@ -84,9 +84,27 @@
     "price": "FREE",
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Nizhny Tagil, Russia"],
-    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny_Tagil_20260317_LST.jpg"],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_V66C2NDT_20260317T073918Z.zip"
   }
+  /* {
+    "title": "Icebreakers Monitoring",
+    "description": "Monitoring of icebreaker activities and port operations.",
+    "product": "LST Precision Core Product + Layer 01",
+    "price": "FREE",
+    "use_cases": ["Maritime"],
+    "locations": ["Pevek, Russia"],
+    "images": [""],
+    "download_url": ""
+  },
+  {
+    "title": "Vessel Detection",
+    "description": "Monitoring of vessel activities in the Bering Strait.",
+    "product": "LST Precision Core Product + Layer 01",
+    "price": "FREE",
+    "use_cases": ["Maritime"],
+    "locations": ["Bering Strait, Russia"],
+    "images": [""],
+    "download_url": ""
+  } */
 ]
 
 
