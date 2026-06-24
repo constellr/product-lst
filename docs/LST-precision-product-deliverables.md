@@ -7,7 +7,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 **Core product data layers** 
 
 | Layers | Description | File Format |
-|--------|-------------|-------------|
+|--------|-------------|---|
 | lst.tiff | LST data | Cloud optimized geotiff |
 | quicklook.tiff | Temperature quicklook | Cloud optimized geotiff |
 | thumbnail.jpg | Temperature Thumbnail | jpg |
@@ -20,7 +20,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 These files are available for free for all daytime images. 
 
 | Layers | Description | File Format |
-|--------|-------------|-------------|
+|--------|-------------|---|
 | rgb_quicklook.tiff | True color (RGB) quicklook | Cloud optimized geotiff |
 | rgb_thumbnail.jpg | RGB Thumbnail | jpg |
 | scl_mask_xxm.tiff | Scene Classification Layer at 10m and 20m spatial resolution | Cloud optimized geotiff |
@@ -30,11 +30,11 @@ These files are available for free for all daytime images.
 **Option 2: Shaprening layer** 
 
 | Layers | Description | File Format |
-|--------|-------------|-------------|
+|--------|-------------|---|
 | lst_sharpened_10m.tiff | LST data at 10m resolution| Cloud optimized geotiff |
 | lst_quicklook_sharpened_10m.tiff | Temperature quicklook at 10m| Cloud optimized geotiff |
 | lst_thumbnail_sharpened_10m.tiff | Temperature thumbnail at 10m| jpg |
-| scl_mask_10m.tiff |Scene Classification Layer at 10m spatial resolution| Cloud optimized geotiff |
+| scl_mask_10m.tiff |Scene Classification Layer at 10m spatial resolution| Cloud optimized geotiff |   
 
 <!-- **Option 3: Emissivity layer** 
 
