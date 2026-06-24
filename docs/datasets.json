@@ -79,59 +79,16 @@
   },
   {
     "title": "Oil Refineries and Petrochemicals Monitoring",
-    "description": "Monitoring of oil refineries and petrochemical facilities - day and nighttime lst imagery.",
+    "description": "Monitoring of oil refineries and petrochemical facilities.",
     "product": "LST Precision Core Product + Layer 01",
     "price": "FREE",
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Nizhny Tagil, Russia"],
     "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_LST.png", 
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_RGB.png",
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260318_LST.png"
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny_Tagil_20260317_LST.jpg",
+  
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/Nizhny_Tagil/"
-  },
-  {
-    "title": "Vessels Detection",
-    "description": "Monitoring of vessels and their movements.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Maritime"],
-    "locations": ["Bering Strait, Russia"],
-    "images": [""],
-    "download_url": ""
-  },
-  {
-    "title": "Icebreakers Monitoring",
-    "description": "Monitoring of icebreaker ships and their routes during nighttime.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Maritime"],
-    "locations": ["Pevek, Russia"],
-    "images": [""],
-    "download_url": ""
-  },  
-  {
-    "title": "Nuclear Power Plants Monitoring By Nighttime",
-    "description": "Monitoring the operational status of nuclear power plants through plume observations by nighttime.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Hangzhou Bay, China"],
-    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Hangzhou+Bay_20260325_LST.png"],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_WTMVPYMW_20260325T141546Z.zip"
-  },
-  {
-    "title": "Oil Refineries and Petrochemicals Monitoring",
-    "description": "Monitoring of oil refineries and petrochemical facilities.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Biysk, Russia"],
-    "images": 
-    ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260503_LST.tiff",
-    "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260503_RGB.tiff" ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4PD_20260503T054200Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_V66C2NDT_20260317T073918Z.zip"
   }
 ]
 
