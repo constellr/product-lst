@@ -30,156 +30,6 @@
     margin-left: 0;
 }
 
-
-/*for fading images*/
-/* fsets outer container */
-.image-container {
-    position: relative;
-    display: inline-block; 
-    width: 600px; 
-    height: 400px;
-}
-
-
-/* Home page */
-/* .hero-section { 
-  position: relative;
-  width: 100%; */
-  /* height: 90vh; Adjust the height */
-  /* background-image: url('../assets/Intro_background.png') ; Path to your large image */
-  /* background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .hero-logo {
-  width: 250px; /* Adjust as needed */
-  /* margin-bottom: 20px;
-  z-index: 2;
-}
-
-.hero-text h1 {
-  color: white !important;
-  text-align: center;
-  margin-bottom: 10px;
-}  */
-
-/* .hero-text p {
-  color: white;
-  text-align: center;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 20px auto 50px auto;Centers text block horizontally */
-  /* line-height: 1.5;
-}
-
-.hero-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 650px; Only fits two boxes per row */
-    /* gap: 30px;
-}
-
-.hero-box {
-  background-color: #FFC034;
-  color: black;
-  padding: 15px 15px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.3s, transform 0.2s;
-  width: 300px;  */
-  
-  /* Center text vertically and horizontally */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  text-align: center;
-  line-height: 1.4;
-}
-
-.hero-box:hover {
-  transform: translateY(-5px);
-  background-color: rgba(255,192,52,0.8);
-} */
-
-/* make hero section work for phones etc */
-/* @media (max-width: 768px) {
-  .hero-section {
-    height: auto; /* Allow section to grow with content */
-    /* padding: 40px 20px; /* Add breathing space on smaller screens 
-  } */
-
-  /* .hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    max-width: 90%;
-  } */
-
-  /* .hero-boxes {
-    flex-direction: column; /* Stack boxes vertically */
-    /* align-items: center;
-    gap: 15px;
-    max-width: 100%;
-  } */
-
-  /* .hero-box {
-    width: 90%; /* Slight margin on sides */
-    /* padding: 20px;
-    font-size: 1rem;
-  } */ 
-/* } */
-
-
-
-/*  */
-.image-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  
-    /* This creates the height (3:2 aspect ratio) */
-    padding-bottom: 30%;
-  }
-
-/*styling image in container*/
-.image-container img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-/*centers images*/
-.wrapper {
-    text-align: center; 
-    margin: 0 auto;
-}
-/*makes an image visible/active*/
-.image-container img.active {
-    opacity: 1;
-}
-
-@media (max-width: 480px) {
-    .image-container {
-        max-width: 100%;
-        aspect-ratio: 4 / 3;
-    }
-}
-
 /* Centering tables, figcaptions and paragraphs */
 .md-typeset .md-typeset__table {
     display: block;
@@ -207,80 +57,55 @@ img {
 }
 
 
-/*designs grid layout*/
+/*for fading images*/
+/*styling image in container*/
+
+.image-container {
+    position: relative;
+    display: inline-block; 
+    width: 600px; 
+    height: 400px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+/*centers images*/
+.wrapper {
+    text-align: center; 
+    margin: 0 auto;
+}
+/*makes an image visible/active*/
+.image-container img.active {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+/* designs grid layout for archive Product Portfolio */
 .md-typeset .grid{
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    /* centered: true; */
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
-/*designs card layout*/
 .cards > ul > li {
     max-width: 300px;
     justify-self: center;
 }
-/*design card on first page*/
-/* Custom Styles for Cards */
-.card {
-    width: 250px; /* Fixed width to make them smaller */
-    margin: 5px auto; /* Space around each card */
-    height: 170px;  /*80px */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #162a42; /* Blue background */
-    color: #ffc034;
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
-}
 
-.card:hover {
-    background-color: #21125a; /* Slightly lighter blue */
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    height: 100%;
-    padding: 10px 15px 15px 15px; /* top-right-bottom-left padding */
-    box-sizing: border-box;
-}
-
-.card-title {
-    color: #ffc034 !important;
-    display: flex;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 0 0 0 0;
-    text-align: center;
-}
-
-.card-title a {
-    color: #ffc034 !important;
-}
-
-.card-text {
-    font-size: 0.80rem;
-    color: #e0dfe4;
-    margin: 0;
-    text-align: center;
-}
-
-.material-icons {
-    font-size: 20px;
-    vertical-align: middle;
-    color: #ffc034;
-    line-height: 1;
-}
-
-/* Bootstrap Grid Customization for Cards */
 .container {
     padding-top: 40px;
 }
@@ -289,7 +114,7 @@ img {
     padding-bottom: 30px;
 }
 
-
+/* Sidebar and Navigation Customization */
 /* Navigation Links and Colors */
 /* Ensure all navigation links are black */
 .md-nav__link, .md-nav__item a {
@@ -309,18 +134,51 @@ img {
     color: black !important;  /* Ensure hover also stays black */
 }
 
+/* Make the sidebar visible when toggled */
+.md-sidebar--primary.show {
+    display: block;  /* Show sidebar when it has the 'show' class */
+}
 
-/* Image carousel explorer lab */
+/* Make the text inside the navigation use the space */
+.md-nav__item a {
+    max-width: 100%; /*Prevent truncation */
+    display: block;  /* Ensures links take full width */
+    white-space: normal;  /* Allows text to wrap if needed */
+    padding: 5px 10px;  /*Control padding around links */
+    text-align: left;  /* Align text properly */
+}
+
+/* Indent nested navigation items properly */
+.md-nav__item--nested {
+    padding-left: 10px; /* Increase indentation for subsections */
+}
+
+/* Customize top-level navigation header */
+.md-nav__title {
+    font-size: 18px;  /* Increase font size for section headers */
+    font-weight: bold;  /* Make them bold */
+    color: #333;  /* Darken color slightly */
+    text-transform: uppercase;  /* Optional: Make text uppercase */
+    white-space: nowrap;
+}
+
+/* Indent and style sub-items */
+.md-nav__list .md-nav__item {
+    margin-left: 10px;  /* Indent sub-items */
+    font-size: 0.8rem;  /* Slightly smaller font for sub-items */
+}
+
+/* Reduce font size for Table of Contents items in the navigation */
+.md-nav__list [data-md-component="toc"] .md-nav__link {
+    font-size: 0.7rem;  /* Adjust as needed */
+}
+
+/* Image carousel LST Articles (Swiper 1) and Cards Home Page (swiper 2) */
 .carousel-container {
   max-width: 1500px; 
   margin: 0 auto;
   position: relative; 
   padding: 0 40px; 
-}
-
-.swiper-wrapper {
-  overflow: visible !important;
-  padding: 1rem;
 }
 
 .swiper {
@@ -329,19 +187,20 @@ img {
   position: relative;
 }
 
-.swiper-slide { /* card-body */
-  /* background-color: white;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  min-width: 290px;
-  max-width: 290px;
+.swiper-wrapper {
+  overflow: visible !important;
+  padding: 1rem;
+}
+
+.swiper-wrapper2 {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; 
-  overflow: hidden; */
+  flex-wrap: wrap;
+  justify-content: center; /* centers all cards */
+  gap: 24px;
+  padding: 1rem;
+}
+
+.swiper-slide { /* card-body */
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
@@ -355,6 +214,26 @@ img {
   height: 510px !important;
 }
 
+.swiper-slide2 { /* card-body */
+  background: white;
+  border-radius: 10px;
+  width: 290px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-slide2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 .slide-content {
   padding: 1rem; /* now padding only applies to text */
   display: flex;
@@ -363,13 +242,7 @@ img {
   flex-grow: 1;                  /* makes content fill remaining slide height */
 }
 
-
-.swiper-slide:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.swiper-slide h6.fw-bold{
+.slide-content h6.fw-bold{
   font-size: 0.9rem;
   font-weight: 700;
   color: #212529;
@@ -445,6 +318,7 @@ img {
   margin-top: 0.1rem;
   margin-bottom: 0.3rem;
 }
+
 .download-button {
   margin-top: auto; /* or whatever spacing you need */
 }
@@ -552,7 +426,7 @@ img {
 }
 
 
-/* collapsible elements */
+/* collapsible elements (e.g. metadata) */
 
 .md-typeset details {
   font-size: 0.8rem;         
@@ -590,48 +464,6 @@ img {
 .md-typeset details[open] summary::after {
   content: '▼';               /* down-pointing arrow when open */
   color: #160A42 !important;   
-}
-
-
-/* Sidebar and Navigation Customization */
-
-/* Make the sidebar visible when toggled */
-.md-sidebar--primary.show {
-    display: block;  /* Show sidebar when it has the 'show' class */
-}
-
-/* Make the text inside the navigation use the space */
-.md-nav__item a {
-    max-width: 100%; /*Prevent truncation */
-    display: block;  /* Ensures links take full width */
-    white-space: normal;  /* Allows text to wrap if needed */
-    padding: 5px 10px;  /*Control padding around links */
-    text-align: left;  /* Align text properly */
-}
-
-/* Indent nested navigation items properly */
-.md-nav__item--nested {
-    padding-left: 10px; /* Increase indentation for subsections */
-}
-
-/* Customize top-level navigation header */
-.md-nav__title {
-    font-size: 18px;  /* Increase font size for section headers */
-    font-weight: bold;  /* Make them bold */
-    color: #333;  /* Darken color slightly */
-    text-transform: uppercase;  /* Optional: Make text uppercase */
-    white-space: nowrap;
-}
-
-/* Indent and style sub-items */
-.md-nav__list .md-nav__item {
-    margin-left: 10px;  /* Indent sub-items */
-    font-size: 0.8rem;  /* Slightly smaller font for sub-items */
-}
-
-/* Reduce font size for Table of Contents items in the navigation */
-.md-nav__list [data-md-component="toc"] .md-nav__link {
-    font-size: 0.7rem;  /* Adjust as needed */
 }
 
 
@@ -685,7 +517,7 @@ img {
     }
 }
 
-/* use-cases image-text design responsive to mobile version */
+/* use-cases image-text design responsive to mobile version (page no longer used) */
 
 .image-text-block {
     display: flex;
