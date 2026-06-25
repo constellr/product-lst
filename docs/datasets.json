@@ -104,8 +104,8 @@
     "price": "FREE",
     "use_cases": ["Maritime"],
     "locations": ["Pevek, Russia"],
-    "images": [""],
-    "download_url": ""
+    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Pevek_20251112_LST.png"],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_ZU3JPVCU_20251112T010121Z.zip"
   },  
   {
     "title": "Nuclear Power Plants Monitoring By Nighttime",
