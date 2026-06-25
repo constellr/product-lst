@@ -125,8 +125,8 @@
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Biysk, Russia"],
     "images": 
-    ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260503_LST.tiff",
-    "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260503_RGB.tiff" ],
+    ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_LST.png",
+    "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_RGB.png" ],
     "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4PD_20260503T054200Z.zip"
   }
 ]
