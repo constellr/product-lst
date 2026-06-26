@@ -11,7 +11,7 @@ Our product portfolio combines a **core Land Surface Temperature (LST) dataset w
 <h2>When should you use LSTprecision?</h2>
 - *Protect high-value assets:* Get asset-level insights with accurate thermal data, not just rough indices or proxies. 
 - *Stay ahead of risks:* Our system acts as an early-warning tool, spotting stress in environments, infrastructure, and materials before damage occurs. 
-- *Rely on unmatched temperature accuracy:* With absolute precision of < 2K, you can trust your data to be consistent, comparable, and reliable over time. 
-- *See what others miss:* A sensitivity of 0.03K uncovers subtle thermal shifts, ensuring confident detection of both relative and absolute changes. 
+- *Rely on unmatched temperature accuracy:* With absolute precision of < 2 K, you can trust your data to be consistent, comparable, and reliable over time. 
+- *See what others miss:* A sensitivity of 0.03 K uncovers subtle thermal shifts, ensuring confident detection of both relative and absolute changes. 
 - *Track trends with confidence:* High-frequency revisits deliver rich time-series data, enabling timely identification of anomalies and long-term patterns. 
 
