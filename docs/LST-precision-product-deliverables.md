@@ -67,7 +67,7 @@ LSTprecision's unprecedented temperature sensitivity allows for reliable absolut
 
   During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks.   
 
-  ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision_processing_steps_L0_L2.jpg){ width=80% }
+  ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LST_precision_chaine_L0toL2.png){ width=80% }
   <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the <a href= https://constellr.github.io/product-lst/Constellr-product-offer/ >Product Offer</a></figcaption>
 
 <h3>VNIR Surface Reflectance Layers</h3>
