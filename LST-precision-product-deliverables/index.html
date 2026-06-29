@@ -1241,7 +1241,7 @@
 </tr>
 <tr>
 <td>scl_mask_30m.tiff</td>
-<td>Scene Classification Layer at 30m resolution</td>
+<td>Scene Classification Layer at 30 m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 </tbody>
@@ -1269,7 +1269,7 @@
 </tr>
 <tr>
 <td>scl_mask_xxm.tiff</td>
-<td>Scene Classification Layer at 10m and 20m spatial resolution</td>
+<td>Scene Classification Layer at 10 m and 20 m spatial resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
@@ -1296,22 +1296,22 @@
 <tbody>
 <tr>
 <td>lst_sharpened_10m.tiff</td>
-<td>LST data at 10m resolution</td>
+<td>LST data at 10 m resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
 <td>lst_quicklook_sharpened_10m.tiff</td>
-<td>Temperature quicklook at 10m</td>
+<td>Temperature quicklook at 10 m</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
 <td>lst_thumbnail_sharpened_10m.tiff</td>
-<td>Temperature thumbnail at 10m</td>
+<td>Temperature thumbnail at 10 m</td>
 <td>jpg</td>
 </tr>
 <tr>
 <td>scl_mask_10m.tiff</td>
-<td>Scene Classification Layer at 10m spatial resolution</td>
+<td>Scene Classification Layer at 10 m spatial resolution</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 </tbody>
@@ -1324,7 +1324,7 @@
 
 <h2 id="data-layer-description">Data Layer Description</h2>
 <h3>LSTprecision Layer</h3>
-<p>LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30m - day and night. It is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of <a href="https://constellr.github.io/product-lst/our-technology/">constellr’s HiVe constellation</a>. Following an <a href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">advanced calibration and validation (cal/val) procedure</a>, ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle:</p>
+<p>LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30 m - day and night. It is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of <a href="https://constellr.github.io/product-lst/our-technology/">constellr’s HiVe constellation</a>. Following an <a href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">advanced calibration and validation (cal/val) procedure</a>, ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle:</p>
 <ol>
 <li>
 <p><strong>Cloud and Scene Classification:</strong> 
@@ -1358,7 +1358,7 @@
 </p>
 <h3>VNIR Surface Reflectance Layers</h3>
 <p>Daytime imagery comes with 8 VNIR bands. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  </p>
-<p>Surface reflectance (SR) is delivered at 10m and 20m spatial resolution (see <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a> for each band's resolution). The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:</p>
+<p>Surface reflectance (SR) is delivered at 10 m and 20 m spatial resolution (see <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a> for each band's resolution). The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:</p>
 <p><span class="arithmatex">\({SR} = DN * scale factor + offset\)</span></p>
 <p>This has been introduced to allow the quantization of floating point numbers up to 1/100% in a 16 bit integer number. The offset value is non-zero to ensure that slightly negative values are not clipped. 
 The product is based on the L1B/C product and shows the same geotiff structure as the L1B/C radiance files.</p>
@@ -1370,9 +1370,9 @@ The product is based on the L1B/C product and shows the same geotiff structure a
 <p>The dynamic land/water mask is generated from the Level-1B calibrated (L1BC) imagery using the spectral ratio between the VNIR03 and VNIR08 bands. This approach leverages the characteristic reflectance differences of water and land surfaces to derive a scene-dependent classification that captures temporary changes in coastlines, water extent, and surface conditions at the time of acquisition. </p>
 <p>The static land/water mask is derived from the ESA WorldCover 2021 global land-cover dataset and provides a stable reference classification independent of the current acquisition. It is particularly useful for consistency checks and for distinguishing between persistent land/water boundaries and short-term variations observed in the dynamic mask. </p>
 <h3>Sharpening Layer</h3>
-<p>The sharpening layer has a 10m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.<br />
-The sharpening algorithm creates a 10m resolution LST data layer using as input the nominal HiVE 30m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation.<br />
-Consequently, the 10m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.</p>
+<p>The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.<br />
+The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation.<br />
+Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.</p>
 <!-- <h3>Emissivity Layer</h3>
 These layers provide the derived Emissivity (EMIS) values for each of the three thermal bands used in the LST algorithm, as described in Step 4 of the LSTprecision derivation.  
 
