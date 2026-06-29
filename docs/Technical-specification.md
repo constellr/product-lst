@@ -3,16 +3,16 @@
 
 | Characteristics | [**LSTprecision**](https://constellr.github.io/product-lst/Constellr-product-offer/) |
 |------------------------|--------------------------------|
-| **Spatial Resolution [^2]** | 30m     | 
-| **Swath**   | 17.5km    | 
-| **Scene Size**   | 15km x 15km  |
+| **Spatial Resolution [^2]** | 30 m     | 
+| **Swath**   | 17.5 km    | 
+| **Scene Size**   | 15x15 km  |
 | **Frequency [^3]**   | sub-daily   | 
 | **Coverage**| worldwide tasking, up to 1.000.000 km² daily imaging capacity | 
 | **Local acquisition time [^4]**  | 01:30 am/pm <br> 10:30 am/pm   | 
 | **Type of images** | day and night imagery  | 
 | **Acquisition Angle**    | up to 30° | not applicable | 
-| **Temperature accuracy [^5]**  | <1-2K with 0.03K NEDT |
-| **Spatial accuracy**          | <1 px |
+| **Temperature accuracy [^5]**  | < 1-2 K with 0.03 K NEDT |
+| **Spatial accuracy**          | < 1 px |
 | **Data access**           | [API](https://constellr.github.io/product-lst/API-documentation/) or [UI](https://constellr.github.io/product-lst/UI-documentation/) | 
 | **Mean Time to Tasking (MTT)**           | Standard: 3 days <br> Priority offer: 24 hours[^6] | 
 | **Latency [^7]**     |  Standard: 3 days <br> Priority offer: 24 hours  | 

@@ -7,8 +7,8 @@
 ??? note "When should you use LSTprecision?"
     - *Protect high-value assets:* Get asset-level insights with accurate thermal data, not just rough indices or proxies. 
     - *Detect issues before they escalate:* Our system acts as an early-warning tool, spotting stress in environments, infrastructure, and materials before damage occurs. 
-    - *Rely on unmatched temperature accuracy:* With absolute precision of <2K, you can trust your data to be consistent, comparable, and reliable over time. 
-    - *See what others miss:* A sensitivity of 0.03K uncovers subtle thermal shifts, ensuring confident detection of both relative and absolute changes. 
+    - *Rely on unmatched temperature accuracy:* With absolute precision of < 2 K, you can trust your data to be consistent, comparable, and reliable over time. 
+    - *See what others miss:* A sensitivity of 0.03 K uncovers subtle thermal shifts, ensuring confident detection of both relative and absolute changes. 
     - *Track trends with confidence:* High-frequency revisits (as often as every 3 days in daylight) deliver rich time-series data, enabling timely identification of anomalies and long-term patterns. 
 
     Want even sharper local detail? → [Explore LSTzoom](Link)  
@@ -43,7 +43,7 @@
 ??? note "What are the specifications of LSTprecision?"
     |Parameter|Value|
     |---------|-----|
-    |Spatial Resolution|LST and SR: 30m|
+    |Spatial Resolution|LST and SR: 30 m|
     |Temporal Resolution| 1.5 - 3 days|
     |Output Time| 10:30 or 13:30 am and pm, local solar time|
     |Coverage Area|Worldwide tasking, up to 1.000.000 km² daily imaging capacity, AOI maximum size: 15x15 km² |
