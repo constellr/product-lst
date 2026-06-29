@@ -29,15 +29,15 @@ This document is intented to always provide you the latest version of our capabi
 ## Footnotes
 [^custom-label]: Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km²) between 50°S and 55°N. All numbers are cloud coverage dependent.
   
-[^2]: Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision native nadir looking Ground Sampling Distance (GSD) at 510km altitude is 27.3 m for Thermal Infrared data. GSD defined as a pixel projection on ground.  
+[^2]: Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision native nadir looking Ground Sampling Distance (GSD) at 510 km altitude is 27.3 m for Thermal Infrared data. GSD defined as a pixel projection on ground.  
 
 [^3]: For LSTprecision frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 < 4 days is equatorial, < 3 days at ± 40°+ latitudes and < 2 days between ± 60° and ± 80° latitude.  
 
 [^4]: Defined as solar local time, which is time based on the Sun’s actual position in the sky at your location, without considering time zones or daylight saving shifts.  
 
-[^5]: Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.   
+[^5]: Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295 K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.   
 
-[^6]: Available for orders placed Monday to Friday, 9.00am until 4.00pm Central European Time.
+[^6]: Available for orders placed Monday to Friday, 9.00 am until 4.00 pm Central European Time.
 
 [^7]: Defined as the time between image acquisition by a satellite and delivery of LST data corresponding to the acquisition. 2σ (95%) over 1000 deliveries.​
 ​
