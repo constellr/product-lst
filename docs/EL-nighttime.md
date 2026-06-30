@@ -16,16 +16,15 @@ Because there is no sunlight at night, traditional optical bands (VNIR/RGB) cann
 
 However, this same absence of solar illumination is precisely what gives nighttime LST its unique value. Two wider applications emerge here: 
 
-1. Without the influence of solar heating at night, day vs night comparisons reveal how heat is **stored and released by surfaces**, providing a clearer and more actionable view of thermal behavior.  
+1. Without the influence of solar heating at night, day vs night comparisons reveal how **heat is stored and released by surfaces**, providing a clearer and more actionable view of thermal behavior.
 
     Use case examples:
 
-    - **Urban heat monitoring:** 
+    - **Urban heat monitoring**  
       Nighttime data reveals how cities retain heat, highlighting persistent hotspots that impact public health and energy demand.
 
-    - **Infrastructure stress:** 
-      Day–night behavior provides insight into infrastructure materials such as railways and energy networks. Weak spots requiring maintenance can be identified from repeated thermal observations.
-
+    - **Infrastructure stress**  
+      Day-night behavior provides insight into the material used in infrastructure, such as transportation tracks or energy infrastructure. Here, weak spots requiring maintenance can be identified—using imagery that covers large areas at a repeated frequency without the need for in-situ measurements.
 
 2. At night, the contrast between active and inactive systems becomes more pronounced. True thermal signals emerge, making anomalies, activity, and infrastructure dynamics significantly easier to detect.This makes nighttime LST especially powerful for operational monitoring and situational awareness.
 
@@ -35,7 +34,7 @@ However, this same absence of solar illumination is precisely what gives nightti
       Thermal contrast between water and vessels is enhanced at night, improving detection of ships, tracking of maritime activity, and identification of anomalous behavior — even in low-visibility conditions.
 
     - **Critical industrial monitoring**  
-      Facilities such as power plants — including nuclear sites — exhibit distinct thermal signatures linked to operations. Nighttime observations make it easier to detect changes in activity, monitor cooling processes, and identify potential anomalies.
+      Facilities such as power plants, including nuclear sites, exhibit distinct thermal signatures linked to operations. Nighttime observations make it easier to detect changes in activity, monitor cooling processes, and identify potential anomalies.
 
     - **Defense and security applications**  
       The absence of solar interference enhances the detection of human activity, equipment usage, and infrastructure operations, providing a reliable layer of intelligence for surveillance and reconnaissance.
