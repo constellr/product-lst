@@ -7,7 +7,7 @@ All surfaces — whether water, soil, vegetation, or built infrastructure — co
 This is fundamentally different from optical data: 
 
 - **Thermal infrared (LST):** Measures emitted radiation → works day and night 
-- **VNIR / RGB imagery:**Measures reflected sunlight → requires illumination → not available at night 
+- **VNIR / RGB imagery:** Measures reflected sunlight → requires illumination → not available at night 
 
 Because there is no sunlight at night, traditional optical bands (VNIR/RGB) cannot capture usable imagery. While thermal imagery can be captured at night, this absence of visible reference features can make **georeferencing and image interpretation more challenging**, as there are fewer familiar visual landmarks compared to daytime scenes. 
 
