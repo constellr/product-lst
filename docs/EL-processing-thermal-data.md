@@ -19,5 +19,6 @@ For example, comparing a standard RGB image with a VNIR-enhanced image near Toul
 
 <div class="article-nav">
   <a class="prev" href="https://constellr.github.io/product-lst/EL-LST-retrieval-process">← Previous Article</a>
+  <a class="next" href="https://constellr.github.io/product-lst/EL-nighttime">Next Article →</a>
 </div>
 

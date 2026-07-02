@@ -27,7 +27,7 @@
           <div class= "slide-content">
               <h6 class="fw-bold"><a>Open Data Programme</a></h6>
               <p class="text-muted small">Download free datasets to explore our products.</p>
-              <a class="download-button" href="https://constellr.github.io/product-lst/example-datasets/">Explore →</a>
+              <a class="download-button" href="https://constellr.github.io/product-lst/open-data-programme/">Explore →</a>
           </div>
   </div>
 
@@ -143,7 +143,7 @@
                 <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Osaka_20261106_night.png" />
                     <div class= "slide-content">
                         <span class="tag tag-product">1 min read</span>
-                        <h6 class="fw-bold"><a> How nighttime LST measurements work and why they matter </a></h6>
+                        <h6 class="fw-bold"><a> How nighttime LST works and why it matters </a></h6>
                         <p class="text-muted small"> When the sun goes down, the most valuable thermal insights emerge. Explore how nighttime LST uncovers patterns invisible during the day.</p>
                         <a class="download-button" href="https://constellr.github.io/product-lst/EL-nighttime">Read article →</a>
                     </div>

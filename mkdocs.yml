@@ -10,11 +10,11 @@ nav:
   - LSTprecision: 
     - Constellr's product offer: Constellr-product-offer.md
     - Technical specifications: Technical-specification.md
-    - Data Bundle Description: LST-precision-product-deliverables.md
+    - Data Bundle Description: LST-precision-data-bundle-description.md
     - Metadata Explanation: LST-precision-metadata.md
     - Calibration and Validation: LST-precision-cal-val-procedure.md
   - How to access our data:
-    - Open Data Programme: example-datasets.md
+    - Open Data Programme: open-data-programme.md
     - UI documentation: UI-documentation.md
     - API documentation: API-documentation.md
   - Our Technology: our-technology.md

@@ -1,6 +1,6 @@
 # **Land Surface Temperature (LST) definition and its importance**
 
-The temperature of the Earth's land surface represents how hot the ground would feel if touched at a specific location. Such temperature is measured using thermal and optical sensors, such as those used by constellr’s satellites. From a satellite perspective, the "surface" could be anything visible from space—snow, grass, rooftops, industrial buildings, or forest canopies. Importantly, LST differs from air temperature, which is typically measured by ground-based weather stations at about 2 meters above the surface and reported by weather forecasts. While LST reflects the actual skin temperature of the Earth’s surface, air temperature represents the temperature of the air above it—meaning the two can differ significantly, such as under clear skies and in urban areas. 
+The temperature of the Earth's land surface represents how hot the ground would feel if touched at a specific location. Such temperature is measured using thermal and optical sensors, such as those used by constellr’s satellites. From a satellite perspective, the "surface" could be anything visible from space — snow, grass, rooftops, industrial buildings, or forest canopies. Importantly, LST differs from air temperature, which is typically measured by ground-based weather stations at about 2 meters above the surface and reported by weather forecasts. While LST reflects the actual skin temperature of the Earth’s surface, air temperature represents the temperature of the air above it — meaning the two can differ significantly, such as under clear skies and in urban areas. 
 
 ![Global LST map](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/Explorer-lab/Global_LST_Map.png){ width=60% }
 <figcaption>Daytime LST monthly composite map, constellr (leveraging a fusion of public data) </figcaption>
@@ -17,7 +17,7 @@ For **farmers**, LST is a valuable complement to spectral vegetation indices. Wh
 
 **Industrial operators** use LST data to monitor activities at refineries and power plants, enabling better oversight of critical infrastructure, operational safety, and emissions management. 
 
-For more examples of how LST data can be applied in practice, see the page [Thermal Insights](https://constellr.github.io/product-lst/thermal-insights)
+For more examples of how LST data can be applied in practice, read our [Case Studies](https://constellr.github.io/product-lst/case-studies)
 
 ---
 

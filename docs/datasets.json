@@ -1,8 +1,79 @@
 [
   {
+    "title": "Infrastructure Monitoring at High Granularity",
+    "description": "Highly granular satellite imagery of neighborhood-level urban heat patterns including waterways and airports.",
+    "product": "LST Precision + VNIR + Sharpened LST",
+    "price": "FREE",
+    "use_cases": ["Urban Planning", "Industrial Monitoring"],
+    "locations": ["Abu Dhabi, UAE"],
+    "images": [
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_23_11.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_RGB.png"
+    ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_THQDZSBX_20251123T072838Z.zip"
+  },
+  {
+    "title": "Petrochemical Activity Tracking",
+    "description": "Detecting activity of petrochemical facilities through heat signals and plumes.",
+    "product": "LST Precision + VNIR",
+    "price": "FREE",
+    "use_cases": ["Industrial Monitoring"],
+    "locations": ["Nizhny Tagil, Russia"],
+    "images": [
+        "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_LST.png", 
+        "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_RGB.png"
+      ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/Nizhny_Tagil/" 
+  },
+  {
+    "title": "Vessel Detection",
+    "description": "Monitoring of vessels and their movements through wake detection.",
+    "product": "LST Precision",
+    "price": "FREE",
+    "use_cases": ["Maritime"],
+    "locations": ["Bering Strait, Russia"],
+    "images": [
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Bering+Strait_20260213_LST.png"
+      ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_B5Z0Q1H9_20260213T092026Z.zip"
+  },
+  {
+    "title": "Icebreaker Monitoring",
+    "description": "Icebreaker ships leave a hot trail of fresh water in the ice, allowing the detection of their routes day and night.",
+    "product": "LST Precision",
+    "price": "FREE",
+    "use_cases": ["Maritime"],
+    "locations": ["Pevek, Russia"],
+    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Pevek_20251112_LST.png"],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_ZU3JPVCU_20251112T010121Z.zip"
+  },  
+  {
+    "title": "NPP Monitoring By Nighttime",
+    "description": "Monitoring the operational status of nuclear power plants through plume observations by nighttime.",
+    "product": "LST Precision",
+    "price": "FREE",
+    "use_cases": ["Industrial Monitoring"],
+    "locations": ["Hangzhou Bay, China"],
+    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Hangzhou+Bay_20260325_LST.png"],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_WTMVPYMW_20260325T141546Z.zip"
+  },
+  {
+    "title": "Industrial Activity Leaves a Thermal Signature",
+    "description": "Monitoring Coal Power Plant and their thermal signtures indicates the operational status of industrial facilities.",
+    "product": "LST Precision + VNIR",
+    "price": "FREE",
+    "use_cases": ["Industrial Monitoring"],
+    "locations": ["Biysk, Russia"],
+    "images": [
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_RGB.png"
+    ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4PD_20260503T054200Z.zip"
+  },
+  {
     "title": "Urban Heat Island Analysis",
     "description": "Comprehensive satellite imagery of urban heat patterns including waterways and airports.",
-    "product": "LST Precision Core Product + Layer 01",
+    "product": "LST Precision + VNIR",
     "price": "FREE",
     "use_cases": ["Urban Planning"],
     "locations": ["Dubai, UAE"],
@@ -15,7 +86,7 @@
   {
     "title": "Agricultural Fields and Natural Parks",
     "description": "Detect different heat patterns across fields and monitor important natural reserves.",
-    "product": "LST Precision Core Product + Layer 01",
+    "product": "LST Precision + VNIR",
     "price": "FREE",
     "use_cases": ["Agriculture", "Nature Monitoring"],
     "locations": ["Atherton Tablelands, Northern Australia"],
@@ -28,7 +99,7 @@
   {
     "title": "Urban Infrastructure and Mangroves",
     "description": "A city's infrastructure, such as the Surabaya airport, encroaching on mangroves, displaying stark temperature contrasts.",
-    "product": "LST Precision Core Product + Layer 01",
+    "product": "LST Precision + VNIR",
     "price": "FREE",
     "use_cases": ["Urban Heat Island", "Urban Planning"],
     "locations": ["Surabaya Airport, Indonesia"],
@@ -41,7 +112,7 @@
   {
     "title": "Identifying Urban LST details",
     "description": "Indonesia's longest bridge, showcasing significant temperature variations between land and water.",
-    "product": "LST Precision Core Product + Layer 01",
+    "product": "LST Precision + VNIR",
     "price": "FREE",
     "use_cases": ["Urban Planning"],
     "locations": ["Suramadu Bridge, Indonesia"],
@@ -54,7 +125,7 @@
   {
     "title": "Large Scale Agriculture Analysis",
     "description": "Analyze large scale agriculture to improve irrigation and crop health.",
-    "product": "LST Precision Core Product + Layer 01",
+    "product": "LST Precision + VNIR",
     "price": "FREE",
     "use_cases": ["Agriculture"],
     "locations": ["Pennsylvania, USA"],
@@ -63,71 +134,6 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/East_Coast_USA_2025-08-18T16-18-21.091328Z-2025-08-18T16_18_21_RGB.png"
     ],
     "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_DR6HY7P0_20250818T161818Z.zip"
-  },
-  {
-    "title": "Infrastructure Monitoring at High Granularity",
-    "description": "Highly granular satellite imagery of neighborhood-level urban heat patterns including waterways and airports.",
-    "product": "LST Precision Core Product + Layer 01 and 02",
-    "price": "FREE",
-    "use_cases": ["Urban Planning", "Industrial Monitoring"],
-    "locations": ["Abu Dhabi, UAE"],
-    "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_23_11.png",
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_RGB.png"
-    ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_THQDZSBX_20251123T072838Z.zip"
-  },
-  {
-    "title": "Oil Refineries and Petrochemicals Monitoring",
-    "description": "Monitoring of oil refineries and petrochemical facilities.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Nizhny Tagil, Russia"],
-    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_LST.png", "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_RGB.png"],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/Nizhny_Tagil/" 
-  },
-  {
-    "title": "Vessels Detection",
-    "description": "Monitoring of vessels and their movements.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Maritime"],
-    "locations": ["Bering Strait, Russia"],
-    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Bering+Strait_20260213_LST.png"],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_B5Z0Q1H9_20260213T092026Z.zip"
-  },
-  {
-    "title": "Icebreakers Monitoring",
-    "description": "Monitoring of icebreaker ships and their routes during nighttime.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Maritime"],
-    "locations": ["Pevek, Russia"],
-    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Pevek_20251112_LST.png"],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_ZU3JPVCU_20251112T010121Z.zip"
-  },  
-  {
-    "title": "Nuclear Power Plants Monitoring By Nighttime",
-    "description": "Monitoring the operational status of nuclear power plants through plume observations by nighttime.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Hangzhou Bay, China"],
-    "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Hangzhou+Bay_20260325_LST.png"],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_WTMVPYMW_20260325T141546Z.zip"
-  },
-  {
-    "title": "Industrial Activity Leaves a Thermal Signature",
-    "description": "Monitoring Coal Power Plant and their thermal signtures indicates the operational status of industrial facilities.",
-    "product": "LST Precision Core Product + Layer 01",
-    "price": "FREE",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Biysk, Russia"],
-    "images": 
-    ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_LST.png",
-    "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_RGB.png" ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4PD_20260503T054200Z.zip"
   }
 ]
 

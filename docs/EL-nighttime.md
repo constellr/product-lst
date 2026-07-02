@@ -1,4 +1,4 @@
-# **How nighttime LST measurements work and why they matter**
+# **How nighttime LST works and why it matters**
 
 Nighttime Land Surface Temperature measurements are possible because satellites capture **thermal infrared radiation** that is naturally emitted by the Earth’s surface. Unlike optical imagery, which depends on reflected sunlight, thermal sensors measure the energy radiated by objects themselves as a function of their temperature. 
 
@@ -24,9 +24,9 @@ However, this same absence of solar illumination is precisely what gives nightti
       Nighttime data reveals how cities retain heat, highlighting persistent hotspots that impact public health and energy demand.
 
     - **Infrastructure stress**  
-      Day-night behavior provides insight into the material used in infrastructure, such as transportation tracks or energy infrastructure. Here, weak spots requiring maintenance can be identified—using imagery that covers large areas at a repeated frequency without the need for in-situ measurements.
+      Day-night behavior provides insight into the material used in infrastructure, such as transportation tracks or energy infrastructure. Here, weak spots requiring maintenance can be identified, using imagery that covers large areas at a repeated frequency without the need for in-situ measurements.
 
-2. At night, the contrast between active and inactive systems becomes more pronounced. True thermal signals emerge, making anomalies, activity, and infrastructure dynamics significantly easier to detect.This makes nighttime LST especially powerful for operational monitoring and situational awareness.
+2. At night, the contrast between active and inactive systems becomes more pronounced. True thermal signals emerge, making anomalies, activity, and infrastructure dynamics significantly easier to detect. This makes nighttime LST especially powerful for operational monitoring and situational awareness.
 
     Use case examples:
 
