@@ -74,7 +74,7 @@
     "title": "Urban Infrastructure and Mangroves",
     "description": "A city's infrastructure, such as the Surabaya airport, encroaching on mangroves, displaying stark temperature contrasts.",
     "product": "LST Precision",
-    "Optional Layer ": "VNIR",,
+    "Optional Layer ": "VNIR",
     "use_cases": ["Urban Heat Island", "Urban Planning"],
     "locations": ["Surabaya Airport, Indonesia"],
     "images": [
