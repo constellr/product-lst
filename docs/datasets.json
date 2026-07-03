@@ -2,8 +2,8 @@
   {
     "title": "Vessel Detection",
     "description": "Monitoring of vessels and their movements through wake detection.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Maritime"],
     "locations": ["Bering Strait, Russia"],
     "images": [
@@ -14,8 +14,8 @@
   {
     "title": "Icebreaker Monitoring",
     "description": "Icebreaker ships leave a hot trail of fresh water in the ice, allowing the detection of their routes day and night.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Maritime"],
     "locations": ["Pevek, Russia"],
     "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Pevek_20251112_LST.png"],
@@ -24,8 +24,8 @@
   {
     "title": "NPP Monitoring By Nighttime",
     "description": "Monitoring the operational status of nuclear power plants through plume observations by nighttime.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Hangzhou Bay, China"],
     "images": ["https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Hangzhou+Bay_20260325_LST.png"],
@@ -34,8 +34,8 @@
   {
     "title": "Industrial Activity Leaves a Thermal Signature",
     "description": "Monitoring Coal Power Plant and their thermal signtures indicates the operational status of industrial facilities.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Biysk, Russia"],
     "images": [
@@ -47,8 +47,8 @@
   {
     "title": "Urban Heat Island Analysis",
     "description": "Comprehensive satellite imagery of urban heat patterns including waterways and airports.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Urban Planning"],
     "locations": ["Dubai, UAE"],
     "images": [
@@ -60,8 +60,8 @@
   {
     "title": "Agricultural Fields and Natural Parks",
     "description": "Detect different heat patterns across fields and monitor important natural reserves.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Agriculture", "Nature Monitoring"],
     "locations": ["Atherton Tablelands, Northern Australia"],
     "images": [
@@ -73,8 +73,8 @@
   {
     "title": "Urban Infrastructure and Mangroves",
     "description": "A city's infrastructure, such as the Surabaya airport, encroaching on mangroves, displaying stark temperature contrasts.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",,
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Urban Heat Island", "Urban Planning"],
     "locations": ["Surabaya Airport, Indonesia"],
     "images": [
@@ -86,8 +86,8 @@
   {
     "title": "Identifying Urban LST details",
     "description": "Indonesia's longest bridge, showcasing significant temperature variations between land and water.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Urban Planning"],
     "locations": ["Suramadu Bridge, Indonesia"],
     "images": [
@@ -99,8 +99,8 @@
   {
     "title": "Large Scale Agriculture Analysis",
     "description": "Analyze large scale agriculture to improve irrigation and crop health.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Agriculture"],
     "locations": ["Pennsylvania, USA"],
     "images": [
@@ -112,8 +112,8 @@
   {
     "title": "Infrastructure Monitoring at High Granularity",
     "description": "Highly granular satellite imagery of neighborhood-level urban heat patterns including waterways and airports.",
-    "product": "LST Precision",
-    "Optional Layer ": ["VNIR", "Sharpened (10m)"],
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Urban Planning", "Industrial Monitoring"],
     "locations": ["Abu Dhabi, UAE"],
     "images": [
@@ -125,15 +125,15 @@
   {
     "title": "Petrochemical Activity Tracking",
     "description": "Detecting activity of petrochemical facilities through heat signals and plumes.",
-    "product": "LST Precision",
-    "Optional Layer ": "VNIR",
+    "product": "LSTprecision",
+    "price": "Free",
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Nizhny Tagil, Russia"],
     "images": [
         "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_LST.png", 
         "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_RGB.png"
       ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/Nizhny_Tagil/" 
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_V66C2NDT_20260317T073918Z+2.zip" 
   }
 ]
 
