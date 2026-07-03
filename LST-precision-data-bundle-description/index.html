@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/constellr/product-lst/LST-fusion-metadata/">
+        <link rel="canonical" href="https://github.com/constellr/product-lst/LST-precision-data-bundle-description/">
       
       
+        <link rel="prev" href="../Technical-specification/">
+      
+      
+        <link rel="next" href="../LST-precision-metadata/">
       
       
       <link rel="icon" href="../assets/logo-constellr-dark-icon.svg">
@@ -18,7 +22,7 @@
     
     
       
-        <title>LSTfusion Metadata - Knowledge Center</title>
+        <title>Data Bundle Description - Knowledge Center</title>
       
     
     
@@ -68,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lstfusion-metadata" class="md-skip">
+        <a href="#lstprecision-data-bundle-description" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LSTfusion Metadata
+              Data Bundle Description
             
           </span>
         </div>
@@ -219,17 +223,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -244,7 +250,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             LSTprecision
@@ -299,10 +305,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../LST-precision-product-deliverables/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data Bundle Description
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -312,6 +339,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-layer-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Layer Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naming Convention
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -411,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-datasets/" class="md-nav__link">
+      <a href="../open-data-programme/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1132,57 +1206,299 @@
   
 
 
-<h1 id="lstfusion-metadata">LSTfusion Metadata</h1>
-<p>This page describes the metadata file used for L3 products. </p>
-<style>
-  table { border-collapse: collapse; width: 100%; table-layout: fixed; }
-  th, td { border: 1px solid #aaa; padding: 6px; text-align: left; word-wrap: break-word; }
-  th { background-color: #f2f2f2; }
+<h1 id="lstprecision-data-bundle-description">LSTprecision Data Bundle Description</h1>
+<p>Constellr's product deliverables include several layers, which are outlined below.</p>
+<h2 id="data-layers">Data Layers</h2>
+<p><strong>Core product data layers</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lst.tiff</td>
+<td>LST data</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>quicklook.tiff</td>
+<td>Temperature quicklook</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>thumbnail.jpg</td>
+<td>Temperature Thumbnail</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>metadata.json</td>
+<td><a href="https://constellr.github.io/product-lst/LST-precision-metadata/">Metadata description</a></td>
+<td>json</td>
+</tr>
+<tr>
+<td>scl_mask_30m.tiff</td>
+<td>Scene Classification Layer at 30 m resolution</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Option 1: VNIR layers</strong> </p>
+<p>These files are available for free for all daytime images. </p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rgb_quicklook.tiff</td>
+<td>True color (RGB) quicklook</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>rgb_thumbnail.jpg</td>
+<td>RGB Thumbnail</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>scl_mask_xxm.tiff</td>
+<td>Scene Classification Layer at 10 m and 20 m spatial resolution</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>vnirXX.tiff<sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></td>
+<td>VNIR Surface Reflection for bands 02 - 09 (see individual band's resolution on <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a>)</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>vnirXX_qa.tiff</td>
+<td>Quality Assessment Layer for each VNIR band at band's spatial resolution</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Option 2: Shaprening layer</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lst_sharpened_10m.tiff</td>
+<td>LST data at 10 m resolution</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_quicklook_sharpened_10m.tiff</td>
+<td>Temperature quicklook at 10 m</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_thumbnail_sharpened_10m.tiff</td>
+<td>Temperature thumbnail at 10 m</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>scl_mask_10m.tiff</td>
+<td>Scene Classification Layer at 10 m spatial resolution</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<!-- **Option 3: Emissivity layer** 
 
-  /* Adjust column widths */
-  th:nth-child(1), td:nth-child(1) { width: 25%; } 
-  th:nth-child(2), td:nth-child(2) { width: 20%; } 
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff | -->
 
-  /* Hierarchy styling */
-  .level-1 { font-weight: bold; }
-  .level-2 { font-style: normal; color: #000; }
-  .level-3 { font-style: italic; color: #333; }
-  .level-4 { font-style: italic; color: #555; }
-  .level-5 { font-style: italic; color: #777; }
-</style>
+<h2 id="data-layer-description">Data Layer Description</h2>
+<h3>LSTprecision Layer</h3>
+<p>LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30 m - day and night. It is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of <a href="https://constellr.github.io/product-lst/our-technology/">constellr’s HiVe constellation</a>. Following an <a href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">advanced calibration and validation (cal/val) procedure</a>, ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle:</p>
+<ol>
+<li>
+<p><strong>Cloud and Scene Classification:</strong> 
+  A deep learning algorithm relying on a U-net convolutional neural network (CNN), classifies pixels into four cloud-related classes: clear sky, thick cloud, thin cloud, and cloud shadow. Additional masks are also generated to distinguish land and water and to detect terrain cast-shadows. </p>
+</li>
+<li>
+<p><strong>Atmospheric Correction Inputs:</strong> 
+  Two key atmospheric parameters are retrieved from the data: </p>
+<ul>
+<li>Aerosol Optical Thickness (AOT) using the Dense Dark Vegetation (DDV) method. </li>
+<li>
+<p>Total Column Water Vapor (TCWV) via the Atmospheric Pre-corrected Differential Absorption (APDA) technique.  </p>
+<p>We make use of  high quality and well-established datasets <a href="https://doi.org/10.24381/cds.bd0915c6">ERA5</a> and <a href="https://doi.org/10.24381/04a0b097">CAMS_forecast</a> datasets to complement our imagery. We seamlessly leverage the best available source to deliver robust, reliable parameter coverage and consistently high-quality results. </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Surface Reflectance (SR) Retrieval:</strong> 
+  Surface Reflectance is derived from the ten <a href="https://constellr.github.io/product-lst/our-technology/">VNIR bands</a> using as input the generated masks and atmospheric amounts. The constellr SR algorithm includes corrections for adjacency effects, providing SR with high accuracy for any type of scene, including vegetation, or buildings and infrastructure suitable for a large range of applications.  </p>
+</li>
+<li>
+<p><strong>Land Surface Temperature (LST) Retrieval:</strong> 
+  The thermal retrieval is based on a library-constrained Temperature–Emissivity Separation (TES) approach. Instead of relying only on VNIR-derived first-guess emissivities, the algorithm evaluates candidate emissivity spectra from a spectral library that has been adapted to the sensor’s thermal bands. For each pixel, the observed thermal radiances are atmospherically corrected and compared against the candidate emissivity spectra to identify the most physically plausible emissivity-temperature combination. Candidate solutions are ranked primarily by inter-band temperature consistency, and the final emissivity is derived from the best-supported subset of candidates. This joint retrieval of LST and emissivity provides a more physically meaningful representation of surface thermal behaviour, particularly over heterogeneous and mixed land-cover types, and supports improved robustness of the final LST product.    </p>
+</li>
+</ol>
+<p>LST and VNIR surface reflectance are thus Level 2 (L2) products that have gone through various preprocessing levels (see Figure below). Therefore, they represent geophysical values that are scientifically useful and that can be processed into meaningful Earth-surface variables.  </p>
+<p>During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks.   </p>
+<p><img alt="LSTprecision workflow" src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LST_precision_chaine_L0toL2.png" width="80%" />
+<br />
+<figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the <a href= https://constellr.github.io/product-lst/Constellr-product-offer/ >Product Offer</a></figcaption>
+</p>
+<h3>VNIR Surface Reflectance Layers</h3>
+<p>Daytime imagery comes with 8 VNIR bands. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  </p>
+<p>Surface reflectance (SR) is delivered at 10 m and 20 m spatial resolution (see <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a> for each band's resolution). The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:</p>
+<p><span class="arithmatex">\({SR} = DN * scale factor + offset\)</span></p>
+<p>This has been introduced to allow the quantization of floating point numbers up to 1/100% in a 16 bit integer number. The offset value is non-zero to ensure that slightly negative values are not clipped. 
+The product is based on the L1B/C product and shows the same geotiff structure as the L1B/C radiance files.</p>
+<h3>Quality Assessment Layers</h3>
+<p>Quality masks are provided for each of the VNIR and TIR bands as uint8 data at the native spatial resolution of the corresponding band. Those masks report among others the presence of saturated pixels, nodata pixels, or possibly pixels for which the quality could not be tested. </p>
+<h3>Scene Classification Layers</h3>
+<p>The Scene Classification Layer (SCL) provides per-pixel quality and contextual information that can be used to identify and mask clouds, cloud shadows, and water bodies, enabling more robust retrieval of geophysical parameters and improving the reliability of change detection, time-series analysis, and monitoring workflows. </p>
+<p>The SCL product consists of four classification bands: a cloud mask, a cast shadow mask, a dynamic and a static land/water mask (see more detail in Metadata). </p>
+<p>The dynamic land/water mask is generated from the Level-1B calibrated (L1BC) imagery using the spectral ratio between the VNIR03 and VNIR08 bands. This approach leverages the characteristic reflectance differences of water and land surfaces to derive a scene-dependent classification that captures temporary changes in coastlines, water extent, and surface conditions at the time of acquisition. </p>
+<p>The static land/water mask is derived from the ESA WorldCover 2021 global land-cover dataset and provides a stable reference classification independent of the current acquisition. It is particularly useful for consistency checks and for distinguishing between persistent land/water boundaries and short-term variations observed in the dynamic mask. </p>
+<h3>Sharpening Layer</h3>
+<p>The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.<br />
+The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation.<br />
+Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.</p>
+<!-- <h3>Emissivity Layer</h3>
+These layers provide the derived Emissivity (EMIS) values for each of the three thermal bands used in the LST algorithm, as described in Step 4 of the LSTprecision derivation.  
+
+The layers are provided as uint16 Digital Numbers at the spatial resolution of the TIR bands, i.e. 30m. The physical emissivity values (unitless) can be obtained from the DNs by applying offset and scale factors specified in the table below as
+
+${EMIS} = DN* scale factor + offset$
+
+<h3>TIR bands</h3>
+TBC -->
 
 <table>
-  <tr>
-    <th>Key</th>
-    <th>Content Type</th>
-    <th>Description</th>
-  </tr>
-
-  <!-- product-level keys -->
-  <tr><td class="level-1">product_type</td><td>string</td><td>"L3"</td></tr>
-  <tr><td class="level-1">product_name</td><td>string</td><td>"LSTfusion"</td></tr>
-  <tr><td class="level-1">link</td><td>string</td><td><a href= "https://constellr.github.io/product-lst/Technical-specification/">URL with complementary documentation and data access info</a></td></tr>
-  <tr><td class="level-1">source</td><td>string</td><td> "constellr" </td></tr>
-  <tr><td class="level-1">acquisition_time</td><td>string</td><td>Date and time of the acquisition, ISO 8601 format at UTC time</td></tr>
-  <tr><td class="level-1">sources</td><td>string</td><td> satellite sensors used, e.g. CLMS, MODIS_AQUA, MODIS_TERRA, VIIRS_NOAA20, VIIRS_NPP </td></tr>
-  <tr><td class="level-1">resolutions</td><td>number array</td><td>Spatial resolution for this band</td></tr>
-  <tr><td class="level-1">resolution_unit</td><td>string</td><td>"m"</td></tr>
-  <tr><td class="level-1">bbox_WGS84</td><td>number array</td><td>Bounding box in Lon/Lat (WGS84), RFC 7946 format</td></tr>
-  <tr><td class="level-1">bbox_utm</td><td>number array</td><td>Bounding box in UTM reference system, RFC 7946 format</td></tr>
-  <tr><td class="level-1">utm_crs</td><td>string</td><td>EPSG code of the UTM Coordinate Reference System used for the dataset</td></tr>
-  <tr><td class="level-1">processing_start_time</td><td>string</td><td>ISO-8601 string indicating start time of imagery processing</td></tr>
-  <tr><td class="level-1">processing_end_time</td><td>string</td><td>ISO-8601 string indicating end time of imagery processing</td></tr>
-  <tr><td class="level-1">request_aoi</td><td>object</td><td></td></tr>
-  <tr><td class="level-2">&nbsp;&nbsp;type</td><td>string</td><td>Polygon</td></tr>
-  <tr><td class="level-2">&nbsp;&nbsp;coordinates</td><td>number array</td><td>Default GeoJSON footprint geometry</td></tr  
-  <tr><td class="level-1">request_start_datetime</td><td>string</td><td>ISO-8601 start time of imagery request</td></tr>
-  <tr><td class="level-1">request_end_datetime</td><td>string</td><td>ISO-8601 end time of imagery request</td></tr>
-
+<thead>
+<tr>
+<th>Variable</th>
+<th>Data Type</th>
+<th>Scale Factor</th>
+<th>Offset</th>
+<th>Unit</th>
+<th>Fill in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ST</td>
+<td>uint16</td>
+<td>0.01</td>
+<td>0</td>
+<td>K</td>
+<td>65535</td>
+</tr>
+<tr>
+<td>SR</td>
+<td>uint16</td>
+<td>0.0001</td>
+<td>-0.1</td>
+<td>1</td>
+<td>65535</td>
+</tr>
+</tbody>
 </table>
+<figcaption>Raster Properties for ST and SR</figcaption>
 
+<h2 id="naming-convention">Naming Convention</h2>
+<p><strong>Via the API</strong>
+<br> Files can be downloaded via a STAC compliant API. The naming convention per file is as follows: </p>
+<div class="admonition note">
+<p class="admonition-title">Naming convention</p>
+<p><strong><span style="color:darkblue;">[Product Type]</span></strong> _ <strong><span style="color:red;">[Satellite ID]</span></strong> _ <strong><span style="color:green;">[Geohash]</span></strong> _ <strong><span style="color:blue;">[Acquisition Time]</span></strong> _ <strong><span style="color:purple;">[File Type]</span></strong></p>
+<!-- *Example*<br />**<span style="color:darkblue;">LSTprecision</span>** _ **<span style="color:red;">SBA01</span>** _ **<span style="color:green;">[Geohash]</span>** _ **<span style="color:blue;">[Acquisition Time]</span>** _ **<span style="color:purple;">[File Type]</span>** -->
+<p><strong><span style="color:darkblue;">[Product Type]</span></strong> = the constellr product name e.g. LSTprecision 
+<br> <strong><span style="color:red;">[Satellite ID]</span></strong> = the unique satellite ID e.g. SBA01 or SBA02 
+<br> <strong><span style="color:green;">[Geohash]</span></strong> = the geohash of the image’s footprint
+<br> <strong><span style="color:blue;">[Acquisition Time]</span></strong> = the time the image was acquired by the satellite
+<br> <strong><span style="color:purple;">[File Type]</span></strong> = describes the content of the file e.g. metadata.json, lst.tiff etc</p>
+</div>
+<p><strong>Via the UI</strong>
+<br> For every acquired image, you can download a zip folder containing all of the files related to that image. The file naming convention is as above. The folder name is the root of the file i.e.  </p>
+<div class="admonition note">
+<p class="admonition-title">Naming convention</p>
+<p><strong><span style="color:darkblue;">[Product Type]</span></strong> _ <strong><span style="color:red;">[Satellite ID]</span></strong> _ <strong><span style="color:green;">[Geohash]</span></strong> _ <strong><span style="color:blue;">[Acquisition Time]</span></strong></p>
+</div>
+<!-- [^2]: The creation of the tcwv.tiff file is not possible if a scene is covered entirely by water or clouds. In this case, no tcwv.tiff file will be available and the SR will rely on modelled data. 
+[^3]: The availability of the aot.tiff files for a scene depends on the presence of dark and vegetated pixels in the corresponding scene. If such pixels are not available, the AOT.tiff file will be missing and the SR will rely on modelled data.  -->
+
+<!-- 
+| Product Deliverables               |                       |
+|---                                    |----:                  |
+| Images files               | TIR and VNIR for your area of interest - cloud optimized geotiff format              |
+| Quicklooks for thermal and optical data                       | geotiff format         |
+| Metadata file                             | json and xml format, STAC & INSPIRE compliant             |
+| Cloud Mask               | geotiff format : pixel values: 0=clear pixel, 1=contamined pixel (both cloud and shadow pixels)      |
+| Quality data layer                     |  geotiff format              |
+| Thumbnails for thermal and optical data                  |  .jpg format              |
+
+<h2>Metadata conventions</h2>
+
+The metadata file provided with the constellr products contains various pieces of information. Find an explanatory table per product below:
+
+[Metadata description for **LSTfusion**]()  
+[Metadata description for **LSTprecision**](https://constellr.github.io/product-lst/LST-precision-metadata/)  
+[Metadata description for **LSTzoom**]()
+
+---
+Data delivery of all data points through constellr's end-user platform via [**UI download**](https://constellr.github.io/product-lst/UI-documentation/) or [**API**](https://constellr.github.io/product-lst/API-documentation/).
+
+In case you are curious to leverage any of our data layers for your analysis, please refer to the table summarizing the [**technical specifications**](https://constellr.github.io/product-lst/Technical-specification/) for each of our products. -->
+
+<!-- 
+| Metadata field             | Definition                                                                                                 |
+|----------------------------|-------------------------------------------------------------------------------------------------------------|
+| area_of_interest_id        | Internal aoi id                                                                                             |
+| area_of_interest_name      | Internal aoi name                                                                                           |
+| organization_id            | Internal organization id                                                                                    |
+| bbox                       | bbox coordinates of the Area of Interest                                                                    |
+| l1_item_href               | Landsat l1 data source                                                                                      |
+| l2_item_href               | Landsat l2 data source                                                                                      |
+| scene_datetime             | Image acquisition datetime                                                                                  |
+| processing_datetime        | Start of constellr processing image datetime                                                                |
+| cloud_ratio_aoi            | Percentage of cloud cover over the aoi                                                                      |
+| na_ratio_aoi               | Percentage of nan values over the aoi                                                                       |
+| min_lst                    | Minimum LST value (in Kelvin)                                                                               |
+| max_lst                    | Maximum LST value (in Kelvin)                                                                               |
+| median_lst                 | Median LST value (in Kelvin)                                                                                |
+| sun_elevation              | Sun's elevation angle for a given geographical bounding box and time                                        |
+| proj:epsg                  | Reference projection in epsg                                                                                |
+| proj:shape                 | The shape of the spatial object in terms of the width and height, or the dimensions of the ara covered      |
+| proj:transform             | The transformation matrix that is used to transform coordinates between different spatial reference systems |
+| sat_source                 | Public data source used for satellite sensors                                                               |
+| atm_source                 | Public data source used for atmospheric data                                                                |
+| requested_area_of_interest | Coordinates of the AOI requested (Polygon)                                                                  |
+| geometry                   | Coordinates of the Polygon returned                                                                         |
+ -->
+
+<p><br></p>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: September, 2025
+  Last update: June, 2026
 </p>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:custom-label">
+<p>Band 01 and 10 are excluded, as they do not represent surface information.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
