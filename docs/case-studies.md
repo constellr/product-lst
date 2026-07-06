@@ -11,6 +11,29 @@ Do you want to get started using land surface temperature to derive temperature-
     <div class="swiper mySwiper2">
          <div class="swiper-wrapper">
 
+            <!-- <div class="swiper-slide  d-flex flex-column">
+                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png" />
+                    <div class= "slide-content">
+                        <span class="tag tag-product">6 min read</span>
+                        <h6 class="fw-bold"><a>LST for Industrial Activity Monitoring</a></h6>
+                        <div class="location">📍 Russia</div>
+                        <p class="text-muted small">Satellites equipped to measure LST can detect sludge deposits as a proxy for industrial activity.</p>
+                        <a class="download-button" href="https://constellr.github.io/product-lst/Nizhny-Tagil-use-case">Read article →</a>
+                    </div>
+            </div>  -->
+
+            <!-- <div class="swiper-slide  d-flex flex-column">
+                <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png" />
+                    <div class= "slide-content">
+                        <span class="tag tag-product">6 min read</span>
+                        <h6 class="fw-bold"><a>LST for Industrial Activity Monitoring</a></h6>
+                        <div class="location">📍 Russia</div>
+                        <p class="text-muted small">Satellites equipped to measure LST can detect heated buildings and thermal plumes, indicative for continuous industrial activity.</p>
+                        <a class="download-button" href="https://constellr.github.io/product-lst/Biysk-use-case">Read article →</a>
+                    </div>
+            </div>  -->
+
+
             <div class="swiper-slide  d-flex flex-column">
                 <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/water-stress-story/waterstressstory_graphical_abstract.png" />
                     <div class= "slide-content">
