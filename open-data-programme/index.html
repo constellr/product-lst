@@ -1507,10 +1507,10 @@
     <h5 class="fw-bold">Use Cases</h5>
     <div id="filter-usecase" class="d-flex flex-wrap"></div>
   </div>
-  <!-- <div class="filter-card"> -->
-    <!-- <h5 class="fw-bold">Price</h5>
+  <div class="filter-card">
+    <h5 class="fw-bold">Price</h5>
     <div id="filter-price" class="d-flex flex-wrap"></div>
-  </div> -->
+  </div>
 </div>
     <div class="col-md-8">
       <div class="row justify-content-center" id="catalog"></div>
@@ -1582,18 +1582,18 @@
     return `<button class="btn btn-outline-secondary btn-sm filter-button" data-type="${type}" data-value="${value}">${label}</button>`;
   }
 
-  // function renderFilters() {
-  //   const productCounts = {};
-  //   const useCaseCounts = {};
-  //   const priceCounts = {};
+  function renderFilters() {
+    const productCounts = {};
+    const useCaseCounts = {};
+    const priceCounts = {};
 
-  //   datasets.forEach(d => {
-  //     productCounts[d.product] = (productCounts[d.product] || 0) + 1;
-  //     priceCounts[d.price] = (priceCounts[d.price] || 0) + 1;
-  //     d.use_cases.forEach(u => {
-  //       useCaseCounts[u] = (useCaseCounts[u] || 0) + 1;
-  //     });
-  //   });
+    datasets.forEach(d => {
+      productCounts[d.product] = (productCounts[d.product] || 0) + 1;
+      priceCounts[d.price] = (priceCounts[d.price] || 0) + 1;
+      d.use_cases.forEach(u => {
+        useCaseCounts[u] = (useCaseCounts[u] || 0) + 1;
+      });
+    });
 
     const productHTML = Object.keys(productCounts)
       .map(p => createTag(`${p} (${productCounts[p]})`, "product", p)).join("");
@@ -1603,9 +1603,9 @@
       .map(u => createTag(`${u} (${useCaseCounts[u]})`, "use_case", u)).join("");
     document.getElementById("filter-usecase").innerHTML = usecaseHTML;
 
-    // const priceHTML = Object.keys(priceCounts)
-    //   .map(p => createTag(`${p} (${priceCounts[p]})`, "price", p)).join("");
-    // document.getElementById("filter-price").innerHTML = priceHTML;
+    const priceHTML = Object.keys(priceCounts)
+      .map(p => createTag(`${p} (${priceCounts[p]})`, "price", p)).join("");
+    document.getElementById("filter-price").innerHTML = priceHTML;
 
     document.querySelectorAll(".filter-button").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -1628,15 +1628,15 @@
 
 
   function renderCatalog() {
-  //   filtered = datasets.filter(d => {
-  //     const matchProduct = !filters.product.length || filters.product.includes(d.product);
-  //     const matchPrice = !filters.price.length || filters.price.includes(d.price);
-  //     const matchUseCase = !filters.use_case.length || d.use_cases.some(u => filters.use_case.includes(u));
-  //     return matchProduct && matchPrice && matchUseCase;
-  //   });
+    filtered = datasets.filter(d => {
+      const matchProduct = !filters.product.length || filters.product.includes(d.product);
+      const matchPrice = !filters.price.length || filters.price.includes(d.price);
+      const matchUseCase = !filters.use_case.length || d.use_cases.some(u => filters.use_case.includes(u));
+      return matchProduct && matchPrice && matchUseCase;
+    });
 
-  //   const container = document.getElementById("catalog");
-  //   container.innerHTML = "";
+    const container = document.getElementById("catalog");
+    container.innerHTML = "";
 
     filtered.forEach((d, i) => {
   const carouselId = `carousel-${i}`;
@@ -1677,7 +1677,7 @@
       <div class="card-body d-flex flex-column">
         <div class="mb-2">
           <span class="tag tag-product">${d.product}</span>
-          // <span class="tag ${d.price.toLowerCase() === 'free' ? 'tag-free' : 'tag-paid'}">${d.price.toUpperCase()}</span>
+          <span class="tag ${d.price.toLowerCase() === 'free' ? 'tag-free' : 'tag-paid'}">${d.price.toUpperCase()}</span>
         </div>
         <h6 class="fw-bold">${d.title}</h6>
         <div class="location">📍 ${d.locations.join(', ')}</div>
@@ -1791,10 +1791,10 @@ document.getElementById("downloadForm").addEventListener("submit", async functio
     }
     }
 
-  // showThankYouModal(
-  //   currentDataset.title,
-  //   currentDataset.price.toLowerCase() === "free"
-  // );
+  showThankYouModal(
+    currentDataset.title,
+    currentDataset.price.toLowerCase() === "free"
+  );
 });
 </script>
 
