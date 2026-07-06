@@ -1509,7 +1509,7 @@
   </div>
   <div class="filter-card">
     <h5 class="fw-bold">Optinal Layer</h5>
-    <div id="filter-price" class="d-flex flex-wrap"></div>
+    <div id="filter-Optinal Layer" class="d-flex flex-wrap"></div>
   </div>
 </div>
     <div class="col-md-8">
@@ -1576,7 +1576,7 @@
 </div>
 
 <script>
-  let datasets = [], filtered = [], filters = { product: [], use_case: [], price: [] };
+  let datasets = [], filtered = [], filters = { product: [], use_case: [], optinal_layer: [] };
 
   function createTag(label, type, value) {
     return `<button class="btn btn-outline-secondary btn-sm filter-button" data-type="${type}" data-value="${value}">${label}</button>`;
@@ -1585,11 +1585,11 @@
   function renderFilters() {
     const productCounts = {};
     const useCaseCounts = {};
-    const priceCounts = {};
+    const optinal_layerCounts = {};
 
     datasets.forEach(d => {
       productCounts[d.product] = (productCounts[d.product] || 0) + 1;
-      priceCounts[d.price] = (priceCounts[d.price] || 0) + 1;
+      optinal_layerCounts[d.optinal_layer] = (optinal_layerCounts[d.optinal_layer] || 0) + 1;
       d.use_cases.forEach(u => {
         useCaseCounts[u] = (useCaseCounts[u] || 0) + 1;
       });
@@ -1603,9 +1603,9 @@
       .map(u => createTag(`${u} (${useCaseCounts[u]})`, "use_case", u)).join("");
     document.getElementById("filter-usecase").innerHTML = usecaseHTML;
 
-    const priceHTML = Object.keys(priceCounts)
-      .map(p => createTag(`${p} (${priceCounts[p]})`, "price", p)).join("");
-    document.getElementById("filter-price").innerHTML = priceHTML;
+    const optinal_layerHTML = Object.keys(optinal_layerCounts)
+      .map(p => createTag(`${p} (${optinal_layerCounts[p]})`, "optinal_layer", p)).join("");
+    document.getElementById("filter-optinal_layer").innerHTML = optinal_layerHTML;
 
     document.querySelectorAll(".filter-button").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -1630,9 +1630,9 @@
   function renderCatalog() {
     filtered = datasets.filter(d => {
       const matchProduct = !filters.product.length || filters.product.includes(d.product);
-      const matchPrice = !filters.price.length || filters.price.includes(d.price);
+      const matchOptinal_layer = !filters.optinal_layer.length || filters.optinal_layer.includes(d.optinal_layer);
       const matchUseCase = !filters.use_case.length || d.use_cases.some(u => filters.use_case.includes(u));
-      return matchProduct && matchPrice && matchUseCase;
+      return matchProduct && matchOptinal_layer && matchUseCase;
     });
 
     const container = document.getElementById("catalog");
@@ -1677,7 +1677,7 @@
       <div class="card-body d-flex flex-column">
         <div class="mb-2">
           <span class="tag tag-product">${d.product}</span>
-          <span class="tag ${d.price.toLowerCase() === 'free' ? 'tag-free' : 'tag-paid'}">${d.price.toUpperCase()}</span>
+          <span class="tag ${d.optinal_layer.toLowerCase() === 'free' ? 'tag-free' : 'tag-paid'}">${d.optinal_layer.toUpperCase()}</span>
         </div>
         <h6 class="fw-bold">${d.title}</h6>
         <div class="location">📍 ${d.locations.join(', ')}</div>
@@ -1793,7 +1793,7 @@ document.getElementById("downloadForm").addEventListener("submit", async functio
 
   showThankYouModal(
     currentDataset.title,
-    currentDataset.price.toLowerCase() === "free"
+    currentDataset.optinal_layer.toLowerCase() === "free"
   );
 });
 </script>
