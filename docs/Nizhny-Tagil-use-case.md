@@ -6,7 +6,7 @@
 
 <div style="display: flex; align-items: flex-start; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="XXXX" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/NizhnyTagil_Use_Case_Story/NizhnyTagil_Location.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Figure 1: Location of Nizhny Tagil</figcaption>
 </div>
 <div style="flex: 2;">
@@ -33,7 +33,7 @@ Attention is given to the **sludge processing unit**, which exhibits dominant an
     </p>
 </div>
 <div style="flex: 1;">
-    <img src="XXXX" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/NizhnyTagil_Use_Case_Story/NizhnyTagil_Hotspot_Delineation.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Figure 2: Image segmentation and hotspot detection allow for automated delination and localization of heat sources associated with the idnustrial production at this site.</figcaption>
 </div>
 </div> 
@@ -42,7 +42,7 @@ Attention is given to the **sludge processing unit**, which exhibits dominant an
 
 <div style="display: flex; align-items: flex-start; justify-content: flex-start; gap: 20px;">
 <div style="flex: 1;">
-    <img src="XXXX" alt="Thermal Overview" style="max-width: 400px; height: auto;">
+    <img src="https://public-data-213979744349.s3.eu-central-1.amazonaws.com/NizhnyTagil_Use_Case_Story/NizhnyTagil_Deposit_Timeseries.png" alt="Thermal Overview" style="max-width: 400px; height: auto;">
     <figcaption>Figure 3: A time series of LSTprecision imagery on different dates between January and February 2026, overlaid on a high-resolution basemap, reveals different slug deposit locations.</figcaption>
 </div>
 <div style="flex: 2;">
