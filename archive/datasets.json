@@ -3,7 +3,7 @@
     "title": "Urban Heat Island Analysis",
     "description": "Comprehensive satellite imagery of urban heat patterns including waterways and airports.",
     "product": "LST Precision",
-    "price": "FREE",
+    "price": "VNIR",
     "use_cases": ["Urban Planning"],
     "locations": ["Dubai, UAE"],
     "images": [
@@ -16,7 +16,7 @@
     "title": "Agricultural Fields and Natural Parks",
     "description": "Detect different heat patterns across fields and monitor important natural reserves.",
     "product": "LST Precision",
-    "price": "FREE",
+    "price": "VNIR",
     "use_cases": ["Agriculture", "Nature Monitoring"],
     "locations": ["Atherton Tablelands, Northern Australia"],
     "images": [
@@ -29,7 +29,7 @@
     "title": "Urban Infrastructure and Mangroves",
     "description": "A city's infrastructure, such as the Surabaya airport, encroaching on mangroves, displaying stark temperature contrasts.",
     "product": "LST Precision",
-    "price": "FREE",
+    "price": "VNIR",
     "use_cases": ["Urban Heat Island", "Urban Planning"],
     "locations": ["Surabaya Airport, Indonesia"],
     "images": [
@@ -42,7 +42,7 @@
     "title": "Identifying Urban LST details",
     "description": "Indonesia's longest bridge, showcasing significant temperature variations between land and water.",
     "product": "LST Precision",
-    "price": "FREE",
+    "price": "VNIR",
     "use_cases": ["Urban Planning"],
     "locations": ["Suramadu Bridge, Indonesia"],
     "images": [
@@ -55,7 +55,7 @@
     "title": "Large Scale Agriculture Analysis",
     "description": "Analyze large scale agriculture to improve irrigation and crop health.",
     "product": "LST Precision",
-    "price": "FREE",
+    "price": "VNIR",
     "use_cases": ["Agriculture"],
     "locations": ["Pennsylvania, USA"],
     "images": [
@@ -68,7 +68,7 @@
     "title": "Infrastructure Monitoring at High Granularity",
     "description": "Highly granular satellite imagery of neighborhood-level urban heat patterns including waterways and airports.",
     "product": "LST Zoom",
-    "price": "FREE",
+    "price": "VNIR",
     "use_cases": ["Urban Planning", "Industrial Monitoring"],
     "locations": ["Abu Dhabi, UAE"],
     "images": [
