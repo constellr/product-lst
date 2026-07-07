@@ -39,10 +39,10 @@
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Biysk, Russia"],
     "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_LST.png",
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_RGB.png"
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260215_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260215_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4PD_20260503T054200Z.zip"
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4NV_20260215T055004Z_Biysk.zip"
   },
   {
     "title": "Urban Heat Island Analysis",
