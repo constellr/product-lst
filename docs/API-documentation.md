@@ -183,7 +183,7 @@ print(response.json())
 - **401:** Invalid API key.
 - **403:** User not authorized to create orders.
 - **404:** Resource not found (e.g., AOI or product does not exist).
-- **422:** Request body validation error (including when a customer order contains more than 25 data orders).
+- **422:** Request body validation error (including when a batch request contains more than 25 orders).
 ---
 
 <h3>2. List All Orders</h3>
