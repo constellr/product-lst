@@ -361,8 +361,8 @@ After downloading the datasets, find more information on the different layers an
     <div id="filter-usecase" class="d-flex flex-wrap"></div>
   </div>
   <div class="filter-card">
-    <h5 class="fw-bold">Price</h5>
-    <div id="filter-price" class="d-flex flex-wrap"></div>
+    <h5 class="fw-bold">Optional Layer</h5>
+    <div id="filter-optional-layer" class="d-flex flex-wrap"></div>
   </div>
 </div>
     <div class="col-md-8">
@@ -429,20 +429,48 @@ After downloading the datasets, find more information on the different layers an
 </div>
 
 <script>
-  let datasets = [], filtered = [], filters = { product: [], use_case: [], price: [] };
+  const OPTIONAL_LAYER_OPTIONS = ["VNIR", "Sharpened 10m", "Brightness", "Emissivity"];
+  const OPTIONAL_LAYER_LOOKUP = Object.fromEntries(
+    OPTIONAL_LAYER_OPTIONS.map(layer => [layer.toLowerCase(), layer])
+  );
+  let datasets = [], filtered = [], filters = { product: [], use_case: [], optional_layer: [] };
 
   function createTag(label, type, value) {
     return `<button class="btn btn-outline-secondary btn-sm filter-button" data-type="${type}" data-value="${value}">${label}</button>`;
   }
 
+  function normalizeOptionalLayer(layer) {
+    if (typeof layer !== "string") return null;
+    const normalized = OPTIONAL_LAYER_LOOKUP[layer.trim().toLowerCase()];
+    return normalized || null;
+  }
+
+  function getDatasetOptionalLayers(dataset) {
+    const rawLayers = dataset.optional_layer ?? dataset.optional_layers ?? null;
+    if (Array.isArray(rawLayers)) {
+      return rawLayers
+        .map(normalizeOptionalLayer)
+        .filter(Boolean);
+    }
+    if (typeof rawLayers === "string" && rawLayers.trim()) {
+      const normalized = normalizeOptionalLayer(rawLayers);
+      return normalized ? [normalized] : [];
+    }
+    return [];
+  }
+
   function renderFilters() {
     const productCounts = {};
     const useCaseCounts = {};
-    const priceCounts = {};
+    const optionalLayerCounts = Object.fromEntries(
+      OPTIONAL_LAYER_OPTIONS.map(layer => [layer, 0])
+    );
 
     datasets.forEach(d => {
       productCounts[d.product] = (productCounts[d.product] || 0) + 1;
-      priceCounts[d.price] = (priceCounts[d.price] || 0) + 1;
+      getDatasetOptionalLayers(d).forEach(layer => {
+        optionalLayerCounts[layer] += 1;
+      });
       d.use_cases.forEach(u => {
         useCaseCounts[u] = (useCaseCounts[u] || 0) + 1;
       });
@@ -456,9 +484,9 @@ After downloading the datasets, find more information on the different layers an
       .map(u => createTag(`${u} (${useCaseCounts[u]})`, "use_case", u)).join("");
     document.getElementById("filter-usecase").innerHTML = usecaseHTML;
 
-    const priceHTML = Object.keys(priceCounts)
-      .map(p => createTag(`${p} (${priceCounts[p]})`, "price", p)).join("");
-    document.getElementById("filter-price").innerHTML = priceHTML;
+    const optionalLayerHTML = OPTIONAL_LAYER_OPTIONS
+      .map(layer => createTag(`${layer} (${optionalLayerCounts[layer]})`, "optional_layer", layer)).join("");
+    document.getElementById("filter-optional-layer").innerHTML = optionalLayerHTML;
 
     document.querySelectorAll(".filter-button").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -482,10 +510,11 @@ After downloading the datasets, find more information on the different layers an
 
   function renderCatalog() {
     filtered = datasets.filter(d => {
+      const datasetLayers = getDatasetOptionalLayers(d);
       const matchProduct = !filters.product.length || filters.product.includes(d.product);
-      const matchPrice = !filters.price.length || filters.price.includes(d.price);
+      const matchOptionalLayer = !filters.optional_layer.length || datasetLayers.some(layer => filters.optional_layer.includes(layer));
       const matchUseCase = !filters.use_case.length || d.use_cases.some(u => filters.use_case.includes(u));
-      return matchProduct && matchPrice && matchUseCase;
+      return matchProduct && matchOptionalLayer && matchUseCase;
     });
 
     const container = document.getElementById("catalog");
@@ -530,7 +559,9 @@ After downloading the datasets, find more information on the different layers an
       <div class="card-body d-flex flex-column">
         <div class="mb-2">
           <span class="tag tag-product">${d.product}</span>
-          <span class="tag ${d.price.toLowerCase() === 'free' ? 'tag-free' : 'tag-paid'}">${d.price.toUpperCase()}</span>
+          ${getDatasetOptionalLayers(d)
+            .map(layer => `<span class="tag tag-free">${layer}</span>`)
+            .join('')}
         </div>
         <h6 class="fw-bold">${d.title}</h6>
         <div class="location">📍 ${d.locations.join(', ')}</div>
@@ -646,7 +677,7 @@ document.getElementById("downloadForm").addEventListener("submit", async functio
 
   showThankYouModal(
     currentDataset.title,
-    currentDataset.price.toLowerCase() === "free"
+    (currentDataset.price || "free").toLowerCase() === "free"
   );
 });
 </script>
