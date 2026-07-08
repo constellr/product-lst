@@ -1294,12 +1294,6 @@
     border: none;
   }
 
-  .tag-layer {
-    background-color: #f1f3f5;
-    color: #495057;
-    border: none;
-  }
-
   .tag-paid {
     background-color: #ef4444;
     color: white;
@@ -1582,29 +1576,47 @@
 </div>
 
 <script>
-  const OPTIONAL_LAYER_OPTIONS = ["VNIR", "Sharpened 10m", "Emissivity", "Brightness"];
+  const OPTIONAL_LAYER_OPTIONS = ["VNIR", "Sharpened 10m", "Brightness", "Emissivity"];
+  const OPTIONAL_LAYER_LOOKUP = Object.fromEntries(
+    OPTIONAL_LAYER_OPTIONS.map(layer => [layer.toLowerCase(), layer])
+  );
   let datasets = [], filtered = [], filters = { product: [], use_case: [], optional_layer: [] };
 
   function createTag(label, type, value) {
     return `<button class="btn btn-outline-secondary btn-sm filter-button" data-type="${type}" data-value="${value}">${label}</button>`;
   }
 
+  function normalizeOptionalLayer(layer) {
+    if (typeof layer !== "string") return null;
+    const normalized = OPTIONAL_LAYER_LOOKUP[layer.trim().toLowerCase()];
+    return normalized || null;
+  }
+
   function getDatasetOptionalLayers(dataset) {
-    const layers = dataset.optional_layer || dataset.optional_layers || [];
-    if (Array.isArray(layers)) return layers;
-    if (typeof layers === "string" && layers.trim()) return [layers.trim()];
+    const rawLayers = dataset.optional_layer ?? dataset.optional_layers ?? null;
+    if (Array.isArray(rawLayers)) {
+      return rawLayers
+        .map(normalizeOptionalLayer)
+        .filter(Boolean);
+    }
+    if (typeof rawLayers === "string" && rawLayers.trim()) {
+      const normalized = normalizeOptionalLayer(rawLayers);
+      return normalized ? [normalized] : [];
+    }
     return [];
   }
 
   function renderFilters() {
     const productCounts = {};
     const useCaseCounts = {};
-    const optionalLayerCounts = {};
+    const optionalLayerCounts = Object.fromEntries(
+      OPTIONAL_LAYER_OPTIONS.map(layer => [layer, 0])
+    );
 
     datasets.forEach(d => {
       productCounts[d.product] = (productCounts[d.product] || 0) + 1;
       getDatasetOptionalLayers(d).forEach(layer => {
-        optionalLayerCounts[layer] = (optionalLayerCounts[layer] || 0) + 1;
+        optionalLayerCounts[layer] += 1;
       });
       d.use_cases.forEach(u => {
         useCaseCounts[u] = (useCaseCounts[u] || 0) + 1;
@@ -1619,16 +1631,8 @@
       .map(u => createTag(`${u} (${useCaseCounts[u]})`, "use_case", u)).join("");
     document.getElementById("filter-usecase").innerHTML = usecaseHTML;
 
-    const optionalLayers = Object.keys(optionalLayerCounts).sort((a, b) => {
-      const ai = OPTIONAL_LAYER_PRIORITY.indexOf(a);
-      const bi = OPTIONAL_LAYER_PRIORITY.indexOf(b);
-      if (ai === -1 && bi === -1) return a.localeCompare(b);
-      if (ai === -1) return 1;
-      if (bi === -1) return -1;
-      return ai - bi;
-    });
-    const optionalLayerHTML = optionalLayers
-      .map(layer => createTag(`${layer} (${optionalLayerCounts[layer] || 0})`, "optional_layer", layer)).join("");
+    const optionalLayerHTML = OPTIONAL_LAYER_OPTIONS
+      .map(layer => createTag(`${layer} (${optionalLayerCounts[layer]})`, "optional_layer", layer)).join("");
     document.getElementById("filter-optional-layer").innerHTML = optionalLayerHTML;
 
     document.querySelectorAll(".filter-button").forEach(btn => {
@@ -1703,7 +1707,7 @@
         <div class="mb-2">
           <span class="tag tag-product">${d.product}</span>
           ${getDatasetOptionalLayers(d)
-            .map(layer => `<span class="tag tag-layer">${layer}</span>`)
+            .map(layer => `<span class="tag tag-free">${layer}</span>`)
             .join('')}
         </div>
         <h6 class="fw-bold">${d.title}</h6>
