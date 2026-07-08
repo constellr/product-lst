@@ -39,23 +39,10 @@
     "use_cases": ["Industrial Monitoring"],
     "locations": ["Biysk, Russia"],
     "images": [
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260215_LST.png",
-      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_20260215_RGB.png"
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_LST.png",
+      "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Biysk_202600503_RGB.png"
     ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4NV_20260215T055004Z_Biysk.zip"
-  },
-  {
-    "title": "Petrochemical Activity Tracking",
-    "description": "Detecting activity of petrochemical facilities through heat signals and plumes.",
-    "product": "LSTprecision",
-    "price": "Free",
-    "use_cases": ["Industrial Monitoring"],
-    "locations": ["Nizhny Tagil, Russia"],
-    "images": [
-        "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_LST.png", 
-        "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_RGB.png"
-      ],
-    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_V66C2NDT_20260317T073918Z+2.zip" 
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_VCKDF4PD_20260503T054200Z.zip"
   },
   {
     "title": "Urban Heat Island Analysis",
@@ -134,6 +121,19 @@
       "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/AbuDhabi_RGB.png"
     ],
     "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_THQDZSBX_20251123T072838Z.zip"
+  },
+  {
+    "title": "Petrochemical Activity Tracking",
+    "description": "Detecting activity of petrochemical facilities through heat signals and plumes.",
+    "product": "LSTprecision",
+    "price": "Free",
+    "use_cases": ["Industrial Monitoring"],
+    "locations": ["Nizhny Tagil, Russia"],
+    "images": [
+        "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_LST.png", 
+        "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/KC_Card_Images/Nizhny+Tagil_20260317_RGB.png"
+      ],
+    "download_url": "https://public-data-213979744349.s3.eu-central-1.amazonaws.com/open_data_programme/LSTPRECISION_SBA01_V66C2NDT_20260317T073918Z+2.zip" 
   }
 ]
 
