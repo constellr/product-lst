@@ -1593,20 +1593,18 @@
     const layers = dataset.optional_layer || dataset.optional_layers || [];
     if (Array.isArray(layers)) return layers;
     if (typeof layers === "string" && layers.trim()) return [layers.trim()];
-    return [...OPTIONAL_LAYER_OPTIONS];
+    return [];
   }
 
   function renderFilters() {
     const productCounts = {};
     const useCaseCounts = {};
-    const optionalLayerCounts = Object.fromEntries(OPTIONAL_LAYER_OPTIONS.map(layer => [layer, 0]));
+    const optionalLayerCounts = {};
 
     datasets.forEach(d => {
       productCounts[d.product] = (productCounts[d.product] || 0) + 1;
       getDatasetOptionalLayers(d).forEach(layer => {
-        if (layer in optionalLayerCounts) {
-          optionalLayerCounts[layer] += 1;
-        }
+        optionalLayerCounts[layer] = (optionalLayerCounts[layer] || 0) + 1;
       });
       d.use_cases.forEach(u => {
         useCaseCounts[u] = (useCaseCounts[u] || 0) + 1;
@@ -1621,7 +1619,15 @@
       .map(u => createTag(`${u} (${useCaseCounts[u]})`, "use_case", u)).join("");
     document.getElementById("filter-usecase").innerHTML = usecaseHTML;
 
-    const optionalLayerHTML = OPTIONAL_LAYER_OPTIONS
+    const optionalLayers = Object.keys(optionalLayerCounts).sort((a, b) => {
+      const ai = OPTIONAL_LAYER_PRIORITY.indexOf(a);
+      const bi = OPTIONAL_LAYER_PRIORITY.indexOf(b);
+      if (ai === -1 && bi === -1) return a.localeCompare(b);
+      if (ai === -1) return 1;
+      if (bi === -1) return -1;
+      return ai - bi;
+    });
+    const optionalLayerHTML = optionalLayers
       .map(layer => createTag(`${layer} (${optionalLayerCounts[layer] || 0})`, "optional_layer", layer)).join("");
     document.getElementById("filter-optional-layer").innerHTML = optionalLayerHTML;
 
