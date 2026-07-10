@@ -566,7 +566,7 @@ After downloading the datasets, find more information on the different layers an
         <h6 class="fw-bold">${d.title}</h6>
         <div class="location">📍 ${d.locations.join(', ')}</div>
         <p class="text-muted small">${d.description}</p>
-        <a class="download-button mt-auto" onclick='openModal(datasets[${i}])'>DOWNLOAD DATASET →</a> 
+        <a class="download-button mt-auto" onclick='openModal(d)'>DOWNLOAD DATASET →</a> 
       </div>
     </div>
   `;
