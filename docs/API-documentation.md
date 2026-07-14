@@ -1,4 +1,4 @@
-# Constellr Developer Guide
+# **Constellr API Documentation**
 
 This guide covers the concepts and workflows behind the Constellr API. It complements, but doesn't replace the full endpoint reference:
 
