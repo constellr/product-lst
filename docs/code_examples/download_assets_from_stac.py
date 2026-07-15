@@ -91,7 +91,7 @@ while body:
         # Sanitize the ISO timestamp so it can be safely used as a folder name across platforms.
         acquired = item["properties"]["datetime"].replace(":", "-")
 
-        # Combine the timestamp and unique feature ID to build a unique folder name.
+        # Combine the timestamp and unique feature ID to build a unique folder name per each feature.
         # This prevents directory namespace collisions if multiple features share a timestamp.
         folder_name = f"{acquired}_{feature_id}"
         item_dir = os.path.join(DOWNLOAD_DIR, folder_name)
