@@ -9,8 +9,8 @@ assets associated with each returned item into a local directory.
 Directory structure for the downloaded assets::
     downloads/
         <acquisition_datetime>_<feature_id>/
-            asset_1.tif
-            asset_2.json
+            LSTPRECISION_SBA02_U155VHMQ_20260708T235815Z_LST.tiff
+            LSTPRECISION_SBA02_U155VHMQ_20260708T235815Z_METADATA.json
             ...
 
 Before running:
@@ -22,6 +22,9 @@ Before running:
 
 import os
 import re
+from pathlib import Path
+from urllib.parse import urlparse
+
 import requests
 
 # Configuration and authentication
@@ -125,24 +128,19 @@ body = {
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 
-def extract_file_name_from_s3_url(file_url: str) -> str:
+def get_download_filename(response: requests.Response) -> str:
     """
-    Parses a signed S3 URL to extract a clean local filename.
-
-    Removes complex query/signature parameters attached to the URL, isolates
-    the base file name from the path, and replaces any unexpected whitespace
-    characters with safe underscores.
+    Return the filename from the Content-Disposition header, falling back to
+    the last path component of the download URL.
     """
-    # Strip off the query string parameters (e.g., AWS signatures, expiration tokens)
-    clean_url = file_url.split("?")[0]
+    disposition = response.headers.get("Content-Disposition")
 
-    # Extract the actual file name from the final segment of the URL path
-    path_segments = [seg for seg in clean_url.split("/") if seg]
-    file_name = path_segments[-1]
+    if disposition:
+        match = re.search(r'filename="?([^"]+)"?', disposition)
+        if match:
+            return match.group(1)
 
-    # Sanitize the file name by replacing any whitespace sequences with underscores
-    return re.sub(r"\s+", "_", file_name)
-
+    return Path(urlparse(response.url).path).name
 
 # Execute the search query and loop dynamically through paginated results.
 while body:
@@ -167,18 +165,17 @@ while body:
         for asset_name, asset in item["assets"].items():
             url = asset["href"]
 
-            # Derive a clean file destination name using the S3 URL parsing utility
-            filename_from_url = extract_file_name_from_s3_url(url)
-            filename = os.path.join(item_dir, filename_from_url)
-
-            # Initialize a streamed HTTP GET request to optimize memory consumption when downloading large files.
+            # Initialize a streamed HTTP GET request to optimize memory
+            # consumption when downloading large files.
             with requests.get(url, stream=True) as r:
                 r.raise_for_status()
-                with open(filename, "wb") as f:
-                    # Write the file directly to disk in small, manageable binary blocks (8KB chunks)
+
+                filepath = os.path.join(item_dir, get_download_filename(r))
+
+                with open(filepath, "wb") as f:
                     for chunk in r.iter_content(chunk_size=8192):
                         f.write(chunk)
-            print(f"Downloaded {filename}")
+            print(f"Downloaded {filepath}")
 
     # Handle server-side pagination: Look for the 'next' relationship tag in the link block.
     # If a 'next' page link exists, update the query body context to request the next batch of data.
