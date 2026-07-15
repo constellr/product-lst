@@ -36,92 +36,29 @@ DOWNLOAD_DIR = "downloads"
 headers = {"X-Api-Key": API_KEY, "Content-Type": "application/json"}
 
 # Define the payload structure for the STAC Search API.
+# Optional filters you can add to `body` below:
+#   datetime: "2026-07-08T23:58:15.445339Z"                      (exact time)
+#   datetime: "2026-06-01T00:00:00Z/2026-07-15T23:59:59Z"        (range)
+#   datetime: "2026-06-01T00:00:00Z/.."                          (open-ended)
+#   bbox: [4.22, 51.16, 4.66, 51.45]                              ([minimum_longitude, minimum_latitude, maximum_longitude, maximum_latitude])
+#   Geometry intersection:
+#     Replace the `filter` in the body with:
+#     {
+#         "op": "and",
+#         "args": [
+#             {"op": "eq", "args": [{"property": "order:id"}, ORDER_ID]},
+#             {"op": "s_intersects", "args": [{"property": "geometry"}, GEOJSON_GEOMETRY]},
+#         ],
+#     }
+
 body = {
-    # Maximum number of items returned per request.
-    "limit": 10,
-
-    # STAC collection(s) to search.
-    "collections": [
-        "lstprecision",
-    ],
-
-    # Base filter: search within a specific Constellr order.
+    "limit": 10, # max number of items to rereturn per request
+    "collections": ["lstprecision"], # collection ids to search in
     "filter": {
         "op": "eq",
-        "args": [
-            {
-                "property": "order:id",
-            },
-            ORDER_ID,
-        ],
+        "args": [{"property": "order:id"}, ORDER_ID], # order id filtering
     },
-
-    # Optional temporal filter.
-    #
-    # Exact acquisition time:
-    # "datetime": "2026-07-08T23:58:15.445339Z",
-    #
-    # Time range:
-    # "datetime": "2026-06-01T00:00:00Z/2026-07-15T23:59:59Z",
-    #
-    # After a specific date:
-    # "datetime": "2026-06-01T00:00:00Z/..",
-
-
-    # Optional spatial filter using a bounding box.
-    #
-    # Format:
-    # [minimum_longitude, minimum_latitude, maximum_longitude, maximum_latitude]
-    #
-    # Example: Antwerp, Belgium area
-    # "bbox": [4.22, 51.16, 4.66, 51.45],
-
-
-    # Optional spatial filter using geometry intersection.
-    #
-    # Replace the base filter above with this filter to return
-    # items whose footprint intersects the provided GeoJSON geometry.
-    #
-    # Example: Point intersection (Antwerp, Belgium)
-    #
-    # "filter": {
-    #     "op": "and",
-    #     "args": [
-    #         {
-    #             "op": "eq",
-    #             "args": [
-    #                 {
-    #                     "property": "order:id",
-    #                 },
-    #                 ORDER_ID,
-    #             ],
-    #         },
-    #         {
-    #             "op": "s_intersects",
-    #             "args": [
-    #                 {
-    #                     "property": "geometry",
-    #                 },
-    #                 {
-    #                     "type": "Point",
-    #                     "coordinates": [
-    #                         4.40026,
-    #                         51.22047,
-    #                     ],
-    #                 },
-    #             ],
-    #         },
-    #     ],
-    # },
-
-
-    # Sort results by acquisition time (newest first).
-    "sortby": [
-        {
-            "field": "datetime",
-            "direction": "desc",
-        }
-    ],
+    "sortby": [{"field": "datetime", "direction": "desc"}], # sort by the acquisition datetime in descending order
 }
 
 # Ensure the root download directory exists locally before proceeding.
