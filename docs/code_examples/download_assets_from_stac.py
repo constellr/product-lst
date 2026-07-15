@@ -35,7 +35,6 @@ DOWNLOAD_DIR = "downloads"
 
 headers = {"X-Api-Key": API_KEY, "Content-Type": "application/json"}
 
-# Define the payload structure for the STAC Search API.
 # Optional filters you can add to `body` below:
 #   datetime: "2026-07-08T23:58:15.445339Z"                      (exact time)
 #   datetime: "2026-06-01T00:00:00Z/2026-07-15T23:59:59Z"        (range)
