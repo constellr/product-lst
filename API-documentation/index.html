@@ -552,6 +552,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Orders API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-lifecycle-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order Lifecycle States
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1325,6 +1340,37 @@ To avoid disruption, switch to workspace-scoped API keys now. They explicitly ta
 <h2 id="the-apis">The APIs</h2>
 <h3 id="orders-api">Orders API</h3>
 <p>Request satellite-derived data products (e.g., <code>LSTprecision</code>) for a given area and time window. An order ties together a <strong>product</strong>, an <strong>Area of Interest (AOI)</strong>, and a <strong>schedule</strong>. Orders can be created individually or in batch, listed, updated, and deleted.</p>
+<h4 id="order-lifecycle-states">Order Lifecycle States</h4>
+<p>You can track an order's lifecycle using its <code>state</code> property. Once created, an order progresses through four states:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">State</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>pending_validation</code></strong></td>
+<td style="text-align: left;">The order has been submitted and is awaiting manual review/validation by Constellr Customer Success Managers (CSMs).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>in_progress</code></strong></td>
+<td style="text-align: left;">The order is active and the system is working to acquire and deliver images to you.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>closing</code></strong></td>
+<td style="text-align: left;">The order's monitoring period is over. The system is no longer trying to acquire new images. However, we are waiting for any last images taken by the satellite to be downlinked, processed and quality controlled before the order closes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>closed</code></strong></td>
+<td style="text-align: left;">The order is complete and all of your data has been delivered.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>State Sequence:</strong> <code>pending_validation</code> → <code>in_progress</code> → <code>closing</code> → <code>closed</code></p>
+</blockquote>
 <h3 id="areas-of-interest-aoi-api">Areas of Interest (AOI) API</h3>
 <p>Defines the geographic regions that orders are placed against. AOIs are created once from GeoJSON and can be reused across multiple orders.</p>
 <h3 id="products-api">Products API</h3>
