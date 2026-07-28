@@ -53,6 +53,19 @@ Here is a typical, summarized workflow for requesting and downloading satellite-
 
 Request satellite-derived data products (e.g., `LSTprecision`) for a given area and time window. An order ties together a **product**, an **Area of Interest (AOI)**, and a **schedule**. Orders can be created individually or in batch, listed, updated, and deleted.
 
+#### Order Lifecycle States
+
+You can track an order's lifecycle using its `state` property. Once created, an order progresses through four states:
+
+| State | Description                                                                                                                                                                                                                                 |
+| :--- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`pending_validation`** | The order has been submitted and is awaiting manual review/validation by Constellr Customer Success Managers (CSMs).                                                                                                                        |
+| **`in_progress`** | The order is active and the system is working to acquire and deliver images to you.                                                                                                                                                         |
+| **`closing`** | The order's monitoring period is over. The system is no longer trying to acquire new images. However, we are waiting for any last images taken by the satellite to be downlinked, processed and quality controlled before the order closes. |
+| **`closed`** | The order is complete and all of your data has been delivered.                                                                                                                                                                              |
+
+> **State Sequence:** `pending_validation` → `in_progress` → `closing` → `closed`
+
 ### Areas of Interest (AOI) API
 
 Defines the geographic regions that orders are placed against. AOIs are created once from GeoJSON and can be reused across multiple orders.
