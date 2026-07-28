@@ -53,7 +53,7 @@ Here is a typical, summarized workflow for requesting and downloading satellite-
 
 Request satellite-derived data products (e.g., `LSTprecision`) for a given area and time window. An order ties together a **product**, an **Area of Interest (AOI)**, and a **schedule**. Orders can be created individually or in batch, listed, updated, and deleted.
 
-#### Order Lifecycle States
+**Order Lifecycle States**
 
 You can track an order's lifecycle using its `state` property. Once created, an order progresses through four states:
 
