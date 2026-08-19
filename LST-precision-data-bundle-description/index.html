@@ -1246,7 +1246,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Option 1: VNIR layers</strong> </p>
+<p><strong>Optional : VNIR layers</strong> </p>
 <p>These files are available for free for all daytime images. </p>
 <table>
 <thead>
@@ -1284,7 +1284,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Option 2: Shaprening layer</strong> </p>
+<p><strong>Optional : Shaprening layer</strong> </p>
 <table>
 <thead>
 <tr>
@@ -1305,7 +1305,7 @@
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst_thumbnail_sharpened_10m.tiff</td>
+<td>lst_thumbnail_sharpened_10m.jpg</td>
 <td>Temperature thumbnail at 10 m</td>
 <td>jpg</td>
 </tr>
@@ -1316,12 +1316,45 @@
 </tr>
 </tbody>
 </table>
-<!-- **Option 3: Emissivity layer** 
-
-| Layers | Description | File Format |
-|--------|-------------|-------------|
-| emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff | -->
-
+<p><strong>Optional : Emissivity layer</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EMISSIVITYXX.tiff</td>
+<td>Emissivity values per sensor band (see individual band's resolution on <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a>) as well as a wideband emissivity file. Cloud optimized geotiff</td>
+<td></td>
+</tr>
+<tr>
+<td>EMISSIVITY_WIDEBAND.tiff</td>
+<td>Emissivity values per sensor band (see individual band's resolution on <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a>) as well as a wideband emissivity file.</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optional : Radiance layer</strong> </p>
+<table>
+<thead>
+<tr>
+<th>Layers</th>
+<th>Description</th>
+<th>File Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BOA_RADIANCEXX.tiff</td>
+<td>Bottom of Atmosphere surface leaving radiance per band (see individual band's resolution on <a href="https://constellr.github.io/product-lst/our-technology/">Our Technology</a>)</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+</tbody>
+</table>
 <h2 id="data-layer-description">Data Layer Description</h2>
 <h3>LSTprecision Layer</h3>
 <p>LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30 m - day and night. It is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of <a href="https://constellr.github.io/product-lst/our-technology/">constellr’s HiVe constellation</a>. Following an <a href="https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/">advanced calibration and validation (cal/val) procedure</a>, ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle:</p>
