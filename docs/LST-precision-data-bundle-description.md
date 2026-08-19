@@ -15,7 +15,7 @@ Constellr's product deliverables include several layers, which are outlined belo
 | scl_mask_30m.tiff | Scene Classification Layer at 30 m resolution | Cloud optimized geotiff |
 
 
-**Option 1: VNIR layers** 
+**Optional : VNIR layers** 
 
 These files are available for free for all daytime images. 
 
@@ -27,20 +27,27 @@ These files are available for free for all daytime images.
 | vnirXX.tiff[^custom-label] |VNIR Surface Reflection for bands 02 - 09 (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/))| Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band at band's spatial resolution | Cloud optimized geotiff |
 
-**Option 2: Shaprening layer** 
+**Optional : Shaprening layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|---|
 | lst_sharpened_10m.tiff | LST data at 10 m resolution| Cloud optimized geotiff |
 | lst_quicklook_sharpened_10m.tiff | Temperature quicklook at 10 m| Cloud optimized geotiff |
-| lst_thumbnail_sharpened_10m.tiff | Temperature thumbnail at 10 m| jpg |
+| lst_thumbnail_sharpened_10m.jpg | Temperature thumbnail at 10 m| jpg |
 | scl_mask_10m.tiff |Scene Classification Layer at 10 m spatial resolution| Cloud optimized geotiff |   
 
-<!-- **Option 3: Emissivity layer** 
+**Optional : Emissivity layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| emi_XX.tiff | Emissivity layers for TIR bands 1-3| Cloud optimized geotiff | -->
+| EMISSIVITYXX.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file. Cloud optimized geotiff |
+| EMISSIVITY_WIDEBAND.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file.| Cloud optimized geotiff |
+
+**Optional : Radiance layer** 
+
+| Layers | Description | File Format |
+|--------|-------------|-------------|
+| BOA_RADIANCEXX.tiff | Bottom of Atmosphere surface leaving radiance per band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) | Cloud optimized geotiff |
 
 ## Data Layer Description
 
