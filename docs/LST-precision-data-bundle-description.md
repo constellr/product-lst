@@ -20,9 +20,11 @@ The RGB and VNIR layers are available for free for all daytime images.
 | scl_mask_xxm.tiff | Scene Classification Layer at 10 m and 20 m spatial resolution | Cloud optimized geotiff |
 | vnirXX.tiff[^custom-label] |VNIR Surface Reflection for bands 02 - 09 (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/))| Cloud optimized geotiff |
 | vnirXX_qa.tiff | Quality Assessment Layer for each VNIR band at band's spatial resolution | Cloud optimized geotiff |
+| tirXX_qa.tiff | Quality Assessment Layer for each TIR band at band's spatial resolution | Cloud optimized geotiff |
 
 
-**Optional : Shaprening layer** 
+
+**Optional : Sharpening layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|---|
@@ -96,9 +98,7 @@ The static land/water mask is derived from the ESA WorldCover 2021 global land-c
 
 
 <h3>Sharpening Layer</h3>
-The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard.  
-The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation.  
-Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.
+The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard. The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation. Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.
 
 <!-- <h3>Emissivity Layer</h3>
 These layers provide the derived Emissivity (EMIS) values for each of the three thermal bands used in the LST algorithm, as described in Step 4 of the LSTprecision derivation.  
@@ -203,5 +203,5 @@ In case you are curious to leverage any of our data layers for your analysis, pl
 
 <br>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: June, 2026
+  Last update: September, 2026
 </p>
