@@ -82,6 +82,7 @@ The New Order form includes the following fields:
 * **Max Number of Images**: Set the maximum number of images to be delivered for the order.
 * **Illumination Constraint**: Specify illumination preferences constraints for acquisitions: *Day, Night, No Constraint*.
 * **Product Options**: Select the product configuration for your order, including the optional Sharpened 10m dataset.
+* **Notification Preferences**: Choose whether you want to receive email notifications for *new deliveries* and/or *status changes* on this order. These can be changed later — see the [Notifications](#notifications) section for more detail.
 * **Optional Tags and Comments**: Add tags and free-text comments to help identify and manage your order.
 
 Upon successful submission, you will receive a confirmation message. Your order will also be visible in the table on the My Data tab.  
@@ -109,6 +110,10 @@ Each row in the table represents one data order with the following information:
 * **Frequency**: How often data is delivered to you (e.g. *Single Image, Weekly, Monthly*). This is a *target* frequency rather than a guaranteed frequency. The real frequency of deliveries may vary based on when acquisitions can take place, cloud coverage, satellite availability etc.  
 * **Product**: The selected product type for the order (*LSTprecision*).
 * **Monitoring Period**: The time window for which data is collected.  
+
+**Order Notifications**
+
+While viewing an order, a bell icon in the top right lets you quickly check and adjust the email notification preferences for that specific order (*new deliveries* and *status changes*) without leaving the page. If email notifications are turned off at the workspace level, the icon will indicate this and prompt you to enable them from the [Notifications](#notifications) settings page.
 
 **Downloading Data**  
 You can access your data by clicking on the Data Order ID. Here, you can see every delivery for that order.  
@@ -183,6 +188,21 @@ The **Account Details** page provides a quick overview of your profile, includin
 
 ![AccountDetails](./images/ui-documentation/account_details.png){ width=80% }
 
+**Notifications**
+
+The **Notifications** page lets you manage email notifications for your orders. You can access it by navigating to [Account > Notifications](https://app.constellr.com/account/notifications).
+
+* **Email Notifications (main switch)**: Turns order-related emails on or off for the entire workspace. When switched off, no order notification emails are sent and the per-order preferences below are hidden, but they are preserved and will apply again once notifications are re-enabled.
+* **Per-Order Preferences**: When the main switch is on, a table lists all of your orders with two toggles each:
+  * **New Delivery**: Notifies you by email when a new delivery is available for that order.
+  * **Status Changes**: Notifies you by email when that order's status changes (e.g. moves to *In Progress*, *Closing*, or *Closed*).
+* You can search by **Data Order ID** or filter by **Area of Interest** to quickly find the order you want to configure.
+
+> **Note:** Notification preferences for an order can also be set at creation time in the [New Order](#new-order) form, or adjusted later via the bell icon shown when viewing an order in [My Data](#my-data).
+
+![Notifications](./images/ui-documentation/notifications.png){ width=80% }
+
+
 **Workspace Management**
 
 Workspaces are the core unit of data isolation and access control in the platform. Each workspace represents a separate tenant with its own data and user membership.
@@ -205,6 +225,7 @@ The **Invitations** tab controls access for new users through secure, email-base
 * **Manage Invites**: Use the action icons to resend an invitation email or revoke an unused invitation.
 
 ![WorkspaceInvitations](./images/ui-documentation/workspace_invitations.png){ width=80% }
+
 
 **API Keys**
 
