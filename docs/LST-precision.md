@@ -5,11 +5,11 @@
     LSTprecision delivers exceptional satellite-based land surface temperature sensitivity and details, enabling accurate absolute temperature measurements. It is designed for precise thermal data, making it ideally suited for urban, vegetation, and industrial analyses with new levels of coverage, detail, and accuracy.  LSTprecision also delivers co-registered accurate surface reflectance measurements across visible and near-infrared bands, day and night. This enables for example the generation of true-color imagery and the calculation of key vegetation indices providing complementary information for more robust temperature analyses. LSTprecision is built on a satellite system that is independently reviewed under the European Space Agency’s (ESA) Copernicus quality assessment framework. An ESA-commissioned evaluation confirms the maturity, stability, and fitness for purpose of Constellr’s land surface temperature and surface reflectance products.   
 
 ??? note "When should you use LSTprecision?"
-    - *Protect high-value assets:* Get asset-level insights with accurate thermal data, not just rough indices or proxies. 
-    - *Detect issues before they escalate:* Our system acts as an early-warning tool, spotting stress in environments, infrastructure, and materials before damage occurs. 
-    - *Rely on unmatched temperature accuracy:* With absolute precision of < 2 K, you can trust your data to be consistent, comparable, and reliable over time. 
-    - *See what others miss:* A sensitivity of 0.03 K uncovers subtle thermal shifts, ensuring confident detection of both relative and absolute changes. 
-    - *Track trends with confidence:* High-frequency revisits (as often as every 3 days in daylight) deliver rich time-series data, enabling timely identification of anomalies and long-term patterns. 
+    - **Protect high-value assets:** Get asset-level insights with accurate thermal data, not just rough indices or proxies. 
+    - **Detect issues before they escalate:** Our system acts as an early-warning tool, spotting stress in environments, infrastructure, and materials before damage occurs. 
+    - **Rely on unmatched temperature accuracy:** With absolute precision of < 2 K, you can trust your data to be consistent, comparable, and reliable over time. 
+    - **See what others miss:** A sensitivity of 0.03 K uncovers subtle thermal shifts, ensuring confident detection of both relative and absolute changes. 
+    - **Track trends with confidence:** High-frequency revisits (as often as every 3 days in daylight) deliver rich time-series data, enabling timely identification of anomalies and long-term patterns. 
 
     Want even sharper local detail? → [Explore LSTzoom](Link)  
     Need broader, cloud-free daily coverage? → [Discover LSTfusion](https://constellr.github.io/product-lst/LST-fusion/) 

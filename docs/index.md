@@ -33,7 +33,7 @@
 
   <div class="swiper-slide2  d-flex flex-column">
           <div class= "slide-content">
-              <h6 class="fw-bold"><a>LST specifications</a></h6>
+              <h6 class="fw-bold"><a>LST Specifications</a></h6>
               <p class="text-muted small">Find details on the technical specifications of our LST data. </p>
               <a class="download-button" href="https://constellr.github.io/product-lst/Technical-specification/">Explore →</a>
           </div>
