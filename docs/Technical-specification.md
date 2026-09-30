@@ -5,13 +5,13 @@
 |------------------------|--------------------------------|
 | **Spatial Resolution [^2]** | 30 m     | 
 | **Swath**   | 17.5 km    | 
-| **Maximum AOI size[^3]**   | fits within 15x15 km bounding box |
+| **Maximum AOI size[^3]**   | Fits within 15x15 km bounding box |
 | **Standard scene size[^4]**   | 24 km acquisition strip along track |
-| **Frequency [^5]**   | sub-daily   | 
-| **Coverage**| worldwide tasking, up to 1.000.000 km² daily imaging capacity | 
+| **Frequency [^5]**   | Sub-daily   | 
+| **Coverage**| Worldwide tasking, up to 1.000.000 km² daily imaging capacity | 
 | **Local acquisition time [^6]**  | 01:30 am/pm <br> 10:30 am/pm   | 
-| **Type of images** | day and night imagery  | 
-| **Acquisition Angle**    | up to 30° | not applicable | 
+| **Type of images** | Day and night imagery  | 
+| **Acquisition Angle**    | Up to 30° | Not applicable | 
 | **Temperature accuracy [^7]**  | < 1-2 K with 0.03 K NEDT |
 | **Spatial accuracy**          | < 1 px |
 | **Data access**           | [API](https://constellr.github.io/product-lst/API-documentation/) or [UI](https://constellr.github.io/product-lst/UI-documentation/) | 
