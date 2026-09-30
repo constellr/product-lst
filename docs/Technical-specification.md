@@ -34,7 +34,7 @@ This document is intented to always provide you the latest version of our capabi
 
 [^3]: For standard orders adhering to MTT and latency SLAs.
 
-[^4]: ** For standard orders. Max AOI coverage is ensured within the delivered strip.
+[^4]: For standard orders. Max AOI coverage is ensured within the delivered strip.
 
 [^5]: For LSTprecision frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 < 4 days is equatorial, < 3 days at ± 40°+ latitudes and < 2 days between ± 60° and ± 80° latitude.  
 
