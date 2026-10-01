@@ -7,29 +7,24 @@ This Cal/Val framework is designed to characterize the detector response to inco
 - Absolute radiometric response, dynamic range, non-uniformity, noise levels, and temporal stability; 
 - Detection of damaged pixels; 
 - False signals (e.g., stray light or instrument self-emission in TIR); 
-- Geometric parameters such as optical alignment, distortion, and Modulation Transfer Function (MTF).  
+- Geometric parameters such as camera alignment, per-band viewing geometry, line timing, and Modulation Transfer Function (MTF).  
 
 Cal/Val procedures begin pre-launch, with comprehensive laboratory calibrations in controlled environments. For example, these use a variety of calibrated reference instruments, such as blackbodies for thermal calibration and uniform light sources in the VNIR, to assess the detector responses, optical alignment, and radiometric accuracy. 
  
 Post-launch, instrument performance may evolve due to launch effects or aging. Therefore, regular in-orbit calibration procedures are applied during commissioning and routine operations in order to monitor and, when necessary, update the instrument’s performance. These methodologies span a wide range of techniques. 
  
-**Geometric orthorectification** follows a two-step approach. First, a systematic correction is applied, which relies on the orbit ephemeris, attitude information and pre-computed calibration parameters. The calibration parameters are computed and continuously updated by analysing images acquired over highly structured areas, such as agricultural regions with regular patterns (e.g., the Dakotas, USA), or over sharp, well-defined features such as coastlines or bridges. These types of scenes serve as reliable references for detecting geometric distortions and verifying spatial accuracy. Together, this first step is assumed to correct the products to an error level of approx. 200 m. 
+**Geometric correction** traces the line of sight of every pixel to the ground, using the orbit, the star tracker attitude, a calibrated camera model for each band and the Copernicus digital elevation model. All 14 bands are written onto one common map grid.
 
-The second step is a precision modelling for which reference images and a digital elevation model are used to further improve geometric accuracy to a sub pixel level. While the first step is performed for all image products, the second can only be performed successfully in areas where the imaged surface shows sufficient structures to automatically derive a set of correlation points distributed well enough over the whole image take so that an improved geometric model can be created.  
+The camera model, i.e. the alignment of both cameras, the viewing geometry of each band and the line timing, is re-estimated in orbit for each satellite at regular intervals.
 
-The result of constellr's geometric orthorectification process, i.e. an image's geometric accuracy, is continuously monitored and evaluated by constellr. In Figure 1 and 2 the box and whisker plots present, separately for each of the two cameras (VNIR and TIR), the monthly statistical distribution of the assessed product geometric accuracy after the precision correction has been applied. In these plots, the green lines correspond to the median accuracy, the boxes are formed by the percentiles 25 and 75, and the whiskers represent the remaining 50% of the images after filtering out possible outliers (dots).  
- 
-In general, these plots show that the median CE95 values are below the 1 pixel accuracy threshold over the operational time for both the TIR camera (30 m GSD) and the VNIR camera (10 m GSD).  
- 
-Those plots will be updated monthly with the most recent images.  
+For each acquisition, thousands of points are matched automatically against Sentinel-2 reference imagery, and the satellite pointing is corrected for the whole pass at once. Parts of a pass with few ground features, such as coastal or offshore scenes, are held by the rest of the pass, and long strips are geometrically seamless.
 
-![Geometric Accuracy 1](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_TIR02_precision+9.png){ width=70% }
-<figcaption> Figure 1: TIR CE95 distribution over all precision corrected products </figcaption>
+The geometric accuracy of every product is assessed against Sentinel-2. Figure 1 shows the CE95 (the radius containing 95 % of the assessed points) of 1000 acquisitions of both satellites between 1 August and 22 September 2026. The median CE95 is 9.6 m for TIR by day, 11.6 m for TIR at night and 3.4 m for VNIR, with 93 %, 95 % and 98 % of acquisitions within one pixel (30 m TIR, 10 m VNIR). The four TIR bands, used jointly for the temperature retrieval, agree with each other within a median CE95 of 4.2 m by day and 6.4 m at night.
 
-![Geometric Accuracy 2](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/monthly_ce95_VNIR04_precision+6.png){ width=70% }
-<figcaption> Figure 2: VNIR CE95 distribution over all precision corrected products </figcaption>
+![Geometric Accuracy](images/geolocation_ce95_2026-09.png){ width=90% }
+<figcaption> Figure 1: CE95 distribution of TIR (day and night) and VNIR products over 1000 acquisitions </figcaption>
 
-*Note*: The statistical baseline of this evaluation is all image products which have successfully processed into precision status. The outliers are mostly images where the precision model falsely assumed a good enough correlation point distribution or a high enough number of correlation points. During image QC such images are sorted out and will not be delivered to customers.  
+*Note*: Products whose geometric accuracy does not meet the requirements are sorted out during image QC and are not delivered to customers.  
  
 **Statistical analyses** are employed to detect dead or bad detector pixels or to correct for possible non-uniformities of the detector. Those are complemented by measurements obtained through specific spacecraft manoeuvres such as 90°-yaw manoeuvre over homogeneous sites or pointing towards the cold deep space support respectively the characterization of detector non-uniformity and dark signal. 
  
@@ -43,7 +38,7 @@ Those validation exercises rely on reference ground-based measurements and indep
 
 |  | Ground-based | Reference Satellite |Others|
 |--|--------------|---------------------|------|
-| **Geolocation** | -- | -- | Sentinel-2 GRI |
+| **Geolocation** | -- | -- | Sentinel-2 |
 | **MTF** | -- | -- | Reference Targets |
 | **SR** | Radcalnet / (Hypernets) |Sentinel-2 | -- |
 | **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations <br>  USCRN stations | SEVIRI <br> GOES <br> HIMAWARI | -- |
@@ -58,10 +53,10 @@ Those validation exercises rely on reference ground-based measurements and indep
 </div>
 <figcaption style="text-align:center;">Example locations of reference sites.</figcaption> -->
 
-The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the [LSTprecision product](https://constellr.github.io/product-lst/LST-precision/) both during the day and at night, as shown in Figure 3. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
+The comparison of the surface temperatures measured by SkyBee-1 and Skybee-2 with reference ground data in the near neighbourhood of key validation sites demonstrates the high accuracy of the [LSTprecision product](https://constellr.github.io/product-lst/LST-precision/) both during the day and at night, as shown in Figures 2 and 3. Each data point collected over those reference sites during this early phase of the mission matches nicely the reference measurements with a mean deviation being close to only 1 degree. Such a high accuracy, though challenging to reach, offers opportunities for a large range of use cases based on the detection of thermal anomalies.
 
 ![LST plot SB01](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/SBA01_TESlib_Correlation_insitu_starttime20250905_endtime20260616_forKnowledgeCenter+1.png){ width=70% }
-<figcaption>Figure 3: Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. The satellite time series span the period 15th September 2025 to 15th June 2026. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, USCRN data portals, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
+<figcaption>Figure 2: Comparison of surface temperatures measured from space by SkyBee-01 with high-quality reference ground data over a few key validation sites. The satellite time series span the period 15th September 2025 to 15th June 2026. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, USCRN data portals, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
 
 ![LST plot SB02](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/SBA02_TESlib_Correlation_insitu_starttime20260117_endtime20260616_forKnowledgeCenter+1.png){ width=70% }
 <figcaption> Figure 3: Comparison of surface temperatures measured from space by SkyBee-02 with high-quality reference ground data over a few key validation sites. The satellite time series span the period 17th January 2026 to 15th June 2026. We gratefully acknowledge the <a href= https://gml.noaa.gov/grad/surfrad/ >SURFRAD</a>, <a href= https://calval.jpl.nasa.gov/ >JPL data portals</a>, USCRN, and the <a href= https://law.acri-st.fr/home >Copernicus LAW portal</a> as well as the colleagues from KIT-IMKASF for providing the in-situ data.</figcaption>
@@ -71,7 +66,7 @@ The cloud and cloud masking algorithm uses the VNIR data as an input. Here the s
 <br>
 
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: June, 2026
+  Last update: October, 2026
 </p>
 
 
