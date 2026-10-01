@@ -38,7 +38,7 @@ Those validation exercises rely on reference ground-based measurements and indep
 
 |  | Ground-based | Reference Satellite |Others|
 |--|--------------|---------------------|------|
-| **Geolocation** | -- | -- | Sentinel-2 |
+| **Geolocation** | -- | Sentinel-2 | -- |
 | **MTF** | -- | -- | Reference Targets |
 | **SR** | Radcalnet / (Hypernets) |Sentinel-2 | -- |
 | **LST** | Copernicus LAW <br> SURFRAD <br> KIT stations <br> JPL stations <br>  USCRN stations | SEVIRI <br> GOES <br> HIMAWARI | -- |
