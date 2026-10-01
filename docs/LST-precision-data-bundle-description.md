@@ -37,7 +37,7 @@ The RGB and VNIR layers are available for free for all daytime images.
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| EMISSIVITYXX.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file. Cloud optimized geotiff |
+| EMISSIVITYXX.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file.| Cloud optimized geotiff |
 | EMISSIVITY_WIDEBAND.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file.| Cloud optimized geotiff |
 
 **Optional : Radiance layer** 
