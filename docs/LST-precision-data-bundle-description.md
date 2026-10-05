@@ -37,29 +37,25 @@ The RGB and VNIR layers are available for free for all daytime images.
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| EMISSIVITYXX.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file.| Cloud optimized geotiff |
-| EMISSIVITY_WIDEBAND.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) as well as a wideband emissivity file.| Cloud optimized geotiff |
+| emi_tirXX.tiff | Emissivity values per sensor band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)). | Cloud optimized geotiff |
+| emi_wb.tiff | A wideband emissivity file, representative of the spectral range covered by our individual thermal bands.| Cloud optimized geotiff |
 
 **Optional : Radiance layer** 
 
 | Layers | Description | File Format |
 |--------|-------------|-------------|
-| BOA_RADIANCEXX.tiff | Bottom of Atmosphere surface leaving radiance per band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) | Cloud optimized geotiff |
+| boa_tirXX.tiff | Bottom of Atmosphere surface leaving radiance per band (see individual band's resolution on [Our Technology](https://constellr.github.io/product-lst/our-technology/)) | Cloud optimized geotiff |
 
 ## Data Layer Description
 
-<h3>LSTprecision Layer</h3>
+<h3>The LSTprecision product</h3>
 LSTprecision's unprecedented temperature sensitivity allows for reliable absolute temperature analysis at 30 m - day and night. It is derived from the high-resolution measurements acquired by the SkyBee satellite instruments of [constellr’s HiVe constellation](https://constellr.github.io/product-lst/our-technology/). Following an [advanced calibration and validation (cal/val) procedure](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/), ensuring highly accurate and well georeferenced radiance data, a sequence of processing steps is applied to generate the full LSTprecision product bundle:
 
   1. **Cloud and Scene Classification:** 
   A deep learning algorithm relying on a U-net convolutional neural network (CNN), classifies pixels into four cloud-related classes: clear sky, thick cloud, thin cloud, and cloud shadow. Additional masks are also generated to distinguish land and water and to detect terrain cast-shadows. 
 
   2. **Atmospheric Correction Inputs:** 
-  Two key atmospheric parameters are retrieved from the data: 
-      - Aerosol Optical Thickness (AOT) using the Dense Dark Vegetation (DDV) method. 
-      - Total Column Water Vapor (TCWV) via the Atmospheric Pre-corrected Differential Absorption (APDA) technique.  
-
-        We make use of  high quality and well-established datasets [ERA5](https://doi.org/10.24381/cds.bd0915c6) and [CAMS_forecast](https://doi.org/10.24381/04a0b097) datasets to complement our imagery. We seamlessly leverage the best available source to deliver robust, reliable parameter coverage and consistently high-quality results. 
+  The surface reflectance and land surface temperature retrievals critically depend on atmospheric input data to convert the measurements from the top to the bottom of the atmosphere. We make use of the high-quality and well-established [ERA5](https://doi.org/10.24381/cds.bd0915c6) and [CAMS_forecast](https://doi.org/10.24381/04a0b097) datasets to complement our imagery. We seamlessly leverage the best available source to deliver robust, reliable parameter coverage and consistently high-quality results. 
 
   3. **Surface Reflectance (SR) Retrieval:** 
   Surface Reflectance is derived from the ten [VNIR bands](https://constellr.github.io/product-lst/our-technology/) using as input the generated masks and atmospheric amounts. The constellr SR algorithm includes corrections for adjacency effects, providing SR with high accuracy for any type of scene, including vegetation, or buildings and infrastructure suitable for a large range of applications.  
@@ -72,14 +68,24 @@ LSTprecision's unprecedented temperature sensitivity allows for reliable absolut
   During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks.   
 
   ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/LSTprecision_data_bundle/Processing_Levels_updated-2-1.png){ width=80% }
-  <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the <a href= https://constellr.github.io/product-lst/Constellr-product-offer/ >Product Offer</a></figcaption>
+  <figcaption>The processing steps from raw data acquisition by SkyBee satellites to LSTprecision L2 product. The LSTprecision L2 product consists of the core product as well as the optional add-on layers as outlined in the <a href= https://constellr.github.io/product-lst/Constellr-product-offer/ >Product Offer</a></figcaption>
+
+<h3>Thermal Layers</h3>
+
+The land surface temperature (LST) layer is delivered at 30 m spatial resolution. It is provided as 16-bit unsigned integers, which can be converted to kelvin by applying a scale factor of 0.01 as 
+
+$LST = DN \times \text{scale factor}$
+
+This LST layer can be optionally accompanied by emissivity layers. Emissivity is a spectral quantity representing how efficiently the scene emits radiation in the thermal infrared. Those layers are the emissivity retrieved in each thermal band simultaneously with LST. The additional wide band emissivity layer represents the emissivity over the whole 8.0–13.5 µm spectral range. They are provided in the same format as LST but with a scale factor of 0.0001. 
+
+If selected, thermal radiances leaving the surface can also be delivered for each of the four thermal bands. Those layers represent the radiation emitted by the surface, to which a small surface-reflected atmospheric contribution is added. This quantity has the advantage of being independent of the retrieved emissivity. Those layers are also provided as 16-bit unsigned integers, to be converted to radiances in W/m²/sr/µm using a scale factor of 0.01.
 
 <h3>VNIR Surface Reflectance Layers</h3>
 Daytime imagery comes with 8 VNIR bands. This enables the generation of true-color imagery and the calculation of key spectral indices providing complementary information for more robust temperature analyses.  
 
 Surface reflectance (SR) is delivered at 10 m and 20 m spatial resolution (see [Our Technology](https://constellr.github.io/product-lst/our-technology/) for each band's resolution). The physical values of reflectance (unitless scaled between 0 and 1) can be obtained by applying the offset and scale factors, as specified in the table below, following:
 
-${SR} = DN * scale factor + offset$
+$SR = DN \times \text{scale factor} + \text{offset}$
 
 This has been introduced to allow the quantization of floating point numbers up to 1/100% in a 16 bit integer number. The offset value is non-zero to ensure that slightly negative values are not clipped. 
 The product is based on the L1B/C product and shows the same geotiff structure as the L1B/C radiance files.
@@ -100,23 +106,16 @@ The static land/water mask is derived from the ESA WorldCover 2021 global land-c
 <h3>Sharpening Layer</h3>
 The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard. The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation. Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.
 
-<!-- <h3>Emissivity Layer</h3>
-These layers provide the derived Emissivity (EMIS) values for each of the three thermal bands used in the LST algorithm, as described in Step 4 of the LSTprecision derivation.  
-
-The layers are provided as uint16 Digital Numbers at the spatial resolution of the TIR bands, i.e. 30m. The physical emissivity values (unitless) can be obtained from the DNs by applying offset and scale factors specified in the table below as
-
-${EMIS} = DN* scale factor + offset$
-
-<h3>TIR bands</h3>
-TBC -->
 
 
 
 | Variable | Data Type | Scale Factor | Offset | Unit | Fill in |
 |---|---|---|---|---|---|
-|ST|uint16|0.01|0|K|65535|
+|LST|uint16|0.01|0|K|65535|
 |SR|uint16|0.0001|-0.1|1|65535|
-<figcaption>Raster Properties for ST and SR</figcaption>
+|EMIS|uint16|0.0001|0|1|65535|
+|BOA radiance|uint16|0.01|0|W/m²/sr/µm|65535|
+<figcaption>Raster properties of the LST, SR, emissivity and BOA radiance layers</figcaption>
 
 ## Naming Convention
 
@@ -203,5 +202,5 @@ In case you are curious to leverage any of our data layers for your analysis, pl
 
 <br>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: September, 2026
+  Last update: October, 2026
 </p>

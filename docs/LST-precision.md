@@ -38,7 +38,7 @@
     During night, VNIR data are not available. Therefore, the LSTprecision Level 2 product is made exclusively of the LST layer complemented with cloud and quality masks. In the absence of SR data, the LST retrieval is adapted and initiated with a fixed emissivity value with an expected marginal accuracy loss.  
 
     ![LSTprecision workflow](https://public-data-213979744349.s3.eu-central-1.amazonaws.com/PUG/LSTprecision.png){ width=80% }
-    <figcaption>The processing steps from raw data acquisition by Skybee satellites to LSTprecision L2 product.</figcaption>
+    <figcaption>The processing steps from raw data acquisition by SkyBee satellites to LSTprecision L2 product.</figcaption>
 
 ??? note "What are the specifications of LSTprecision?"
     |Parameter|Value|
@@ -61,7 +61,7 @@
 ??? note "What to look forward to in future developments?"
 
     **Higher revisit frequency**   
-    SkyBee-03 is already in the pipeline, with a launch scheduled for mid-2026. It will further reduce revisit times while having the high performance of our first two SkyBee instruments.  
+    SkyBee-3 is already in the pipeline, with a launch scheduled for mid-2026. It will further reduce revisit times while having the high performance of our first two SkyBee instruments.  
     
     **Towards a higher spatial resolution**  
     The next generation of instruments is already in development, promising enhanced performance, such as higher native spatial resolution, to deliver even greater impact for your applications. 
@@ -71,6 +71,6 @@
 
 <br>
 <p style="text-align: right; font-size: 0.8rem; color: #777;">
-  Last update: March, 2026
+  Last update: October, 2026
 </p>
 
