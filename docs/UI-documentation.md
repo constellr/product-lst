@@ -189,6 +189,7 @@ The **Account Details** page provides a quick overview of your profile, includin
 ![AccountDetails](./images/ui-documentation/account_details.png){ width=80% }
 
 **Notifications**
+{ #notifications }
 
 The **Notifications** page lets you manage email notifications for your orders. You can access it by navigating to [Account > Notifications](https://app.constellr.com/account/notifications).
 
@@ -199,6 +200,8 @@ The **Notifications** page lets you manage email notifications for your orders. 
 * You can search by **Data Order ID** or filter by **Area of Interest** to quickly find the order you want to configure.
 
 > **Note:** Notification preferences for an order can also be set at creation time in the [New Order](#new-order) form, or adjusted later via the bell icon shown when viewing an order in [My Data](#my-data).
+
+> To receive order and delivery events directly in your own systems, see [Webhooks](notifications.md#webhooks).
 
 ![Notifications](./images/ui-documentation/notifications.png){ width=80% }
 
