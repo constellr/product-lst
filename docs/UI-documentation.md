@@ -192,15 +192,17 @@ The **Account Details** page provides a quick overview of your profile, includin
 
 The **Notifications** page lets you manage email notifications for your orders. You can access it by navigating to [Account > Notifications](https://app.constellr.com/account/notifications).
 
-* **Email Notifications (main switch)**: Turns order-related emails on or off for the entire workspace. When switched off, no order notification emails are sent and the per-order preferences below are hidden, but they are preserved and will apply again once notifications are re-enabled.
+* **Email Notifications (main switch)**: Turns order-related emails on or off for you in the current workspace. When switched off, you receive no order notification emails and the per-order preferences below are hidden, but they are preserved and will apply again once notifications are re-enabled.
 * **Per-Order Preferences**: When the main switch is on, a table lists all of your orders with two toggles each:
   * **New Delivery**: Notifies you by email when a new delivery is available for that order.
-  * **Status Changes**: Notifies you by email when that order's status changes (e.g. moves to *In Progress*, *Closing*, or *Closed*).
+  * **Status Changes**: Notifies you by email when that order is validated, rejected or closed.
 * You can search by **Data Order ID** or filter by **Area of Interest** to quickly find the order you want to configure.
 
 > **Note:** Notification preferences for an order can also be set at creation time in the [New Order](#new-order) form, or adjusted later via the bell icon shown when viewing an order in [My Data](#my-data).
 
 ![Notifications](./images/ui-documentation/notifications.png){ width=80% }
+
+For more details, see [Email notifications](notifications/email-notifications.md). To send order updates to your own systems instead, see [Webhooks](notifications/webhooks/introduction.md).
 
 
 **Workspace Management**
