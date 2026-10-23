@@ -54,11 +54,11 @@ For a complete, dependency-free example that also verifies the signature, see [v
 
 === "UI"
 
-    1. Go to [Account > Webhooks](https://app.constellr.com/account/webhooks).
-    2. Click **Create Webhook** and enter your endpoint URL, the event types to subscribe to and, optionally, a description.
+    1. Go to [Account > Workspace > Webhooks](https://app.constellr.com/account/webhooks).
+    2. Click **Create Webhook** and enter your endpoint URL, the events to subscribe to and, optionally, a description.
     3. Copy the **signing secret** shown after creation.
 
-    From the same page you can edit or delete an endpoint, rotate its signing secret, and view its delivery history.
+    From the same page you can edit or delete an endpoint, rotate its signing secret, and view its delivery history in the **Events log**. See the [UI documentation](../../UI-documentation.md#webhooks) for a step-by-step guide with screenshots.
 
 === "API"
 
