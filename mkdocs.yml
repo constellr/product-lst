@@ -14,9 +14,20 @@ nav:
     - Metadata Explanation: LST-precision-metadata.md
     - Calibration and Validation: LST-precision-cal-val-procedure.md
   - How to access our data:
-    - Open Data Programme: open-data-programme.md
-    - UI documentation: UI-documentation.md
-    - API documentation: API-documentation.md
+    - Open Data Programme:
+      - Overview: open-data-programme.md
+    - UI documentation:
+      - Overview: UI-documentation.md
+    - API documentation:
+      - Overview: API-documentation.md
+    - Notifications:
+      - Email notifications:
+        - Overview: notifications/email-notifications.md
+      - Webhooks:
+        - Introduction: notifications/webhooks/introduction.md
+        - Event types: notifications/webhooks/event-types.md
+        - Retries: notifications/webhooks/retries.md
+        - Verifying webhooks: notifications/webhooks/verify-webhooks.md
   - Our Technology: our-technology.md
   - Case Studies: case-studies.md
  
