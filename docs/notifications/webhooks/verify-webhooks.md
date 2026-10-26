@@ -5,7 +5,7 @@ Your webhook URL is public, so anyone could send requests to it. Every webhook w
 Our signatures follow the [Standard Webhooks](https://www.standardwebhooks.com/) specification. You can use any Standard Webhooks library, or verify the signature yourself as described below.
 
 !!! tip "Example script"
-    A minimal FastAPI example that verifies signatures without any third-party verification library is available here: [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py)
+    A minimal FastAPI example that verifies signatures without any third-party verification library is available here: [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py). You can also use one of the official [Standard Webhooks libraries](https://github.com/standard-webhooks/standard-webhooks/tree/main/libraries) for your language.
 
 ---
 
@@ -37,7 +37,7 @@ Each request includes three headers:
     * **Base64-encode** the result.
 5. **Compare signatures.** The `webhook-signature` header contains one or more space-separated entries in the form `v1,<signature>` — more than one appears only during a [secret rotation](#rotating-the-signing-secret). The request is valid if **any** `v1` entry matches your expected signature. Use a constant-time comparison.
 
-If verification fails, respond with `400` and ignore the request.
+If verification succeeds, respond with a `2xx` status code. If it fails, respond with `400` and ignore the request.
 
 ### Handling duplicate webhooks
 
