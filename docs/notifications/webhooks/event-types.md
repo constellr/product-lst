@@ -35,7 +35,7 @@ Every webhook request contains a JSON body describing a single event. All events
 
 ## `order.validated`
 
-The order has been reviewed by constellr and is now active. The system is working to acquire and deliver images.
+The order has been reviewed and approved by a constellr CSM and the system is working to acquire and deliver images.
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
