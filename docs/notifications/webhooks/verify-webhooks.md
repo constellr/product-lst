@@ -39,6 +39,19 @@ Each request includes three headers:
 
 If verification fails, respond with `400` and ignore the request.
 
+### Handling duplicate webhooks
+
+A valid signature and timestamp only prove a request is genuine and recent — not that you haven't seen it before. The same event can be [retried](retries.md), and a captured, validly-signed request can still be replayed within the timestamp tolerance. Make your endpoint **idempotent**: processing the same event twice shouldn't repeat its side effects.
+
+Use the `webhook-id` header as an idempotency key:
+
+1. After verifying the signature, check whether you've already processed this `webhook-id`.
+2. If you have, return a `2xx` without repeating the processing.
+3. If you haven't, process the event and store the `webhook-id` in persistent storage, so duplicates are caught across retries and restarts.
+
+!!! note
+    The timestamp check limits how long a request can be replayed; deduplication stops it from being processed twice. You need both.
+
 ---
 
 ## Rotating the signing secret
