@@ -42,6 +42,4 @@ The last attempt happens roughly **7.5 hours** after the first one. If it also f
 * **Retries carry the same event.** The body and the `webhook-id` header stay the same on every attempt. The `webhook-timestamp` and `webhook-signature` headers are regenerated for each attempt.
 * **Duplicates can happen.** Because delivery is *at least once*, you may occasionally receive an event you've already processed. Use the `webhook-id` to deduplicate.
 * **Endpoints are never disabled automatically.** A failing endpoint keeps receiving new events.
-* **Each endpoint is retried independently.** A failure on one endpoint doesn't affect deliveries to your other endpoints.
 * **Check the delivery history** with `GET /webhook-endpoints/{id}/delivery-attempts` (or on the [Webhooks page](https://app.constellr.com/account/webhooks)) to see each attempt, its status code and your server's response.
-* **Missed events?** If all attempts fail, use the [Orders API](../../API-documentation.md#orders-api) and [STAC API](../../API-documentation.md#stac-api) to catch up on order states and deliveries.
