@@ -30,7 +30,7 @@ Your endpoint must:
 
 * Be reachable from the public internet over **HTTPS**.
 * Accept `POST` requests with a JSON body.
-* Respond with a `2xx` status code within **20 seconds**.
+* Respond with a `2xx` status code *.
 
 ```python
 # Minimal example using FastAPI
