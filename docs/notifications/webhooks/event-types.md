@@ -6,7 +6,7 @@ Every webhook request contains a JSON body describing a single event. All events
 | :--- | :--- |
 | [`order.validated`](#ordervalidated) | An order has been validated by a constellr CSM and its state moves to `in_progress`. |
 | [`order.rejected`](#orderrejected) | An order has been rejected during validation. |
-| [`order.closed`](#orderclosed) | An order is complete and moves to `closed`. |
+| [`order.closed`](#orderclosed) | An order is complete and moves to `closed` state. |
 | [`delivery.published`](#deliverypublished) | A new delivery for an order is available to download. |
 
 ---
