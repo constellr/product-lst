@@ -18,7 +18,8 @@ Typical uses:
 4. Your server [verifies the signature](verify-webhooks.md) and responds with a `2xx` status code.
 5. If your server doesn't respond with a `2xx`, we [retry](retries.md) on a fixed schedule.
 
-Webhook endpoints are **workspace-scoped**: an endpoint receives events for all eligible orders in its workspace, regardless of who placed them. Webhooks are independent of [email notifications](../email-notifications.md).
+!!! warning "Webhooks are workspace-scoped"
+    An endpoint receives events for **all eligible orders in its workspace**, regardless of who placed them. Webhooks are independent of [email notifications](../email-notifications.md).
 
 ---
 
@@ -31,19 +32,6 @@ Your endpoint must:
 * Be reachable from the public internet over **HTTPS**.
 * Accept `POST` requests with a JSON body.
 * Respond with a `2xx` status code *.
-
-```python
-# Minimal example using FastAPI
-from fastapi import FastAPI, Request, Response
-
-app = FastAPI()
-
-@app.post("/webhooks/constellr")
-async def constellr_webhook(request: Request):
-    event = await request.json()
-    print(event["type"], event["data"])
-    return Response(status_code=204)
-```
 
 For a complete, dependency-free example that also verifies the signature, see [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py).
 
@@ -66,26 +54,10 @@ For a complete, dependency-free example that also verifies the signature, see [v
     curl -X POST https://api.constellr.com/webhook-endpoints \
       -H "X-Api-Key: $CONSTELLR_API_KEY" \
       -H "Content-Type: application/json" \
-      -d '{
-            "url": "https://example.com/webhooks/constellr",
-            "event_types": ["order.validated", "order.rejected", "order.closed", "delivery.published"],
-            "description": "Production listener"
-          }'
+      -d '{"url": "https://example.com/webhooks/constellr", "event_types": ["delivery.published"]}'
     ```
 
-    Response (`201 Created`):
-
-    ```json
-    {
-      "id": "5b3f8c2e-1d4a-4b7e-9c6f-2a8d0e1f3b47",
-      "url": "https://example.com/webhooks/constellr",
-      "event_types": ["order.validated", "order.rejected", "order.closed", "delivery.published"],
-      "description": "Production listener",
-      "created": "2026-10-22T09:00:00Z",
-      "updated": "2026-10-22T09:00:00Z",
-      "secret": "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw8m0p3Yq8L0E="
-    }
-    ```
+    See [Swagger](https://api.constellr.com/docs) or [ReDoc](https://api.constellr.com/redoc) for the full request/response schema.
 
 !!! warning "The signing secret is shown only once"
     The `secret` is returned only when the endpoint is created (and when it is [rotated](verify-webhooks.md#rotating-the-signing-secret)). Store it securely right away; it can't be retrieved later.
@@ -96,7 +68,7 @@ Use the signing secret to check that each request really comes from constellr an
 
 **4. Receive your first event**
 
-Events are sent as orders progress. Place an order, or wait for the next validation or delivery on an existing order, and check the request arriving at your endpoint. You can review every delivery attempt, including your server's response, in the endpoint's [delivery history](#managing-endpoints) (`GET /webhook-endpoints/{id}/delivery-attempts`, also documented in [Swagger](https://api.constellr.com/docs) and [ReDoc](https://api.constellr.com/redoc)).
+Placing an order does not by itself trigger a webhook. Events are sent as an **existing** order progresses: wait for it to be validated, rejected or closed, or for a new delivery to be published, and check the request arriving at your endpoint. You can review every delivery attempt, including your server's response, in the endpoint's [delivery history](#managing-endpoints) (`GET /webhook-endpoints/{id}/delivery-attempts`, also documented in [Swagger](https://api.constellr.com/docs) and [ReDoc](https://api.constellr.com/redoc)).
 
 ---
 
