@@ -19,7 +19,7 @@ Typical uses:
 5. If your server doesn't respond with a `2xx`, we [retry](retries.md) on a fixed schedule.
 
 !!! warning "Webhooks are workspace-scoped"
-    An endpoint receives events for **all eligible orders in its workspace**, regardless of who placed them. Webhooks are independent of [email notifications](../email-notifications.md).
+    An endpoint receives events for **all eligible orders in its workspace**, regardless of who placed them. Webhook notifications are currently only sent for standing **LST Precision** orders; other products aren't yet supported. Deleted orders don't trigger webhooks. Webhooks are independent of [email notifications](../email-notifications.md).
 
 ---
 

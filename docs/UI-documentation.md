@@ -253,7 +253,7 @@ A few important things to keep in mind:
 
 The **Webhooks** page lets you send order and delivery events to a URL of your choice, so your own systems can react to them without polling our API. You can access it by navigating to [Account > Workspace > Webhooks](https://app.constellr.com/account/webhooks).
 
-Webhooks are configured **per workspace**: every member of the workspace can see and manage them, and they receive events for all orders in that workspace. For how to receive and verify events on your server, see the [Webhooks documentation](notifications/webhooks/introduction.md).
+Webhooks are configured **per workspace**: every member of the workspace can see and manage them, and they receive events for all *eligible* orders in that workspace — see [which orders are eligible](notifications/webhooks/introduction.md#how-it-works) and how to receive and verify events on your server.
 
 The page lists all webhooks of the active workspace with their **Webhook Endpoint ID**, **Events**, **Endpoint URL** and **Created** date.
 
