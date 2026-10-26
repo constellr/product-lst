@@ -35,34 +35,15 @@ Each request includes three headers:
     * Remove the `whsec_` prefix from your signing secret and **base64-decode** the rest. The result is the key.
     * Compute an **HMAC-SHA256** of the signed content using that key.
     * **Base64-encode** the result.
-5. **Compare signatures.** The `webhook-signature` header contains one or more space-separated entries in the form `v1,<signature>`. The request is valid if **any** `v1` entry matches your expected signature. Use a constant-time comparison.
+5. **Compare signatures.** The `webhook-signature` header contains one or more space-separated entries in the form `v1,<signature>` — more than one appears only during a [secret rotation](#rotating-the-signing-secret). The request is valid if **any** `v1` entry matches your expected signature. Use a constant-time comparison.
 
 If verification fails, respond with `400` and ignore the request.
-
-```python
-import base64
-import hashlib
-import hmac
-
-def sign(secret: str, msg_id: str, timestamp: str, body: bytes) -> str:
-    key = base64.b64decode(secret.removeprefix("whsec_"))
-    signed_content = f"{msg_id}.{timestamp}.".encode() + body
-    digest = hmac.new(key, signed_content, hashlib.sha256).digest()
-    return base64.b64encode(digest).decode()
-```
 
 ---
 
 ## Rotating the signing secret
 
-Rotate your signing secret regularly, or immediately if you believe it has been exposed. You can rotate it on the [Webhooks page](https://app.constellr.com/account/webhooks) or via the API:
-
-```bash
-curl -X POST https://api.constellr.com/webhook-endpoints/{id}/rotate-secret \
-  -H "X-Api-Key: $CONSTELLR_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"overlap_hours": 24}'
-```
+Rotate your signing secret regularly, or immediately if you believe it has been exposed. You can rotate it on the [Webhooks page](https://app.constellr.com/account/webhooks) or via the API (`POST /webhook-endpoints/{id}/rotate-secret`, see [Swagger](https://api.constellr.com/docs) or [ReDoc](https://api.constellr.com/redoc)).
 
 The response contains the new `secret` (shown **only once**), `secret_rotated_at` and, if there is an overlap, `previous_secret_expires_at`.
 
