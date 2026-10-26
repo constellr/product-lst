@@ -74,7 +74,7 @@ Placing an order does not by itself trigger a webhook. Events are sent as an **e
 
 ## Managing endpoints
 
-Endpoints and their delivery history can be created and managed through the [UI](../../UI-documentation.md#webhooks) or the [API](https://api.constellr.com/docs).
+Endpoints and their delivery history can be created and managed through the [UI](../../UI-documentation.md#webhook-details) or the [API](https://api.constellr.com/docs).
 
 ---
 

@@ -275,6 +275,7 @@ After clicking **Create webhook**, a dialog shows the webhook's **signing secret
     Copy the signing secret and store it securely before closing the dialog; it cannot be retrieved later. If you lose it, rotate the signing secret (see below) to get a new one. Use it to [verify](notifications/webhooks/verify-webhooks.md) that incoming requests really come from constellr.
 
 **Webhook Details**
+{ #webhook-details }
 
 Click a **Webhook Endpoint ID** to open its detail page, which shows the endpoint URL and description, the **Webhook Endpoint ID** (with a copy icon), the events it is **Listening for**, and when it was **Created**. The menu in the top right gives access to **Edit endpoint**, **Rotate signing secret** and **Delete webhook**.
 
