@@ -1,9 +1,10 @@
 """
-Receive and verify constellr webhooks without any third-party library.
+Receive and verify constellr webhooks with a minimal FastAPI server.
 
 Webhooks are signed following the Standard Webhooks specification
-(https://www.standardwebhooks.com/). This script starts a small HTTP server
-that verifies the signature of every incoming request and prints the event.
+(https://www.standardwebhooks.com/). The `verify_webhook` function below has no
+third-party dependencies and can be dropped into any framework; only the HTTP
+server around it uses FastAPI.
 
 Before running:
     - Set `WEBHOOK_SECRET` to your endpoint's signing secret (starts with `whsec_`).
@@ -11,7 +12,8 @@ Before running:
       ngrok) and register that HTTPS URL as your webhook endpoint.
 
 Run:
-    python verify_webhook.py
+    pip install fastapi uvicorn
+    uvicorn verify_webhook:app --port 8000
 """
 
 import base64
@@ -19,11 +21,20 @@ import hashlib
 import hmac
 import json
 import time
-from http.server import BaseHTTPRequestHandler, HTTPServer
 
-WEBHOOK_SECRET = "whsec_YOUR_SIGNING_SECRET"
+from fastapi import FastAPI, HTTPException, Request, Response
+
+WEBHOOK_SECRET = "whsec_lab8Cj/bkYzuNNLaTvNf8mTodgKf32eMRrrmEo+Tac0="
 TOLERANCE_SECONDS = 5 * 60
-PORT = 8000
+
+if WEBHOOK_SECRET == "whsec_YOUR_SIGNING_SECRET":
+    raise RuntimeError("Set WEBHOOK_SECRET to your endpoint's real signing secret before running this script.")
+
+app = FastAPI()
+
+# Delivery is *at least once*: track processed event ids to skip duplicates.
+# Use a persistent store instead of memory in production.
+seen_event_ids: set[str] = set()
 
 
 class WebhookVerificationError(Exception):
@@ -42,6 +53,7 @@ def verify_webhook(secret: str, headers, body: bytes) -> dict:
     Raises:
         WebhookVerificationError: If the request is not a valid constellr webhook.
     """
+    # Standard Webhooks sends the message id, timestamp and signature(s) in these headers.
     headers = {key.lower(): value for key, value in headers.items()}
     msg_id = headers.get("webhook-id")
     msg_timestamp = headers.get("webhook-timestamp")
@@ -57,6 +69,7 @@ def verify_webhook(secret: str, headers, body: bytes) -> dict:
     if abs(time.time() - timestamp) > TOLERANCE_SECONDS:
         raise WebhookVerificationError("Timestamp outside the tolerance window")
 
+    # Recompute the HMAC over "{id}.{timestamp}.{body}" using the shared secret.
     key = base64.b64decode(secret.removeprefix("whsec_"))
     signed_content = f"{msg_id}.{msg_timestamp}.".encode() + body
     expected = base64.b64encode(
@@ -73,26 +86,22 @@ def verify_webhook(secret: str, headers, body: bytes) -> dict:
     raise WebhookVerificationError("No matching signature")
 
 
-class WebhookHandler(BaseHTTPRequestHandler):
-    def do_POST(self):
-        # Read the raw body: re-serialized JSON would not match the signature.
-        body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+@app.post("/webhooks/constellr")
+async def receive_webhook(request: Request):
+    # Read the raw body: re-serialized JSON would not match the signature.
+    body = await request.body()
 
-        try:
-            event = verify_webhook(WEBHOOK_SECRET, self.headers, body)
-        except WebhookVerificationError as error:
-            print(f"Rejected webhook: {error}")
-            self.send_response(400)
-            self.end_headers()
-            return
+    try:
+        event = verify_webhook(WEBHOOK_SECRET, request.headers, body)
+    except WebhookVerificationError as error:
+        raise HTTPException(status_code=400, detail=str(error))
 
-        # Respond quickly; move heavy processing (e.g. downloads) to a background job.
-        # Use event["id"] to skip events you have already processed.
-        print(f"Received {event['type']} ({event['id']}): {event['data']}")
-        self.send_response(204)
-        self.end_headers()
+    # Delivery is at least once: the event id (same as the webhook-id header)
+    # lets you recognize and skip a duplicate delivery of the same event.
+    if event["id"] in seen_event_ids:
+        return Response(status_code=204)
+    seen_event_ids.add(event["id"])
 
-
-if __name__ == "__main__":
-    print(f"Listening for webhooks on http://localhost:{PORT}")
-    HTTPServer(("", PORT), WebhookHandler).serve_forever()
+    # Respond quickly; move heavy processing (e.g. downloads) to a background job.
+    print(f"Received {event['type']} ({event['id']}): {event['data']}")
+    return Response(status_code=204)

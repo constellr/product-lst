@@ -33,7 +33,7 @@ Your endpoint must:
 * Accept `POST` requests with a JSON body.
 * Respond with a `2xx` status code *.
 
-For a complete, dependency-free example that also verifies the signature, see [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py).
+For a complete example that also verifies the signature, see [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py).
 
 !!! tip "Testing locally"
     To receive webhooks on your own machine during development, expose your local server through an HTTPS tunnel (for example [ngrok](https://ngrok.com/)) and register the tunnel's URL.

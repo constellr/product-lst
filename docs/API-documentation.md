@@ -97,5 +97,5 @@ A Python example script demonstrating how to download assets from the STAC API f
 
 ### Verify webhooks
 
-A dependency-free Python example that receives webhooks and verifies their signatures is available here:
+A minimal FastAPI example that receives webhooks and verifies their signatures without any third-party verification library is available here:
 [verify_webhook.py](<https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py>)

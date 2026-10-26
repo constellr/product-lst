@@ -5,7 +5,7 @@ Your webhook URL is public, so anyone could send requests to it. Every webhook w
 Our signatures follow the [Standard Webhooks](https://www.standardwebhooks.com/) specification. You can use any Standard Webhooks library, or verify the signature yourself as described below.
 
 !!! tip "Example script"
-    A complete Python example without third-party dependencies is available here: [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py)
+    A minimal FastAPI example that verifies signatures without any third-party verification library is available here: [verify_webhook.py](https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py)
 
 ---
 
