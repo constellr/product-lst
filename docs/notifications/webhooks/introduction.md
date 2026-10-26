@@ -68,34 +68,13 @@ Use the signing secret to check that each request really comes from constellr an
 
 **4. Receive your first event**
 
-Placing an order does not by itself trigger a webhook. Events are sent as an **existing** order progresses: wait for it to be validated, rejected or closed, or for a new delivery to be published, and check the request arriving at your endpoint. You can review every delivery attempt, including your server's response, in the endpoint's [delivery history](#managing-endpoints) (`GET /webhook-endpoints/{id}/delivery-attempts`, also documented in [Swagger](https://api.constellr.com/docs) and [ReDoc](https://api.constellr.com/redoc)).
+Placing an order does not by itself trigger a webhook. Events are sent as an **existing** order progresses: wait for it to be validated, rejected or closed, or for a new delivery to be published, and check the request arriving at your endpoint. You can review every delivery attempt, including your server's response, in the endpoint's delivery history through the [UI](../../UI-documentation.md#webhooks) or the API.
 
 ---
 
 ## Managing endpoints
 
-All endpoints below require your workspace API key in the `X-Api-Key` header. For full schemas and error codes, see [Swagger](https://api.constellr.com/docs) or [ReDoc](https://api.constellr.com/redoc).
-
-| Action | Request |
-| :--- | :--- |
-| Create an endpoint | `POST /webhook-endpoints` |
-| List endpoints | `GET /webhook-endpoints` |
-| Get an endpoint | `GET /webhook-endpoints/{id}` |
-| Update URL, event types or description | `PATCH /webhook-endpoints/{id}` |
-| Delete an endpoint | `DELETE /webhook-endpoints/{id}` |
-| Rotate the signing secret | `POST /webhook-endpoints/{id}/rotate-secret` |
-| View delivery history | `GET /webhook-endpoints/{id}/delivery-attempts` |
-
-**Limits and rules**
-
-* Up to **50** endpoints per workspace.
-* Each URL can only be registered once per workspace.
-* URLs must use `https://`, must not contain credentials (`user:password@`), and must resolve to a public address. Private, loopback and link-local addresses are rejected.
-* Redirects are **not** followed. Register the final URL.
-
-**Delivery history**
-
-Each delivery attempt is recorded with the event payload, the attempt number, whether it succeeded, your server's response status code and body, and the request duration. Use it to debug failing deliveries.
+Endpoints and their delivery history can be created and managed through the [UI](../../UI-documentation.md#webhooks) or the [API](https://api.constellr.com/docs).
 
 ---
 
@@ -104,5 +83,5 @@ Each delivery attempt is recorded with the event payload, the attempt number, wh
 * **Respond quickly.** Return a `2xx` as soon as you've received and verified the request, and do any heavy processing (e.g. downloading data) asynchronously. Requests time out after 20 seconds.
 * **Always verify signatures** before trusting the payload. See [Verifying webhooks](verify-webhooks.md).
 * **Handle duplicates.** Delivery is *at least once*, so the same event may arrive more than once. Use the `webhook-id` header (equal to the event `id`) to ignore events you've already processed.
-* **Don't rely on ordering.** Events may arrive in a different order than they happened. Use the event `timestamp`, or fetch the latest order state from the [Orders API](../../API-documentation.md#orders-api), if order matters.
+* **Don't rely on ordering.** Events may arrive in a different order than they happened. Use the event `timestamp` if order matters.
 * **Subscribe only to what you need.** Each endpoint only receives the event types it's subscribed to.
