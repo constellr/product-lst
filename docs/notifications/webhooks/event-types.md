@@ -57,7 +57,7 @@ The order has been reviewed and approved by a constellr CSM and the system is wo
 
 ## `order.rejected`
 
-The order has been reviewed by constellr and rejected.
+The order has been reviewed by a constellr CSM and rejected.
 
 | Field | Type | Description |
 | :--- | :--- | :--- |
