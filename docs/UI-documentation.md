@@ -49,7 +49,6 @@ For programmatic integrations, you can authenticate using an API key. API keys a
  
 A few important things to keep in mind:
  
-* A user can have only **one active API key** at a time.
 * The generated key value is displayed **only once** at the time of creation. Copy it immediately and store it securely, as it cannot be retrieved afterwards.
 * If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.
 * Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
@@ -241,7 +240,6 @@ From this page, you can generate a new API key by providing a name, view your ex
 
 A few important things to keep in mind:
 
-* A user can have only **one active API key** at a time.
 * If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.
 * Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
 
