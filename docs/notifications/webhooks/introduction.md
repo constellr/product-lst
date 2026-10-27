@@ -54,7 +54,7 @@ For a complete example that also verifies the signature, see [verify_webhook.py]
     curl -X POST https://api.constellr.com/webhook-endpoints \
       -H "X-Api-Key: $CONSTELLR_API_KEY" \
       -H "Content-Type: application/json" \
-      -d '{"url": "https://example.com/webhooks/constellr", "event_types": ["delivery.published"]}'
+      -d '{"url": "https://example.com/webhooks/constellr", "event_types": ["delivery.published"], "description": "Production order events"}'
     ```
 
     See [Swagger](https://api.constellr.com/docs) or [ReDoc](https://api.constellr.com/redoc) for the full request/response schema.
