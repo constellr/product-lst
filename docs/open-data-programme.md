@@ -430,7 +430,7 @@ After downloading the datasets, find more information on the different layers an
 </div>
 
 <script>
-  const OPTIONAL_LAYER_OPTIONS = ["VNIR", "Sharpened 10m", "Brightness", "Emissivity"];
+  const OPTIONAL_LAYER_OPTIONS = ["Sharpened 10m", "Brightness", "Emissivity"];
   const OPTIONAL_LAYER_LOOKUP = Object.fromEntries(
     OPTIONAL_LAYER_OPTIONS.map(layer => [layer.toLowerCase(), layer])
   );
