@@ -79,6 +79,10 @@ A simple lookup of which data products are available to your workspace. Useful a
 
 Once an order is fulfilled, the results are available through the standard [SpatioTemporal Asset Catalog (STAC)](https://stacspec.org/). Use the STAC API to search collections and items by area, time, order id or other filters, and download the resulting assets using pre-signed URLs.
 
+### Webhooks API
+
+Register HTTPS endpoints to receive order updates (validated, rejected, closed) and new deliveries as they happen, instead of polling. See [Webhooks](notifications/webhooks/introduction.md) for setup, [event types](notifications/webhooks/event-types.md), [retries](notifications/webhooks/retries.md) and [signature verification](notifications/webhooks/verify-webhooks.md).
+
 *For endpoint-level details on any of the above (parameters, schemas, error codes etc.) see [Swagger](https://api.constellr.com/docs) or [ReDoc](https://api.constellr.com/redoc).*
 
 ---
@@ -90,3 +94,8 @@ Once an order is fulfilled, the results are available through the standard [Spat
 The STAC API provides metadata and temporary pre-signed URLs for accessing your ordered data products. These URLs can be used to download the available assets associated with an order.
 A Python example script demonstrating how to download assets from the STAC API for a specific order is available here:
 [download_assets_from_stac.py](<https://github.com/constellr/product-lst/blob/main/docs/code_examples/download_assets_from_stac.py>)
+
+### Verify webhooks
+
+A minimal FastAPI example that receives webhooks and verifies their signatures without any third-party verification library is available here:
+[verify_webhook.py](<https://github.com/constellr/product-lst/blob/main/docs/code_examples/verify_webhook.py>)

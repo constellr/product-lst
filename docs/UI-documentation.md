@@ -189,18 +189,21 @@ The **Account Details** page provides a quick overview of your profile, includin
 ![AccountDetails](./images/ui-documentation/account_details.png){ width=80% }
 
 **Notifications**
+{ #notifications }
 
 The **Notifications** page lets you manage email notifications for your orders. You can access it by navigating to [Account > Notifications](https://app.constellr.com/account/notifications).
 
-* **Email Notifications (main switch)**: Turns order-related emails on or off for the entire workspace. When switched off, no order notification emails are sent and the per-order preferences below are hidden, but they are preserved and will apply again once notifications are re-enabled.
+* **Email Notifications (main switch)**: Turns order-related emails on or off for you in the current workspace. When switched off, you receive no order notification emails and the per-order preferences below are hidden, but they are preserved and will apply again once notifications are re-enabled.
 * **Per-Order Preferences**: When the main switch is on, a table lists all of your orders with two toggles each:
   * **New Delivery**: Notifies you by email when a new delivery is available for that order.
-  * **Status Changes**: Notifies you by email when that order's status changes (e.g. moves to *In Progress*, *Closing*, or *Closed*).
+  * **Status Changes**: Notifies you by email when that order is validated, rejected or closed.
 * You can search by **Data Order ID** or filter by **Area of Interest** to quickly find the order you want to configure.
 
 > **Note:** Notification preferences for an order can also be set at creation time in the [New Order](#new-order) form, or adjusted later via the bell icon shown when viewing an order in [My Data](#my-data).
 
 ![Notifications](./images/ui-documentation/notifications.png){ width=80% }
+
+For more details, see [Email notifications](notifications/email-notifications.md). To send order updates to your own systems instead, see [Webhooks](notifications/webhooks/introduction.md).
 
 
 **Workspace Management**
@@ -243,5 +246,58 @@ A few important things to keep in mind:
 * Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
 
 ![APIKeys](./images/ui-documentation/api_keys.png){ width=80% }
+
+
+**Webhooks**
+{ #webhooks }
+
+The **Webhooks** page lets you send order and delivery events to a URL of your choice, so your own systems can react to them without polling our API. You can access it by navigating to [Account > Workspace > Webhooks](https://app.constellr.com/account/webhooks).
+
+Webhooks are configured **per workspace**: every member of the workspace can see and manage them, and they receive events for all *eligible* orders in that workspace — see [which orders are eligible](notifications/webhooks/introduction.md#how-it-works) and how to receive and verify events on your server.
+
+The page lists all webhooks of the active workspace with their **Webhook Endpoint ID**, **Events**, **Endpoint URL** and **Created** date.
+
+![WebhooksListing](./images/ui-documentation/webhooks-listing.png){ width=80% }
+
+**Create a Webhook**
+
+Click **Create Webhook** and fill in the form:
+
+* **Events** *(required)*: One or more [event types](notifications/webhooks/event-types.md) to subscribe to.
+* **Endpoint URL** *(required)*: The HTTPS URL that should receive the events, for example `https://example.com/webhooks`.
+* **Description** *(optional)*: A short note to help you and your team recognise the webhook later.
+
+![WebhookCreation](./images/ui-documentation/webhook-creation.png){ width=80% }
+
+After clicking **Create webhook**, a dialog shows the webhook's **signing secret**.
+
+!!! warning "Signing secret shown only once"
+    Copy the signing secret and store it securely before closing the dialog; it cannot be retrieved later. If you lose it, rotate the signing secret (see below) to get a new one. Use it to [verify](notifications/webhooks/verify-webhooks.md) that incoming requests really come from constellr.
+
+**Webhook Details**
+{ #webhook-details }
+
+Click a **Webhook Endpoint ID** to open its detail page, which shows the endpoint URL and description, the **Webhook Endpoint ID** (with a copy icon), the events it is **Listening for**, and when it was **Created**. The menu in the top right gives access to **Edit endpoint**, **Rotate signing secret** and **Delete webhook**.
+
+![WebhookActions](./images/ui-documentation/webhook-actions.png){ width=80% }
+
+**Events Log**
+
+The **Events log** on the detail page shows every delivery attempt to this endpoint, newest first:
+
+* **Attempts list**: Each entry shows the event type, a **Delivered** or **Failed** badge, the response status code, the request duration, the attempt number and when it was sent.
+* **Attempt details**: Select an entry to see its **Response status**, **Attempt**, **Duration**, **Sent at** and **Event ID** (shared by all [retries](notifications/webhooks/retries.md) of the same event, so you can use it to de-duplicate), the **Error** (if the request could not be completed, e.g. a timeout), your endpoint's **Response body**, and the exact **Request body** we sent.
+
+![WebhookDetails](./images/ui-documentation/webhook-details.png){ width=80% }
+
+> **Tip:** The Events log is the first place to look when your system did not receive an event. Failed attempts show the status and body your endpoint returned, which usually points to the cause.
+
+**Edit, Rotate or Delete a Webhook**
+
+* **Edit endpoint**: Change the events, endpoint URL or description. The signing secret stays the same.
+* **Rotate signing secret**: Generates a new secret, shown **only once**. Choose whether to **Keep the current secret valid for 24 hours** (recommended, so your server can switch over without missing events) or **Invalidate the current secret immediately** (if the secret may be compromised). See [Rotating the signing secret](notifications/webhooks/verify-webhooks.md#rotating-the-signing-secret).
+* **Delete webhook**: After confirming, the endpoint stops receiving events. This cannot be undone.
+
+![WebhookSecretRotation](./images/ui-documentation/webhook-secret-rotation.png){ width=80% }
 
 
