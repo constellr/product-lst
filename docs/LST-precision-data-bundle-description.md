@@ -28,9 +28,12 @@ The RGB and VNIR layers are available for free for all daytime images.
 
 | Layers | Description | File Format |
 |--------|-------------|---|
-| lst_sharpened_10m.tiff | LST data at 10 m resolution| Cloud optimized geotiff |
-| lst_quicklook_sharpened_10m.tiff | Temperature quicklook at 10 m| Cloud optimized geotiff |
-| lst_thumbnail_sharpened_10m.jpg | Temperature thumbnail at 10 m| jpg |
+| lst_sharpened_rrdb_10m.tiff | LST data at 10 m resolution from the rrdb model| Cloud optimized geotiff |
+| lst_quicklook_sharpened_rrdb_10m.tiff | Temperature quicklook at 10 m from the rrdb model| Cloud optimized geotiff |
+| lst_thumbnail_sharpened_rrdb_10m.jpg | Temperature thumbnail at 10 m from the rrdb model| jpg |
+| lst_sharpened_dmscnn_10m.tiff | LST data at 10 m resolution from the DMS-CCN model| Cloud optimized geotiff |
+| lst_quicklook_sharpened_dmscnn_10m.tiff | Temperature quicklook at 10 m from the DMS-CCN model| Cloud optimized geotiff |
+| lst_thumbnail_sharpened_dmscnn_10m.jpg | Temperature thumbnail at 10 m from the DMS-CCN model| jpg |
 | scl_mask_10m.tiff |Scene Classification Layer at 10 m spatial resolution| Cloud optimized geotiff |   
 
 **Optional : Emissivity layer** 
@@ -90,6 +93,15 @@ $SR = DN \times \text{scale factor} + \text{offset}$
 This has been introduced to allow the quantization of floating point numbers up to 1/100% in a 16 bit integer number. The offset value is non-zero to ensure that slightly negative values are not clipped. 
 The product is based on the L1B/C product and shows the same geotiff structure as the L1B/C radiance files.
 
+
+| Variable | Data Type | Scale Factor | Offset | Unit | Fill in |
+|---|---|---|---|---|---|
+|LST|uint16|0.01|0|K|65535|
+|SR|uint16|0.0001|-0.1|1|65535|
+|EMIS|uint16|0.0001|0|1|65535|
+|BOA radiance|uint16|0.01|0|W/m²/sr/µm|65535|
+<figcaption>Raster properties of the LST, SR, emissivity and BOA radiance layers</figcaption>
+
 <h3>Quality Assessment Layers</h3>
 Quality masks are provided for each of the VNIR and TIR bands as uint8 data at the native spatial resolution of the corresponding band. Those masks report among others the presence of saturated pixels, nodata pixels, or possibly pixels for which the quality could not be tested. 
 
@@ -104,18 +116,17 @@ The static land/water mask is derived from the ESA WorldCover 2021 global land-c
 
 
 <h3>Sharpening Layer</h3>
-The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard. The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation. Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.
+The sharpening layer provides LST at 10 m spatial resolution, a 3x improvement over the nominal 30 m product. Two complementary products are available, differing in inputs, training data, and operating conditions.
+<h4>RRDB-based sharpening</h4>
+This approach uses a Residual-in-Residual Dense Block (RRDB) network to produce 10 m LST from the 30 m HiVE LST product alone, trained on external HyTEST LST datasets. Because it relies only on thermal information and needs no guiding bands, it works for both daytime and nighttime acquisitions. Without VNIR guidance, however, it captures less detailed geometric structure than the DMS-CNN approach.
+<h4>DMS-CNN-based sharpening</h4>
+This approach combines a Data Mining Sharpener (DMS) with Convolutional Neural Networks (CNN) to produce 10 m LST from the 30 m HiVE LST product and 10 m L2A VNIR data, trained on proprietary datasets from our own sensors. The VNIR guidance lets it capture finer geometric structures and spatial patterns than the RRDB method, but it is limited to daytime acquisitions. Performance is also expected to drop over highly homogeneous surfaces (oceans, deserts, ice), where few distinct spatial features are available to guide reconstruction.
+<h4>Model performance and product characteristics</h4>
+Both approaches are optimized to preserve pixel-level accuracy, structural consistency, and edges. They yield complementary 10 m LST products that keep the original absolute temperatures and spatial patterns while adding spatial detail for downstream applications.
 
 
 
 
-| Variable | Data Type | Scale Factor | Offset | Unit | Fill in |
-|---|---|---|---|---|---|
-|LST|uint16|0.01|0|K|65535|
-|SR|uint16|0.0001|-0.1|1|65535|
-|EMIS|uint16|0.0001|0|1|65535|
-|BOA radiance|uint16|0.01|0|W/m²/sr/µm|65535|
-<figcaption>Raster properties of the LST, SR, emissivity and BOA radiance layers</figcaption>
 
 ## Naming Convention
 
