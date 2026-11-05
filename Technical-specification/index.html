@@ -1572,7 +1572,7 @@
 
 
 <h1 id="technical-specifications"><strong>Technical Specifications</strong></h1>
-<h2 id="overview-product-specifications" style="margin-bottom: 5px;">Overview Product Specifications <sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></h2>
+<h2 id="overview-product-specifications" style="margin-bottom: 5px;">Overview Product Specifications</h2>
 <table>
 <thead>
 <tr>
@@ -1582,7 +1582,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Spatial Resolution <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></strong></td>
+<td><strong>Spatial Resolution <sup id="fnref:custom-label"><a class="footnote-ref" href="#fn:custom-label">1</a></sup></strong></td>
 <td>30 m</td>
 </tr>
 <tr>
@@ -1590,15 +1590,15 @@
 <td>17.5 km</td>
 </tr>
 <tr>
-<td><strong>Maximum AOI size<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></strong></td>
+<td><strong>Maximum AOI size<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></strong></td>
 <td>Fits within 15x15 km bounding box</td>
 </tr>
 <tr>
-<td><strong>Standard scene size<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></strong></td>
+<td><strong>Standard scene size<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></strong></td>
 <td>24 km acquisition strip along track</td>
 </tr>
 <tr>
-<td><strong>Frequency <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></strong></td>
+<td><strong>Frequency <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></strong></td>
 <td>Sub-daily</td>
 </tr>
 <tr>
@@ -1606,7 +1606,7 @@
 <td>Worldwide tasking, up to 1.000.000 km² daily imaging capacity</td>
 </tr>
 <tr>
-<td><strong>Local acquisition time <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></strong></td>
+<td><strong>Local acquisition time <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></strong></td>
 <td>01:30 am/pm <br> 10:30 am/pm</td>
 </tr>
 <tr>
@@ -1618,7 +1618,7 @@
 <td>Up to 30°</td>
 </tr>
 <tr>
-<td><strong>Temperature accuracy <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></strong></td>
+<td><strong>Temperature accuracy <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></strong></td>
 <td>&lt; 1-2 K with 0.03 K NEDT</td>
 </tr>
 <tr>
@@ -1631,10 +1631,10 @@
 </tr>
 <tr>
 <td><strong>Mean Time to Tasking (MTT)</strong></td>
-<td>Standard: 3 days <br> Priority offer: 24 hours<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></td>
+<td>Standard: 3 days <br> Priority offer: 24 hours<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup></td>
 </tr>
 <tr>
-<td><strong>Latency <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></strong></td>
+<td><strong>Latency <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></strong></td>
 <td>Standard: 3 days <br> Priority offer: 24 hours</td>
 </tr>
 <tr>
@@ -1656,32 +1656,29 @@ This document is intented to always provide you the latest version of our capabi
 <hr />
 <ol>
 <li id="fn:custom-label">
-<p>Performances are only warranted for daytime observations of land surfaces (for islands only if larger than 100 km²) between 50°S and 55°N. All numbers are cloud coverage dependent.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision native nadir looking Ground Sampling Distance (GSD) at 510 km altitude is 27.3 m for Thermal Infrared data. GSD defined as a pixel projection on ground.&#160;<a class="footnote-backref" href="#fnref:custom-label" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Defined as resampled pixel size of Land Surface Temperature (LST) products. For LSTprecision native nadir looking Ground Sampling Distance (GSD) at 510 km altitude is 27.3 m for Thermal Infrared data. GSD defined as a pixel projection on ground.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>For standard orders adhering to MTT and latency SLAs.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>For standard orders adhering to MTT and latency SLAs.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>For standard orders. Max AOI coverage is ensured within the delivered strip.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>For standard orders. Max AOI coverage is ensured within the delivered strip.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>For LSTprecision frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 &lt; 4 days is equatorial, &lt; 3 days at ± 40°+ latitudes and &lt; 2 days between ± 60° and ± 80° latitude.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>For LSTprecision frequency relates to the geometric revisit time, defined as the mean number of observation opportunities over a period of 3 months. In 2025 &lt; 4 days is equatorial, &lt; 3 days at ± 40°+ latitudes and &lt; 2 days between ± 60° and ± 80° latitude.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Defined as solar local time, which is time based on the Sun’s actual position in the sky at your location, without considering time zones or daylight saving shifts.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>Defined as solar local time, which is time based on the Sun’s actual position in the sky at your location, without considering time zones or daylight saving shifts.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295 K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:7">
-<p>Defined as absolute temperature error. Value defined at Mid-Latitude Summer atmosphere, ground temperature of 295 K, ground cover with emissivity 0.98. High atmospheric water vapour may lead to local deviations in temperature accuracy. The Noise Equivalent Temperature Difference (NETD) is defined as the minimum resolvable temperature difference.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Available for orders placed Monday to Friday, 9.00 am until 4.00 pm Central European Time.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:8">
-<p>Available for orders placed Monday to Friday, 9.00 am until 4.00 pm Central European Time.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
-</li>
-<li id="fn:9">
 <p>Defined as the time between image acquisition by a satellite and delivery of LST data corresponding to the acquisition. 2σ (95%) over 1000 deliveries.​
-​&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+​&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
