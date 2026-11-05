@@ -1662,18 +1662,33 @@
 </thead>
 <tbody>
 <tr>
-<td>lst_sharpened_10m.tiff</td>
-<td>LST data at 10 m resolution</td>
+<td>lst_sharpened_rrdb_10m.tiff</td>
+<td>LST data at 10 m resolution from the rrdb model</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst_quicklook_sharpened_10m.tiff</td>
-<td>Temperature quicklook at 10 m</td>
+<td>lst_quicklook_sharpened_rrdb_10m.tiff</td>
+<td>Temperature quicklook at 10 m from the rrdb model</td>
 <td>Cloud optimized geotiff</td>
 </tr>
 <tr>
-<td>lst_thumbnail_sharpened_10m.jpg</td>
-<td>Temperature thumbnail at 10 m</td>
+<td>lst_thumbnail_sharpened_rrdb_10m.jpg</td>
+<td>Temperature thumbnail at 10 m from the rrdb model</td>
+<td>jpg</td>
+</tr>
+<tr>
+<td>lst_sharpened_dmscnn_10m.tiff</td>
+<td>LST data at 10 m resolution from the DMS-CCN model</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_quicklook_sharpened_dmscnn_10m.tiff</td>
+<td>Temperature quicklook at 10 m from the DMS-CCN model</td>
+<td>Cloud optimized geotiff</td>
+</tr>
+<tr>
+<td>lst_thumbnail_sharpened_dmscnn_10m.jpg</td>
+<td>Temperature thumbnail at 10 m from the DMS-CCN model</td>
 <td>jpg</td>
 </tr>
 <tr>
@@ -1761,15 +1776,6 @@
 <p><span class="arithmatex">\(SR = DN \times \text{scale factor} + \text{offset}\)</span></p>
 <p>This has been introduced to allow the quantization of floating point numbers up to 1/100% in a 16 bit integer number. The offset value is non-zero to ensure that slightly negative values are not clipped. 
 The product is based on the L1B/C product and shows the same geotiff structure as the L1B/C radiance files.</p>
-<h3>Quality Assessment Layers</h3>
-<p>Quality masks are provided for each of the VNIR and TIR bands as uint8 data at the native spatial resolution of the corresponding band. Those masks report among others the presence of saturated pixels, nodata pixels, or possibly pixels for which the quality could not be tested. </p>
-<h3>Scene Classification Layers</h3>
-<p>The Scene Classification Layer (SCL) provides per-pixel quality and contextual information that can be used to identify and mask clouds, cloud shadows, and water bodies, enabling more robust retrieval of geophysical parameters and improving the reliability of change detection, time-series analysis, and monitoring workflows. </p>
-<p>The SCL product consists of four classification bands: a cloud mask, a cast shadow mask, a dynamic and a static land/water mask (see more detail in Metadata). </p>
-<p>The dynamic land/water mask is generated from the Level-1B calibrated (L1BC) imagery using the spectral ratio between the VNIR03 and VNIR08 bands. This approach leverages the characteristic reflectance differences of water and land surfaces to derive a scene-dependent classification that captures temporary changes in coastlines, water extent, and surface conditions at the time of acquisition. </p>
-<p>The static land/water mask is derived from the ESA WorldCover 2021 global land-cover dataset and provides a stable reference classification independent of the current acquisition. It is particularly useful for consistency checks and for distinguishing between persistent land/water boundaries and short-term variations observed in the dynamic mask. </p>
-<h3>Sharpening Layer</h3>
-<p>The sharpening layer has a 10 m spatial resolution that can provide insights with a 10x improvement in sharpness over today's LST standard. The sharpening algorithm creates a 10 m resolution LST data layer using as input the nominal HiVE 30 m LST data. It is based on the Residual-in-Residual Dense Block (RRDB) network trained using the external HyTEST Land Surface Temperature data sets. It operates without need for any auxiliary guiding bands, relying solely on thermal information. The model is optimized to ensure maintaining pixel accuracy, structural consistency, and edge preservation. Consequently, the 10 m sharpened layer provides super-resolved LST products that preserve both the absolute thermal values and the spatial patterns necessary for downstream applications.</p>
 <table>
 <thead>
 <tr>
@@ -1818,6 +1824,21 @@ The product is based on the L1B/C product and shows the same geotiff structure a
 </table>
 <figcaption>Raster properties of the LST, SR, emissivity and BOA radiance layers</figcaption>
 
+<h3>Quality Assessment Layers</h3>
+<p>Quality masks are provided for each of the VNIR and TIR bands as uint8 data at the native spatial resolution of the corresponding band. Those masks report among others the presence of saturated pixels, nodata pixels, or possibly pixels for which the quality could not be tested. </p>
+<h3>Scene Classification Layers</h3>
+<p>The Scene Classification Layer (SCL) provides per-pixel quality and contextual information that can be used to identify and mask clouds, cloud shadows, and water bodies, enabling more robust retrieval of geophysical parameters and improving the reliability of change detection, time-series analysis, and monitoring workflows. </p>
+<p>The SCL product consists of four classification bands: a cloud mask, a cast shadow mask, a dynamic and a static land/water mask (see more detail in Metadata). </p>
+<p>The dynamic land/water mask is generated from the Level-1B calibrated (L1BC) imagery using the spectral ratio between the VNIR03 and VNIR08 bands. This approach leverages the characteristic reflectance differences of water and land surfaces to derive a scene-dependent classification that captures temporary changes in coastlines, water extent, and surface conditions at the time of acquisition. </p>
+<p>The static land/water mask is derived from the ESA WorldCover 2021 global land-cover dataset and provides a stable reference classification independent of the current acquisition. It is particularly useful for consistency checks and for distinguishing between persistent land/water boundaries and short-term variations observed in the dynamic mask. </p>
+<h3>Sharpening Layer</h3>
+<p>The sharpening layer provides LST at 10 m spatial resolution, a 3x improvement over the nominal 30 m product. Two complementary products are available, differing in inputs, training data, and operating conditions.</p>
+<h4>RRDB-based sharpening</h4>
+<p>This approach uses a Residual-in-Residual Dense Block (RRDB) network to produce 10 m LST from the 30 m HiVE LST product alone, trained on external HyTEST LST datasets. Because it relies only on thermal information and needs no guiding bands, it works for both daytime and nighttime acquisitions. Without VNIR guidance, however, it captures less detailed geometric structure than the DMS-CNN approach.</p>
+<h4>DMS-CNN-based sharpening</h4>
+<p>This approach combines a Data Mining Sharpener (DMS) with Convolutional Neural Networks (CNN) to produce 10 m LST from the 30 m HiVE LST product and 10 m L2A VNIR data, trained on proprietary datasets from our own sensors. The VNIR guidance lets it capture finer geometric structures and spatial patterns than the RRDB method, but it is limited to daytime acquisitions. Performance is also expected to drop over highly homogeneous surfaces (oceans, deserts, ice), where few distinct spatial features are available to guide reconstruction.</p>
+<h4>Model performance and product characteristics</h4>
+<p>Both approaches are optimized to preserve pixel-level accuracy, structural consistency, and edges. They yield complementary 10 m LST products that keep the original absolute temperatures and spatial patterns while adding spatial detail for downstream applications.</p>
 <h2 id="naming-convention">Naming Convention</h2>
 <p><strong>Via the API</strong>
 <br> Files can be downloaded via a STAC compliant API. The naming convention per file is as follows: </p>
