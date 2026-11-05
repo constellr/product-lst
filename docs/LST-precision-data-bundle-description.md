@@ -117,11 +117,17 @@ The static land/water mask is derived from the ESA WorldCover 2021 global land-c
 
 <h3>Sharpening Layer</h3>
 The sharpening layer provides LST at 10 m spatial resolution, a 3x improvement over the nominal 30 m product. Two complementary products are available, differing in inputs, training data, and operating conditions.
-<h4>RRDB-based sharpening</h4>
+
+**1. RRDB-based sharpening**
+
 This approach uses a Residual-in-Residual Dense Block (RRDB) network to produce 10 m LST from the 30 m HiVE LST product alone, trained on external HyTEST LST datasets. Because it relies only on thermal information and needs no guiding bands, it works for both daytime and nighttime acquisitions. Without VNIR guidance, however, it captures less detailed geometric structure than the DMS-CNN approach.
-<h4>DMS-CNN-based sharpening</h4>
+
+**2. DMS-CNN-based sharpening**
+
 This approach combines a Data Mining Sharpener (DMS) with Convolutional Neural Networks (CNN) to produce 10 m LST from the 30 m HiVE LST product and 10 m L2A VNIR data, trained on proprietary datasets from our own sensors. The VNIR guidance lets it capture finer geometric structures and spatial patterns than the RRDB method, but it is limited to daytime acquisitions. Performance is also expected to drop over highly homogeneous surfaces (oceans, deserts, ice), where few distinct spatial features are available to guide reconstruction.
-<h4>Model performance and product characteristics</h4>
+
+**3. Model performance and product characteristics**
+
 Both approaches are optimized to preserve pixel-level accuracy, structural consistency, and edges. They yield complementary 10 m LST products that keep the original absolute temperatures and spatial patterns while adding spatial detail for downstream applications.
 
 
