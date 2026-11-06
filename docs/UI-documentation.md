@@ -49,8 +49,8 @@ For programmatic integrations, you can authenticate using an API key. API keys a
  
 A few important things to keep in mind:
  
-* A user can have only **one active API key** at a time.
 * The generated key value is displayed **only once** at the time of creation. Copy it immediately and store it securely, as it cannot be retrieved afterwards.
+* Keys expire automatically after a set period. The key creator receives reminder emails as expiration approaches, so you can generate a new key and switch your integration over to it before the old one stops working.
 * If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.
 * Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
 See the [API Keys](#api-keys) section for more detail on managing keys.
@@ -239,9 +239,10 @@ From this page, you can generate a new API key by providing a name, view your ex
 !!! warning API Key shown only once
     The generated key value is displayed **only once** at the time of creation. Make sure to copy it immediately and store it securely, as it cannot be retrieved afterwards.
 
+Each key has an expiration date and shows its current status, **Active** or **Expired**, in the keys table. The key creator receives reminder emails as expiration approaches, so you can generate a new key and switch your integration over to it before the old one stops working.
+
 A few important things to keep in mind:
 
-* A user can have only **one active API key** at a time.
 * If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.
 * Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
 
