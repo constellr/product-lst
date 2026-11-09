@@ -20,7 +20,7 @@
 | **Total request time**     | Sum of (MTT + Revisit Time + Latency) | 
 | **Calibration and Validation**           | In-situ data validation following CEOS standards.  Patented cross calibration of HiVE with highly accurate calibrated public missions. <br> [Calibration and Validation](https://constellr.github.io/product-lst/LST-precision-cal-val-procedure/) |
 
-## Coverage by AOI Size
+## Coverage by AOI Size {: #coverage-by-aoi-size }
 
 AOIs are cropped to what the satellite actually acquires, so the larger an AOI, the more likely its edges fall outside a single acquisition's footprint. Expected coverage is predicted from the AOI's longest bounding box side:
 
