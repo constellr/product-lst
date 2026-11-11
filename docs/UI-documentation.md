@@ -162,11 +162,18 @@ To get started, use the quick square drawing tool to place a 15 km × 15 km AOI.
 ![ArchiveBrowserPreview](./images/ui-documentation/archive_browser_preview.png){ width=80% }
 
 <h3>AOI Library</h3>
-This page is under construction and provides limited functionality for the moment.  
 
 From the [AOI Library](https://app.constellr.com/aoi-library) tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  
 
 From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload a GeoJSON file. Each AOI in your account must have a unique name.  
+
+To draw an AOI, pick one of the map's drawing tools:
+
+* **Circle** (default): Click a point on the map, then set its center coordinates and radius.
+* **Rectangle**: Drag out a bounding box.
+* **Polygon**: Click to place each vertex of a freeform shape.
+
+While drawing or resizing an AOI, the map shows its expected coverage based on size: AOIs up to 5 km × 5 km are fully covered, while larger AOIs (up to the 15 km × 15 km maximum) may have their edges cut off at delivery, with a warning shown accordingly. See [Coverage by AOI Size](https://constellr.github.io/product-lst/Technical-specification/#coverage-by-aoi-size) for details.
 
 For GeoJSON uploads, we accept the following inputs:
 
