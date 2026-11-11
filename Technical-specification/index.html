@@ -343,6 +343,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#coverage-by-aoi-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coverage by AOI Size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#footnotes" class="md-nav__link">
     <span class="md-ellipsis">
       Footnotes
@@ -1647,6 +1656,31 @@
 </tr>
 </tbody>
 </table>
+<h2 id="coverage-by-aoi-size">Coverage by AOI Size</h2>
+<p>AOIs are cropped to what the satellite actually acquires, so the larger an AOI, the more likely its edges fall outside a single acquisition's footprint. Expected coverage is predicted from the AOI's longest bounding box side:</p>
+<table>
+<thead>
+<tr>
+<th>AOI longest side</th>
+<th>Expected coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up to 5 km</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Up to 10 km</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>Up to 15 km (maximum)</td>
+<td>90%</td>
+</tr>
+</tbody>
+</table>
+<p>The End User Platform shows this expected coverage, and a cut-off warning when it's below 100%, while you draw or resize an AOI — see <a href="https://constellr.github.io/product-lst/UI-documentation/#aoi-library">UI documentation</a>.</p>
 <!-- 
 ## Capability Statement
 This document is intented to always provide you the latest version of our capability statement. Download [here](https://constdataext.blob.core.windows.net/constellr-public/Capability_Statement/Capability_statement_constellr_PUBLIC.pdf).   -->

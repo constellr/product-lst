@@ -1642,8 +1642,8 @@
 <p>For programmatic integrations, you can authenticate using an API key. API keys are created and managed per workspace via <a href="https://app.constellr.com/account/workspace-api-keys">Account &gt; Workspace &gt; API Keys</a>.</p>
 <p>A few important things to keep in mind:</p>
 <ul>
-<li>A user can have only <strong>one active API key</strong> at a time.</li>
 <li>The generated key value is displayed <strong>only once</strong> at the time of creation. Copy it immediately and store it securely, as it cannot be retrieved afterwards.</li>
+<li>Keys expire automatically after a set period. The key creator receives reminder emails as expiration approaches, so you can generate a new key and switch your integration over to it before the old one stops working.</li>
 <li>If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.</li>
 <li>Deleting a key is irreversible — any integrations relying on that key will stop working immediately.
 See the <a href="#api-keys">API Keys</a> section for more detail on managing keys.</li>
@@ -1731,9 +1731,16 @@ You can access your data by clicking on the Data Order ID. Here, you can see eve
 </blockquote>
 <p><img alt="ArchiveBrowserPreview" src="../images/ui-documentation/archive_browser_preview.png" width="80%" /></p>
 <h3>AOI Library</h3>
-<p>This page is under construction and provides limited functionality for the moment.  </p>
+
 <p>From the <a href="https://app.constellr.com/aoi-library">AOI Library</a> tab, you can manage the AOIs that you have defined. You can see the name, creation date and size. You can also download the GeoJSON by clicking the three dots on the upper right of each AOI.  </p>
 <p>From this page, you can create new AOIs that can be reused when creating orders. You can either draw an AOI or upload a GeoJSON file. Each AOI in your account must have a unique name.  </p>
+<p>To draw an AOI, pick one of the map's drawing tools:</p>
+<ul>
+<li><strong>Circle</strong> (default): Click a point on the map, then set its center coordinates and radius.</li>
+<li><strong>Rectangle</strong>: Drag out a bounding box.</li>
+<li><strong>Polygon</strong>: Click to place each vertex of a freeform shape.</li>
+</ul>
+<p>While drawing or resizing an AOI, the map shows its expected coverage based on size: AOIs up to 5 km × 5 km are fully covered, while larger AOIs (up to the 15 km × 15 km maximum) may have their edges cut off at delivery, with a warning shown accordingly. See <a href="https://constellr.github.io/product-lst/Technical-specification/#coverage-by-aoi-size">Coverage by AOI Size</a> for details.</p>
 <p>For GeoJSON uploads, we accept the following inputs:</p>
 <ul>
 <li><strong>Feature</strong>: Accepted as-is.  </li>
@@ -1788,9 +1795,9 @@ You can manage team access via the <strong>Workspace</strong> section in the <st
 <p class="admonition-title">Warning</p>
 <p>The generated key value is displayed <strong>only once</strong> at the time of creation. Make sure to copy it immediately and store it securely, as it cannot be retrieved afterwards.</p>
 </div>
+<p>Each key has an expiration date and shows its current status, <strong>Active</strong> or <strong>Expired</strong>, in the keys table. The key creator receives reminder emails as expiration approaches, so you can generate a new key and switch your integration over to it before the old one stops working.</p>
 <p>A few important things to keep in mind:</p>
 <ul>
-<li>A user can have only <strong>one active API key</strong> at a time.</li>
 <li>If the key creator is removed from the workspace (or their account is deleted), all keys created by that user are automatically revoked.</li>
 <li>Deleting a key is irreversible — any integrations relying on that key will stop working immediately.</li>
 </ul>
